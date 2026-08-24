@@ -1,0 +1,117 @@
+kind: repair
+input: the agent retries the request if the test fails
+verdict: ideal
+snapshot: if the test fails, then the agent retries the request
+unique_outputs:
+- output: if the test fails, then the agent retries the request
+  valid: true
+  count: 5
+- output: if the test fails, then the agent retries the request.
+  valid: true
+  count: 10
+runs:
+- at_unix: 1788284243
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+- at_unix: 1788285590
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+- at_unix: 1788285663
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request.
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: if the test fails, then the agent retries the request
+      valid: true

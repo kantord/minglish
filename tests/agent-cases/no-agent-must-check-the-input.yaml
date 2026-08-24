@@ -1,0 +1,173 @@
+kind: repair
+input: no agent must check the input
+verdict: needs-fix
+snapshot: no agent checks the input.
+unique_outputs:
+- output: agent must not check the input
+  valid: false
+  count: 1
+- output: agents must not check the input
+  valid: true
+  count: 5
+- output: an agent must not check the input
+  valid: true
+  count: 1
+- output: every agent must not check the input
+  valid: false
+  count: 7
+- output: no agent checks the input
+  valid: true
+  count: 7
+- output: no agent checks the input.
+  valid: true
+  count: 1
+- output: no agent must check the input
+  valid: false
+  count: 1
+runs:
+- at_unix: 1788284193
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: an agent must not check the input
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: no agent checks the input
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: no agent checks the input
+      valid: true
+- at_unix: 1788285525
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent checks the input
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: no agent must check the input
+      valid: false
+      diagnosis: '"no agent must check the input": STYLE: "no … must" is ambiguous
+        — write "<nouns> must not …" for prohibition (ADR 0014)'
+    - output: agents must not check the input
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: no agent checks the input
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: agents must not check the input
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent checks the input
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: agents must not check the input
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: agents must not check the input
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: agents must not check the input
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: no agent checks the input
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent checks the input.
+      valid: true
+  - rounds: 3
+    final_valid: false
+    attempts:
+    - output: agent must not check the input
+      valid: false
+      diagnosis: '"agent must not check the input": STYLE: this structure is outside
+        the sanctioned sentence shapes — restructure into one of the minglish templates'
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: every agent must not check the input
+      valid: false
+      diagnosis: '"every agent must not check the input": STYLE: "every … not" is
+        scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns>
+        do not …" (ADR 0014)'
+    - output: no agent checks the input
+      valid: true

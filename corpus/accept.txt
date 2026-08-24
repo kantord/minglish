@@ -1,0 +1,62 @@
+# minglish seed corpus — target sentences the language must accept
+# one sentence per line; lowercase; drives the lexicon coverage metric
+the agent reads the file
+the server returns an error
+the user sends a message to the server
+the system stores the result in the database
+an error stops the process
+the agent creates a report from the data
+the parser rejects the sentence
+the linter finds a collision in the lexicon
+the compiler builds the program
+the agent deletes the old file
+a message arrives from the queue
+the test fails
+the agent retries the request
+the user starts a session
+the script writes the output to a file
+you send the report to the server
+i store your message in my database
+the queue is empty
+the old files are big
+the parser is a program
+the server stores the message and returns the result
+the test fails or the agent retries the request
+do not delete my report
+the agent does not store the file
+the queue is not empty
+the agent creates a report for the user
+the user opens the file with the tool
+the server stores a copy of the report at the database
+if the test fails, then the agent retries the request
+if the queue is empty, then the server stops the process
+the agent must check the input
+you cannot delete the lexicon
+the user can open a session
+the agent must not delete your report
+the compiler built the program
+the queue was empty
+the user did not open a session
+the tests were old
+machines find collisions
+agents retry requests
+old files are big
+people do not find collisions
+every agent retries the request
+every user of the system opens a session
+no agent can delete the lexicon
+no test was old
+the agent checks every request
+every word has one tag
+the user has one session
+i have your report
+some agents retry the request
+some agents do not retry the request
+some words have one tag
+the tool Lexgen builds the lexicon
+the file "seed.json" is the source of the truth
+the database WordNet attests the senses of the words
+check the input of the user
+store the report in the database
+the test fails but the agent retries the request
+the agent opened the file but the file was empty

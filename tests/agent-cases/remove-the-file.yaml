@@ -1,0 +1,187 @@
+kind: repair
+input: Remove the file
+verdict: ideal
+snapshot: delete the file
+unique_outputs:
+- output: Delete the file.
+  valid: false
+  count: 4
+- output: The agent deletes the file.
+  valid: true
+  count: 2
+- output: The agent removes the file.
+  valid: false
+  count: 1
+- output: The user deletes the file.
+  valid: true
+  count: 3
+- output: delete the file
+  valid: false
+  count: 3
+- output: the agent deletes the file
+  valid: true
+  count: 1
+- output: the agent removes the file
+  valid: false
+  count: 1
+- output: the agent removes the file.
+  valid: false
+  count: 1
+- output: the user deletes the file
+  valid: true
+  count: 1
+- output: the user removes the file.
+  valid: false
+  count: 1
+- output: you delete the file
+  valid: true
+  count: 4
+- output: you must not delete the file.
+  valid: true
+  count: 1
+- output: you remove the file
+  valid: false
+  count: 2
+runs:
+- at_unix: 1788284204
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: you remove the file
+      valid: false
+      diagnosis: '"you remove the file": WORD: "remove" is not a minglish word'
+    - output: you delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you delete the file
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: you remove the file
+      valid: false
+      diagnosis: '"you remove the file": WORD: "remove" is not a minglish word'
+    - output: you delete the file
+      valid: true
+- at_unix: 1788285532
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: Delete the file.
+      valid: false
+      diagnosis: '"Delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: The user deletes the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must not delete the file.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: Delete the file.
+      valid: false
+      diagnosis: '"Delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: The user deletes the file.
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 0
+  trial_detail:
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the agent removes the file
+      valid: false
+      diagnosis: '"the agent removes the file": WORD: "removes" is not a minglish
+        word'
+    - output: the agent deletes the file
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: The agent removes the file.
+      valid: false
+      diagnosis: '"The agent removes the file": WORD: "removes" is not a minglish
+        word'
+    - output: The agent deletes the file.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the agent removes the file.
+      valid: false
+      diagnosis: '"the agent removes the file": WORD: "removes" is not a minglish
+        word'
+    - output: The agent deletes the file.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 0
+  trial_detail:
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: Delete the file.
+      valid: false
+      diagnosis: '"Delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: The user deletes the file.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the user removes the file.
+      valid: false
+      diagnosis: '"the user removes the file": WORD: "removes" is not a minglish word'
+    - output: the user deletes the file
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: delete the file
+      valid: false
+      diagnosis: '"delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: you delete the file
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: Delete the file.
+      valid: true

@@ -1,0 +1,8 @@
+source: (language design)
+sentence: commit as a verb (e.g. 'The maintainers commit the generated files')
+diagnosis: '''commit'' verb-sense conflicts with the enabled commit NOUN (one-tag-per-surface)'
+resolution: gap
+gap: resolve the commit noun/verb conflict (ambitransitive-style tension with the
+  one-tag invariant)
+note: the 'we' half of this case was resolved by ADR 0020 (banned, name-the-group
+  advice); ADR 0001 rewritten to 'The maintainers commit ...'

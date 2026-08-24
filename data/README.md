@@ -1,0 +1,31 @@
+# Reference data
+
+Used by `lexgen`/`triage` for **checking only** — never for choosing words
+(see ADR 0001). Pinned by checksum in `checksums.sha256`; verify with
+`sha256sum -c checksums.sha256` from this directory.
+
+Permissively licensed files (WordNet, moby) are vendored in git. The
+**CC BY-SA 4.0** files (`ud/`, `freq/`) are NOT vendored — run
+`scripts/fetch-data.sh` once after cloning; it downloads/derives them from
+pinned upstream versions and verifies these checksums, keeping the
+repository itself entirely MIT/Apache.
+
+| Path | Source | License |
+|---|---|---|
+| `wordnet/index.{noun,verb,adj,adv}` | WordNet 3.0, Princeton University (<https://wordnetcode.princeton.edu/3.0/WNdb-3.0.tar.gz>) | WordNet License (BSD-style permissive) — see `wordnet/LICENSE` |
+| `moby/mobypos.txt` | Moby Part-of-Speech II, Grady Ward, via Project Gutenberg #3203 | Public domain |
+| `ud/en_ewt-ud-test.conllu` (fetched) | UD_English-EWT **r2.16** test split (<https://github.com/UniversalDependencies/UD_English-EWT>) | **CC BY-SA 4.0** — gold-tagged evaluation corpus for `triage`; data only, never enters generated lexicon |
+| `freq/en_zipf.tsv` (derived at fetch time) | Derived from the `wordfreq` 3.1.1 Python package (Robyn Speer), English "best" wordlist, top 100k words | **CC BY-SA 4.0** (wordfreq's data license). The derived TSV remains CC BY-SA 4.0; attribution: wordfreq, <https://github.com/rspeer/wordfreq> |
+
+The CC BY-SA file is data, kept separate from the project's code license; it
+is only read to print frequency warnings in the lexicon report.
+
+## Format notes
+
+- WordNet index files: license header lines start with two spaces; data lines
+  are `lemma pos synset_cnt ...` (space-separated, lemma uses `_` for spaces).
+- mobypos: `word\CODES` per line (backslash separator), CRLF line endings.
+  Codes: N noun, p plural, h noun phrase, V verb (participle), t transitive
+  verb, i intransitive verb, A adjective, v adverb, C conjunction,
+  P preposition, ! interjection, r pronoun, D/I articles, o nominative.
+- en_zipf.tsv: `word\tzipf`, one header comment line.

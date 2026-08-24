@@ -1,0 +1,153 @@
+kind: repair
+input: the agent stores the report in the database with the tool
+verdict: ideal
+snapshot: the agent stores the report in the database. the agent uses the tool.
+unique_outputs:
+- output: The agent stores the report in the database. The agent uses the tool.
+  valid: true
+  count: 5
+- output: the agent stores the report in the database with the tool.
+  valid: false
+  count: 2
+- output: the agent stores the report in the database. the agent stores the report with the tool.
+  valid: true
+  count: 2
+- output: the agent stores the report in the database. the agent uses the tool.
+  valid: false
+  count: 10
+- output: the agent stores the report in the database. the tool is used for the report.
+  valid: false
+  count: 1
+- output: the agent stores the report in the database. the tool stores the report.
+  valid: true
+  count: 1
+- output: the agent uses the tool. the agent stores the report in the database.
+  valid: true
+  count: 1
+runs:
+- at_unix: 1788284266
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 0
+  trial_detail:
+  - rounds: 3
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: false
+      diagnosis: '"the agent uses the tool": WORD: "uses" is not a minglish word'
+    - output: the agent stores the report in the database with the tool.
+      valid: false
+      diagnosis: '"the agent stores the report in the database with the tool": AMBIGUOUS (5 readings): split the sentence, or move the prepositional phrase so each attachment is explicit'
+    - output: the agent stores the report in the database. the tool stores the report.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: false
+      diagnosis: '"the agent uses the tool": WORD: "uses" is not a minglish word'
+    - output: the agent stores the report in the database. the agent stores the report with the tool.
+      valid: true
+  - rounds: 3
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: false
+      diagnosis: '"the agent uses the tool": WORD: "uses" is not a minglish word'
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: false
+      diagnosis: '"the agent uses the tool": WORD: "uses" is not a minglish word'
+    - output: the agent stores the report in the database. the agent stores the report with the tool.
+      valid: true
+- at_unix: 1788285596
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 3
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the tool is used for the report.
+      valid: false
+      diagnosis: '"the tool is used for the report": STYLE: "used" is transitive in minglish and needs an object; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)'
+    - output: the agent stores the report in the database with the tool.
+      valid: false
+      diagnosis: '"the agent stores the report in the database with the tool": AMBIGUOUS (5 readings): split the sentence, or move the prepositional phrase so each attachment is explicit'
+    - output: the agent uses the tool. the agent stores the report in the database.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the report in the database. The agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true
+- at_unix: 1788285665
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the report in the database. The agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the report in the database. The agent uses the tool.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the report in the database. The agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the report in the database. The agent uses the tool.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the report in the database. the agent uses the tool.
+      valid: true

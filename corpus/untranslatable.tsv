@@ -1,0 +1,41 @@
+# english sentence<TAB>reason codes — why a faithful minglish translation is impossible today
+# sampled deterministically from UD_English-EWT r2.16 test (# text lines, 5–14 words, every 29th)
+# codes: TENSE past/future needed; ASPECT progressive/perfect; QUESTION interrogative form;
+#   ANAPHORA 3rd-person reference; FRAGMENT not a clause; PASSIVE; IDIOM non-compositional;
+#   QUANTIFIER every/all/some; DEGREE very/too/comparative; MODAL should/would/may;
+#   INFINITIVE to-clause; EMBED complement/embedded clause; INDEF_PRON something/anyone;
+#   OBJ_PRON me/him object forms; VOCAB open-class gap only
+I'm staying away from the stock.	ASPECT IDIOM
+It is now threatening to pull out of the Allawi caretaker government.	ANAPHORA ASPECT INFINITIVE IDIOM
+Saad Khalid, 19, of Eclipse Avenue, Mississauga.	FRAGMENT
+why do you think i should get one of those?	QUESTION MODAL ANAPHORA
+I don't know how much it will help however.	EMBED TENSE ANAPHORA
+I met you at the Risk conference last week in Houston.	TENSE
+If you want a CD copy of this web site, give me a yell.	IDIOM OBJ_PRON VOCAB
+I talked with Gary Wilson, and he confirmed that the revised values are correct.	TENSE ANAPHORA EMBED
+Are you going to be able to make the power VAR meeting on Thursday?	QUESTION ASPECT IDIOM
+You should use the same spreadsheet format used for the 1/29/02 DPR.	MODAL PASSIVE
+So I started a small mailing list and added their addresses to it.	TENSE ANAPHORA
+I was married by a judge.	TENSE PASSIVE
+in n out of the chicago area?	FRAGMENT
+mazzoni's deli best italian food in phila pa?	FRAGMENT
+I need something reliable and good looking.	INDEF_PRON VOCAB
+and where can I find them?	QUESTION ANAPHORA
+I assume you are talking about a pacman frog.	EMBED ASPECT
+i love The Script and know there from iraland.	FRAGMENT
+why are there two statues of David?	QUESTION
+You are busy, you don't have to sit face to face to try	IDIOM INFINITIVE
+Make sure to put OILY sauces on your food to make it moist!	IDIOM INFINITIVE ANAPHORA
+But the servers don't pay attention to you whether it's busy or not.	IDIOM EMBED ANAPHORA
+I Highly Recommend, The Law Offices Of Dale Gribow!!	DEGREE VOCAB
+Truly james bond style stuff ... would recommend	FRAGMENT MODAL
+Also very friendly and the stylists are not in the "been there/done that" mood!	FRAGMENT DEGREE IDIOM
+If you enjoy amazing things, you must go to World's Finest Donair.	VOCAB DEGREE
+Bulwark regarding service by Eric	FRAGMENT
+On time, Clean and very nice	FRAGMENT DEGREE
+Reports have to be created by the agent for every single user.	QUANTIFIER PASSIVE
+Make sure to check all input coming from users.	QUANTIFIER ASPECT
+In case of an error, the process will be stopped.	PASSIVE TENSE
+Messages arriving from the queue get stored in the database.	PASSIVE ASPECT
+Word choice must stay a human judgment.	GENERIC NOMINALIZATION
+…the critical safety property is exactly the kind of check humans miss and machines don't.	GENERIC NOMINALIZATION EMBED

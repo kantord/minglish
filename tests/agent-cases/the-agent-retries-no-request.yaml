@@ -1,0 +1,135 @@
+kind: repair
+input: the agent retries no request
+verdict: needs-fix
+snapshot: the agent does not retry a request
+unique_outputs:
+- output: the agent does not retry a request
+  valid: true
+  count: 13
+- output: the agent does not retry a request.
+  valid: true
+  count: 2
+- output: the agent does not retry any request
+  valid: false
+  count: 3
+- output: the agent retries no request
+  valid: false
+  count: 1
+runs:
+- at_unix: 1788284232
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the agent does not retry any request
+      valid: false
+      diagnosis: '"the agent does not retry any request": WORD: "any" is not a minglish word'
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+- at_unix: 1788285581
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the agent does not retry any request
+      valid: false
+      diagnosis: '"the agent does not retry any request": WORD: "any" is not a minglish word'
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+- at_unix: 1788285662
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 3
+    final_valid: true
+    attempts:
+    - output: the agent does not retry any request
+      valid: false
+      diagnosis: '"the agent does not retry any request": WORD: "any" is not a minglish word'
+    - output: the agent retries no request
+      valid: false
+      diagnosis: '"the agent retries no request": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+    - output: the agent does not retry a request
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent does not retry a request
+      valid: true

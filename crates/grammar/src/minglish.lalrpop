@@ -1,0 +1,287 @@
+// Tier-1 minglish grammar. Terminals are form-tags (see lexicon.tsv);
+// constructions are exactly those sanctioned by ADRs 0002–0014.
+// LR(1)-clean by design: the PREP_N/PREP_V split (ADR 0011) removes PP
+// attachment conflicts, coordination is factored so the token after CONJ
+// decides predicate- vs clause-coordination (ADR 0004, binary only), and
+// agreement/positivity variants are parameterized macros rather than
+// hand-copied production sets.
+
+use crate::{Tree, Tok, LexError, leaf, nd};
+
+grammar;
+
+extern {
+    type Location = usize;
+    type Error = LexError;
+
+    enum Tok {
+        "DET" => Tok::Det(<String>),
+        "DET_SG" => Tok::DetSg(<String>),
+        "ADJ" => Tok::Adj(<String>),
+        "NOUN_SG" => Tok::NounSg(<String>),
+        "NOUN_PL" => Tok::NounPl(<String>),
+        "VT_BASE" => Tok::VtBase(<String>),
+        "VT_3SG" => Tok::Vt3(<String>),
+        "VT_ED" => Tok::VtEd(<String>),
+        "VT_ING" => Tok::VtIng(<String>),
+        "VI_BASE" => Tok::ViBase(<String>),
+        "VI_3SG" => Tok::Vi3(<String>),
+        "VI_ED" => Tok::ViEd(<String>),
+        "VI_ING" => Tok::ViIng(<String>),
+        "PREP_N" => Tok::PrepN(<String>),
+        "PREP_V" => Tok::PrepV(<String>),
+        "PRON_1" => Tok::Pron1(<String>),
+        "PRON_2" => Tok::Pron2(<String>),
+        "POSS" => Tok::Poss(<String>),
+        "COP_SG" => Tok::CopSg(<String>),
+        "COP_PL" => Tok::CopPl(<String>),
+        "COP_SG_PAST" => Tok::CopSgPast(<String>),
+        "COP_PL_PAST" => Tok::CopPlPast(<String>),
+        "CONJ" => Tok::Conj(<String>),
+        "NEG" => Tok::Neg(<String>),
+        "DO_BASE" => Tok::DoBase(<String>),
+        "DO_3SG" => Tok::Do3(<String>),
+        "DO_PAST" => Tok::DoPast(<String>),
+        "MODAL_MUST" => Tok::ModalMust(<String>),
+        "MODAL_CAN" => Tok::ModalCan(<String>),
+        "MODAL_CANNOT" => Tok::ModalCannot(<String>),
+        "IF" => Tok::If(<String>),
+        "THEN" => Tok::Then(<String>),
+        "EVERY" => Tok::Every(<String>),
+        "NO" => Tok::No(<String>),
+        "NUM_SG" => Tok::Num(<String>),
+        "SOME" => Tok::Some_(<String>),
+        "NAME" => Tok::Name(<String>),
+        "COMMA" => Tok::Comma,
+    }
+}
+
+// ------------------------------------------------------ terminal wrappers
+
+LDet: Tree = <l:@L> <w:"DET"> => leaf(l, w);
+LDetSg: Tree = <l:@L> <w:"DET_SG"> => leaf(l, w);
+LAdj: Tree = <l:@L> <w:"ADJ"> => leaf(l, w);
+LNounSg: Tree = <l:@L> <w:"NOUN_SG"> => leaf(l, w);
+LNounPl: Tree = <l:@L> <w:"NOUN_PL"> => leaf(l, w);
+LVtBase: Tree = <l:@L> <w:"VT_BASE"> => leaf(l, w);
+LVt3: Tree = <l:@L> <w:"VT_3SG"> => leaf(l, w);
+LVtEd: Tree = <l:@L> <w:"VT_ED"> => leaf(l, w);
+LViBase: Tree = <l:@L> <w:"VI_BASE"> => leaf(l, w);
+LVi3: Tree = <l:@L> <w:"VI_3SG"> => leaf(l, w);
+LViEd: Tree = <l:@L> <w:"VI_ED"> => leaf(l, w);
+LPrepN: Tree = <l:@L> <w:"PREP_N"> => leaf(l, w);
+LPrepV: Tree = <l:@L> <w:"PREP_V"> => leaf(l, w);
+LPron1: Tree = <l:@L> <w:"PRON_1"> => leaf(l, w);
+LPron2: Tree = <l:@L> <w:"PRON_2"> => leaf(l, w);
+LPoss: Tree = <l:@L> <w:"POSS"> => leaf(l, w);
+LCopSg: Tree = <l:@L> <w:"COP_SG"> => leaf(l, w);
+LCopPl: Tree = <l:@L> <w:"COP_PL"> => leaf(l, w);
+LCopSgPast: Tree = <l:@L> <w:"COP_SG_PAST"> => leaf(l, w);
+LCopPlPast: Tree = <l:@L> <w:"COP_PL_PAST"> => leaf(l, w);
+LConj: Tree = <l:@L> <w:"CONJ"> => leaf(l, w);
+LNeg: Tree = <l:@L> <w:"NEG"> => leaf(l, w);
+LDoBase: Tree = <l:@L> <w:"DO_BASE"> => leaf(l, w);
+LDo3: Tree = <l:@L> <w:"DO_3SG"> => leaf(l, w);
+LDoPast: Tree = <l:@L> <w:"DO_PAST"> => leaf(l, w);
+LModalMust: Tree = <l:@L> <w:"MODAL_MUST"> => leaf(l, w);
+LModalCan: Tree = <l:@L> <w:"MODAL_CAN"> => leaf(l, w);
+LModalCannot: Tree = <l:@L> <w:"MODAL_CANNOT"> => leaf(l, w);
+LIf: Tree = <l:@L> <w:"IF"> => leaf(l, w);
+LThen: Tree = <l:@L> <w:"THEN"> => leaf(l, w);
+LComma: Tree = <l:@L> "COMMA" => leaf(l, ",".to_string());
+LEvery: Tree = <l:@L> <w:"EVERY"> => leaf(l, w);
+LNo: Tree = <l:@L> <w:"NO"> => leaf(l, w);
+LNum: Tree = <l:@L> <w:"NUM_SG"> => leaf(l, w);
+LSome: Tree = <l:@L> <w:"SOME"> => leaf(l, w);
+LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
+
+// ----------------------------------------------------------------- macros
+
+// Verb predicate for one (transitive, intransitive) agreement pair.
+VPn<Vt, Vi>: Tree = {
+    <v:Vt> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
+    <v:Vi> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
+};
+
+// Do-support negation with the given auxiliary form.
+NegVPn<D>: Tree = {
+    <d:D> <n:LNeg> <v:VBaseP> => nd("NegVP", 2, vec![Some(d), Some(n), Some(v)]),
+};
+
+// Copular predicate (optionally negated) with the given copula form.
+CopPredn<C>: Tree = {
+    <c:C> <n:LNeg?> <cm:Compl> => nd("CopPred", 2, vec![Some(c), n, Some(cm)]),
+};
+
+// Positive-only copular predicate (for quantified subjects, ADR 0014).
+CopPosn<C>: Tree = {
+    <c:C> <cm:Compl> => nd("CopPred", 1, vec![Some(c), Some(cm)]),
+};
+
+// Determined NP with the given determiner class and noun number.
+NPx<D, N>: Tree = {
+    <d:D> <a:LAdj?> <n:N> <o:OfPP?> => nd("NP", 2, vec![Some(d), a, Some(n), o]),
+};
+
+// Inner NP (inside of-PPs): no further of-PP (no chains, ADR 0011).
+NPi<D, N>: Tree = {
+    <d:D> <a:LAdj?> <n:N> => nd("NP", 2, vec![Some(d), a, Some(n)]),
+};
+
+// Coordination tail for one predicate set (binary only, ADR 0004).
+Tailn<P>: Tree = {
+    <c:LConj> <p:P> => nd("CoordPred", 1, vec![Some(c), Some(p)]),
+    <c:LConj> <cl:Clause> => nd("CoordClause", 1, vec![Some(c), Some(cl)]),
+};
+
+// -------------------------------------------------------------- sentences
+
+pub Sentence: Tree = {
+    Statement,
+    Conditional,
+    Prohibition,
+    Imperative,
+};
+
+Statement: Tree = {
+    <s:SubjSG> <p:PredSG> <t:Tailn<PredSG>?> => nd("S", 1, vec![Some(s), Some(p), t]),
+    <s:NPEvery> <p:PredEvery> => nd("S", 1, vec![Some(s), Some(p)]),
+    <s:NPNo> <p:PredNo> => nd("S", 1, vec![Some(s), Some(p)]),
+    <s:NPSome> <p:PredPL> => nd("S", 1, vec![Some(s), Some(p)]),
+    <s:SubjPL> <p:PredPL> <t:Tailn<PredPL>?> => nd("S", 1, vec![Some(s), Some(p), t]),
+    <s:Subj1> <p:Pred1> <t:Tailn<Pred1>?> => nd("S", 1, vec![Some(s), Some(p), t]),
+};
+
+Clause: Tree = {
+    <s:SubjSG> <p:PredSG> => nd("Clause", 1, vec![Some(s), Some(p)]),
+    <s:SubjPL> <p:PredPL> => nd("Clause", 1, vec![Some(s), Some(p)]),
+    <s:Subj1> <p:Pred1> => nd("Clause", 1, vec![Some(s), Some(p)]),
+};
+
+// if <clause> , then <clause> — mandatory comma and then (ADR 0007).
+Conditional: Tree = {
+    <i:LIf> <c:Clause> <cm:LComma> <t:LThen> <m:Clause> =>
+        nd("Cond", 4, vec![Some(i), Some(c), Some(cm), Some(t), Some(m)]),
+};
+
+// do not <verb …> — prohibition (ADR 0005).
+Prohibition: Tree = {
+    <d:LDoBase> <n:LNeg> <v:VBaseP> => nd("Prohib", 2, vec![Some(d), Some(n), Some(v)]),
+};
+
+// <verb …> — bare imperative; the verb is the signature (ADR 0019).
+Imperative: Tree = {
+    <v:VBaseP> => nd("Imp", 0, vec![Some(v)]),
+};
+
+// --------------------------------------------------------------- subjects
+
+SubjSG: Tree = { NPSG };
+SubjPL: Tree = { NPPL, BarePl, LPron2 };
+Subj1: Tree = { LPron1 };
+
+// ------------------------------------------------------------- predicates
+
+PredSG: Tree = {
+    VPn<LVt3, LVi3>,
+    VPn<LVtEd, LViEd>,
+    NegVPn<LDo3>,
+    NegVPn<LDoPast>,
+    ModalVP,
+    CopPredn<LCopSg>,
+    CopPredn<LCopSgPast>,
+};
+
+PredPL: Tree = {
+    VPn<LVtBase, LViBase>,
+    VPn<LVtEd, LViEd>,
+    NegVPn<LDoBase>,
+    NegVPn<LDoPast>,
+    ModalVP,
+    CopPredn<LCopPl>,
+    CopPredn<LCopPlPast>,
+};
+
+// First person: base agreement, but no copula — *am* is not in the language.
+Pred1: Tree = {
+    VPn<LVtBase, LViBase>,
+    VPn<LVtEd, LViEd>,
+    NegVPn<LDoBase>,
+    NegVPn<LDoPast>,
+    ModalVP,
+};
+
+// Positive-only predicate sets for quantified subjects (ADR 0014);
+// no + must is additionally banned.
+PredEvery: Tree = {
+    VPn<LVt3, LVi3>,
+    <m:LModalMust> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    CopPosn<LCopSg>,
+    CopPosn<LCopSgPast>,
+};
+PredNo: Tree = {
+    VPn<LVt3, LVi3>,
+    <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    CopPosn<LCopSg>,
+    CopPosn<LCopSgPast>,
+};
+
+ModalVP: Tree = {
+    <m:LModalMust> <n:LNeg?> <v:VBaseP> => nd("ModalVP", 2, vec![Some(m), n, Some(v)]),
+    <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    <m:LModalCannot> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+};
+
+VBaseP: Tree = {
+    <v:LVtBase> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
+    <v:LViBase> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
+};
+
+// ------------------------------------------------------------ noun phrases
+
+NPSG: Tree = {
+    NPx<LDet, LNounSg>, NPx<LDetSg, LNounSg>, NPx<LPoss, LNounSg>, NPx<LNum, LNounSg>,
+    // proper names (ADR 0018): bare, or appositive after a noun
+    <nm:LName> => nm,
+    <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> <o:OfPP?> =>
+        nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm), o]),
+};
+NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl> };
+
+// every + singular; no + singular is subject-only (ADR 0014).
+NPEvery: Tree = { NPx<LEvery, LNounSg> };
+NPNo: Tree = { NPx<LNo, LNounSg> };
+NPSome: Tree = { NPx<LSome, LNounPl> };
+
+NPAny: Tree = { NPSG, NPPL, BarePl, NPEvery };
+
+// Bare plural: generic/characterizing reading only, by fiat (ADR 0013).
+BarePl: Tree = {
+    <a:LAdj?> <n:LNounPl> <o:OfPP?> => nd("NPGen", 1, vec![a, Some(n), o]),
+};
+
+// of-PP attaches to the preceding noun (ADR 0011).
+OfPP: Tree = {
+    <p:LPrepN> <np:NPInner> => nd("OfPP", 1, vec![Some(p), Some(np)]),
+};
+
+NPInner: Tree = {
+    NPi<LNum, LNounSg>,
+    NPi<LDet, LNounSg>,
+    NPi<LDet, LNounPl>,
+    NPi<LDetSg, LNounSg>,
+    NPi<LPoss, LNounSg>,
+    NPi<LPoss, LNounPl>,
+};
+
+// Verb-attaching PP; at most one per clause (ADR 0011).
+PPv: Tree = {
+    <p:LPrepV> <np:NPAny> => nd("PP", 1, vec![Some(p), Some(np)]),
+};
+
+// Copular complement: adjective or noun phrase (ADR 0003).
+Compl: Tree = {
+    LAdj,
+    NPAny,
+};

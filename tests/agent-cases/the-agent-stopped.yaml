@@ -1,0 +1,120 @@
+kind: repair
+input: the agent stopped
+verdict: ideal
+snapshot: the agent stopped the process
+unique_outputs:
+- output: The agent stopped the process.
+  valid: true
+  count: 1
+- output: the agent stopped the process
+  valid: true
+  count: 12
+- output: the agent stopped the process.
+  valid: true
+  count: 2
+runs:
+- at_unix: 1788284261
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+- at_unix: 1788285594
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+- at_unix: 1788285664
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stopped the process.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stopped the process
+      valid: true

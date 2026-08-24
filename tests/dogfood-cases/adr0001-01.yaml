@@ -1,0 +1,12 @@
+source: docs/adr/0001-generated-lexicon-from-curated-seed.md
+sentence: Both generated files are committed; they are build outputs and are never
+  hand-edited.
+diagnosis: passive + pronoun chain + semicolon splice (they, are committed, never
+  hand-edited)
+resolution: rewritten
+rewrite: We commit the generated files. People do not edit the generated files.
+note: 'rewrite applied in place in ADR 0001; the new prose is itself valid minglish
+  (both sentences parse); redundant ''build outputs'' apposition removed (generated
+  entails it) | REVISED after quality re-audit: ''repository has'' was vaguer than
+  ''committed'' - precision restored; ''we commit'' is well-written English that minglish
+  cannot yet parse (gaps filed: we, commit-as-verb)'

@@ -1,0 +1,120 @@
+kind: repair
+input: a files are big
+verdict: ideal
+snapshot: a file is big
+unique_outputs:
+- output: A file is big.
+  valid: true
+  count: 1
+- output: a file is big
+  valid: true
+  count: 13
+- output: the files are big
+  valid: true
+  count: 1
+runs:
+- at_unix: 1788284168
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+- at_unix: 1788285501
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the files are big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: A file is big.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: a file is big
+      valid: true

@@ -1,0 +1,126 @@
+kind: repair
+input: every agent does not retry the request
+verdict: ideal
+snapshot: no agent retries the request
+unique_outputs:
+- output: 'If the intended meaning is "no agent retries the request": no agent retries
+    the request.'
+  valid: false
+  count: 1
+- output: No agent retries the request.
+  valid: true
+  count: 7
+- output: no agent retries the request
+  valid: true
+  count: 8
+runs:
+- at_unix: 1788284170
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+- at_unix: 1788285504
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: 'If the intended meaning is "no agent retries the request": no agent
+        retries the request.'
+      valid: false
+      diagnosis: '"If the intended meaning is "no agent retries the request": no agent
+        retries the request": WORD: "intended" is not a minglish word'
+    - output: no agent retries the request
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: No agent retries the request.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: no agent retries the request
+      valid: true

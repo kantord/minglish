@@ -1,0 +1,800 @@
+[
+  {
+    "lemma": "the",
+    "category": "DET"
+  },
+  {
+    "lemma": "a",
+    "category": "DET_SG",
+    "note": "indefinite, singular nouns only; a/an choice is phonological and not grammar-checkable"
+  },
+  {
+    "lemma": "an",
+    "category": "DET_SG",
+    "note": "indefinite, singular nouns only; a/an choice is phonological and not grammar-checkable"
+  },
+  {
+    "lemma": "to",
+    "category": "PREP_V",
+    "note": "preposition only in v0; no infinitives yet"
+  },
+  {
+    "lemma": "in",
+    "category": "PREP_V"
+  },
+  {
+    "lemma": "from",
+    "category": "PREP_V"
+  },
+  {
+    "lemma": "agent",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "file",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "submit"
+    }
+  },
+  {
+    "lemma": "server",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "error",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "user",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "message",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "notify"
+    }
+  },
+  {
+    "lemma": "system",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "result",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "follow"
+    }
+  },
+  {
+    "lemma": "database",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "process",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "handle"
+    }
+  },
+  {
+    "lemma": "report",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "describe"
+    }
+  },
+  {
+    "lemma": "data",
+    "category": "NOUN",
+    "forms": {
+      "plural": "data"
+    },
+    "note": "mass noun; plural equals singular"
+  },
+  {
+    "lemma": "parser",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "sentence",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "condemn"
+    },
+    "note": "the judicial verb sense is banned"
+  },
+  {
+    "lemma": "linter",
+    "category": "NOUN",
+    "forms": {
+      "plural": "linters"
+    },
+    "note": "domain jargon; not in reference data"
+  },
+  {
+    "lemma": "collision",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "lexicon",
+    "category": "NOUN",
+    "forms": {
+      "plural": "lexicons"
+    },
+    "note": "plural rare but correct; acknowledged"
+  },
+  {
+    "lemma": "compiler",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "program",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "write"
+    }
+  },
+  {
+    "lemma": "queue",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "wait"
+    }
+  },
+  {
+    "lemma": "test",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "check"
+    }
+  },
+  {
+    "lemma": "request",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "ask"
+    }
+  },
+  {
+    "lemma": "session",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "script",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "write"
+    }
+  },
+  {
+    "lemma": "output",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "emit"
+    }
+  },
+  {
+    "lemma": "read",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "read"
+    },
+    "reject": {
+      "NOUN": "text"
+    },
+    "waive": [
+      "ADJ"
+    ],
+    "note": "adjectival sense (a read book) too obscure to redirect"
+  },
+  {
+    "lemma": "return",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "response"
+    }
+  },
+  {
+    "lemma": "send",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "sent"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "nautical noun sense; irrelevant to domain"
+  },
+  {
+    "lemma": "store",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "shop"
+    }
+  },
+  {
+    "lemma": "stop",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "halt"
+    }
+  },
+  {
+    "lemma": "create",
+    "category": "VERB_TRANS"
+  },
+  {
+    "lemma": "reject",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "outcast"
+    }
+  },
+  {
+    "lemma": "find",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "found"
+    },
+    "reject": {
+      "NOUN": "discovery"
+    }
+  },
+  {
+    "lemma": "build",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "built"
+    },
+    "reject": {
+      "NOUN": "compilation"
+    }
+  },
+  {
+    "lemma": "delete",
+    "category": "VERB_TRANS"
+  },
+  {
+    "lemma": "retry",
+    "category": "VERB_TRANS",
+    "forms": {
+      "third": "retries"
+    },
+    "note": "3sg rare in reference data but correct; acknowledged"
+  },
+  {
+    "lemma": "start",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "beginning"
+    }
+  },
+  {
+    "lemma": "write",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "wrote",
+      "ppart": "written"
+    }
+  },
+  {
+    "lemma": "arrive",
+    "category": "VERB_INTRANS"
+  },
+  {
+    "lemma": "fail",
+    "category": "VERB_INTRANS",
+    "reject": {
+      "NOUN": "failure"
+    }
+  },
+  {
+    "lemma": "old",
+    "category": "ADJ",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "generic-people noun sense (the old); irrelevant to domain"
+  },
+  {
+    "lemma": "i",
+    "category": "PRON_1SG",
+    "note": "indexical, never anaphoric; lowercase by minglish orthography (ADR 0002)"
+  },
+  {
+    "lemma": "you",
+    "category": "PRON_2",
+    "note": "indexical, never anaphoric (ADR 0002)"
+  },
+  {
+    "lemma": "my",
+    "category": "POSS_1SG",
+    "note": "indexical possessive (ADR 0002)"
+  },
+  {
+    "lemma": "your",
+    "category": "POSS_2",
+    "note": "indexical possessive (ADR 0002)"
+  },
+  {
+    "lemma": "is",
+    "category": "COPULA_SG",
+    "note": "present-only copula; lemma be deliberately absent (ADR 0003)"
+  },
+  {
+    "lemma": "are",
+    "category": "COPULA_PL",
+    "note": "present-only copula (ADR 0003)"
+  },
+  {
+    "lemma": "empty",
+    "category": "ADJ",
+    "reject": {
+      "VERB": "drain"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "noun sense (empties/an empty) irrelevant to domain"
+  },
+  {
+    "lemma": "big",
+    "category": "ADJ",
+    "waive": [
+      "ADV"
+    ],
+    "note": "adverbial sense (win big) irrelevant; no ADV category exists yet anyway"
+  },
+  {
+    "lemma": "and",
+    "category": "CONJ",
+    "note": "identical-category coordination only; see ADR 0004"
+  },
+  {
+    "lemma": "or",
+    "category": "CONJ",
+    "note": "see ADR 0004"
+  },
+  {
+    "lemma": "not",
+    "category": "NEG",
+    "note": "predicate negation only; see ADR 0005"
+  },
+  {
+    "lemma": "do",
+    "category": "NEG_AUX_BASE",
+    "note": "negation carrier only (ADR 0005)"
+  },
+  {
+    "lemma": "does",
+    "category": "NEG_AUX_3SG",
+    "note": "negation carrier only (ADR 0005)"
+  },
+  {
+    "lemma": "of",
+    "category": "PREP_N",
+    "note": "the only noun-attaching preposition (ADR 0011)"
+  },
+  {
+    "lemma": "for",
+    "category": "PREP_V"
+  },
+  {
+    "lemma": "with",
+    "category": "PREP_V",
+    "note": "instrument/accompaniment PP attachment is the classic ambiguity; grammar tier must fix attachment"
+  },
+  {
+    "lemma": "on",
+    "category": "PREP_V"
+  },
+  {
+    "lemma": "at",
+    "category": "PREP_V"
+  },
+  {
+    "lemma": "copy",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "duplicate"
+    }
+  },
+  {
+    "lemma": "open",
+    "category": "VERB_TRANS",
+    "reject": {
+      "ADJ": "unlocked"
+    },
+    "waive": [
+      "ADV",
+      "NOUN"
+    ],
+    "note": "adverb (break open) and noun (in the open) senses irrelevant to domain",
+    "forms": {
+      "past": "opened",
+      "ing": "opening"
+    }
+  },
+  {
+    "lemma": "tool",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "verb sense (tool around) irrelevant to domain"
+  },
+  {
+    "lemma": "if",
+    "category": "SCONJ_COND",
+    "note": "conditional template only: if <clause>, then <clause> (ADR 0007)"
+  },
+  {
+    "lemma": "then",
+    "category": "THEN",
+    "note": "mandatory consequent marker (ADR 0007)"
+  },
+  {
+    "lemma": "must",
+    "category": "MODAL_MUST",
+    "note": "obligation only (ADR 0009)"
+  },
+  {
+    "lemma": "can",
+    "category": "MODAL_CAN",
+    "note": "ability/permission merged by fiat (ADR 0009)"
+  },
+  {
+    "lemma": "cannot",
+    "category": "MODAL_CAN_NEG",
+    "note": "single-token modal negation (ADR 0009)"
+  },
+  {
+    "lemma": "check",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "test"
+    }
+  },
+  {
+    "lemma": "input",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "enter"
+    }
+  },
+  {
+    "lemma": "person",
+    "category": "NOUN",
+    "forms": {
+      "plural": "people"
+    },
+    "note": "irregular plural"
+  },
+  {
+    "lemma": "sweet",
+    "category": "ADJ",
+    "reject": {
+      "NOUN": "candy"
+    },
+    "waive": [
+      "ADV"
+    ],
+    "note": "adverbial sense (talk sweet) irrelevant to domain"
+  },
+  {
+    "lemma": "was",
+    "category": "COPULA_SG_PAST",
+    "note": "past copula (ADR 0010)"
+  },
+  {
+    "lemma": "were",
+    "category": "COPULA_PL_PAST",
+    "note": "past copula (ADR 0010)"
+  },
+  {
+    "lemma": "did",
+    "category": "NEG_AUX_PAST",
+    "note": "past negation carrier only (ADR 0010)"
+  },
+  {
+    "lemma": "choose",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "chose",
+      "ppart": "chosen"
+    }
+  },
+  {
+    "lemma": "machine",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "verb sense (machine a part) irrelevant to domain"
+  },
+  {
+    "lemma": "word",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "write"
+    },
+    "note": "the dogfood test found minglish could not say 'word'"
+  },
+  {
+    "lemma": "every",
+    "category": "QUANT_UNIV",
+    "note": "exceptionless universal, singular; subject or object (ADR 0014)"
+  },
+  {
+    "lemma": "no",
+    "category": "QUANT_NEG",
+    "note": "universal negative; subject-only, first-token signature (ADR 0014)"
+  },
+  {
+    "lemma": "tag",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "mark"
+    },
+    "note": "transparent single word for the category label concept (ADR 0015)"
+  },
+  {
+    "lemma": "binary",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "programmer-transparent word for build output (ADR 0015); adjectival sense unused"
+  },
+  {
+    "lemma": "initial",
+    "category": "ADJ",
+    "note": "for transparent paraphrases (ADR 0015); noun (his initials) and verb (initial a document) senses irrelevant",
+    "waive": [
+      "NOUN",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "have",
+    "category": "VERB_TRANS",
+    "forms": {
+      "third": "has",
+      "past": "had"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "possession only; auxiliary reading unparseable by construction (ADR 0016); noun sense (the haves) irrelevant"
+  },
+  {
+    "lemma": "one",
+    "category": "NUM_SG",
+    "note": "exactly-one numeral, determiner position only (ADR 0016)"
+  },
+  {
+    "lemma": "some",
+    "category": "QUANT_EXIST",
+    "note": "existential, plural, subject-only; some+not = not-all (ADR 0017)"
+  },
+  {
+    "lemma": "sense",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "verb sense (sense danger) irrelevant to domain"
+  },
+  {
+    "lemma": "attest",
+    "category": "VERB_TRANS"
+  },
+  {
+    "lemma": "need",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "necessity"
+    },
+    "note": "frequency guard will flag necessity; kept \u2014 rephrase advice acceptable (ADR 0008 review)"
+  },
+  {
+    "lemma": "source",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "find"
+    },
+    "note": "verb sense (source a component) redirected"
+  },
+  {
+    "lemma": "truth",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "use",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "usage"
+    },
+    "note": "added after agenttest run 1: the model's semantically best repair failed only on this gap"
+  },
+  {
+    "lemma": "it",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "they",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "them",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "its",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "their",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "he",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "she",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "his",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "her",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "this",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "that",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "these",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "those",
+    "category": "BANNED",
+    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+  },
+  {
+    "lemma": "may",
+    "category": "BANNED",
+    "advice": "for permission write \"can\"; for possibility rephrase the sentence (ADR 0009)"
+  },
+  {
+    "lemma": "all",
+    "category": "BANNED",
+    "advice": "write \"every\" with a singular noun (ADR 0014)"
+  },
+  {
+    "lemma": "each",
+    "category": "BANNED",
+    "advice": "write \"every\" with a singular noun (ADR 0014)"
+  },
+  {
+    "lemma": "please",
+    "category": "BANNED",
+    "advice": "politeness markers are not minglish - state the instruction directly or write \"you must ...\""
+  },
+  {
+    "lemma": "edit",
+    "category": "VERB_TRANS",
+    "reject": {
+      "NOUN": "revision"
+    },
+    "forms": {
+      "past": "edited",
+      "ing": "editing"
+    }
+  },
+  {
+    "lemma": "commit",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "save"
+    },
+    "note": "the git artifact; transparent head noun for 'curation commit' (ADR 0015)"
+  },
+  {
+    "lemma": "effect",
+    "category": "NOUN",
+    "reject": {
+      "VERB": "cause"
+    }
+  },
+  {
+    "lemma": "diff",
+    "category": "NOUN",
+    "forms": {
+      "plural": "diffs"
+    },
+    "note": "domain jargon; acknowledged forms"
+  },
+  {
+    "lemma": "show",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "showed",
+      "ppart": "shown"
+    },
+    "reject": {
+      "NOUN": "display"
+    }
+  },
+  {
+    "lemma": "repository",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "generated",
+    "category": "ADJ",
+    "note": "participial adjective (ADR 0015); the verb generate is deliberately not enabled, so no collision",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "entry",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "inflection",
+    "category": "NOUN",
+    "forms": {
+      "plural": "inflections"
+    },
+    "note": "linguistics jargon; plural acknowledged"
+  },
+  {
+    "lemma": "we",
+    "category": "BANNED",
+    "advice": "name the group - \"the maintainers\", \"the team\" - or use an imperative; \"we\" hides who acts (ADR 0020)"
+  },
+  {
+    "lemma": "our",
+    "category": "BANNED",
+    "advice": "name the group - \"the maintainers\", \"the team\" - or use an imperative; \"we\" hides who acts (ADR 0020)"
+  },
+  {
+    "lemma": "us",
+    "category": "BANNED",
+    "advice": "name the group - \"the maintainers\", \"the team\" - or use an imperative; \"we\" hides who acts (ADR 0020)"
+  },
+  {
+    "lemma": "maintainer",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "but",
+    "category": "CONJ",
+    "note": "adversative coordination; within-sentence only (ADR 0021)"
+  }
+]

@@ -1,0 +1,1139 @@
+---
+source: crates/grammar/tests/corpus.rs
+expression: snap
+---
+### the agent reads the file
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    reads
+    (NP h=1
+      the
+      file
+    )
+  )
+)
+
+### the server returns an error
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    server
+  )
+  (VP h=0
+    returns
+    (NP h=1
+      an
+      error
+    )
+  )
+)
+
+### the user sends a message to the server
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (VP h=0
+    sends
+    (NP h=1
+      a
+      message
+    )
+    (PP h=1
+      to
+      (NP h=1
+        the
+        server
+      )
+    )
+  )
+)
+
+### the system stores the result in the database
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    system
+  )
+  (VP h=0
+    stores
+    (NP h=1
+      the
+      result
+    )
+    (PP h=1
+      in
+      (NP h=1
+        the
+        database
+      )
+    )
+  )
+)
+
+### an error stops the process
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    an
+    error
+  )
+  (VP h=0
+    stops
+    (NP h=1
+      the
+      process
+    )
+  )
+)
+
+### the agent creates a report from the data
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    creates
+    (NP h=1
+      a
+      report
+    )
+    (PP h=1
+      from
+      (NP h=1
+        the
+        data
+      )
+    )
+  )
+)
+
+### the parser rejects the sentence
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    parser
+  )
+  (VP h=0
+    rejects
+    (NP h=1
+      the
+      sentence
+    )
+  )
+)
+
+### the linter finds a collision in the lexicon
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    linter
+  )
+  (VP h=0
+    finds
+    (NP h=1
+      a
+      collision
+    )
+    (PP h=1
+      in
+      (NP h=1
+        the
+        lexicon
+      )
+    )
+  )
+)
+
+### the compiler builds the program
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    compiler
+  )
+  (VP h=0
+    builds
+    (NP h=1
+      the
+      program
+    )
+  )
+)
+
+### the agent deletes the old file
+open=3 maxdep=3 depth=1 right=20% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    deletes
+    (NP h=2
+      the
+      old
+      file
+    )
+  )
+)
+
+### a message arrives from the queue
+open=3 maxdep=3 depth=1 right=20% fronted=2
+(S h=1
+  (NP h=1
+    a
+    message
+  )
+  (VP h=0
+    arrives
+    (PP h=1
+      from
+      (NP h=1
+        the
+        queue
+      )
+    )
+  )
+)
+
+### the test fails
+open=1 maxdep=1 depth=1 right=0% fronted=2
+(S h=1
+  (NP h=1
+    the
+    test
+  )
+  (VP h=0
+    fails
+  )
+)
+
+### the agent retries the request
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    retries
+    (NP h=1
+      the
+      request
+    )
+  )
+)
+
+### the user starts a session
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (VP h=0
+    starts
+    (NP h=1
+      a
+      session
+    )
+  )
+)
+
+### the script writes the output to a file
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    script
+  )
+  (VP h=0
+    writes
+    (NP h=1
+      the
+      output
+    )
+    (PP h=1
+      to
+      (NP h=1
+        a
+        file
+      )
+    )
+  )
+)
+
+### you send the report to the server
+open=3 maxdep=5 depth=1 right=33% fronted=1
+(S h=1
+  you
+  (VP h=0
+    send
+    (NP h=1
+      the
+      report
+    )
+    (PP h=1
+      to
+      (NP h=1
+        the
+        server
+      )
+    )
+  )
+)
+
+### i store your message in my database
+open=3 maxdep=5 depth=1 right=33% fronted=1
+(S h=1
+  i
+  (VP h=0
+    store
+    (NP h=1
+      your
+      message
+    )
+    (PP h=1
+      in
+      (NP h=1
+        my
+        database
+      )
+    )
+  )
+)
+
+### the queue is empty
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=1
+    the
+    queue
+  )
+  (CopPred h=1
+    is
+    empty
+  )
+)
+
+### the old files are big
+open=2 maxdep=2 depth=1 right=0% fronted=4
+(S h=1
+  (NP h=2
+    the
+    old
+    files
+  )
+  (CopPred h=1
+    are
+    big
+  )
+)
+
+### the parser is a program
+open=3 maxdep=3 depth=1 right=0% fronted=4
+(S h=1
+  (NP h=1
+    the
+    parser
+  )
+  (CopPred h=1
+    is
+    (NP h=1
+      a
+      program
+    )
+  )
+)
+
+### the server stores the message and returns the result
+open=3 maxdep=4 depth=1 right=38% fronted=2
+(S h=1
+  (NP h=1
+    the
+    server
+  )
+  (VP h=0
+    stores
+    (NP h=1
+      the
+      message
+    )
+  )
+  (CoordPred h=1
+    and
+    (VP h=0
+      returns
+      (NP h=1
+        the
+        result
+      )
+    )
+  )
+)
+
+### the test fails or the agent retries the request
+open=3 maxdep=4 depth=2 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    test
+  )
+  (VP h=0
+    fails
+  )
+  (CoordClause h=1
+    or
+    (Clause h=1
+      (NP h=1
+        the
+        agent
+      )
+      (VP h=0
+        retries
+        (NP h=1
+          the
+          request
+        )
+      )
+    )
+  )
+)
+
+### do not delete my report
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(Prohib h=2
+  do
+  not
+  (VP h=0
+    delete
+    (NP h=1
+      my
+      report
+    )
+  )
+)
+
+### the agent does not store the file
+open=3 maxdep=3 depth=1 right=17% fronted=4
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (NegVP h=2
+    does
+    not
+    (VP h=0
+      store
+      (NP h=1
+        the
+        file
+      )
+    )
+  )
+)
+
+### the queue is not empty
+open=3 maxdep=3 depth=1 right=0% fronted=4
+(S h=1
+  (NP h=1
+    the
+    queue
+  )
+  (CopPred h=2
+    is
+    not
+    empty
+  )
+)
+
+### the agent creates a report for the user
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    creates
+    (NP h=1
+      a
+      report
+    )
+    (PP h=1
+      for
+      (NP h=1
+        the
+        user
+      )
+    )
+  )
+)
+
+### the user opens the file with the tool
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (VP h=0
+    opens
+    (NP h=1
+      the
+      file
+    )
+    (PP h=1
+      with
+      (NP h=1
+        the
+        tool
+      )
+    )
+  )
+)
+
+### the server stores a copy of the report at the database
+open=4 maxdep=8 depth=1 right=30% fronted=2
+(S h=1
+  (NP h=1
+    the
+    server
+  )
+  (VP h=0
+    stores
+    (NP h=1
+      a
+      copy
+      (OfPP h=1
+        of
+        (NP h=1
+          the
+          report
+        )
+      )
+    )
+    (PP h=1
+      at
+      (NP h=1
+        the
+        database
+      )
+    )
+  )
+)
+
+### if the test fails, then the agent retries the request
+open=5 maxdep=8 depth=2 right=10% fronted=8
+(Cond h=4
+  if
+  (Clause h=1
+    (NP h=1
+      the
+      test
+    )
+    (VP h=0
+      fails
+    )
+  )
+  ,
+  then
+  (Clause h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
+      (NP h=1
+        the
+        request
+      )
+    )
+  )
+)
+
+### if the queue is empty, then the server stops the process
+open=5 maxdep=9 depth=2 right=9% fronted=9
+(Cond h=4
+  if
+  (Clause h=1
+    (NP h=1
+      the
+      queue
+    )
+    (CopPred h=1
+      is
+      empty
+    )
+  )
+  ,
+  then
+  (Clause h=1
+    (NP h=1
+      the
+      server
+    )
+    (VP h=0
+      stops
+      (NP h=1
+        the
+        process
+      )
+    )
+  )
+)
+
+### the agent must check the input
+open=2 maxdep=2 depth=1 right=20% fronted=3
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (ModalVP h=1
+    must
+    (VP h=0
+      check
+      (NP h=1
+        the
+        input
+      )
+    )
+  )
+)
+
+### you cannot delete the lexicon
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  you
+  (ModalVP h=1
+    cannot
+    (VP h=0
+      delete
+      (NP h=1
+        the
+        lexicon
+      )
+    )
+  )
+)
+
+### the user can open a session
+open=2 maxdep=2 depth=1 right=20% fronted=3
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (ModalVP h=1
+    can
+    (VP h=0
+      open
+      (NP h=1
+        a
+        session
+      )
+    )
+  )
+)
+
+### the agent must not delete your report
+open=3 maxdep=3 depth=1 right=17% fronted=4
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (ModalVP h=2
+    must
+    not
+    (VP h=0
+      delete
+      (NP h=1
+        your
+        report
+      )
+    )
+  )
+)
+
+### the compiler built the program
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    compiler
+  )
+  (VP h=0
+    built
+    (NP h=1
+      the
+      program
+    )
+  )
+)
+
+### the queue was empty
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=1
+    the
+    queue
+  )
+  (CopPred h=1
+    was
+    empty
+  )
+)
+
+### the user did not open a session
+open=3 maxdep=3 depth=1 right=17% fronted=4
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (NegVP h=2
+    did
+    not
+    (VP h=0
+      open
+      (NP h=1
+        a
+        session
+      )
+    )
+  )
+)
+
+### the tests were old
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=1
+    the
+    tests
+  )
+  (CopPred h=1
+    were
+    old
+  )
+)
+
+### machines find collisions
+open=1 maxdep=1 depth=1 right=50% fronted=1
+(S h=1
+  (NPGen h=0
+    machines
+  )
+  (VP h=0
+    find
+    (NPGen h=0
+      collisions
+    )
+  )
+)
+
+### agents retry requests
+open=1 maxdep=1 depth=1 right=50% fronted=1
+(S h=1
+  (NPGen h=0
+    agents
+  )
+  (VP h=0
+    retry
+    (NPGen h=0
+      requests
+    )
+  )
+)
+
+### old files are big
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NPGen h=1
+    old
+    files
+  )
+  (CopPred h=1
+    are
+    big
+  )
+)
+
+### people do not find collisions
+open=3 maxdep=3 depth=1 right=25% fronted=3
+(S h=1
+  (NPGen h=0
+    people
+  )
+  (NegVP h=2
+    do
+    not
+    (VP h=0
+      find
+      (NPGen h=0
+        collisions
+      )
+    )
+  )
+)
+
+### every agent retries the request
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    every
+    agent
+  )
+  (VP h=0
+    retries
+    (NP h=1
+      the
+      request
+    )
+  )
+)
+
+### every user of the system opens a session
+open=4 maxdep=4 depth=1 right=29% fronted=5
+(S h=1
+  (NP h=1
+    every
+    user
+    (OfPP h=1
+      of
+      (NP h=1
+        the
+        system
+      )
+    )
+  )
+  (VP h=0
+    opens
+    (NP h=1
+      a
+      session
+    )
+  )
+)
+
+### no agent can delete the lexicon
+open=2 maxdep=2 depth=1 right=20% fronted=3
+(S h=1
+  (NP h=1
+    no
+    agent
+  )
+  (ModalVP h=1
+    can
+    (VP h=0
+      delete
+      (NP h=1
+        the
+        lexicon
+      )
+    )
+  )
+)
+
+### no test was old
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=1
+    no
+    test
+  )
+  (CopPred h=1
+    was
+    old
+  )
+)
+
+### the agent checks every request
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    checks
+    (NP h=1
+      every
+      request
+    )
+  )
+)
+
+### every word has one tag
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    every
+    word
+  )
+  (VP h=0
+    has
+    (NP h=1
+      one
+      tag
+    )
+  )
+)
+
+### the user has one session
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (VP h=0
+    has
+    (NP h=1
+      one
+      session
+    )
+  )
+)
+
+### i have your report
+open=2 maxdep=2 depth=1 right=33% fronted=1
+(S h=1
+  i
+  (VP h=0
+    have
+    (NP h=1
+      your
+      report
+    )
+  )
+)
+
+### some agents retry the request
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    some
+    agents
+  )
+  (VP h=0
+    retry
+    (NP h=1
+      the
+      request
+    )
+  )
+)
+
+### some agents do not retry the request
+open=3 maxdep=3 depth=1 right=17% fronted=4
+(S h=1
+  (NP h=1
+    some
+    agents
+  )
+  (NegVP h=2
+    do
+    not
+    (VP h=0
+      retry
+      (NP h=1
+        the
+        request
+      )
+    )
+  )
+)
+
+### some words have one tag
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    some
+    words
+  )
+  (VP h=0
+    have
+    (NP h=1
+      one
+      tag
+    )
+  )
+)
+
+### the tool Lexgen builds the lexicon
+open=2 maxdep=2 depth=1 right=40% fronted=3
+(S h=1
+  (NPAppos h=1
+    the
+    tool
+    Lexgen
+  )
+  (VP h=0
+    builds
+    (NP h=1
+      the
+      lexicon
+    )
+  )
+)
+
+### the file "seed.json" is the source of the truth
+open=3 maxdep=4 depth=1 right=25% fronted=5
+(S h=1
+  (NPAppos h=1
+    the
+    file
+    seed.json
+  )
+  (CopPred h=1
+    is
+    (NP h=1
+      the
+      source
+      (OfPP h=1
+        of
+        (NP h=1
+          the
+          truth
+        )
+      )
+    )
+  )
+)
+
+### the database WordNet attests the senses of the words
+open=3 maxdep=3 depth=1 right=38% fronted=3
+(S h=1
+  (NPAppos h=1
+    the
+    database
+    WordNet
+  )
+  (VP h=0
+    attests
+    (NP h=1
+      the
+      senses
+      (OfPP h=1
+        of
+        (NP h=1
+          the
+          words
+        )
+      )
+    )
+  )
+)
+
+### check the input of the user
+open=3 maxdep=3 depth=1 right=40% fronted=0
+(Imp h=0
+  (VP h=0
+    check
+    (NP h=1
+      the
+      input
+      (OfPP h=1
+        of
+        (NP h=1
+          the
+          user
+        )
+      )
+    )
+  )
+)
+
+### store the report in the database
+open=3 maxdep=5 depth=1 right=40% fronted=0
+(Imp h=0
+  (VP h=0
+    store
+    (NP h=1
+      the
+      report
+    )
+    (PP h=1
+      in
+      (NP h=1
+        the
+        database
+      )
+    )
+  )
+)
+
+### the test fails but the agent retries the request
+open=3 maxdep=4 depth=2 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    test
+  )
+  (VP h=0
+    fails
+  )
+  (CoordClause h=1
+    but
+    (Clause h=1
+      (NP h=1
+        the
+        agent
+      )
+      (VP h=0
+        retries
+        (NP h=1
+          the
+          request
+        )
+      )
+    )
+  )
+)
+
+### the agent opened the file but the file was empty
+open=4 maxdep=7 depth=2 right=22% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    opened
+    (NP h=1
+      the
+      file
+    )
+  )
+  (CoordClause h=1
+    but
+    (Clause h=1
+      (NP h=1
+        the
+        file
+      )
+      (CopPred h=1
+        was
+        empty
+      )
+    )
+  )
+)

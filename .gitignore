@@ -1,0 +1,11 @@
+# build output
+/target
+
+# vendored agent skills — reinstallable from skills-lock.json
+/.agents/
+/.claude/skills/
+
+# CC BY-SA 4.0 reference data — fetched by scripts/fetch-data.sh,
+# verified against data/checksums.sha256 (see data/README.md)
+/data/ud/
+/data/freq/

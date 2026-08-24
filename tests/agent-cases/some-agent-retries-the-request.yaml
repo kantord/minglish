@@ -1,0 +1,114 @@
+kind: repair
+input: some agent retries the request
+verdict: ideal
+snapshot: some agents retry the request
+unique_outputs:
+- output: some agents retry the request
+  valid: true
+  count: 15
+runs:
+- at_unix: 1788284211
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+- at_unix: 1788285539
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+- at_unix: 1788285660
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: some agents retry the request
+      valid: true

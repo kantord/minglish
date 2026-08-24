@@ -1,0 +1,120 @@
+kind: repair
+input: Lexgen builds the lexicon
+verdict: ideal
+snapshot: the tool Lexgen builds the lexicon
+unique_outputs:
+- output: The tool Lexgen builds the lexicon.
+  valid: true
+  count: 4
+- output: the tool Lexgen builds the lexicon
+  valid: true
+  count: 8
+- output: the tool Lexgen builds the lexicon.
+  valid: true
+  count: 3
+runs:
+- at_unix: 1788284183
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+- at_unix: 1788285522
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The tool Lexgen builds the lexicon.
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The tool Lexgen builds the lexicon.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The tool Lexgen builds the lexicon.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The tool Lexgen builds the lexicon.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the tool Lexgen builds the lexicon
+      valid: true

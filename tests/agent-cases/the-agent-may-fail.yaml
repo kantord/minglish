@@ -1,0 +1,120 @@
+kind: repair
+input: the agent may fail
+verdict: ideal
+snapshot: the agent can fail
+unique_outputs:
+- output: The agent can fail.
+  valid: true
+  count: 2
+- output: the agent can fail
+  valid: true
+  count: 12
+- output: the agent can fail.
+  valid: true
+  count: 1
+runs:
+- at_unix: 1788284228
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+- at_unix: 1788285571
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+- at_unix: 1788285661
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent can fail.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent can fail.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail.
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent can fail
+      valid: true

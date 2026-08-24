@@ -1,0 +1,9 @@
+# english<TAB>minglish<TAB>declared drops (ADR 0012; empty = lossless)
+# minglish side must be lexicon-valid and parse in the tier-1 grammar (textcost enforces both)
+Please don't delete my report.	do not delete my report	politeness
+If the test fails, the agent will just retry the request.	if the test fails, then the agent retries the request	emphasis
+The server returned an empty result.	the server returned an empty result
+It is not possible to delete the lexicon.	you cannot delete the lexicon	impersonal-scope
+A copy of the report is stored in the database by the system.	the system stores a copy of the report in the database	topic-structure
+The user opened up a brand new session.	the user opened a session	emphasis
+and the people are sweet :)	the people are sweet	affect,discourse-link

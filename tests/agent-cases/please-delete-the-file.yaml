@@ -1,0 +1,131 @@
+kind: repair
+input: please delete the file
+verdict: needs-fix
+snapshot: You must delete the file.
+unique_outputs:
+- output: You must delete the file.
+  valid: true
+  count: 4
+- output: delete the file
+  valid: false
+  count: 2
+- output: you must delete the file
+  valid: true
+  count: 9
+- output: you must delete the file.
+  valid: true
+  count: 2
+runs:
+- at_unix: 1788284199
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 1
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: delete the file
+      valid: false
+      diagnosis: '"delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: you must delete the file
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: delete the file
+      valid: false
+      diagnosis: '"delete the file": STYLE: this structure is outside the sanctioned
+        sentence shapes — restructure into one of the minglish templates'
+    - output: you must delete the file
+      valid: true
+- at_unix: 1788285530
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: You must delete the file.
+      valid: true
+- at_unix: 1788285658
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: You must delete the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: You must delete the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: you must delete the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: You must delete the file.
+      valid: true

@@ -1,0 +1,155 @@
+kind: repair
+input: the file stored in the database fails
+verdict: ideal
+snapshot: the agent stores the file in the database. the file fails.
+unique_outputs:
+- output: I stored the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: The agent stored the file in the database. The file fails.
+  valid: true
+  count: 1
+- output: The agent stores the file in the database. the file fails.
+  valid: true
+  count: 3
+- output: The database stores the file. The file fails.
+  valid: true
+  count: 1
+- output: The user stores the file in the database. The file fails.
+  valid: true
+  count: 1
+- output: a user stores the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: the agent stored the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: the agent stores the file in the database. the file fails.
+  valid: true
+  count: 2
+- output: the file is stored in the database. the file fails.
+  valid: false
+  count: 1
+- output: the script stores the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: the server stored the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: the server stores the file in the database. the file fails.
+  valid: true
+  count: 1
+- output: the user stores the file in the database. the file fails.
+  valid: true
+  count: 1
+runs:
+- at_unix: 1788284278
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: I stored the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the file in the database. the file fails.
+      valid: true
+- at_unix: 1788285605
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 2
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stored the file in the database. The file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the script stores the file in the database. the file fails.
+      valid: true
+  - rounds: 2
+    final_valid: true
+    attempts:
+    - output: the file is stored in the database. the file fails.
+      valid: false
+      diagnosis: '"the file is stored in the database": STYLE: "stored" is transitive
+        in minglish and needs an object; passive ("is <verb>-ed") is not in minglish
+        — name the doer and use active voice (ADR 0003)'
+    - output: a user stores the file in the database. the file fails.
+      valid: true
+- at_unix: 1788285667
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The user stores the file in the database. The file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The database stores the file. The file fails.
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the server stored the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the server stores the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the user stores the file in the database. the file fails.
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stores the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent stored the file in the database. the file fails.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: The agent stores the file in the database. the file fails.
+      valid: true

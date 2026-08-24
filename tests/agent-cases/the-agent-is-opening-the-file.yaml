@@ -1,0 +1,117 @@
+kind: repair
+input: the agent is opening the file
+verdict: ideal
+snapshot: the agent opens the file
+unique_outputs:
+- output: the agent opens the file
+  valid: true
+  count: 14
+- output: the agent opens the file.
+  valid: true
+  count: 1
+runs:
+- at_unix: 1788284222
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+- at_unix: 1788285565
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+- at_unix: 1788285661
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+- at_unix: 1788285742
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+- at_unix: 1788286025
+  model: deepseek/deepseek-v4-flash
+  temperature: 0.7
+  trials: 3
+  first_try_valid: 3
+  trial_detail:
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file.
+      valid: true
+  - rounds: 1
+    final_valid: true
+    attempts:
+    - output: the agent opens the file
+      valid: true
