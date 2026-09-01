@@ -20,6 +20,8 @@
 //!        MINGLISH_TEST_TRIALS (default: 3)
 //!        MINGLISH_TEST_TEMP   (default: 0.7)
 
+mod paragraphs;
+
 use diagnose::{diagnose, Diagnosis};
 use grammar::Lexicon;
 use serde::{Deserialize, Serialize};
@@ -28,7 +30,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 const CASES_DIR: &str = "tests/agent-cases";
 const SKILL_PATH: &str = "skills/minglish/SKILL.md";
-const LEXICON_PATH: &str = "lexicon.tsv";
+pub(crate) const LEXICON_PATH: &str = "lexicon.tsv";
 const MAX_ROUNDS: usize = 3;
 
 #[derive(Serialize, Deserialize, Default)]
@@ -82,8 +84,10 @@ struct Attempt {
 }
 
 fn main() {
+    let dry_run = std::env::args().any(|a| a == "--dry-run");
     let api_key = match std::env::var("OPENROUTER_API_KEY") {
         Ok(k) if !k.is_empty() => k,
+        _ if dry_run => String::new(),
         _ => {
             eprintln!(
                 "agenttest: OPENROUTER_API_KEY is not set.\n\
@@ -108,6 +112,17 @@ fn main() {
     let system_prompt = build_system_prompt();
 
     let args: Vec<String> = std::env::args().skip(1).collect();
+    if args.first().map(String::as_str) == Some("paragraphs") {
+        let file = args.get(1).expect("usage: agenttest paragraphs <markdown> [out.md] [--dry-run]");
+        let dry = args.iter().any(|a| a == "--dry-run");
+        let out = args
+            .get(2)
+            .filter(|a| !a.starts_with("--"))
+            .cloned()
+            .unwrap_or_else(|| "docs/paragraph-report.md".to_string());
+        paragraphs::run(&api_key, &model, temperature, trials, &system_prompt, &lexicon, file, &out, dry);
+        return;
+    }
     if args.first().map(String::as_str) == Some("fix") {
         let file = args.get(1).expect("usage: agenttest fix <sentences-file> [out.md]");
         let out = args.get(2).cloned().unwrap_or_else(|| "docs/autofix-report.md".to_string());
@@ -311,7 +326,7 @@ fn validate(lexicon: &Lexicon, reply: &str) -> (bool, String) {
     (problems.is_empty(), problems.join(" | "))
 }
 
-fn diagnosis_text(d: &Diagnosis) -> String {
+pub(crate) fn diagnosis_text(d: &Diagnosis) -> String {
     match d {
         Diagnosis::Clean(_) => "accepted".to_string(),
         Diagnosis::Word(m) => format!("WORD: {m}"),
@@ -334,6 +349,16 @@ fn complete(
     temperature: f64,
     messages: &[serde_json::Value],
 ) -> Result<String, String> {
+    complete_with(api_key, model, temperature, messages, 120)
+}
+
+pub(crate) fn complete_with(
+    api_key: &str,
+    model: &str,
+    temperature: f64,
+    messages: &[serde_json::Value],
+    max_tokens: u32,
+) -> Result<String, String> {
     let resp: serde_json::Value = ureq::post("https://openrouter.ai/api/v1/chat/completions")
         .set("Authorization", &format!("Bearer {api_key}"))
         .set("Content-Type", "application/json")
@@ -341,7 +366,7 @@ fn complete(
             "model": model,
             "messages": messages,
             "temperature": temperature,
-            "max_tokens": 120,
+            "max_tokens": max_tokens,
         }))
         .map_err(|e| e.to_string())?
         .into_json()

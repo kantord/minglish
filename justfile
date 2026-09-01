@@ -30,6 +30,12 @@ coherence:
 agenttest concurrency="64":
     MINGLISH_TEST_CONCURRENCY={{concurrency}} cargo run -p agenttest
 
+# MILESTONE: paragraph-level proposals for a markdown file (needs
+# OPENROUTER_API_KEY; cases in tests/paragraph-cases/, report needs ADR 0012
+# review). Add --dry-run to measure only, no API calls.
+autofix-paragraphs file out="docs/paragraph-report.md" *FLAGS:
+    cargo run -p agenttest -- paragraphs {{file}} {{out}} {{FLAGS}}
+
 # MILESTONE: propose minglish fixes for a markdown file's prose (never edits
 # the source; output needs ADR 0012 meaning review)
 autofix file out="docs/autofix-report.md":

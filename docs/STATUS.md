@@ -17,7 +17,8 @@ derivable from the code, ADRs, or git history.
   quality; read the relevant entries before treating any metric as a target.
 - `tests/dogfood-cases/` — the standard dogfood flow (README there) and open
   gap cases. `tests/agent-cases/` — LLM repair snapshots with human verdicts.
-- `justfile` — check / showcase / lint / agenttest / autofix targets.
+- `justfile` — check / showcase / lint / agenttest / autofix /
+  autofix-paragraphs (paragraph repair flow, `tests/paragraph-cases/`) targets.
 - `docs/review-checklist.md` — known failure types to check in every
   evaluation.
 - `scripts/lint-file.py` / `just lint-file <md>` — document-level lint:
