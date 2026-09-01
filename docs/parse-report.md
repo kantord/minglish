@@ -72,7 +72,8 @@ right-branching share, and fronted tokens before the main head.
 | 3 agents retry the request | 2 | 2 | 1 | 25% | 2 |
 | the user has 2 sessions | 2 | 2 | 1 | 25% | 2 |
 | the server stores a copy of 2 reports | 3 | 3 | 1 | 29% | 2 |
+| the copies are identical | 2 | 2 | 1 | 0% | 3 |
 
-**Aggregate:** 64 sentences parsed; mean peak-open 2.5, worst 5 (ceiling ≈ 4).
+**Aggregate:** 65 sentences parsed; mean peak-open 2.5, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

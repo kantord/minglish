@@ -70,6 +70,11 @@ fn rejections_get_named_diagnoses() {
         Diagnosis::Word(msg) => assert!(msg.contains("digits")),
         other => panic!("expected Word diagnosis, got {other:?}"),
     }
+    // same: banned, advice names the per-sense synonym (ADR 0023)
+    match diagnose(&lexicon, "the copies are the same") {
+        Diagnosis::Word(msg) => assert!(msg.contains("identical")),
+        other => panic!("expected Word diagnosis, got {other:?}"),
+    }
     // two verb-attaching PPs: genuinely multiple readings
     match diagnose(&lexicon, "the agent stores the report in the database with the tool") {
         Diagnosis::Ambiguous { readings, .. } => assert!(readings > 1),

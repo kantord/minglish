@@ -96,6 +96,12 @@ run "no agent retries the request"
 echo
 run "the agent deleted 0 files"
 run "the agent did not delete files"
+echo
+run "the same file fails"
+run "the file fails"
+echo
+run "the copies are the same"
+run "the copies are identical"
 echo '```'
 echo
 echo "## The repair loop: STYLE flags and their fixes"

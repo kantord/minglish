@@ -1,7 +1,8 @@
 # 0008 — Redirect only when the fix is findable; otherwise ban
 
 Date: 2026-08-31
-Status: accepted (curation policy)
+Status: accepted (curation policy); point 3 and the relative frequency
+trigger superseded by ADR 0023
 
 ## Context
 

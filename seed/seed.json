@@ -798,6 +798,16 @@
     "note": "adversative coordination; within-sentence only (ADR 0021)"
   },
   {
+    "lemma": "identical",
+    "category": "ADJ",
+    "note": "the one-sense synonym for the two-things-match sense of \"same\" (ADR 0023)"
+  },
+  {
+    "lemma": "same",
+    "category": "BANNED",
+    "advice": "for the thing already named write \"the file\"; for two things that match write \"identical\" (\"the copies are identical\") (ADR 0023)"
+  },
+  {
     "lemma": "zero",
     "category": "BANNED",
     "advice": "for none write \"no <noun> …\" as the subject, or \"… does not <verb> <nouns>\" (ADR 0022)"

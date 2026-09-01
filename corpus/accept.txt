@@ -64,3 +64,4 @@ the agent deleted 3 files
 3 agents retry the request
 the user has 2 sessions
 the server stores a copy of 2 reports
+the copies are identical

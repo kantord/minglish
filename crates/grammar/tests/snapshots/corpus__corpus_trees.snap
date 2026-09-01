@@ -1208,3 +1208,16 @@ open=3 maxdep=3 depth=1 right=29% fronted=2
     )
   )
 )
+
+### the copies are identical
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=1
+    the
+    copies
+  )
+  (CopPred h=1
+    are
+    identical
+  )
+)

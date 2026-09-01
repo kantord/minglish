@@ -106,6 +106,7 @@ he	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 her	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 his	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 i	form	PRON_1SG	i
+identical	form	ADJ	identical
 if	form	SCONJ_COND	if
 in	form	PREP_V	in
 inflection	form	NOUN_SG	inflection
@@ -196,6 +197,7 @@ return	reject	NOUN	response
 returned	form	VERB_TRANS_ED	return
 returning	form	VERB_TRANS_ING	return
 returns	form	VERB_TRANS_3SG	return
+same	ban	-	for the thing already named write "the file"; for two things that match write "identical" ("the copies are identical") (ADR 0023)
 script	form	NOUN_SG	script
 script	reject	VERB	write
 scripts	form	NOUN_PL	script

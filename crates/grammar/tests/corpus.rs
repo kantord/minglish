@@ -75,6 +75,8 @@ fn banned_structures_reject() {
         "the agent deleted three files",
         "3 agent retries the request",
         "one files are big",
+        // same is banned with per-sense advice (ADR 0023)
+        "the same file fails",
     ];
     for s in banned {
         assert!(

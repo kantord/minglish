@@ -4,12 +4,12 @@
 
 ## Summary
 
-- 138 lemmas, 224 surface forms, 36 redirects, 16 waivers
-- Lemmas per category: ADJ 6, BANNED 30, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 43, NUM_SG 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 2, VERB_TRANS 22
+- 140 lemmas, 225 surface forms, 36 redirects, 16 waivers
+- Lemmas per category: ADJ 7, BANNED 31, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 43, NUM_SG 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 2, VERB_TRANS 22
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.64 (higher = more common; everyday words sit at 4.5+)
+- Mean zipf: 4.63 (higher = more common; everyday words sit at 4.5+)
 - Rarest 5: linter (0.00), maintainer (2.38), retry (2.57), parser (2.63), inflection (2.88)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
@@ -17,18 +17,10 @@
 - Mean senses: 5.8 (upper bound — WordNet oversplits)
 - Top 5: check (25), have (19), return (16), find (16), start (14)
 
-## Redirect frequency guard
+## Redirect findability guard (floor: zipf 3.5)
 
-- ⚠ need (NOUN) → "necessity": suggestion is 115× rarer (zipf 5.97 → 3.91)
-- ⚠ open (ADJ) → "unlocked": suggestion is 52× rarer (zipf 5.48 → 3.76)
-- ⚠ stop (NOUN) → "halt": suggestion is 39× rarer (zipf 5.52 → 3.93)
-- ⚠ use (NOUN) → "usage": suggestion is 38× rarer (zipf 5.81 → 4.23)
-- ⚠ find (NOUN) → "discovery": suggestion is 20× rarer (zipf 5.76 → 4.45)
-- ⚠ message (VERB) → "notify": suggestion is 19× rarer (zipf 5.00 → 3.73)
-- ⚠ build (NOUN) → "compilation": suggestion is 15× rarer (zipf 5.04 → 3.85)
-- ⚠ output (VERB) → "emit": suggestion is 15× rarer (zipf 4.43 → 3.25)
-- ⚠ copy (VERB) → "duplicate": suggestion is 15× rarer (zipf 4.77 → 3.59)
-- ⚠ show (NOUN) → "display": suggestion is 11× rarer (zipf 5.68 → 4.63)
+- ⚠ reject (NOUN) → "outcast": zipf 3.09
+- ⚠ output (VERB) → "emit": zipf 3.25
 
 ## Waivers (attested senses with no redirect)
 
@@ -53,5 +45,5 @@
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 60/64 sentences fully lexicalized
+- 61/65 sentences fully lexicalized
 - Missing tokens: 2 (×2), 3 (×2)

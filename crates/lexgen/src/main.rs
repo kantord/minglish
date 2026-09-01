@@ -30,6 +30,10 @@ struct Form {
     explicit: bool,
 }
 
+/// Review trigger for redirect suggestions (ADR 0023): below this zipf a
+/// suggested word is not common knowledge and the redirect needs review.
+const REDIRECT_ZIPF_FLOOR: f64 = 3.5;
+
 fn main() {
     let check_mode = std::env::args().any(|a| a == "--check");
 
@@ -349,32 +353,30 @@ fn render_report(forms: &[Form], entries: &[SeedEntry], refdata: &RefData) -> St
         out.push_str("\n\n");
     }
 
-    // Redirect frequency guard (report-only, per Q6)
-    let mut deltas: Vec<(f64, String)> = Vec::new();
+    // Redirect findability guard (report-only): the suggested word must be
+    // common knowledge on its own — an absolute floor, not a gap from the
+    // rejected word, because precise words are rarer by construction
+    // (ADR 0023).
+    let mut rare: Vec<(f64, String)> = Vec::new();
     for e in entries {
-        let lemma_z = refdata.zipf(&e.lemma).unwrap_or(0.0);
         for (pos, sugg) in &e.reject {
             let sugg_z = refdata.zipf(sugg).unwrap_or(0.0);
-            let delta = lemma_z - sugg_z;
-            if delta > 1.0 {
-                deltas.push((
-                    delta,
-                    format!(
-                        "{} ({pos}) → \"{sugg}\": suggestion is {:.0}× rarer \
-                         (zipf {lemma_z:.2} → {sugg_z:.2})",
-                        e.lemma,
-                        10f64.powf(delta)
-                    ),
+            if sugg_z < REDIRECT_ZIPF_FLOOR {
+                rare.push((
+                    sugg_z,
+                    format!("{} ({pos}) → \"{sugg}\": zipf {sugg_z:.2}", e.lemma),
                 ));
             }
         }
     }
-    deltas.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
-    out.push_str("## Redirect frequency guard\n\n");
-    if deltas.is_empty() {
-        out.push_str("No redirect suggestion is more than 10× rarer than its word. ✓\n\n");
+    rare.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
+    out.push_str(&format!(
+        "## Redirect findability guard (floor: zipf {REDIRECT_ZIPF_FLOOR})\n\n"
+    ));
+    if rare.is_empty() {
+        out.push_str("Every redirect suggestion is above the floor. ✓\n\n");
     } else {
-        for (_, line) in deltas.iter().take(10) {
+        for (_, line) in &rare {
             out.push_str(&format!("- ⚠ {line}\n"));
         }
         out.push('\n');

@@ -12,6 +12,10 @@ are not auditable data). Candidate uses, ranked:
 1. **Meaning-preservation guard for corpus/pairs.tsv** — sentence-embedding
    cosine between the English and minglish sides; catches silent meaning
    loss (e.g. dropped quantifiers) that lexicon-validity checks cannot see.
+   Caveat (2026-09-01): pooled embeddings are close to order-blind — a
+   subject/object swap lands almost on top of the original — so cosine
+   cannot judge role changes. For the faithfulness gate proper, see
+   "Structured repair", NLI.
 2. **Redirect findability scoring** — rank substitute candidates by
    similarity-to-rejected-sense × frequency, operationalizing ADR 0008.
 3. **Homonymy vs polysemy detection** — cluster a word's contextual
@@ -97,3 +101,52 @@ with an OOV verb. The message should offer both readings: "…or if this is a
 command, minglish has no bare imperatives — write 'you must <verb> …' or
 'do not <verb> …'". Also: whether bare positive imperatives deserve a
 sanctioned form is now a data-backed design question.
+
+## Structured repair: structure enumeration + table-driven rewrite (2026-09-01)
+
+Design sketch for turning the linter from a rejecter into a corrector,
+deterministic first, model-assisted last. Pruned to the parts that fit this
+project; everything else was considered and dropped.
+
+1. **Structure enumerator.** The tier-1 grammar is a cycle-free CFG and
+   LR(1)-unique, so parse trees with N leaves ↔ accepted sequences of N
+   form-tags, a finite set. Bottom-up DP over the expanded grammar (the
+   same shape as diagnose's Tier2 counter) lists them all; brute force over
+   38^N is not needed. ~2 h. Yields the complete inventory of sentence
+   shapes per length — a testable artifact on its own.
+2. **Role assignment on failure.** Each word has a small candidate tag set:
+   an enabled word gets its form-tag plus every rejected sense in its
+   redirect entry (*files* = NOUN_PL, or VERB via the reject row); an
+   unknown word gets any open-class slot. Match the words' tag sets against
+   the enumerated structures (permutations of the multiset). Every match is
+   parse-valid by construction and names the role each word was playing.
+   Gap messages become "needs a verb here", not "not a minglish word".
+3. **Table-driven rewrite with explanation.** With roles known, a word in a
+   rejected sense takes the redirect synonym inflected to the slot's form
+   from its generated paradigm (*files* in a verb slot → *submits*); a
+   banned sense leaves a hole with the rephrase advice; an unknown word
+   keeps its assigned role. Output: a valid sentence plus one line per
+   changed word — role chosen, reject row that fired, curation note. All
+   data already lives in the seed. This retires advice gap #2 above rather
+   than patching it, and it makes the per-sense-synonym policy (ADR 0023)
+   structurally necessary: every rejected sense with a findable synonym must
+   carry it, or the transducer has a hole where a suggestion belongs.
+4. **Edit-distance repair** (later): add paradigm swaps and closed-class
+   insert/delete (*the*, *then*, *does not*, comma), bounded at two edits.
+   Covers the failure classes the agent cases actually show (dropped
+   *then*, agreement, passive→active shape). Only here does the candidate
+   set grow enough to need a ranker.
+5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
+   not ranking). A candidate is a faithful rewrite only if input ⊨ candidate
+   and candidate ⊨ input; a role swap fails one direction. This mechanizes
+   the ADR 0012 loss review that is a human verdict on every dogfood pair
+   and agent snapshot today. Local, deterministic given the model, explains
+   itself as "does not entail". Dependency-parse role comparison (UD-scheme
+   parser over the fetched EWT) is the fallback for unknown-word roles;
+   marginal while gaps are being closed by curation.
+
+Dropped: embeddings as a ranker (order-blind, see above; keep only as a
+coarse gap detector), cross-encoders (duplicate NLI without the
+explanation), LM log-probability ranking (spends API budget on a question
+the redirect table already answers), late-interaction retrieval (a search
+problem this project does not have).
