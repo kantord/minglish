@@ -33,6 +33,7 @@ run "the agent reads the file" \
     "every word has one tag" \
     "the server stores a copy of the report at the database" \
     "I have your report" \
+    "the agent deleted 3 files" \
     "The agent reads the file" \
     "delete the file"
 echo '```'
@@ -83,6 +84,18 @@ run "the agent can fail"
 echo
 run "please delete the file"
 run "delete the file"
+echo
+run "the agent deleted three files"
+run "the agent deleted 3 files"
+echo
+run "the agent deleted 1 file"
+run "the agent deleted one file"
+echo
+run "0 agents retry the request"
+run "no agent retries the request"
+echo
+run "the agent deleted 0 files"
+run "the agent did not delete files"
 echo '```'
 echo
 echo "## The repair loop: STYLE flags and their fixes"
@@ -118,6 +131,9 @@ run "the agent stored the file in the database" "the file fails"
 echo
 run "a files are big"
 run "the files are big"
+echo
+run "the agent deleted 3 file"
+run "the agent deleted 3 files"
 echo
 run "the agent stopped"
 run "the agent stopped the process"

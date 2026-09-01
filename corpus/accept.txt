@@ -60,3 +60,7 @@ check the input of the user
 store the report in the database
 the test fails but the agent retries the request
 the agent opened the file but the file was empty
+the agent deleted 3 files
+3 agents retry the request
+the user has 2 sessions
+the server stores a copy of 2 reports

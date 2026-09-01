@@ -39,6 +39,8 @@
   parses uniquely — peak-open 4, max-dep 8, depth 1, right-branching 30%
 ✓ I have your report
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 33%
+✓ the agent deleted 3 files
+  parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
 ✓ The agent reads the file
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
 ✓ delete the file
@@ -108,6 +110,26 @@ the advice:
   WORD: "please" is not a minglish word — politeness markers are not minglish - state the instruction directly or write "you must ..."
 ✓ delete the file
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 50%
+
+✗ the agent deleted three files
+  WORD: "three" is not a minglish word — counts are digits: write "3 files", not "three files" (ADR 0022)
+✓ the agent deleted 3 files
+  parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
+
+✗ the agent deleted 1 file
+  WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)
+✓ the agent deleted one file
+  parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
+
+✗ 0 agents retry the request
+  WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
+✓ no agent retries the request
+  parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
+
+✗ the agent deleted 0 files
+  WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
+✓ the agent did not delete files
+  parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
 ```
 
 ## The repair loop: STYLE flags and their fixes
@@ -177,6 +199,12 @@ the advice:
     - "a files" — a/an take a singular noun
 ✓ the files are big
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 0%
+
+✗ the agent deleted 3 file
+  STYLE:
+    - "3 file" — a number takes a plural noun (ADR 0022)
+✓ the agent deleted 3 files
+  parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
 
 ✗ the agent stopped
   STYLE:

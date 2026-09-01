@@ -37,8 +37,12 @@ fn main() {
     let mut trees = Vec::new();
     for (_, mg, _) in &pairs {
         for raw in mg.split_whitespace() {
-            // NAMEs (quoted or capitalized, ADR 0018) are not lexicon words
-            if raw.starts_with('"') || raw.chars().next().is_some_and(|c| c.is_uppercase()) {
+            // NAMEs (quoted or capitalized, ADR 0018) and digits (ADR 0022)
+            // are lexer classes, not lexicon words
+            if raw.starts_with('"')
+                || raw.chars().next().is_some_and(|c| c.is_uppercase())
+                || raw.trim_end_matches('.').chars().all(|c| c.is_ascii_digit())
+            {
                 continue;
             }
             let tok = raw.trim_matches(|c: char| c.is_ascii_punctuation()).to_lowercase();

@@ -72,6 +72,7 @@ edits	form	VERB_TRANS_3SG	edit
 effect	form	NOUN_SG	effect
 effect	reject	VERB	cause
 effects	form	NOUN_PL	effect
+eight	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 empty	form	ADJ	empty
 empty	reject	VERB	drain
 entries	form	NOUN_PL	entry
@@ -91,8 +92,10 @@ find	form	VERB_TRANS_BASE	find
 find	reject	NOUN	discovery
 finding	form	VERB_TRANS_ING	find
 finds	form	VERB_TRANS_3SG	find
+five	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 for	form	PREP_V	for
 found	form	VERB_TRANS_ED	find
+four	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 from	form	PREP_V	from
 generated	form	ADJ	generated
 had	form	VERB_TRANS_ED	have
@@ -133,6 +136,7 @@ need	reject	NOUN	necessity
 needed	form	VERB_TRANS_ED	need
 needing	form	VERB_TRANS_ING	need
 needs	form	VERB_TRANS_3SG	need
+nine	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 no	form	QUANT_NEG	no
 not	form	NEG	not
 of	form	PREP_N	of
@@ -208,6 +212,7 @@ server	form	NOUN_SG	server
 servers	form	NOUN_PL	server
 session	form	NOUN_SG	session
 sessions	form	NOUN_PL	session
+seven	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 she	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 show	form	VERB_TRANS_BASE	show
 show	reject	NOUN	display
@@ -215,6 +220,7 @@ showed	form	VERB_TRANS_ED	show
 showing	form	VERB_TRANS_ING	show
 shown	form	VERB_TRANS_ED	show
 shows	form	VERB_TRANS_3SG	show
+six	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 some	form	QUANT_EXIST	some
 source	form	NOUN_SG	source
 source	reject	VERB	find
@@ -241,6 +247,7 @@ systems	form	NOUN_PL	system
 tag	form	NOUN_SG	tag
 tag	reject	VERB	mark
 tags	form	NOUN_PL	tag
+ten	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 test	form	NOUN_SG	test
 test	reject	VERB	check
 tests	form	NOUN_PL	test
@@ -253,11 +260,13 @@ these	ban	-	third-person reference is banned - repeat the noun you mean (ADR 000
 they	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 this	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 those	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+three	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 to	form	PREP_V	to
 tool	form	NOUN_SG	tool
 tools	form	NOUN_PL	tool
 truth	form	NOUN_SG	truth
 truths	form	NOUN_PL	truth
+two	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 us	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
 use	form	VERB_TRANS_BASE	use
 use	reject	NOUN	usage
@@ -280,3 +289,4 @@ written	form	VERB_TRANS_ED	write
 wrote	form	VERB_TRANS_ED	write
 you	form	PRON_2	you
 your	form	POSS_2	your
+zero	ban	-	for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)

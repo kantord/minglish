@@ -67,6 +67,14 @@ fn banned_structures_reject() {
         // some: plural + subject-only (ADR 0017)
         "some agent retries the request",
         "the agent checks some requests",
+        // digits: 0 and 1 redirect, leading zeros reject, number words
+        // are banned, digit + singular / one + plural disagree (ADR 0022)
+        "the agent deleted 0 files",
+        "the agent deleted 1 file",
+        "the agent deleted 03 files",
+        "the agent deleted three files",
+        "3 agent retries the request",
+        "one files are big",
     ];
     for s in banned {
         assert!(

@@ -7,7 +7,7 @@ derivable from the code, ADRs, or git history.
 
 - `CONTEXT.md` — glossary (authoritative vocabulary; "Rejection" defines the
   ban/gap/load-warning triage that governs all linting work).
-- `docs/adr/0001–0021` — every language and policy decision, each citing its
+- `docs/adr/0001–0022` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban), 0012 (loss taxonomy),
   0015 (transparency-first vocabulary) are the governing ones.
@@ -20,24 +20,23 @@ derivable from the code, ADRs, or git history.
 
 ## Open decision queue (in order, with standing recommendations)
 
-1. **Numbers** (pending mid-interview): recommend digits as an open lexer
-   class (NUM_PL + plural noun: "3 files"), *one* stays word-form
-   (exactly-one fiat), digit-0 banned in favor of *no*, ordinals/units
-   deferred. Alternatives (number words / both forms) rejected for treadmill
-   and one-meaning-one-form reasons. Awaiting user confirmation.
-2. **same** — CAUTION from discussion: "the same X" is anaphoric-adjacent
+1. **same** — CAUTION from discussion: "the same X" is anaphoric-adjacent
    (same as *what*?), so it is NOT a clean vocabulary add; needs its own
    interview with the reference problem front and center.
-3. **commit-as-verb** (gap case adr0001-05) — the one-tag noun/verb tension;
+2. **commit-as-verb** (gap case adr0001-05) — the one-tag noun/verb tension;
    same family as ambitransitives (see findings: "the process stops"
    inexpressible because *stop* is VERB_TRANS only).
-4. **only** (gap case adr0001-04) — real but rare (absent from sweep top-30);
+3. **only** (gap case adr0001-04) — real but rare (absent from sweep top-30);
    deprioritized by data.
-5. Parked with design notes in `docs/ideas.md`: vocative (directed
+4. Parked with design notes in `docs/ideas.md`: vocative (directed
    imperatives), quotation-as-mention, pseudocode/analysis-code compiler,
    embeddings-as-measurement, core+jargon-packs split, LM-based cost model,
    linter advice gap #2 (rejected-verb redirects dormant on inflected forms:
    "the agent files the report" gives no submit-suggestion).
+5. Deferred by ADR 0022 (numbers, decided 2026-09-01): measurement values
+   ("the exit code is 0" — the natural home for a future 0), ordinals,
+   units, thousands separators, decimals. Needs a value slot distinct from
+   the NUM_PL count slot.
 
 ## Working process (session-established, not in any ADR)
 
@@ -54,7 +53,7 @@ derivable from the code, ADRs, or git history.
 
 ## Metrics snapshot (2026-09-01)
 
-- Lexicon 224 forms; corpus 60/60 parse; grammar LR(1)-clean, zero
+- Lexicon 224 forms (+10 ban rows for number words); corpus 64/64 parse; grammar LR(1)-clean, zero
   precedence declarations (CI-enforced).
 - agenttest first-try trajectory: 44 → 51 → 48 → 52 of 54 (run 5). Predictions registered for run 6: "please delete the file" should
   snapshot to the bare imperative (skill now teaches it); the no-must case

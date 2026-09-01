@@ -42,6 +42,8 @@ fn rejections_get_named_diagnoses() {
         ("the agent is opening the file", "progressive"),
         ("the file stored in the database fails", "reduced relative"),
         ("the agent stopped", "needs an object"),
+        ("the agent deleted 3 file", "plural noun"),
+        ("the user has one sessions", "singular noun"),
     ];
     for (sentence, expect) in style_cases {
         match diagnose(&lexicon, sentence) {
@@ -57,6 +59,15 @@ fn rejections_get_named_diagnoses() {
     // banned words go through the word-level channel with suggestions
     match diagnose(&lexicon, "it fails") {
         Diagnosis::Word(msg) => assert!(msg.contains("it")),
+        other => panic!("expected Word diagnosis, got {other:?}"),
+    }
+    // digits: 0 and number words redirect through the word-level channel (ADR 0022)
+    match diagnose(&lexicon, "the agent deleted 0 files") {
+        Diagnosis::Word(msg) => assert!(msg.contains("\"no <noun>")),
+        other => panic!("expected Word diagnosis, got {other:?}"),
+    }
+    match diagnose(&lexicon, "the agent deleted three files") {
+        Diagnosis::Word(msg) => assert!(msg.contains("digits")),
         other => panic!("expected Word diagnosis, got {other:?}"),
     }
     // two verb-attaching PPs: genuinely multiple readings

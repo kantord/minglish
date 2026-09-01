@@ -796,5 +796,55 @@
     "lemma": "but",
     "category": "CONJ",
     "note": "adversative coordination; within-sentence only (ADR 0021)"
+  },
+  {
+    "lemma": "zero",
+    "category": "BANNED",
+    "advice": "for none write \"no <noun> …\" as the subject, or \"… does not <verb> <nouns>\" (ADR 0022)"
+  },
+  {
+    "lemma": "two",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "three",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "four",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "five",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "six",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "seven",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "eight",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "nine",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
+  },
+  {
+    "lemma": "ten",
+    "category": "BANNED",
+    "advice": "counts are digits: write \"3 files\", not \"three files\" (ADR 0022)"
   }
 ]

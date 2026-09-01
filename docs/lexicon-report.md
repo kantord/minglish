@@ -4,8 +4,8 @@
 
 ## Summary
 
-- 128 lemmas, 224 surface forms, 36 redirects, 16 waivers
-- Lemmas per category: ADJ 6, BANNED 20, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 43, NUM_SG 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 2, VERB_TRANS 22
+- 138 lemmas, 224 surface forms, 36 redirects, 16 waivers
+- Lemmas per category: ADJ 6, BANNED 30, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 43, NUM_SG 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 2, VERB_TRANS 22
 
 ## Frequency (open-class lemmas)
 
@@ -53,4 +53,5 @@
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 60/60 sentences fully lexicalized
+- 60/64 sentences fully lexicalized
+- Missing tokens: 2 (×2), 3 (×2)

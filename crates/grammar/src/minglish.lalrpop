@@ -50,6 +50,7 @@ extern {
         "EVERY" => Tok::Every(<String>),
         "NO" => Tok::No(<String>),
         "NUM_SG" => Tok::Num(<String>),
+        "NUM_PL" => Tok::NumPl(<String>),
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
@@ -92,6 +93,7 @@ LComma: Tree = <l:@L> "COMMA" => leaf(l, ",".to_string());
 LEvery: Tree = <l:@L> <w:"EVERY"> => leaf(l, w);
 LNo: Tree = <l:@L> <w:"NO"> => leaf(l, w);
 LNum: Tree = <l:@L> <w:"NUM_SG"> => leaf(l, w);
+LNumPl: Tree = <l:@L> <w:"NUM_PL"> => leaf(l, w);
 LSome: Tree = <l:@L> <w:"SOME"> => leaf(l, w);
 LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
 
@@ -247,7 +249,8 @@ NPSG: Tree = {
     <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> <o:OfPP?> =>
         nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm), o]),
 };
-NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl> };
+// digits count plural nouns (ADR 0022); *one* + singular is NPSG (ADR 0016)
+NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl>, NPx<LNumPl, LNounPl> };
 
 // every + singular; no + singular is subject-only (ADR 0014).
 NPEvery: Tree = { NPx<LEvery, LNounSg> };
@@ -268,6 +271,7 @@ OfPP: Tree = {
 
 NPInner: Tree = {
     NPi<LNum, LNounSg>,
+    NPi<LNumPl, LNounPl>,
     NPi<LDet, LNounSg>,
     NPi<LDet, LNounPl>,
     NPi<LDetSg, LNounSg>,

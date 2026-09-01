@@ -12,9 +12,10 @@ fetch-data:
 showcase:
     ./scripts/showcase.sh
 
-# lint one or more sentences
+# lint one or more sentences (quote each one: just lint "the agent reads the file")
+[positional-arguments]
 lint +SENTENCES:
-    cargo run -q -p diagnose -- {{SENTENCES}}
+    cargo run -q -p diagnose -- "$@"
 
 # MILESTONE: run the LLM repair-loop harness (needs OPENROUTER_API_KEY;
 # see tests/agent-cases/README.md — results need human review)

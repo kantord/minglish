@@ -83,7 +83,8 @@ fn word(t: &Tok) -> &str {
         | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w)
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
-        | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::Some_(w) | Tok::Name(w) => w,
+        | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Some_(w)
+        | Tok::Name(w) => w,
         Tok::Comma => ",",
     }
 }
@@ -155,6 +156,20 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
                 word(&w[1])
             ));
         }
+        if matches!(w[0], Tok::Num(_)) && matches!(w[1], Tok::NounPl(_)) {
+            out.push(format!(
+                "\"{} {}\" — one takes a singular noun (ADR 0016)",
+                word(&w[0]),
+                word(&w[1])
+            ));
+        }
+        if matches!(w[0], Tok::NumPl(_)) && matches!(w[1], Tok::NounSg(_)) {
+            out.push(format!(
+                "\"{} {}\" — a number takes a plural noun (ADR 0022)",
+                word(&w[0]),
+                word(&w[1])
+            ));
+        }
         // perfect aspect via have
         if matches!(&w[0], Tok::Vt3(v) | Tok::VtBase(v) | Tok::VtEd(v) if ["have","has","had"].contains(&v.as_str()))
             && matches!(w[1], Tok::VtEd(_) | Tok::ViEd(_))
@@ -208,7 +223,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             let next = toks.get(i + 1);
             let object_start = matches!(
                 next,
-                Some(Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::Every(_)
+                Some(Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Every(_)
                     | Tok::Adj(_) | Tok::NounSg(_) | Tok::NounPl(_))
             );
             let have_like = ["have", "has", "had"].contains(&word(t));
@@ -242,7 +257,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Every(_) => vec![Term::Every],
         Tok::No(_) => vec![Term::No],
         Tok::Some_(_) => vec![Term::Some_],
-        Tok::Num(_) => vec![Term::Num],
+        Tok::Num(_) | Tok::NumPl(_) => vec![Term::Num],
         Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],
         Tok::NounPl(_) => vec![Term::NPl],

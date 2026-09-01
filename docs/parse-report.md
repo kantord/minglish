@@ -68,7 +68,11 @@ right-branching share, and fronted tokens before the main head.
 | store the report in the database | 3 | 5 | 1 | 40% | 0 |
 | the test fails but the agent retries the request | 3 | 4 | 2 | 25% | 2 |
 | the agent opened the file but the file was empty | 4 | 7 | 2 | 22% | 2 |
+| the agent deleted 3 files | 2 | 2 | 1 | 25% | 2 |
+| 3 agents retry the request | 2 | 2 | 1 | 25% | 2 |
+| the user has 2 sessions | 2 | 2 | 1 | 25% | 2 |
+| the server stores a copy of 2 reports | 3 | 3 | 1 | 29% | 2 |
 
-**Aggregate:** 60 sentences parsed; mean peak-open 2.6, worst 5 (ceiling ≈ 4).
+**Aggregate:** 64 sentences parsed; mean peak-open 2.5, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

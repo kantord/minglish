@@ -16,8 +16,9 @@ original.
 | 5 | 13 | 33.9 | 11 | 29.2 | 0.86 |
 | 6 | 8 | 25.2 | 5 | 15.7 | 0.62 |
 | 7 | 5 | 12.0 | 4 | 10.4 | 0.87 |
+| 8 | 5 | 18.0 | 5 | 17.9 | 0.99 |
 
-**Aggregate:** 7 pairs — words 56 → 46 (-18%), cost 167.1 → 144.9 (**ratio 0.87**)
+**Aggregate:** 8 pairs — words 61 → 51 (-16%), cost 185.1 → 162.8 (**ratio 0.88**)
 
 ## Before → after
 
@@ -76,6 +77,14 @@ AFTER (4 words, cost 10.4, **87%** of original) — 1 sentence(s), each parses u
 > The people are sweet
 
 Declared loss: affect,discourse-link
+
+**8.** BEFORE (5 words, cost 18.0)
+> The agent deleted three files.
+
+AFTER (5 words, cost 17.9, **99%** of original) — 1 sentence(s), each parses uniquely ✓, peak-open 2, right-branching 25%
+> The agent deleted 3 files
+
+Declared loss: none (lossless per ADR 0012)
 
 
 *Caveats: unigram surprisal ignores context and structure; meaning

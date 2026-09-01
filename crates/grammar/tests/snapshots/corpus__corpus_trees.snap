@@ -1137,3 +1137,74 @@ open=4 maxdep=7 depth=2 right=22% fronted=2
     )
   )
 )
+
+### the agent deleted 3 files
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    deleted
+    (NP h=1
+      3
+      files
+    )
+  )
+)
+
+### 3 agents retry the request
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    3
+    agents
+  )
+  (VP h=0
+    retry
+    (NP h=1
+      the
+      request
+    )
+  )
+)
+
+### the user has 2 sessions
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    user
+  )
+  (VP h=0
+    has
+    (NP h=1
+      2
+      sessions
+    )
+  )
+)
+
+### the server stores a copy of 2 reports
+open=3 maxdep=3 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    server
+  )
+  (VP h=0
+    stores
+    (NP h=1
+      a
+      copy
+      (OfPP h=1
+        of
+        (NP h=1
+          2
+          reports
+        )
+      )
+    )
+  )
+)

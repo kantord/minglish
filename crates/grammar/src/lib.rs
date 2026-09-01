@@ -51,6 +51,7 @@ pub enum Tok {
     Every(String),
     No(String),
     Num(String),
+    NumPl(String),
     Some_(String),
     Name(String),
     Comma,
@@ -155,6 +156,20 @@ impl Lexicon {
             }
             if !word.is_empty() {
                 let pos = out.len();
+                // ADR 0022: digits are a lexer class, not lexicon words
+                if let Some(numeral) = number_token(word) {
+                    let tok = numeral.map_err(|suggestion| LexError {
+                        word: word.to_string(),
+                        position: pos,
+                        suggestion: Some(suggestion),
+                    })?;
+                    out.push((pos, tok));
+                    if had_comma {
+                        let pos = out.len();
+                        out.push((pos, Tok::Comma));
+                    }
+                    continue;
+                }
                 let capitalized = word.chars().next().is_some_and(|c| c.is_uppercase());
                 // ADR 0018, fail-loud: unquoted NAME only when capitalized,
                 // mid-sentence, and not a lexicon word in lowercase. A
@@ -227,6 +242,25 @@ impl Lexicon {
         }
         Ok(())
     }
+}
+
+/// Digit strings (ADR 0022): `2` and up are NUM_PL; `0` and `1` are
+/// redirected (*no* / *one*), leading zeros are rejected. Non-digit words
+/// return None.
+fn number_token(word: &str) -> Option<Result<Tok, String>> {
+    if word.is_empty() || !word.chars().all(|c| c.is_ascii_digit()) {
+        return None;
+    }
+    Some(match word {
+        "0" => Err("for none write \"no <noun> …\" as the subject, or \
+                    \"… does not <verb> <nouns>\" (ADR 0022)"
+            .to_string()),
+        "1" => Err("write \"one\" — exactly one stays a word (ADR 0016)".to_string()),
+        _ if word.starts_with('0') => {
+            Err("a number does not start with 0 (ADR 0022)".to_string())
+        }
+        _ => Ok(Tok::NumPl(word.to_string())),
+    })
 }
 
 fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
