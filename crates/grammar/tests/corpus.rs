@@ -77,6 +77,14 @@ fn banned_structures_reject() {
         "one files are big",
         // same is banned with per-sense advice (ADR 0023)
         "the same file fails",
+        // percent needs a digit count and a named set (ADR 0024)
+        "43 percent reduce the ambiguity",
+        "one percent of the swaps reduce the ambiguity",
+        "the percent of the swaps is big",
+        // about / ~ only before a digit count (ADR 0025)
+        "the agent reads about the file",
+        "about one file fails",
+        "~ 5 forms fail",
     ];
     for s in banned {
         assert!(

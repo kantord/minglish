@@ -48,6 +48,9 @@ notes where. Add an entry when a new type is caught; never delete one.
   a pattern finding exists or could (tier-2 count 0 with no findings).
 - **Unfindable fix**: advice that names a word the writer would never reach
   for, or that only makes sense with insider context (ADR 0008, 0015).
+- **Redirect to a word outside the lexicon**: the advice names a synonym
+  that is itself not enabled (*report* → *describe*, *commit* → *save*;
+  caught rewriting ADR 0001). Listed in the lexicon report since 2026-09-01.
 
 ## D. The decision was made on the wrong evidence
 

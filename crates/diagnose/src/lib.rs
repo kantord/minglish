@@ -85,8 +85,8 @@ fn word(t: &Tok) -> &str {
         | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w)
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
-        | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Some_(w)
-        | Tok::Name(w) => w,
+        | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
+        | Tok::Approx(w) | Tok::Some_(w) | Tok::Name(w) => w,
         Tok::Comma => ",",
     }
 }
@@ -225,7 +225,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             let next = toks.get(i + 1);
             let object_start = matches!(
                 next,
-                Some(Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Every(_)
+                Some(Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Approx(_) | Tok::Every(_)
                     | Tok::Adj(_) | Tok::NounSg(_) | Tok::NounPl(_))
             );
             let have_like = ["have", "has", "had"].contains(&word(t));
@@ -248,7 +248,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
 enum Term {
     Det, DetSg, Poss, Every, No, Some_, Num, Adj, NSg, NPl,
     VAny, PrepN, PrepV, Pron, CopAny, Conj, Neg, DoAny, ModAny, If, Then, Comma,
-    Ing, Ed, NameT,
+    Ing, Ed, NameT, Pct, Approx,
 }
 
 fn term_of(t: &Tok) -> Vec<Term> {
@@ -260,6 +260,8 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::No(_) => vec![Term::No],
         Tok::Some_(_) => vec![Term::Some_],
         Tok::Num(_) | Tok::NumPl(_) => vec![Term::Num],
+        Tok::Percent(_) => vec![Term::Pct],
+        Tok::Approx(_) => vec![Term::Approx],
         Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],
         Tok::NounPl(_) => vec![Term::NPl],
@@ -318,6 +320,8 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
     p[CL] = vec![vec![N(NPS), N(PRED)]];
     p[NPS] = vec![
         vec![N(DETX), N(ADJS), N(NH), N(PPS)],
+        vec![T(Term::Num), T(Term::Pct), N(PPS)], // 43 percent of the swaps
+        vec![T(Term::Approx), T(Term::Num), T(Term::Pct), N(PPS)],
         vec![N(ADJS), T(Term::NPl), N(PPS)],
         vec![T(Term::NSg), N(PPS)], // bare singular (dirty)
         vec![T(Term::Pron)],
@@ -327,6 +331,7 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
     p[DETX] = vec![
         vec![T(Term::Det)], vec![T(Term::DetSg)], vec![T(Term::Poss)],
         vec![T(Term::Every)], vec![T(Term::No)], vec![T(Term::Some_)], vec![T(Term::Num)],
+        vec![T(Term::Approx), T(Term::Num)],
     ];
     p[ADJS] = vec![vec![], vec![T(Term::Adj), N(ADJS)]];
     p[NH] = vec![vec![T(Term::NSg)], vec![T(Term::NPl)]];

@@ -16,8 +16,16 @@ original.
 | 5 | 13 | 49.3 | 13 | 42.8 | 0.87 |
 | 6 | 16 | 62.9 | 18 | 59.0 | 0.94 |
 | 7 | 11 | 36.1 | 15 | 46.7 | 1.29 |
+| 8 | 18 | 77.2 | 35 | 112.7 | 1.46 |
+| 9 | 7 | 21.6 | 5 | 19.3 | 0.89 |
+| 10 | 33 | 137.7 | 53 | 184.8 | 1.34 |
+| 11 | 23 | 94.3 | 27 | 94.6 | 1.00 |
+| 12 | 30 | 169.3 | 64 | 259.5 | 1.53 |
+| 13 | 6 | 23.1 | 9 | 30.9 | 1.34 |
+| 14 | 26 | 108.5 | 32 | 123.5 | 1.14 |
+| 15 | 28 | 114.5 | 19 | 65.8 | 0.57 |
 
-**Aggregate:** 7 pairs — words 80 → 98 (+22%), cost 299.7 → 324.1 (**ratio 1.08**)
+**Aggregate:** 15 pairs — words 251 → 342 (+36%), cost 1045.8 → 1215.0 (**ratio 1.16**)
 
 ## Before → after
 
@@ -76,6 +84,70 @@ AFTER (15 words, cost 46.7, **129%** of original) — 2 sentence(s), each parses
 > The linter checks the words with the data. The data does not choose the words.
 
 Declared loss: nominalization
+
+**8.** BEFORE (18 words, cost 77.2)
+> minglish needs a lexicon: every allowed surface form, each with exactly one form-tag, plus redirects for rejected uses.
+
+AFTER (35 words, cost 112.7, **146%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 23%
+> The language needs a lexicon. The lexicon contains every form of the words. Every form has one tag. A word can have an unused sense. The lexicon can contain a replacement for the unused sense.
+
+Declared loss: terminology
+
+**9.** BEFORE (7 words, cost 21.6)
+> Three ways to produce it were considered.
+
+AFTER (5 words, cost 19.3, **89%** of original) — 1 sentence(s), each parses uniquely ✓, peak-open 2, right-branching 25%
+> The maintainers considered 3 options.
+
+Declared loss: topic-structure
+
+**10.** BEFORE (33 words, cost 137.7)
+> Prior research showed that algorithmic word selection optimizes rarity, not clarity: a swap generator's apparent disambiguation was fully explained by picking rarer words, and 43% of its swaps had no benefit at all.
+
+AFTER (53 words, cost 184.8, **134%** of original) — 6 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 26%
+> The file "docs/research/cnl-design-findings.md" describes the prior research. The algorithms optimized the rarity of the words. The algorithms did not optimize the clarity of the words. One generator replaced common words with rare words. The rarity of the rare words explained the apparent improvement. 43 percent of the swaps did not reduce the ambiguity.
+
+Declared loss: emphasis,comparative
+
+**11.** BEFORE (23 words, cost 94.3)
+> At the same time, hand-writing every inflected surface form (full paradigms, ~5 forms per verb) is toil that invites typos and silent gaps.
+
+AFTER (27 words, cost 94.6, **100%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 19%
+> Every verb has about 5 forms. If people write every form, then the lexicon has typos. If people write every form, then the lexicon has hidden gaps.
+
+Declared loss: affect
+
+**12.** BEFORE (30 words, cost 169.3)
+> A Rust tool (crates/lexgen) expands paradigms with ~10 regular-morphology rules, enforces the linter invariants (collision-free, cross-POS completeness, no unattested forms) as hard build errors, and deterministically emits lexicon.tsv and docs/lexicon-report.md.
+
+AFTER (64 words, cost 259.5, **153%** of original) — 8 sentence(s), each parses uniquely ✓, peak-open 6, right-branching 32%
+> The tool Lexgen expands the paradigms with about 10 rules. The tool Lexgen checks the invariants. No form has 2 tags. An unused sense has a replacement or has a waiver. The data attests every form. If a test fails, then the tool Lexgen returns an error. The tool Lexgen writes the file "lexicon.tsv" and writes the file "docs/lexicon-report.md". The tool Lexgen is deterministic.
+
+Declared loss: detail
+
+**13.** BEFORE (6 words, cost 23.1)
+> The maintainers commit the generated files.
+
+AFTER (9 words, cost 30.9, **134%** of original) — 1 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 25%
+> The maintainers save the generated files in the repository.
+
+Declared loss: none (lossless per ADR 0012)
+
+**14.** BEFORE (26 words, cost 108.5)
+> The committed-generated-file pattern requires discipline (and eventually a CI check) that lexicon.tsv matches seed.json; a hand-edit to the TSV is a build error waiting to happen.
+
+AFTER (32 words, cost 123.5, **114%** of original) — 4 sentence(s), each parses uniquely ✓, peak-open 6, right-branching 25%
+> The repository stores the generated files. The generated files can drift from the seed. The script "scripts/check.sh" finds the differences. If a person edits the file "lexicon.tsv", then the script "scripts/check.sh" fails.
+
+Declared loss: idiom,update
+
+**15.** BEFORE (28 words, cost 114.5)
+> Reversing this later (e.g. moving to a database or to per-word files) means migrating accumulated curation, which gets more expensive as the seed grows — hence this ADR.
+
+AFTER (19 words, cost 65.8, **57%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 25%
+> A reversal migrates every entry. The expense of a reversal grows with the seed. The maintainers record the decision.
+
+Declared loss: example,causal
 
 
 *Caveats: unigram surprisal ignores context and structure; meaning

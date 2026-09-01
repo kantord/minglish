@@ -41,6 +41,14 @@
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 33%
 ✓ the agent deleted 3 files
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
+✓ 43 percent of the swaps did not reduce the ambiguity
+  parses uniquely — peak-open 4, max-dep 6, depth 1, right-branching 22%
+✓ the tool Lexgen expands the paradigms with about 10 rules
+  parses uniquely — peak-open 4, max-dep 6, depth 1, right-branching 33%
+✓ every verb has ~5 forms
+  parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
+✓ people write every form of the file "lexicon.tsv"
+  parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 43%
 ✓ The agent reads the file
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
 ✓ delete the file

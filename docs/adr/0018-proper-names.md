@@ -38,6 +38,9 @@ names).
 
 ## Consequences
 
+- (2026-09-01, dogfood ADR 0001) The appositive form is also allowed inside
+  an of-PP: "every form of the file \"lexicon.tsv\"".
+
 - minglish can finally talk about itself, its files, and its tools —
   several dogfood rows unblock.
 - Coverage/cost tooling must treat NAME tokens specially (not lexicon

@@ -4,7 +4,7 @@
 
 | ADR | parse rate |
 |---|---|
-| 0001-generated-lexicon-from-curated-seed.md | 3/19 |
+| 0001-generated-lexicon-from-curated-seed.md | 70/70 |
 | 0002-pronoun-policy.md | 0/11 |
 | 0003-copula.md | 0/11 |
 | 0004-coordination.md | 0/11 |
@@ -21,42 +21,46 @@
 | 0015-compounds-transparency.md | 0/18 |
 | 0016-have-and-one.md | 0/16 |
 | 0017-existential-some.md | 0/7 |
-| 0018-proper-names.md | 0/17 |
+| 0018-proper-names.md | 0/18 |
 | 0019-imperatives.md | 0/11 |
 | 0020-no-first-person-plural.md | 0/12 |
 | 0021-but.md | 0/10 |
+| 0022-digits.md | 0/22 |
+| 0023-per-sense-synonyms.md | 0/20 |
+| 0024-percent.md | 0/14 |
+| 0025-approximation.md | 0/11 |
 
-**Aggregate: 3/287 sentences (1%)**
+**Aggregate: 70/406 sentences (17%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
 - enabled ×8
 - banned ×5
-- same ×4
+- deferred ×5
 - future ×4
-- three ×3
+- bare ×4
+- same ×4
 - english ×3
 - scope ×3
+- grammar ×3
 - this ×3
-- bare ×3
-- minglish ×2
+- closed-class ×3
+- three ×3
+- adr ×3
+- first ×3
+- second ×3
 - allowed ×2
 - zero ×2
 - intended ×2
-- deferred ×2
 - compound ×2
 - token-level ×2
 - constituent ×2
 - negated ×2
 - auxiliary ×2
-- grammar ×2
 - our ×2
 - they ×2
 - prefer ×2
 - when ×2
-- rules ×2
+- metrics ×2
 - writers ×2
-- forcing ×2
-- per ×2
-- modals ×2
-- generic ×2
+- ban ×2

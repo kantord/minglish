@@ -7,7 +7,7 @@ derivable from the code, ADRs, or git history.
 
 - `CONTEXT.md` — glossary (authoritative vocabulary; "Rejection" defines the
   ban/gap/load-warning triage that governs all linting work).
-- `docs/adr/0001–0023` — every language and policy decision, each citing its
+- `docs/adr/0001–0025` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -23,9 +23,12 @@ derivable from the code, ADRs, or git history.
 
 ## Open decision queue (in order, with standing recommendations)
 
-1. **commit-as-verb** (gap case adr0001-05) — the one-tag noun/verb tension;
-   same family as ambitransitives (see findings: "the process stops"
-   inexpressible because *stop* is VERB_TRANS only).
+1. **Causal connective** (*because / so / hence*): no minglish form; the
+   ADR 0001 rewrite drops "hence this ADR" as declared tier-1 debt
+   (pair 15, `causal`). ADR 0012 counts causal structure as propositional,
+   so this is the first queue item. Needs its own interview: clause order,
+   first-token telegraph (*because* fronted vs trailing), and whether *so*
+   (result) and *because* (reason) are one construction or two.
 2. **only** (gap case adr0001-04) — real but rare (absent from sweep top-30);
    deprioritized by data.
 3. Parked with design notes in `docs/ideas.md`: vocative (directed
@@ -43,6 +46,10 @@ derivable from the code, ADRs, or git history.
    the NUM_PL count slot.
 6. Deferred by ADR 0023 (same): the named-standard form "identical to the
    report" needs an adjective + PP complement the copula lacks.
+7. Deferred by ADR 0024 (percent): percent of a singular mass, percentages as
+   predicates, decimals. Ambitransitives ("the process stops") remain a
+   findings-level gap with no case attached; commit-as-verb (adr0001-05) was
+   resolved by the linter's own redirect (*save*).
 
 ## Working process (session-established, not in any ADR)
 
@@ -61,19 +68,21 @@ derivable from the code, ADRs, or git history.
 
 ## Metrics snapshot (2026-09-01)
 
-- Lexicon 224 forms (+10 ban rows for number words); corpus 64/64 parse; grammar LR(1)-clean, zero
+- Lexicon 373 forms (ADR 0001 rewrite added ≈55 lemmas); corpus 68/68 parse; grammar LR(1)-clean, zero
   precedence declarations (CI-enforced).
 - agenttest first-try trajectory: 44 → 51 → 48 → 52 of 54 (run 5). Predictions registered for run 6: "please delete the file" should
   snapshot to the bare imperative (skill now teaches it); the no-must case
   should stop dropping the deontic (advice got a concrete example);
   autofix rerun on ADR 0001 should yield real proposals + GAP declarations
   (extractor fixed, refusal-routing strengthened).
-- ADR sweep: 3/287 sentences parse. Expected: ADRs are meta-linguistic
+- ADR sweep: 68/393 sentences parse (ADR 0001: 68/68, fully minglish since
+  2026-09-01 — see docs/dogfood-adr-0001.md for every fix-gap-vs-follow-advice
+  choice). Expected: ADRs are meta-linguistic
   register, and coverage of them is a non-target (see the reframe in
   docs/dogfood-adr-0001.md: coverage of arbitrary English is a non-goal).
-- Dogfood ADR 0001: 7 of 8 audited sentences resolved (4 translated, 3 by
-  in-place rewrite); dogfood pairs cost ratio ≈1.08 (understated by the
-  nominalization blind spot — see findings).
+- Dogfood ADR 0001: every sentence parses (in-place rewrite, 15 declared
+  pairs in corpus/dogfood-pairs.tsv); cost ratio in docs/dogfood-cost-report.md
+  (understated by the nominalization blind spot — see findings).
 
 ## Standing policies easy to violate accidentally
 

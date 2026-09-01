@@ -34,6 +34,10 @@ run "the agent reads the file" \
     "the server stores a copy of the report at the database" \
     "I have your report" \
     "the agent deleted 3 files" \
+    "43 percent of the swaps did not reduce the ambiguity" \
+    "the tool Lexgen expands the paradigms with about 10 rules" \
+    "every verb has ~5 forms" \
+    "people write every form of the file \"lexicon.tsv\"" \
     "The agent reads the file" \
     "delete the file"
 echo '```'

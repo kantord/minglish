@@ -50,6 +50,9 @@ rejected sentence, keep its meaning; change only what the error requires.
     `3 agents retry the request`. `one` stays a word (`one file`, never
     `1`). Never `0` or `zero`: write `no agent retries the request` or
     `the agent does not delete files`. Never number words (`three`).
+    Shares: `43 percent of the swaps did not reduce the ambiguity` (digits +
+    `percent` + `of` + the named set; plural agreement). Approximate counts:
+    `about 10 rules` or `~10 rules`; `about` exists only before digits.
 
 ## Hard bans (rewrite instead)
 

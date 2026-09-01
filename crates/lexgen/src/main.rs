@@ -382,6 +382,36 @@ fn render_report(forms: &[Form], entries: &[SeedEntry], refdata: &RefData) -> St
         out.push('\n');
     }
 
+    // Redirect targets outside the lexicon (report-only, ADR 0023): the
+    // advice names a word the writer cannot actually use.
+    {
+        let enabled: std::collections::BTreeSet<&str> = entries
+            .iter()
+            .filter(|e| !matches!(e.cat(), Category::Banned))
+            .map(|e| e.lemma.as_str())
+            .collect();
+        let outside: Vec<String> = entries
+            .iter()
+            .flat_map(|e| {
+                e.reject.iter().filter(|(_, s)| !enabled.contains(s.as_str())).map(
+                    move |(pos, s)| format!("{} ({pos}) → \"{s}\"", e.lemma),
+                )
+            })
+            .collect();
+        out.push_str("## Redirect targets outside the lexicon\n\n");
+        if outside.is_empty() {
+            out.push_str("Every redirect points at an enabled word. ✓\n\n");
+        } else {
+            out.push_str(
+                "The advice names a word that is not itself enabled (ADR 0023 hole):\n\n",
+            );
+            for o in &outside {
+                out.push_str(&format!("- {o}\n"));
+            }
+            out.push('\n');
+        }
+    }
+
     // Waivers = deliberate debt
     let waivers: Vec<String> = entries
         .iter()

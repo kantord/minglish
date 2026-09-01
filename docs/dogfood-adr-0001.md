@@ -61,3 +61,49 @@ sentence as evidence, not coverage of the original prose. Self-hosting also expo
 spot in the tooling itself: structural-ambiguity guarantees and cost metrics
 are silent about semantic reference ambiguity — that check is human (or a
 future semantic layer), and ADR 0012 review is where it happens.
+
+## 2026-09-01: full rewrite — every sentence of ADR 0001 parses
+
+The whole ADR was rewritten in place (68 sentences, 68 parse; meaning
+review per ADR 0012 in corpus/dogfood-pairs.tsv, 15 pairs). At each
+blocked sentence the choice was: fix a gap in the system, or apply the
+linter's advice when it was right about the prose.
+
+| Blocker | Choice | Result |
+|---|---|---|
+| Vocabulary (≈55 lemmas: *language, form, option, seed, lemma, category, replacement, waiver, contain, derive, migrate, prior, rare, unused, …*) | gap — curated into the seed, WordNet-attested, cross-POS handled | lexicon 224 → 373 forms |
+| *43% of its swaps* | gap — proportion is propositional; "43 of 100" would invent a count | ADR 0024 (*percent*) |
+| *every form of the file `lexicon.tsv`* | gap — appositive names were not allowed inside an of-PP | ADR 0018 extended |
+| *commit* as a verb (case adr0001-05) | advice — the redirect (*save*) was right; *commit* stays a noun | "save … in the repository"; *save* enabled |
+| *reports/checks* as verb/noun in the wrong slot | advice — redirects were right (*describe*, *test*); both were dormant on inflected forms (ideas, advice gap 2) | *describe* enabled |
+| *rejected* as an adjective | advice by construction — collides with the verb form | *unused sense* |
+| NP coordination (*a replacement or a waiver*), *every*-subject with a tail | advice — predicate coordination / indefinite subject | rewritten |
+| parentheses, colons, semicolons, *e.g.*, *hence*, *~*, *at the same time* | advice — meta-prose devices; split into sentences | rewritten, drops declared |
+| named options ("Option 3") | advice — ordinals deferred (ADR 0022) | `the option "seed"` (ADR 0018 appositive) |
+| *the maintainers vendor the reference data* | the ADR was stale: CC BY-SA data is fetched, not vendored | rewritten to the current facts |
+
+Open from this pass: *only* (case adr0001-04) is no longer used by the ADR
+but stays a language-design gap; redirect targets outside the lexicon are
+now listed in the lexicon report so the ADR 0023 hole is visible.
+
+### Pair review (2026-09-01, ADR 0012 meaning check with the maintainer)
+
+- Pair 8: *every unused sense has a replacement* overclaimed (waivers exist)
+  → "a word can have an unused sense. the lexicon can contain a replacement
+  for the unused sense".
+- Pair 10: restated around *improvement* so the claim is readable without
+  the source's jargon.
+- Pair 11: generic statements had lost the cause → two conditionals;
+  *silent gaps* restored as *hidden gaps*.
+- Pairs 11/12: "5 forms" and "10 rules" were false precision → ADR 0025
+  (*about* / *~*).
+- Pair 14: the sentence had absorbed a parenthetical that belonged
+  elsewhere → restated as drift + check + hand-edit failure.
+- Pair 15: the causal link ("hence this ADR") has no minglish form. Declared
+  as `causal`, a known tier-1 debt; causal connectives are now the head of
+  the STATUS queue.
+- Pair 13 (*commit* → *save … in the repository*) kept. The maintainer's
+  note: the odd phrasing may be the better one; the real question is how a
+  domain model would separate the noun and verb senses of *commit* under
+  the one-tag rule (queue: ambitransitives).
+

@@ -52,6 +52,8 @@ pub enum Tok {
     No(String),
     Num(String),
     NumPl(String),
+    Percent(String),
+    Approx(String),
     Some_(String),
     Name(String),
     Comma,
@@ -162,7 +164,16 @@ impl Lexicon {
             }
             if !word.is_empty() {
                 let pos = out.len();
-                // ADR 0022: digits are a lexer class, not lexicon words
+                // ADR 0022: digits are a lexer class, not lexicon words;
+                // ADR 0025: a "~" prefix is the symbol form of "about"
+                let (approx, word) = match word.strip_prefix('~') {
+                    Some(rest) if !rest.is_empty() => (true, rest),
+                    _ => (false, word),
+                };
+                if approx {
+                    out.push((pos, Tok::Approx("~".to_string())));
+                }
+                let pos = out.len();
                 if let Some(numeral) = number_token(word) {
                     let tok = numeral.map_err(|suggestion| LexError {
                         word: word.to_string(),
@@ -314,6 +325,8 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "QUANT_NEG" => Tok::No(w),
         "NUM_SG" => Tok::Num(w),
         "QUANT_EXIST" => Tok::Some_(w),
+        "PERCENT" => Tok::Percent(w),
+        "APPROX" => Tok::Approx(w),
         // NAME is produced directly by the tokenizer, never from the lexicon
         _ => return None,
     })

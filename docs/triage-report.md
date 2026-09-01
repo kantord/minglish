@@ -8,32 +8,32 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 
 ## Sentence buckets
 
-- **Perfect** (every token usable as-is): 1 (0.0%)
-- **Close** (1–2 problem tokens): 459 (22.5%)
+- **Perfect** (every token usable as-is): 2 (0.1%)
+- **Close** (1–2 problem tokens): 458 (22.5%)
 - **Far** (3+ problem tokens): 1577 (77.4%)
 
 ## Token verdicts
 
 | verdict | tokens | share |
 |---|---|---|
-| OK | 6306 | 28.9% |
-| REDIRECT (designed rejection with suggestion) | 43 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 1013 | 4.6% |
+| OK | 6434 | 29.5% |
+| REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
+| MISMATCH (enabled word, uncovered POS) | 1051 | 4.8% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 12410 | 56.8% |
+| OOV | 12240 | 56.0% |
 
 ## OOV by gold UPOS
 
-- NOUN: 3942
-- VERB: 2119
-- ADJ: 1760
-- ADV: 1147
+- NOUN: 3900
+- VERB: 2047
+- ADJ: 1736
 - PRON: 1147
+- ADV: 1145
 - AUX: 639
 - NUM: 502
-- ADP: 452
+- ADP: 426
 - DET: 270
-- SCONJ: 224
+- SCONJ: 220
 - INTJ: 112
 - PART: 70
 - CCONJ: 26
@@ -48,6 +48,7 @@ be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (�
 - need used as NOUN ×8
 - file used as VERB ×5
 - commit used as VERB ×4
+- note used as VERB ×4
 - report used as VERB ×4
 - open used as ADJ ×3
 - show used as NOUN ×3
@@ -65,6 +66,7 @@ be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (�
 - do used as VERB ×45
 - be used as VERB ×36
 - one used as NUM ×34
+- about used as ADP ×26
 - for used as SCONJ ×24
 - one used as NOUN ×18
 - in used as ADV ×11
@@ -72,12 +74,12 @@ be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (�
 - of used as SCONJ ×10
 - to used as SCONJ ×10
 - no used as INTJ ×9
-- on used as SCONJ ×8
 
 ## Samples for manual review
 
 ### Perfect
 
+- expensive
 - and the people are sweet :)
 
 ### Close (with their problems)

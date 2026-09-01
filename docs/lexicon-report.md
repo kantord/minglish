@@ -4,23 +4,56 @@
 
 ## Summary
 
-- 140 lemmas, 225 surface forms, 36 redirects, 16 waivers
-- Lemmas per category: ADJ 7, BANNED 31, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 43, NUM_SG 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 2, VERB_TRANS 22
+- 206 lemmas, 387 surface forms, 40 redirects, 37 waivers
+- Lemmas per category: ADJ 18, APPROX 1, BANNED 31, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 75, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 6, VERB_TRANS 39
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.63 (higher = more common; everyday words sit at 4.5+)
-- Rarest 5: linter (0.00), maintainer (2.38), retry (2.57), parser (2.63), inflection (2.88)
+- Mean zipf: 4.48 (higher = more common; everyday words sit at 4.5+)
+- Rarest 5: linter (0.00), maintainer (2.38), retry (2.57), parser (2.63), lemma (2.74)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
 
-- Mean senses: 5.8 (upper bound — WordNet oversplits)
-- Top 5: check (25), have (19), return (16), find (16), start (14)
+- Mean senses: 5.5 (upper bound — WordNet oversplits)
+- Top 5: check (25), come (21), reduce (20), have (19), return (16)
 
 ## Redirect findability guard (floor: zipf 3.5)
 
 - ⚠ reject (NOUN) → "outcast": zipf 3.09
 - ⚠ output (VERB) → "emit": zipf 3.25
+
+## Redirect targets outside the lexicon
+
+The advice names a word that is not itself enabled (ADR 0023 hole):
+
+- file (VERB) → "submit"
+- message (VERB) → "notify"
+- result (VERB) → "follow"
+- process (VERB) → "handle"
+- sentence (VERB) → "condemn"
+- queue (VERB) → "wait"
+- request (VERB) → "ask"
+- output (VERB) → "emit"
+- read (NOUN) → "text"
+- return (NOUN) → "response"
+- store (NOUN) → "shop"
+- stop (NOUN) → "halt"
+- reject (NOUN) → "outcast"
+- find (NOUN) → "discovery"
+- build (NOUN) → "compilation"
+- start (NOUN) → "beginning"
+- fail (NOUN) → "failure"
+- empty (VERB) → "drain"
+- copy (VERB) → "duplicate"
+- open (ADJ) → "unlocked"
+- input (VERB) → "enter"
+- sweet (NOUN) → "candy"
+- tag (VERB) → "mark"
+- need (NOUN) → "necessity"
+- use (NOUN) → "usage"
+- edit (NOUN) → "revision"
+- effect (VERB) → "cause"
+- show (NOUN) → "display"
 
 ## Waivers (attested senses with no redirect)
 
@@ -40,10 +73,31 @@
 - have (NOUN)
 - sense (VERB)
 - generated (VERB)
+- research (VERB)
+- gap (VERB)
+- rule (VERB)
+- invariant (ADJ)
+- table (VERB)
+- expense (VERB)
+- record (NOUN)
+- match (NOUN)
+- pin (NOUN)
+- fetch (NOUN)
+- save (NOUN)
+- come (NOUN)
+- prior (NOUN)
+- common (NOUN)
+- small (NOUN)
+- small (ADV)
+- irregular (NOUN)
+- seed (VERB)
+- hidden (VERB)
+- drift (NOUN)
+- difference (VERB)
 
 ## Corpus coverage
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 61/65 sentences fully lexicalized
-- Missing tokens: 2 (×2), 3 (×2)
+- 63/71 sentences fully lexicalized
+- Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 5 (×1)

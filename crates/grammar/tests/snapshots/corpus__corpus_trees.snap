@@ -1221,3 +1221,149 @@ open=2 maxdep=2 depth=1 right=0% fronted=3
     identical
   )
 )
+
+### 43 percent of the swaps did not reduce the ambiguity
+open=4 maxdep=6 depth=1 right=22% fronted=7
+(S h=1
+  (NPPct h=1
+    43
+    percent
+    (OfPP h=1
+      of
+      (NP h=1
+        the
+        swaps
+      )
+    )
+  )
+  (NegVP h=2
+    did
+    not
+    (VP h=0
+      reduce
+      (NP h=1
+        the
+        ambiguity
+      )
+    )
+  )
+)
+
+### people write every form of the file "lexicon.tsv"
+open=3 maxdep=3 depth=1 right=43% fronted=1
+(S h=1
+  (NPGen h=0
+    people
+  )
+  (VP h=0
+    write
+    (NP h=1
+      every
+      form
+      (OfPP h=1
+        of
+        (NPAppos h=1
+          the
+          file
+          lexicon.tsv
+        )
+      )
+    )
+  )
+)
+
+### the expense of a reversal grows with the seed
+open=4 maxdep=4 depth=1 right=25% fronted=5
+(S h=1
+  (NP h=1
+    the
+    expense
+    (OfPP h=1
+      of
+      (NP h=1
+        a
+        reversal
+      )
+    )
+  )
+  (VP h=0
+    grows
+    (PP h=1
+      with
+      (NP h=1
+        the
+        seed
+      )
+    )
+  )
+)
+
+### the tool Lexgen expands the paradigms with about 10 rules
+open=4 maxdep=6 depth=1 right=33% fronted=3
+(S h=1
+  (NPAppos h=1
+    the
+    tool
+    Lexgen
+  )
+  (VP h=0
+    expands
+    (NP h=1
+      the
+      paradigms
+    )
+    (PP h=1
+      with
+      (NP h=2
+        about
+        10
+        rules
+      )
+    )
+  )
+)
+
+### every verb has ~5 forms
+open=3 maxdep=3 depth=1 right=20% fronted=2
+(S h=1
+  (NP h=1
+    every
+    verb
+  )
+  (VP h=0
+    has
+    (NP h=2
+      ~
+      5
+      forms
+    )
+  )
+)
+
+### about 43 percent of the swaps did not reduce the ambiguity
+open=4 maxdep=6 depth=1 right=20% fronted=8
+(S h=1
+  (NPPct h=2
+    about
+    43
+    percent
+    (OfPP h=1
+      of
+      (NP h=1
+        the
+        swaps
+      )
+    )
+  )
+  (NegVP h=2
+    did
+    not
+    (VP h=0
+      reduce
+      (NP h=1
+        the
+        ambiguity
+      )
+    )
+  )
+)

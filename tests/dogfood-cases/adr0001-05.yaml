@@ -1,8 +1,12 @@
 source: (language design)
 sentence: commit as a verb (e.g. 'The maintainers commit the generated files')
-diagnosis: '''commit'' verb-sense conflicts with the enabled commit NOUN (one-tag-per-surface)'
-resolution: gap
-gap: resolve the commit noun/verb conflict (ambitransitive-style tension with the
-  one-tag invariant)
-note: the 'we' half of this case was resolved by ADR 0020 (banned, name-the-group
-  advice); ADR 0001 rewritten to 'The maintainers commit ...'
+diagnosis: "'commit' verb-sense conflicts with the enabled commit NOUN (one-tag-per-surface)"
+resolution: rewritten
+rewrite: the maintainers save the generated files in the repository
+note: |
+  Resolved by relying on the linter's own redirect (commit VERB -> save):
+  "save ... in the repository" is what commit means here, and commit stays a
+  noun ("every commit shows the effect of the commit"). The redirect pointed
+  at a word outside the lexicon; "save" was enabled to close that hole
+  (ADR 0023: a redirect target must be usable). The 'we' half was resolved
+  earlier by ADR 0020.

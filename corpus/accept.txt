@@ -65,3 +65,9 @@ the agent deleted 3 files
 the user has 2 sessions
 the server stores a copy of 2 reports
 the copies are identical
+43 percent of the swaps did not reduce the ambiguity
+people write every form of the file "lexicon.tsv"
+the expense of a reversal grows with the seed
+the tool Lexgen expands the paradigms with about 10 rules
+every verb has ~5 forms
+about 43 percent of the swaps did not reduce the ambiguity

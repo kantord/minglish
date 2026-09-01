@@ -73,7 +73,13 @@ right-branching share, and fronted tokens before the main head.
 | the user has 2 sessions | 2 | 2 | 1 | 25% | 2 |
 | the server stores a copy of 2 reports | 3 | 3 | 1 | 29% | 2 |
 | the copies are identical | 2 | 2 | 1 | 0% | 3 |
+| 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 22% | 7 |
+| people write every form of the file "lexicon.tsv" | 3 | 3 | 1 | 43% | 1 |
+| the expense of a reversal grows with the seed | 4 | 4 | 1 | 25% | 5 |
+| the tool Lexgen expands the paradigms with about 10 rules | 4 | 6 | 1 | 33% | 3 |
+| every verb has ~5 forms | 3 | 3 | 1 | 20% | 2 |
+| about 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 20% | 8 |
 
-**Aggregate:** 65 sentences parsed; mean peak-open 2.5, worst 5 (ceiling ≈ 4).
+**Aggregate:** 71 sentences parsed; mean peak-open 2.6, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓
