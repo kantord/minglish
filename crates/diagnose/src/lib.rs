@@ -86,7 +86,7 @@ fn word(t: &Tok) -> &str {
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
-        | Tok::Approx(w) | Tok::Some_(w) | Tok::Name(w) => w,
+        | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w) => w,
         Tok::Comma => ",",
     }
 }
@@ -136,6 +136,30 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
              \"agents must not check the input\" (bare plural + must not, ADR 0014)"
                 .to_string(),
         );
+    }
+    // causal connectives (ADR 0026): never sentence-initial; comma mandatory
+    if matches!(toks.first(), Some(Tok::Because(_))) {
+        out.push(
+            "\"because\" cannot start a sentence — write the result first: \
+             \"<result>, because <reason>\"; or cause first: \"<cause>, so <result>\" (ADR 0026)"
+                .to_string(),
+        );
+    }
+    if matches!(toks.first(), Some(Tok::So(_))) {
+        out.push(
+            "\"so\" cannot start a sentence — join the cause in the same sentence: \
+             \"<cause>, so <result>\" (ADR 0026)"
+                .to_string(),
+        );
+    }
+    for w in toks.windows(2) {
+        if matches!(w[1], Tok::So(_) | Tok::Because(_)) && !matches!(w[0], Tok::Comma) {
+            out.push(format!(
+                "a comma before \"{}\" is mandatory — \"<clause>, {} <clause>\" (ADR 0026)",
+                word(&w[1]),
+                word(&w[1])
+            ));
+        }
     }
     // no / some misplacement
     if toks.iter().skip(1).any(|t| matches!(t, Tok::No(_))) {
@@ -248,7 +272,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
 enum Term {
     Det, DetSg, Poss, Every, No, Some_, Num, Adj, NSg, NPl,
     VAny, PrepN, PrepV, Pron, CopAny, Conj, Neg, DoAny, ModAny, If, Then, Comma,
-    Ing, Ed, NameT, Pct, Approx,
+    Ing, Ed, NameT, Pct, Approx, So, Because,
 }
 
 fn term_of(t: &Tok) -> Vec<Term> {
@@ -262,6 +286,8 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Num(_) | Tok::NumPl(_) => vec![Term::Num],
         Tok::Percent(_) => vec![Term::Pct],
         Tok::Approx(_) => vec![Term::Approx],
+        Tok::So(_) => vec![Term::So],
+        Tok::Because(_) => vec![Term::Because],
         Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],
         Tok::NounPl(_) => vec![Term::NPl],
@@ -316,6 +342,13 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
         vec![N(CL), T(Term::If), N(CL)],
         vec![T(Term::DoAny), T(Term::Neg), N(VPX)],
         vec![N(VPX)], // bare imperative
+        // causal (ADR 0026) and its dirty shapes: missing comma, fronted because
+        vec![N(CL), T(Term::Comma), T(Term::So), N(CL)],
+        vec![N(CL), T(Term::Comma), T(Term::Because), N(CL)],
+        vec![N(CL), T(Term::So), N(CL)],
+        vec![N(CL), T(Term::Because), N(CL)],
+        vec![T(Term::Because), N(CL), T(Term::Comma), N(CL)],
+        vec![T(Term::So), N(CL)],
     ];
     p[CL] = vec![vec![N(NPS), N(PRED)]];
     p[NPS] = vec![

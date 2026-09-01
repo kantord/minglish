@@ -1275,5 +1275,40 @@
     "lemma": "explain",
     "category": "VERB_TRANS",
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+  },
+  {
+    "lemma": "so",
+    "category": "RESULT",
+    "note": "result connective: \"<cause>, so <result>\"; comma mandatory; degree and purpose senses unwritable by construction (ADR 0026)"
+  },
+  {
+    "lemma": "because",
+    "category": "REASON",
+    "note": "reason connective: \"<result>, because <reason>\"; comma mandatory; never sentence-initial (ADR 0026)"
+  },
+  {
+    "lemma": "since",
+    "category": "BANNED",
+    "advice": "\"since\" is causal or temporal - for a cause and its result write \"<cause>, so <result>\"; for a result and its reason write \"<result>, because <reason>\" (ADR 0026)"
+  },
+  {
+    "lemma": "hence",
+    "category": "BANNED",
+    "advice": "for a cause and its result write \"<cause>, so <result>\"; for a result and its reason write \"<result>, because <reason>\" (ADR 0026)"
+  },
+  {
+    "lemma": "therefore",
+    "category": "BANNED",
+    "advice": "for a cause and its result write \"<cause>, so <result>\"; for a result and its reason write \"<result>, because <reason>\" (ADR 0026)"
+  },
+  {
+    "lemma": "thus",
+    "category": "BANNED",
+    "advice": "for a cause and its result write \"<cause>, so <result>\"; for a result and its reason write \"<result>, because <reason>\" (ADR 0026)"
+  },
+  {
+    "lemma": "as",
+    "category": "BANNED",
+    "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); comparison has no minglish form yet"
   }
 ]

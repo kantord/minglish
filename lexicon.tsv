@@ -17,11 +17,13 @@ arrive	form	VERB_INTRANS_BASE	arrive
 arrived	form	VERB_INTRANS_ED	arrive
 arrives	form	VERB_INTRANS_3SG	arrive
 arriving	form	VERB_INTRANS_ING	arrive
+as	ban	-	"as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); comparison has no minglish form yet
 at	form	PREP_V	at
 attest	form	VERB_TRANS_BASE	attest
 attested	form	VERB_TRANS_ED	attest
 attesting	form	VERB_TRANS_ING	attest
 attests	form	VERB_TRANS_3SG	attest
+because	form	REASON	because
 big	form	ADJ	big
 binaries	form	NOUN_PL	binary
 binary	form	NOUN_SG	binary
@@ -182,6 +184,7 @@ has	form	VERB_TRANS_3SG	have
 have	form	VERB_TRANS_BASE	have
 having	form	VERB_TRANS_ING	have
 he	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+hence	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 her	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 hidden	form	ADJ	hidden
 his	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
@@ -371,8 +374,10 @@ showed	form	VERB_TRANS_ED	show
 showing	form	VERB_TRANS_ING	show
 shown	form	VERB_TRANS_ED	show
 shows	form	VERB_TRANS_3SG	show
+since	ban	-	"since" is causal or temporal - for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 six	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 small	form	ADJ	small
+so	form	RESULT	so
 some	form	QUANT_EXIST	some
 source	form	NOUN_SG	source
 source	reject	VERB	find
@@ -413,11 +418,13 @@ the	form	DET	the
 their	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 them	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 then	form	THEN	then
+therefore	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 these	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 they	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 this	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 those	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 three	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
+thus	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 to	form	PREP_V	to
 tool	form	NOUN_SG	tool
 tools	form	NOUN_PL	tool

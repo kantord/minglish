@@ -54,6 +54,8 @@ pub enum Tok {
     NumPl(String),
     Percent(String),
     Approx(String),
+    So(String),
+    Because(String),
     Some_(String),
     Name(String),
     Comma,
@@ -327,6 +329,8 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "QUANT_EXIST" => Tok::Some_(w),
         "PERCENT" => Tok::Percent(w),
         "APPROX" => Tok::Approx(w),
+        "RESULT" => Tok::So(w),
+        "REASON" => Tok::Because(w),
         // NAME is produced directly by the tokenizer, never from the lexicon
         _ => return None,
     })
@@ -445,7 +449,7 @@ fn clause_depth(tree: &Tree) -> usize {
         Tree::Leaf { .. } => 0,
         Tree::Node { label, children, .. } => {
             let inner = children.iter().map(clause_depth).max().unwrap_or(0);
-            let is_clause = matches!(*label, "S" | "Clause" | "Cond" | "Prohib" | "Imp");
+            let is_clause = matches!(*label, "S" | "Clause" | "Cond" | "Causal" | "Prohib" | "Imp");
             inner + usize::from(is_clause)
         }
     }

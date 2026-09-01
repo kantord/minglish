@@ -23,9 +23,9 @@ original.
 | 12 | 30 | 169.3 | 64 | 259.5 | 1.53 |
 | 13 | 6 | 23.1 | 9 | 30.9 | 1.34 |
 | 14 | 26 | 108.5 | 32 | 123.5 | 1.14 |
-| 15 | 28 | 114.5 | 19 | 65.8 | 0.57 |
+| 15 | 28 | 114.5 | 20 | 68.2 | 0.60 |
 
-**Aggregate:** 15 pairs — words 251 → 342 (+36%), cost 1045.8 → 1215.0 (**ratio 1.16**)
+**Aggregate:** 15 pairs — words 251 → 343 (+37%), cost 1045.8 → 1217.5 (**ratio 1.16**)
 
 ## Before → after
 
@@ -144,10 +144,10 @@ Declared loss: idiom,update
 **15.** BEFORE (28 words, cost 114.5)
 > Reversing this later (e.g. moving to a database or to per-word files) means migrating accumulated curation, which gets more expensive as the seed grows — hence this ADR.
 
-AFTER (19 words, cost 65.8, **57%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 25%
-> A reversal migrates every entry. The expense of a reversal grows with the seed. The maintainers record the decision.
+AFTER (20 words, cost 68.2, **60%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 26%
+> A reversal migrates every entry. The expense of a reversal grows with the seed, so the maintainers record the decision.
 
-Declared loss: example,causal
+Declared loss: example
 
 
 *Caveats: unigram surprisal ignores context and structure; meaning

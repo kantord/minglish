@@ -1367,3 +1367,75 @@ open=4 maxdep=6 depth=1 right=20% fronted=8
     )
   )
 )
+
+### the expense of a reversal grows with the seed, so the maintainers record the decision
+open=4 maxdep=5 depth=2 right=27% fronted=10
+(Causal h=2
+  (Clause h=1
+    (NP h=1
+      the
+      expense
+      (OfPP h=1
+        of
+        (NP h=1
+          a
+          reversal
+        )
+      )
+    )
+    (VP h=0
+      grows
+      (PP h=1
+        with
+        (NP h=1
+          the
+          seed
+        )
+      )
+    )
+  )
+  ,
+  so
+  (Clause h=1
+    (NP h=1
+      the
+      maintainers
+    )
+    (VP h=0
+      record
+      (NP h=1
+        the
+        decision
+      )
+    )
+  )
+)
+
+### the agent retries the request, because the test failed
+open=3 maxdep=4 depth=2 right=22% fronted=6
+(Causal h=2
+  (Clause h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
+      (NP h=1
+        the
+        request
+      )
+    )
+  )
+  ,
+  because
+  (Clause h=1
+    (NP h=1
+      the
+      test
+    )
+    (VP h=0
+      failed
+    )
+  )
+)

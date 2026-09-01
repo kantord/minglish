@@ -85,6 +85,12 @@ fn banned_structures_reject() {
         "the agent reads about the file",
         "about one file fails",
         "~ 5 forms fail",
+        // causal: comma mandatory, never sentence-initial, no coordination inside (ADR 0026)
+        "the test fails so the agent retries the request",
+        "because the test fails, the agent retries the request",
+        "so the agent retries the request",
+        "the test fails, so the agent retries the request and the queue is empty",
+        "the agent retries the request, because the test fails hence the queue is empty",
     ];
     for s in banned {
         assert!(

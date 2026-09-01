@@ -71,3 +71,5 @@ the expense of a reversal grows with the seed
 the tool Lexgen expands the paradigms with about 10 rules
 every verb has ~5 forms
 about 43 percent of the swaps did not reduce the ambiguity
+the expense of a reversal grows with the seed, so the maintainers record the decision
+the agent retries the request, because the test failed

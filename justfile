@@ -17,6 +17,14 @@ showcase:
 lint +SENTENCES:
     -cargo run -q -p diagnose -- "$@"
 
+# document-level lint of one markdown file (parse rate, topic continuity, relation inventory)
+lint-file FILE:
+    python3 scripts/lint-file.py {{FILE}}
+
+# regenerate docs/coherence-report.md over every ADR
+coherence:
+    ./scripts/coherence.sh
+
 # MILESTONE: run the LLM repair-loop harness (needs OPENROUTER_API_KEY;
 # see tests/agent-cases/README.md — results need human review)
 agenttest concurrency="64":

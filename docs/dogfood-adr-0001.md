@@ -106,4 +106,5 @@ now listed in the lexicon report so the ADR 0023 hole is visible.
   note: the odd phrasing may be the better one; the real question is how a
   domain model would separate the noun and verb senses of *commit* under
   the one-tag rule (queue: ambitransitives).
-
+- Pair 15 follow-up: ADR 0026 (causal connectives) closed the debt —
+  "…grows with the seed, so the maintainers record the decision".

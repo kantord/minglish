@@ -79,7 +79,9 @@ right-branching share, and fronted tokens before the main head.
 | the tool Lexgen expands the paradigms with about 10 rules | 4 | 6 | 1 | 33% | 3 |
 | every verb has ~5 forms | 3 | 3 | 1 | 20% | 2 |
 | about 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 20% | 8 |
+| the expense of a reversal grows with the seed, so the maintainers record the decision | 4 | 5 | 2 | 27% | 10 |
+| the agent retries the request, because the test failed | 3 | 4 | 2 | 22% | 6 |
 
-**Aggregate:** 71 sentences parsed; mean peak-open 2.6, worst 5 (ceiling ≈ 4).
+**Aggregate:** 73 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

@@ -68,4 +68,4 @@ data does not choose the words.
   differences. If a person edits the file `lexicon.tsv`, then the script
   `scripts/check.sh` fails.
 - A reversal migrates every entry. The expense of a reversal grows with
-  the seed. The maintainers record the decision.
+  the seed, so the maintainers record the decision.

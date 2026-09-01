@@ -53,6 +53,8 @@ extern {
         "NUM_PL" => Tok::NumPl(<String>),
         "PERCENT" => Tok::Percent(<String>),
         "APPROX" => Tok::Approx(<String>),
+        "RESULT" => Tok::So(<String>),
+        "REASON" => Tok::Because(<String>),
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
@@ -98,6 +100,8 @@ LNum: Tree = <l:@L> <w:"NUM_SG"> => leaf(l, w);
 LNumPl: Tree = <l:@L> <w:"NUM_PL"> => leaf(l, w);
 LPercent: Tree = <l:@L> <w:"PERCENT"> => leaf(l, w);
 LApprox: Tree = <l:@L> <w:"APPROX"> => leaf(l, w);
+LSo: Tree = <l:@L> <w:"RESULT"> => leaf(l, w);
+LBecause: Tree = <l:@L> <w:"REASON"> => leaf(l, w);
 LSome: Tree = <l:@L> <w:"SOME"> => leaf(l, w);
 LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
 
@@ -145,6 +149,7 @@ Tailn<P>: Tree = {
 pub Sentence: Tree = {
     Statement,
     Conditional,
+    Causal,
     Prohibition,
     Imperative,
 };
@@ -168,6 +173,16 @@ Clause: Tree = {
 Conditional: Tree = {
     <i:LIf> <c:Clause> <cm:LComma> <t:LThen> <m:Clause> =>
         nd("Cond", 4, vec![Some(i), Some(c), Some(cm), Some(t), Some(m)]),
+};
+
+// <clause> , so <clause> — cause given, result new;
+// <clause> , because <clause> — result given, reason new (ADR 0026).
+// Comma mandatory; clauses carry no coordination, so scope is fixed.
+Causal: Tree = {
+    <c:Clause> <cm:LComma> <s:LSo> <r:Clause> =>
+        nd("Causal", 2, vec![Some(c), Some(cm), Some(s), Some(r)]),
+    <r:Clause> <cm:LComma> <b:LBecause> <c:Clause> =>
+        nd("Causal", 2, vec![Some(r), Some(cm), Some(b), Some(c)]),
 };
 
 // do not <verb …> — prohibition (ADR 0005).

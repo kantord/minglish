@@ -18,29 +18,29 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 |---|---|---|
 | OK | 6434 | 29.5% |
 | REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 1051 | 4.8% |
+| MISMATCH (enabled word, uncovered POS) | 1136 | 5.2% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 12240 | 56.0% |
+| OOV | 12155 | 55.6% |
 
 ## OOV by gold UPOS
 
 - NOUN: 3900
 - VERB: 2047
-- ADJ: 1736
+- ADJ: 1734
 - PRON: 1147
-- ADV: 1145
+- ADV: 1085
 - AUX: 639
 - NUM: 502
-- ADP: 426
+- ADP: 424
 - DET: 270
-- SCONJ: 220
+- SCONJ: 199
 - INTJ: 112
 - PART: 70
 - CCONJ: 26
 
 ## Top missing lemmas (curation candidates — human decides)
 
-be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (×127), will/AUX (×116), this/DET (×111), that/PRON (×105), would/AUX (×91), go/VERB (×86), he/PRON (×82), that/SCONJ (×81), get/VERB (×75), great/ADJ (×72), by/ADP (×71), 's/PART (×70), service/NOUN (×67), know/VERB (×64), so/ADV (×60), what/PRON (×59), make/VERB (×58), just/ADV (×57), very/ADV (×57), place/NOUN (×54), want/VERB (×53), our/PRON (×50), time/NOUN (×50), thanks/NOUN (×49), this/PRON (×49), there/PRON (×48), all/DET (×46), up/ADP (×46), any/DET (×45), could/AUX (×44), take/VERB (×44), his/PRON (×40), think/VERB (×40), food/NOUN (×39), look/VERB (×38), say/VERB (×38)
+be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (×127), will/AUX (×116), this/DET (×111), that/PRON (×105), would/AUX (×91), go/VERB (×86), he/PRON (×82), that/SCONJ (×81), get/VERB (×75), great/ADJ (×72), by/ADP (×71), 's/PART (×70), service/NOUN (×67), know/VERB (×64), what/PRON (×59), make/VERB (×58), just/ADV (×57), very/ADV (×57), place/NOUN (×54), want/VERB (×53), our/PRON (×50), time/NOUN (×50), thanks/NOUN (×49), this/PRON (×49), there/PRON (×48), all/DET (×46), up/ADP (×46), any/DET (×45), could/AUX (×44), take/VERB (×44), his/PRON (×40), think/VERB (×40), food/NOUN (×39), look/VERB (×38), say/VERB (×38), as/ADP (×36)
 
 ## Redirect hits (the rejection rules doing their job)
 
@@ -63,17 +63,17 @@ be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (�
 - have used as AUX ×168
 - not used as PART ×100
 - I used as PRON ×70
+- so used as ADV ×61
 - do used as VERB ×45
 - be used as VERB ×36
 - one used as NUM ×34
 - about used as ADP ×26
 - for used as SCONJ ×24
 - one used as NOUN ×18
+- because used as SCONJ ×17
 - in used as ADV ×11
 - in used as SCONJ ×11
 - of used as SCONJ ×10
-- to used as SCONJ ×10
-- no used as INTJ ×9
 
 ## Samples for manual review
 

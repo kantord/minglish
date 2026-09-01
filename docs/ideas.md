@@ -150,3 +150,24 @@ coarse gap detector), cross-encoders (duplicate NLI without the
 explanation), LM log-probability ranking (spends API budget on a question
 the redirect table already answers), late-interaction retrieval (a search
 problem this project does not have).
+
+## Paragraph repair: fix-and-compare in context (agreed design, 2026-09-01)
+
+Sentence-level fixes can be right in isolation and wrong for the paragraph
+(given-before-new, topic continuity). Agreed flow, to build after the
+coherence measurement has run:
+
+1. `just autofix` sends each **paragraph** to the repair loop with the
+   per-sentence linter verdicts, the skill, and the neighbouring sentences.
+2. The model returns a rewritten paragraph plus a declared-drops line
+   (ADR 0012 contract, as in corpus/pairs.tsv).
+3. The tool lints every sentence of the proposal, computes the document
+   metrics (parse rate, topic continuity, relation inventory) for original
+   and proposal, and writes one YAML per paragraph in `tests/paragraph-cases/`
+   (original, every trial's proposal, metrics, `verdict`) — the agent-cases
+   pattern at paragraph scale.
+4. The report renders original and proposals side by side with metric
+   deltas, ranked parse-rate → continuity → cost. Display order only, never
+   a gate. Accepted rewrites are applied by hand until verdicts show the
+   proposals are trustworthy.
+

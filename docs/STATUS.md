@@ -7,7 +7,7 @@ derivable from the code, ADRs, or git history.
 
 - `CONTEXT.md` — glossary (authoritative vocabulary; "Rejection" defines the
   ban/gap/load-warning triage that governs all linting work).
-- `docs/adr/0001–0025` — every language and policy decision, each citing its
+- `docs/adr/0001–0026` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -20,15 +20,17 @@ derivable from the code, ADRs, or git history.
 - `justfile` — check / showcase / lint / agenttest / autofix targets.
 - `docs/review-checklist.md` — known failure types to check in every
   evaluation.
+- `scripts/lint-file.py` / `just lint-file <md>` — document-level lint:
+  per-sentence verdicts, topic continuity, relation inventory. `just
+  coherence` regenerates `docs/coherence-report.md` over all ADRs.
 
 ## Open decision queue (in order, with standing recommendations)
 
-1. **Causal connective** (*because / so / hence*): no minglish form; the
-   ADR 0001 rewrite drops "hence this ADR" as declared tier-1 debt
-   (pair 15, `causal`). ADR 0012 counts causal structure as propositional,
-   so this is the first queue item. Needs its own interview: clause order,
-   first-token telegraph (*because* fronted vs trailing), and whether *so*
-   (result) and *because* (reason) are one construction or two.
+1. **Coherence relations beyond cause** (exemplification, sequence,
+   concession, purpose, elaboration) and cross-sentence relations: decide
+   from `docs/coherence-report.md` (relation inventory + topic continuity,
+   `just coherence`), not from word counts. Next: the paragraph repair flow
+   (agreed design in docs/ideas.md, "Paragraph repair").
 2. **only** (gap case adr0001-04) — real but rare (absent from sweep top-30);
    deprioritized by data.
 3. Parked with design notes in `docs/ideas.md`: vocative (directed

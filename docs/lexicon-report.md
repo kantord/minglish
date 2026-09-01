@@ -4,8 +4,8 @@
 
 ## Summary
 
-- 206 lemmas, 387 surface forms, 40 redirects, 37 waivers
-- Lemmas per category: ADJ 18, APPROX 1, BANNED 31, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 75, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 6, VERB_TRANS 39
+- 213 lemmas, 389 surface forms, 40 redirects, 37 waivers
+- Lemmas per category: ADJ 18, APPROX 1, BANNED 36, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 75, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 6, VERB_TRANS 39
 
 ## Frequency (open-class lemmas)
 
@@ -99,5 +99,5 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 63/71 sentences fully lexicalized
+- 65/73 sentences fully lexicalized
 - Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 5 (×1)

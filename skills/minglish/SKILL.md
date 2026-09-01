@@ -46,6 +46,10 @@ rejected sentence, keep its meaning; change only what the error requires.
    - some / not-all: `some agents retry the request` ·
      `some agents do not retry the request` (some + plural, subject only)
 9. Possession: `every word has one tag` (`one` means exactly one)
+11. Causal (comma mandatory, never sentence-initial, no `and`/`or` inside):
+    cause given, result new: `the seed grows, so the expense grows` ·
+    result given, reason new: `the agent retries the request, because the
+    test failed`. `since`, `hence`, `therefore`, `thus`, `as` do not exist.
 10. Counts are digits with a plural noun: `the agent deleted 3 files` ·
     `3 agents retry the request`. `one` stays a word (`one file`, never
     `1`). Never `0` or `zero`: write `no agent retries the request` or

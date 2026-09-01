@@ -37,6 +37,8 @@ run "the agent reads the file" \
     "43 percent of the swaps did not reduce the ambiguity" \
     "the tool Lexgen expands the paradigms with about 10 rules" \
     "every verb has ~5 forms" \
+    "the expense of a reversal grows with the seed, so the maintainers record the decision" \
+    "the agent retries the request, because the test failed" \
     "people write every form of the file \"lexicon.tsv\"" \
     "The agent reads the file" \
     "delete the file"
@@ -144,6 +146,15 @@ run "the files are big"
 echo
 run "the agent deleted 3 file"
 run "the agent deleted 3 files"
+echo
+run "the test fails so the agent retries the request"
+run "the test fails, so the agent retries the request"
+echo
+run "because the test fails, the agent retries the request"
+run "the agent retries the request, because the test fails"
+echo
+run "the seed grows. therefore the expense grows"
+run "the seed grows, so the expense grows"
 echo
 run "the agent stopped"
 run "the agent stopped the process"

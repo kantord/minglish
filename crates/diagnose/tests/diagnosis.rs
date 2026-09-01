@@ -44,6 +44,9 @@ fn rejections_get_named_diagnoses() {
         ("the agent stopped", "needs an object"),
         ("the agent deleted 3 file", "plural noun"),
         ("the user has one sessions", "singular noun"),
+        ("the test fails so the agent retries the request", "comma before \"so\""),
+        ("because the test fails, the agent retries the request", "cannot start a sentence"),
+        ("so the agent retries the request", "cannot start a sentence"),
     ];
     for (sentence, expect) in style_cases {
         match diagnose(&lexicon, sentence) {

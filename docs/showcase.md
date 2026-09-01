@@ -47,6 +47,10 @@
   parses uniquely — peak-open 4, max-dep 6, depth 1, right-branching 33%
 ✓ every verb has ~5 forms
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
+✓ the expense of a reversal grows with the seed, so the maintainers record the decision
+  parses uniquely — peak-open 4, max-dep 5, depth 2, right-branching 27%
+✓ the agent retries the request, because the test failed
+  parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 22%
 ✓ people write every form of the file "lexicon.tsv"
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 43%
 ✓ The agent reads the file
@@ -223,6 +227,23 @@ the advice:
     - "3 file" — a number takes a plural noun (ADR 0022)
 ✓ the agent deleted 3 files
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
+
+✗ the test fails so the agent retries the request
+  STYLE:
+    - a comma before "so" is mandatory — "<clause>, so <clause>" (ADR 0026)
+✓ the test fails, so the agent retries the request
+  parses uniquely — peak-open 2, max-dep 3, depth 2, right-branching 22%
+
+✗ because the test fails, the agent retries the request
+  STYLE:
+    - "because" cannot start a sentence — write the result first: "<result>, because <reason>"; or cause first: "<cause>, so <result>" (ADR 0026)
+✓ the agent retries the request, because the test fails
+  parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 22%
+
+✗ the seed grows. therefore the expense grows
+  WORD: "therefore" is banned in minglish — for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
+✓ the seed grows, so the expense grows
+  parses uniquely — peak-open 2, max-dep 3, depth 2, right-branching 14%
 
 ✗ the agent stopped
   STYLE:
