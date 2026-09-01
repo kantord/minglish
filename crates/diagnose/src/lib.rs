@@ -32,7 +32,9 @@ pub enum Diagnosis {
 pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     match parse(lexicon, sentence) {
         Ok(tree) => return Diagnosis::Clean(metrics(&tree)),
-        Err(e) if e.contains("not a minglish word") || e.contains("not yet usable") => {
+        Err(e) if e.contains("not a minglish word")
+            || e.contains("is banned in minglish")
+            || e.contains("not yet usable") => {
             return Diagnosis::Word(e)
         }
         Err(_) => {}

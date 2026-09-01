@@ -97,22 +97,22 @@ the advice:
 
 ```
 ✗ it fails
-  WORD: "it" is not a minglish word — third-person reference is banned - repeat the noun you mean (ADR 0002)
+  WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 ✓ the test fails
   parses uniquely — peak-open 1, max-dep 1, depth 1, right-branching 0%
 
 ✗ the agent may fail
-  WORD: "may" is not a minglish word — for permission write "can"; for possibility rephrase the sentence (ADR 0009)
+  WORD: "may" is banned in minglish — for permission write "can"; for possibility rephrase the sentence (ADR 0009)
 ✓ the agent can fail
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 0%
 
 ✗ please delete the file
-  WORD: "please" is not a minglish word — politeness markers are not minglish - state the instruction directly or write "you must ..."
+  WORD: "please" is banned in minglish — politeness markers are not minglish - state the instruction directly or write "you must ..."
 ✓ delete the file
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 50%
 
 ✗ the agent deleted three files
-  WORD: "three" is not a minglish word — counts are digits: write "3 files", not "three files" (ADR 0022)
+  WORD: "three" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022)
 ✓ the agent deleted 3 files
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
 
@@ -132,12 +132,12 @@ the advice:
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
 
 ✗ the same file fails
-  WORD: "same" is not a minglish word — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
+  WORD: "same" is banned in minglish — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
 ✓ the file fails
   parses uniquely — peak-open 1, max-dep 1, depth 1, right-branching 0%
 
 ✗ the copies are the same
-  WORD: "same" is not a minglish word — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
+  WORD: "same" is banned in minglish — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
 ✓ the copies are identical
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 0%
 ```

@@ -64,11 +64,17 @@ pub struct LexError {
     /// From the lexicon's reject table, when the unknown word is a known
     /// rejected use: "use \"X\" instead".
     pub suggestion: Option<String>,
+    /// The word is deliberately banned (ban table), not merely unknown.
+    pub banned: bool,
 }
 
 impl std::fmt::Display for LexError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "\"{}\" is not a minglish word", self.word)?;
+        if self.banned {
+            write!(f, "\"{}\" is banned in minglish", self.word)?;
+        } else {
+            write!(f, "\"{}\" is not a minglish word", self.word)?;
+        }
         if let Some(s) = &self.suggestion {
             write!(f, " — {s}")?;
         }
@@ -162,6 +168,7 @@ impl Lexicon {
                         word: word.to_string(),
                         position: pos,
                         suggestion: Some(suggestion),
+                        banned: false,
                     })?;
                     out.push((pos, tok));
                     if had_comma {
@@ -189,6 +196,7 @@ impl Lexicon {
                                 "minglish words are lowercase (\"{folded}\"); a name \
                                  that equals a word needs quotes"
                             )),
+                            banned: false,
                         });
                     } else if capitalized && pos > 0 {
                         out.push((pos, Tok::Name(word.to_string())));
@@ -204,6 +212,7 @@ impl Lexicon {
                                  (\"delete the file\")"
                                     .to_string(),
                             ),
+                            banned: false,
                         });
                     } else {
                         word
@@ -216,6 +225,7 @@ impl Lexicon {
                         word: word.to_string(),
                         position: pos,
                         suggestion: Some(advice.clone()),
+                        banned: true,
                     });
                 }
                 let tag = self.forms.get(word).ok_or_else(|| LexError {
@@ -227,11 +237,13 @@ impl Lexicon {
                             .collect::<Vec<_>>()
                             .join("; ")
                     }),
+                    banned: false,
                 })?;
                 let tok = tag_to_tok(tag, word).ok_or_else(|| LexError {
                     word: word.to_string(),
                     position: pos,
                     suggestion: Some(format!("its category {tag} is not yet usable in any sentence structure")),
+                    banned: false,
                 })?;
                 out.push((pos, tok));
             }

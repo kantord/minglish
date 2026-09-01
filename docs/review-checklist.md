@@ -37,7 +37,8 @@ notes where. Add an entry when a new type is caught; never delete one.
   advice, fixed 2026-09-01). Write templates as `"the <noun>"` and mark the
   example as an example.
 - **Wrong error class**: a deliberately banned word reported as "not a
-  minglish word", so bans read as typos. (open)
+  minglish word", so bans read as typos (fixed 2026-09-01: bans now say
+  "is banned in minglish").
 - **One reading named, the other meant**: a capitalized verb at sentence
   start diagnosed as a bad name when an imperative was meant (agent run 4;
   fixed by dual-reading advice, ADR 0019).
@@ -65,6 +66,7 @@ notes where. Add an entry when a new type is caught; never delete one.
 - **Shell re-split the sentence**: unquoted multi-word input lints word by
   word (justfile `lint`, fixed with positional arguments).
 - **Nonzero exit on rejection read as a crash**: the linter's exit code
-  reports rejection; `just` prints "recipe failed" on top of it. (open)
+  reports rejection; `just` printed "recipe failed" on top of it (fixed
+  2026-09-01: the recipe ignores the exit status).
 - **Stale generated artifact**: report or lexicon not regenerated after a
   seed change; `./scripts/check.sh` catches drift only against the index.
