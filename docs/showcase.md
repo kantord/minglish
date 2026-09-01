@@ -132,12 +132,12 @@ the advice:
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
 
 ✗ the same file fails
-  WORD: "same" is not a minglish word — for the thing already named write "the file"; for two things that match write "identical" ("the copies are identical") (ADR 0023)
+  WORD: "same" is not a minglish word — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
 ✓ the file fails
   parses uniquely — peak-open 1, max-dep 1, depth 1, right-branching 0%
 
 ✗ the copies are the same
-  WORD: "same" is not a minglish word — for the thing already named write "the file"; for two things that match write "identical" ("the copies are identical") (ADR 0023)
+  WORD: "same" is not a minglish word — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
 ✓ the copies are identical
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 0%
 ```

@@ -18,6 +18,8 @@ derivable from the code, ADRs, or git history.
 - `tests/dogfood-cases/` — the standard dogfood flow (README there) and open
   gap cases. `tests/agent-cases/` — LLM repair snapshots with human verdicts.
 - `justfile` — check / showcase / lint / agenttest / autofix targets.
+- `docs/review-checklist.md` — known failure types to check in every
+  evaluation.
 
 ## Open decision queue (in order, with standing recommendations)
 
@@ -51,6 +53,8 @@ derivable from the code, ADRs, or git history.
   and drift-checks committed artifacts.
 - The user runs all `git commit`s and all API-spending runs (agenttest,
   autofix) themselves; those runs are milestones, not routine.
+- Every review of linter output, rewrites, or agent snapshots goes through
+  `docs/review-checklist.md` (known failure types; append, never delete).
 - Dogfood flow: lint own docs → useful flag → rewrite in place (English
   quality first — parse-validity is NEVER the rewrite target; well-written
   but unparseable = gap evidence) → else file gap case.

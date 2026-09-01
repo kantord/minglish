@@ -805,7 +805,7 @@
   {
     "lemma": "same",
     "category": "BANNED",
-    "advice": "for the thing already named write \"the file\"; for two things that match write \"identical\" (\"the copies are identical\") (ADR 0023)"
+    "advice": "\"same\" has two meanings - for that very thing, repeat the noun with \"the\" (\"the file\", not \"the same file\"); for two things that match, write \"identical\" (\"the copies are identical\") (ADR 0023)"
   },
   {
     "lemma": "zero",

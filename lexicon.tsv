@@ -197,7 +197,7 @@ return	reject	NOUN	response
 returned	form	VERB_TRANS_ED	return
 returning	form	VERB_TRANS_ING	return
 returns	form	VERB_TRANS_3SG	return
-same	ban	-	for the thing already named write "the file"; for two things that match write "identical" ("the copies are identical") (ADR 0023)
+same	ban	-	"same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
 script	form	NOUN_SG	script
 script	reject	VERB	write
 scripts	form	NOUN_PL	script

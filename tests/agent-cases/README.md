@@ -7,7 +7,8 @@ need human review; this is a snapshot-boosted manual review flow, not a
 cheap replicable snapshot test.
 
 Fields: `input` (the rejected sentence) · `snapshot` (latest valid repair)
-· `verdict` — your review of the snapshot: `ideal` | `needs-fix` |
+· `verdict` — your review of the snapshot against `docs/review-checklist.md`:
+`ideal` | `needs-fix` |
 `unreviewed` (auto-reset whenever a run changes the snapshot) ·
 `unique_outputs` (every output ever seen, failures included — the mining
 corpus) · `runs` (full per-trial logs).
