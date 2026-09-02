@@ -233,3 +233,19 @@
   - condition: 1 ✓ if …, then
   - sequence: 1 ✗ no form
 
+## docs/adr/0029-ordinals-and-scales.md
+
+- Sentences: 49; parse: 49/49 (100%)
+- Topic continuity: 10/40 consecutive pairs share the subject with the sentence before (25%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - condition: 1 ✓ if …, then
+  - sequence: 5 ✗ no form
+
+## docs/adr/0030-comparatives.md
+
+- Sentences: 33; parse: 33/33 (100%)
+- Topic continuity: 9/27 consecutive pairs share the subject with the sentence before (33%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 1 ✓ , so
+  - condition: 3 ✓ if …, then
+

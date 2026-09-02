@@ -472,5 +472,25 @@
       "name": "Markdown"
     },
     "definition": "Markdown is the format of the documents. Markdown turns a dash into a bullet."
+  },
+  {
+    "lemma": "comparative",
+    "category": "NOUN",
+    "definition": "a Comparative is a Complement. a Comparative compares the subject with a standard. the phrase \"heavier than the length\" is a Comparative."
+  },
+  {
+    "lemma": "ordinal",
+    "category": "NOUN",
+    "definition": "an Ordinal marks a position in an order. the word \"first\" is an Ordinal. the string \"4th\" is an Ordinal."
+  },
+  {
+    "lemma": "scale word",
+    "definition": "a Scale Word follows the digits. the word \"million\" is a Scale Word. the phrase \"20 million files\" has a Scale Word.",
+    "category": "NOUN"
+  },
+  {
+    "lemma": "number word",
+    "definition": "a Number Word writes a number with letters. the word \"three\" is a Number Word. the language bans every Number Word.",
+    "category": "NOUN"
   }
 ]

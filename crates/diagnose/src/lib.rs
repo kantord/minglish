@@ -97,7 +97,8 @@ fn word(t: &Tok) -> &str {
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
-        | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w) => w,
+        | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w)
+        | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) => w,
         Tok::Comma => ",",
         Tok::Colon => ":",
     }
@@ -181,7 +182,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         );
     }
     for w in toks.windows(2) {
-        if matches!(w[0], Tok::Some_(_)) && matches!(w[1], Tok::NounSg(_) | Tok::Adj(_)) {
+        if matches!(w[0], Tok::Some_(_)) && matches!(w[1], Tok::NounSg(_) | Tok::Adj(_) | Tok::AdjLong(_)) {
             if let [Tok::Some_(_), Tok::NounSg(_)] = w {
                 out.push("\"some\" takes a plural noun (ADR 0017)".to_string());
             }
@@ -307,7 +308,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         if let Tok::NounSg(n) = t {
             // look back through adjectives to the word before the noun phrase
             let mut j = i;
-            while j > 0 && matches!(toks[j - 1], Tok::Adj(_)) {
+            while j > 0 && matches!(toks[j - 1], Tok::Adj(_) | Tok::AdjLong(_)) {
                 j -= 1;
             }
             let prev = j.checked_sub(1).map(|k| &toks[k]);
@@ -345,11 +346,38 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             }
         }
     }
+    // a determiner before a Name: "the Triage" (a Name takes no determiner)
+    for w in toks.windows(2) {
+        if is_det(&w[0]) && matches!(w[1], Tok::Name(_)) && !matches!(w[0], Tok::NumPl(_)) {
+            out.push(format!(
+                "\"{} {}\" — a Name takes no determiner: write \"{}\", or introduce it with a noun: \"the tool {}\" (ADR 0018)",
+                word(&w[0]), word(&w[1]), word(&w[1]), word(&w[1])
+            ));
+        }
+    }
+    // a stray "not" inside a noun phrase: "a person not the speaker"
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Neg(_)) && i > 0
+            && !matches!(toks[i - 1], Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::DoBase(_) | Tok::Do3(_) | Tok::DoPast(_) | Tok::ModalMust(_))
+        {
+            out.push("\"not\" negates the verb only — write \"does not <verb>\" or \"is not <adjective>\"; a noun phrase cannot carry \"not\" (ADR 0005)".to_string());
+        }
+    }
+    // comma splice: a comma between two clauses with no connective after it
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Comma) && !matches!(toks.get(i + 1), Some(Tok::So(_) | Tok::Because(_) | Tok::Then(_) | Tok::Conj(_)))
+            && !matches!(toks.first(), Some(Tok::If(_)))
+            && toks[..i].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)))
+            && toks[i + 1..].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)))
+        {
+            out.push("a comma cannot join 2 clauses — write 2 sentences, or \"<clause>, so <clause>\" / \"<clause>, because <clause>\" (ADR 0026)".to_string());
+        }
+    }
     // (b) adjective used as a noun: "a possessive", "the future" at the end
     for (i, t) in toks.iter().enumerate() {
-        if let Tok::Adj(a) = t {
+        if let Tok::Adj(a) | Tok::AdjLong(a) = t {
             let after_det = i > 0 && is_det(&toks[i - 1]);
-            let no_noun = !matches!(toks.get(i + 1), Some(Tok::Adj(_) | Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)));
+            let no_noun = !matches!(toks.get(i + 1), Some(Tok::Adj(_) | Tok::AdjLong(_) | Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)));
             if after_det && no_noun {
                 out.push(format!("\"{a}\" is an adjective — add the noun it describes: \"a {a} <noun>\""));
             }
@@ -457,7 +485,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
                  prepositional phrase; use a verb: \"the Lexicon contains the pronouns\" (ADR 0003)",
                 word(t)
             )),
-            (Some(Tok::Adj(a)), Some(Tok::PrepV(p))) => out.push(format!(
+            (Some(Tok::Adj(a) | Tok::AdjLong(a)), Some(Tok::PrepV(p))) => out.push(format!(
                 "\"{a} {p} …\" — an adjective cannot take a prepositional phrase yet; \
                  restructure with a verb, or split the sentence (deferred, ADR 0023)"
             )),
@@ -473,7 +501,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         if toks.get(j).is_some_and(is_det) {
             j += 1;
         }
-        while matches!(toks.get(j), Some(Tok::Adj(_))) {
+        while matches!(toks.get(j), Some(Tok::Adj(_) | Tok::AdjLong(_))) {
             j += 1;
         }
         let verb_before = toks[..i].iter().any(|t| {
@@ -482,7 +510,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
                     | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))
         });
         if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
-            && (!verb_before || toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::Comma | Tok::Conj(_))))
+            && (!verb_before || toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::PrepN(_) | Tok::Comma | Tok::Conj(_))))
         {
             out.push(
                 "noun phrases cannot be coordinated — repeat the verb: \"the mechanism stores \
@@ -498,7 +526,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             let object_start = matches!(
                 next,
                 Some(Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Approx(_) | Tok::Every(_)
-                    | Tok::Adj(_) | Tok::NounSg(_) | Tok::NounPl(_))
+                    | Tok::Adj(_) | Tok::AdjLong(_) | Tok::NounSg(_) | Tok::NounPl(_))
             );
             let have_like = ["have", "has", "had"].contains(&word(t));
             if !object_start && !have_like && (next.is_none() || matches!(next, Some(Tok::PrepV(_)))) {
@@ -517,7 +545,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
 // ------------------------------------------------ slot (redirect) findings --
 
 fn is_det(t: &Tok) -> bool {
-    matches!(t, Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Every(_) | Tok::No(_) | Tok::Some_(_))
+    matches!(t, Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Every(_) | Tok::No(_) | Tok::Some_(_) | Tok::Ord(_) | Tok::Scale(_))
 }
 
 fn is_noun_head(t: &Tok) -> bool {
@@ -529,6 +557,24 @@ fn is_noun_head(t: &Tok) -> bool {
 /// files the report" (files is a noun; verb → submit).
 fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
     let mut out = Vec::new();
+    // comparatives (ADR 0030): "more big" when an inflected form exists;
+    // a comparative needs its standard ("than …")
+    for (i, t) in toks.iter().enumerate() {
+        if let Tok::More(_) = t {
+            if let Some(Tok::Adj(a) | Tok::AdjLong(a)) = toks.get(i + 1) {
+                if let Some(c) = lexicon.comparative(a) {
+                    out.push(format!("\"more {a}\" — write \"{c}\" (short adjectives inflect, ADR 0030)"));
+                }
+            }
+        }
+        if matches!(t, Tok::AdjCmp(_)) && !matches!(toks.get(i + 1), Some(Tok::Than(_))) {
+            out.push(format!("\"{}\" needs the standard: \"{} than <noun phrase>\" (ADR 0030)", word(t), word(t)));
+        }
+        if matches!(t, Tok::Scale(_)) && !(i > 0 && matches!(toks[i - 1], Tok::NumPl(_))) {
+            out.push(format!("\"{}\" follows digits: \"20 {}\" (ADR 0029)", word(t), word(t)));
+        }
+    }
+
     for (i, t) in toks.iter().enumerate() {
         let prev = i.checked_sub(1).map(|j| &toks[j]);
         let next = toks.get(i + 1);
@@ -544,7 +590,7 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
             }
             // noun form in a verb slot: after a subject head, before an object start
             Tok::NounSg(w) | Tok::NounPl(w)
-                if prev.is_some_and(is_noun_head) && next.is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_))) =>
+                if prev.is_some_and(is_noun_head) && next.is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_) | Tok::AdjLong(_))) =>
             {
                 if let Some(s) = lexicon.redirect(w, "VERB") {
                     out.push(format!("\"{w}\" is a noun in minglish — as a verb use \"{s}\""));
@@ -594,7 +640,7 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
             if term_spans.iter().any(|&(s, e)| i >= s && i + 1 < e) {
                 continue;
             }
-            let verb_slot = toks.get(i + 2).is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_)))
+            let verb_slot = toks.get(i + 2).is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_) | Tok::AdjLong(_)))
                 && lexicon.redirect(b, "VERB").is_some();
             if !verb_slot {
                 out.push(format!(
@@ -613,7 +659,7 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
 enum Term {
     Det, DetSg, Poss, Every, No, Some_, Num, Adj, NSg, NPl,
     VAny, PrepN, PrepV, Pron, CopAny, Conj, Neg, DoAny, ModAny, If, Then, Comma,
-    Ing, Ed, NameT, Pct, Approx, So, Because,
+    Ing, Ed, NameT, Pct, Approx, So, Because, Ord, Than,
 }
 
 fn term_of(t: &Tok) -> Vec<Term> {
@@ -629,7 +675,9 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Approx(_) => vec![Term::Approx],
         Tok::So(_) => vec![Term::So],
         Tok::Because(_) => vec![Term::Because],
-        Tok::Adj(_) => vec![Term::Adj],
+        Tok::Ord(_) => vec![Term::Ord],
+        Tok::Than(_) => vec![Term::Than],
+        Tok::More(_) | Tok::Scale(_) | Tok::AdjCmp(_) | Tok::AdjLong(_) | Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],
         Tok::NounPl(_) => vec![Term::NPl],
         Tok::VtBase(_) | Tok::Vt3(_) | Tok::ViBase(_) | Tok::Vi3(_) => vec![Term::VAny],
@@ -706,7 +754,7 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
     p[DETX] = vec![
         vec![T(Term::Det)], vec![T(Term::DetSg)], vec![T(Term::Poss)],
         vec![T(Term::Every)], vec![T(Term::No)], vec![T(Term::Some_)], vec![T(Term::Num)],
-        vec![T(Term::Approx), T(Term::Num)],
+        vec![T(Term::Approx), T(Term::Num)], vec![T(Term::Det), T(Term::Ord)],
     ];
     p[ADJS] = vec![vec![], vec![T(Term::Adj), N(ADJS)]];
     p[NH] = vec![vec![T(Term::NSg)], vec![T(Term::NPl)]];
@@ -732,6 +780,8 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
     ];
     p[COMPL] = vec![
         vec![T(Term::Adj)],
+        vec![T(Term::Adj), T(Term::Than), N(NPS)], // comparative + standard
+        vec![T(Term::Adj), T(Term::Adj), T(Term::Than), N(NPS)], // more <adj> than
         vec![N(NPS)],
         vec![T(Term::Ed), N(PPS)],  // passive shape (dirty)
         vec![T(Term::Ing), N(PPS)], // progressive shape (dirty)

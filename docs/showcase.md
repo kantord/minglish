@@ -51,6 +51,12 @@
   parses uniquely — peak-open 4, max-dep 5, depth 2, right-branching 27%
 ✓ the agent retries the request, because the test failed
   parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 22%
+✓ the first word of the sentence is a verb
+  parses uniquely — peak-open 4, max-dep 6, depth 1, right-branching 12%
+✓ the agent deleted 20 million files
+  parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
+✓ the load is heavier than the length
+  parses uniquely — peak-open 2, max-dep 3, depth 1, right-branching 33%
 ✓ the language allows 4 pronouns:
 - "I"
 - "you"
@@ -247,6 +253,7 @@ the advice:
 ✗ because the test fails, the agent retries the request
   STYLE:
     - "because" cannot start a sentence — write the result first: "<result>, because <reason>"; or cause first: "<cause>, so <result>" (ADR 0026)
+    - a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026)
 ✓ the agent retries the request, because the test fails
   parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 22%
 

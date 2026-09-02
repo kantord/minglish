@@ -4,18 +4,18 @@
 
 ## Summary
 
-- 833 lemmas, 1766 surface forms, 40 redirects, 425 waivers
-- Domain model: 80 terms with definitions (ADR 0027)
-- Lemmas per category: ADJ 138, APPROX 1, BANNED 49, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NAME 6, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 400, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 14, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 165
+- 866 lemmas, 1868 surface forms, 40 redirects, 442 waivers
+- Domain model: 84 terms with definitions (ADR 0027)
+- Lemmas per category: ADJ 142, APPROX 1, BANNED 46, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 6, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 419, NUM_SG 1, ORD 3, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 14, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, THAN 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 170
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.11 (higher = more common; everyday words sit at 4.5+)
+- Mean zipf: 4.09 (higher = more common; everyday words sit at 4.5+)
 - Rarest 5: adversative (0.00), anaphora (0.00), anaphoric (0.00), anaphoric pronoun (0.00), appositive (0.00)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
 
-- Mean senses: 5.4 (upper bound — WordNet oversplits)
+- Mean senses: 5.3 (upper bound — WordNet oversplits)
 - Top 5: break (59), make (49), give (44), take (42), carry (40)
 
 ## Redirect findability guard (floor: zipf 3.5)
@@ -425,7 +425,6 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - answer (NOUN)
 - mix (VERB)
 - string (VERB)
-- ordinal (ADJ)
 - decimal (ADJ)
 - negative (NOUN)
 - negative (VERB)
@@ -470,6 +469,24 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - reason (VERB)
 - pay (NOUN)
 - inner (NOUN)
+- minute (ADJ)
+- minute (VERB)
+- skip (NOUN)
+- round (NOUN)
+- round (VERB)
+- round (ADV)
+- syllable (VERB)
+- slot (VERB)
+- maximum (ADJ)
+- fraction (VERB)
+- range (VERB)
+- superlative (ADJ)
+- revert (NOUN)
+- suffix (VERB)
+- standard (ADJ)
+- compare (NOUN)
+- later (ADV)
+- letter (VERB)
 - curate (NOUN)
 - lint (NOUN)
 - parse (NOUN)
@@ -480,5 +497,5 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 73/82 sentences fully lexicalized
-- Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 4 (×1), 5 (×1)
+- 76/88 sentences fully lexicalized
+- Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 20 (×1), 3.5 (×1), 4 (×1), 4th (×1), 5 (×1)

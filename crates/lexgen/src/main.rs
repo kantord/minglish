@@ -290,7 +290,22 @@ fn expand(e: &SeedEntry, errors: &mut Vec<String>) -> Vec<Form> {
             push(ing, format!("{base_tag}_ING"), exi, &mut out);
         }
         Category::Banned => {} // no forms; emitted as a ban row
-        Category::Adj => push(lemma.into(), "ADJ".into(), true, &mut out),
+        Category::Adj => {
+            // ADR 0030: a short adjective has an inflected comparative (ADJ);
+            // a long one is ADJ_LONG and takes "more <adj> than" in the grammar
+            let cmp = match over("comparative") {
+                Some(c) if c == "none" => None,
+                Some(c) => Some((c, true)),
+                None => morph::comparative(lemma).map(|c| (c, false)),
+            };
+            match cmp {
+                Some((c, explicit)) => {
+                    push(lemma.into(), "ADJ".into(), true, &mut out);
+                    push(c, "ADJ_CMP".into(), explicit, &mut out);
+                }
+                None => push(lemma.into(), "ADJ_LONG".into(), true, &mut out),
+            }
+        }
         Category::Prep => push(lemma.into(), "PREP".into(), true, &mut out),
         Category::Det => push(lemma.into(), "DET".into(), true, &mut out),
         Category::Closed(tag) => push(lemma.into(), tag, true, &mut out),

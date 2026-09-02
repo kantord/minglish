@@ -57,6 +57,12 @@ rejected sentence, keep its meaning; change only what the error requires.
     Shares: `43 percent of the swaps did not reduce the ambiguity` (digits +
     `percent` + `of` + the named set; plural agreement). Approximate counts:
     `about 10 rules` or `~10 rules`; `about` exists only before digits.
+    Big numbers use a scale word after digits: `20 million files`; decimals
+    stay digits: `3.5 seconds`. Ordinals: `first`, `second`, `third` as
+    words, then digits with a suffix: `the 4th file` (never `1st`).
+12. Comparative, standard mandatory: `the load is heavier than the length` ·
+    long adjectives use `more`: `the paraphrase is more transparent than the
+    Compound`. Short adjectives inflect (`bigger`, never `more big`).
 
 ## Blocks
 

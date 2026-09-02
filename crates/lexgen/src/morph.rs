@@ -30,6 +30,30 @@ pub fn gerund(verb: &str) -> String {
     format!("{}ing", doubled(verb))
 }
 
+/// Inflected comparative for short adjectives (ADR 0030): one syllable, or
+/// two ending in -y. Longer adjectives return None and use "more <adj>".
+pub fn comparative(adj: &str) -> Option<String> {
+    let syllables = adj
+        .chars()
+        .fold((0usize, false), |(n, prev_vowel), c| {
+            let v = is_vowel(c) || c == 'y';
+            (if v && !prev_vowel { n + 1 } else { n }, v)
+        })
+        .0
+        .max(1);
+    let short = syllables == 1 || (syllables == 2 && adj.ends_with('y'));
+    if !short {
+        return None;
+    }
+    Some(if adj.ends_with('e') {
+        format!("{adj}r")
+    } else if let Some(stem) = strip_consonant_y(adj) {
+        format!("{stem}ier")
+    } else {
+        format!("{}er", doubled(adj))
+    })
+}
+
 /// -s / -es / -ies, shared by noun plurals and 3rd-person singular.
 fn sibilant_s(word: &str) -> String {
     if let Some(stem) = strip_consonant_y(word) {

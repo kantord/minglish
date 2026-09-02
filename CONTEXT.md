@@ -30,6 +30,8 @@ undefined; add an entry before using one in code or docs.
 
 **Collision** (noun) — if 2 Lemmas produce one Surface Form, then the Surface Form is a Collision. if one Surface Form has 2 Form Tags, then the Surface Form is a Collision. Lexgen rejects every Collision.
 
+**Comparative** (noun) — a Comparative is a Complement. a Comparative compares the subject with a standard. the phrase "heavier than the length" is a Comparative.
+
 **Complement** (noun) — a Complement follows a Copula. a Complement is an adjective or is a Noun Phrase. a Complement is not a Participle.
 
 **Compound** (noun) — a Compound has 2 nouns. a determiner does not separate the 2 nouns. the phrase "discourse layer" is a Compound. the language bans every Compound. a writer uses a term or uses a paraphrase.
@@ -112,7 +114,11 @@ undefined; add an entry before using one in code or docs.
 
 **Noun Preposition** (noun) — a Noun Preposition attaches to the prior noun. the word "of" is the Noun Preposition. the language has one Noun Preposition.
 
+**Number Word** (noun) — a Number Word writes a number with letters. the word "three" is a Number Word. the language bans every Number Word.
+
 **Open Dependency** (noun) — an Open Dependency is a relation. the relation links 2 words of a sentence. the reader holds an Open Dependency in the memory. the comfortable bound is 4 Open Dependencies.
+
+**Ordinal** (noun) — an Ordinal marks a position in an order. the word "first" is an Ordinal. the string "4th" is an Ordinal.
 
 **Paradigm** (noun) — a Paradigm contains every Surface Form of one Lemma. Lexgen builds the Paradigm of a Lemma from the Category of the Lemma.
 
@@ -143,6 +149,8 @@ undefined; add an entry before using one in code or docs.
 **Rejected Sense** (noun) — a Rejected Sense is a sense of a word. the Seed does not enable the Rejected Sense. the Linter rejects the Rejected Sense. a Rejected Sense has a Redirect or has a Waiver.
 
 **Rejection** (noun) — if the Linter does not parse a sentence, then the sentence is a Rejection. a Rejection is a Ban or is a Gap. the Linter must explain every Rejection.
+
+**Scale Word** (noun) — a Scale Word follows the digits. the word "million" is a Scale Word. the phrase "20 million files" has a Scale Word.
 
 **Scope Ambiguity** (noun) — if a reader cannot tell the Constituent of a word, then the sentence has a Scope Ambiguity. the word "not" causes a Scope Ambiguity in English.
 

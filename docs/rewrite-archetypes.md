@@ -28,6 +28,19 @@ rewrite cost.
 | A19 | a term used lowercase in its general sense (*gap*, *name*, *form*) | "the gap is big" | a different general word (*distance*, *word*) | 8 |
 | A20 | "X of Y" with a bare plural or *every* inside | "5 of 8 sentences", "a chain of Noun Prepositions" | determiner on the inner noun, or restructure | 6 |
 
+Decisions from the maintainer's review (2026-09-02): A1 → ADR 0029 (ordinals,
+scale words, decimals); A3 → ADR 0030 (comparatives); A2 kept as a ban with
+advice; A6 and A9 accepted as rewrite costs; A4 to be examined on its
+examples (see below); the rest need targeted discussion.
+
+A4 examples from the source ADRs: "X become(s) expressible" ×8 (rendered
+"the language can say X"); "X becomes Y" with Y a role ×4 ("the ratio
+becomes honest", "the guard becomes a floor", "the table becomes the
+substitution table", "*may* becomes a ban candidate" — rendered as plain
+copulas, losing before/after); "X enters the language", "texts get longer",
+"redirects grow" ×5 (verbs exist). Shape 2 is the real gap: a copula of
+change.
+
 Counts are approximate tallies over the 28 rewrites (2026-09-02). Archetypes
 A1, A3, A13, A16, A17 and A18 are language questions; A11 and A19 are
 vocabulary policy; the rest are accepted rewrite costs unless the review

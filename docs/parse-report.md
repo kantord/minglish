@@ -83,7 +83,13 @@ right-branching share, and fronted tokens before the main head.
 | the agent retries the request, because the test failed | 3 | 4 | 2 | 22% | 6 |
 | the Linter bans every Anaphoric Pronoun: ⏎ - "it" ⏎ - "they" ⏎ - "he" | 4 | 3 | 1 | 25% | 2 |
 | the language allows 4 pronouns: ⏎ - "I" ⏎ - "you" ⏎ - "my" ⏎ - "your" | 5 | 3 | 1 | 22% | 2 |
+| the first word of the sentence is a verb | 4 | 6 | 1 | 12% | 8 |
+| the 4th file fails | 2 | 2 | 1 | 0% | 3 |
+| the agent deleted 20 million files | 3 | 3 | 1 | 20% | 2 |
+| the load is heavier than the length | 2 | 3 | 1 | 33% | 3 |
+| the paraphrase is more transparent than the Compound | 3 | 3 | 1 | 29% | 4 |
+| the test took 3.5 minutes | 2 | 2 | 1 | 25% | 2 |
 
-**Aggregate:** 75 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
+**Aggregate:** 81 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

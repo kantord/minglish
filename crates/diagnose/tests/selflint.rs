@@ -188,7 +188,6 @@ fn linter_advice_examples_parse() {
         "pronouns for the speaker are indexical",
         "the frequencies are of pronouns",
         "the speaker or the hearer reads the file",
-        "the first pronoun fails",
         "the findings are big",
         "the design prefers clarity",
         "the report shows pronouns are big",

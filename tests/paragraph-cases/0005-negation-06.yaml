@@ -82,7 +82,7 @@ proposals:
     cost: 98.49000000000001
     words: 26
     terms: 2
-  diagnosis: '"The later ADR 0010 adds the rule": WORD: "later" is not a minglish word'
+  diagnosis: '"The later ADR 0010 adds the rule": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Seed does not enable "doesn't". The Seed does not enable "don't". The Grammar bans "doesn't". The Grammar bans "don't". The Grammar of Minglish bans every Surface Form of "do not". The ADR 0010 adds the rule.

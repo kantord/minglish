@@ -51,6 +51,17 @@ def past(w):
     if w.endswith("e"): return w + "d"
     if w.endswith("y") and w[-2] not in VOWELS: return w[:-1] + "ied"
     return doubled(w) + "ed"
+def comparative(w):
+    syl, prev = 0, False
+    for c in w:
+        v = c in VOWELS or c == "y"
+        if v and not prev: syl += 1
+        prev = v
+    syl = max(syl, 1)
+    if not (syl == 1 or (syl == 2 and w.endswith("y"))): return None
+    if w.endswith("e"): return w + "r"
+    if w.endswith("y") and w[-2] not in VOWELS: return w[:-1] + "ier"
+    return doubled(w) + "er"
 def gerund(w):
     if w.endswith("ie"): return w[:-2] + "ying"
     if w.endswith("e") and not w.endswith("ee"): return w[:-1] + "ing"
@@ -69,6 +80,10 @@ def check(path, domain):
         if cat == "NOUN" and not (domain):
             if "plural" not in forms and sib(lemma) not in known:
                 forms["plural"] = sib(lemma); changed += 1
+        if cat == "ADJ" and "comparative" not in forms:
+            c = comparative(lemma)
+            if c is not None and c not in known:
+                forms["comparative"] = c; changed += 1
         if cat in ("VERB_TRANS", "VERB_INTRANS"):
             for slot, f in [("third", sib), ("past", past), ("ing", gerund)]:
                 if slot not in forms and f(lemma) not in known:

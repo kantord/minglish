@@ -56,6 +56,12 @@ pub enum Tok {
     Approx(String),
     So(String),
     Because(String),
+    Ord(String),
+    Than(String),
+    More(String),
+    Scale(String),
+    AdjCmp(String),
+    AdjLong(String),
     Some_(String),
     Name(String),
     Comma,
@@ -96,6 +102,8 @@ pub struct Lexicon {
     terms: BTreeMap<String, String>,
     /// defined proper names (domain model NAME entries): may start a sentence
     names: std::collections::BTreeSet<String>,
+    /// adjective lemma → its inflected comparative surface (ADR 0030)
+    comparatives: BTreeMap<String, String>,
     rejects: BTreeMap<String, Vec<(String, String)>>,
     bans: BTreeMap<String, String>,
 }
@@ -109,6 +117,7 @@ impl Lexicon {
         let mut bans: BTreeMap<String, String> = BTreeMap::new();
         let mut terms: BTreeMap<String, String> = BTreeMap::new();
         let mut names = std::collections::BTreeSet::new();
+        let mut comparatives: BTreeMap<String, String> = BTreeMap::new();
         for line in text.lines().filter(|l| !l.starts_with('#')) {
             let f: Vec<&str> = line.split('\t').collect();
             let [surface, kind, tag, value] = f[..] else { continue };
@@ -116,6 +125,9 @@ impl Lexicon {
                 "form" => {
                     forms.insert(surface.to_string(), tag.to_string());
                     lemmas.insert(surface.to_string(), value.to_string());
+                    if tag == "ADJ_CMP" {
+                        comparatives.insert(value.to_string(), surface.to_string());
+                    }
                 }
                 "reject" => rejects
                     .entry(surface.to_string())
@@ -133,7 +145,7 @@ impl Lexicon {
                 _ => {}
             }
         }
-        Ok(Lexicon { forms, lemmas, terms, names, rejects, bans })
+        Ok(Lexicon { forms, lemmas, terms, names, comparatives, rejects, bans })
     }
 
     /// The form-tag of an enabled surface form, if any.
@@ -145,6 +157,11 @@ impl Lexicon {
     /// ("reference ambiguity" → "Reference Ambiguity"), ADR 0027.
     pub fn term(&self, lowercase: &str) -> Option<&str> {
         self.terms.get(lowercase).map(String::as_str)
+    }
+
+    /// The inflected comparative of an adjective, if it has one (ADR 0030).
+    pub fn comparative(&self, adj: &str) -> Option<&str> {
+        self.comparatives.get(adj).map(String::as_str)
     }
 
     /// The lemma of an enabled surface form.
@@ -427,6 +444,29 @@ pub fn is_enumeration(text: &str) -> bool {
 /// redirected (*no* / *one*), leading zeros are rejected. Non-digit words
 /// return None.
 fn number_token(word: &str) -> Option<Result<Tok, String>> {
+    // ADR 0029: digits + st/nd/rd/th is an ordinal; 1st–3rd are word-form
+    for suf in ["st", "nd", "rd", "th"] {
+        if let Some(n) = word.strip_suffix(suf) {
+            if !n.is_empty() && n.chars().all(|c| c.is_ascii_digit()) {
+                return Some(match n {
+                    "1" => Err("write \"first\" — the first three ordinals are words (ADR 0029)".to_string()),
+                    "2" => Err("write \"second\" — the first three ordinals are words (ADR 0029)".to_string()),
+                    "3" => Err("write \"third\" — the first three ordinals are words (ADR 0029)".to_string()),
+                    _ => Ok(Tok::Ord(word.to_string())),
+                });
+            }
+        }
+    }
+    // ADR 0029: a decimal (digits . digits) is a quantity written in digits
+    if let Some((a, b)) = word.split_once('.') {
+        if !a.is_empty() && !b.is_empty() && a.chars().all(|c| c.is_ascii_digit()) && b.chars().all(|c| c.is_ascii_digit()) {
+            return Some(if a.starts_with('0') && a != "0" {
+                Err("a number does not start with 0 (ADR 0022)".to_string())
+            } else {
+                Ok(Tok::NumPl(word.to_string()))
+            });
+        }
+    }
     if word.is_empty() || !word.chars().all(|c| c.is_ascii_digit()) {
         return None;
     }
@@ -485,6 +525,12 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "APPROX" => Tok::Approx(w),
         "RESULT" => Tok::So(w),
         "REASON" => Tok::Because(w),
+        "ORD" => Tok::Ord(w),
+        "THAN" => Tok::Than(w),
+        "MORE" => Tok::More(w),
+        "SCALE" => Tok::Scale(w),
+        "ADJ_CMP" => Tok::AdjCmp(w),
+        "ADJ_LONG" => Tok::AdjLong(w),
         // NAME is produced directly by the tokenizer, never from the lexicon
         _ => return None,
     })

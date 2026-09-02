@@ -72,7 +72,7 @@ proposals:
     cost: 237.80000000000013
     words: 80
     terms: 10
-  diagnosis: '"The Grammar allows "do" and "does" in a negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar does not allow "do" for emphasis": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the") | "The Grammar allows "do not" as a command": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); comparison has no minglish Surface Form yet'
+  diagnosis: '"The Grammar allows "do" and "does" in a negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar does not allow "do" for emphasis": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the") | "The Grammar allows "do not" as a command": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-

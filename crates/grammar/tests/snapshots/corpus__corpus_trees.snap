@@ -1495,3 +1495,114 @@ open=5 maxdep=3 depth=1 right=22% fronted=2
   my
   your
 )
+
+### the first word of the sentence is a verb
+open=4 maxdep=6 depth=1 right=12% fronted=8
+(S h=1
+  (NP h=2
+    the
+    first
+    word
+    (OfPP h=1
+      of
+      (NP h=1
+        the
+        sentence
+      )
+    )
+  )
+  (CopPred h=1
+    is
+    (NP h=1
+      a
+      verb
+    )
+  )
+)
+
+### the 4th file fails
+open=2 maxdep=2 depth=1 right=0% fronted=3
+(S h=1
+  (NP h=2
+    the
+    4th
+    file
+  )
+  (VP h=0
+    fails
+  )
+)
+
+### the agent deleted 20 million files
+open=3 maxdep=3 depth=1 right=20% fronted=2
+(S h=1
+  (NP h=1
+    the
+    agent
+  )
+  (VP h=0
+    deleted
+    (NP h=2
+      20
+      million
+      files
+    )
+  )
+)
+
+### the load is heavier than the length
+open=2 maxdep=3 depth=1 right=33% fronted=3
+(S h=1
+  (NP h=1
+    the
+    load
+  )
+  (CopPred h=1
+    is
+    (Cmp h=0
+      heavier
+      than
+      (NP h=1
+        the
+        length
+      )
+    )
+  )
+)
+
+### the paraphrase is more transparent than the Compound
+open=3 maxdep=3 depth=1 right=29% fronted=4
+(S h=1
+  (NP h=1
+    the
+    paraphrase
+  )
+  (CopPred h=1
+    is
+    (Cmp h=1
+      more
+      transparent
+      than
+      (NP h=1
+        the
+        Compound
+      )
+    )
+  )
+)
+
+### the test took 3.5 minutes
+open=2 maxdep=2 depth=1 right=25% fronted=2
+(S h=1
+  (NP h=1
+    the
+    test
+  )
+  (VP h=0
+    took
+    (NP h=1
+      3.5
+      minutes
+    )
+  )
+)

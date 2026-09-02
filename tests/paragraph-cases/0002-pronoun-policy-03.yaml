@@ -464,7 +464,7 @@ proposals:
     cost: 62.01999999999998
     words: 20
     terms: 0
-  diagnosis: '"the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second]'
+  diagnosis: '"the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows i and you and my and your. i is a pronoun. you is a pronoun. my is a possessive. your is a possessive.

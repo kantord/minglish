@@ -82,3 +82,9 @@ the language allows 4 pronouns:
 - "you"
 - "my"
 - "your"
+the first word of the sentence is a verb
+the 4th file fails
+the agent deleted 20 million files
+the load is heavier than the length
+the paraphrase is more transparent than the Compound
+the test took 3.5 minutes

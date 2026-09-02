@@ -82,7 +82,7 @@ proposals:
     cost: 89.7
     words: 20
     terms: 4
-  diagnosis: '"The Linter can lint a Negated statement": STYLE: "Negated statement" — the name follows its noun: "the statement Negated" (ADR 0018); "can … lint" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "statement" — a singular noun needs a determiner: "the statement" (mass nouns take "the")'
+  diagnosis: '"The Linter can lint a Negated statement": STYLE: "Negated statement" — the name follows its noun: "the statement Negated" (ADR 0018); "a Negated" — a Name takes no determiner: write "Negated", or introduce it with a noun: "the tool Negated" (ADR 0018); "can … lint" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "statement" — a singular noun needs a determiner: "the statement" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter can lint the statement Negated. the Linter can lint the Prohibition. the Linter writes every sentence in Minglish.

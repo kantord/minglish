@@ -105,6 +105,20 @@ fn banned_structures_reject() {
         "the Linter bans 2 pronouns and reads the file:\n- \"it\"\n- \"they\"",
         "the language allows 2 pronouns:\n- \"I\"\n- \"you",
     ];
+    // ordinals, scales, comparatives (ADR 0029, 0030)
+    let banned2 = [
+        "the 1st file fails",
+        "the file is heavier",
+        "the file is more heavy than the report",
+        "million files fail",
+        "the agent deleted 3.5",
+    ];
+    for s in banned2 {
+        assert!(parse(&lexicon, s).is_err(), "should NOT parse but did: {s}");
+    }
+    let _ = [
+        "",
+    ];
     for s in banned_blocks {
         assert!(
             parse_text(&lexicon, s).is_err(),

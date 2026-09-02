@@ -54,7 +54,7 @@ string "03".
 
 The maintainers deferred 6 questions:
 - the measurements
-- the ordinals
+- the Ordinals
 - the units
 - the separators
 - the decimals

@@ -39,6 +39,9 @@ run "the agent reads the file" \
     "every verb has ~5 Surface Forms" \
     "the expense of a reversal grows with the Seed, so the maintainers record the decision" \
     "the agent retries the request, because the test failed" \
+    "the first word of the sentence is a verb" \
+    "the agent deleted 20 million files" \
+    "the load is heavier than the length" \
     "$(printf 'the language allows 4 pronouns:\n- "I"\n- "you"\n- "my"\n- "your"')" \
     "people write every Surface Form of the file \"lexicon.tsv\"" \
     "The agent reads the file" \

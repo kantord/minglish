@@ -55,6 +55,12 @@ extern {
         "APPROX" => Tok::Approx(<String>),
         "RESULT" => Tok::So(<String>),
         "REASON" => Tok::Because(<String>),
+        "ORD" => Tok::Ord(<String>),
+        "THAN" => Tok::Than(<String>),
+        "MORE" => Tok::More(<String>),
+        "SCALE" => Tok::Scale(<String>),
+        "ADJ_CMP" => Tok::AdjCmp(<String>),
+        "ADJ_LONG" => Tok::AdjLong(<String>),
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
@@ -66,7 +72,10 @@ extern {
 
 LDet: Tree = <l:@L> <w:"DET"> => leaf(l, w);
 LDetSg: Tree = <l:@L> <w:"DET_SG"> => leaf(l, w);
-LAdj: Tree = <l:@L> <w:"ADJ"> => leaf(l, w);
+LDetAny: Tree = { LDet, LDetSg };
+// any adjective: short (inflecting) or long (ADR 0030)
+LAdj: Tree = { <l:@L> <w:"ADJ"> => leaf(l, w), <l:@L> <w:"ADJ_LONG"> => leaf(l, w) };
+LAdjLong: Tree = <l:@L> <w:"ADJ_LONG"> => leaf(l, w);
 LNounSg: Tree = <l:@L> <w:"NOUN_SG"> => leaf(l, w);
 LNounPl: Tree = <l:@L> <w:"NOUN_PL"> => leaf(l, w);
 LVtBase: Tree = <l:@L> <w:"VT_BASE"> => leaf(l, w);
@@ -104,6 +113,11 @@ LPercent: Tree = <l:@L> <w:"PERCENT"> => leaf(l, w);
 LApprox: Tree = <l:@L> <w:"APPROX"> => leaf(l, w);
 LSo: Tree = <l:@L> <w:"RESULT"> => leaf(l, w);
 LBecause: Tree = <l:@L> <w:"REASON"> => leaf(l, w);
+LOrd: Tree = <l:@L> <w:"ORD"> => leaf(l, w);
+LThan: Tree = <l:@L> <w:"THAN"> => leaf(l, w);
+LMore: Tree = <l:@L> <w:"MORE"> => leaf(l, w);
+LScale: Tree = <l:@L> <w:"SCALE"> => leaf(l, w);
+LAdjCmp: Tree = <l:@L> <w:"ADJ_CMP"> => leaf(l, w);
 LSome: Tree = <l:@L> <w:"SOME"> => leaf(l, w);
 LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
 
@@ -279,6 +293,9 @@ VBaseP: Tree = {
 
 NPSG: Tree = {
     NPx<LDet, LNounSg>, NPx<LDetSg, LNounSg>, NPx<LPoss, LNounSg>, NPx<LNum, LNounSg>,
+    // ordinal (ADR 0029): "the first word", "the 4th file", "a first draft"
+    <d:LDetAny> <o:LOrd> <a:LAdj?> <n:LNounSg> <of:OfPP?> =>
+        nd("NP", 3, vec![Some(d), Some(o), a, Some(n), of]),
     // proper names (ADR 0018): bare, or appositive after a noun
     <nm:LName> => nm,
     <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> <o:OfPP?> =>
@@ -290,9 +307,10 @@ NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl>, NPNum, NPPct };
 // [about] <digits> [adj] <plural noun> [of-PP] — a count, optionally
 // approximate (ADR 0022, 0025).
 // "the 2 words": a definite count is allowed (the set is already known)
+// a scale word may follow the digits: "20 million files" (ADR 0029)
 NPNum: Tree = {
-    <d:LDet?> <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> <o:OfPP?> =>
-        nd("NP", 4, vec![d, ap, Some(n), a, Some(nn), o]),
+    <d:LDet?> <ap:LApprox?> <n:LNumPl> <sc:LScale?> <a:LAdj?> <nn:LNounPl> <o:OfPP?> =>
+        nd("NP", 5, vec![d, ap, Some(n), sc, a, Some(nn), o]),
 };
 
 // <digits> percent of <plural NP> — a share of a named set; plural agreement
@@ -326,8 +344,10 @@ NPInner: Tree = {
     <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> =>
         nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm)]),
     NPi<LNum, LNounSg>,
-    <d:LDet?> <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> =>
-        nd("NP", 4, vec![d, ap, Some(n), a, Some(nn)]),
+    <d:LDetAny> <o:LOrd> <a:LAdj?> <n:LNounSg> =>
+        nd("NP", 3, vec![Some(d), Some(o), a, Some(n)]),
+    <d:LDet?> <ap:LApprox?> <n:LNumPl> <sc:LScale?> <a:LAdj?> <nn:LNounPl> =>
+        nd("NP", 5, vec![d, ap, Some(n), sc, a, Some(nn)]),
     NPi<LDet, LNounSg>,
     NPi<LDet, LNounPl>,
     NPi<LDetSg, LNounSg>,
@@ -340,8 +360,12 @@ PPv: Tree = {
     <p:LPrepV> <np:NPAny> => nd("PP", 1, vec![Some(p), Some(np)]),
 };
 
-// Copular complement: adjective or noun phrase (ADR 0003).
+// Copular complement: adjective or noun phrase (ADR 0003); or a comparative
+// with its standard (ADR 0030): "heavier than the length", "more transparent
+// than the compound". The standard is mandatory.
 Compl: Tree = {
     LAdj,
     NPAny,
+    <c:LAdjCmp> <t:LThan> <np:NPAny> => nd("Cmp", 0, vec![Some(c), Some(t), Some(np)]),
+    <m:LMore> <a:LAdjLong> <t:LThan> <np:NPAny> => nd("Cmp", 1, vec![Some(m), Some(a), Some(t), Some(np)]),
 };

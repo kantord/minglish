@@ -113,7 +113,7 @@ proposals:
     cost: 66.12
     words: 18
     terms: 2
-  diagnosis: '"A Copular negation uses "is not" or "are not"": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "a Copular negation does not use "do" or "does"": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"A Copular negation uses "is not" or "are not"": WORD: "Copular" is not a minglish word — minglish words are lowercase ("copular"); a name that equals a word needs quotes | "a Copular negation does not use "do" or "does"": WORD: "Copular" is not a minglish word — minglish words are lowercase ("copular"); a name that equals a word needs quotes'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A Copula uses "is not" or "are not". a Copula does not use "do" or "does".

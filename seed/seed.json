@@ -562,7 +562,10 @@
     "waive": [
       "ADV"
     ],
-    "note": "adverbial sense (talk sweet) irrelevant to domain"
+    "note": "adverbial sense (talk sweet) irrelevant to domain",
+    "forms": {
+      "comparative": "sweeter"
+    }
   },
   {
     "lemma": "was",
@@ -1310,7 +1313,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "comparative": "priorer"
+    }
   },
   {
     "lemma": "rare",
@@ -1467,7 +1473,7 @@
   {
     "lemma": "as",
     "category": "BANNED",
-    "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); comparison has no minglish Surface Form yet"
+    "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); for a comparison write \"is <adjective>er than <noun phrase>\" (ADR 0030)"
   },
   {
     "lemma": "pronoun",
@@ -1839,21 +1845,6 @@
     "lemma": "closed",
     "category": "ADJ",
     "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
-  },
-  {
-    "lemma": "first",
-    "category": "BANNED",
-    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
-  },
-  {
-    "lemma": "second",
-    "category": "BANNED",
-    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
-  },
-  {
-    "lemma": "third",
-    "category": "BANNED",
-    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
   },
   {
     "lemma": "findings",
@@ -2377,7 +2368,10 @@
       "NOUN",
       "ADV"
     ],
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "comparative": "better"
+    }
   },
   {
     "lemma": "declaration",
@@ -2663,7 +2657,10 @@
       "ADV",
       "VERB"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "comparative": "plainer"
+    }
   },
   {
     "lemma": "time",
@@ -3295,7 +3292,10 @@
       "NOUN",
       "ADV",
       "VERB"
-    ]
+    ],
+    "forms": {
+      "comparative": "badder"
+    }
   },
   {
     "lemma": "score",
@@ -3524,7 +3524,10 @@
       "NOUN",
       "ADV"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "comparative": "realer"
+    }
   },
   {
     "lemma": "deep",
@@ -3533,7 +3536,10 @@
       "NOUN",
       "ADV"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "comparative": "deeper"
+    }
   },
   {
     "lemma": "distance",
@@ -3633,7 +3639,10 @@
       "ADV",
       "VERB"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "comparative": "shorter"
+    }
   },
   {
     "lemma": "free",
@@ -3866,7 +3875,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "comparative": "blunter"
+    }
   },
   {
     "lemma": "stall",
@@ -4072,7 +4084,10 @@
     "waive": [
       "ADV"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "comparative": "newer"
+    }
   },
   {
     "lemma": "guard",
@@ -4491,7 +4506,10 @@
     "waive": [
       "ADV"
     ],
-    "note": "ADR 0010-0013 rewrite"
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "comparative": "stronger"
+    }
   },
   {
     "lemma": "reopen",
@@ -4574,7 +4592,10 @@
       "ADV",
       "NOUN"
     ],
-    "note": "ADR 0010-0013 rewrite"
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "comparative": "cheaper"
+    }
   },
   {
     "lemma": "judge",
@@ -5088,7 +5109,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0014-0017 rewrite"
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "comparative": "fiater"
+    }
   },
   {
     "lemma": "sit",
@@ -5543,7 +5567,10 @@
   {
     "lemma": "strict",
     "category": "ADJ",
-    "note": "ADR 0018-0021 rewrite"
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "comparative": "stricter"
+    }
   },
   {
     "lemma": "case",
@@ -5575,7 +5602,10 @@
     "note": "ADR 0018-0021 rewrite",
     "waive": [
       "ADV"
-    ]
+    ],
+    "forms": {
+      "comparative": "louder"
+    }
   },
   {
     "lemma": "flat",
@@ -5828,17 +5858,6 @@
     "note": "ADR 0022-0025 rewrite",
     "forms": {
       "plural": "measurements"
-    }
-  },
-  {
-    "lemma": "ordinal",
-    "category": "NOUN",
-    "note": "ADR 0022-0025 rewrite",
-    "waive": [
-      "ADJ"
-    ],
-    "forms": {
-      "plural": "ordinals"
     }
   },
   {
@@ -6479,5 +6498,276 @@
     "forms": {
       "plural": "facts"
     }
+  },
+  {
+    "lemma": "first",
+    "category": "ORD",
+    "note": "ordinal, word form for 1–3 (ADR 0029)"
+  },
+  {
+    "lemma": "second",
+    "category": "ORD",
+    "note": "ADR 0029"
+  },
+  {
+    "lemma": "third",
+    "category": "ORD",
+    "note": "ADR 0029"
+  },
+  {
+    "lemma": "than",
+    "category": "THAN",
+    "note": "comparative standard (ADR 0030)"
+  },
+  {
+    "lemma": "more",
+    "category": "MORE",
+    "note": "periphrastic comparative for long adjectives (ADR 0030)"
+  },
+  {
+    "lemma": "thousand",
+    "category": "SCALE",
+    "note": "scale word after digits (ADR 0029)"
+  },
+  {
+    "lemma": "million",
+    "category": "SCALE",
+    "note": "ADR 0029"
+  },
+  {
+    "lemma": "billion",
+    "category": "SCALE",
+    "note": "ADR 0029"
+  },
+  {
+    "lemma": "minute",
+    "category": "NOUN",
+    "waive": [
+      "ADJ",
+      "VERB"
+    ],
+    "note": "ADR 0029 corpus"
+  },
+  {
+    "lemma": "skip",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "third": "skips"
+    }
+  },
+  {
+    "lemma": "round",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "VERB",
+      "ADV"
+    ],
+    "note": "ADR 0029-0030 rewrite"
+  },
+  {
+    "lemma": "archetype",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "archetypes"
+    }
+  },
+  {
+    "lemma": "syllable",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite [auto-waived VERB]",
+    "forms": {
+      "plural": "syllables"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "slot",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "slots"
+    }
+  },
+  {
+    "lemma": "maximum",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "maximums"
+    }
+  },
+  {
+    "lemma": "fraction",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite [auto-waived VERB]",
+    "forms": {
+      "plural": "fractions"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "range",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "ranges"
+    }
+  },
+  {
+    "lemma": "superlative",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "superlatives"
+    }
+  },
+  {
+    "lemma": "duration",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "durations"
+    }
+  },
+  {
+    "lemma": "revert",
+    "category": "VERB_TRANS",
+    "note": "ADR 0029-0030 rewrite [auto-waived NOUN]",
+    "forms": {
+      "third": "reverts",
+      "past": "reverted"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "integer",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "integers"
+    }
+  },
+  {
+    "lemma": "preference",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "preferences"
+    }
+  },
+  {
+    "lemma": "addition",
+    "category": "NOUN",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "additions"
+    }
+  },
+  {
+    "lemma": "precede",
+    "category": "VERB_TRANS",
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "third": "precedes"
+    }
+  },
+  {
+    "lemma": "suffix",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "suffixes"
+    }
+  },
+  {
+    "lemma": "standard",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "ADR 0029-0030 rewrite",
+    "forms": {
+      "plural": "standards"
+    }
+  },
+  {
+    "lemma": "testable",
+    "category": "ADJ",
+    "note": "ADR 0029-0030 rewrite"
+  },
+  {
+    "lemma": "compare",
+    "category": "VERB_TRANS",
+    "note": "ADR 0029-0030 rewrite [auto-waived NOUN]",
+    "forms": {
+      "third": "compares"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "comparison",
+    "category": "NOUN",
+    "note": "ADR 0030",
+    "forms": {
+      "plural": "comparisons"
+    }
+  },
+  {
+    "lemma": "acknowledge",
+    "category": "VERB_TRANS",
+    "note": "ADR 0030",
+    "forms": {
+      "third": "acknowledges"
+    }
+  },
+  {
+    "lemma": "copular",
+    "category": "ADJ",
+    "note": "ADR 0030"
+  },
+  {
+    "lemma": "later",
+    "category": "ADJ",
+    "waive": [
+      "ADV"
+    ],
+    "note": "ADR 0029"
+  },
+  {
+    "lemma": "letter",
+    "category": "NOUN",
+    "note": "ADR 0029 [auto-waived VERB]",
+    "waive": [
+      "VERB"
+    ]
   }
 ]

@@ -32,8 +32,10 @@
 | 0026-causal-connectives.md | 61/61 |
 | 0027-domain-model.md | 81/81 |
 | 0028-enumeration.md | 49/49 |
+| 0029-ordinals-and-scales.md | 49/49 |
+| 0030-comparatives.md | 33/33 |
 
-**Aggregate: 1241/1241 sentences (100%)**
+**Aggregate: 1323/1323 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
