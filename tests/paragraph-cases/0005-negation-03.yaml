@@ -1,11 +1,15 @@
 source: docs/adr/0005-negation.md
 index: 3
-original: 'The language enables 3 Function Words: - "not" - "do" - "does"'
+original: |-
+  The language enables 3 Function Words:
+  - "not"
+  - "do"
+  - "does"
 context_before: A Negation of a verb needs the word "do" in English. The word "do" is an Auxiliary. The language avoids Auxiliaries. The word "not" can change one Constituent. The phrase "not all users" is one example. The phrase "not old" is one example. A Negation of a Constituent causes a Scope Ambiguity.
 context_after: The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The Form Tag of "does" is "NEG_AUX_3SG".
 original_metrics:
   sentences: 1
-  parsed: 0
+  parsed: 1
   continuity_pairs: 0
   continuity_ok: 0
   cost: 29.509999999999998
@@ -13,7 +17,11 @@ original_metrics:
   terms: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
-best: ''
+best: |-
+  The language enables 3 Function Words:
+  - "not"
+  - "do"
+  - "does"
 proposals:
 - text: The Grammar does not allow "do" as a verb. The Grammar allows "do" only in the phrase "do not" or "does not" plus a base verb. "do not" plus a base verb forms a prohibition. The Grammar does not allow "do" for emphasis. The Grammar does not allow "do" in a question.
   drops: none
@@ -140,4 +148,21 @@ proposals:
     terms: 5
   diagnosis: '"The Grammar allows "do" with "not" and a verb": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar does not allow "do" with a verb and no "not"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "does" with "not" and a verb": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar does not allow "does" with a verb and no "not"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "do not" in an imperative": WORD: "imperative" is not a minglish word | "The language does not have an emphatic "do"": STYLE: "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The language does not have an interrogative "do"": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure'
   count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language enables 3 Function Words:
+    - "not"
+    - "do"
+    - "does"
+  drops: none
+  valid: true
+  metrics:
+    sentences: 1
+    parsed: 1
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 29.509999999999998
+    words: 9
+    terms: 1
+  count: 3
   model: deepseek/deepseek-v4-flash

@@ -272,7 +272,11 @@ pub fn paragraphs(text: &str) -> Vec<String> {
             out.push(cur);
         }
     }
-    out.into_iter().map(|p| normalize(&p)).filter(|p| p.split_whitespace().count() >= 3).collect()
+    // normalize prose only: an Enumeration block keeps its line breaks
+    out.into_iter()
+        .map(|p| if grammar::is_enumeration(&p) { p } else { normalize(&p) })
+        .filter(|p| p.split_whitespace().count() >= 3)
+        .collect()
 }
 
 fn normalize(p: &str) -> String {

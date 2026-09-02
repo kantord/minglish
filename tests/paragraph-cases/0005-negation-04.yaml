@@ -1,7 +1,11 @@
 source: docs/adr/0005-negation.md
 index: 4
 original: The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The Form Tag of "does" is "NEG_AUX_3SG".
-context_before: 'The language enables 3 Function Words: - "not" - "do" - "does"'
+context_before: |-
+  The language enables 3 Function Words:
+  - "not"
+  - "do"
+  - "does"
 context_after: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
 original_metrics:
   sentences: 3
