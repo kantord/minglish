@@ -31,7 +31,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 const CASES_DIR: &str = "tests/agent-cases";
 const SKILL_PATH: &str = "skills/minglish/SKILL.md";
 pub(crate) const LEXICON_PATH: &str = "lexicon.tsv";
-const MAX_ROUNDS: usize = 3;
+pub(crate) const MAX_ROUNDS: usize = 3;
 
 #[derive(Serialize, Deserialize, Default)]
 struct Case {

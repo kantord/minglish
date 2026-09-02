@@ -131,6 +131,24 @@ impl Words {
         (subj, set)
     }
 
+    /// Every word of a sentence that is neither a lexicon form, a name
+    /// (quoted / capitalized mid-sentence), a digit count, nor punctuation.
+    fn unknown_words(&self, sentence: &str) -> Vec<String> {
+        let mut out = Vec::new();
+        for (i, tok) in tokens(sentence).into_iter().enumerate() {
+            if tok.starts_with('"') || tok == "," {
+                continue;
+            }
+            let digits = tok.trim_start_matches('~').chars().all(|c| c.is_ascii_digit());
+            let name = i > 0 && tok.chars().next().is_some_and(|c| c.is_uppercase());
+            let w = tok.to_lowercase();
+            if !digits && !name && !self.tags.contains_key(&w) && !out.contains(&w) {
+                out.push(w);
+            }
+        }
+        out
+    }
+
     fn cost(&self, text: &str) -> (usize, f64) {
         let toks: Vec<String> = text
             .split_whitespace()
@@ -231,9 +249,13 @@ pub fn sentences(p: &str) -> Vec<String> {
     let mut out = Vec::new();
     let mut cur = String::new();
     let chars: Vec<char> = protected.chars().collect();
+    let mut in_quote = false;
     for (i, &c) in chars.iter().enumerate() {
         cur.push(c);
-        if matches!(c, '.' | '!' | '?') && chars.get(i + 1).is_none_or(|n| *n == ' ') {
+        if c == '"' {
+            in_quote = !in_quote;
+        }
+        if !in_quote && matches!(c, '.' | '!' | '?') && chars.get(i + 1).is_none_or(|n| *n == ' ') {
             out.push(std::mem::take(&mut cur));
         }
     }
@@ -266,7 +288,14 @@ fn measure(lexicon: &Lexicon, words: &Words, para: &str) -> (Metrics, Vec<(Strin
         if ok {
             m.parsed += 1;
         }
-        verdicts.push((s.clone(), ok, if ok { String::new() } else { super::diagnosis_text(&d) }));
+        let mut detail = if ok { String::new() } else { super::diagnosis_text(&d) };
+        if !ok {
+            let unknown = words.unknown_words(s);
+            if unknown.len() > 1 {
+                detail.push_str(&format!(" [all unknown words: {}]", unknown.join(", ")));
+            }
+        }
+        verdicts.push((s.clone(), ok, detail));
         let (subj, nouns) = words.nouns(s);
         if let (Some(p), Some(subj)) = (&prev, &subj) {
             m.continuity_pairs += 1;
@@ -320,7 +349,8 @@ pub fn run(
          sentences freely; keep the given-before-new order — start each \
          sentence from a noun the previous sentence mentioned when you can. \
          Reply with the rewritten paragraph (sentences separated by periods, \
-         all lowercase except names), then ONE final line `drops: <comma-\
+         all lowercase except names, which keep their capital: \"the tool Lexgen\"; a word mentioned AS A WORD is \
+         quoted: the linter bans \"it\"), then ONE final line `drops: <comma-\
          separated register/affect losses, or none>`. If a meaning-preserving \
          rewrite is impossible with the available words and structures, reply \
          exactly `GAP: <one-line reason>`. No other prose."
@@ -404,35 +434,57 @@ fn process(
          Linter rejections:\n{}\n",
         case.context_before, paras[i], case.context_after, flags.join("\n")
     );
-    let replies: Vec<String> = std::thread::scope(|scope| {
+    // each trial is an independent conversation with up to MAX_ROUNDS repair
+    // rounds; every attempt (failures included) becomes a proposal
+    let attempts: Vec<Vec<(String, String, bool, Metrics, Option<String>)>> = std::thread::scope(|scope| {
         let handles: Vec<_> = (0..trials)
             .map(|_| {
                 scope.spawn(|| {
-                    let messages = vec![
+                    let mut messages = vec![
                         serde_json::json!({"role": "system", "content": system_prompt}),
-                        serde_json::json!({"role": "user", "content": user}),
+                        serde_json::json!({"role": "user", "content": user.clone()}),
                     ];
-                    super::complete_with(api_key, model, temperature, &messages, 700)
-                        .unwrap_or_else(|e| format!("API error: {e}"))
+                    let mut out = Vec::new();
+                    for round in 0..super::MAX_ROUNDS {
+                        let raw = match super::complete_with(api_key, model, temperature, &messages, 700) {
+                            Ok(r) => r,
+                            Err(e) => {
+                                out.push((format!("API error: {e}"), String::new(), false, Metrics::default(), None));
+                                break;
+                            }
+                        };
+                        let (text, drops) = split_reply(&raw);
+                        let (valid, metrics, diagnosis) = if text.starts_with("GAP:") {
+                            (false, Metrics::default(), Some(text.clone()))
+                        } else {
+                            let (m, v) = measure(lexicon, words, &text);
+                            let bad: Vec<String> = v
+                                .iter()
+                                .filter(|(_, ok, _)| !ok)
+                                .map(|(s, _, d)| format!("\"{s}\": {d}"))
+                                .collect();
+                            (bad.is_empty(), m, (!bad.is_empty()).then(|| bad.join(" | ")))
+                        };
+                        let gap = text.starts_with("GAP:");
+                        out.push((text.clone(), drops, valid, metrics, diagnosis.clone()));
+                        if valid || gap || round + 1 == super::MAX_ROUNDS {
+                            break;
+                        }
+                        messages.push(serde_json::json!({"role": "assistant", "content": raw}));
+                        messages.push(serde_json::json!({"role": "user", "content": format!(
+                            "Still rejected. Linter output per sentence:\n  {}\n\nReply with the whole \
+                             corrected paragraph again, then the `drops:` line.",
+                            diagnosis.unwrap_or_default().replace(" | ", "\n  ")
+                        )}));
+                    }
+                    out
                 })
             })
             .collect();
         handles.into_iter().map(|h| h.join().unwrap()).collect()
     });
 
-    for raw in replies {
-        let (text, drops) = split_reply(&raw);
-        let (valid, metrics, diagnosis) = if text.starts_with("GAP:") || text.starts_with("API error") {
-            (false, Metrics::default(), Some(text.clone()))
-        } else {
-            let (m, v) = measure(lexicon, words, &text);
-            let bad: Vec<String> = v
-                .iter()
-                .filter(|(_, ok, _)| !ok)
-                .map(|(s, _, d)| format!("\"{s}\": {d}"))
-                .collect();
-            (bad.is_empty(), m, (!bad.is_empty()).then(|| bad.join(" | ")))
-        };
+    for (text, drops, valid, metrics, diagnosis) in attempts.into_iter().flatten() {
         if let Some(p) = case.proposals.iter_mut().find(|p| p.text == text) {
             p.count += 1;
         } else {

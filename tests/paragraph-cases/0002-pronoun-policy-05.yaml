@@ -1,0 +1,287 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 5
+original: Zero reference ambiguity by construction; no discourse layer to build.
+context_before: No anaphora/discourse machinery exists or is planned for v0.
+context_after: Prose is repetitive ("the agent … the agent …") — accepted cost, consistent with the project's clarity-over-naturalness stance.
+original_metrics:
+  sentences: 1
+  parsed: 0
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 38.580000000000005
+  words: 10
+verdict: unreviewed
+best: the design does not create ambiguities. the system does not build a layer.
+proposals:
+- text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 53.260000000000005
+    words: 16
+  diagnosis: '"the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the system has no discourse layer to build": WORD: "discourse" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: every parser produces zero ambiguities. every parser has one parse. the system builds no discourse layer.
+  drops: performative flair, fragmentary style
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 68.11999999999999
+    words: 16
+  diagnosis: '"every parser produces zero ambiguities": WORD: "produces" is not a minglish word | "every parser has one parse": WORD: "parse" is not a minglish word | "the system builds no discourse layer": WORD: "discourse" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design of the system creates zero reference ambiguities. the system does not have a discourse layer. the team does not build a discourse layer.
+  drops: zero-as-number, semicolon structure, passive voice
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 80.69999999999999
+    words: 25
+  diagnosis: '"the design of the system creates zero reference ambiguities": WORD: "design" is not a minglish word | "the system does not have a discourse layer": WORD: "discourse" is not a minglish word | "the team does not build a discourse layer": WORD: "team" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: zero ambiguity does not occur in the design. the design has no discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 47.080000000000005
+    words: 14
+  diagnosis: '"zero ambiguity does not occur in the design": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: zero, occur] | "the design has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: no design contains ambiguity. the design does not have a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 40.8
+    words: 12
+  diagnosis: '"no design contains ambiguity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not have a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not contain ambiguity. the design does not contain a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 47.38
+    words: 14
+  diagnosis: '"the design does not contain ambiguity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not contain a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not produce ambiguities. the tool has no discourse layer.
+  drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 51.68
+    words: 13
+  diagnosis: '"the tool has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not produce ambiguities. the tool does not build a discourse layer.
+  drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 57.57
+    words: 15
+  diagnosis: '"the tool does not build a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not produce ambiguities. the tool does not have a discourse layer.
+  drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound, no-build-layer
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 55.9
+    words: 15
+  diagnosis: '"the tool does not have a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design removes reference ambiguities by construction. the system has no discourse layer to build.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 52.720000000000006
+    words: 15
+  diagnosis: '"the design removes reference ambiguities by construction": WORD: "removes" is not a minglish word [all unknown words: removes, reference, by, construction] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not create reference ambiguities. the system does not build a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 50.980000000000004
+    words: 15
+  diagnosis: '"the design does not create reference ambiguities": WORD: "reference" is not a minglish word | "the system does not build a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not create ambiguities. the system does not build a layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 41.55
+    words: 13
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: no agent reads reference ambiguities in the design. the system does not build a discourse layer.
+  drops: initial framing as a construction-time guarantee, compression
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 54.75000000000001
+    words: 16
+  diagnosis: '"no agent reads reference ambiguities in the design": WORD: "reference" is not a minglish word | "the system does not build a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design has no ambiguities. the system does not build a discourse layer.
+  drops: mention of references
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 42.449999999999996
+    words: 13
+  diagnosis: '"the design has no ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system does not build a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not create ambiguities. the system does not build a discourse layer.
+  drops: mention of references
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 46.72
+    words: 14
+  diagnosis: '"the system does not build a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system produces 0 ambiguities in the reference resolution process, so the development team does not build a discourse layer
+  drops: emphatic "by construction", semicolon structure
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 66.83999999999999
+    words: 20
+  diagnosis: '"the system produces 0 ambiguities in the reference resolution process, so the development team does not build a discourse layer": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: reference, resolution, development]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system produces no ambiguities in the tag process of the reference, so the team does not build a discourse layer
+  drops: '"by construction", "resolution" concept, "development" role'
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 65.03999999999999
+    words: 21
+  diagnosis: '"the system produces no ambiguities in the tag process of the reference, so the team does not build a discourse layer": WORD: "reference" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system produces no ambiguities in the tag process of the word, so the team does not build a discourse layer
+  drops: '"by construction", "resolution" concept, "development" role, "reference" term'
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 64.52
+    words: 21
+  diagnosis: '"the system produces no ambiguities in the tag process of the word, so the team does not build a discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system has no discourse layer. the system has no anaphora. the system produces no reference ambiguity.
+  drops: imperative tone, claim of "by construction", "zero" as an adjective, "to build" as purpose.
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 60.809999999999995
+    words: 17
+  diagnosis: '"the system has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system has no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system produces no reference ambiguity": WORD: "reference" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not have a discourse layer. the system does not have an anaphora. the system does not produce an ambiguities.
+  drops: '"reference" meaning'
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 71.41000000000001
+    words: 22
+  diagnosis: '"the system does not have a discourse layer": not recognizable as a minglish-like sentence | "the system does not produce an ambiguities": STYLE: "an ambiguities" — a/an take a singular noun'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not have a discourse layer. the system does not have an anaphora. the system does not produce ambiguities.
+  drops: '"reference" meaning'
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 68.94
+    words: 21
+  diagnosis: '"the system does not have a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash

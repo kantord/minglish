@@ -92,6 +92,10 @@ rules. Distinguish delimiters or introduce a marker when designed.
    "files" lexes as the enabled NOUN_PL, so the file→submit VERB redirect
    never surfaces. The diagnose layer should notice a noun in verb position
    whose lemma has a rejected-VERB entry and surface the suggestion.
+   **Resolved 2026-09-02** (slot findings in diagnose: verb after a
+   determiner → NOUN redirect; noun between subject and object → VERB
+   redirect). The structural version (role assignment) stays in
+   "Structured repair".
 
 ## Imperative-input advice gap (agenttest run 4, 2026-09-01)
 

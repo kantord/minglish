@@ -44,6 +44,9 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     };
     let toks: Vec<Tok> = toks.into_iter().map(|(_, t)| t).collect();
     let mut findings = pattern_findings(&toks);
+    findings.extend(slot_findings(lexicon, &toks));
+    findings.sort();
+    findings.dedup();
     let readings = Tier2::new(&toks).count();
     match readings {
         0 => {
@@ -243,6 +246,72 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             }
         }
     }
+    // a word mentioned as a word must be quoted (ADR 0018)
+    for w in toks.windows(2) {
+        let function_word = matches!(
+            w[1],
+            Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_) | Tok::Det(_) | Tok::DetSg(_)
+                | Tok::If(_) | Tok::Then(_) | Tok::No(_) | Tok::Every(_) | Tok::Some_(_)
+        );
+        if matches!(w[0], Tok::NounSg(_)) && function_word {
+            out.push(format!(
+                "\"{} {}\" — a word mentioned as a word must be quoted: \"{} \\\"{}\\\"\" (ADR 0018)",
+                word(&w[0]), word(&w[1]), word(&w[0]), word(&w[1])
+            ));
+        }
+    }
+    if let [first, Tok::CopSg(_) | Tok::CopPl(_), ..] = toks {
+        if matches!(first, Tok::Pron2(_) | Tok::Poss(_) | Tok::Det(_) | Tok::DetSg(_)) {
+            out.push(format!(
+                "\"{}\" used as a word must be quoted: \"\\\"{}\\\" is …\" (ADR 0018)",
+                word(first), word(first)
+            ));
+        }
+    }
+    // copula + prepositional phrase / adjective + PP (ADR 0003; ADR 0023 deferral)
+    for (i, t) in toks.iter().enumerate() {
+        if !matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
+            continue;
+        }
+        let mut j = i + 1;
+        if matches!(toks.get(j), Some(Tok::Neg(_))) {
+            j += 1;
+        }
+        match (toks.get(j), toks.get(j + 1)) {
+            (Some(Tok::PrepV(p)), _) => out.push(format!(
+                "\"{} {p} …\" — the copula takes an adjective or a noun phrase, not a \
+                 prepositional phrase; use a verb: \"the lexicon contains the pronouns\" (ADR 0003)",
+                word(t)
+            )),
+            (Some(Tok::Adj(a)), Some(Tok::PrepV(p))) => out.push(format!(
+                "\"{a} {p} …\" — an adjective cannot take a prepositional phrase yet; \
+                 restructure with a verb, or split the sentence (deferred, ADR 0023)"
+            )),
+            _ => {}
+        }
+    }
+    // noun-phrase coordination (ADR 0004: coordinate predicates or clauses)
+    for (i, t) in toks.iter().enumerate() {
+        if !matches!(t, Tok::Conj(_)) || i == 0 || !matches!(toks[i - 1], Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)) {
+            continue;
+        }
+        let mut j = i + 1;
+        if toks.get(j).is_some_and(is_det) {
+            j += 1;
+        }
+        while matches!(toks.get(j), Some(Tok::Adj(_))) {
+            j += 1;
+        }
+        if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
+            && toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::Comma | Tok::Conj(_)))
+        {
+            out.push(
+                "noun phrases cannot be coordinated — repeat the verb: \"the mechanism stores \
+                 a word and stores a message\", or split the sentence (ADR 0004)"
+                    .to_string(),
+            );
+        }
+    }
     // transitive verb with no object
     for (i, t) in toks.iter().enumerate() {
         if matches!(t, Tok::VtBase(_) | Tok::Vt3(_) | Tok::VtEd(_)) {
@@ -263,6 +332,62 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     }
     out.sort();
     out.dedup();
+    out
+}
+
+// ------------------------------------------------ slot (redirect) findings --
+
+fn is_det(t: &Tok) -> bool {
+    matches!(t, Tok::Det(_) | Tok::DetSg(_) | Tok::Poss(_) | Tok::Num(_) | Tok::NumPl(_) | Tok::Every(_) | Tok::No(_) | Tok::Some_(_))
+}
+
+fn is_noun_head(t: &Tok) -> bool {
+    matches!(t, Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_) | Tok::Pron1(_) | Tok::Pron2(_))
+}
+
+/// A word in the wrong slot whose rejected sense has a redirect (ideas,
+/// advice gap 2): "the cost" (cost is a verb; noun → expense), "the agent
+/// files the report" (files is a noun; verb → submit).
+fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
+    let mut out = Vec::new();
+    for (i, t) in toks.iter().enumerate() {
+        let prev = i.checked_sub(1).map(|j| &toks[j]);
+        let next = toks.get(i + 1);
+        match t {
+            // verb form in a noun slot: right after a determiner
+            Tok::VtBase(w) | Tok::ViBase(w) | Tok::Vt3(w) | Tok::Vi3(w)
+                if prev.is_some_and(is_det) =>
+            {
+                out.push(match lexicon.redirect(w, "NOUN") {
+                    Some(s) => format!("\"{w}\" is a verb in minglish — as a noun use \"{s}\""),
+                    None => format!("\"{w}\" is a verb in minglish and cannot follow a determiner"),
+                });
+            }
+            // noun form in a verb slot: after a subject head, before an object start
+            Tok::NounSg(w) | Tok::NounPl(w)
+                if prev.is_some_and(is_noun_head) && next.is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_))) =>
+            {
+                if let Some(s) = lexicon.redirect(w, "VERB") {
+                    out.push(format!("\"{w}\" is a noun in minglish — as a verb use \"{s}\""));
+                }
+            }
+            _ => {}
+        }
+    }
+    // noun-noun compound (ADR 0015): two nouns in a row, unless the second
+    // is a noun form used in the verb slot (handled above)
+    for (i, w) in toks.windows(2).enumerate() {
+        if let (Tok::NounSg(a), Tok::NounSg(b) | Tok::NounPl(b)) = (&w[0], &w[1]) {
+            let verb_slot = toks.get(i + 2).is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_)))
+                && lexicon.redirect(b, "VERB").is_some();
+            if !verb_slot {
+                out.push(format!(
+                    "\"{a} {b}\" — noun-noun compounds are not minglish; write \"the {b} of the {a}\", \
+                     or one transparent word (ADR 0015)"
+                ));
+            }
+        }
+    }
     out
 }
 

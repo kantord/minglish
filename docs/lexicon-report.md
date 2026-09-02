@@ -4,18 +4,18 @@
 
 ## Summary
 
-- 213 lemmas, 389 surface forms, 40 redirects, 37 waivers
-- Lemmas per category: ADJ 18, APPROX 1, BANNED 36, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 75, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 6, VERB_TRANS 39
+- 255 lemmas, 488 surface forms, 42 redirects, 61 waivers
+- Lemmas per category: ADJ 26, APPROX 1, BANNED 36, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 97, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 8, VERB_TRANS 49
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.48 (higher = more common; everyday words sit at 4.5+)
-- Rarest 5: linter (0.00), maintainer (2.38), retry (2.57), parser (2.63), lemma (2.74)
+- Mean zipf: 4.34 (higher = more common; everyday words sit at 4.5+)
+- Rarest 5: anaphora (0.00), anaphoric (0.00), indexical (0.00), linter (0.00), validator (0.00)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
 
-- Mean senses: 5.5 (upper bound — WordNet oversplits)
-- Top 5: check (25), come (21), reduce (20), have (19), return (16)
+- Mean senses: 5.3 (upper bound — WordNet oversplits)
+- Top 5: carry (40), check (25), come (21), reduce (20), have (19)
 
 ## Redirect findability guard (floor: zipf 3.5)
 
@@ -94,6 +94,30 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - hidden (VERB)
 - drift (NOUN)
 - difference (VERB)
+- discourse (VERB)
+- prose (VERB)
+- project (VERB)
+- team (VERB)
+- example (VERB)
+- triage (VERB)
+- layer (VERB)
+- plan (NOUN)
+- repeat (NOUN)
+- say (NOUN)
+- say (ADV)
+- produce (NOUN)
+- future (NOUN)
+- reference (VERB)
+- demonstrative (ADJ)
+- object (VERB)
+- ban (NOUN)
+- carry (NOUN)
+- split (NOUN)
+- split (ADJ)
+- refer (ADJ)
+- refer (NOUN)
+- unknown (NOUN)
+- possessive (NOUN)
 
 ## Corpus coverage
 

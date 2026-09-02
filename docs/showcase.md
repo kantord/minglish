@@ -191,6 +191,7 @@ the advice:
 
 ✗ the agent retries the request if the test fails
   STYLE:
+    - "request if" — a word mentioned as a word must be quoted: "request \"if\"" (ADR 0018)
     - condition must come first — write: if <clause>, then <clause> (ADR 0007)
 ✓ if the test fails, then the agent retries the request
   parses uniquely — peak-open 5, max-dep 8, depth 2, right-branching 10%

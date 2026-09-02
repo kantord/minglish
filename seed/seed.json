@@ -1310,5 +1310,324 @@
     "lemma": "as",
     "category": "BANNED",
     "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); comparison has no minglish form yet"
+  },
+  {
+    "lemma": "pronoun",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "discourse",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "anaphora",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "plural": "anaphoras"
+    }
+  },
+  {
+    "lemma": "prose",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "proses"
+    }
+  },
+  {
+    "lemma": "project",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "writer",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "mechanism",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "validator",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "plural": "validators"
+    }
+  },
+  {
+    "lemma": "team",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "example",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "document",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "reject": {
+      "VERB": "record"
+    }
+  },
+  {
+    "lemma": "triage",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "triages"
+    }
+  },
+  {
+    "lemma": "design",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "reject": {
+      "VERB": "plan"
+    }
+  },
+  {
+    "lemma": "layer",
+    "category": "NOUN",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "plan",
+    "category": "VERB_TRANS",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "repeat",
+    "category": "VERB_TRANS",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "say",
+    "category": "VERB_TRANS",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "past": "said",
+      "ppart": "said"
+    },
+    "waive": [
+      "NOUN",
+      "ADV"
+    ]
+  },
+  {
+    "lemma": "produce",
+    "category": "VERB_TRANS",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "consistent",
+    "category": "ADJ",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "future",
+    "category": "ADJ",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "anaphoric",
+    "category": "ADJ",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "instructional",
+    "category": "ADJ",
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+  },
+  {
+    "lemma": "reference",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "speaker",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "hearer",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "demonstrative",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "demonstratives"
+    }
+  },
+  {
+    "lemma": "repetition",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "naturalness",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "plural": "naturalnesses"
+    }
+  },
+  {
+    "lemma": "version",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "object",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "ban",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "allow",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "prefer",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "past": "preferred",
+      "ppart": "preferred",
+      "ing": "preferring"
+    }
+  },
+  {
+    "lemma": "defer",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "past": "deferred",
+      "ppart": "deferred",
+      "ing": "deferring"
+    }
+  },
+  {
+    "lemma": "carry",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "split",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "NOUN",
+      "ADJ"
+    ],
+    "forms": {
+      "past": "split",
+      "ppart": "split",
+      "ing": "splitting"
+    }
+  },
+  {
+    "lemma": "refer",
+    "category": "VERB_INTRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "ADJ",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "reappear",
+    "category": "VERB_INTRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "unknown",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "possessive",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "indexical",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "closed",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
   }
 ]

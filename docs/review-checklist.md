@@ -45,7 +45,13 @@ notes where. Add an entry when a new type is caught; never delete one.
 - **Dormant redirect**: a redirect that never fires because the word lexes
   as its enabled form ("the agent files the report"; ideas, advice gap 2).
 - **Generic fallback**: "not recognizable as a minglish-like sentence" where
-  a pattern finding exists or could (tier-2 count 0 with no findings).
+  a pattern finding exists or could (tier-2 count 0 with no findings). The
+  ADR 0002 paragraph run showed 115 of these for four silent gaps —
+  noun-noun compounds, unquoted mention, copula + PP, noun coordination —
+  all now named (2026-09-02).
+- **Invalid example in our own output**: an example sentence in the skill
+  or in linter advice that does not itself parse. Guarded by the self-lint
+  tests since 2026-09-02 (crates/diagnose/tests/selflint.rs).
 - **Unfindable fix**: advice that names a word the writer would never reach
   for, or that only makes sense with insider context (ADR 0008, 0015).
 - **Redirect to a word outside the lexicon**: the advice names a synonym

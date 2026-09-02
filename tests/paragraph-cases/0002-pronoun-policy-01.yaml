@@ -1,0 +1,288 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 1
+original: 'Triage against UD-EWT (docs/triage-report.md) shows pronouns are ~2,200 of the OOV tokens — the second-largest closed-class gap. But third-person pronouns are anaphoric: resolving "it failed" requires a discourse layer, and our research findings identify cross-sentence reference as exactly where ambiguity reappears after sentences are split (docs/research/cnl-design-findings.md, "Ambiguity migrates"). First- and second-person pronouns are indexical (speaker/hearer), never anaphoric, and carry no reference ambiguity; instructional text uses them constantly.'
+context_before: ''
+context_after: 'Banned: all anaphoric pronouns and pronominal demonstratives (it, they, he, she, this, that, these, those, and their object/possessive forms). The writer repeats the noun instead.'
+original_metrics:
+  sentences: 3
+  parsed: 0
+  continuity_pairs: 2
+  continuity_ok: 2
+  cost: 331.3499999999999
+  words: 67
+verdict: unreviewed
+best: ''
+proposals:
+- text: the report in docs/triage-report.md shows the frequencies of tokens from the ud-ewt corpus. the pronouns are about 2200 of the tokens that the parser does not know. the pronouns form the second-largest closed-class gap. the pronouns for the speaker and the hearer refer to the speaker and the hearer. the pronouns for the speaker and the hearer never refer to a prior noun. the pronouns for the speaker and the hearer carry no reference ambiguity. the instructional text uses the pronouns for the speaker and the hearer constantly. the pronouns for a third person refer to a prior noun. the resolution of the pronoun for a third person requires a discourse layer. the research findings identify cross-sentence reference as the point where ambiguity reappears after the system splits the sentences. the document docs/research/cnl-design-findings.md describes the finding. the finding states that ambiguity migrates.
+  drops: parenthetical citations, dash, hyphenated compounds, register of "triage" as a noun, "anaphoric" as a technical term, "indexical" as a technical term, "closed-class", "OOV", "token", "discourse layer", "cross-sentence reference", "speaker/hearer" notation
+  valid: false
+  metrics:
+    sentences: 12
+    parsed: 0
+    continuity_pairs: 8
+    continuity_ok: 1
+    cost: 500.1599999999999
+    words: 142
+  diagnosis: '"the report in docs/triage-report.md shows the frequencies of tokens from the ud-ewt corpus": WORD: "docs/triage-report.md" is not a minglish word | "the pronouns are about 2200 of the tokens that the parser does not know": WORD: "pronouns" is not a minglish word | "the pronouns form the second-largest closed-class gap": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer refer to the speaker and the hearer": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer never refer to a prior noun": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer carry no reference ambiguity": WORD: "pronouns" is not a minglish word | "the instructional text uses the pronouns for the speaker and the hearer constantly": WORD: "instructional" is not a minglish word | "the pronouns for a third person refer to a prior noun": WORD: "pronouns" is not a minglish word | "the resolution of the pronoun for a third person requires a discourse layer": WORD: "resolution" is not a minglish word | "the research findings identify cross-sentence reference as the point where ambiguity reappears after the system splits the sentences": WORD: "findings" is not a minglish word | "the document docs/research/cnl-design-findings.md describes the finding": WORD: "document" is not a minglish word | "the finding states that ambiguity migrates": WORD: "states" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows pronouns are about 2200 of the out of vocabulary tokens. the pronouns are the second largest closed class gap. pronouns for the speaker or the hearer are not anaphoric. pronouns for the speaker or the hearer carry no reference ambiguities. instructional text uses pronouns for the speaker and the hearer often. the research findings show cross sentence reference is the location where ambiguity reappears after the process splits sentences.
+  drops: register of triage/paper genre, hyphenated compound adjectives, parenthetical citations, dash-connective, "anaphoric" and "indexical" technical terms, "discourse layer" concept, "OOV" abbreviation, "UD-EWT" corpus name, "docs/" path references, percentage approximation "~", "second-largest" comparison, "resolving" gerund, "constantly" adverb
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 267.46000000000004
+    words: 73
+  diagnosis: '"the triage report shows pronouns are about 2200 of the out of vocabulary tokens": WORD: "triage" is not a minglish word | "the pronouns are the second largest closed class gap": WORD: "pronouns" is not a minglish word | "pronouns for the speaker or the hearer are not anaphoric": WORD: "pronouns" is not a minglish word | "pronouns for the speaker or the hearer carry no reference ambiguities": WORD: "pronouns" is not a minglish word | "instructional text uses pronouns for the speaker and the hearer often": WORD: "instructional" is not a minglish word | "the research findings show cross sentence reference is the location where ambiguity reappears after the process splits sentences": WORD: "findings" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report "docs/triage-report.md" shows the gap of pronouns is about 2200 of the out-of-vocabulary tokens. the gap of pronouns is the second largest closed-class gap. pronouns for a person who is not the speaker or the hearer are anaphoric. for example the sentence "it failed" requires a discourse layer to resolve the pronoun. the research findings in "docs/research/cnl-design-findings.md" identify cross-sentence reference as the place where ambiguity reappears after the parser splits sentences. pronouns for the speaker and the hearer are indexical. indexical pronouns are never anaphoric. indexical pronouns carry no reference ambiguity. instructional text uses indexical pronouns constantly.
+  drops: parenthetical glosses, hyphenated modifier, dash, colon, semicolon
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 0
+    continuity_pairs: 5
+    continuity_ok: 1
+    cost: 400.59999999999985
+    words: 98
+  diagnosis: '"the report "docs/triage-report.md" shows the gap of pronouns is about 2200 of the out-of-vocabulary tokens": WORD: "pronouns" is not a minglish word | "the gap of pronouns is the second largest closed-class gap": WORD: "pronouns" is not a minglish word | "pronouns for a person who is not the speaker or the hearer are anaphoric": WORD: "pronouns" is not a minglish word | "for example the sentence "it failed" requires a discourse layer to resolve the pronoun": WORD: "example" is not a minglish word | "the research findings in "docs/research/cnl-design-findings.md" identify cross-sentence reference as the place where ambiguity reappears after the parser splits sentences": WORD: "findings" is not a minglish word | "pronouns for the speaker and the hearer are indexical": WORD: "pronouns" is not a minglish word | "indexical pronouns are never anaphoric": WORD: "indexical" is not a minglish word | "indexical pronouns carry no reference ambiguity": WORD: "indexical" is not a minglish word | "instructional text uses indexical pronouns constantly": WORD: "instructional" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows pronouns are about 2,200 of the unknown tokens in the corpus UD EWT. the pronouns are the second biggest gap in the closed class words. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. first person pronouns and second person pronouns are indexical. they refer to the speaker or the hearer. they are never anaphoric. they carry no ambiguity of reference. the instructional prose uses first person pronouns and second person pronouns often.
+  drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 7
+    continuity_ok: 1
+    cost: 390.05999999999966
+    words: 108
+  diagnosis: '"the triage report shows pronouns are about 2,200 of the unknown tokens in the corpus UD EWT": WORD: "2,200" is not a minglish word [all unknown words: 2,200, unknown, tokens, corpus] | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is not a minglish word [all unknown words: second, biggest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "they refer to the speaker or the hearer": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, refer, speaker, hearer] | "they are never anaphoric": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, never] | "they carry no ambiguity of reference": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, carry, reference] | "the instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on triage shows pronouns are ~2200 of the unknown tokens in the corpus UD EWT. the pronouns are the second biggest gap in the closed class words. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. first person pronouns and second person pronouns are indexical. first person pronouns and second person pronouns refer to the speaker or the hearer. first person pronouns and second person pronouns are never anaphoric. first person pronouns and second person pronouns carry no ambiguity of reference. the instructional prose uses first person pronouns and second person pronouns often.
+  drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 9
+    continuity_ok: 4
+    cost: 459.77999999999946
+    words: 126
+  diagnosis: '"the report on triage shows pronouns are ~2200 of the unknown tokens in the corpus UD EWT": WORD: "unknown" is not a minglish word [all unknown words: unknown, tokens, corpus] | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is not a minglish word [all unknown words: second, biggest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "first person pronouns and second person pronouns refer to the speaker or the hearer": WORD: "first" is not a minglish word [all unknown words: first, second, refer, speaker, hearer] | "first person pronouns and second person pronouns are never anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second, never] | "first person pronouns and second person pronouns carry no ambiguity of reference": WORD: "first" is not a minglish word [all unknown words: first, second, carry, reference] | "the instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on triage shows pronouns are ~2200 of the words that the parser does not know in the corpus UD EWT. the pronouns are the next biggest gap in the closed words. the pronouns for a person who is not the speaker or the hearer are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. the pronouns for the speaker and the pronouns for the hearer are indexical. the pronouns for the speaker and the pronouns for the hearer refer to the speaker or the hearer. the pronouns for the speaker and the pronouns for the hearer are not anaphoric. the pronouns for the speaker and the pronouns for the hearer have no ambiguity of reference. the instructional prose uses the pronouns for the speaker and the pronouns for the hearer often.
+  drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms, ordinal words "first", "second", "third", words "refer", "speaker", "hearer", "never", "often", "carry", "reference", "cross", "unknown", "tokens", "corpus", "resolution", "biggest", "closed", "class", "exact", "location", "reappearance", "after", "split", "indexical"
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 9
+    continuity_ok: 5
+    cost: 526.5199999999994
+    words: 160
+  diagnosis: '"the report on triage shows pronouns are ~2200 of the words that the parser does not know in the corpus UD EWT": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, know, corpus] | "the pronouns are the next biggest gap in the closed words": WORD: "next" is not a minglish word [all unknown words: next, biggest, closed] | "the pronouns for a person who is not the speaker or the hearer are anaphoric": WORD: "who" is not a minglish word [all unknown words: who, speaker, hearer] | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "the pronouns for the speaker and the pronouns for the hearer are indexical": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, indexical] | "the pronouns for the speaker and the pronouns for the hearer refer to the speaker or the hearer": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, refer] | "the pronouns for the speaker and the pronouns for the hearer are not anaphoric": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer] | "the pronouns for the speaker and the pronouns for the hearer have no ambiguity of reference": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, reference] | "the instructional prose uses the pronouns for the speaker and the pronouns for the hearer often": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report triage against ud ewt shows about 2200 pronouns are in the set of unknown words. the set of pronouns is the second large gap in the closed classes. third person pronouns are anaphoric. an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails. the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences. first person pronouns and second person pronouns are indexical. the indexical pronouns refer to the speaker or the hearer. the indexical pronouns are not anaphoric. the indexical pronouns do not carry ambiguity in reference. instructional prose uses the indexical pronouns often.
+  drops: citation markers, dash typography, hyphenated compounds, parenthetical gloss, register "constantly"
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 9
+    continuity_ok: 5
+    cost: 429.1599999999997
+    words: 111
+  diagnosis: '"the report triage against ud ewt shows about 2200 pronouns are in the set of unknown words": WORD: "against" is not a minglish word [all unknown words: against, ud, ewt, set, unknown] | "the set of pronouns is the second large gap in the closed classes": WORD: "set" is not a minglish word [all unknown words: set, second, large, closed, classes] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails": WORD: "resolution" is not a minglish word | "the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, cross, reference, as, place, where, after, splits] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the indexical pronouns refer to the speaker or the hearer": WORD: "indexical" is not a minglish word [all unknown words: indexical, refer, speaker, hearer] | "the indexical pronouns are not anaphoric": WORD: "indexical" is not a minglish word | "the indexical pronouns do not carry ambiguity in reference": WORD: "indexical" is not a minglish word [all unknown words: indexical, carry, reference] | "instructional prose uses the indexical pronouns often": WORD: "indexical" is not a minglish word [all unknown words: indexical, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on the ud ewt data shows about 2200 pronouns are in the set of unknown words. the set of pronouns is the second large gap in the closed classes. third person pronouns are anaphoric. an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails. the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences. first person pronouns and second person pronouns are indexical. the indexical pronouns refer to the speaker or the hearer. the indexical pronouns are not anaphoric. the indexical pronouns do not carry ambiguity in reference. instructional prose uses the indexical pronouns often.
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 9
+    continuity_ok: 5
+    cost: 426.74999999999966
+    words: 112
+  diagnosis: '"the report on the ud ewt data shows about 2200 pronouns are in the set of unknown words": WORD: "ud" is not a minglish word [all unknown words: ud, ewt, set, unknown] | "the set of pronouns is the second large gap in the closed classes": WORD: "set" is not a minglish word [all unknown words: set, second, large, closed, classes] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails": WORD: "resolution" is not a minglish word | "the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, cross, reference, as, place, where, after, splits] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the indexical pronouns refer to the speaker or the hearer": WORD: "indexical" is not a minglish word [all unknown words: indexical, refer, speaker, hearer] | "the indexical pronouns are not anaphoric": WORD: "indexical" is not a minglish word | "the indexical pronouns do not carry ambiguity in reference": WORD: "indexical" is not a minglish word [all unknown words: indexical, carry, reference] | "instructional prose uses the indexical pronouns often": WORD: "indexical" is not a minglish word [all unknown words: indexical, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'GAP: the required meaning involves several concepts (proper names "ud ewt", ordinal "third", ordinal "second", "set", "closed classes", "cross-sentence reference", "indexical", "speaker/hearer", "discourse layer", "resolution") that are not present in the minglish word list and cannot be expressed with the available vocabulary and sentence shapes.'
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 0
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 0.0
+    words: 0
+  diagnosis: 'GAP: the required meaning involves several concepts (proper names "ud ewt", ordinal "third", ordinal "second", "set", "closed classes", "cross-sentence reference", "indexical", "speaker/hearer", "discourse layer", "resolution") that are not present in the minglish word list and cannot be expressed with the available vocabulary and sentence shapes.'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed categories. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer. the research shows cross sentence reference is the place where ambiguity returns after a split. first person pronouns and second person pronouns are indexical. these pronouns refer to the speaker or the hearer. the pronouns have no reference ambiguity. instructional prose uses first person pronouns and second person pronouns often.
+  drops: register (bracketed citations, hyphenated compounds, "against"), affect (explanation of "second-largest" as a gap type), detail (explicit mention of "UD-EWT" corpus name and document paths)
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 0
+    continuity_pairs: 8
+    continuity_ok: 3
+    cost: 316.22999999999985
+    words: 86
+  diagnosis: '"the triage report shows pronouns are about 2200 of the unknown tokens": WORD: "unknown" is not a minglish word [all unknown words: unknown, tokens] | "the pronouns are the second largest gap in the closed categories": WORD: "second" is not a minglish word [all unknown words: second, largest, closed] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows cross sentence reference is the place where ambiguity returns after a split": WORD: "cross" is not a minglish word [all unknown words: cross, reference, place, where, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "these pronouns refer to the speaker or the hearer": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, refer, speaker, hearer] | "the pronouns have no reference ambiguity": WORD: "reference" is not a minglish word | "instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows pronouns are about 2200 of the out of vocabulary tokens. the pronouns are the big gap in the categories that do not grow. person 3 pronouns are anaphoric. the sentence "it failed" needs a discourse layer. the research shows that ambiguity returns at the boundaries between sentences. person 1 pronouns and person 2 pronouns are not anaphoric. person 1 pronouns refer to the speaker. person 2 pronouns refer to the hearer. these pronouns have no ambiguity. instructional prose uses person 1 pronouns and person 2 pronouns often.
+  drops: affect (ranking "second largest"), detail (explicit "closed-class" term, "cross-sentence reference" phrasing), register (ordinal numbers used as labels "third person" rewritten to "person 3", "first person" to "person 1")
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 0
+    continuity_pairs: 9
+    continuity_ok: 4
+    cost: 329.1399999999999
+    words: 91
+  diagnosis: '"the triage report shows pronouns are about 2200 of the out of vocabulary tokens": WORD: "out" is not a minglish word [all unknown words: out, vocabulary, tokens] | "the pronouns are the big gap in the categories that do not grow": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "person 3 pronouns are anaphoric": not recognizable as a minglish-like sentence | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows that ambiguity returns at the boundaries between sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, boundaries, between] | "person 1 pronouns and person 2 pronouns are not anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "person 1 pronouns refer to the speaker": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) [all unknown words: refer, speaker] | "person 2 pronouns refer to the hearer": WORD: "refer" is not a minglish word [all unknown words: refer, hearer] | "these pronouns have no ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "instructional prose uses person 1 pronouns and person 2 pronouns often": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'GAP: Cannot express "out of vocabulary", "tokens", "third person", "first person", "second person", "refer", "speaker", "hearer", "boundaries", "between", or "that" with the available word list and sentence shapes. The original claims about pronoun classes, anaphoricity, indexicality, and the OOV gap require words and structures not present in minglish.'
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 0
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 0.0
+    words: 0
+  diagnosis: 'GAP: Cannot express "out of vocabulary", "tokens", "third person", "first person", "second person", "refer", "speaker", "hearer", "boundaries", "between", or "that" with the available word list and sentence shapes. The original claims about pronoun classes, anaphoricity, indexicality, and the OOV gap require words and structures not present in minglish.'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on triage against ud ewt shows pronouns have about 2200 of the out of vocabulary tokens. the gap is the second largest closed class gap. the pronouns for the third person are anaphoric. the sentence "it failed" needs a discourse layer. the research findings describe cross sentence reference. this reference is the place where ambiguity reappears after the tool splits sentences. the pronouns for the first person and the second person are indexical. they refer to the speaker or the hearer. they are never anaphoric. they carry no reference ambiguity. instructional text uses the pronouns for the first person and the second person constantly.
+  drops: dashes, parentheses, document references, percentage symbols, hyphenated compounds, register "but"
+  valid: false
+  metrics:
+    sentences: 11
+    parsed: 0
+    continuity_pairs: 8
+    continuity_ok: 0
+    cost: 372.53999999999985
+    words: 106
+  diagnosis: '"the report on triage against ud ewt shows pronouns have about 2200 of the out of vocabulary tokens": WORD: "against" is not a minglish word [all unknown words: against, ud, ewt, out, vocabulary, tokens] | "the gap is the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "the pronouns for the third person are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research findings describe cross sentence reference": WORD: "findings" is not a minglish word [all unknown words: findings, cross, reference] | "this reference is the place where ambiguity reappears after the tool splits sentences": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, reference, place, where, reappears, after, splits] | "the pronouns for the first person and the second person are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "they refer to the speaker or the hearer": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, refer, speaker, hearer] | "they are never anaphoric": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, never] | "they carry no reference ambiguity": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, carry, reference] | "instructional text uses the pronouns for the first person and the second person constantly": WORD: "text" is not a minglish word [all unknown words: text, first, second, constantly]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on triage shows pronouns have about 2200 of the unknown words. the gap is large. the pronouns for person 3 are anaphoric. the sentence "it failed" needs a discourse layer. the research describes cross sentence reference. cross sentence reference is the place where ambiguity comes back after the tool splits sentences. the pronouns for person 1 and person 2 are indexical. the pronouns for person 1 and person 2 refer to the speaker or the hearer. the pronouns for person 1 and person 2 are never anaphoric. the pronouns for person 1 and person 2 carry no ambiguity. instructional prose uses the pronouns for person 1 and person 2.
+  drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class"
+  valid: false
+  metrics:
+    sentences: 11
+    parsed: 0
+    continuity_pairs: 10
+    continuity_ok: 4
+    cost: 380.0299999999997
+    words: 111
+  diagnosis: '"the report on triage shows pronouns have about 2200 of the unknown words": WORD: "unknown" is not a minglish word | "the gap is large": WORD: "large" is not a minglish word | "the pronouns for person 3 are anaphoric": not recognizable as a minglish-like sentence | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research describes cross sentence reference": WORD: "cross" is not a minglish word [all unknown words: cross, reference] | "cross sentence reference is the place where ambiguity comes back after the tool splits sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, place, where, back, after, splits] | "the pronouns for person 1 and person 2 are indexical": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns for person 1 and person 2 refer to the speaker or the hearer": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) [all unknown words: refer, speaker, hearer] | "the pronouns for person 1 and person 2 are never anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns for person 1 and person 2 carry no ambiguity": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "instructional prose uses the pronouns for person 1 and person 2": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report on triage shows pronouns have about 2200 of the rare words. the gap is big. the anaphoric pronouns are the pronouns for person three. the sentence "it failed" needs a discourse layer. the research describes reference across sentences. reference across sentences is the place where ambiguity returns after the tool splits sentences. the pronouns for person one and person two are indexical. the pronouns for person one and person two refer to the speaker or the hearer. the pronouns for person one and person two are never anaphoric. the pronouns for person one and person two carry no ambiguity. instructional prose uses the pronouns for person one and person two.
+  drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class", "large", "unknown", "cross sentence"
+  valid: false
+  metrics:
+    sentences: 11
+    parsed: 1
+    continuity_pairs: 10
+    continuity_ok: 4
+    cost: 381.8399999999996
+    words: 112
+  diagnosis: '"the report on triage shows pronouns have about 2200 of the rare words": not recognizable as a minglish-like sentence | "the anaphoric pronouns are the pronouns for person three": WORD: "three" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research describes reference across sentences": WORD: "reference" is not a minglish word [all unknown words: reference, across] | "reference across sentences is the place where ambiguity returns after the tool splits sentences": WORD: "reference" is not a minglish word [all unknown words: reference, across, place, where, after, splits] | "the pronouns for person one and person two are indexical": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, indexical] | "the pronouns for person one and person two refer to the speaker or the hearer": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, refer, speaker, hearer] | "the pronouns for person one and person two are never anaphoric": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, never] | "the pronouns for person one and person two carry no ambiguity": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, carry] | "instructional prose uses the pronouns for person one and person two": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report triage of the repository shows the test set of the tool UD-EWT has about 2200 unknown words. the pronouns are the second common gap in the generated class of words. the pronouns of the third person are anaphoric. the discourse layer must resolve the reference of the sentence "it failed". the research findings of the team show the ambiguity reappears in the cross sentence reference after the system splits the sentences. the pronouns of the first person and the pronouns of the second person are indexical. the pronouns of the first person and the pronouns of the second person are not anaphoric. the pronouns of the first person and the pronouns of the second person carry no ambiguity of reference. the instructional prose uses the pronouns of the first person and the pronouns of the second person.
+  drops: tone (directness), hyphenated compounds, register (academic), structural compactness
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 0
+    continuity_pairs: 8
+    continuity_ok: 3
+    cost: 438.72999999999956
+    words: 139
+  diagnosis: '"the report triage of the repository shows the test set of the tool UD-EWT has about 2200 unknown words": WORD: "set" is not a minglish word [all unknown words: set, unknown] | "the pronouns are the second common gap in the generated class of words": WORD: "second" is not a minglish word [all unknown words: second, class] | "the pronouns of the third person are anaphoric": WORD: "third" is not a minglish word | "the discourse layer must resolve the reference of the sentence "it failed"": WORD: "resolve" is not a minglish word [all unknown words: resolve, reference] | "the research findings of the team show the ambiguity reappears in the cross sentence reference after the system splits the sentences": WORD: "findings" is not a minglish word [all unknown words: findings, reappears, cross, reference, after, splits] | "the pronouns of the first person and the pronouns of the second person are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the pronouns of the first person and the pronouns of the second person are not anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second] | "the pronouns of the first person and the pronouns of the second person carry no ambiguity of reference": WORD: "first" is not a minglish word [all unknown words: first, second, carry, reference] | "the instructional prose uses the pronouns of the first person and the pronouns of the second person": WORD: "first" is not a minglish word [all unknown words: first, second]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows about 2200 words are unknown in the test data of the tool UD-EWT. the pronouns are the second common gap in the generated words. the pronouns of person 3 are anaphoric. the discourse layer must find the meaning of the sentence "it failed". the research shows the ambiguity appears in the sentence reference after the system splits the sentences. the pronouns of person 1 and the pronouns of person 2 are not anaphoric. the pronouns of person 1 and the pronouns of person 2 have no ambiguity. the instructional prose uses the pronouns of person 1 and the pronouns of person 2.
+  drops: ordinal numbers, academic register, precision of "cross-sentence"
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 0
+    continuity_pairs: 7
+    continuity_ok: 2
+    cost: 345.04999999999984
+    words: 106
+  diagnosis: '"the triage report shows about 2200 words are unknown in the test data of the tool UD-EWT": WORD: "unknown" is not a minglish word | "the pronouns are the second common gap in the generated words": WORD: "second" is not a minglish word | "the pronouns of person 3 are anaphoric": not recognizable as a minglish-like sentence | "the discourse layer must find the meaning of the sentence "it failed"": WORD: "meaning" is not a minglish word | "the research shows the ambiguity appears in the sentence reference after the system splits the sentences": WORD: "appears" is not a minglish word [all unknown words: appears, reference, after, splits] | "the pronouns of person 1 and the pronouns of person 2 are not anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns of person 1 and the pronouns of person 2 have no ambiguity": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the instructional prose uses the pronouns of person 1 and the pronouns of person 2": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the triage report shows about 2200 words are not known in the test data of the tool UD-EWT. the pronouns are the next common gap in the generated words. the pronouns of person three are anaphoric. the discourse layer must find the referent of the sentence "it failed". the research shows the ambiguity appears in the cross sentence reference after the system splits the sentences. the pronouns of person one and the pronouns of person two are not anaphoric. the pronouns of person one and the pronouns of person two have no ambiguity. the instructional prose uses the pronouns of person one and the pronouns of person two.
+  drops: ordinal numbers, academic register, precision of "cross-sentence"
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 0
+    continuity_pairs: 7
+    continuity_ok: 2
+    cost: 351.40999999999974
+    words: 108
+  diagnosis: '"the triage report shows about 2200 words are not known in the test data of the tool UD-EWT": WORD: "known" is not a minglish word | "the pronouns are the next common gap in the generated words": WORD: "next" is not a minglish word | "the pronouns of person three are anaphoric": WORD: "three" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the discourse layer must find the referent of the sentence "it failed"": WORD: "referent" is not a minglish word | "the research shows the ambiguity appears in the cross sentence reference after the system splits the sentences": WORD: "appears" is not a minglish word [all unknown words: appears, cross, reference, after, splits] | "the pronouns of person one and the pronouns of person two are not anaphoric": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the pronouns of person one and the pronouns of person two have no ambiguity": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the instructional prose uses the pronouns of person one and the pronouns of person two": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report docs/triage-report.md shows that pronouns are about 2200 of the unknown words. pronouns are the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research findings show that ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first and second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. these pronouns are not anaphoric. these pronouns carry no reference ambiguity. instructional prose uses these pronouns.
+  drops: markdown formatting, parenthetical citations, hyphenated compounds, dash, token, OOV, closed-class, gap, resolving, discourse layer, our, findings, identify, exactly, where, reappears, after, split, indexical, speaker/hearer, never, carry, reference, text, them, constantly
+  valid: false
+  metrics:
+    sentences: 12
+    parsed: 0
+    continuity_pairs: 11
+    continuity_ok: 6
+    cost: 375.5199999999997
+    words: 97
+  diagnosis: '"the report docs/triage-report.md shows that pronouns are about 2200 of the unknown words": WORD: "docs/triage-report.md" is not a minglish word [all unknown words: docs/triage-report.md, that, unknown] | "pronouns are the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research findings show that ambiguity reappears after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, that, reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "these pronouns are not anaphoric": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "these pronouns carry no reference ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, carry, reference] | "instructional prose uses these pronouns": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report shows that pronouns are about 2200 of the unknown words. pronouns are a big gap. the gap is the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research shows that ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first person pronouns are indexical. second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. the first person pronoun is not anaphoric. the second person pronoun is not anaphoric. the first person pronoun carries no reference ambiguity. the second person pronoun carries no reference ambiguity. instructional prose uses the first person pronoun and the second person pronoun.
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 1
+    continuity_pairs: 15
+    continuity_ok: 10
+    cost: 487.2099999999994
+    words: 130
+  diagnosis: '"the report shows that pronouns are about 2200 of the unknown words": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, unknown] | "the gap is the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows that ambiguity reappears after the system splits sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, indexical] | "second person pronouns are indexical": WORD: "second" is not a minglish word [all unknown words: second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "the first person pronoun is not anaphoric": WORD: "first" is not a minglish word | "the second person pronoun is not anaphoric": WORD: "second" is not a minglish word | "the first person pronoun carries no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, carries, reference] | "the second person pronoun carries no reference ambiguity": WORD: "second" is not a minglish word [all unknown words: second, carries, reference] | "instructional prose uses the first person pronoun and the second person pronoun": WORD: "first" is not a minglish word [all unknown words: first, second]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the report shows pronouns are about 2200 of the unknown words. pronouns are a big gap. the gap is the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research shows ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first person pronouns are indexical. second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. the first person pronoun is not anaphoric. the second person pronoun is not anaphoric. the first person pronoun carries no reference ambiguity. the second person pronoun carries no reference ambiguity. instructional prose uses the first person pronoun and the second person pronoun.
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 1
+    continuity_pairs: 15
+    continuity_ok: 10
+    cost: 483.2299999999994
+    words: 128
+  diagnosis: '"the report shows pronouns are about 2200 of the unknown words": WORD: "unknown" is not a minglish word | "the gap is the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows ambiguity reappears after the system splits sentences": WORD: "reappears" is not a minglish word [all unknown words: reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, indexical] | "second person pronouns are indexical": WORD: "second" is not a minglish word [all unknown words: second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "the first person pronoun is not anaphoric": WORD: "first" is not a minglish word | "the second person pronoun is not anaphoric": WORD: "second" is not a minglish word | "the first person pronoun carries no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, carries, reference] | "the second person pronoun carries no reference ambiguity": WORD: "second" is not a minglish word [all unknown words: second, carries, reference] | "instructional prose uses the first person pronoun and the second person pronoun": WORD: "first" is not a minglish word [all unknown words: first, second]'
+  count: 1
+  model: deepseek/deepseek-v4-flash

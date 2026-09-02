@@ -1,0 +1,288 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 2
+original: 'Banned: all anaphoric pronouns and pronominal demonstratives (it, they, he, she, this, that, these, those, and their object/possessive forms). The writer repeats the noun instead.'
+context_before: 'Triage against UD-EWT (docs/triage-report.md) shows pronouns are ~2,200 of the OOV tokens — the second-largest closed-class gap. But third-person pronouns are anaphoric: resolving "it failed" requires a discourse layer, and our research findings identify cross-sentence reference as exactly where ambiguity reappears after sentences are split (docs/research/cnl-design-findings.md, "Ambiguity migrates"). First- and second-person pronouns are indexical (speaker/hearer), never anaphoric, and carry no reference ambiguity; instructional text uses them constantly.'
+context_after: 'Allowed: i (PRON_1SG), you (PRON_2), my (POSS_1SG), your (POSS_2).'
+original_metrics:
+  sentences: 2
+  parsed: 0
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 97.98
+  words: 25
+verdict: unreviewed
+best: ''
+proposals:
+- text: the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the user repeats the noun instead.
+  drops: imperative mood, colon punctuation, parenthetical list, register of a specification rule
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 136.60999999999996
+    words: 38
+  diagnosis: '"the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word | "the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word | "the user repeats the noun instead": WORD: "repeats" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool bans anaphoric pronouns and pronominal demonstratives. the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms. the person who writes repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 122.76999999999997
+    words: 34
+  diagnosis: '"the tool bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word | "the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms": WORD: "ban" is not a minglish word | "the person who writes repeats the noun": WORD: "who" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: a linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words. the user repeats the noun instead of every banned word.
+  drops: imperative form, colon notation, parenthetical list, bullet style
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 150.39999999999995
+    words: 39
+  diagnosis: '"a linter bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words": WORD: "bans" is not a minglish word | "the user repeats the noun instead of every banned word": WORD: "repeats" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter rejects anaphoric pronouns and pronominal demonstratives. the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 137.38999999999993
+    words: 36
+  diagnosis: '"the linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words": WORD: "bans" is not a minglish word [all unknown words: bans, it, they, he, she, this, that, these, those, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter rejects anaphoric pronouns. the linter rejects demonstrative pronouns. the words it, they, he, she, this, that, these, and those are not allowed. the object forms and possessive forms of these words are also not allowed. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 151.72999999999996
+    words: 42
+  diagnosis: '"the linter rejects demonstrative pronouns": WORD: "demonstrative" is not a minglish word | "the words it, they, he, she, this, that, these, and those are not allowed": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, allowed] | "the object forms and possessive forms of these words are also not allowed": WORD: "object" is not a minglish word [all unknown words: object, possessive, these, also, allowed]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter rejects anaphoric pronouns. the linter rejects the words it, they, he, she, this, that, these, and those. the linter rejects the forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 119.35999999999996
+    words: 32
+  diagnosis: '"the linter rejects the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the linter rejects the forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule bans anaphoric pronouns. the rule bans pronominal demonstratives. the anaphoric pronouns are it, they, he, she, this, that, these, those. the rule also bans the object forms and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 150.84999999999997
+    words: 40
+  diagnosis: '"the rule bans anaphoric pronouns": WORD: "bans" is not a minglish word | "the rule bans pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "the anaphoric pronouns are it, they, he, she, this, that, these, those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule also bans the object forms and possessive forms of these words": WORD: "also" is not a minglish word [all unknown words: also, bans, object, possessive, these]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule prohibits anaphoric pronouns. the rule prohibits pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule prohibits the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 164.59999999999997
+    words: 43
+  diagnosis: '"the rule prohibits anaphoric pronouns": WORD: "prohibits" is not a minglish word | "the rule prohibits pronominal demonstratives": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, pronominal, demonstratives] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule prohibits the object forms and possessive forms of the anaphoric pronouns": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule does not allow anaphoric pronouns. the rule does not allow pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule does not allow the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 176.54000000000002
+    words: 49
+  diagnosis: '"the rule does not allow anaphoric pronouns": WORD: "allow" is not a minglish word | "the rule does not allow pronominal demonstratives": WORD: "allow" is not a minglish word [all unknown words: allow, pronominal, demonstratives] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule does not allow the object forms and possessive forms of the anaphoric pronouns": WORD: "allow" is not a minglish word [all unknown words: allow, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: every anaphoric pronoun is banned. every pronominal demonstrative is banned. the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 125.80999999999995
+    words: 36
+  diagnosis: '"every anaphoric pronoun is banned": WORD: "banned" is not a minglish word | "every pronominal demonstrative is banned": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstrative, banned] | "the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, include, it, they, he, she, this, that, these, those, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use pronominal demonstratives. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 170.76
+    words: 46
+  diagnosis: '"the tool Lexgen does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 131.35999999999996
+    words: 38
+  diagnosis: '"the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, object, possessive]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 150.37999999999997
+    words: 42
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, it, they, he, she, this, that, these, those, object, possessive] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 153.82999999999998
+    words: 44
+  diagnosis: '"the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, it, they, he, she, this, that, these, those, object, possessive] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen does not use pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, and those. the tool Lexgen does not use the object forms of these words. the tool Lexgen does not use the possessive forms of these words. the writer repeats the noun. the writer does not use the pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 3
+    continuity_pairs: 5
+    continuity_ok: 4
+    cost: 202.75000000000003
+    words: 60
+  diagnosis: '"the tool Lexgen does not use the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the tool Lexgen does not use the object forms of these words": WORD: "object" is not a minglish word [all unknown words: object, these] | "the tool Lexgen does not use the possessive forms of these words": WORD: "possessive" is not a minglish word [all unknown words: possessive, these]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the person writes the noun. the writer does not use an anaphoric pronoun. the writer does not use a pronominal demonstrative. i does not refer to an entity. you does not refer to an entity. my refers to the writer. your refers to the reader. the tool Linter rejects a sentence with an anaphoric pronoun. the tool Linter rejects a sentence with a pronominal demonstrative. the tool Linter rejects a sentence with the word it. the tool Linter rejects a sentence with the word they. the tool Linter rejects a sentence with the word he. the tool Linter rejects a sentence with the word she. the tool Linter rejects a sentence with the word this. the tool Linter rejects a sentence with the word that. the tool Linter rejects a sentence with the word these. the tool Linter rejects a sentence with the word those. the tool Linter rejects a sentence with the word their. the tool Linter rejects a sentence with the word its. the tool Linter rejects a sentence with the word his. the tool Linter rejects a sentence with the word hers.
+  drops: list format, parentheses, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification
+  valid: false
+  metrics:
+    sentences: 21
+    parsed: 2
+    continuity_pairs: 17
+    continuity_ok: 14
+    cost: 668.7399999999994
+    words: 185
+  diagnosis: '"the writer does not use a pronominal demonstrative": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstrative] | "i does not refer to an entity": WORD: "refer" is not a minglish word [all unknown words: refer, entity] | "you does not refer to an entity": WORD: "refer" is not a minglish word [all unknown words: refer, entity] | "my refers to the writer": WORD: "refers" is not a minglish word | "your refers to the reader": WORD: "refers" is not a minglish word [all unknown words: refers, reader] | "the tool Linter rejects a sentence with an anaphoric pronoun": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with a pronominal demonstrative": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes [all unknown words: pronominal, demonstrative] | "the tool Linter rejects a sentence with the word it": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word they": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word he": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word she": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word this": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word that": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word these": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word those": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word their": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word its": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word his": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word hers": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the writer repeats the noun. the writer does not use the word it. the writer does not use the word they. the writer does not use the word he. the writer does not use the word she. the writer does not use the word this. the writer does not use the word that. the writer does not use the word these. the writer does not use the word those. the writer does not use the word their. the writer does not use the word its. the writer does not use the word his. the writer does not use the word hers. the word i is not an anaphoric word. the word you is not an anaphoric word. the word my refers to the writer. the word your refers to the person who reads the text. the tool "linter" rejects a sentence with an anaphoric word. the tool "linter" rejects a sentence with the word it. the tool "linter" rejects a sentence with the word they. the tool "linter" rejects a sentence with the word he. the tool "linter" rejects a sentence with the word she. the tool "linter" rejects a sentence with the word this. the tool "linter" rejects a sentence with the word that. the tool "linter" rejects a sentence with the word these. the tool "linter" rejects a sentence with the word those. the tool "linter" rejects a sentence with the word their. the tool "linter" rejects a sentence with the word its. the tool "linter" rejects a sentence with the word his. the tool "linter" rejects a sentence with the word hers.
+  drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words
+  valid: false
+  metrics:
+    sentences: 30
+    parsed: 2
+    continuity_pairs: 29
+    continuity_ok: 28
+    cost: 861.6099999999997
+    words: 265
+  diagnosis: '"the writer does not use the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word hers": WORD: "hers" is not a minglish word | "the word i is not an anaphoric word": not recognizable as a minglish-like sentence | "the word you is not an anaphoric word": not recognizable as a minglish-like sentence | "the word my refers to the writer": WORD: "refers" is not a minglish word | "the word your refers to the person who reads the text": WORD: "refers" is not a minglish word [all unknown words: refers, who, text] | "the tool "linter" rejects a sentence with the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word hers": WORD: "hers" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the writer repeats the noun. the word i is not a third person word. the word you is not a third person word. the word my shows the writer. the word your shows the person who reads the report. the tool "linter" rejects a third person word. the tool "linter" rejects the word it. the tool "linter" rejects the word they. the tool "linter" rejects the word he. the tool "linter" rejects the word she. the tool "linter" rejects the word this. the tool "linter" rejects the word that. the tool "linter" rejects the word these. the tool "linter" rejects the word those. the tool "linter" rejects the word their. the tool "linter" rejects the word its. the tool "linter" rejects the word his. the tool "linter" does not have the word hers.
+  drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words, explicit mention of each banned word as a word token
+  valid: false
+  metrics:
+    sentences: 18
+    parsed: 1
+    continuity_pairs: 17
+    continuity_ok: 15
+    cost: 478.8199999999999
+    words: 133
+  diagnosis: '"the word i is not a third person word": WORD: "third" is not a minglish word | "the word you is not a third person word": WORD: "third" is not a minglish word | "the word my shows the writer": not recognizable as a minglish-like sentence | "the word your shows the person who reads the report": WORD: "who" is not a minglish word | "the tool "linter" rejects a third person word": WORD: "third" is not a minglish word | "the tool "linter" rejects the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" does not have the word hers": WORD: "hers" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are i, he, she, they, and their forms. pronominal demonstratives are this, that, these, and those. the writer repeats the noun. the writer does not use a pronoun.
+  drops: imperative tone, parenthetical list, possessive forms mention, object/possessive forms mention
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 147.07999999999996
+    words: 38
+  diagnosis: '"the rule bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "anaphoric pronouns are i, he, she, they, and their forms": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: he, she, they, their] | "pronominal demonstratives are this, that, these, and those": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives, this, that, these, those]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule does not allow anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are i and you and the forms of i and you. pronominal demonstratives are the forms of this and that. the writer repeats the noun. the writer does not use a pronoun.
+  drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 3
+    cost: 154.18999999999994
+    words: 44
+  diagnosis: '"the rule does not allow anaphoric pronouns and pronominal demonstratives": WORD: "allow" is not a minglish word [all unknown words: allow, pronominal, demonstratives] | "anaphoric pronouns are i and you and the forms of i and you": not recognizable as a minglish-like sentence | "pronominal demonstratives are the forms of this and that": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives, this, that]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the rule rejects anaphoric pronouns and pronominal demonstratives. i and you are anaphoric pronouns. the forms of i and you are anaphoric pronouns. the forms of this and that are pronominal demonstratives. the writer repeats the noun. the writer does not use a pronoun.
+  drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention, copular list structure
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 2
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 165.20999999999998
+    words: 44
+  diagnosis: '"the rule rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "i and you are anaphoric pronouns": not recognizable as a minglish-like sentence | "the forms of i and you are anaphoric pronouns": not recognizable as a minglish-like sentence | "the forms of this and that are pronominal demonstratives": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, that, pronominal, demonstratives]'
+  count: 1
+  model: deepseek/deepseek-v4-flash

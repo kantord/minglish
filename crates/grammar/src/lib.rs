@@ -90,6 +90,7 @@ impl std::fmt::Display for LexError {
 
 pub struct Lexicon {
     forms: BTreeMap<String, String>,
+    lemmas: BTreeMap<String, String>,
     rejects: BTreeMap<String, Vec<(String, String)>>,
     bans: BTreeMap<String, String>,
 }
@@ -98,6 +99,7 @@ impl Lexicon {
     pub fn load(path: &str) -> Result<Lexicon, String> {
         let text = std::fs::read_to_string(path).map_err(|e| format!("{path}: {e}"))?;
         let mut forms = BTreeMap::new();
+        let mut lemmas = BTreeMap::new();
         let mut rejects: BTreeMap<String, Vec<(String, String)>> = BTreeMap::new();
         let mut bans: BTreeMap<String, String> = BTreeMap::new();
         for line in text.lines().filter(|l| !l.starts_with('#')) {
@@ -106,6 +108,7 @@ impl Lexicon {
             match kind {
                 "form" => {
                     forms.insert(surface.to_string(), tag.to_string());
+                    lemmas.insert(surface.to_string(), value.to_string());
                 }
                 "reject" => rejects
                     .entry(surface.to_string())
@@ -117,7 +120,26 @@ impl Lexicon {
                 _ => {}
             }
         }
-        Ok(Lexicon { forms, rejects, bans })
+        Ok(Lexicon { forms, lemmas, rejects, bans })
+    }
+
+    /// The form-tag of an enabled surface form, if any.
+    pub fn tag_of(&self, word: &str) -> Option<&str> {
+        self.forms.get(word).map(String::as_str)
+    }
+
+    /// The lemma of an enabled surface form.
+    pub fn lemma_of(&self, word: &str) -> Option<&str> {
+        self.lemmas.get(word).map(String::as_str)
+    }
+
+    /// The redirect suggestion for a rejected (POS) use of a word, looked up
+    /// by its lemma (the reject table is keyed by lemma).
+    pub fn redirect(&self, word: &str, pos: &str) -> Option<&str> {
+        let key = self.lemmas.get(word).map(String::as_str).unwrap_or(word);
+        self.rejects
+            .get(key)
+            .and_then(|rs| rs.iter().find(|(p, _)| p == pos).map(|(_, s)| s.as_str()))
     }
 
     /// Tokenize a sentence. Commas become COMMA tokens; a trailing period is

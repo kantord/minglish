@@ -1,0 +1,275 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 4
+original: No anaphora/discourse machinery exists or is planned for v0.
+context_before: 'Allowed: i (PRON_1SG), you (PRON_2), my (POSS_1SG), your (POSS_2).'
+context_after: Zero reference ambiguity by construction; no discourse layer to build.
+original_metrics:
+  sentences: 1
+  parsed: 0
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 38.81
+  words: 9
+verdict: unreviewed
+best: ''
+proposals:
+- text: the system has no anaphora machinery and the system has no discourse machinery. the system does not have plans for an anaphora or a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 89.58999999999999
+    words: 26
+  diagnosis: '"the system has no anaphora machinery and the system has no discourse machinery": WORD: "anaphora" is not a minglish word | "the system does not have plans for an anaphora or a discourse layer": WORD: "plans" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain an anaphora tool. the lexicon does not contain a discourse tool. the maintainers do not plan a discourse tool for version 0.
+  drops: technical precision of "machinery", the compound "anaphora/discourse", the phrase "or is planned"
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 99.23999999999998
+    words: 27
+  diagnosis: '"the lexicon does not contain an anaphora tool": WORD: "anaphora" is not a minglish word | "the lexicon does not contain a discourse tool": WORD: "discourse" is not a minglish word | "the maintainers do not plan a discourse tool for version 0": WORD: "plan" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not have an anaphora machinery or a discourse machinery. the system does not plan an anaphora machinery or a discourse machinery for version 0.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 97.66
+    words: 27
+  diagnosis: '"the system does not have an anaphora machinery or a discourse machinery": WORD: "anaphora" is not a minglish word | "the system does not plan an anaphora machinery or a discourse machinery for version 0": WORD: "plan" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the repository has no anaphora machinery. the repository has no discourse machinery. the team does not plan an anaphora machinery. the team does not plan a discourse machinery for the initial version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 115.84
+    words: 32
+  diagnosis: '"the repository has no anaphora machinery": WORD: "machinery" is not a minglish word | "the repository has no discourse machinery": WORD: "machinery" is not a minglish word | "the team does not plan an anaphora machinery": WORD: "machinery" is not a minglish word | "the team does not plan a discourse machinery for the initial version": WORD: "machinery" is not a minglish word [all unknown words: machinery, version]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the repository has no anaphora. the repository has no discourse. the team does not plan an anaphora. the team does not plan a discourse for the first version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 94.52999999999997
+    words: 28
+  diagnosis: '"the repository has no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the repository has no discourse": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the team does not plan a discourse for the first version": WORD: "first" is not a minglish word [all unknown words: first, version]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the repository does not have an anaphora. the repository does not have a discourse. the team does not plan an anaphora. the team does not plan a discourse for the initial version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 105.19
+    words: 32
+  diagnosis: '"the team does not plan a discourse for the initial version": WORD: "version" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: no anaphora exists and no discourse layer exists for the version 0. the tool does not plan an anaphora. the tool does not plan a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 98.53
+    words: 27
+  diagnosis: '"no anaphora exists and no discourse layer exists for the version 0": WORD: "exists" is not a minglish word [all unknown words: exists, version] | "the tool does not plan a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word. the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence. the version 0 has no anaphora and has no discourse layer. the team does not plan an anaphora for the version 0. the team does not plan a discourse layer for the version 0.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 266.65999999999997
+    words: 78
+  diagnosis: '"no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word": WORD: "exists" is not a minglish word [all unknown words: exists, version, that, wrong, minglish] | "the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence": WORD: "^" is not a minglish word [all unknown words: that, wrong, it, recognizable, as, minglish-like] | "the version 0 has no anaphora and has no discourse layer": WORD: "version" is not a minglish word | "the team does not plan an anaphora for the version 0": WORD: "version" is not a minglish word | "the team does not plan a discourse layer for the version 0": WORD: "version" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: no tool has an anaphora. no tool has a discourse layer. the tool does not plan an anaphora. the tool does not plan a discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 95.17999999999999
+    words: 26
+  diagnosis: '"no tool has a discourse layer": not recognizable as a minglish-like sentence | "the tool does not plan a discourse layer": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the project has no anaphora machinery and the project has no discourse machinery. the project does not plan a discourse machinery and the project does not plan an anaphora machinery.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 104.87
+    words: 30
+  diagnosis: '"the project has no anaphora machinery and the project has no discourse machinery": WORD: "machinery" is not a minglish word | "the project does not plan a discourse machinery and the project does not plan an anaphora machinery": WORD: "machinery" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the project has no anaphora mechanism and the project has no discourse mechanism. the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 103.87
+    words: 30
+  diagnosis: '"the project has no anaphora mechanism and the project has no discourse mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the project does not have an anaphora mechanism. the project does not have a discourse mechanism. the project does not plan a discourse mechanism. the project does not plan an anaphora mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 109.96
+    words: 32
+  diagnosis: '"the project does not have an anaphora mechanism": not recognizable as a minglish-like sentence | "the project does not have a discourse mechanism": not recognizable as a minglish-like sentence | "the project does not plan a discourse mechanism": not recognizable as a minglish-like sentence | "the project does not plan an anaphora mechanism": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism. the team does not plan the anaphora mechanism for the version. the team does not plan the discourse mechanism for the version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 132.12
+    words: 39
+  diagnosis: '"the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "the team does not plan the anaphora mechanism for the version": WORD: "version" is not a minglish word | "the team does not plan the discourse mechanism for the version": WORD: "version" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism. the team does not plan the anaphora mechanism. the team does not plan the discourse mechanism.
+  drops: version number
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 117.74
+    words: 33
+  diagnosis: '"the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "the team does not plan the anaphora mechanism": not recognizable as a minglish-like sentence | "the team does not plan the discourse mechanism": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon has no anaphora mechanism. the lexicon has no discourse mechanism. the team does not plan the anaphora mechanism. the team does not plan the discourse mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 102.46
+    words: 28
+  diagnosis: '"the lexicon has no anaphora mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the lexicon has no discourse mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the team does not plan the anaphora mechanism": not recognizable as a minglish-like sentence | "the team does not plan the discourse mechanism": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 58.36
+    words: 16
+  diagnosis: '"the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism": WORD: "current" is not a minglish word [all unknown words: current, version]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon for the old version does not contain an anaphora mechanism or a discourse mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 57.879999999999995
+    words: 16
+  diagnosis: '"the lexicon for the old version does not contain an anaphora mechanism or a discourse mechanism": WORD: "version" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain an anaphora mechanism or a discourse mechanism.
+  drops: temporal precision (v0)
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 47.44
+    words: 12
+  diagnosis: '"the lexicon does not contain an anaphora mechanism or a discourse mechanism": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not contain an anaphora mechanism. the system does not contain a discourse mechanism. no agent plans the anaphora mechanism for the future. no agent plans the discourse mechanism for the future.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 118.98999999999998
+    words: 34
+  diagnosis: '"the system does not contain an anaphora mechanism": not recognizable as a minglish-like sentence | "the system does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "no agent plans the anaphora mechanism for the future": not recognizable as a minglish-like sentence | "no agent plans the discourse mechanism for the future": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not contain an anaphora mechanism. the system does not contain a discourse mechanism. no agent plans the anaphora mechanism. no agent plans the discourse mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 105.13
+    words: 28
+  diagnosis: '"the system does not contain an anaphora mechanism": not recognizable as a minglish-like sentence | "the system does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "no agent plans the anaphora mechanism": not recognizable as a minglish-like sentence | "no agent plans the discourse mechanism": not recognizable as a minglish-like sentence'
+  count: 2
+  model: deepseek/deepseek-v4-flash

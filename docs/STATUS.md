@@ -60,7 +60,9 @@ derivable from the code, ADRs, or git history.
   user decides), then land as: tentative ADR + seed/grammar change + corpus
   sentences + reject tests + regenerated reports, all in one commit.
 - `./scripts/check.sh` must pass before commits; it regenerates everything
-  and drift-checks committed artifacts.
+  and drift-checks committed artifacts. It includes the self-lint tests:
+  every example sentence in the skill, in linter advice, and in ban advice
+  must itself parse — never feed the model an invalid example.
 - The user runs all `git commit`s and all API-spending runs (agenttest,
   autofix) themselves; those runs are milestones, not routine.
 - Every review of linter output, rewrites, or agent snapshots goes through
@@ -71,7 +73,8 @@ derivable from the code, ADRs, or git history.
 
 ## Metrics snapshot (2026-09-01)
 
-- Lexicon 373 forms (ADR 0001 rewrite added ≈55 lemmas); corpus 68/68 parse; grammar LR(1)-clean, zero
+- Lexicon 488 forms (ADR 0001 rewrite ≈55 lemmas; ADR 0002 paragraph runs ≈40
+  jargon lemmas); corpus 70/70 parse; grammar LR(1)-clean, zero
   precedence declarations (CI-enforced).
 - agenttest first-try trajectory: 44 → 51 → 48 → 52 of 54 (run 5). Predictions registered for run 6: "please delete the file" should
   snapshot to the bare imperative (skill now teaches it); the no-must case
