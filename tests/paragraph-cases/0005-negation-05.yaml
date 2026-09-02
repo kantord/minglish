@@ -61,13 +61,13 @@ proposals:
   valid: false
   metrics:
     sentences: 4
-    parsed: 1
+    parsed: 3
     continuity_pairs: 3
     continuity_ok: 1
     cost: 124.93
     words: 40
     terms: 3
-  diagnosis: '"The word "not" changes the meaning of the verb of a sentence": AMBIGUOUS (5 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "The language bans the structure "not" before a Noun Phrase": WORD: "before" is not a minglish word | "The language bans the structure "not" before an adjective": WORD: "before" is not a minglish word'
+  diagnosis: '"The word "not" changes the meaning of the verb of a sentence": AMBIGUOUS (5 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The word "not" changes the verb of a sentence. The Grammar gives one scope to every Function Word. The language bans a sentence with "not" and a Noun Phrase. The language bans a sentence with "not" and an adjective.

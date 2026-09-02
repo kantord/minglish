@@ -62,6 +62,7 @@ pub enum Tok {
     Scale(String),
     AdjCmp(String),
     AdjLong(String),
+    Be(String),
     Some_(String),
     Name(String),
     Comma,
@@ -417,6 +418,18 @@ pub fn units(text: &str) -> Vec<String> {
             i += 1;
             continue;
         }
+        // a Step Block (ADR 0034): consecutive header/step lines are one unit
+        if is_step_line(l) {
+            let mut block = Vec::new();
+            let mut j = i;
+            while j < lines.len() && is_step_line(lines[j]) {
+                block.push(lines[j].to_string());
+                j += 1;
+            }
+            out.push(block.join("\n"));
+            i = j;
+            continue;
+        }
         if l.ends_with(':') {
             let mut block = vec![l.to_string()];
             let mut j = i + 1;
@@ -432,6 +445,26 @@ pub fn units(text: &str) -> Vec<String> {
         }
     }
     out
+}
+
+/// Gherkin keywords that open a step line (ADR 0034).
+pub const STEP_KEYWORDS: [&str; 4] = ["Given ", "When ", "Then ", "And "];
+pub const HEADER_KEYWORDS: [&str; 2] = ["Feature:", "Scenario:"];
+
+fn is_step_line(l: &str) -> bool {
+    STEP_KEYWORDS.iter().any(|k| l.starts_with(k)) || HEADER_KEYWORDS.iter().any(|k| l.starts_with(k))
+}
+
+/// True when a text has the Step Block shape: every non-empty line is a
+/// Gherkin header or step, and at least one step is present.
+pub fn is_step_block(text: &str) -> bool {
+    let lines: Vec<&str> = text.lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+    // opens with a header, "Given" or "When": a lone "Then …" line is prose
+    // with a misplaced "then", not a block
+    let opens = lines.first().is_some_and(|l| {
+        HEADER_KEYWORDS.iter().any(|k| l.starts_with(k)) || l.starts_with("Given ") || l.starts_with("When ")
+    });
+    opens && lines.iter().all(|l| is_step_line(l))
 }
 
 /// True when a text has the Enumeration block shape.
@@ -531,6 +564,7 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "SCALE" => Tok::Scale(w),
         "ADJ_CMP" => Tok::AdjCmp(w),
         "ADJ_LONG" => Tok::AdjLong(w),
+        "BE" => Tok::Be(w),
         // NAME is produced directly by the tokenizer, never from the lexicon
         _ => return None,
     })
@@ -649,7 +683,7 @@ fn clause_depth(tree: &Tree) -> usize {
         Tree::Leaf { .. } => 0,
         Tree::Node { label, children, .. } => {
             let inner = children.iter().map(clause_depth).max().unwrap_or(0);
-            let is_clause = matches!(*label, "S" | "Clause" | "Cond" | "Causal" | "Prohib" | "Imp");
+            let is_clause = matches!(*label, "S" | "Clause" | "Cond" | "Causal" | "Prohib" | "Imp" | "Steps");
             inner + usize::from(is_clause)
         }
     }
@@ -664,9 +698,46 @@ pub type ParseError =
 pub fn parse_text(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
     if is_enumeration(text) {
         parse_enumeration(lexicon, text)
+    } else if is_step_block(text) {
+        parse_step_block(lexicon, text)
     } else {
         parse(lexicon, text)
     }
+}
+
+/// Feature:/Scenario: headers carry a minglish sentence or a quoted Name;
+/// Given/When/Then/And lines carry one clause each (ADR 0034).
+fn parse_step_block(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
+    let mut children = Vec::new();
+    let mut seen_step = false;
+    for (k, raw) in text.lines().map(str::trim).filter(|l| !l.is_empty()).enumerate() {
+        if let Some(kw) = HEADER_KEYWORDS.iter().find(|kw| raw.starts_with(*kw)) {
+            let title = raw[kw.len()..].trim();
+            if title.is_empty() {
+                return Err(format!("line {}: \"{kw}\" needs a title (ADR 0034)", k + 1));
+            }
+            let tree = parse(lexicon, title).or_else(|_| {
+                let toks = lexicon.tokenize(title).map_err(|e| e.to_string())?;
+                let iter = toks.into_iter().map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+                minglish::ItemParser::new().parse(iter).map_err(|_| String::new())
+            }).map_err(|e| format!("line {}: the title \"{title}\" is not a minglish sentence or a quoted Name{}", k + 1, if e.is_empty() { String::new() } else { format!(" — {e}") }))?;
+            children.push(tree);
+            continue;
+        }
+        let kw = STEP_KEYWORDS.iter().find(|kw| raw.starts_with(*kw)).expect("step line");
+        if kw.trim() == "And" && !seen_step {
+            return Err(format!("line {}: \"And\" continues a step — no step comes before it (ADR 0034)", k + 1));
+        }
+        seen_step = true;
+        let clause = raw[kw.len()..].trim().trim_end_matches('.');
+        let toks = lexicon.tokenize(clause).map_err(|e| format!("line {}: {e}", k + 1))?;
+        let iter = toks.into_iter().map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+        let tree = minglish::StepParser::new()
+            .parse(iter)
+            .map_err(|e| format!("line {} (\"{}{clause}\"): a step is one clause with no coordination — {}", k + 1, kw, format_parse_error(&e)))?;
+        children.push(tree);
+    }
+    Ok(Tree::Node { label: "Steps", head: 0, children })
 }
 
 /// intro statement ending in ":" + "- item" lines. The items enumerate the

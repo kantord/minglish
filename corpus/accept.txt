@@ -88,3 +88,16 @@ the agent deleted 20 million files
 the load is heavier than the length
 the paraphrase is more transparent than the Compound
 the test took 3.5 minutes
+the Lexicon is a bad tool for a Name
+the word "we" is a big blocker in the Dogfood
+a hyphenated word must be transparent
+a term can be a verb
+the intro cannot be a question
+every Redirect must be a common word
+the ambiguity reappears after the rewrite
+the reader holds the consequent until the condition
+Scenario: the agent retries a request
+Given the test fails
+When the agent retries the request
+Then the queue is empty
+And the Linter shows an error

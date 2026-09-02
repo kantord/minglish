@@ -12,7 +12,7 @@ concept of the project into general words. The phrase "the ambiguity of
 the reference" is one example. The phrase "the layer of the discourse" is
 one example. The language did not mark a term. The decision
 "0015" requires a definition for an opaque coinage. The system did not
-enforce the definitions. The system did not use the definitions. A verb can carry a term. The word "waive" is one example. The word
+enforce the definitions. The system did not use the definitions. A term can be a verb. The word "waive" is one example. The word
 "attest" is one example. The word "anaphoric" is an adjective. A list of
 the nouns does not cover the terms.
 

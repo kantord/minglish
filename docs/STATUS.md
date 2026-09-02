@@ -8,7 +8,7 @@ derivable from the code, ADRs, or git history.
 - `domain/model.json` — the domain model (ADR 0027): every project term with
   its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
   written Capitalized in minglish text. `just define <Term>` looks one up.
-- `docs/adr/0001–0030` — every language and policy decision, each citing its
+- `docs/adr/0001–0034` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),

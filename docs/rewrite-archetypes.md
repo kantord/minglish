@@ -28,7 +28,11 @@ rewrite cost.
 | A19 | a term used lowercase in its general sense (*gap*, *name*, *form*) | "the gap is big" | a different general word (*distance*, *word*) | 8 |
 | A20 | "X of Y" with a bare plural or *every* inside | "5 of 8 sentences", "a chain of Noun Prepositions" | determiner on the inner noun, or restructure | 6 |
 
-Decisions from the maintainer's review (2026-09-02): A1 → ADR 0029 (ordinals,
+Decisions from the maintainer's review (2026-09-02/03): A17 → ADR 0031 (a
+verb-preposition phrase after a copular complement; A5 stays banned);
+A16 → ADR 0032 ("be" after a modal only); A13 → ADR 0033 (after, before,
+until + noun phrase) and ADR 0034 (Step Block: Gherkin Given/When/Then/And
+lines; "Then" only inside the block); A1 → ADR 0029 (ordinals,
 scale words, decimals); A3 → ADR 0030 (comparatives); A2 kept as a ban with
 advice; A6 and A9 accepted as rewrite costs; A4 to be examined on its
 examples (see below); the rest need targeted discussion.

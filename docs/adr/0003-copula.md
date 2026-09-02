@@ -38,11 +38,12 @@ Participle. The language bans the Passive. The language bans the
 Progressive. The sentence "the file is stored" is a Passive. The sentence
 "the agent is running" is a Progressive.
 
-The language does not enable 4 Surface Forms of "be":
-- "be"
+The language does not enable 3 Surface Forms of "be":
 - "am"
 - "been"
 - "being"
+
+The decision "0032" enabled the phrase "must be".
 
 The decision "0010" added "was". The decision "0010" added "were".
 

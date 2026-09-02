@@ -13,7 +13,7 @@ fn tier2_is_a_superset_of_tier1() {
     let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
     let corpus = std::fs::read_to_string(repo("corpus/accept.txt")).unwrap();
     for line in grammar::units(&corpus) {
-        if grammar::is_enumeration(&line) {
+        if grammar::is_enumeration(&line) || grammar::is_step_block(&line) {
             continue; // blocks are checked by the tier-1 corpus test
         }
         let line = line.as_str();
@@ -65,6 +65,8 @@ fn rejections_get_named_diagnoses() {
         ("the file is more heavy than the report", "write \"heavier\""),
         ("the file is heavier", "needs the standard"),
         ("the Triage checks the tokens", "takes no determiner"),
+        ("the file be old", "exists only after a modal"),
+        ("Then the queue is empty", "inside a Step Block"),
         ("the pronouns of a person not the speaker are anaphoric", "negates the verb only"),
         ("the prose is repetitive, the agent mentions the agent", "comma cannot join"),
         ("the language does not have a discourse layer", "write \"Discourse Layer\""),

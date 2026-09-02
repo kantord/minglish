@@ -269,7 +269,7 @@ proposals:
     cost: 77.52999999999997
     words: 25
     terms: 0
-  diagnosis: '"the project uses clarity and does not use naturalness": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the") | "the team does not find the cost to be a problem": WORD: "be" is not a minglish word'
+  diagnosis: '"the project uses clarity and does not use naturalness": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the") | "the team does not find the cost to be a problem": STYLE: "be" exists only after a modal: "must be <adjective>", "can be <noun phrase>"; elsewhere write "is" or "are" (ADR 0032); "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "does … find" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the prose repeats the agent. this effect is a cost. the team accepts the cost. the cost is consistent with the design of the project. the design prefers clarity over naturalness.

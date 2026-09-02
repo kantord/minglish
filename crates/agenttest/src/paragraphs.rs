@@ -225,9 +225,14 @@ pub fn paragraphs(text: &str) -> Vec<String> {
         {
             continue;
         }
+        // a Step Block (ADR 0034) is one paragraph and one unit
+        let ls: Vec<&str> = block.lines().map(str::trim).collect();
+        if grammar::is_step_block(block) {
+            out.push(ls.join("\n"));
+            continue;
+        }
         // an Enumeration block (ADR 0028) is one unit, whether it is the whole
         // paragraph or ends it; the prose before it is its own paragraph
-        let ls: Vec<&str> = block.lines().map(str::trim).collect();
         let k = (0..ls.len()).find(|&i| ls[i].ends_with(':') && i + 1 < ls.len() && ls[i + 1..].iter().all(|l| l.starts_with("- ")));
         if let Some(k) = k {
             // the intro is the last sentence of the (possibly wrapped) text before the items
@@ -274,7 +279,7 @@ pub fn paragraphs(text: &str) -> Vec<String> {
     }
     // normalize prose only: an Enumeration block keeps its line breaks
     out.into_iter()
-        .map(|p| if grammar::is_enumeration(&p) { p } else { normalize(&p) })
+        .map(|p| if grammar::is_enumeration(&p) || grammar::is_step_block(&p) { p } else { normalize(&p) })
         .filter(|p| p.split_whitespace().count() >= 3)
         .collect()
 }
@@ -298,7 +303,7 @@ fn normalize(p: &str) -> String {
 
 /// Sentence split with abbreviation protection (as scripts/extract-sentences.py).
 pub fn sentences(p: &str) -> Vec<String> {
-    if grammar::is_enumeration(p) {
+    if grammar::is_enumeration(p) || grammar::is_step_block(p) {
         return vec![p.to_string()];
     }
     let protected = p.replace("e.g.", "e~g~").replace("i.e.", "i~e~").replace("cf.", "cf~");
@@ -337,7 +342,7 @@ fn measure(lexicon: &Lexicon, words: &Words, para: &str) -> (Metrics, Vec<(Strin
     // units: Enumeration blocks stay whole; other lines split into sentences
     let mut sents = Vec::new();
     for u in grammar::units(para) {
-        if grammar::is_enumeration(&u) {
+        if grammar::is_enumeration(&u) || grammar::is_step_block(&u) {
             sents.push(u);
         } else {
             sents.extend(sentences(&u));

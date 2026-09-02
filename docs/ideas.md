@@ -179,3 +179,20 @@ coherence measurement has run:
    a gate. Accepted rewrites are applied by hand until verdicts show the
    proposals are trustworthy.
 
+## Medium-aware rendering (spoken vs. written), an accessibility feature (2026-09-03)
+
+The block structures (Enumeration, ADR 0028; Step Block, ADR 0034) and some
+sentence shapes carry structure that written text shows with layout — dashes,
+line breaks, Gherkin keywords, quotes, capitals for terms. Spoken output
+(TTS, screen readers) has no layout. Because every minglish unit is
+statically parseable, the conversion can be static too: a renderer walks the
+parse tree and emits the form for a *medium*. Examples: an Enumeration
+becomes "the language allows 4 pronouns: I, you, my, your" with spoken
+pauses or "first / second" cues; a Step Block reads its keywords aloud
+("given …, when …, then …"); a quoted Name is announced as a name; a
+Capitalized term can be announced as a defined term on first mention.
+Design questions: which shapes need a distinct spoken form; whether the
+written form is the canonical one and spoken forms are derived (yes, by
+default); whether a "medium" is a property of a document or of a renderer.
+Not a language change — a rendering layer over the parse tree.
+

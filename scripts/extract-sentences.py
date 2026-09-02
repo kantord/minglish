@@ -12,6 +12,9 @@ for para in text.split("\n\n"):
     if not para or para.startswith("#") or para.startswith(("Date:", "Status:")):
         continue
     lines = [l.strip() for l in para.splitlines()]
+    if lines and all(l.startswith(("Given ", "When ", "Then ", "And ", "Feature:", "Scenario:")) for l in lines):
+        blocks.append(re.sub(r"`([^`]+)`", r'"\1"', "\n".join(lines)).replace("\n", "\u23ce"))  # Step Block
+        continue
     # an Enumeration block (intro line ending in ":" + "- item" lines) stays one
     # unit, whether it is the whole paragraph or ends it
     k = next((i for i, l in enumerate(lines) if l.endswith(":") and i + 1 < len(lines) and all(x.startswith("- ") for x in lines[i + 1:])), None)

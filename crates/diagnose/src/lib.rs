@@ -10,7 +10,7 @@
 //! Pattern checks over the token stream attach specific, actionable names
 //! (missing *then*, quantifier+negation, reduced relative, …).
 
-use grammar::{is_enumeration, metrics, parse, parse_text, Lexicon, Metrics, Tok};
+use grammar::{is_enumeration, is_step_block, metrics, parse, parse_text, Lexicon, Metrics, Tok};
 use std::collections::BTreeMap;
 
 // ------------------------------------------------------------ diagnosis --
@@ -31,7 +31,7 @@ pub enum Diagnosis {
 
 pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     // an Enumeration block (ADR 0028) is one unit; its errors are already explained
-    if is_enumeration(sentence) {
+    if is_enumeration(sentence) || is_step_block(sentence) {
         return match parse_text(lexicon, sentence) {
             Ok(tree) => Diagnosis::Clean(metrics(&tree)),
             Err(e) if e.contains("not a minglish word") || e.contains("is banned in minglish") => Diagnosis::Word(e),
@@ -98,7 +98,7 @@ fn word(t: &Tok) -> &str {
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
         | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w)
-        | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) => w,
+        | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) | Tok::Be(w) => w,
         Tok::Comma => ",",
         Tok::Colon => ":",
     }
@@ -147,6 +147,14 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         out.push(
             "\"no … must\" is ambiguous — for prohibition write, for example, \
              \"agents must not check the input\" (bare plural + must not, ADR 0014)"
+                .to_string(),
+        );
+    }
+    // "Then" opens a sentence only inside a Step Block (ADR 0034)
+    if matches!(toks.first(), Some(Tok::Then(_))) {
+        out.push(
+            "\"then\" opens a line only inside a Step Block (Given / When / Then / And lines, ADR 0034); \
+             in prose write the step as a plain sentence"
                 .to_string(),
         );
     }
@@ -343,6 +351,15 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
                      sentence, or name it: \"the report shows the result\"",
                     word(&toks[a]), word(&toks[b])
                 ));
+            }
+        }
+    }
+    // "be" outside "must be / can be / cannot be" (ADR 0032)
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Be(_)) {
+            let after_modal = i > 0 && matches!(toks[i - 1], Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Neg(_));
+            if !after_modal {
+                out.push("\"be\" exists only after a modal: \"must be <adjective>\", \"can be <noun phrase>\"; elsewhere write \"is\" or \"are\" (ADR 0032)".to_string());
             }
         }
     }
@@ -676,6 +693,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::So(_) => vec![Term::So],
         Tok::Because(_) => vec![Term::Because],
         Tok::Ord(_) => vec![Term::Ord],
+        Tok::Be(_) => vec![Term::CopAny],
         Tok::Than(_) => vec![Term::Than],
         Tok::More(_) | Tok::Scale(_) | Tok::AdjCmp(_) | Tok::AdjLong(_) | Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],
@@ -771,6 +789,8 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
         vec![T(Term::DoAny), T(Term::Neg), N(VPX)],
         vec![T(Term::ModAny), N(VPX)],
         vec![T(Term::ModAny), T(Term::Neg), N(VPX)],
+        vec![T(Term::ModAny), T(Term::CopAny), N(COMPL)],
+        vec![T(Term::ModAny), T(Term::Neg), T(Term::CopAny), N(COMPL)],
     ];
     p[VPX] = vec![
         vec![T(Term::VAny), N(PPS)],

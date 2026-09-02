@@ -30,7 +30,7 @@ proposals:
     cost: 46.67
     words: 15
     terms: 0
-  diagnosis: '"The copula does not use "do"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md) | "the copula uses "not" after "is" or after "were"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: copula, after]'
+  diagnosis: '"The copula does not use "do"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md) | "the copula uses "not" after "is" or after "were"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Copula does not use "do". the Copula uses "not" after "is" or after "were".
@@ -44,7 +44,7 @@ proposals:
     cost: 46.67
     words: 15
     terms: 2
-  diagnosis: '"the Copula uses "not" after "is" or after "were"": WORD: "after" is not a minglish word'
+  diagnosis: '"the Copula uses "not" after "is" or after "were"": STYLE: phrases cannot be coordinated — split the sentence, one phrase each (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Copula does not use "do". the Copula uses "not" with "is" or uses "not" with "were".
@@ -71,7 +71,7 @@ proposals:
     cost: 51.0
     words: 16
     terms: 2
-  diagnosis: '"A sentence with a Copula uses "not" after the Copula": WORD: "after" is not a minglish word'
+  diagnosis: '"A sentence with a Copula uses "not" after the Copula": STYLE: "sentence with …" — only "of" attaches to a noun; "with" attaches to the verb. Write "the sentence of …", or move the phrase after the verb (ADR 0011)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A sentence with a Copula puts "not" after the Copula. the sentence does not use "do".
@@ -85,7 +85,7 @@ proposals:
     cost: 51.349999999999994
     words: 16
     terms: 2
-  diagnosis: '"A sentence with a Copula puts "not" after the Copula": WORD: "after" is not a minglish word'
+  diagnosis: '"A sentence with a Copula puts "not" after the Copula": STYLE: "sentence with …" — only "of" attaches to a noun; "with" attaches to the verb. Write "the sentence of …", or move the phrase after the verb (ADR 0011)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A sentence with a Copula has "not" after the Copula. the sentence does not use "do".
@@ -99,7 +99,7 @@ proposals:
     cost: 49.50999999999999
     words: 16
     terms: 2
-  diagnosis: '"A sentence with a Copula has "not" after the Copula": WORD: "after" is not a minglish word'
+  diagnosis: '"A sentence with a Copula has "not" after the Copula": STYLE: "sentence with …" — only "of" attaches to a noun; "with" attaches to the verb. Write "the sentence of …", or move the phrase after the verb (ADR 0011)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A Copular negation uses "is not" or "are not". a Copular negation does not use "do" or "does".

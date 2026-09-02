@@ -57,6 +57,7 @@ Function Word	form	NOUN_SG	function word
 Function Words	form	NOUN_PL	function word
 Gap	form	NOUN_SG	gap
 Gaps	form	NOUN_PL	gap
+Gherkin	name	-	Gherkin
 Grammar	form	NOUN_SG	grammar
 Grammars	form	NOUN_PL	grammar
 Head Noun	form	NOUN_SG	head noun
@@ -130,6 +131,8 @@ Seed	form	NOUN_SG	seed
 Seeds	form	NOUN_PL	seed
 Sentence Shape	form	NOUN_SG	sentence shape
 Sentence Shapes	form	NOUN_PL	sentence shape
+Step Block	form	NOUN_SG	step block
+Step Blocks	form	NOUN_PL	step block
 Structure Loss	form	NOUN_SG	structure loss
 Structure Losses	form	NOUN_PL	structure loss
 Surface Form	form	NOUN_SG	surface form
@@ -185,6 +188,7 @@ advice	form	NOUN_SG	advice
 advices	form	NOUN_PL	advice
 affect	form	NOUN_SG	affect
 affects	form	NOUN_PL	affect
+after	form	PREP_V	after
 against	form	PREP_V	against
 agent	form	NOUN_SG	agent
 agents	form	NOUN_PL	agent
@@ -289,11 +293,13 @@ bare	form	ADJ_LONG	bare
 bare plural	term	-	Bare Plural
 bare plurals	term	-	Bare Plurals
 base	form	ADJ_LONG	base
+be	form	BE	be
 beat	form	VERB_TRANS_BASE	beat
 beaten	form	VERB_TRANS_ED	beat
 beating	form	VERB_TRANS_ING	beat
 beats	form	VERB_TRANS_3SG	beat
 because	form	REASON	because
+before	form	PREP_V	before
 belong	form	VERB_INTRANS_BASE	belong
 belonged	form	VERB_INTRANS_ED	belong
 belonging	form	VERB_INTRANS_ING	belong
@@ -414,6 +420,8 @@ closed class	term	-	Closed Class
 closed classes	term	-	Closed Classes
 cognitive load	term	-	Cognitive Load
 cognitive loads	term	-	Cognitive Loads
+coherence	form	NOUN_SG	coherence
+coherences	form	NOUN_PL	coherence
 coin	form	VERB_TRANS_BASE	coin
 coinage	form	NOUN_SG	coinage
 coinages	form	NOUN_PL	coinage
@@ -501,6 +509,8 @@ context	form	NOUN_SG	context
 context need	term	-	Context Need
 context needs	term	-	Context Needs
 contexts	form	NOUN_PL	context
+continuation	form	NOUN_SG	continuation
+continuations	form	NOUN_PL	continuation
 continuities	form	NOUN_PL	continuity
 continuity	form	NOUN_SG	continuity
 contraction	form	NOUN_SG	contraction
@@ -740,6 +750,8 @@ enumeration	term	-	Enumeration
 enumerations	term	-	Enumerations
 error	form	NOUN_SG	error
 errors	form	NOUN_PL	error
+event	form	NOUN_SG	event
+events	form	NOUN_PL	event
 every	form	QUANT_UNIV	every
 evidence	form	NOUN_SG	evidence
 evidences	form	NOUN_PL	evidence
@@ -799,7 +811,11 @@ false	form	ADJ_LONG	false
 familiar	form	ADJ_LONG	familiar
 familiarities	form	NOUN_PL	familiarity
 familiarity	form	NOUN_SG	familiarity
+feature	form	NOUN_SG	feature
+features	form	NOUN_PL	feature
 fell	form	VERB_INTRANS_ED	fall
+fence	form	NOUN_SG	fence
+fences	form	NOUN_PL	fence
 fetch	form	VERB_TRANS_BASE	fetch
 fetched	form	VERB_TRANS_ED	fetch
 fetches	form	VERB_TRANS_3SG	fetch
@@ -840,6 +856,8 @@ floor	form	NOUN_SG	floor
 floors	form	NOUN_PL	floor
 fold	form	VERB_TRANS_BASE	fold
 folded	form	VERB_TRANS_ED	fold
+folder	form	NOUN_SG	folder
+folders	form	NOUN_PL	folder
 folding	form	VERB_TRANS_ING	fold
 folds	form	VERB_TRANS_3SG	fold
 follow	form	VERB_TRANS_BASE	follow
@@ -938,6 +956,8 @@ he	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 head	form	NOUN_SG	head
 head noun	term	-	Head Noun
 head nouns	term	-	Head Nouns
+header	form	NOUN_SG	header
+headers	form	NOUN_PL	header
 heads	form	NOUN_PL	head
 hearer	form	NOUN_SG	hearer
 hearers	form	NOUN_PL	hearer
@@ -971,7 +991,9 @@ hyphenated	form	ADJ_LONG	hyphenated
 hypotheses	form	NOUN_PL	hypothesis
 hypothesis	form	NOUN_SG	hypothesis
 i	form	PRON_1SG	i
+idea	form	NOUN_SG	idea
 ideal	form	ADJ_LONG	ideal
+ideas	form	NOUN_PL	idea
 identical	form	ADJ_LONG	identical
 identifier	form	NOUN_SG	identifier
 identifiers	form	NOUN_PL	identifier
@@ -984,6 +1006,7 @@ ignores	form	VERB_TRANS_3SG	ignore
 ignoring	form	VERB_TRANS_ING	ignore
 imperative	term	-	Imperative
 imperatives	term	-	Imperatives
+implicit	form	ADJ_LONG	implicit
 improvement	form	NOUN_SG	improvement
 improvements	form	NOUN_PL	improvement
 in	form	PREP_V	in
@@ -1054,6 +1077,8 @@ keep	form	VERB_TRANS_BASE	keep
 keeping	form	VERB_TRANS_ING	keep
 keeps	form	VERB_TRANS_3SG	keep
 kept	form	VERB_TRANS_ED	keep
+keyword	form	NOUN_SG	keyword
+keywords	form	NOUN_PL	keyword
 kind	form	NOUN_SG	kind
 kinds	form	NOUN_PL	kind
 knew	form	VERB_TRANS_ED	know
@@ -1115,8 +1140,12 @@ longer	form	ADJ_CMP	long
 lookahead	form	NOUN_SG	lookahead
 lookaheads	form	NOUN_PL	lookahead
 loose	form	ADJ_LONG	loose
+lose	form	VERB_TRANS_BASE	lose
+loses	form	VERB_TRANS_3SG	lose
+losing	form	VERB_TRANS_ING	lose
 loss	form	NOUN_SG	loss
 losses	form	NOUN_PL	loss
+lost	form	VERB_TRANS_ED	lose
 loud	form	ADJ	loud
 louder	form	ADJ_CMP	loud
 lowercase	form	NOUN_SG	lowercase
@@ -1414,6 +1443,8 @@ preceding	form	VERB_TRANS_ING	precede
 precise	form	ADJ_LONG	precise
 precision	form	NOUN_SG	precision
 precisions	form	NOUN_PL	precision
+precondition	form	NOUN_SG	precondition
+preconditions	form	NOUN_PL	precondition
 predicate	form	NOUN_SG	predicate
 predicates	form	NOUN_PL	predicate
 predict	form	VERB_TRANS_BASE	predict
@@ -1640,6 +1671,10 @@ requires	form	VERB_TRANS_3SG	require
 requiring	form	VERB_TRANS_ING	require
 research	form	NOUN_SG	research
 researches	form	NOUN_PL	research
+reserve	form	VERB_TRANS_BASE	reserve
+reserved	form	VERB_TRANS_ED	reserve
+reserves	form	VERB_TRANS_3SG	reserve
+reserving	form	VERB_TRANS_ING	reserve
 resolution	form	NOUN_SG	resolution
 resolutions	form	NOUN_PL	resolution
 resolve	form	VERB_TRANS_BASE	resolve
@@ -1711,6 +1746,8 @@ scale	form	NOUN_SG	scale
 scale word	term	-	Scale Word
 scale words	term	-	Scale Words
 scales	form	NOUN_PL	scale
+scenario	form	NOUN_SG	scenario
+scenarioes	form	NOUN_PL	scenario
 scope	form	NOUN_SG	scope
 scope ambiguities	term	-	Scope Ambiguities
 scope ambiguity	term	-	Scope Ambiguity
@@ -1747,6 +1784,8 @@ separates	form	VERB_TRANS_3SG	separate
 separating	form	VERB_TRANS_ING	separate
 separator	form	NOUN_SG	separator
 separators	form	NOUN_PL	separator
+sequence	form	NOUN_SG	sequence
+sequences	form	NOUN_PL	sequence
 server	form	NOUN_SG	server
 servers	form	NOUN_PL	server
 session	form	NOUN_SG	session
@@ -1809,6 +1848,7 @@ spellings	form	NOUN_PL	spelling
 split	form	VERB_TRANS_BASE	split
 splits	form	VERB_TRANS_3SG	split
 splitting	form	VERB_TRANS_ING	split
+spoken	form	ADJ_LONG	spoken
 square	form	NOUN_SG	square
 squares	form	NOUN_PL	square
 stall	form	VERB_INTRANS_BASE	stall
@@ -1833,6 +1873,8 @@ stayed	form	VERB_INTRANS_ED	stay
 staying	form	VERB_INTRANS_ING	stay
 stays	form	VERB_INTRANS_3SG	stay
 step	form	NOUN_SG	step
+step block	term	-	Step Block
+step blocks	term	-	Step Blocks
 steps	form	NOUN_PL	step
 stop	form	VERB_TRANS_BASE	stop
 stop	reject	NOUN	halt
@@ -1942,6 +1984,8 @@ tied	form	VERB_INTRANS_ED	tie
 ties	form	VERB_INTRANS_3SG	tie
 time	form	NOUN_SG	time
 times	form	NOUN_PL	time
+title	form	NOUN_SG	title
+titles	form	NOUN_PL	title
 to	form	PREP_V	to
 token	form	NOUN_SG	token
 tokens	form	NOUN_PL	token
@@ -1993,6 +2037,7 @@ two	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 tying	form	VERB_INTRANS_ING	tie
 typo	form	NOUN_SG	typo
 typos	form	NOUN_PL	typo
+unambiguous	form	ADJ_LONG	unambiguous
 unblock	form	VERB_TRANS_BASE	unblock
 unblocked	form	VERB_TRANS_ED	unblock
 unblocking	form	VERB_TRANS_ING	unblock
@@ -2012,6 +2057,7 @@ unknown	form	ADJ_LONG	unknown
 unnatural	form	ADJ_LONG	unnatural
 unquoted	form	ADJ_LONG	unquoted
 unreadable	form	ADJ_LONG	unreadable
+until	form	PREP_V	until
 unused	form	ADJ_LONG	unused
 update	form	VERB_TRANS_BASE	update
 updated	form	VERB_TRANS_ED	update

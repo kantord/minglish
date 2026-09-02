@@ -89,7 +89,16 @@ right-branching share, and fronted tokens before the main head.
 | the load is heavier than the length | 2 | 3 | 1 | 33% | 3 |
 | the paraphrase is more transparent than the Compound | 3 | 3 | 1 | 29% | 4 |
 | the test took 3.5 minutes | 2 | 2 | 1 | 25% | 2 |
+| the Lexicon is a bad tool for a Name | 4 | 4 | 1 | 12% | 5 |
+| the word "we" is a big blocker in the Dogfood | 4 | 5 | 1 | 22% | 6 |
+| a hyphenated word must be transparent | 2 | 2 | 1 | 20% | 4 |
+| a term can be a verb | 2 | 2 | 1 | 20% | 3 |
+| the intro cannot be a question | 2 | 2 | 1 | 20% | 3 |
+| every Redirect must be a common word | 3 | 3 | 1 | 17% | 3 |
+| the ambiguity reappears after the rewrite | 3 | 3 | 1 | 20% | 2 |
+| the reader holds the consequent until the condition | 3 | 5 | 1 | 29% | 2 |
+| Scenario: the agent retries a request ⏎ Given the test fails ⏎ When the agent retries the request ⏎ Then the queue is empty ⏎ And the Linter shows an error | 6 | 2 | 2 | 19% | 2 |
 
-**Aggregate:** 81 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
+**Aggregate:** 90 sentences parsed; mean peak-open 2.8, worst 6 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

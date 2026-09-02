@@ -40,7 +40,7 @@ intro with the items. Markdown turns a dash into a bullet.
 The maintainers deferred 3 questions. One question is an ordered list. The
 items of an ordered list are clauses. The steps of a procedure are one
 example. One question is an inner colon. One question is the
-intro. A future design can accept a question in the intro.
+intro. The intro can be a question in a future design.
 
 ## Consequences
 

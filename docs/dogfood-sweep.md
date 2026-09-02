@@ -6,7 +6,7 @@
 |---|---|
 | 0001-generated-lexicon-from-curated-seed.md | 69/69 |
 | 0002-pronoun-policy.md | 29/29 |
-| 0003-copula.md | 35/35 |
+| 0003-copula.md | 36/36 |
 | 0004-coordination.md | 33/33 |
 | 0005-negation.md | 43/43 |
 | 0006-comprehension-first-syntax.md | 64/64 |
@@ -34,8 +34,12 @@
 | 0028-enumeration.md | 49/49 |
 | 0029-ordinals-and-scales.md | 49/49 |
 | 0030-comparatives.md | 33/33 |
+| 0031-complement-phrases.md | 24/24 |
+| 0032-modal-be.md | 30/30 |
+| 0033-time-prepositions.md | 22/22 |
+| 0034-step-block.md | 48/48 |
 
-**Aggregate: 1323/1323 sentences (100%)**
+**Aggregate: 1448/1448 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

@@ -6769,5 +6769,181 @@
     "waive": [
       "VERB"
     ]
+  },
+  {
+    "lemma": "be",
+    "category": "BE",
+    "note": "only after a modal: must be / can be / cannot be (ADR 0032)"
+  },
+  {
+    "lemma": "lose",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "lost",
+      "ppart": "lost",
+      "ing": "losing",
+      "third": "loses"
+    },
+    "note": "ADR 0032"
+  },
+  {
+    "lemma": "fence",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0032",
+    "forms": {
+      "plural": "fences"
+    }
+  },
+  {
+    "lemma": "after",
+    "category": "PREP_V",
+    "note": "time relative to an event noun; attaches to the verb (ADR 0033)"
+  },
+  {
+    "lemma": "before",
+    "category": "PREP_V",
+    "note": "time relative to an event noun; attaches to the verb (ADR 0033)"
+  },
+  {
+    "lemma": "until",
+    "category": "PREP_V",
+    "note": "time relative to an event noun; attaches to the verb (ADR 0033)"
+  },
+  {
+    "lemma": "coherence",
+    "category": "NOUN",
+    "note": "ADR 0033",
+    "forms": {
+      "plural": "coherences"
+    }
+  },
+  {
+    "lemma": "sequence",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0033",
+    "forms": {
+      "plural": "sequences"
+    }
+  },
+  {
+    "lemma": "implicit",
+    "category": "ADJ",
+    "note": "ADR 0033"
+  },
+  {
+    "lemma": "event",
+    "category": "NOUN",
+    "note": "ADR 0033",
+    "forms": {
+      "plural": "events"
+    }
+  },
+  {
+    "lemma": "keyword",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "keywords"
+    }
+  },
+  {
+    "lemma": "scenario",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "scenarioes"
+    }
+  },
+  {
+    "lemma": "feature",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "features"
+    }
+  },
+  {
+    "lemma": "precondition",
+    "category": "NOUN",
+    "note": "ADR 0034 [auto-waived VERB]",
+    "forms": {
+      "plural": "preconditions"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "continuation",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "continuations"
+    }
+  },
+  {
+    "lemma": "title",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "titles"
+    }
+  },
+  {
+    "lemma": "reserve",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0034"
+  },
+  {
+    "lemma": "unambiguous",
+    "category": "ADJ",
+    "note": "ADR 0034"
+  },
+  {
+    "lemma": "header",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "headers"
+    }
+  },
+  {
+    "lemma": "folder",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "folders"
+    }
+  },
+  {
+    "lemma": "spoken",
+    "category": "ADJ",
+    "note": "ADR 0034 [auto-waived VERB]",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "idea",
+    "category": "NOUN",
+    "note": "ADR 0034",
+    "forms": {
+      "plural": "ideas"
+    }
   }
 ]

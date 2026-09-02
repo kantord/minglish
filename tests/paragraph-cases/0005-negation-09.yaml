@@ -26,7 +26,7 @@ proposals:
     cost: 113.19999999999999
     words: 32
     terms: 2
-  diagnosis: '"The fence is a Grammar rule": WORD: "fence" is not a minglish word | "The scope rule is a Grammar rule": STYLE: "Grammar rule" — noun-noun compounds are not minglish; write "the rule of the Grammar", or one transparent word (ADR 0015); "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "Token-level Triage does not count the scope rule": WORD: "Token-level" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "Triage counts every "do", every "does", and every "not" as acceptable": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030)'
+  diagnosis: '"The fence is a Grammar rule": STYLE: "Grammar rule" — noun-noun compounds are not minglish; write "the rule of the Grammar", or one transparent word (ADR 0015) | "The scope rule is a Grammar rule": STYLE: "Grammar rule" — noun-noun compounds are not minglish; write "the rule of the Grammar", or one transparent word (ADR 0015); "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "Token-level Triage does not count the scope rule": WORD: "Token-level" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "Triage counts every "do", every "does", and every "not" as acceptable": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Grammar defines the fence. The Grammar defines the rule of the scope. The tool Triage does not count the rule of the scope. Triage counts every "do", every "does", and every "not". Triage accepts every "do", every "does", and every "not".
@@ -34,13 +34,13 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
+    parsed: 3
     continuity_pairs: 4
     continuity_ok: 2
     cost: 136.92
     words: 42
     terms: 2
-  diagnosis: '"The Grammar defines the fence": WORD: "fence" is not a minglish word | "Triage counts every "do", every "does", and every "not"": STYLE: "every do" — a Name takes no determiner: write "do", or introduce it with a noun: "the tool do" (ADR 0018); "every does" — a Name takes no determiner: write "does", or introduce it with a noun: "the tool does" (ADR 0018); "every not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Triage accepts every "do", every "does", and every "not"": STYLE: "every do" — a Name takes no determiner: write "do", or introduce it with a noun: "the tool do" (ADR 0018); "every does" — a Name takes no determiner: write "does", or introduce it with a noun: "the tool does" (ADR 0018); "every not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"Triage counts every "do", every "does", and every "not"": STYLE: "every do" — a Name takes no determiner: write "do", or introduce it with a noun: "the tool do" (ADR 0018); "every does" — a Name takes no determiner: write "does", or introduce it with a noun: "the tool does" (ADR 0018); "every not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Triage accepts every "do", every "does", and every "not"": STYLE: "every do" — a Name takes no determiner: write "do", or introduce it with a noun: "the tool do" (ADR 0018); "every does" — a Name takes no determiner: write "does", or introduce it with a noun: "the tool does" (ADR 0018); "every not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -66,7 +66,7 @@ proposals:
     "The Grammar defines a category. The category is the fence. The Grammar defines the rule of the scope. The tool Triage does not count the rule of the scope. Triage counts 3 words:
     - "do"
     - "does"
-    - "not"": WORD: "category" is not a minglish word — "Category" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: category, fence, -]
+    - "not"": WORD: "category" is not a minglish word — "Category" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: category, -]
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter checks the Grammar. the Grammar defines the fence. the Grammar defines the scope rule. the Grammar defines every Sentence Shape. the triage checks the tokens. the triage accepts "do". the triage accepts "does". the triage accepts "not". the triage accepts any word of the Lexicon. the triage counts the tokens. the coverage of the Lexicon is a proxy.
@@ -74,13 +74,13 @@ proposals:
   valid: false
   metrics:
     sentences: 11
-    parsed: 2
+    parsed: 3
     continuity_pairs: 10
     continuity_ok: 3
     cost: 217.3800000000001
     words: 60
     terms: 8
-  diagnosis: '"the Grammar defines the fence": WORD: "fence" is not a minglish word | "the Grammar defines the scope rule": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "the triage checks the tokens": WORD: "triage" is not a minglish word | "the triage accepts "do"": WORD: "triage" is not a minglish word | "the triage accepts "does"": WORD: "triage" is not a minglish word | "the triage accepts "not"": WORD: "triage" is not a minglish word | "the triage accepts any word of the Lexicon": WORD: "triage" is not a minglish word [all unknown words: triage, any] | "the triage counts the tokens": WORD: "triage" is not a minglish word | "the coverage of the Lexicon is a proxy": WORD: "coverage" is not a minglish word — "Coverage" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the Grammar defines the scope rule": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "the triage checks the tokens": WORD: "triage" is not a minglish word | "the triage accepts "do"": WORD: "triage" is not a minglish word | "the triage accepts "does"": WORD: "triage" is not a minglish word | "the triage accepts "not"": WORD: "triage" is not a minglish word | "the triage accepts any word of the Lexicon": WORD: "triage" is not a minglish word [all unknown words: triage, any] | "the triage counts the tokens": WORD: "triage" is not a minglish word | "the coverage of the Lexicon is a proxy": WORD: "coverage" is not a minglish word — "Coverage" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter checks the Grammar. the Grammar defines the fence rule. the Grammar defines the scope rule. the Grammar defines every Sentence Shape. the Triage checks the tokens. the Triage accepts "do". the Triage accepts "does". the Triage accepts "not". the Triage accepts every word of the Lexicon. the Triage counts the tokens. the Coverage of the Lexicon is a proxy.
@@ -94,7 +94,7 @@ proposals:
     cost: 221.72000000000008
     words: 61
     terms: 9
-  diagnosis: '"the Grammar defines the fence rule": WORD: "fence" is not a minglish word | "the Grammar defines the scope rule": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "the Triage checks the tokens": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "do"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "does"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "not"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts every word of the Lexicon": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage counts the tokens": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018)'
+  diagnosis: '"the Grammar defines the fence rule": STYLE: "fence rule" — noun-noun compounds are not minglish; write "the rule of the fence", or one transparent word (ADR 0015) | "the Grammar defines the scope rule": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015) | "the Triage checks the tokens": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "do"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "does"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts "not"": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage accepts every word of the Lexicon": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018) | "the Triage counts the tokens": STYLE: "the Triage" — a Name takes no determiner: write "Triage", or introduce it with a noun: "the tool Triage" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: 'GAP: the words "fence" and "triage" are not in the word list, and no equivalent meaning can be expressed with the available words and structures.'
@@ -122,7 +122,7 @@ proposals:
     cost: 101.46000000000001
     words: 31
     terms: 0
-  diagnosis: '"The fence is a grammar rule": WORD: "fence" is not a minglish word [all unknown words: fence, grammar] | "The scope rule is a grammar rule": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "Triage counts every word of a sentence at the token level": WORD: "level" is not a minglish word | "Triage accepts "do" and "does" and "not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The fence is a grammar rule": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "The scope rule is a grammar rule": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "Triage counts every word of a sentence at the token level": WORD: "level" is not a minglish word | "Triage accepts "do" and "does" and "not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The fence is a rule of the Grammar. The scope rule is a rule of the Grammar. Triage counts every token of a sentence. Triage accepts "do". Triage accepts "does". Triage accepts "not".
@@ -130,13 +130,13 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 4
+    parsed: 5
     continuity_pairs: 5
     continuity_ok: 0
     cost: 115.58000000000001
     words: 33
     terms: 2
-  diagnosis: '"The fence is a rule of the Grammar": WORD: "fence" is not a minglish word | "The scope rule is a rule of the Grammar": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015)'
+  diagnosis: '"The scope rule is a rule of the Grammar": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The rule of the scope is a rule of the Grammar. Triage counts every token of a sentence. Triage accepts "do". Triage accepts "does". Triage accepts "not".

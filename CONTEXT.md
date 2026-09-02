@@ -74,6 +74,8 @@ undefined; add an entry before using one in code or docs.
 
 **Gap** (noun) — a Gap is a Rejection of a good sentence. the language cannot say the sentence. the maintainers fix a Gap with a decision.
 
+**Gherkin** (name) — Gherkin is the format of a feature. a file of Gherkin is a document of Minglish.
+
 **Grammar** (noun) — the Grammar defines every Sentence Shape of the language. the Grammar gives one Parse to every sentence.
 
 **Head Noun** (noun) — the Head Noun of a Compound is the last noun of the Compound. the Head Noun names the kind of the thing.
@@ -157,6 +159,8 @@ undefined; add an entry before using one in code or docs.
 **Seed** (noun) — the Seed is the file "seed/seed.json". people edit the Seed. every entry of the Seed names one Lemma. the entry names the Category of the Lemma. Lexgen builds the Lexicon from the Seed.
 
 **Sentence Shape** (noun) — a Sentence Shape is a structure of a sentence. the Grammar defines every Sentence Shape. every sentence of the language uses one Sentence Shape.
+
+**Step Block** (noun) — a Step Block is a block. a keyword opens every line of a Step Block. the language has 4 keywords. every line holds one clause. a Step Block is a scenario of Gherkin.
 
 **Structure Loss** (noun) — a Structure Loss changes the order of the information. a Passive of the original sentence causes a Structure Loss. a Translation Pair declares every Structure Loss.
 

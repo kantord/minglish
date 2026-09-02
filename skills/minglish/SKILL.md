@@ -33,7 +33,8 @@ rejected sentence, keep its meaning; change only what the error requires.
    Prohibition: `do not delete my report`
 5. Modal: `the agent must check the input` · `the agent must not delete
    your report` · `the user can open a session` · `you cannot delete the
-   Lexicon`
+   Lexicon` · with a copula: `a hyphenated word must be transparent`, `a
+   term can be a verb` (`be` exists only after a modal)
 6. Conditional — comma and then are mandatory, condition first:
    `if the test fails, then the agent retries the request`
 7. Coordination (binary only): `the server stores the message and returns
@@ -77,6 +78,18 @@ rejected sentence, keep its meaning; change only what the error requires.
   - "you"
   - "my"
   - "your"
+  ```
+
+- Step Block (Gherkin): lines starting with `Given `, `When `, `Then `,
+  `And `, each holding ONE clause (no `and`/`or` inside); `Feature:` and
+  `Scenario:` lines carry a minglish sentence or a quoted Name. `Then` at
+  the front of a line exists only here.
+  ```
+  Scenario: the agent retries a request
+  Given the test fails
+  When the agent retries the request
+  Then the queue is empty
+  And the Linter shows an error
   ```
 
 ## Hard bans (rewrite instead)

@@ -1606,3 +1606,232 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
     )
   )
 )
+
+### the Lexicon is a bad tool for a Name
+open=4 maxdep=4 depth=1 right=12% fronted=5
+(S h=1
+  (NP h=1
+    the
+    Lexicon
+  )
+  (CopPred h=1
+    is
+    (ComplPP h=0
+      (NP h=2
+        a
+        bad
+        tool
+      )
+      (PP h=1
+        for
+        (NP h=1
+          a
+          Name
+        )
+      )
+    )
+  )
+)
+
+### the word "we" is a big blocker in the Dogfood
+open=4 maxdep=5 depth=1 right=22% fronted=6
+(S h=1
+  (NPAppos h=1
+    the
+    word
+    we
+  )
+  (CopPred h=1
+    is
+    (ComplPP h=0
+      (NP h=2
+        a
+        big
+        blocker
+      )
+      (PP h=1
+        in
+        (NP h=1
+          the
+          Dogfood
+        )
+      )
+    )
+  )
+)
+
+### a hyphenated word must be transparent
+open=2 maxdep=2 depth=1 right=20% fronted=4
+(S h=1
+  (NP h=2
+    a
+    hyphenated
+    word
+  )
+  (ModalCop h=1
+    must
+    be
+    transparent
+  )
+)
+
+### a term can be a verb
+open=2 maxdep=2 depth=1 right=20% fronted=3
+(S h=1
+  (NP h=1
+    a
+    term
+  )
+  (ModalCop h=1
+    can
+    be
+    (NP h=1
+      a
+      verb
+    )
+  )
+)
+
+### the intro cannot be a question
+open=2 maxdep=2 depth=1 right=20% fronted=3
+(S h=1
+  (NP h=1
+    the
+    intro
+  )
+  (ModalCop h=1
+    cannot
+    be
+    (NP h=1
+      a
+      question
+    )
+  )
+)
+
+### every Redirect must be a common word
+open=3 maxdep=3 depth=1 right=17% fronted=3
+(S h=1
+  (NP h=1
+    every
+    Redirect
+  )
+  (ModalCop h=1
+    must
+    be
+    (NP h=2
+      a
+      common
+      word
+    )
+  )
+)
+
+### the ambiguity reappears after the rewrite
+open=3 maxdep=3 depth=1 right=20% fronted=2
+(S h=1
+  (NP h=1
+    the
+    ambiguity
+  )
+  (VP h=0
+    reappears
+    (PP h=1
+      after
+      (NP h=1
+        the
+        rewrite
+      )
+    )
+  )
+)
+
+### the reader holds the consequent until the condition
+open=3 maxdep=5 depth=1 right=29% fronted=2
+(S h=1
+  (NP h=1
+    the
+    reader
+  )
+  (VP h=0
+    holds
+    (NP h=1
+      the
+      consequent
+    )
+    (PP h=1
+      until
+      (NP h=1
+        the
+        condition
+      )
+    )
+  )
+)
+
+### Scenario: the agent retries a request
+Given the test fails
+When the agent retries the request
+Then the queue is empty
+And the Linter shows an error
+open=6 maxdep=2 depth=2 right=19% fronted=2
+(Steps h=0
+  (S h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
+      (NP h=1
+        a
+        request
+      )
+    )
+  )
+  (Clause h=1
+    (NP h=1
+      the
+      test
+    )
+    (VP h=0
+      fails
+    )
+  )
+  (Clause h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
+      (NP h=1
+        the
+        request
+      )
+    )
+  )
+  (Clause h=1
+    (NP h=1
+      the
+      queue
+    )
+    (CopPred h=1
+      is
+      empty
+    )
+  )
+  (Clause h=1
+    (NP h=1
+      the
+      Linter
+    )
+    (VP h=0
+      shows
+      (NP h=1
+        an
+        error
+      )
+    )
+  )
+)

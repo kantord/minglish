@@ -492,5 +492,18 @@
     "lemma": "number word",
     "definition": "a Number Word writes a number with letters. the word \"three\" is a Number Word. the language bans every Number Word.",
     "category": "NOUN"
+  },
+  {
+    "lemma": "step block",
+    "category": "NOUN",
+    "definition": "a Step Block is a block. a keyword opens every line of a Step Block. the language has 4 keywords. every line holds one clause. a Step Block is a scenario of Gherkin."
+  },
+  {
+    "lemma": "gherkin",
+    "category": "NAME",
+    "forms": {
+      "name": "Gherkin"
+    },
+    "definition": "Gherkin is the format of a feature. a file of Gherkin is a document of Minglish."
   }
 ]

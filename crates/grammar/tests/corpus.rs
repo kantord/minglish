@@ -31,6 +31,21 @@ fn corpus_parses_with_snapshots() {
     insta::assert_snapshot!("corpus_trees", snap);
 }
 
+/// Every .feature file is a minglish document (ADR 0034).
+#[test]
+fn feature_files_parse() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    for entry in std::fs::read_dir(repo("features")).unwrap() {
+        let path = entry.unwrap().path();
+        if path.extension().is_some_and(|x| x == "feature") {
+            let text = std::fs::read_to_string(&path).unwrap();
+            for unit in grammar::units(&text) {
+                parse_text(&lexicon, &unit).unwrap_or_else(|e| panic!("{}: {unit} — {e}", path.display()));
+            }
+        }
+    }
+}
+
 #[test]
 fn banned_structures_reject() {
     let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
@@ -112,6 +127,19 @@ fn banned_structures_reject() {
         "the file is more heavy than the report",
         "million files fail",
         "the agent deleted 3.5",
+        // ADR 0031: the complement phrase is copular only; subject position stays out
+        "the metrics for the load exist in the research",
+        "the agent stores the report for the user in the database",
+        // ADR 0032: be only after a modal, complements only
+        "the file be old",
+        "the file must be deleted",
+        "the agent must be deleting the file",
+        "the agent wants to be a tool",
+        // ADR 0034: Then only inside a Step Block; a step is one clause
+        "Then the queue is empty",
+        "Given the test fails\nThen the queue is empty and the agent retries the request",
+        "And the test fails\nThen the queue is empty",
+        "Scenario:\nGiven the test fails",
     ];
     for s in banned2 {
         assert!(parse(&lexicon, s).is_err(), "should NOT parse but did: {s}");

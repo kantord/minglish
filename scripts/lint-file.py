@@ -19,7 +19,7 @@ RELATIONS = {
     "contrast":       (["but", "however", "yet", "whereas", "while", "instead"], "but"),
     "concession":     (["although", "though", "even though", "despite", "nevertheless", "still"], None),
     "condition":      (["if", "unless", "when", "whenever", "otherwise"], "if …, then"),
-    "sequence":       (["then", "after", "before", "next", "finally", "first", "later", "once"], None),
+    "sequence":       (["then", "after", "before", "next", "finally", "first", "later", "once"], "after/before/until + noun phrase (ADR 0033)"),
     "exemplification":(["for example", "e.g.", "such as", "for instance"], None),
     "purpose":        (["so that", "in order to"], None),
     "elaboration":    (["in other words", "i.e.", "that is", "also", "moreover", "furthermore", "specifically", "namely"], None),
@@ -33,6 +33,10 @@ def paragraphs(text):
         if not para or para.startswith("#") or para.startswith(("Date:", "Status:")) or para.startswith("|"):
             continue
         lines = [l.strip() for l in para.splitlines()]
+        # a Step Block (Gherkin lines, ADR 0034) is one unit
+        if lines and all(l.startswith(("Given ", "When ", "Then ", "And ", "Feature:", "Scenario:")) for l in lines):
+            out.append("\n".join(lines))
+            continue
         # an Enumeration block (intro line ending in ":" + "- item" lines) is one
         # unit, whether it is the whole paragraph or ends it
         k = next((i for i, l in enumerate(lines) if l.endswith(":") and i + 1 < len(lines) and all(x.startswith("- ") for x in lines[i + 1:])), None)
@@ -50,6 +54,8 @@ def paragraphs(text):
     return out
 
 def sentences(para):
+    if para.startswith(("Given ", "When ", "Then ", "And ", "Feature:", "Scenario:")):
+        return [para]  # Step Block = one unit
     if "\n- " in para:
         return [re.sub(r"`([^`]+)`", r'"\1"', para)]  # Enumeration block = one unit
     body = re.sub(r"`([^`]+)`", r'"\1"', para)

@@ -17,11 +17,11 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - condition: 1 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0003-copula.md
 
-- Sentences: 35; parse: 35/35 (100%)
+- Sentences: 36; parse: 36/36 (100%)
 - Topic continuity: 15/25 consecutive pairs share the subject with the sentence before (60%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - reason: 1 ✓ , because
@@ -49,7 +49,7 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - condition: 6 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0007-conditionals.md
 
@@ -59,7 +59,7 @@
   - result: 2 ✓ , so
   - reason: 1 ✓ , because
   - condition: 13 ✓ if …, then
-  - sequence: 5 ✗ no form
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0008-redirect-vs-ban.md
 
@@ -114,16 +114,16 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - reason: 1 ✓ , because
   - condition: 5 ✓ if …, then
-  - sequence: 4 ✗ no form
+  - sequence: 4 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0015-compounds-transparency.md
 
 - Sentences: 52; parse: 52/52 (100%)
-- Topic continuity: 19/40 consecutive pairs share the subject with the sentence before (48%)
+- Topic continuity: 18/40 consecutive pairs share the subject with the sentence before (45%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - reason: 1 ✓ , because
-  - condition: 3 ✓ if …, then
+  - condition: 2 ✓ if …, then
 
 ## docs/adr/0016-have-and-one.md
 
@@ -140,7 +140,7 @@
 - Topic continuity: 8/17 consecutive pairs share the subject with the sentence before (47%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - reason: 2 ✓ , because
-  - sequence: 2 ✗ no form
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0018-proper-names.md
 
@@ -156,7 +156,7 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - condition: 2 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0020-no-first-person-plural.md
 
@@ -172,7 +172,7 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - reason: 2 ✓ , because
   - contrast: 19 ✓ but
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0022-digits.md
 
@@ -180,7 +180,7 @@
 - Topic continuity: 22/52 consecutive pairs share the subject with the sentence before (42%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - condition: 2 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0023-per-sense-synonyms.md
 
@@ -189,7 +189,7 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - reason: 1 ✓ , because
   - condition: 4 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0024-percent.md
 
@@ -214,7 +214,7 @@
   - result: 21 ✓ , so
   - reason: 12 ✓ , because
   - condition: 3 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
   - purpose: 2 ✗ no form
 
 ## docs/adr/0027-domain-model.md
@@ -228,10 +228,10 @@
 ## docs/adr/0028-enumeration.md
 
 - Sentences: 49; parse: 49/49 (100%)
-- Topic continuity: 8/40 consecutive pairs share the subject with the sentence before (20%)
+- Topic continuity: 9/40 consecutive pairs share the subject with the sentence before (22%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - condition: 1 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0029-ordinals-and-scales.md
 
@@ -239,7 +239,7 @@
 - Topic continuity: 10/40 consecutive pairs share the subject with the sentence before (25%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - condition: 1 ✓ if …, then
-  - sequence: 5 ✗ no form
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0030-comparatives.md
 
@@ -248,4 +248,39 @@
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - condition: 3 ✓ if …, then
+
+## docs/adr/0031-complement-phrases.md
+
+- Sentences: 24; parse: 24/24 (100%)
+- Topic continuity: 6/21 consecutive pairs share the subject with the sentence before (29%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - reason: 2 ✓ , because
+  - condition: 2 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+
+## docs/adr/0032-modal-be.md
+
+- Sentences: 30; parse: 30/30 (100%)
+- Topic continuity: 10/24 consecutive pairs share the subject with the sentence before (42%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - condition: 2 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+
+## docs/adr/0033-time-prepositions.md
+
+- Sentences: 22; parse: 22/22 (100%)
+- Topic continuity: 3/17 consecutive pairs share the subject with the sentence before (18%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 1 ✓ , so
+  - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
+
+## docs/adr/0034-step-block.md
+
+- Sentences: 48; parse: 48/48 (100%)
+- Topic continuity: 12/40 consecutive pairs share the subject with the sentence before (30%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - reason: 1 ✓ , because
+  - contrast: 2 ✓ but
+  - condition: 2 ✓ if …, then
+  - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
 

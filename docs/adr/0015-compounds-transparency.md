@@ -36,7 +36,7 @@ A paraphrase uses current words. The phrase "the initial words" replaces
 the Compound "seed list". A long paraphrase is acceptable, because the paraphrase removes an expense of the comprehension.
 
 A hyphenated word is one token of the Lexicon. The word
-"temperature-sensor-cable" is one example. If a hyphenated word is not transparent, then the maintainers reject the word. The maintainers curate a hyphenated word. The word gets a
+"temperature-sensor-cable" is one example. A hyphenated word must be transparent. The maintainers curate a hyphenated word. The word gets a
 note. The word gets the Redirects.
 
 If a term does not have a transparent word, then the maintainers reject the term. The maintainers do not rename the term. The maintainers unfold

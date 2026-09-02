@@ -43,8 +43,7 @@ The maintainers deferred 6 words:
 - "might"
 - "could"
 
-A modal takes a verb. A modal does not take a modal. A modal does not take
-a Copula. The phrase "must be old" is one example of a Ban.
+A modal takes a verb. A modal does not take a modal. The decision "0032" allows the phrase "must be" and allows the phrase "can be". The phrase "must be old" is legal.
 
 ## Consequences
 

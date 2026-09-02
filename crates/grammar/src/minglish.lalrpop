@@ -61,6 +61,7 @@ extern {
         "SCALE" => Tok::Scale(<String>),
         "ADJ_CMP" => Tok::AdjCmp(<String>),
         "ADJ_LONG" => Tok::AdjLong(<String>),
+        "BE" => Tok::Be(<String>),
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
@@ -76,6 +77,7 @@ LDetAny: Tree = { LDet, LDetSg };
 // any adjective: short (inflecting) or long (ADR 0030)
 LAdj: Tree = { <l:@L> <w:"ADJ"> => leaf(l, w), <l:@L> <w:"ADJ_LONG"> => leaf(l, w) };
 LAdjLong: Tree = <l:@L> <w:"ADJ_LONG"> => leaf(l, w);
+LBe: Tree = <l:@L> <w:"BE"> => leaf(l, w);
 LNounSg: Tree = <l:@L> <w:"NOUN_SG"> => leaf(l, w);
 LNounPl: Tree = <l:@L> <w:"NOUN_PL"> => leaf(l, w);
 LVtBase: Tree = <l:@L> <w:"VT_BASE"> => leaf(l, w);
@@ -167,6 +169,9 @@ Tailn<P>: Tree = {
 pub Intro: Tree = {
     <s:Statement> <c:LColon> => nd("Intro", 0, vec![Some(s), Some(c)]),
 };
+
+// One step of a Step Block (ADR 0034): a clause with no coordination.
+pub Step: Tree = { Clause };
 
 // One item of an Enumeration: a noun phrase, or a bare singular term/name.
 pub Item: Tree = {
@@ -268,12 +273,15 @@ PredEvery: Tree = {
     VPn<LVt3, LVi3>,
     <m:LModalMust> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    <m:LModalMust> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
+    <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
     CopPosn<LCopSg>,
     CopPosn<LCopSgPast>,
 };
 PredNo: Tree = {
     VPn<LVt3, LVi3>,
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
     CopPosn<LCopSg>,
     CopPosn<LCopSgPast>,
 };
@@ -282,6 +290,10 @@ ModalVP: Tree = {
     <m:LModalMust> <n:LNeg?> <v:VBaseP> => nd("ModalVP", 2, vec![Some(m), n, Some(v)]),
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     <m:LModalCannot> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
+    // ADR 0032: "be" exists only after a modal, with the copula's complements
+    <m:LModalMust> <n:LNeg?> <b:LBe> <cm:Compl> => nd("ModalCop", 2, vec![Some(m), n, Some(b), Some(cm)]),
+    <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
+    <m:LModalCannot> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
 };
 
 VBaseP: Tree = {
@@ -366,6 +378,9 @@ PPv: Tree = {
 Compl: Tree = {
     LAdj,
     NPAny,
+    // ADR 0031: one verb-preposition phrase may follow a noun-phrase
+    // complement and attaches to it — the copula has no object to compete
+    <np:NPAny> <pp:PPv> => nd("ComplPP", 0, vec![Some(np), Some(pp)]),
     <c:LAdjCmp> <t:LThan> <np:NPAny> => nd("Cmp", 0, vec![Some(c), Some(t), Some(np)]),
     <m:LMore> <a:LAdjLong> <t:LThan> <np:NPAny> => nd("Cmp", 1, vec![Some(m), Some(a), Some(t), Some(np)]),
 };
