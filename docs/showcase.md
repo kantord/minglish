@@ -51,6 +51,12 @@
   parses uniquely — peak-open 4, max-dep 5, depth 2, right-branching 27%
 ✓ the agent retries the request, because the test failed
   parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 22%
+✓ the language allows 4 pronouns:
+- "I"
+- "you"
+- "my"
+- "your"
+  parses uniquely — peak-open 5, max-dep 3, depth 1, right-branching 22%
 ✓ people write every Surface Form of the file "lexicon.tsv"
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 43%
 ✓ The agent reads the file

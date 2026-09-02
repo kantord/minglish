@@ -81,7 +81,9 @@ right-branching share, and fronted tokens before the main head.
 | about 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 20% | 8 |
 | the expense of a reversal grows with the Seed, so the maintainers record the decision | 4 | 5 | 2 | 27% | 10 |
 | the agent retries the request, because the test failed | 3 | 4 | 2 | 22% | 6 |
+| the Linter bans every Anaphoric Pronoun: ⏎ - "it" ⏎ - "they" ⏎ - "he" | 4 | 3 | 1 | 25% | 2 |
+| the language allows 4 pronouns: ⏎ - "I" ⏎ - "you" ⏎ - "my" ⏎ - "your" | 5 | 3 | 1 | 22% | 2 |
 
-**Aggregate:** 73 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
+**Aggregate:** 75 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

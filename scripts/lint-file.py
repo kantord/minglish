@@ -32,11 +32,17 @@ def paragraphs(text):
         para = para.strip()
         if not para or para.startswith("#") or para.startswith(("Date:", "Status:")) or para.startswith("|"):
             continue
-        lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in para.splitlines()]
+        lines = para.splitlines()
+        if len(lines) > 1 and lines[0].rstrip().endswith(":") and all(l.lstrip().startswith("- ") for l in lines[1:]):
+            out.append("\n".join([lines[0].strip()] + [l.strip() for l in lines[1:]]))  # Enumeration block
+            continue
+        lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in lines]
         out.append(re.sub(r"\s+", " ", " ".join(lines)))
     return out
 
 def sentences(para):
+    if "\n- " in para:
+        return [re.sub(r"`([^`]+)`", r'"\1"', para)]  # Enumeration block = one unit
     body = re.sub(r"`([^`]+)`", r'"\1"', para)
     body = re.sub(r"\*\*?", "", body)
     body = body.replace("e.g.", "e~g~").replace("i.e.", "i~e~").replace("cf.", "cf~")

@@ -1,7 +1,7 @@
 //! Every accept-corpus sentence parses (LR(1) guarantees uniqueness);
 //! trees + metrics are snapshotted; sanctioned-structure violations reject.
 
-use grammar::{metrics, parse, Lexicon};
+use grammar::{metrics, parse, parse_text, Lexicon};
 
 fn repo(path: &str) -> String {
     format!("{}/../../{path}", env!("CARGO_MANIFEST_DIR"))
@@ -12,12 +12,9 @@ fn corpus_parses_with_snapshots() {
     let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
     let corpus = std::fs::read_to_string(repo("corpus/accept.txt")).unwrap();
     let mut snap = String::new();
-    for line in corpus.lines() {
-        let line = line.trim();
-        if line.is_empty() || line.starts_with('#') {
-            continue;
-        }
-        let tree = parse(&lexicon, line)
+    for line in grammar::units(&corpus) {
+        let line = line.as_str();
+        let tree = parse_text(&lexicon, line)
             .unwrap_or_else(|e| panic!("corpus sentence failed to parse: {line} — {e}"));
         let m = metrics(&tree);
         snap.push_str(&format!(
@@ -91,6 +88,30 @@ fn banned_structures_reject() {
         "so the agent retries the request",
         "the test fails, so the agent retries the request and the queue is empty",
         "the agent retries the request, because the test fails hence the queue is empty",
+    ];
+    for s in banned {
+        assert!(
+            parse(&lexicon, s).is_err(),
+            "should NOT parse but did: {s}"
+        );
+    }
+    // Enumeration (ADR 0028): singular/unquantified target, count mismatch,
+    // clause item, trailing PP after the enumerated NP, coordination tail
+    let banned_blocks = [
+        "the Linter bans the pronoun:\n- \"it\"",
+        "the Linter bans 3 pronouns:\n- \"it\"\n- \"they\"",
+        "the Linter bans 2 pronouns:\n- \"it\"\n- the agent reads the file",
+        "the Linter bans 2 pronouns in the Lexicon:\n- \"it\"\n- \"they\"",
+        "the Linter bans 2 pronouns and reads the file:\n- \"it\"\n- \"they\"",
+    ];
+    for s in banned_blocks {
+        assert!(
+            parse_text(&lexicon, s).is_err(),
+            "block should NOT parse but did: {s}"
+        );
+    }
+    let _unused = [
+        "",
     ];
     for s in banned {
         assert!(

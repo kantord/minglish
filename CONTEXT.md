@@ -32,6 +32,8 @@ undefined; add an entry before using one in code or docs.
 
 **Discourse Layer** (noun) — a Discourse Layer resolves the referent of an Anaphoric Pronoun. the language does not have a Discourse Layer.
 
+**Enumeration** (noun) — an Enumeration is a block. the block has a statement. the block has a list of the items. the statement ends with a colon. every item names one thing. the items enumerate the last Noun Phrase of the statement.
+
 **Form Tag** (noun) — a Form Tag names the class of one Surface Form. every Surface Form has one Form Tag. the Form Tag comes from the Category of the Lemma.
 
 **Function Word** (noun) — a Function Word is a word of a Closed Class. a Function Word has one meaning. the Grammar gives one meaning to every Function Word.
@@ -57,6 +59,8 @@ undefined; add an entry before using one in code or docs.
 **Linter** (noun) — the Linter checks a sentence. the Linter parses the sentence or explains the Rejection. the Linter names the kind of a Rejection.
 
 **Minglish** (name) — Minglish is the language of the project. every sentence of Minglish has one Parse.
+
+**Noun Phrase** (noun) — a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word.
 
 **Paradigm** (noun) — a Paradigm contains every Surface Form of one Lemma. Lexgen builds the Paradigm of a Lemma from the Category of the Lemma.
 

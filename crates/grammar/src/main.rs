@@ -1,7 +1,7 @@
 //! parse-report — parse every corpus sentence with the tier-1 grammar and
 //! report the ADR 0006 cognitive-load metrics. Measurement only, no gating.
 
-use grammar::{metrics, parse, Lexicon};
+use grammar::{metrics, parse_text, Lexicon};
 
 const CORPUS: &str = "corpus/accept.txt";
 const REPORT: &str = "docs/parse-report.md";
@@ -21,12 +21,10 @@ fn main() {
 
     let mut failures = Vec::new();
     let (mut n, mut peak_worst, mut open_sum) = (0usize, 0usize, 0usize);
-    for line in corpus.lines() {
-        let line = line.trim();
-        if line.is_empty() || line.starts_with('#') {
-            continue;
-        }
-        match parse(&lexicon, line) {
+    for line in grammar::units(&corpus) {
+        let line = line.replace('\n', " ⏎ ");
+        let line = line.as_str();
+        match parse_text(&lexicon, &line.replace(" ⏎ ", "\n")) {
             Ok(tree) => {
                 let m = metrics(&tree);
                 n += 1;

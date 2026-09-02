@@ -58,6 +58,21 @@ rejected sentence, keep its meaning; change only what the error requires.
     `percent` + `of` + the named set; plural agreement). Approximate counts:
     `about 10 rules` or `~10 rules`; `about` exists only before digits.
 
+## Blocks
+
+- Enumeration: one statement ending in a colon, then one line per item
+  starting with `- `. The items enumerate the statement's LAST noun phrase,
+  which must be plural, counted, or `every <noun>`; a digit count must
+  match the item count. An item is one noun phrase: a quoted word, a
+  Capitalized term, a name, or `the <noun>`. No clauses as items.
+  ```
+  The language allows 4 pronouns:
+  - "I"
+  - "you"
+  - "my"
+  - "your"
+  ```
+
 ## Hard bans (rewrite instead)
 
 - Third-person pronouns (`it, they, he, she, this, that`): repeat the noun.

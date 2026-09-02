@@ -10,8 +10,15 @@ for para in text.split("\n\n"):
     para = para.strip()
     if not para or para.startswith("#") or para.startswith(("Date:", "Status:")):
         continue
+    lines = para.splitlines()
+    # an Enumeration block (intro ending in ":" + "- item" lines) stays one unit
+    if len(lines) > 1 and lines[0].rstrip().endswith(":") and all(l.lstrip().startswith("- ") for l in lines[1:]):
+        block = "\n".join([lines[0].strip()] + [l.strip() for l in lines[1:]])
+        block = re.sub(r"`([^`]+)`", r'"\1"', block)
+        print(block.replace("\n", "\u23ce"))  # one line: ⏎ marks the item breaks
+        continue
     # unwrap; strip bullet/number markers at line starts
-    lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in para.splitlines()]
+    lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in lines]
     prose.append(re.sub(r"\s+", " ", " ".join(lines)))
 body = " ".join(prose)
 # backticked spans are verbatim identifiers → minglish double quotes

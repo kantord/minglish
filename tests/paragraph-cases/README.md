@@ -9,7 +9,8 @@ Fields: `source`, `index`, `original`, `context_before/after` (the
 neighbouring paragraphs the model saw) · `original_metrics` · `proposals`
 (every distinct reply ever seen: text, declared `drops`, `valid`, metrics,
 diagnosis when rejected, count) · `best` (highest-ranked valid proposal:
-parse rate → topic continuity → cost; display order, never a gate) ·
+parse rate → topic continuity → defined terms used → cost; display order,
+never a gate) ·
 `verdict` — your judgment of `best`: `ideal` | `needs-fix` | `unreviewed`
 (auto-reset whenever `best` changes).
 

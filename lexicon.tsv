@@ -16,6 +16,8 @@ Declared Loss	form	NOUN_SG	declared loss
 Declared Losses	form	NOUN_PL	declared loss
 Discourse Layer	form	NOUN_SG	discourse layer
 Discourse Layers	form	NOUN_PL	discourse layer
+Enumeration	form	NOUN_SG	enumeration
+Enumerations	form	NOUN_PL	enumeration
 Form Tag	form	NOUN_SG	form tag
 Form Tags	form	NOUN_PL	form tag
 Function Word	form	NOUN_SG	function word
@@ -34,6 +36,8 @@ Lexicons	form	NOUN_PL	lexicon
 Linter	form	NOUN_SG	linter
 Linters	form	NOUN_PL	linter
 Minglish	name	-	Minglish
+Noun Phrase	form	NOUN_SG	noun phrase
+Noun Phrases	form	NOUN_PL	noun phrase
 Paradigm	form	NOUN_SG	paradigm
 Paradigms	form	NOUN_PL	paradigm
 Parse	form	NOUN_SG	parse
@@ -117,6 +121,8 @@ because	form	REASON	because
 big	form	ADJ	big
 binaries	form	NOUN_PL	binary
 binary	form	NOUN_SG	binary
+block	form	NOUN_SG	block
+blocks	form	NOUN_PL	block
 build	form	VERB_TRANS_BASE	build
 build	reject	NOUN	compilation
 building	form	VERB_TRANS_ING	build
@@ -167,6 +173,8 @@ collides	form	VERB_INTRANS_3SG	collide
 colliding	form	VERB_INTRANS_ING	collide
 collision	term	-	Collision
 collisions	term	-	Collisions
+colon	form	NOUN_SG	colon
+colons	form	NOUN_PL	colon
 come	form	VERB_INTRANS_BASE	come
 comes	form	VERB_INTRANS_3SG	come
 coming	form	VERB_INTRANS_ING	come
@@ -292,8 +300,18 @@ enable	form	VERB_TRANS_BASE	enable
 enabled	form	VERB_TRANS_ED	enable
 enables	form	VERB_TRANS_3SG	enable
 enabling	form	VERB_TRANS_ING	enable
+end	form	VERB_INTRANS_BASE	end
+ended	form	VERB_INTRANS_ED	end
+ending	form	VERB_INTRANS_ING	end
+ends	form	VERB_INTRANS_3SG	end
 entries	form	NOUN_PL	entry
 entry	form	NOUN_SG	entry
+enumerate	form	VERB_TRANS_BASE	enumerate
+enumerated	form	VERB_TRANS_ED	enumerate
+enumerates	form	VERB_TRANS_3SG	enumerate
+enumerating	form	VERB_TRANS_ING	enumerate
+enumeration	term	-	Enumeration
+enumerations	term	-	Enumerations
 error	form	NOUN_SG	error
 errors	form	NOUN_PL	error
 every	form	QUANT_UNIV	every
@@ -402,6 +420,8 @@ invariants	form	NOUN_PL	invariant
 irregular	form	ADJ	irregular
 is	form	COPULA_SG	is
 it	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+item	form	NOUN_SG	item
+items	form	NOUN_PL	item
 its	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 keep	form	VERB_TRANS_BASE	keep
 keeping	form	VERB_TRANS_ING	keep
@@ -416,6 +436,7 @@ known	form	VERB_TRANS_ED	know
 knows	form	VERB_TRANS_3SG	know
 language	form	NOUN_SG	language
 languages	form	NOUN_PL	language
+last	form	ADJ	last
 layer	form	NOUN_SG	layer
 layers	form	NOUN_PL	layer
 lemma	term	-	Lemma
@@ -428,6 +449,8 @@ linter	term	-	Linter
 linters	term	-	Linters
 linting	form	VERB_TRANS_ING	lint
 lints	form	VERB_TRANS_3SG	lint
+list	form	NOUN_SG	list
+lists	form	NOUN_PL	list
 loss	form	NOUN_SG	loss
 losses	form	NOUN_PL	loss
 machine	form	NOUN_SG	machine
@@ -474,6 +497,8 @@ note	form	NOUN_SG	note
 note	reject	VERB	record
 notes	form	NOUN_PL	note
 noun	form	NOUN_SG	noun
+noun phrase	term	-	Noun Phrase
+noun phrases	term	-	Noun Phrases
 nouns	form	NOUN_PL	noun
 object	form	NOUN_SG	object
 objects	form	NOUN_PL	object
@@ -517,6 +542,8 @@ people	form	NOUN_PL	person
 percent	form	PERCENT	percent
 permanent	form	ADJ	permanent
 person	form	NOUN_SG	person
+phrase	form	NOUN_SG	phrase
+phrases	form	NOUN_PL	phrase
 pin	form	VERB_TRANS_BASE	pin
 pinned	form	VERB_TRANS_ED	pin
 pinning	form	VERB_TRANS_ING	pin
@@ -561,6 +588,7 @@ quality	form	NOUN_SG	quality
 queue	form	NOUN_SG	queue
 queue	reject	VERB	wait
 queues	form	NOUN_PL	queue
+quoted	form	ADJ	quoted
 rare	form	ADJ	rare
 rarities	form	NOUN_PL	rarity
 rarity	form	NOUN_SG	rarity
@@ -718,6 +746,8 @@ start	reject	NOUN	beginning
 started	form	VERB_TRANS_ED	start
 starting	form	VERB_TRANS_ING	start
 starts	form	VERB_TRANS_3SG	start
+statement	form	NOUN_SG	statement
+statements	form	NOUN_PL	statement
 stop	form	VERB_TRANS_BASE	stop
 stop	reject	NOUN	halt
 stopped	form	VERB_TRANS_ED	stop
@@ -757,6 +787,8 @@ then	form	THEN	then
 therefore	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 these	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 they	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+thing	form	NOUN_SG	thing
+things	form	NOUN_PL	thing
 third	ban	-	ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
 this	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 those	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)

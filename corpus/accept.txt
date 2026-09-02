@@ -73,3 +73,12 @@ every verb has ~5 Surface Forms
 about 43 percent of the swaps did not reduce the ambiguity
 the expense of a reversal grows with the Seed, so the maintainers record the decision
 the agent retries the request, because the test failed
+the Linter bans every Anaphoric Pronoun:
+- "it"
+- "they"
+- "he"
+the language allows 4 pronouns:
+- "I"
+- "you"
+- "my"
+- "your"

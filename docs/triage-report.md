@@ -9,24 +9,24 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 ## Sentence buckets
 
 - **Perfect** (every token usable as-is): 3 (0.1%)
-- **Close** (1–2 problem tokens): 472 (23.2%)
-- **Far** (3+ problem tokens): 1562 (76.7%)
+- **Close** (1–2 problem tokens): 474 (23.3%)
+- **Far** (3+ problem tokens): 1560 (76.6%)
 
 ## Token verdicts
 
 | verdict | tokens | share |
 |---|---|---|
-| OK | 6898 | 31.6% |
+| OK | 6955 | 31.8% |
 | REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 1251 | 5.7% |
+| MISMATCH (enabled word, uncovered POS) | 1264 | 5.8% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 11576 | 53.0% |
+| OOV | 11506 | 52.7% |
 
 ## OOV by gold UPOS
 
-- NOUN: 3762
-- VERB: 1810
-- ADJ: 1565
+- NOUN: 3725
+- VERB: 1798
+- ADJ: 1544
 - PRON: 1147
 - ADV: 1084
 - AUX: 639

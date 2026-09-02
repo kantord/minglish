@@ -58,6 +58,7 @@ extern {
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
+        "COLON" => Tok::Colon,
     }
 }
 
@@ -94,6 +95,7 @@ LModalCannot: Tree = <l:@L> <w:"MODAL_CANNOT"> => leaf(l, w);
 LIf: Tree = <l:@L> <w:"IF"> => leaf(l, w);
 LThen: Tree = <l:@L> <w:"THEN"> => leaf(l, w);
 LComma: Tree = <l:@L> "COMMA" => leaf(l, ",".to_string());
+LColon: Tree = <l:@L> "COLON" => leaf(l, ":".to_string());
 LEvery: Tree = <l:@L> <w:"EVERY"> => leaf(l, w);
 LNo: Tree = <l:@L> <w:"NO"> => leaf(l, w);
 LNum: Tree = <l:@L> <w:"NUM_SG"> => leaf(l, w);
@@ -142,6 +144,20 @@ NPi<D, N>: Tree = {
 Tailn<P>: Tree = {
     <c:LConj> <p:P> => nd("CoordPred", 1, vec![Some(c), Some(p)]),
     <c:LConj> <cl:Clause> => nd("CoordClause", 1, vec![Some(c), Some(cl)]),
+};
+
+// ------------------------------------------------------------ enumeration
+
+// Enumeration intro (ADR 0028): a plain statement ending in a colon; the
+// items (parsed separately as Item) enumerate its final noun phrase.
+pub Intro: Tree = {
+    <s:Statement> <c:LColon> => nd("Intro", 0, vec![Some(s), Some(c)]),
+};
+
+// One item of an Enumeration: a noun phrase, or a bare singular term/name.
+pub Item: Tree = {
+    NPAny,
+    <n:LNounSg> => n,
 };
 
 // -------------------------------------------------------------- sentences

@@ -65,6 +65,9 @@ pub struct Metrics {
     /// Σ unigram surprisal (9 − zipf), as textcost
     pub cost: f64,
     pub words: usize,
+    /// defined terms used (ADR 0027): Capitalized term surfaces in the text
+    #[serde(default)]
+    pub terms: usize,
 }
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -84,17 +87,26 @@ pub struct Proposal {
 struct Words {
     tags: BTreeMap<String, (String, String)>,
     zipf: BTreeMap<String, f64>,
+    /// Capitalized surfaces of defined noun terms ("Anaphoric Pronouns")
+    terms: Vec<String>,
 }
 
 impl Words {
     fn load() -> Words {
         let mut tags = BTreeMap::new();
+        let mut terms = Vec::new();
         for line in std::fs::read_to_string(super::LEXICON_PATH).expect("lexicon").lines() {
             let f: Vec<&str> = line.split('\t').collect();
             if let [surface, "form", tag, lemma] = f[..] {
                 tags.insert(surface.to_string(), (tag.to_string(), lemma.to_string()));
             }
+            if let [_, "term", _, cap] = f[..] {
+                terms.push(cap.to_string());
+            }
         }
+        // longest first, so "Anaphoric Pronouns" is counted once, not as "Pronouns"
+        terms.sort_by_key(|t| std::cmp::Reverse(t.len()));
+        terms.dedup();
         let mut zipf = BTreeMap::new();
         if let Ok(t) = std::fs::read_to_string(ZIPF_PATH) {
             for line in t.lines().filter(|l| !l.starts_with('#')) {
@@ -105,7 +117,7 @@ impl Words {
                 }
             }
         }
-        Words { tags, zipf }
+        Words { tags, zipf, terms }
     }
 
     /// (subject, all noun/name lemmas) of one sentence; subject = first noun
@@ -153,6 +165,20 @@ impl Words {
         out
     }
 
+    /// How many defined-term occurrences a text uses (case-sensitive).
+    fn term_uses(&self, text: &str) -> usize {
+        let mut rest = text.to_string();
+        let mut n = 0;
+        for t in &self.terms {
+            let count = rest.matches(t.as_str()).count();
+            if count > 0 {
+                n += count;
+                rest = rest.replace(t.as_str(), "§");
+            }
+        }
+        n
+    }
+
     fn cost(&self, text: &str) -> (usize, f64) {
         let toks: Vec<String> = text
             .split_whitespace()
@@ -197,6 +223,12 @@ pub fn paragraphs(text: &str) -> Vec<String> {
             || block.starts_with('|')
             || block.starts_with("<!--")
         {
+            continue;
+        }
+        // an Enumeration block (ADR 0028) stays one paragraph and one unit
+        let ls: Vec<&str> = block.lines().map(str::trim).collect();
+        if ls.len() > 1 && ls[0].ends_with(':') && ls[1..].iter().all(|l| l.starts_with("- ")) {
+            out.push(ls.join("\n"));
             continue;
         }
         // split bullets into their own paragraphs
@@ -249,6 +281,9 @@ fn normalize(p: &str) -> String {
 
 /// Sentence split with abbreviation protection (as scripts/extract-sentences.py).
 pub fn sentences(p: &str) -> Vec<String> {
+    if grammar::is_enumeration(p) {
+        return vec![p.to_string()];
+    }
     let protected = p.replace("e.g.", "e~g~").replace("i.e.", "i~e~").replace("cf.", "cf~");
     let mut out = Vec::new();
     let mut cur = String::new();
@@ -282,7 +317,15 @@ pub fn sentences(p: &str) -> Vec<String> {
 // --------------------------------------------------------------- metrics --
 
 fn measure(lexicon: &Lexicon, words: &Words, para: &str) -> (Metrics, Vec<(String, bool, String)>) {
-    let sents = sentences(para);
+    // units: Enumeration blocks stay whole; other lines split into sentences
+    let mut sents = Vec::new();
+    for u in grammar::units(para) {
+        if grammar::is_enumeration(&u) {
+            sents.push(u);
+        } else {
+            sents.extend(sentences(&u));
+        }
+    }
     let mut verdicts = Vec::new();
     let mut m = Metrics { sentences: sents.len(), ..Default::default() };
     let mut prev: Option<BTreeSet<String>> = None;
@@ -312,14 +355,17 @@ fn measure(lexicon: &Lexicon, words: &Words, para: &str) -> (Metrics, Vec<(Strin
     let (w, c) = words.cost(para);
     m.words = w;
     m.cost = c;
+    m.terms = words.term_uses(para);
     (m, verdicts)
 }
 
-fn rank_key(p: &Proposal) -> (bool, i64, i64, i64) {
+/// parse rate → topic continuity → defined terms used → cost. Display
+/// order only, never a gate.
+fn rank_key(p: &Proposal) -> (bool, i64, i64, i64, i64) {
     let m = &p.metrics;
     let parse = if m.sentences == 0 { 0 } else { (1000 * m.parsed / m.sentences) as i64 };
     let cont = if m.continuity_pairs == 0 { 1000 } else { (1000 * m.continuity_ok / m.continuity_pairs) as i64 };
-    (p.valid, parse, cont, -(m.cost * 10.0) as i64)
+    (p.valid, parse, cont, m.terms as i64, -(m.cost * 10.0) as i64)
 }
 
 // ------------------------------------------------------------------ run --
@@ -348,13 +394,18 @@ pub fn run(
         .take(24)
         .collect::<String>();
     let system_prompt = format!(
-        "{system_prompt}\n\nYou rewrite WHOLE PARAGRAPHS. Keep every claim of the \
+        "{system_prompt}\n\nYou rewrite WHOLE PARAGRAPHS. To list things, use an Enumeration block: one \
+         statement ending in a colon whose last noun phrase is plural, counted or \
+         \"every <noun>\", then one line per item starting with \"- \", each item a \
+         noun phrase (a quoted word, a Capitalized term, or \"the <noun>\"). Example:\n\
+         The language allows 4 pronouns:\n- \"I\"\n- \"you\"\n- \"my\"\n- \"your\"\n Keep every claim of the \
          original (ADR 0012: never drop or change a proposition); split \
          sentences freely; keep the given-before-new order — start each \
          sentence from a noun the previous sentence mentioned when you can. \
          Reply with the rewritten paragraph (sentences separated by periods, \
-         all lowercase except names, which keep their capital: \"the tool Lexgen\"; a word mentioned AS A WORD is \
-         quoted: the linter bans \"it\"), then ONE final line `drops: <comma-\
+         with normal sentence casing: a capital first letter, names and defined terms \
+         Capitalized, everything else lowercase; a word mentioned AS A WORD is \
+         quoted: the Linter bans \"it\"), then ONE final line `drops: <comma-\
          separated register/affect losses, or none>`. If a meaning-preserving \
          rewrite is impossible with the available words and structures, reply \
          exactly `GAP: <one-line reason>`. No other prose."
@@ -563,7 +614,9 @@ fn split_reply(raw: &str) -> (String, String) {
             body.push(l);
         }
     }
-    (body.join(" ").trim_matches('"').trim().to_string(), drops)
+    // keep line breaks where they carry structure (Enumeration items)
+    let text = if body.iter().any(|l| l.starts_with("- ")) { body.join("\n") } else { body.join(" ") };
+    (text.trim_matches('"').trim().to_string(), drops)
 }
 
 fn fmt(m: &Metrics) -> String {
@@ -572,7 +625,7 @@ fn fmt(m: &Metrics) -> String {
     } else {
         format!("{}/{}", m.continuity_ok, m.continuity_pairs)
     };
-    format!("parse {}/{} · continuity {cont} · cost {:.0} ({} words)", m.parsed, m.sentences, m.cost, m.words)
+    format!("parse {}/{} · continuity {cont} · terms {} · cost {:.0} ({} words)", m.parsed, m.sentences, m.terms, m.cost, m.words)
 }
 
 fn write_report(cases: &[ParaCase], file: &str, out_path: &str, dry_run: bool) {

@@ -1439,3 +1439,59 @@ open=3 maxdep=4 depth=2 right=22% fronted=6
     )
   )
 )
+
+### the Linter bans every Anaphoric Pronoun:
+- "it"
+- "they"
+- "he"
+open=4 maxdep=3 depth=1 right=25% fronted=2
+(Enum h=0
+  (Intro h=0
+    (S h=1
+      (NP h=1
+        the
+        Linter
+      )
+      (VP h=0
+        bans
+        (NP h=1
+          every
+          Anaphoric Pronoun
+        )
+      )
+    )
+    :
+  )
+  it
+  they
+  he
+)
+
+### the language allows 4 pronouns:
+- "I"
+- "you"
+- "my"
+- "your"
+open=5 maxdep=3 depth=1 right=22% fronted=2
+(Enum h=0
+  (Intro h=0
+    (S h=1
+      (NP h=1
+        the
+        language
+      )
+      (VP h=0
+        allows
+        (NP h=1
+          4
+          pronouns
+        )
+      )
+    )
+    :
+  )
+  I
+  you
+  my
+  your
+)

@@ -233,5 +233,15 @@
     "forms": {
       "plural": "closed classes"
     }
+  },
+  {
+    "lemma": "enumeration",
+    "category": "NOUN",
+    "definition": "an Enumeration is a block. the block has a statement. the block has a list of the items. the statement ends with a colon. every item names one thing. the items enumerate the last Noun Phrase of the statement."
+  },
+  {
+    "lemma": "noun phrase",
+    "category": "NOUN",
+    "definition": "a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word."
   }
 ]

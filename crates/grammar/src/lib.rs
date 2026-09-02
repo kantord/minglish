@@ -59,6 +59,7 @@ pub enum Tok {
     Some_(String),
     Name(String),
     Comma,
+    Colon,
 }
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -210,14 +211,18 @@ impl Lexicon {
                         continue;
                     }
                     let inner_clean = raws[i..i + k - 1].iter().all(|w| clean(w) == (*w, false));
-                    let (last, comma) = clean(raws[i + k - 1]);
+                    let (last_raw, colon) = match raws[i + k - 1].strip_suffix(':') {
+                        Some(w) => (w, true),
+                        None => (raws[i + k - 1], false),
+                    };
+                    let (last, comma) = clean(last_raw);
                     let joined = format!("{} {last}", raws[i..i + k - 1].join(" "));
                     if inner_clean && self.forms.contains_key(&joined) {
-                        matched = Some((k, joined, comma));
+                        matched = Some((k, joined, comma, colon));
                         break;
                     }
                 }
-                if let Some((k, joined, comma)) = matched {
+                if let Some((k, joined, comma, colon)) = matched {
                     let pos = out.len();
                     let tag = &self.forms[&joined];
                     let tok = tag_to_tok(tag, &joined).expect("term tag");
@@ -226,11 +231,19 @@ impl Lexicon {
                         let pos = out.len();
                         out.push((pos, Tok::Comma));
                     }
+                    if colon {
+                        let pos = out.len();
+                        out.push((pos, Tok::Colon));
+                    }
                     i += k;
                     continue;
                 }
             }
-            let (word, had_comma) = clean(raws[i]);
+            let (word, had_colon) = match raws[i].strip_suffix(':') {
+                Some(w) => (w, true),
+                None => (raws[i], false),
+            };
+            let (word, had_comma) = clean(word);
             i += 1;
             if !word.is_empty() {
                 self.tokenize_word(word, out)?;
@@ -238,6 +251,10 @@ impl Lexicon {
             if had_comma {
                 let pos = out.len();
                 out.push((pos, Tok::Comma));
+            }
+            if had_colon {
+                let pos = out.len();
+                out.push((pos, Tok::Colon));
             }
         }
         Ok(())
@@ -358,6 +375,42 @@ fn clean(raw: &str) -> (&str, bool) {
         Some(s) => (s, true),
         None => (w, false),
     }
+}
+
+/// Lines of a text grouped into units: an Enumeration (a line ending in a
+/// colon plus the "- item" lines after it) is one unit; every other
+/// non-empty, non-comment line is one unit (ADR 0028).
+pub fn units(text: &str) -> Vec<String> {
+    let lines: Vec<&str> = text.lines().map(str::trim).collect();
+    let mut out = Vec::new();
+    let mut i = 0;
+    while i < lines.len() {
+        let l = lines[i];
+        if l.is_empty() || l.starts_with('#') {
+            i += 1;
+            continue;
+        }
+        if l.ends_with(':') {
+            let mut block = vec![l.to_string()];
+            let mut j = i + 1;
+            while j < lines.len() && lines[j].starts_with("- ") {
+                block.push(lines[j].to_string());
+                j += 1;
+            }
+            out.push(block.join("\n"));
+            i = j;
+        } else {
+            out.push(l.to_string());
+            i += 1;
+        }
+    }
+    out
+}
+
+/// True when a text has the Enumeration block shape.
+pub fn is_enumeration(text: &str) -> bool {
+    let lines: Vec<&str> = text.lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+    lines.len() > 1 && lines[0].ends_with(':') && lines[1..].iter().all(|l| l.starts_with("- "))
 }
 
 /// Digit strings (ADR 0022): `2` and up are NUM_PL; `0` and `1` are
@@ -550,6 +603,84 @@ fn clause_depth(tree: &Tree) -> usize {
 
 pub type ParseError =
     lalrpop_util::ParseError<usize, Tok, LexError>;
+
+/// Parse one unit: a sentence, or an Enumeration block (ADR 0028).
+pub fn parse_text(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
+    if is_enumeration(text) {
+        parse_enumeration(lexicon, text)
+    } else {
+        parse(lexicon, text)
+    }
+}
+
+/// intro statement ending in ":" + "- item" lines. The items enumerate the
+/// intro's final noun phrase, which must be plural, counted, or "every";
+/// each item is one noun phrase; a digit count must match the item count.
+fn parse_enumeration(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
+    let lines: Vec<&str> = text.lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+    let intro_tokens = lexicon.tokenize(lines[0]).map_err(|e| e.to_string())?;
+    let iter = intro_tokens
+        .into_iter()
+        .map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+    let intro = minglish::IntroParser::new()
+        .parse(iter)
+        .map_err(|e| format!("intro: {}", format_parse_error(&e)))?;
+    let expected = enumerated_count(&intro)?;
+    let mut children = vec![intro];
+    for (k, line) in lines[1..].iter().enumerate() {
+        let item = line.trim_start_matches("- ").trim();
+        let toks = lexicon
+            .tokenize(item)
+            .map_err(|e| format!("item {}: {e}", k + 1))?;
+        let iter = toks
+            .into_iter()
+            .map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+        let tree = minglish::ItemParser::new()
+            .parse(iter)
+            .map_err(|_| format!("item {} (\"{item}\") is not a noun phrase — an item names one thing (ADR 0028)", k + 1))?;
+        children.push(tree);
+    }
+    let n = lines.len() - 1;
+    if let Some(c) = expected {
+        if c != n {
+            return Err(format!("the intro counts {c} but the list has {n} items (ADR 0028)"));
+        }
+    }
+    Ok(Tree::Node { label: "Enum", head: 0, children })
+}
+
+/// The intro's enumerated noun phrase: the last child of the predicate must
+/// be a plural / every / counted NP (no trailing PP, no coordination tail).
+/// Returns the digit count when one is given.
+fn enumerated_count(intro: &Tree) -> Result<Option<usize>, String> {
+    let Tree::Node { children, .. } = intro else { return Err("intro is not a statement".into()) };
+    let Some(Tree::Node { label: "S", children: s, .. }) = children.first() else {
+        return Err("the intro of an Enumeration must be a plain statement (ADR 0028)".into());
+    };
+    if s.len() != 2 {
+        return Err("the intro of an Enumeration cannot carry a coordination tail (ADR 0028)".into());
+    }
+    let Tree::Node { label: pred, children: pc, .. } = &s[1] else {
+        return Err("intro predicate".into());
+    };
+    let np = match (*pred, pc.last()) {
+        ("VP", Some(t @ Tree::Node { label, .. })) if label.starts_with("NP") => t,
+        ("CopPred", Some(t @ Tree::Node { label, .. })) if label.starts_with("NP") => t,
+        _ => return Err("the intro must end in the noun phrase the items enumerate — no trailing prepositional phrase or adjective (ADR 0028)".into()),
+    };
+    let Tree::Node { label, children: nc, .. } = np else { unreachable!() };
+    let first = nc.first().and_then(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None });
+    let last_leaf = nc.iter().rev().find_map(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None });
+    match (*label, first) {
+        ("NPGen", _) => Ok(None),
+        ("NPPct", _) => Ok(None),
+        ("NP", Some(w)) if w == "every" => Ok(None),
+        ("NP", Some(w)) if w.chars().all(|c| c.is_ascii_digit()) => Ok(w.parse().ok()),
+        ("NP", Some(w)) if w == "about" || w == "~" => Ok(None),
+        ("NP", _) if last_leaf.is_some_and(|l| l.ends_with('s')) && nc.len() >= 2 => Ok(None),
+        _ => Err("the enumerated noun phrase must be plural, counted (\"3 pronouns\"), or \"every <noun>\" (ADR 0028)".into()),
+    }
+}
 
 pub fn parse(lexicon: &Lexicon, sentence: &str) -> Result<Tree, String> {
     let tokens = lexicon

@@ -12,10 +12,11 @@ fn repo(path: &str) -> String {
 fn tier2_is_a_superset_of_tier1() {
     let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
     let corpus = std::fs::read_to_string(repo("corpus/accept.txt")).unwrap();
-    for line in corpus.lines().map(str::trim) {
-        if line.is_empty() || line.starts_with('#') {
-            continue;
+    for line in grammar::units(&corpus) {
+        if grammar::is_enumeration(&line) {
+            continue; // blocks are checked by the tier-1 corpus test
         }
+        let line = line.as_str();
         let toks: Vec<_> = lexicon
             .tokenize(line)
             .unwrap()
@@ -62,6 +63,8 @@ fn rejections_get_named_diagnoses() {
         ("the report shows pronouns are big", "cannot be the object"),
         ("the i pronoun is indexical", "follows the noun in quotes"),
         ("the language does not have a discourse layer", "write \"Discourse Layer\""),
+        ("the Linter bans 3 pronouns:\n- \"it\"\n- \"they\"", "counts 3 but"),
+        ("the Linter bans the pronoun:\n- \"it\"", "must be plural"),
         ("the point of the copy of the report fails", "does not chain"),
     ];
     for (sentence, expect) in style_cases {

@@ -1967,5 +1967,84 @@
     "lemma": "declaration",
     "category": "NOUN",
     "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "block",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "item",
+    "category": "NOUN",
+    "note": "ADR 0028",
+    "waive": [
+      "ADV",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "colon",
+    "category": "NOUN",
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "list",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0028: the noun; the verb sense stays out (contain)"
+  },
+  {
+    "lemma": "enumerate",
+    "category": "VERB_TRANS",
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "phrase",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "last",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "VERB",
+      "ADV"
+    ],
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "end",
+    "category": "VERB_INTRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "thing",
+    "category": "NOUN",
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "statement",
+    "category": "NOUN",
+    "note": "ADR 0028"
+  },
+  {
+    "lemma": "quoted",
+    "category": "ADJ",
+    "note": "ADR 0028; quote is not an enabled verb, so no collision",
+    "waive": [
+      "VERB"
+    ]
   }
 ]

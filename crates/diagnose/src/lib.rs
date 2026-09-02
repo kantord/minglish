@@ -10,7 +10,7 @@
 //! Pattern checks over the token stream attach specific, actionable names
 //! (missing *then*, quantifier+negation, reduced relative, …).
 
-use grammar::{metrics, parse, Lexicon, Metrics, Tok};
+use grammar::{is_enumeration, metrics, parse, parse_text, Lexicon, Metrics, Tok};
 use std::collections::BTreeMap;
 
 // ------------------------------------------------------------ diagnosis --
@@ -30,6 +30,14 @@ pub enum Diagnosis {
 }
 
 pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
+    // an Enumeration block (ADR 0028) is one unit; its errors are already explained
+    if is_enumeration(sentence) {
+        return match parse_text(lexicon, sentence) {
+            Ok(tree) => Diagnosis::Clean(metrics(&tree)),
+            Err(e) if e.contains("not a minglish word") || e.contains("is banned in minglish") => Diagnosis::Word(e),
+            Err(e) => Diagnosis::Style(vec![e]),
+        };
+    }
     match parse(lexicon, sentence) {
         Ok(tree) => return Diagnosis::Clean(metrics(&tree)),
         Err(e) if e.contains("not a minglish word")
@@ -91,6 +99,7 @@ fn word(t: &Tok) -> &str {
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
         | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w) => w,
         Tok::Comma => ",",
+        Tok::Colon => ":",
     }
 }
 
@@ -556,6 +565,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Then(_) => vec![Term::Then],
         Tok::Name(_) => vec![Term::NameT],
         Tok::Comma => vec![Term::Comma],
+        Tok::Colon => vec![Term::Comma],
     }
 }
 

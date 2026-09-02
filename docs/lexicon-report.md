@@ -4,9 +4,9 @@
 
 ## Summary
 
-- 341 lemmas, 677 surface forms, 40 redirects, 99 waivers
-- Domain model: 40 terms with definitions (ADR 0027)
-- Lemmas per category: ADJ 36, APPROX 1, BANNED 42, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NAME 4, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 136, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 10, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 10, VERB_TRANS 71
+- 354 lemmas, 705 surface forms, 40 redirects, 109 waivers
+- Domain model: 42 terms with definitions (ADR 0027)
+- Lemmas per category: ADJ 38, APPROX 1, BANNED 42, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NAME 4, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 145, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 10, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 11, VERB_TRANS 72
 
 ## Frequency (open-class lemmas)
 
@@ -149,6 +149,16 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - add (NOUN)
 - good (NOUN)
 - good (ADV)
+- block (VERB)
+- item (ADV)
+- item (VERB)
+- list (VERB)
+- phrase (VERB)
+- last (NOUN)
+- last (VERB)
+- last (ADV)
+- end (NOUN)
+- quoted (VERB)
 - curate (NOUN)
 - lint (NOUN)
 - parse (NOUN)
@@ -159,5 +169,5 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 
 *v0 proxy: a sentence is covered when every token is an enabled surface form. This does not measure whether rejections come with clear, useful alternatives (see CONTEXT.md → Coverage).*
 
-- 65/73 sentences fully lexicalized
-- Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 5 (×1)
+- 73/82 sentences fully lexicalized
+- Missing tokens: 2 (×2), 3 (×2), 43 (×2), 10 (×1), 4 (×1), 5 (×1)
