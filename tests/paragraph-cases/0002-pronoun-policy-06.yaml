@@ -40,7 +40,7 @@ proposals:
     cost: 70.46
     words: 20
     terms: 0
-  diagnosis: '"the prose is repetitive: the agent appears many times": WORD: "repetitive:" is not a minglish word [all unknown words: many, times] | "the project accepts the cost": STYLE: "accepts … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  diagnosis: '"the prose is repetitive: the agent appears many times": WORD: "many" is not a minglish word [all unknown words: many, times] | "the project accepts the cost": STYLE: "accepts … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the prose is repetitive, so the prose uses the word "the agent" many times. the prose is accepted. the project prefers clarity over naturalness, so the prose is consistent with the project.
@@ -68,7 +68,7 @@ proposals:
     cost: 83.03
     words: 25
     terms: 0
-  diagnosis: '"this repetition is an accepted cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than]'
+  diagnosis: '"this repetition is an accepted cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view" is not a minglish word [all unknown words: view, more, important, than]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: 'the prose repeats the agent. the repetition of the agent is an accepted cost. the cost is consistent with the project view: clarity is more important than naturalness.'
@@ -82,7 +82,7 @@ proposals:
     cost: 89.18
     words: 28
     terms: 0
-  diagnosis: '"the repetition of the agent is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than]'
+  diagnosis: '"the repetition of the agent is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view" is not a minglish word [all unknown words: view, more, important, than]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: 'the prose repeats the agent. the prose costs the agent. the cost of the prose is consistent with the project view: clarity is more important than naturalness.'
@@ -96,7 +96,7 @@ proposals:
     cost: 87.04000000000002
     words: 27
     terms: 0
-  diagnosis: '"the cost of the prose is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than]'
+  diagnosis: '"the cost of the prose is consistent with the project view: clarity is more important than naturalness": WORD: "view" is not a minglish word [all unknown words: view, more, important, than]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design of the prose causes repetition. the writer says the agent does an action. the writer says the agent does another action. the repetition is an accepted expense. the design is consistent with the project. the project prefers clarity over naturalness.
@@ -572,7 +572,7 @@ proposals:
     cost: 81.29
     words: 26
     terms: 0
-  diagnosis: '"the prose is repetitive , but the team accepts the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  diagnosis: '"the prose is repetitive , but the team accepts the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the prose is repetitive . the team accepts the expense . the repetition matches the clarity of the project . the project does not have a preference for naturalness .
@@ -1040,5 +1040,115 @@ proposals:
     cost: 116.63
     words: 36
     terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language prohibits anaphoric words. The repetition of a noun is acceptable. The repetition of "the agent" is an example. The repetition is a cost. The design of the language prefers clarity. The design does not prefer naturalness. The design accepts the cost.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 2
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 141.11999999999998
+    words: 43
+    terms: 0
+  diagnosis: '"The language prohibits anaphoric words": WORD: "prohibits" is not a minglish word | "The repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "is … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The design of the language prefers clarity": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the") | "The design does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the") | "The design accepts the cost": STYLE: "accepts … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language bans anaphoric words. The repetition of a noun is acceptable. The repetition of "the agent" is an example. The repetition is an expense. The design of the language prefers the clarity. The design does not prefer the naturalness. The design accepts the expense.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 7
+    parsed: 7
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 146.24
+    words: 45
+    terms: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The prose is repetitive. The repetition has an expense. The design accepts the expense. The repetition is consistent with the design of the project. The project prefers clarity over naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 99.16999999999997
+    words: 30
+    terms: 0
+  diagnosis: '"The repetition is consistent with the design of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "The project prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The prose is repetitive. The repetition has an expense. The design accepts the expense. The repetition is consistent. The project has a design. The design prefers clarity. The design does not prefer naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 5
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 110.64999999999996
+    words: 33
+    terms: 0
+  diagnosis: '"The design prefers clarity": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the") | "The design does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The prose is repetitive. The repetition has an expense. The design accepts the expense. The repetition is consistent. The project has a design. The design prefers the clarity. The design does not prefer the naturalness.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 7
+    parsed: 7
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 113.18999999999997
+    words: 35
+    terms: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The repetition of "the agent" is a cost. The project accepts the cost. The repetition is consistent with the design of the project. The design prefers clarity over naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 88.76
+    words: 29
+    terms: 0
+  diagnosis: '"The repetition of "the agent" is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "is … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The project accepts the cost": STYLE: "accepts … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "The repetition is consistent with the design of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "The design prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The repetition of "the agent" causes an expense. The project accepts the expense. The repetition matches the design of the project. The design values clarity. The design does not value naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 100.45999999999997
+    words: 31
+    terms: 0
+  diagnosis: '"The design values clarity": WORD: "values" is not a minglish word | "The design does not value naturalness": WORD: "value" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The repetition of "the agent" causes an expense. The project accepts the expense. The repetition matches the design of the project. The design prefers clarity. The design does not prefer naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 102.03999999999998
+    words: 31
+    terms: 0
+  diagnosis: '"The design prefers clarity": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the") | "The design does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash

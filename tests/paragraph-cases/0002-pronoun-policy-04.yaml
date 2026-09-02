@@ -11,9 +11,9 @@ original_metrics:
   cost: 38.81
   words: 9
   terms: 0
-verdict: needs-fix
+verdict: unreviewed
 note: the Discourse Layer alternative is better but still confusing; 'the team' is not appropriate in this document
-best: the project does not have a layer of the discourse. the project does not plan a layer of the discourse.
+best: The language does not have a Discourse Layer. The language does not plan a Discourse Layer.
 proposals:
 - text: the system has no anaphora machinery and the system has no discourse machinery. the system does not have plans for an anaphora or a discourse layer.
   drops: none
@@ -123,8 +123,7 @@ proposals:
     cost: 266.65999999999997
     words: 78
     terms: 0
-  diagnosis: '"no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word": WORD: "exists" is not a minglish word [all unknown words: exists, that, wrong, minglish] | "the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence": WORD: "^" is not a minglish word [all unknown words: that, wrong, it, recognizable, as, minglish-like] | "the version 0 has no anaphora and has no discourse layer": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the team does not plan an anaphora for the version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the team does not plan a discourse layer for the version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>"
-    (ADR 0022)'
+  diagnosis: '"no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word": WORD: "exists" is not a minglish word [all unknown words: exists, that, wrong, minglish] | "the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence": WORD: "^" is not a minglish word [all unknown words: that, wrong, it, recognizable, as, minglish-like] | "the version 0 has no anaphora and has no discourse layer": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the team does not plan an anaphora for the version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the team does not plan a discourse layer for the version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: no tool has an anaphora. no tool has a discourse layer. the tool does not plan an anaphora. the tool does not plan a discourse layer.
@@ -180,8 +179,7 @@ proposals:
     cost: 109.96
     words: 32
     terms: 0
-  diagnosis: '"the project does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not have a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
-    | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the project does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not have a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism. the team does not plan the anaphora mechanism for the version. the team does not plan the discourse mechanism for the version.
@@ -279,8 +277,7 @@ proposals:
     cost: 118.98999999999998
     words: 34
     terms: 0
-  diagnosis: '"the system does not contain an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "no agent plans the anaphora mechanism for the future": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "no agent plans the discourse mechanism for the future": STYLE: "discourse mechanism" — noun-noun compounds are not
-    minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015)'
+  diagnosis: '"the system does not contain an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "no agent plans the anaphora mechanism for the future": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "no agent plans the discourse mechanism for the future": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the system does not contain an anaphora mechanism. the system does not contain a discourse mechanism. no agent plans the anaphora mechanism. no agent plans the discourse mechanism.
@@ -294,8 +291,7 @@ proposals:
     cost: 105.13
     words: 28
     terms: 0
-  diagnosis: '"the system does not contain an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "no agent plans the anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "no agent plans the discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism
-    of the discourse", or one transparent word (ADR 0015)'
+  diagnosis: '"the system does not contain an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "no agent plans the anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "no agent plans the discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015)'
   count: 2
   model: deepseek/deepseek-v4-flash
 - text: i did not design a discourse mechanism. i do not plan a discourse mechanism. an anaphora mechanism does not exist. i do not plan an anaphora mechanism.
@@ -598,8 +594,7 @@ proposals:
     cost: 78.24999999999997
     words: 22
     terms: 0
-  diagnosis: '"the system does not have anaphora or discourse tools": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora or discourse tools for version one": STYLE: "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "version" — a singular noun needs a determiner:
-    "the version" (mass nouns take "the")'
+  diagnosis: '"the system does not have anaphora or discourse tools": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora or discourse tools for version one": STYLE: "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "version" — a singular noun needs a determiner: "the version" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the system does not contain the anaphora mechanism. the system does not contain the discourse mechanism. the team does not plan the anaphora mechanism for the first version. the team does not plan the discourse mechanism for the first version.
@@ -613,8 +608,7 @@ proposals:
     cost: 129.81999999999996
     words: 40
     terms: 0
-  diagnosis: '"the system does not contain the anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain the discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora mechanism for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the team does not plan the discourse mechanism for the first version": WORD: "first"
-    is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name'
+  diagnosis: '"the system does not contain the anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain the discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora mechanism for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the team does not plan the discourse mechanism for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool does not plan an anaphora mechanism for version zero. the tool does not plan a discourse mechanism for version zero.
@@ -902,8 +896,7 @@ proposals:
     cost: 110.19999999999999
     words: 32
     terms: 0
-  diagnosis: '"the language does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the language does not have a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
-    | "the project does not plan a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the language does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the language does not have a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language does not have a discourse layer. the language does not have an anaphora mechanism. the project does not plan a discourse layer. the project does not plan an anaphora mechanism.
@@ -917,8 +910,7 @@ proposals:
     cost: 109.93999999999998
     words: 32
     terms: 0
-  diagnosis: '"the language does not have a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the language does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish;
-    write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the language does not have a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the language does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language does not have an anaphora mechanism. the project does not plan an anaphora mechanism for version 0.
@@ -985,6 +977,88 @@ proposals:
     continuity_pairs: 1
     continuity_ok: 0
     cost: 49.730000000000004
+    words: 16
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have a Discourse Layer. The language does not plan a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 50.300000000000004
+    words: 16
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The project does not plan a Discourse Layer. The project does not plan an anaphora mechanism. The language does not have an anaphora mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 85.50000000000001
+    words: 24
+    terms: 1
+  diagnosis: '"The project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The language does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The project does not plan a Discourse Layer. The project does not plan a mechanism of anaphora. The language does not have a mechanism of anaphora.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 87.04000000000002
+    words: 26
+    terms: 1
+  diagnosis: '"The project does not plan a mechanism of anaphora": AMBIGUOUS (2 readings): "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit | "The language does not have a mechanism of anaphora": AMBIGUOUS (2 readings): "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The project does not plan a Discourse Layer. The anaphora has no mechanism. The project does not plan the mechanism of the anaphora. The language has no mechanism of the anaphora.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 105.27
+    words: 31
+    terms: 1
+  diagnosis: '"The anaphora has no mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "The language has no mechanism of the anaphora": AMBIGUOUS (2 readings): "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language has no Anaphoric Pronoun. The language does not plan a Discourse Layer.
+  drops: no register/affect loss
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 51.14000000000001
+    words: 14
+    terms: 2
+  diagnosis: '"The language has no Anaphoric Pronoun": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have an Anaphoric Pronoun. The language does not plan a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 56.190000000000005
     words: 16
     terms: 2
   count: 1

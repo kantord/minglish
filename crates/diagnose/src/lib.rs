@@ -485,6 +485,20 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
             _ => {}
         }
     }
+    // inline list: "X are "it", "they", and "those"" — a comma-separated run
+    // of noun phrases; lists are Enumeration blocks (ADR 0028)
+    {
+        let commas = toks.iter().filter(|t| matches!(t, Tok::Comma)).count();
+        let comma_and = toks.windows(2).any(|w| matches!(w[0], Tok::Comma) && matches!(w[1], Tok::Conj(_)));
+        if commas >= 2 || comma_and {
+            out.push(
+                "this is an inline list — write an Enumeration block: a statement ending in \
+                 \":\" whose last noun phrase is plural or counted, then one \"- item\" per line \
+                 (ADR 0028)"
+                    .to_string(),
+            );
+        }
+    }
     // a defined multi-word term written in lowercase ("reference ambiguity")
     // beats the compound rule below (ADR 0027)
     let mut term_spans: Vec<(usize, usize)> = Vec::new();

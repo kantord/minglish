@@ -138,7 +138,7 @@ proposals:
     cost: 157.22
     words: 48
     terms: 0
-  diagnosis: '"the word list does not include some pronouns": WORD: "list" is not a minglish word [all unknown words: list, include] | "the pronouns are not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the word list does not include some pronouns": WORD: "include" is not a minglish word | "the pronouns are not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon does not contain banned pronouns. the project defers the mechanism for the error message that says "repeat the noun you mean". the future validator needs this mechanism.
@@ -1003,5 +1003,131 @@ proposals:
     words: 69
     terms: 8
   diagnosis: '"The Lexicon does not contain the banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "The Linter rejects every banned pronoun": STYLE: "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "rejects … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Linter does not give a message for a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "does … give" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The future "validator" must check the message": STYLE: "must … check" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Lexicon does not contain banned pronouns. The Linter does not parse a sentence that uses a banned pronoun. The Linter must explain the Rejection. The Linter must name the noun that the writer repeats. The Linter does not have a mechanism for the explanation. The mechanism requires a list of banned words. The mechanism requires a message for every banned word. The maintainers deferred the mechanism. The future validator will have the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 2
+    continuity_pairs: 8
+    continuity_ok: 5
+    cost: 265.90000000000003
+    words: 74
+    terms: 6
+  diagnosis: '"The Lexicon does not contain banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Linter does not parse a sentence that uses a banned pronoun": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter must name the noun that the writer repeats": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter does not have a mechanism for the explanation": WORD: "explanation" is not a minglish word | "The mechanism requires a list of banned words": STYLE: "requires … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The mechanism requires a message for every banned word": STYLE: "every banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "requires … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the") | "The future validator will have the mechanism": WORD: "will" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Lexicon does not contain the banned pronouns. The Linter rejects every sentence with a banned pronoun. The Linter must give the reason for the Rejection. The Linter must name the noun that the writer repeats. The Linter does not have a mechanism for the reason. The mechanism needs a list. The list names every banned pronoun. The mechanism needs a message. The message names the noun for every banned pronoun. The maintainers deferred the mechanism. The future validator adds the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 11
+    parsed: 4
+    continuity_pairs: 10
+    continuity_ok: 6
+    cost: 293.02000000000004
+    words: 82
+    terms: 6
+  diagnosis: '"The Lexicon does not contain the banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "The Linter rejects every sentence with a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "rejects … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Linter must give the reason for the Rejection": WORD: "reason" is not a minglish word | "The Linter must name the noun that the writer repeats": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter does not have a mechanism for the reason": WORD: "reason" is not a minglish word | "The list names every banned pronoun": STYLE: "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "names … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The message names the noun for every banned pronoun": STYLE: "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "names … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter bans some pronouns. The Lexicon does not contain the pronouns. The Linter rejects every sentence that uses a pronoun from the ban. The Linter must tell the writer about the ban. The Linter must name the noun that the writer must repeat. The Linter does not have a mechanism for the message. The mechanism needs a list. The list contains every banned pronoun. The mechanism needs a message. The message names the noun for the writer. The maintainers deferred the mechanism. The future validator adds the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 12
+    parsed: 7
+    continuity_pairs: 11
+    continuity_ok: 6
+    cost: 315.49999999999983
+    words: 89
+    terms: 6
+  diagnosis: '"The Linter bans some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "The Linter rejects every sentence that uses a pronoun from the ban": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter must tell the writer about the ban": WORD: "tell" is not a minglish word | "The Linter must name the noun that the writer must repeat": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The list contains every banned pronoun": STYLE: "contains … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not have a mechanism for Banned Pronouns. A Banned Pronoun is an unknown word. The Linter needs a mechanism. The mechanism gives an error to the writer. The error says "repeat the noun". The project defers the mechanism.
+  drops: parenthetical aside (OOV), hyphenated compound adjectives, semicolon structure, future-tense reference
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 143.85
+    words: 41
+    terms: 4
+  diagnosis: '"The Linter does not have a mechanism for Banned Pronouns": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes | "A Banned Pronoun is an unknown word": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not have a mechanism for "banned" Pronouns. A "banned" Pronoun is an unknown word. The Linter needs a mechanism. The mechanism gives an error to the writer. The error says "repeat the noun". The project defers the mechanism.
+  drops: parenthetical aside (OOV), hyphenated compound adjectives, semicolon structure, future-tense reference
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 143.85
+    words: 41
+    terms: 2
+  diagnosis: '"The Linter does not have a mechanism for "banned" Pronouns": WORD: "Pronouns" is not a minglish word — minglish words are lowercase ("pronouns"); a name that equals a word needs quotes | "A "banned" Pronoun is an unknown word": WORD: "Pronoun" is not a minglish word — minglish words are lowercase ("pronoun"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not have a mechanism for "banned" pronouns. A "banned" pronoun is an unknown word. The Linter needs a mechanism. The mechanism gives an error to the writer. The error says "repeat the noun". The project defers the mechanism.
+  drops: parenthetical aside (OOV), hyphenated compound adjectives, semicolon structure, future-tense reference
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 143.85
+    words: 41
+    terms: 2
+  diagnosis: '"The Linter does not have a mechanism for "banned" pronouns": STYLE: "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "A "banned" pronoun is an unknown word": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not have a mechanism for Banned pronouns. The Linter rejects a Banned pronoun. The Rejection does not name the noun of the Banned pronoun. The writer must repeat the noun. The writer does not know the noun. The writer needs an error with the noun. The project defers the mechanism.
+  drops: the future-oriented phrasing "needs a … mechanism in the future validator" becomes "the writer needs an error with the noun" to express the requirement using available verbs; "fall out of the lexicon (OOV)" becomes a description of the rejection; "writer-facing" is dropped because no available word expresses that register
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 4
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 183.13
+    words: 53
+    terms: 6
+  diagnosis: '"The Linter does not have a mechanism for Banned pronouns": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes | "The Linter rejects a Banned pronoun": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes | "The Rejection does not name the noun of the Banned pronoun": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not have a mechanism for "banned" pronouns. The Linter rejects a "banned" pronoun. The Rejection does not name the noun of the "banned" pronoun. The writer must repeat the noun. The writer does not know the noun. The writer needs an error with the noun. The project defers the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 4
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 183.13
+    words: 53
+    terms: 3
+  diagnosis: '"The Linter does not have a mechanism for "banned" pronouns": STYLE: "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Linter rejects a "banned" pronoun": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The Rejection does not name the noun of the "banned" pronoun": STYLE: "does … name" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter has no mechanism for "banned" pronouns. The Linter rejects the "banned" pronoun. The Rejection does not name the noun of the "banned" pronoun. The writer must repeat the noun. The writer does not know the noun. The writer needs an error with the noun. The project defers the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 4
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 178.54000000000002
+    words: 51
+    terms: 3
+  diagnosis: '"The Linter has no mechanism for "banned" pronouns": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "The Linter rejects the "banned" pronoun": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The Rejection does not name the noun of the "banned" pronoun": STYLE: "does … name" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash

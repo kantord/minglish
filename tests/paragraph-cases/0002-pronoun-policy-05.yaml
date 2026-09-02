@@ -11,9 +11,9 @@ original_metrics:
   cost: 38.580000000000005
   words: 10
   terms: 0
-verdict: ideal
+verdict: unreviewed
 note: almost ideal; slightly unnatural but very close
-best: the design of the language removes every Reference Ambiguity. the language does not have a Discourse Layer.
+best: The design of the language removes every Reference Ambiguity. The design of the language does not build a Discourse Layer. The design of the language does not have a Discourse Layer.
 proposals:
 - text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.
   drops: none
@@ -726,5 +726,58 @@ proposals:
     cost: 103.69
     words: 33
     terms: 4
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The design of the language does not build a Discourse Layer. The design of the language has no Discourse Layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 89.97999999999999
+    words: 29
+    terms: 3
+  diagnosis: '"The design of the language has no Discourse Layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The design of the language does not build a Discourse Layer. The design of the language does not have a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 94.2
+    words: 31
+    terms: 3
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design removes every Reference Ambiguity. The language does not have a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 47.92
+    words: 14
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 54.69
+    words: 17
+    terms: 2
   count: 1
   model: deepseek/deepseek-v4-flash

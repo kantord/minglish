@@ -171,6 +171,16 @@ impl Lexicon {
         // quoted spans become single NAME tokens; even-indexed pieces are
         // ordinary text
         let pieces: Vec<&str> = sentence.split('"').collect();
+        // fail loud on an unterminated quote (ADR 0018): never silently
+        // quote to the end of the line
+        if pieces.len() % 2 == 0 {
+            return Err(LexError {
+                word: "\"".to_string(),
+                position: 0,
+                suggestion: Some("a quote is not closed — quotes come in pairs".to_string()),
+                banned: false,
+            });
+        }
         for (pi, piece) in pieces.iter().enumerate() {
             if pi % 2 == 1 {
                 let pos = out.len();

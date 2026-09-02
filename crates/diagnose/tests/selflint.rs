@@ -195,6 +195,7 @@ fn linter_advice_examples_parse() {
         "the report shows that the test fails",
         "the i pronoun is indexical",
         "the language does not have a discourse layer",
+        "the pronouns are \"it\", \"they\", and \"those\"",
         "the point of the copy of the report fails",
     ];
     let mut examples = Vec::new();

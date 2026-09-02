@@ -615,8 +615,14 @@ fn split_reply(raw: &str) -> (String, String) {
         }
     }
     // keep line breaks where they carry structure (Enumeration items)
-    let text = if body.iter().any(|l| l.starts_with("- ")) { body.join("\n") } else { body.join(" ") };
-    (text.trim_matches('"').trim().to_string(), drops)
+    if body.iter().any(|l| l.starts_with("- ")) {
+        // a block: never strip quotes — the last item may be a quoted word
+        return (body.join("\n"), drops);
+    }
+    let text = body.join(" ");
+    // a reply wrapped in one pair of quotes: unwrap it; otherwise keep quotes
+    let unwrapped = text.strip_prefix('"').and_then(|t| t.strip_suffix('"')).filter(|t| !t.contains('"'));
+    (unwrapped.unwrap_or(&text).trim().to_string(), drops)
 }
 
 fn fmt(m: &Metrics) -> String {

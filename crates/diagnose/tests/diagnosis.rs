@@ -65,6 +65,7 @@ fn rejections_get_named_diagnoses() {
         ("the language does not have a discourse layer", "write \"Discourse Layer\""),
         ("the Linter bans 3 pronouns:\n- \"it\"\n- \"they\"", "counts 3 but"),
         ("the Linter bans the pronoun:\n- \"it\"", "must be plural"),
+        ("the pronouns are \"it\", \"they\", and \"those\"", "inline list"),
         ("the point of the copy of the report fails", "does not chain"),
     ];
     for (sentence, expect) in style_cases {

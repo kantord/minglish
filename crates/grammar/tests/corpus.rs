@@ -103,6 +103,7 @@ fn banned_structures_reject() {
         "the Linter bans 2 pronouns:\n- \"it\"\n- the agent reads the file",
         "the Linter bans 2 pronouns in the Lexicon:\n- \"it\"\n- \"they\"",
         "the Linter bans 2 pronouns and reads the file:\n- \"it\"\n- \"they\"",
+        "the language allows 2 pronouns:\n- \"I\"\n- \"you",
     ];
     for s in banned_blocks {
         assert!(
