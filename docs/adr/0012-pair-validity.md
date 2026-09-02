@@ -37,7 +37,7 @@ every Declared Loss of the pair. The tool "textcost" shows the declarations with
 ## Consequences
 
 - The maintainers moved 3 pairs into the file "corpus/untranslatable.tsv".
-  The ratio of the expense grew. The ratio is honest.
+  The ratio of the expense grew. The ratio became honest.
 - The translation "you cannot" narrows the sentence "it is not possible" to
   the reader. The rewrite is a Register Loss. The maintainers declared the
   loss.

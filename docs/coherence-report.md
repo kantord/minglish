@@ -284,3 +284,10 @@
   - condition: 2 ✓ if …, then
   - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
 
+## docs/adr/0035-become.md
+
+- Sentences: 23; parse: 23/23 (100%)
+- Topic continuity: 10/18 consecutive pairs share the subject with the sentence before (56%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - condition: 1 ✓ if …, then
+

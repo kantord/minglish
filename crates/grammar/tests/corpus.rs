@@ -140,6 +140,10 @@ fn banned_structures_reject() {
         "Given the test fails\nThen the queue is empty and the agent retries the request",
         "And the test fails\nThen the queue is empty",
         "Scenario:\nGiven the test fails",
+        // ADR 0035: become takes the copula's complements only
+        "the file becomes deleted",
+        "the agent becomes running",
+        "the ratio becomes",
     ];
     for s in banned2 {
         assert!(parse(&lexicon, s).is_err(), "should NOT parse but did: {s}");

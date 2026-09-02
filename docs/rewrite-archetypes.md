@@ -32,7 +32,10 @@ Decisions from the maintainer's review (2026-09-02/03): A17 → ADR 0031 (a
 verb-preposition phrase after a copular complement; A5 stays banned);
 A16 → ADR 0032 ("be" after a modal only); A13 → ADR 0033 (after, before,
 until + noun phrase) and ADR 0034 (Step Block: Gherkin Given/When/Then/And
-lines; "Then" only inside the block); A1 → ADR 0029 (ordinals,
+lines; "Then" only inside the block); A4 → ADR 0035 (become as a copula);
+A18 stays one category per lemma — the remedy is the per-sense synonym of
+ADR 0023, chosen for naturalness (the substitutions that read oddly, e.g.
+*quantity* for *count*, go to the meaning review); A1 → ADR 0029 (ordinals,
 scale words, decimals); A3 → ADR 0030 (comparatives); A2 kept as a ban with
 advice; A6 and A9 accepted as rewrite costs; A4 to be examined on its
 examples (see below); the rest need targeted discussion.

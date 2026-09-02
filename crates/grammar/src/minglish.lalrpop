@@ -62,6 +62,9 @@ extern {
         "ADJ_CMP" => Tok::AdjCmp(<String>),
         "ADJ_LONG" => Tok::AdjLong(<String>),
         "BE" => Tok::Be(<String>),
+        "BECOME_SG" => Tok::BecomeSg(<String>),
+        "BECOME_PL" => Tok::BecomePl(<String>),
+        "BECOME_PAST" => Tok::BecomePast(<String>),
         "SOME" => Tok::Some_(<String>),
         "NAME" => Tok::Name(<String>),
         "COMMA" => Tok::Comma,
@@ -78,6 +81,9 @@ LDetAny: Tree = { LDet, LDetSg };
 LAdj: Tree = { <l:@L> <w:"ADJ"> => leaf(l, w), <l:@L> <w:"ADJ_LONG"> => leaf(l, w) };
 LAdjLong: Tree = <l:@L> <w:"ADJ_LONG"> => leaf(l, w);
 LBe: Tree = <l:@L> <w:"BE"> => leaf(l, w);
+LBecomeSg: Tree = <l:@L> <w:"BECOME_SG"> => leaf(l, w);
+LBecomePl: Tree = <l:@L> <w:"BECOME_PL"> => leaf(l, w);
+LBecomePast: Tree = <l:@L> <w:"BECOME_PAST"> => leaf(l, w);
 LNounSg: Tree = <l:@L> <w:"NOUN_SG"> => leaf(l, w);
 LNounPl: Tree = <l:@L> <w:"NOUN_PL"> => leaf(l, w);
 LVtBase: Tree = <l:@L> <w:"VT_BASE"> => leaf(l, w);
@@ -246,6 +252,9 @@ PredSG: Tree = {
     ModalVP,
     CopPredn<LCopSg>,
     CopPredn<LCopSgPast>,
+    // ADR 0035: become is a second copula with the same complements
+    CopPredn<LBecomeSg>,
+    CopPredn<LBecomePast>,
 };
 
 PredPL: Tree = {
@@ -256,6 +265,8 @@ PredPL: Tree = {
     ModalVP,
     CopPredn<LCopPl>,
     CopPredn<LCopPlPast>,
+    CopPredn<LBecomePl>,
+    CopPredn<LBecomePast>,
 };
 
 // First person: base agreement, but no copula — *am* is not in the language.
@@ -277,6 +288,8 @@ PredEvery: Tree = {
     <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
     CopPosn<LCopSg>,
     CopPosn<LCopSgPast>,
+    CopPosn<LBecomeSg>,
+    CopPosn<LBecomePast>,
 };
 PredNo: Tree = {
     VPn<LVt3, LVi3>,
@@ -284,6 +297,8 @@ PredNo: Tree = {
     <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
     CopPosn<LCopSg>,
     CopPosn<LCopSgPast>,
+    CopPosn<LBecomeSg>,
+    CopPosn<LBecomePast>,
 };
 
 ModalVP: Tree = {

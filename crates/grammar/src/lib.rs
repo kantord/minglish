@@ -63,6 +63,9 @@ pub enum Tok {
     AdjCmp(String),
     AdjLong(String),
     Be(String),
+    BecomeSg(String),
+    BecomePl(String),
+    BecomePast(String),
     Some_(String),
     Name(String),
     Comma,
@@ -565,6 +568,9 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "ADJ_CMP" => Tok::AdjCmp(w),
         "ADJ_LONG" => Tok::AdjLong(w),
         "BE" => Tok::Be(w),
+        "BECOME_SG" => Tok::BecomeSg(w),
+        "BECOME_PL" => Tok::BecomePl(w),
+        "BECOME_PAST" => Tok::BecomePast(w),
         // NAME is produced directly by the tokenizer, never from the lexicon
         _ => return None,
     })

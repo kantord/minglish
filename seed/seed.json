@@ -6945,5 +6945,31 @@
     "forms": {
       "plural": "ideas"
     }
+  },
+  {
+    "lemma": "becomes",
+    "category": "BECOME_SG",
+    "note": "copula of change, singular present (ADR 0035)"
+  },
+  {
+    "lemma": "become",
+    "category": "BECOME_PL",
+    "note": "copula of change, plural present (ADR 0035)"
+  },
+  {
+    "lemma": "became",
+    "category": "BECOME_PAST",
+    "note": "copula of change, past (ADR 0035)"
+  },
+  {
+    "lemma": "transition",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0035",
+    "forms": {
+      "plural": "transitions"
+    }
   }
 ]

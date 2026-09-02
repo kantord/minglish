@@ -98,7 +98,7 @@ fn word(t: &Tok) -> &str {
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
         | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w)
-        | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) | Tok::Be(w) => w,
+        | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) | Tok::Be(w) | Tok::BecomeSg(w) | Tok::BecomePl(w) | Tok::BecomePast(w) => w,
         Tok::Comma => ",",
         Tok::Colon => ":",
     }
@@ -693,7 +693,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::So(_) => vec![Term::So],
         Tok::Because(_) => vec![Term::Because],
         Tok::Ord(_) => vec![Term::Ord],
-        Tok::Be(_) => vec![Term::CopAny],
+        Tok::Be(_) | Tok::BecomeSg(_) | Tok::BecomePl(_) | Tok::BecomePast(_) => vec![Term::CopAny],
         Tok::Than(_) => vec![Term::Than],
         Tok::More(_) | Tok::Scale(_) | Tok::AdjCmp(_) | Tok::AdjLong(_) | Tok::Adj(_) => vec![Term::Adj],
         Tok::NounSg(_) => vec![Term::NSg],

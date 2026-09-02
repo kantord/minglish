@@ -24,7 +24,8 @@ rejected sentence, keep its meaning; change only what the error requires.
 
 1. Statement: `the agent reads the file` / past: `the agent deleted the file`
 2. Copular: `the queue is empty` · `the queue is not empty` ·
-   `the tests were old` · `the parser is a program`
+   `the tests were old` · `the parser is a program` · change of state:
+   `the ratio becomes honest`, `the guard became a floor` (same complements)
 3. Negation: `the agent does not store the file` ·
    past `the user did not open a session`
 4. Imperative: `delete the file` · `check the input of the user` — a

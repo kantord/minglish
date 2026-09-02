@@ -298,7 +298,10 @@ beat	form	VERB_TRANS_BASE	beat
 beaten	form	VERB_TRANS_ED	beat
 beating	form	VERB_TRANS_ING	beat
 beats	form	VERB_TRANS_3SG	beat
+became	form	BECOME_PAST	became
 because	form	REASON	because
+become	form	BECOME_PL	become
+becomes	form	BECOME_SG	becomes
 before	form	PREP_V	before
 belong	form	VERB_INTRANS_BASE	belong
 belonged	form	VERB_INTRANS_ED	belong
@@ -2009,6 +2012,8 @@ trades	form	VERB_TRANS_3SG	trade
 trading	form	VERB_TRANS_ING	trade
 tradition	form	NOUN_SG	tradition
 traditions	form	NOUN_PL	tradition
+transition	form	NOUN_SG	transition
+transitions	form	NOUN_PL	transition
 transitive	form	ADJ_LONG	transitive
 translation	form	NOUN_SG	translation
 translation pair	term	-	Translation Pair

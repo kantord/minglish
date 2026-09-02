@@ -1835,3 +1835,55 @@ open=6 maxdep=2 depth=2 right=19% fronted=2
     )
   )
 )
+
+### the ratio of the expense became honest
+open=4 maxdep=5 depth=1 right=17% fronted=6
+(S h=1
+  (NP h=1
+    the
+    ratio
+    (OfPP h=1
+      of
+      (NP h=1
+        the
+        expense
+      )
+    )
+  )
+  (CopPred h=1
+    became
+    honest
+  )
+)
+
+### the guard becomes a floor
+open=3 maxdep=3 depth=1 right=0% fronted=4
+(S h=1
+  (NP h=1
+    the
+    guard
+  )
+  (CopPred h=1
+    becomes
+    (NP h=1
+      a
+      floor
+    )
+  )
+)
+
+### no agent becomes a Name
+open=3 maxdep=3 depth=1 right=0% fronted=4
+(S h=1
+  (NP h=1
+    no
+    agent
+  )
+  (CopPred h=1
+    becomes
+    (NP h=1
+      a
+      Name
+    )
+  )
+)
