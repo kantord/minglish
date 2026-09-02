@@ -20,6 +20,8 @@ undefined; add an entry before using one in code or docs.
 
 **Ban** (noun) — a Ban is a Rejection of an ambiguous structure. the Ban is permanent. the writer changes the sentence. the Linter explains the Ban.
 
+**Bare Plural** (noun) — a Bare Plural is a plural noun. a Bare Plural does not have a determiner. a Bare Plural names a kind. the sentence "machines find collisions" has a Bare Plural.
+
 **Category** (noun) — a Category is the class of a Lemma. people choose one Category for every Lemma. the Category decides the Surface Forms of the Lemma.
 
 **Closed Class** (noun) — a Closed Class contains Function Words. a Closed Class does not grow. people cannot add a word to a Closed Class.
@@ -29,6 +31,8 @@ undefined; add an entry before using one in code or docs.
 **Collision** (noun) — if 2 Lemmas produce one Surface Form, then the Surface Form is a Collision. if one Surface Form has 2 Form Tags, then the Surface Form is a Collision. Lexgen rejects every Collision.
 
 **Complement** (noun) — a Complement follows a Copula. a Complement is an adjective or is a Noun Phrase. a Complement is not a Participle.
+
+**Compound** (noun) — a Compound has 2 nouns. a determiner does not separate the 2 nouns. the phrase "discourse layer" is a Compound. the language bans every Compound. a writer uses a term or uses a paraphrase.
 
 **Conditional** (noun) — a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word "if" opens the condition. the word "then" opens the consequent.
 
@@ -52,11 +56,15 @@ undefined; add an entry before using one in code or docs.
 
 **Discourse Layer** (noun) — a Discourse Layer resolves the referent of an Anaphoric Pronoun. the language does not have a Discourse Layer.
 
+**Dogfood** (noun) — the Dogfood is a test of the language. the maintainers lint the documents of the project. the Dogfood finds the Gaps of the language.
+
 **Embedding Depth** (noun) — the Embedding Depth counts the clauses inside a clause. a deep embedding costs the reader.
 
 **English** (name) — English is the language of the original texts. Minglish is a subset of English.
 
 **Enumeration** (noun) — an Enumeration is a block. the block has a statement. the block has a list of the items. the statement ends with a colon. every item names one thing. the items enumerate the last Noun Phrase of the statement.
+
+**First Token** (noun) — the First Token of a sentence announces the Sentence Shape. the word "if" is the First Token of a Conditional. every Sentence Shape has a distinct First Token.
 
 **Form Tag** (noun) — a Form Tag names the class of one Surface Form. every Surface Form has one Form Tag. the Form Tag comes from the Category of the Lemma.
 
@@ -65,6 +73,10 @@ undefined; add an entry before using one in code or docs.
 **Gap** (noun) — a Gap is a Rejection of a good sentence. the language cannot say the sentence. the maintainers fix a Gap with a decision.
 
 **Grammar** (noun) — the Grammar defines every Sentence Shape of the language. the Grammar gives one Parse to every sentence.
+
+**Head Noun** (noun) — the Head Noun of a Compound is the last noun of the Compound. the Head Noun names the kind of the thing.
+
+**Imperative** (noun) — an Imperative is a Sentence Shape. a verb opens an Imperative. the sentence "delete the file" is an Imperative. the reader is the addressee of an Imperative.
 
 **indexical** (adj) — an indexical word refers to the writer or refers to the reader.
 
@@ -76,6 +88,8 @@ undefined; add an entry before using one in code or docs.
 
 **Lemma** (noun) — a Lemma is one entry of the Seed. a Lemma is the base spelling of a word. Lexgen expands every Lemma into the Surface Forms of the Lemma.
 
+**Lexer** (noun) — the Lexer splits a sentence into tokens. the Lexer gives a Form Tag to every token. the Lexer recognizes a Name and recognizes a quantity by the shape.
+
 **Lexgen** (name) — Lexgen is a tool. Lexgen builds the Lexicon from the Seed. Lexgen rejects every Collision.
 
 **Lexicon** (noun) — the Lexicon is the file "lexicon.tsv". Lexgen writes the Lexicon from the Seed. the Lexicon contains every Surface Form and contains every Redirect. people do not edit the Lexicon.
@@ -84,13 +98,19 @@ undefined; add an entry before using one in code or docs.
 
 **Linter** (noun) — the Linter checks a sentence. the Linter parses the sentence or explains the Rejection. the Linter names the kind of a Rejection.
 
+**Markdown** (name) — Markdown is the format of the documents. Markdown turns a dash into a bullet.
+
 **Minglish** (name) — Minglish is the language of the project. every sentence of Minglish has one Parse.
 
 **Modifier** (noun) — a Modifier is an adjective or is a Prepositional Phrase. a Modifier describes one Noun Phrase. a Modifier does not cover a Coordination.
 
+**Name** (noun) — a Name is one token. a Name is a capitalized word or is a quoted span. a Name does not inflect. the writer repeats a Name.
+
 **Negation** (noun) — a Negation is a statement. a Negation has the word "not". the word "not" changes the truth of the verb. the language uses "does not" for a verb and uses "is not" for a Copula.
 
 **Noun Phrase** (noun) — a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word.
+
+**Noun Preposition** (noun) — a Noun Preposition attaches to the prior noun. the word "of" is the Noun Preposition. the language has one Noun Preposition.
 
 **Open Dependency** (noun) — an Open Dependency is a relation. the relation links 2 words of a sentence. the reader holds an Open Dependency in the memory. the comfortable bound is 4 Open Dependencies.
 
@@ -110,11 +130,15 @@ undefined; add an entry before using one in code or docs.
 
 **Prohibition** (noun) — a Prohibition is a command. a Prohibition has the phrase "do not". the sentence "do not delete the file" is a Prohibition. a Prohibition is a Sentence Shape of the language.
 
+**Propositional Loss** (noun) — a Propositional Loss changes a claim of the original sentence. a Propositional Loss drops a quantifier or drops a doer. a Translation Pair cannot have a Propositional Loss.
+
 **Redirect** (noun) — a Redirect names a replacement for a Rejected Sense of a word. the Linter shows the Redirect to the writer.
 
 **Reduced Relative** (noun) — if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. the sentence "the file stored in the database fails" has a Reduced Relative. the language bans every Reduced Relative.
 
 **Reference Ambiguity** (noun) — if a reader cannot find the referent of a pronoun, then the sentence has a Reference Ambiguity. the design of the language removes every Reference Ambiguity.
+
+**Register Loss** (noun) — a Register Loss drops the politeness of the original sentence or drops the emphasis of the original sentence. a Translation Pair declares every Register Loss.
 
 **Rejected Sense** (noun) — a Rejected Sense is a sense of a word. the Seed does not enable the Rejected Sense. the Linter rejects the Rejected Sense. a Rejected Sense has a Redirect or has a Waiver.
 
@@ -126,6 +150,8 @@ undefined; add an entry before using one in code or docs.
 
 **Sentence Shape** (noun) — a Sentence Shape is a structure of a sentence. the Grammar defines every Sentence Shape. every sentence of the language uses one Sentence Shape.
 
+**Structure Loss** (noun) — a Structure Loss changes the order of the information. a Passive of the original sentence causes a Structure Loss. a Translation Pair declares every Structure Loss.
+
 **Surface Form** (noun) — a Surface Form is one spelling of a word. the Lexicon contains every Surface Form of the language. the Lexicon gives one Form Tag to every Surface Form.
 
 **Tense** (noun) — the Tense of a verb marks the time of the action. the language has the present Tense. the language has the past Tense.
@@ -135,6 +161,8 @@ undefined; add an entry before using one in code or docs.
 **Translation Pair** (noun) — a Translation Pair has an original sentence and has a translation. the Linter must parse the translation. the translation must keep every claim of the original sentence.
 
 **Triage** (name) — Triage is a tool. Triage measures the Coverage of the Lexicon.
+
+**Verb Preposition** (noun) — a Verb Preposition attaches to the verb of the clause. the word "in" is a Verb Preposition. a clause has one Verb Preposition.
 
 **waive** (verb trans) — the maintainers waive the Redirect of a Rejected Sense. the Waiver records the choice.
 

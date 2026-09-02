@@ -5,32 +5,32 @@ Status: proposed (tentative)
 
 ## Context
 
-"every word has one tag" — the ADR 0015 unfolding of the rejected *form-tag*
-compound — was blocked on *has* and *one*. *have* is also ×335 in general
-triage. English *have* is dangerous only as an auxiliary (perfect aspect);
-English *one* is dangerous only as a pronoun ("a good one", generic "one
-must"). Both dangerous halves are already unwritable in the grammar.
+The sentence "every word has one tag" unfolds the Compound "form-tag". The word "has" broke the sentence. The word "one" broke the sentence.
+Triage counts about 335 tokens of the word "have". The word "have" carries a danger in the perfect aspect. The word "one" carries a danger in the phrase "a good one". The Grammar cannot say the 2 dangerous usages.
 
 ## Decision
 
-- **have / has / had** — ordinary VERB_TRANS, possession/attribution only.
-  The auxiliary reading needs no ban: with no participle constructions in
-  the grammar, "the agent has deleted the file" fails to parse by
-  construction (*has* wants an NP object). "have to" is likewise unwritable
-  (no infinitives). Same safety-by-construction pattern as ADR 0010.
-- **one** — NUM_SG, determiner position only, singular nouns; fiat meaning
-  **exactly one**. Distinct from *a/an* (plain at-least-one indefinite).
-  Pronoun *one* stays out. Opens the numeral pattern (*two/three* + plural
-  as NUM_PL) without committing to it.
+The language enables 3 Surface Forms of "have":
+- "have"
+- "has"
+- "had"
+
+The verb "have" marks a possession. The sense of the Auxiliary does not need a Ban. The Grammar does not have a Participle, so the sentence "the agent
+has deleted the file" fails. The verb "has" needs a Noun Phrase. The phrase
+"have to" fails, because the Grammar does not have an infinitive. The
+pattern matches the decision "0010".
+
+The word "one" has the Form Tag "NUM_SG". The word "one" takes the position
+of a determiner. The word "one" takes a singular noun. The word "one" marks
+one thing. The word "a" does not mark the number. The pronoun "one" is a
+Ban. The decision opens the pattern of the numerals. The decision "0022"
+enabled the digits.
 
 ## Consequences
 
-- "every word has one tag" parses; possession statements unlock a large
-  class of attribute prose.
-- The dogfood sentence about form-tags remains only *approximately*
-  expressible: "surface form" vs "word" is a real distinction in our own
-  glossary, and collapsing it is propositional loss under ADR 0012. The
-  faithful version waits on a transparent rendering of "surface form".
-- If participles or infinitives are ever admitted, the have-auxiliary and
-  have-to readings must be re-fenced explicitly (same revisit trigger as
-  ADR 0010's).
+- The Linter parses the sentence "every word has one tag". The language
+  can say a possession.
+- The rendering of the Compound "form-tag" is approximate. The glossary
+  separates the Surface Form from the word. The 2 concepts differ, so the rendering is a Propositional Loss. The decision "0027" defined the term "Surface Form".
+- If a future decision admits a Participle, then the maintainers must ban the perfect aspect of "have". If a future decision admits an infinitive,
+  then the maintainers must ban the phrase "have to".

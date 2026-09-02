@@ -5,47 +5,67 @@ Status: proposed (tentative)
 
 ## Context
 
-Rewriting ADR 0001 dropped "hence this ADR": the language had no causal
-connective, and ADR 0012 counts causal structure as propositional (tier 1).
-Frequencies: *so* ×11 and *because* ×7 in the ADRs; *because* ×17, *since*
-×15 (mostly temporal), *so* ×60 (mixed senses) in UD-EWT.
+The rewrite of the decision "0001" dropped the phrase "hence this ADR".
+The language did not have a causal connective. The decision "0012" says
+one thing. A causal relation is a claim. The sweep counted about 11 tokens of
+the word "so" in the decisions. The sweep counted about 7 tokens of the
+word "because". The corpus has about 17 tokens of the word "because". The
+corpus has about 15 tokens of the word "since". The word "since" marks the
+time in the corpus. The corpus has about 60 tokens of the word "so". The
+word "so" has 3 senses in the corpus.
 
-English offers cause-first ("A, so B" / "because A, B") and effect-first
-("B because A") orders. They are not one meaning with two forms: they
-differ in information structure — which clause is given and which is new
-— and given-before-new is a comprehension aid (ADR 0006, and the standard
-advice in the style literature). Effect-first is also where attachment
-ambiguity lives ("B because A and C").
+English offers 2 orders. The phrase "A, so B" puts the reason at the front.
+The phrase "B because A" puts the effect at the front. The 2 orders differ
+in the information. One clause is old. One clause is new. The reader
+prefers the old clause at the front. The decision "0006" puts the old
+clause at the front. If the effect sits at the front, then the sentence has an ambiguity of the attachment. The phrase "B because A and C" is one example.
 
-Fixing the conditional to one order (ADR 0007) is not a precedent against
-two orders here: a consequent-first conditional makes the reader hold an
-unevaluable hypothetical open; in a causal both clauses are asserted, so
-effect-first costs no suspended evaluation.
+The decision "0007" fixed one order for the Conditional. The decision
+"0007" is not a precedent. If the consequent sits at the front, then the consequent is a hypothesis. The
+reader holds the hypothesis in the memory. A causal sentence asserts the 2
+clauses, so the order does not cost the reader.
 
 ## Decision
 
-- Two constructions, one fiat meaning each, comma mandatory at the seam:
-  - **Result**: `<clause> , so <clause>` — cause is given, result is new.
-  - **Reason**: `<clause> , because <clause>` — result is given, reason is
-    new.
-- Clauses inside carry no coordination (as in the conditional), so the
-  scope of the connective is fixed by construction.
-- Neither connective can start a sentence (first-token telegraph, ADR
-  0014). Cross-sentence causation is written by merging the two sentences
-  or with a causal verb (*explain*, and topic-first "the expense explains
-  the decision").
-- *so* has only the result sense: degree ("so big") and purpose ("so
-  that") are unwritable by construction. *since*, *hence*, *therefore*,
-  *thus*, *as* are banned with advice naming the two shapes.
-- Deferred: imperatives and conditionals inside a causal; causal chains
-  (A, so B, so C); purpose ("in order to").
+The language has 2 causal constructions:
+- the phrase "<clause>, so <clause>"
+- the phrase "<clause>, because <clause>"
+
+The word "so" marks a result. The reason is old. The result is new. The
+word "because" marks a reason. The result is old. The reason is new. The seam has a mandatory comma. A causal sentence does not allow a Coordination inside a clause, so the Grammar fixes the scope of the connective.
+
+The word "so" does not open a sentence. The word "because" does not open a
+sentence. The rule keeps the First Token. If a reason sits in a prior
+sentence, then the writer merges the 2 sentences. A causal verb is the
+alternative. The sentence "the expense explains the decision" is one
+example.
+
+The word "so" has one sense. The sense of the degree is a Ban. The phrase "so
+big" is one example. The sense of the purpose is a Ban. The phrase "so that" is
+one example. The language bans 5 words:
+- "since"
+- "hence"
+- "therefore"
+- "thus"
+- "as"
+
+The advice names the 2 shapes.
+
+The maintainers deferred 3 questions:
+- the causal Imperative
+- the causal Conditional
+- the causal chain
+
+The phrase "A, so B, so C" is a causal chain. The maintainers deferred the
+purpose. The phrase "in order to" marks a purpose.
 
 ## Consequences
 
-- The ADR 0001 debt is paid: "the expense of a reversal grows with the
-  seed, so the maintainers record the decision".
-- The linter names three repairs: missing comma, fronted *because*,
-  sentence-initial *so*.
-- Which connective is right depends on the previous sentence — a check
-  only a document-level lint can make (scripts/lint-file.py, topic
-  continuity).
+- The decision "0001" paid the debt. The sentence "the expense of a
+  reversal grows with the seed, so the maintainers record the decision" is
+  the result.
+- The Linter names 3 repairs. The Linter finds a comma. The Linter finds
+  the word "because" at the front. The Linter finds the word "so" at the
+  front.
+- The correct connective depends on the prior sentence. The tool "lint-file" checks the prior sentence. The tool "lint-file" measures the
+  continuity of the topic.

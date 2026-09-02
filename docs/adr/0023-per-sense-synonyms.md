@@ -6,50 +6,49 @@ the relative frequency trigger). Decides *same*.
 
 ## Context
 
-The queue item *same* forced the question. *same* has two senses in one
-syntactic slot: that very thing ("reads the same file" — resolved only by
-prior discourse, the reference problem ADR 0002 bans) and two things match
-("have the same format"). The second sense has a well-defined synonym,
-*identical*, but ADR 0008's trigger (suggestion more than 10× rarer than
-the rejected word) flags it: zipf 5.80 → 4.21, a gap of 1.59.
+The queue had the word "same". The word "same" has 2 senses in one
+Category. The phrase "reads the same file" marks one thing. The prior text
+resolves the thing. The decision "0002" bans the reference. The phrase
+"have the same format" marks 2 identical things. The word "identical" is a synonym of the sense. The rule of the decision "0008" flags the word
+"identical". The word "same" is common. The word "identical" is rare. The
+distance is big.
 
-The gap rule conflates two quantities. Sentence cost (ADR 0006, textcost:
-a word's price is its improbability) falls when padding goes and precise
-words stay, so dense text is *rarer* text on average, by construction.
-Findability (would the writer produce this word unprompted?) is what ADR
-0008 meant to protect, and it is a property of the suggested word alone,
-not of its distance from the rejected one. *identical* (4.21) is common
-knowledge; *necessitate* (the case ADR 0008 was written against) is not.
+The rule of the distance confuses 2 quantities. If the padding goes, then the
+expense of a sentence falls. A precise word stays. A dense text uses rare
+words. The findability of a word is a different quantity. The findability belongs to the word of the Redirect. The findability does not depend on the distance. Every reader knows the word
+"identical". A reader does not know the word "necessitate".
 
 ## Decision
 
-1. **The goal is one meaning per word within a syntactic category**
-   (homographs across categories count as the same word for this purpose).
-2. **The first line of defense is the redirect table**: every rejected
-   sense that has a well-defined synonym carries it, so a writer or agent
-   can pick the word with the right level of specificity. A **ban** (no
-   substitute; rephrase advice) is reserved for senses with no such
-   synonym.
-3. **The frequency guard becomes an absolute floor on the suggested word**:
-   zipf ≥ 3.5, report-only (a review trigger, never a build error — the
-   general-English table underrates technical vocabulary). The relative
-   1.0 gap is dropped. Against the 36 existing redirects the floor flags
-   *outcast* (3.09) and *emit* (3.25); both reviewed and kept.
-4. ***same* is banned** with per-sense advice: that very thing → "the
-   file" (definite *the* already carries identity); two things match →
-   *identical* ("the copies are identical"). ***identical*** enters as an
-   ordinary ADJ.
-5. Deferred: the named-standard form "identical to the report" — the
-   copular complement takes no prepositional phrase yet.
+Every word has one meaning inside a Category. The rule gives one meaning to a homograph. The rule ignores the Categories of the homograph.
+
+The table of the Redirects is the main defense. If a Rejected Sense has a
+synonym, then the Redirect names the synonym. A writer picks the precise
+word. If a Rejected Sense does not have a synonym, then the sense is a Ban.
+
+The guard of the frequency puts a floor on the word of the Redirect. The
+floor is an absolute frequency. The guard writes a warning. The guard does not stop
+Lexgen. The table of English underrates a technical word. The maintainers
+dropped the relative distance. The floor flags 2 Redirects:
+- "outcast"
+- "emit"
+
+The maintainers reviewed the 2 Redirects. The maintainers kept the 2
+Redirects.
+
+The word "same" is a Ban. The advice has 2 parts. One sense marks one
+thing. The writer repeats the noun with the word "the". One sense marks 2 identical things. The writer uses the word "identical". The sentence "the copies are
+identical" is one example. The word "identical" enters the Lexicon.
+
+The maintainers deferred the phrase "identical to the report". A
+Complement does not take a Prepositional Phrase.
 
 ## Consequences
 
-- Redirects grow rather than shrink as polysemous words are curated; the
-  lexicon report lists the sub-floor ones for review.
-- The redirect table becomes the substitution table for structured repair
-  (docs/ideas.md): once a failed sentence's word roles are known, a
-  rejected sense maps to its synonym mechanically, with the reject row as
-  the explanation. A missing synonym is a hole in that transducer, which
-  is why point 2 is a rule and not a preference.
-- Anaphoric *same* joins *it/that/we* as a reference-class ban; the
-  repeat-the-noun fix is unchanged.
+- The Redirects grow. The report of the Lexicon flags a rare Redirect.
+- The file "docs/ideas.md" describes a repair. The repair knows the role of a word. The repair maps a Rejected Sense to the synonym. The row
+  of the Redirect explains the choice. If a synonym is absent, then the
+  repair has a hole. The rule is a rule, because the repair needs every
+  synonym.
+- The word "same" joins the Bans of the reference. The word "it" is a Ban
+  of the reference. The remedy is the repetition of the noun.

@@ -1,18 +1,33 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 4
-original: 'The language bans every Anaphoric Pronoun: - "it" - "its" - "they" - "them" - "their" - "he" - "him" - "his" - "she" - "her" - "this" - "that" - "these" - "those"'
+original: |-
+  The language bans every Anaphoric Pronoun:
+  - "it"
+  - "its"
+  - "they"
+  - "them"
+  - "their"
+  - "he"
+  - "him"
+  - "his"
+  - "she"
+  - "her"
+  - "this"
+  - "that"
+  - "these"
+  - "those"
 context_before: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 context_after: The writer repeats the noun.
 original_metrics:
   sentences: 1
-  parsed: 0
+  parsed: 1
   continuity_pairs: 0
   continuity_ok: 0
   cost: 64.77000000000002
   words: 20
   terms: 1
-verdict: needs-fix
-note: 'should say: the Negation of a Copula uses ''is not'' / ''are not'' directly and needs no Auxiliary (''do'', ''does'')'
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: The language does not have a Discourse Layer. The language does not plan a Discourse Layer.
 proposals:
 - text: the system has no anaphora machinery and the system has no discourse machinery. the system does not have plans for an anaphora or a discourse layer.
@@ -235,7 +250,7 @@ proposals:
     cost: 58.36
     words: 16
     terms: 0
-  diagnosis: '"the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, current]'
+  diagnosis: '"the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon for the old version does not contain an anaphora mechanism or a discourse mechanism.
@@ -450,13 +465,13 @@ proposals:
   valid: false
   metrics:
     sentences: 2
-    parsed: 0
+    parsed: 1
     continuity_pairs: 1
     continuity_ok: 0
     cost: 57.36
     words: 15
     terms: 0
-  diagnosis: '"no anaphora exists in the current version": WORD: "current" is not a minglish word | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: i have no anaphora in the current version. the project does not plan a mechanism for anaphora.
@@ -470,7 +485,7 @@ proposals:
     cost: 58.20000000000001
     words: 17
     terms: 0
-  diagnosis: '"i have no anaphora in the current version": WORD: "current" is not a minglish word | "the project does not plan a mechanism for anaphora": AMBIGUOUS (2 readings): "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  diagnosis: '"i have no anaphora in the current version": AMBIGUOUS (2 readings): "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the project does not plan a mechanism for anaphora": AMBIGUOUS (2 readings): "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the version is recent. i have no anaphora. the project does not plan a mechanism. the mechanism is for anaphora.
@@ -773,7 +788,7 @@ proposals:
     cost: 71.36000000000001
     words: 20
     terms: 0
-  diagnosis: '"no anaphora exists and no discourse layer exists": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse layer for the current version": WORD: "current" is not a minglish word'
+  diagnosis: '"no anaphora exists and no discourse layer exists": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse layer for the current version": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language does not have an anaphora and does not have a discourse layer. the project does not plan a discourse layer for the initial version.
@@ -1068,13 +1083,13 @@ proposals:
   valid: false
   metrics:
     sentences: 3
-    parsed: 1
+    parsed: 2
     continuity_pairs: 2
     continuity_ok: 1
     cost: 83.13
     words: 26
     terms: 2
-  diagnosis: '"The language does not have anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The project does not plan a Discourse Layer for the current version": WORD: "current" is not a minglish word'
+  diagnosis: '"The language does not have anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language does not have the anaphora. The language does not have a Discourse Layer. The project does not plan a Discourse Layer for the first version.

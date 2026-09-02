@@ -5,34 +5,45 @@ Status: proposed (tentative)
 
 ## Context
 
-Dogfooding ADR 0001 (docs/dogfood-adr-0001.md) showed mandatory determiners
-deleted English's genericity device: characterizing claims ("humans miss
-checks") could only be rendered as false definites ("the people…") or
-ambiguous indefinites ("a person…") — propositional changes, caught by
-human review, invisible to every metric. Genericity was already on the
-research list of CNL semantic failure modes.
+The Dogfood of the decision "0001" showed one result. A mandatory
+determiner deleted the generic statement of English. The sentence "humans
+miss checks" is a generic statement. The language had 2 renderings. The
+rendering "the people miss the checks" is a false definite. The rendering
+"a person misses a check" is ambiguous. The 2 renderings change a claim. A
+person catches the loss. A metric does not catch the loss. The
+research knew the problem.
 
 ## Decision
 
-- A **bare plural** (no determiner; optional adjective; optional of-PP) is
-  legal and has exactly one reading by fiat: a **characterizing/generic
-  statement about the kind** ("machines find collisions", "agents retry
-  requests"). The English existential reading of bare plurals ("dogs are
-  barking") is banned; existentials will use *some* when introduced.
-- Generic ≠ universal, deliberately: "birds fly" tolerates exceptions;
-  *every* (future ADR) will not. The two stay distinct forms with distinct
-  meanings.
-- Bare **singular** remains banned. Singular generics rephrase to plural.
-- The mandatory-determiner rule gets this one carve-out: its purpose was
-  ambiguity prevention, and the fiat single reading preserves that purpose.
-- Positions: subject, object, PP object, copular complement. Not inside
-  of-PPs for now (bound; revisit with evidence).
+A Bare Plural is legal. A Bare Plural has one Parse. A Bare Plural describes
+the kind. The sentence "machines find collisions" is one example.
+The sentence "agents retry requests" is one example. English has an
+existential Parse of a Bare Plural. The sentence "dogs are barking" is one
+example. The language bans the existential Parse. The language uses the
+word "some" for an existential statement.
+
+A generic statement is not a universal statement. The sentence "birds fly"
+tolerates an exception. The word "every" does not tolerate an exception.
+The 2 Sentence Shapes differ.
+
+A singular noun needs a determiner. A writer restructures a generic statement into a Bare Plural.
+
+The rule of the determiner has one exception. The rule prevents an
+ambiguity. The Bare Plural has one Parse, so the exception keeps the
+purpose of the rule.
+
+A Bare Plural takes 4 positions:
+- the subject
+- the object
+- the object of a Verb Preposition
+- the Complement
+
+A Bare Plural cannot follow the Noun Preposition.
 
 ## Consequences
 
-- Characterizing prose (policy text, ADRs, documentation) becomes
-  expressible without meaning change; two retracted dogfood pairs return in
-  faithful generic form.
-- Zero token cost — the generic is *shorter* than the false definite it
-  replaces (ADR 0006 §4).
-- Writers must learn one fiat rule: bare plural = generic, never "some".
+- A policy uses generic statements. The language can say the generic
+  statements. The maintainers returned 2 Translation Pairs into the corpus.
+- A Bare Plural is short. A false definite is long.
+- A writer learns one rule. A Bare Plural is a generic statement. A Bare
+  Plural is not an existential statement.

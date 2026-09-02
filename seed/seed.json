@@ -28,54 +28,84 @@
   },
   {
     "lemma": "agent",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "agents"
+    }
   },
   {
     "lemma": "file",
     "category": "NOUN",
     "reject": {
       "VERB": "submit"
+    },
+    "forms": {
+      "plural": "files"
     }
   },
   {
     "lemma": "server",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "servers"
+    }
   },
   {
     "lemma": "error",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "errors"
+    }
   },
   {
     "lemma": "user",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "users"
+    }
   },
   {
     "lemma": "message",
     "category": "NOUN",
     "reject": {
       "VERB": "notify"
+    },
+    "forms": {
+      "plural": "messages"
     }
   },
   {
     "lemma": "system",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "systems"
+    }
   },
   {
     "lemma": "result",
     "category": "NOUN",
     "reject": {
       "VERB": "follow"
+    },
+    "forms": {
+      "plural": "results"
     }
   },
   {
     "lemma": "database",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "databases"
+    }
   },
   {
     "lemma": "process",
     "category": "NOUN",
     "reject": {
       "VERB": "handle"
+    },
+    "forms": {
+      "plural": "processes"
     }
   },
   {
@@ -83,6 +113,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "describe"
+    },
+    "forms": {
+      "plural": "reports"
     }
   },
   {
@@ -95,7 +128,10 @@
   },
   {
     "lemma": "parser",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "parsers"
+    }
   },
   {
     "lemma": "sentence",
@@ -103,17 +139,26 @@
     "reject": {
       "VERB": "condemn"
     },
-    "note": "the judicial verb sense is banned"
+    "note": "the judicial verb sense is banned",
+    "forms": {
+      "plural": "sentences"
+    }
   },
   {
     "lemma": "compiler",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "compilers"
+    }
   },
   {
     "lemma": "program",
     "category": "NOUN",
     "reject": {
       "VERB": "write"
+    },
+    "forms": {
+      "plural": "programs"
     }
   },
   {
@@ -121,6 +166,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "wait"
+    },
+    "forms": {
+      "plural": "queues"
     }
   },
   {
@@ -128,6 +176,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "check"
+    },
+    "forms": {
+      "plural": "tests"
     }
   },
   {
@@ -135,6 +186,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "ask"
+    },
+    "forms": {
+      "plural": "requests"
     }
   },
   {
@@ -146,6 +200,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "write"
+    },
+    "forms": {
+      "plural": "scripts"
     }
   },
   {
@@ -153,13 +210,17 @@
     "category": "NOUN",
     "reject": {
       "VERB": "emit"
+    },
+    "forms": {
+      "plural": "outputs"
     }
   },
   {
     "lemma": "read",
     "category": "VERB_TRANS",
     "forms": {
-      "past": "read"
+      "past": "read",
+      "third": "reads"
     },
     "reject": {
       "NOUN": "text"
@@ -174,13 +235,18 @@
     "category": "VERB_TRANS",
     "reject": {
       "NOUN": "response"
+    },
+    "forms": {
+      "third": "returns",
+      "past": "returned"
     }
   },
   {
     "lemma": "send",
     "category": "VERB_TRANS",
     "forms": {
-      "past": "sent"
+      "past": "sent",
+      "third": "sends"
     },
     "waive": [
       "NOUN"
@@ -203,20 +269,28 @@
   },
   {
     "lemma": "create",
-    "category": "VERB_TRANS"
+    "category": "VERB_TRANS",
+    "forms": {
+      "third": "creates"
+    }
   },
   {
     "lemma": "reject",
     "category": "VERB_TRANS",
     "reject": {
       "NOUN": "outcast"
+    },
+    "forms": {
+      "third": "rejects",
+      "ing": "rejecting"
     }
   },
   {
     "lemma": "find",
     "category": "VERB_TRANS",
     "forms": {
-      "past": "found"
+      "past": "found",
+      "third": "finds"
     },
     "reject": {
       "NOUN": "discovery"
@@ -226,7 +300,8 @@
     "lemma": "build",
     "category": "VERB_TRANS",
     "forms": {
-      "past": "built"
+      "past": "built",
+      "third": "builds"
     },
     "reject": {
       "NOUN": "compilation"
@@ -234,7 +309,10 @@
   },
   {
     "lemma": "delete",
-    "category": "VERB_TRANS"
+    "category": "VERB_TRANS",
+    "forms": {
+      "third": "deletes"
+    }
   },
   {
     "lemma": "retry",
@@ -249,6 +327,10 @@
     "category": "VERB_TRANS",
     "reject": {
       "NOUN": "beginning"
+    },
+    "forms": {
+      "third": "starts",
+      "past": "started"
     }
   },
   {
@@ -256,18 +338,26 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "wrote",
-      "ppart": "written"
+      "ppart": "written",
+      "third": "writes"
     }
   },
   {
     "lemma": "arrive",
-    "category": "VERB_INTRANS"
+    "category": "VERB_INTRANS",
+    "forms": {
+      "third": "arrives"
+    }
   },
   {
     "lemma": "fail",
     "category": "VERB_INTRANS",
     "reject": {
       "NOUN": "failure"
+    },
+    "forms": {
+      "third": "fails",
+      "past": "failed"
     }
   },
   {
@@ -394,7 +484,8 @@
     "note": "adverb (break open) and noun (in the open) senses irrelevant to domain",
     "forms": {
       "past": "opened",
-      "ing": "opening"
+      "ing": "opening",
+      "third": "opens"
     }
   },
   {
@@ -403,7 +494,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "verb sense (tool around) irrelevant to domain"
+    "note": "verb sense (tool around) irrelevant to domain",
+    "forms": {
+      "plural": "tools"
+    }
   },
   {
     "lemma": "if",
@@ -435,6 +529,10 @@
     "category": "VERB_TRANS",
     "reject": {
       "NOUN": "test"
+    },
+    "forms": {
+      "third": "checks",
+      "ing": "checking"
     }
   },
   {
@@ -442,6 +540,9 @@
     "category": "NOUN",
     "reject": {
       "VERB": "enter"
+    },
+    "forms": {
+      "plural": "inputs"
     }
   },
   {
@@ -483,7 +584,9 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "chose",
-      "ppart": "chosen"
+      "ppart": "chosen",
+      "third": "chooses",
+      "ing": "choosing"
     }
   },
   {
@@ -492,7 +595,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "verb sense (machine a part) irrelevant to domain"
+    "note": "verb sense (machine a part) irrelevant to domain",
+    "forms": {
+      "plural": "machines"
+    }
   },
   {
     "lemma": "word",
@@ -534,7 +640,8 @@
     "category": "VERB_TRANS",
     "forms": {
       "third": "has",
-      "past": "had"
+      "past": "had",
+      "ing": "having"
     },
     "waive": [
       "NOUN"
@@ -557,7 +664,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "verb sense (sense danger) irrelevant to domain"
+    "note": "verb sense (sense danger) irrelevant to domain",
+    "forms": {
+      "plural": "senses"
+    }
   },
   {
     "lemma": "need",
@@ -565,7 +675,10 @@
     "reject": {
       "NOUN": "necessity"
     },
-    "note": "frequency guard will flag necessity; kept — rephrase advice acceptable (ADR 0008 review)"
+    "note": "frequency guard will flag necessity; kept — rephrase advice acceptable (ADR 0008 review)",
+    "forms": {
+      "ing": "needing"
+    }
   },
   {
     "lemma": "source",
@@ -573,7 +686,10 @@
     "reject": {
       "VERB": "find"
     },
-    "note": "verb sense (source a component) redirected"
+    "note": "verb sense (source a component) redirected",
+    "forms": {
+      "plural": "sources"
+    }
   },
   {
     "lemma": "truth",
@@ -585,7 +701,10 @@
     "reject": {
       "NOUN": "usage"
     },
-    "note": "added after agenttest run 1: the model's semantically best repair failed only on this gap"
+    "note": "added after agenttest run 1: the model's semantically best repair failed only on this gap",
+    "forms": {
+      "third": "uses"
+    }
   },
   {
     "lemma": "it",
@@ -680,7 +799,8 @@
     },
     "forms": {
       "past": "edited",
-      "ing": "editing"
+      "ing": "editing",
+      "third": "edits"
     }
   },
   {
@@ -689,7 +809,10 @@
     "reject": {
       "VERB": "save"
     },
-    "note": "the git artifact; transparent head noun for 'curation commit' (ADR 0015)"
+    "note": "the git artifact; transparent head noun for 'curation commit' (ADR 0015)",
+    "forms": {
+      "plural": "commits"
+    }
   },
   {
     "lemma": "effect",
@@ -711,7 +834,8 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "showed",
-      "ppart": "shown"
+      "ppart": "shown",
+      "third": "shows"
     },
     "reject": {
       "NOUN": "display"
@@ -758,7 +882,10 @@
   },
   {
     "lemma": "maintainer",
-    "category": "NOUN"
+    "category": "NOUN",
+    "forms": {
+      "plural": "maintainers"
+    }
   },
   {
     "lemma": "but",
@@ -828,22 +955,34 @@
   {
     "lemma": "language",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "languages"
+    }
   },
   {
     "lemma": "option",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "options"
+    }
   },
   {
     "lemma": "algorithm",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "algorithms"
+    }
   },
   {
     "lemma": "generator",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "generators"
+    }
   },
   {
     "lemma": "swap",
@@ -851,7 +990,10 @@
     "reject": {
       "VERB": "replace"
     },
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "swaps"
+    }
   },
   {
     "lemma": "rarity",
@@ -877,7 +1019,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "researches"
+    }
   },
   {
     "lemma": "typo",
@@ -898,7 +1043,10 @@
   {
     "lemma": "rationale",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "rationales"
+    }
   },
   {
     "lemma": "rule",
@@ -906,7 +1054,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "rules"
+    }
   },
   {
     "lemma": "invariant",
@@ -914,7 +1065,10 @@
     "waive": [
       "ADJ"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "invariants"
+    }
   },
   {
     "lemma": "frequency",
@@ -927,7 +1081,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "tables"
+    }
   },
   {
     "lemma": "history",
@@ -937,17 +1094,26 @@
   {
     "lemma": "reversal",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "reversals"
+    }
   },
   {
     "lemma": "decision",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "decisions"
+    }
   },
   {
     "lemma": "replacement",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "replacements"
+    }
   },
   {
     "lemma": "expense",
@@ -955,47 +1121,76 @@
     "waive": [
       "VERB"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "expenses"
+    }
   },
   {
     "lemma": "verb",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "verbs"
+    }
   },
   {
     "lemma": "noun",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "nouns"
+    }
   },
   {
     "lemma": "contain",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "contains",
+      "ing": "containing"
+    }
   },
   {
     "lemma": "derive",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "derives"
+    }
   },
   {
     "lemma": "consider",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "considers"
+    }
   },
   {
     "lemma": "replace",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "replaces"
+    }
   },
   {
     "lemma": "reduce",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "reduces"
+    }
   },
   {
     "lemma": "expand",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "expands",
+      "ing": "expanding"
+    }
   },
   {
     "lemma": "record",
@@ -1003,7 +1198,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "records"
+    }
   },
   {
     "lemma": "match",
@@ -1011,7 +1209,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "matches"
+    }
   },
   {
     "lemma": "pin",
@@ -1019,7 +1220,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "pins"
+    }
   },
   {
     "lemma": "fetch",
@@ -1027,12 +1231,19 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "fetches",
+      "past": "fetched"
+    }
   },
   {
     "lemma": "migrate",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "migrates"
+    }
   },
   {
     "lemma": "save",
@@ -1040,12 +1251,18 @@
     "waive": [
       "NOUN"
     ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "saves"
+    }
   },
   {
     "lemma": "optimize",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "optimizes"
+    }
   },
   {
     "lemma": "cost",
@@ -1053,7 +1270,10 @@
     "reject": {
       "NOUN": "expense"
     },
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "past": "costed"
+    }
   },
   {
     "lemma": "grow",
@@ -1061,13 +1281,17 @@
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
     "forms": {
       "past": "grew",
-      "ppart": "grown"
+      "ppart": "grown",
+      "third": "grows"
     }
   },
   {
     "lemma": "collide",
     "category": "VERB_INTRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "collides"
+    }
   },
   {
     "lemma": "come",
@@ -1151,7 +1375,10 @@
   {
     "lemma": "describe",
     "category": "VERB_TRANS",
-    "note": "the redirect target of report-as-verb; a redirect must point at an enabled word (ADR 0023)"
+    "note": "the redirect target of report-as-verb; a redirect must point at an enabled word (ADR 0023)",
+    "forms": {
+      "third": "describes"
+    }
   },
   {
     "lemma": "about",
@@ -1161,7 +1388,10 @@
   {
     "lemma": "improvement",
     "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "plural": "improvements"
+    }
   },
   {
     "lemma": "hidden",
@@ -1177,7 +1407,11 @@
     "waive": [
       "NOUN"
     ],
-    "note": "generated files drift from the seed (ADR 0001); noun sense waived (one tag)"
+    "note": "generated files drift from the seed (ADR 0001); noun sense waived (one tag)",
+    "forms": {
+      "third": "drifts",
+      "past": "drifted"
+    }
   },
   {
     "lemma": "difference",
@@ -1185,12 +1419,20 @@
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "differences"
+    }
   },
   {
     "lemma": "explain",
     "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
+    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
+    "forms": {
+      "third": "explains",
+      "past": "explained",
+      "ing": "explaining"
+    }
   },
   {
     "lemma": "so",
@@ -1230,7 +1472,10 @@
   {
     "lemma": "pronoun",
     "category": "NOUN",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "plural": "pronouns"
+    }
   },
   {
     "lemma": "discourse",
@@ -1238,7 +1483,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "discourses"
+    }
   },
   {
     "lemma": "anaphora",
@@ -1265,17 +1513,26 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "projects"
+    }
   },
   {
     "lemma": "writer",
     "category": "NOUN",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "plural": "writers"
+    }
   },
   {
     "lemma": "mechanism",
     "category": "NOUN",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
+    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
+    "forms": {
+      "plural": "mechanisms"
+    }
   },
   {
     "lemma": "validator",
@@ -1291,7 +1548,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "teams"
+    }
   },
   {
     "lemma": "example",
@@ -1299,7 +1559,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "examples"
+    }
   },
   {
     "lemma": "document",
@@ -1307,6 +1570,9 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "reject": {
       "VERB": "record"
+    },
+    "forms": {
+      "plural": "documents"
     }
   },
   {
@@ -1315,6 +1581,9 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "reject": {
       "VERB": "plan"
+    },
+    "forms": {
+      "plural": "designs"
     }
   },
   {
@@ -1323,7 +1592,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "layers"
+    }
   },
   {
     "lemma": "plan",
@@ -1331,7 +1603,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "plans"
+    }
   },
   {
     "lemma": "repeat",
@@ -1339,7 +1614,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "repeats"
+    }
   },
   {
     "lemma": "say",
@@ -1360,7 +1638,10 @@
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "produces"
+    }
   },
   {
     "lemma": "consistent",
@@ -1386,17 +1667,26 @@
     "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "references"
+    }
   },
   {
     "lemma": "speaker",
     "category": "NOUN",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "plural": "speakers"
+    }
   },
   {
     "lemma": "hearer",
     "category": "NOUN",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "plural": "hearers"
+    }
   },
   {
     "lemma": "demonstrative",
@@ -1412,7 +1702,10 @@
   {
     "lemma": "repetition",
     "category": "NOUN",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "plural": "repetitions"
+    }
   },
   {
     "lemma": "naturalness",
@@ -1425,7 +1718,10 @@
   {
     "lemma": "version",
     "category": "NOUN",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "plural": "versions"
+    }
   },
   {
     "lemma": "object",
@@ -1433,7 +1729,10 @@
     "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "objects"
+    }
   },
   {
     "lemma": "ban",
@@ -1446,7 +1745,11 @@
   {
     "lemma": "allow",
     "category": "VERB_TRANS",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "third": "allows",
+      "ing": "allowing"
+    }
   },
   {
     "lemma": "prefer",
@@ -1455,7 +1758,8 @@
     "forms": {
       "past": "preferred",
       "ppart": "preferred",
-      "ing": "preferring"
+      "ing": "preferring",
+      "third": "prefers"
     }
   },
   {
@@ -1465,7 +1769,8 @@
     "forms": {
       "past": "deferred",
       "ppart": "deferred",
-      "ing": "deferring"
+      "ing": "deferring",
+      "third": "defers"
     }
   },
   {
@@ -1497,12 +1802,22 @@
     "waive": [
       "ADJ",
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "refers",
+      "past": "refered",
+      "ing": "refering"
+    }
   },
   {
     "lemma": "reappear",
     "category": "VERB_INTRANS",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)",
+    "forms": {
+      "third": "reappears",
+      "past": "reappeared",
+      "ing": "reappearing"
+    }
   },
   {
     "lemma": "unknown",
@@ -1570,7 +1885,10 @@
     "waive": [
       "ADJ",
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "tokens"
+    }
   },
   {
     "lemma": "class",
@@ -1586,7 +1904,10 @@
     "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "places"
+    }
   },
   {
     "lemma": "point",
@@ -1594,12 +1915,18 @@
     "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "points"
+    }
   },
   {
     "lemma": "resolution",
     "category": "NOUN",
-    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "forms": {
+      "plural": "resolutions"
+    }
   },
   {
     "lemma": "referent",
@@ -1636,7 +1963,8 @@
     "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
     "forms": {
       "past": "knew",
-      "ppart": "known"
+      "ppart": "known",
+      "third": "knows"
     },
     "waive": [
       "NOUN"
@@ -1645,12 +1973,18 @@
   {
     "lemma": "require",
     "category": "VERB_TRANS",
-    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "forms": {
+      "third": "requires"
+    }
   },
   {
     "lemma": "accept",
     "category": "VERB_TRANS",
-    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "forms": {
+      "third": "accepts"
+    }
   },
   {
     "lemma": "cause",
@@ -1658,7 +1992,10 @@
     "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "causes"
+    }
   },
   {
     "lemma": "text",
@@ -1666,7 +2003,10 @@
     "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "texts"
+    }
   },
   {
     "lemma": "repetitive",
@@ -1681,7 +2021,11 @@
   {
     "lemma": "appear",
     "category": "VERB_INTRANS",
-    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "forms": {
+      "third": "appears",
+      "past": "appeared"
+    }
   },
   {
     "lemma": "occur",
@@ -1690,7 +2034,8 @@
     "forms": {
       "past": "occurred",
       "ppart": "occurred",
-      "ing": "occurring"
+      "ing": "occurring",
+      "third": "occurs"
     }
   },
   {
@@ -1699,7 +2044,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "ADJ"
-    ]
+    ],
+    "forms": {
+      "plural": "choices"
+    }
   },
   {
     "lemma": "count",
@@ -1707,7 +2055,11 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "counts",
+      "past": "counted"
+    }
   },
   {
     "lemma": "proxy",
@@ -1723,7 +2075,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "ADJ"
-    ]
+    ],
+    "forms": {
+      "plural": "qualities"
+    }
   },
   {
     "lemma": "share",
@@ -1731,7 +2086,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "shares"
+    }
   },
   {
     "lemma": "change",
@@ -1739,7 +2097,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "changes"
+    }
   },
   {
     "lemma": "ambiguous",
@@ -1752,7 +2113,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "structures"
+    }
   },
   {
     "lemma": "permanent",
@@ -1773,7 +2137,10 @@
   {
     "lemma": "translation",
     "category": "NOUN",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "translations"
+    }
   },
   {
     "lemma": "meaning",
@@ -1781,7 +2148,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "ADJ"
-    ]
+    ],
+    "forms": {
+      "plural": "meanings"
+    }
   },
   {
     "lemma": "politeness",
@@ -1794,7 +2164,10 @@
   {
     "lemma": "emphasis",
     "category": "NOUN",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "emphasises"
+    }
   },
   {
     "lemma": "loss",
@@ -1804,7 +2177,10 @@
   {
     "lemma": "declare",
     "category": "VERB_TRANS",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "third": "declares"
+    }
   },
   {
     "lemma": "claim",
@@ -1812,12 +2188,18 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "claims"
+    }
   },
   {
     "lemma": "define",
     "category": "VERB_TRANS",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "third": "defines"
+    }
   },
   {
     "lemma": "give",
@@ -1825,7 +2207,8 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "forms": {
       "past": "gave",
-      "ppart": "given"
+      "ppart": "given",
+      "third": "gives"
     },
     "waive": [
       "NOUN"
@@ -1834,7 +2217,10 @@
   {
     "lemma": "reader",
     "category": "NOUN",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "readers"
+    }
   },
   {
     "lemma": "resolve",
@@ -1842,7 +2228,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "resolves"
+    }
   },
   {
     "lemma": "remove",
@@ -1850,7 +2239,10 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "removes"
+    }
   },
   {
     "lemma": "measure",
@@ -1866,12 +2258,18 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "fixes"
+    }
   },
   {
     "lemma": "spelling",
     "category": "NOUN",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "spellings"
+    }
   },
   {
     "lemma": "name",
@@ -1886,7 +2284,8 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "kept",
-      "ppart": "kept"
+      "ppart": "kept",
+      "third": "keeps"
     },
     "waive": [
       "NOUN"
@@ -1923,12 +2322,18 @@
   {
     "lemma": "decide",
     "category": "VERB_TRANS",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "third": "decides"
+    }
   },
   {
     "lemma": "enable",
     "category": "VERB_TRANS",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "third": "enables"
+    }
   },
   {
     "lemma": "hole",
@@ -1936,7 +2341,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "holes"
+    }
   },
   {
     "lemma": "kind",
@@ -1944,7 +2352,10 @@
     "waive": [
       "ADJ"
     ],
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "kinds"
+    }
   },
   {
     "lemma": "add",
@@ -1952,7 +2363,12 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "adds",
+      "past": "added",
+      "ing": "adding"
+    }
   },
   {
     "lemma": "good",
@@ -1966,7 +2382,10 @@
   {
     "lemma": "declaration",
     "category": "NOUN",
-    "note": "needed by domain-model definitions (ADR 0027)"
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "declarations"
+    }
   },
   {
     "lemma": "block",
@@ -1974,7 +2393,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0028"
+    "note": "ADR 0028",
+    "forms": {
+      "plural": "blocks"
+    }
   },
   {
     "lemma": "item",
@@ -1983,7 +2405,10 @@
     "waive": [
       "ADV",
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "items"
+    }
   },
   {
     "lemma": "colon",
@@ -2001,7 +2426,10 @@
   {
     "lemma": "enumerate",
     "category": "VERB_TRANS",
-    "note": "ADR 0028"
+    "note": "ADR 0028",
+    "forms": {
+      "third": "enumerates"
+    }
   },
   {
     "lemma": "phrase",
@@ -2009,7 +2437,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0028"
+    "note": "ADR 0028",
+    "forms": {
+      "plural": "phrases"
+    }
   },
   {
     "lemma": "last",
@@ -2027,7 +2458,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0028"
+    "note": "ADR 0028",
+    "forms": {
+      "third": "ends"
+    }
   },
   {
     "lemma": "thing",
@@ -2037,7 +2471,10 @@
   {
     "lemma": "statement",
     "category": "NOUN",
-    "note": "ADR 0028"
+    "note": "ADR 0028",
+    "forms": {
+      "plural": "statements"
+    }
   },
   {
     "lemma": "quoted",
@@ -2058,7 +2495,8 @@
     "forms": {
       "past": "made",
       "ppart": "made",
-      "ing": "making"
+      "ing": "making",
+      "third": "makes"
     },
     "waive": [
       "NOUN"
@@ -2071,7 +2509,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "ing": "linking"
+    }
   },
   {
     "lemma": "adjective",
@@ -2079,12 +2520,18 @@
     "waive": [
       "ADJ"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "adjectives"
+    }
   },
   {
     "lemma": "aspect",
     "category": "NOUN",
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "aspects"
+    }
   },
   {
     "lemma": "general",
@@ -2115,12 +2562,18 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "states"
+    }
   },
   {
     "lemma": "doer",
     "category": "NOUN",
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "doers"
+    }
   },
   {
     "lemma": "mark",
@@ -2136,7 +2589,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "questions"
+    }
   },
   {
     "lemma": "take",
@@ -2144,7 +2600,8 @@
     "forms": {
       "past": "took",
       "ppart": "taken",
-      "ing": "taking"
+      "ing": "taking",
+      "third": "takes"
     },
     "waive": [
       "NOUN"
@@ -2154,7 +2611,10 @@
   {
     "lemma": "enforce",
     "category": "VERB_TRANS",
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "third": "enforces"
+    }
   },
   {
     "lemma": "see",
@@ -2162,7 +2622,8 @@
     "forms": {
       "past": "saw",
       "ppart": "seen",
-      "ing": "seeing"
+      "ing": "seeing",
+      "third": "sees"
     },
     "waive": [
       "NOUN"
@@ -2175,7 +2636,11 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "third": "follows",
+      "past": "followed"
+    }
   },
   {
     "lemma": "subject",
@@ -2185,7 +2650,10 @@
       "ADJ",
       "ADV"
     ],
-    "note": "ADR 0003 rewrite"
+    "note": "ADR 0003 rewrite",
+    "forms": {
+      "plural": "subjects"
+    }
   },
   {
     "lemma": "plain",
@@ -2221,12 +2689,18 @@
     "note": "ADR 0003 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "actions"
+    }
   },
   {
     "lemma": "conjunction",
     "category": "NOUN",
-    "note": "ADR 0004 rewrite"
+    "note": "ADR 0004 rewrite",
+    "forms": {
+      "plural": "conjunctions"
+    }
   },
   {
     "lemma": "different",
@@ -2239,7 +2713,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0004 rewrite"
+    "note": "ADR 0004 rewrite",
+    "forms": {
+      "plural": "contrasts"
+    }
   },
   {
     "lemma": "correct",
@@ -2272,12 +2749,18 @@
     "waive": [
       "ADJ"
     ],
-    "note": "ADR 0004 rewrite"
+    "note": "ADR 0004 rewrite",
+    "forms": {
+      "plural": "alternatives"
+    }
   },
   {
     "lemma": "preposition",
     "category": "NOUN",
-    "note": "ADR 0004 rewrite"
+    "note": "ADR 0004 rewrite",
+    "forms": {
+      "plural": "prepositions"
+    }
   },
   {
     "lemma": "attach",
@@ -2285,7 +2768,11 @@
     "note": "ADR 0004 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "attaches",
+      "ing": "attaching"
+    }
   },
   {
     "lemma": "join",
@@ -2293,7 +2780,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0004 rewrite"
+    "note": "ADR 0004 rewrite",
+    "forms": {
+      "third": "joins"
+    }
   },
   {
     "lemma": "scope",
@@ -2319,7 +2809,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0005 run"
+    "note": "ADR 0005 run",
+    "forms": {
+      "plural": "commands"
+    }
   },
   {
     "lemma": "emphatic",
@@ -2334,7 +2827,8 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "told",
-      "ppart": "told"
+      "ppart": "told",
+      "third": "tells"
     },
     "note": "ADR 0005 run",
     "waive": [
@@ -2391,12 +2885,20 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0005 run"
+    "note": "ADR 0005 run",
+    "forms": {
+      "third": "helps"
+    }
   },
   {
     "lemma": "avoid",
     "category": "VERB_TRANS",
-    "note": "ADR 0005 rewrite"
+    "note": "ADR 0005 rewrite",
+    "forms": {
+      "third": "avoids",
+      "past": "avoided",
+      "ing": "avoiding"
+    }
   },
   {
     "lemma": "main",
@@ -2409,7 +2911,10 @@
   {
     "lemma": "contraction",
     "category": "NOUN",
-    "note": "ADR 0005 rewrite"
+    "note": "ADR 0005 rewrite",
+    "forms": {
+      "plural": "contractions"
+    }
   },
   {
     "lemma": "natural",
@@ -2425,7 +2930,11 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0005 rewrite"
+    "note": "ADR 0005 rewrite",
+    "forms": {
+      "third": "enters",
+      "past": "entered"
+    }
   },
   {
     "lemma": "limit",
@@ -2433,7 +2942,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0005 rewrite"
+    "note": "ADR 0005 rewrite",
+    "forms": {
+      "third": "limits"
+    }
   },
   {
     "lemma": "criterion",
@@ -2465,7 +2977,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "styles"
+    }
   },
   {
     "lemma": "shape",
@@ -2473,7 +2988,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "shapes"
+    }
   },
   {
     "lemma": "branch",
@@ -2481,7 +2999,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "branches"
+    }
   },
   {
     "lemma": "heavy",
@@ -2512,7 +3033,10 @@
   {
     "lemma": "constraint",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "constraints"
+    }
   },
   {
     "lemma": "bound",
@@ -2530,7 +3054,8 @@
     "forms": {
       "past": "put",
       "ppart": "put",
-      "ing": "putting"
+      "ing": "putting",
+      "third": "puts"
     },
     "waive": [
       "NOUN"
@@ -2542,12 +3067,18 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "orders"
+    }
   },
   {
     "lemma": "memory",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "memories"
+    }
   },
   {
     "lemma": "model",
@@ -2556,7 +3087,10 @@
     "waive": [
       "VERB",
       "ADJ"
-    ]
+    ],
+    "forms": {
+      "plural": "models"
+    }
   },
   {
     "lemma": "familiarity",
@@ -2569,12 +3103,18 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "tastes"
+    }
   },
   {
     "lemma": "tradition",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "traditions"
+    }
   },
   {
     "lemma": "ideal",
@@ -2603,12 +3143,18 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "surprises"
+    }
   },
   {
     "lemma": "construction",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "constructions"
+    }
   },
   {
     "lemma": "density",
@@ -2621,12 +3167,18 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "noises"
+    }
   },
   {
     "lemma": "earn",
     "category": "VERB_TRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "earns"
+    }
   },
   {
     "lemma": "expressiveness",
@@ -2668,7 +3220,11 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "trades",
+      "past": "traded"
+    }
   },
   {
     "lemma": "precision",
@@ -2709,7 +3265,10 @@
     "waive": [
       "VERB",
       "ADJ"
-    ]
+    ],
+    "forms": {
+      "plural": "sets"
+    }
   },
   {
     "lemma": "comprehension",
@@ -2749,7 +3308,10 @@
   {
     "lemma": "verify",
     "category": "VERB_TRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "verifies"
+    }
   },
   {
     "lemma": "monitor",
@@ -2757,7 +3319,11 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "monitors",
+      "past": "monitored"
+    }
   },
   {
     "lemma": "gather",
@@ -2765,7 +3331,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "gathers"
+    }
   },
   {
     "lemma": "evidence",
@@ -2773,7 +3342,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "evidences"
+    }
   },
   {
     "lemma": "readable",
@@ -2783,7 +3355,10 @@
   {
     "lemma": "justify",
     "category": "VERB_TRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "justifies"
+    }
   },
   {
     "lemma": "metric",
@@ -2799,17 +3374,27 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "conflicts",
+      "past": "conflicted"
+    }
   },
   {
     "lemma": "formulation",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "formulations"
+    }
   },
   {
     "lemma": "length",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "lengths"
+    }
   },
   {
     "lemma": "weigh",
@@ -2817,12 +3402,19 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "weighs",
+      "past": "weighed"
+    }
   },
   {
     "lemma": "goal",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "goals"
+    }
   },
   {
     "lemma": "right",
@@ -2853,7 +3445,10 @@
     "note": "ADR 0006 rewrite",
     "waive": [
       "VERB"
-    ]
+    ],
+    "forms": {
+      "plural": "trees"
+    }
   },
   {
     "lemma": "ground",
@@ -2862,12 +3457,20 @@
       "NOUN",
       "ADJ"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "past": "grounded"
+    }
   },
   {
     "lemma": "predict",
     "category": "VERB_TRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "predicts",
+      "past": "predicted",
+      "ing": "predicting"
+    }
   },
   {
     "lemma": "profile",
@@ -2875,12 +3478,18 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "profiles"
+    }
   },
   {
     "lemma": "context",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "contexts"
+    }
   },
   {
     "lemma": "target",
@@ -2888,7 +3497,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "targets"
+    }
   },
   {
     "lemma": "dense",
@@ -2929,12 +3541,18 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "distances"
+    }
   },
   {
     "lemma": "clause",
     "category": "NOUN",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "clauses"
+    }
   },
   {
     "lemma": "comfortable",
@@ -2954,7 +3572,8 @@
     "category": "VERB_TRANS",
     "forms": {
       "past": "held",
-      "ppart": "held"
+      "ppart": "held",
+      "third": "holds"
     },
     "waive": [
       "NOUN"
@@ -2987,7 +3606,8 @@
     "forms": {
       "past": "won",
       "ppart": "won",
-      "ing": "winning"
+      "ing": "winning",
+      "third": "wins"
     },
     "waive": [
       "NOUN"
@@ -3046,7 +3666,11 @@
   {
     "lemma": "exist",
     "category": "VERB_INTRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "exists",
+      "past": "existed"
+    }
   },
   {
     "lemma": "over",
@@ -3060,7 +3684,10 @@
       "ADJ",
       "VERB"
     ],
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "plural": "fronts"
+    }
   },
   {
     "lemma": "readability",
@@ -3073,7 +3700,10 @@
   {
     "lemma": "protect",
     "category": "VERB_TRANS",
-    "note": "ADR 0006 rewrite"
+    "note": "ADR 0006 rewrite",
+    "forms": {
+      "third": "protects"
+    }
   },
   {
     "lemma": "separate",
@@ -3087,7 +3717,10 @@
   {
     "lemma": "marker",
     "category": "NOUN",
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "plural": "markers"
+    }
   },
   {
     "lemma": "boundary",
@@ -3148,7 +3781,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "plural": "seams"
+    }
   },
   {
     "lemma": "nested",
@@ -3174,17 +3810,28 @@
   {
     "lemma": "suggest",
     "category": "VERB_TRANS",
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "third": "suggests",
+      "past": "suggested",
+      "ing": "suggesting"
+    }
   },
   {
     "lemma": "subset",
     "category": "NOUN",
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "plural": "subsets"
+    }
   },
   {
     "lemma": "comma",
     "category": "NOUN",
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "plural": "commas"
+    }
   },
   {
     "lemma": "restructure",
@@ -3203,7 +3850,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0007 rewrite"
+    "note": "ADR 0007 rewrite",
+    "forms": {
+      "plural": "rewrites"
+    }
   },
   {
     "lemma": "useless",
@@ -3224,7 +3874,10 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "past": "stalled"
+    }
   },
   {
     "lemma": "hurt",
@@ -3232,7 +3885,8 @@
     "forms": {
       "past": "hurt",
       "ppart": "hurt",
-      "ing": "hurting"
+      "ing": "hurting",
+      "third": "hurts"
     },
     "waive": [
       "NOUN",
@@ -3243,7 +3897,10 @@
   {
     "lemma": "synonym",
     "category": "NOUN",
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "plural": "synonyms"
+    }
   },
   {
     "lemma": "beat",
@@ -3265,7 +3922,12 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "third": "reviews",
+      "past": "reviewed",
+      "ing": "reviewing"
+    }
   },
   {
     "lemma": "whole",
@@ -3290,12 +3952,20 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "third": "trusts"
+    }
   },
   {
     "lemma": "differ",
     "category": "VERB_INTRANS",
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "third": "differs",
+      "past": "differed",
+      "ing": "differing"
+    }
   },
   {
     "lemma": "modal",
@@ -3327,17 +3997,26 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "plural": "forces"
+    }
   },
   {
     "lemma": "obligation",
     "category": "NOUN",
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "plural": "obligations"
+    }
   },
   {
     "lemma": "permission",
     "category": "NOUN",
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "plural": "permissions"
+    }
   },
   {
     "lemma": "ability",
@@ -3361,7 +4040,10 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "plural": "scales"
+    }
   },
   {
     "lemma": "merge",
@@ -3369,12 +4051,20 @@
     "waive": [
       "NOUN"
     ],
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "third": "merges"
+    }
   },
   {
     "lemma": "revisit",
     "category": "VERB_TRANS",
-    "note": "ADR 0009 rewrite"
+    "note": "ADR 0009 rewrite",
+    "forms": {
+      "third": "revisits",
+      "past": "revisited",
+      "ing": "revisiting"
+    }
   },
   {
     "lemma": "new",
@@ -3390,6 +4080,2404 @@
     "waive": [
       "VERB"
     ],
-    "note": "ADR 0008 rewrite"
+    "note": "ADR 0008 rewrite",
+    "forms": {
+      "plural": "guards"
+    }
+  },
+  {
+    "lemma": "flatten",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "flattens",
+      "ing": "flattening"
+    }
+  },
+  {
+    "lemma": "cheat",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "cheats",
+      "past": "cheated"
+    }
+  },
+  {
+    "lemma": "depend",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "depends",
+      "past": "depended",
+      "ing": "depending"
+    }
+  },
+  {
+    "lemma": "attachment",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "attachments"
+    }
+  },
+  {
+    "lemma": "classic",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "structural",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "expect",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "expects"
+    }
+  },
+  {
+    "lemma": "chain",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "turn",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "turns"
+    }
+  },
+  {
+    "lemma": "break",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "past": "broke",
+      "ppart": "broken",
+      "ing": "breaking",
+      "third": "breaks"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "expectation",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "expectations"
+    }
+  },
+  {
+    "lemma": "violate",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "third": "violates"
+    }
+  },
+  {
+    "lemma": "audit",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "audits",
+      "past": "audited",
+      "ing": "auditing"
+    }
+  },
+  {
+    "lemma": "quantifier",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "quantifiers"
+    }
+  },
+  {
+    "lemma": "recast",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "recasts",
+      "past": "recast",
+      "ppart": "recast",
+      "ing": "recasting"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "invent",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "invents",
+      "past": "invented",
+      "ing": "inventing"
+    }
+  },
+  {
+    "lemma": "reward",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "rewards",
+      "past": "rewarded"
+    }
+  },
+  {
+    "lemma": "catch",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "past": "caught",
+      "ppart": "caught",
+      "ing": "catching",
+      "third": "catches"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "regret",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "past": "regretted",
+      "ppart": "regretted",
+      "ing": "regretting"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "column",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "columns"
+    }
+  },
+  {
+    "lemma": "bug",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "affect",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "affects"
+    }
+  },
+  {
+    "lemma": "honest",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "ratio",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "ratios"
+    }
+  },
+  {
+    "lemma": "narrow",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "ADJ",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "rendering",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "renderings"
+    }
+  },
+  {
+    "lemma": "false",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "ADV"
+    ]
+  },
+  {
+    "lemma": "generic",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "existential",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "tolerate",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "tolerates",
+      "past": "tolerated",
+      "ing": "tolerating"
+    }
+  },
+  {
+    "lemma": "exception",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "exceptions"
+    }
+  },
+  {
+    "lemma": "universal",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "prevent",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "prevents",
+      "past": "prevented",
+      "ing": "preventing"
+    }
+  },
+  {
+    "lemma": "purpose",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "purposes"
+    }
+  },
+  {
+    "lemma": "position",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "positions"
+    }
+  },
+  {
+    "lemma": "learn",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "past": "learned",
+      "ppart": "learned",
+      "third": "learns"
+    }
+  },
+  {
+    "lemma": "determiner",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "determiners"
+    }
+  },
+  {
+    "lemma": "cache",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "caches"
+    }
+  },
+  {
+    "lemma": "perfect",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "VERB",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "role",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "roles"
+    }
+  },
+  {
+    "lemma": "argument",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "arguments"
+    }
+  },
+  {
+    "lemma": "definite",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "definites"
+    }
+  },
+  {
+    "lemma": "strong",
+    "category": "ADJ",
+    "waive": [
+      "ADV"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "reopen",
+    "category": "VERB_TRANS",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "reopens",
+      "past": "reopened",
+      "ing": "reopening"
+    }
+  },
+  {
+    "lemma": "pair",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "problem",
+    "category": "NOUN",
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "plural": "problems"
+    }
+  },
+  {
+    "lemma": "legal",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "plural",
+    "category": "ADJ",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "information",
+    "category": "NOUN",
+    "forms": {
+      "plural": "informations"
+    },
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "silent",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "update",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "updates",
+      "past": "updated",
+      "ppart": "updated",
+      "ing": "updating"
+    }
+  },
+  {
+    "lemma": "causal",
+    "category": "ADJ",
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "cheap",
+    "category": "ADJ",
+    "waive": [
+      "ADV",
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "judge",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "move",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite",
+    "forms": {
+      "third": "moves"
+    }
+  },
+  {
+    "lemma": "bare",
+    "category": "ADJ",
+    "waive": [
+      "VERB",
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "singular",
+    "category": "ADJ",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0010-0013 rewrite"
+  },
+  {
+    "lemma": "apply",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "applies",
+      "past": "applied",
+      "ppart": "applied",
+      "ing": "applying"
+    }
+  },
+  {
+    "lemma": "disagree",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "disagrees"
+    }
+  },
+  {
+    "lemma": "rebuild",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "past": "rebuilt",
+      "ppart": "rebuilt",
+      "third": "rebuilds"
+    }
+  },
+  {
+    "lemma": "logic",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "logics"
+    }
+  },
+  {
+    "lemma": "syntax",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "syntaxes"
+    }
+  },
+  {
+    "lemma": "lookahead",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "lookaheads"
+    }
+  },
+  {
+    "lemma": "frame",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "frames"
+    }
+  },
+  {
+    "lemma": "distinct",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "clean",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "ADJ",
+      "NOUN",
+      "ADV"
+    ],
+    "forms": {
+      "third": "cleans",
+      "past": "cleaned"
+    }
+  },
+  {
+    "lemma": "macro",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "macros"
+    }
+  },
+  {
+    "lemma": "opaque",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "bracketing",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "bracketings"
+    }
+  },
+  {
+    "lemma": "findability",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "findabilitys"
+    }
+  },
+  {
+    "lemma": "field",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "subsystem",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "subsystems"
+    }
+  },
+  {
+    "lemma": "curation",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "curations"
+    }
+  },
+  {
+    "lemma": "deliberate",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "promotion",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "promotions"
+    }
+  },
+  {
+    "lemma": "adopt",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "adopts",
+      "ing": "adopting"
+    }
+  },
+  {
+    "lemma": "pressure",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "pressures"
+    }
+  },
+  {
+    "lemma": "signal",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB",
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "signals"
+    }
+  },
+  {
+    "lemma": "coin",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "coins",
+      "past": "coined",
+      "ing": "coining"
+    }
+  },
+  {
+    "lemma": "jargon",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "jargons"
+    }
+  },
+  {
+    "lemma": "unfold",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "unfolds",
+      "past": "unfolded"
+    }
+  },
+  {
+    "lemma": "rename",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "renames"
+    }
+  },
+  {
+    "lemma": "coinage",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "coinages"
+    }
+  },
+  {
+    "lemma": "dangerous",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "usage",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "usages"
+    }
+  },
+  {
+    "lemma": "infinitive",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "infinitives"
+    }
+  },
+  {
+    "lemma": "numeral",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "numerals"
+    }
+  },
+  {
+    "lemma": "glossary",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "glossaries"
+    }
+  },
+  {
+    "lemma": "approximate",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "concept",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "concepts"
+    }
+  },
+  {
+    "lemma": "admit",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "past": "admitted",
+      "ppart": "admitted",
+      "ing": "admitting",
+      "third": "admits"
+    }
+  },
+  {
+    "lemma": "minimum",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "minimums"
+    }
+  },
+  {
+    "lemma": "square",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB",
+      "ADJ",
+      "ADV"
+    ],
+    "forms": {
+      "plural": "squares"
+    }
+  },
+  {
+    "lemma": "complete",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "corner",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "corners"
+    }
+  },
+  {
+    "lemma": "quantification",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "quantifications"
+    }
+  },
+  {
+    "lemma": "identity",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "identities"
+    }
+  },
+  {
+    "lemma": "remedy",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "remedies"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "hyphenated",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "current",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "transparent",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "transparency",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "paraphrase",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "pack",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "packs"
+    }
+  },
+  {
+    "lemma": "domain",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "domains"
+    }
+  },
+  {
+    "lemma": "technical",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "positive",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "quantified",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "provisional",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "possession",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "possessions"
+    }
+  },
+  {
+    "lemma": "fiat",
+    "category": "ADJ",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "sit",
+    "category": "VERB_INTRANS",
+    "forms": {
+      "past": "sat",
+      "ppart": "sat",
+      "ing": "sitting",
+      "third": "sits"
+    },
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "home",
+    "category": "NOUN",
+    "waive": [
+      "VERB",
+      "ADV",
+      "ADJ"
+    ],
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "homes"
+    }
+  },
+  {
+    "lemma": "stay",
+    "category": "VERB_INTRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "term",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "explicit",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite"
+  },
+  {
+    "lemma": "predicate",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite [auto-waived ADJ] [auto-waived VERB]",
+    "forms": {
+      "plural": "predicates"
+    },
+    "waive": [
+      "ADJ",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "announce",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "announces"
+    }
+  },
+  {
+    "lemma": "get",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "got",
+      "ppart": "got",
+      "ing": "getting",
+      "third": "gets"
+    },
+    "note": "ADR 0014-0017 rewrite [auto-waived NOUN]",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "definition",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "definitions"
+    }
+  },
+  {
+    "lemma": "pattern",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite [auto-waived VERB]",
+    "forms": {
+      "plural": "patterns"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "full",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite [auto-waived ADV] [auto-waived VERB] [auto-waived NOUN]",
+    "waive": [
+      "ADV",
+      "VERB",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "include",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "third": "includes"
+    }
+  },
+  {
+    "lemma": "danger",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "dangers"
+    }
+  },
+  {
+    "lemma": "member",
+    "category": "NOUN",
+    "note": "ADR 0014-0017 rewrite",
+    "forms": {
+      "plural": "members"
+    }
+  },
+  {
+    "lemma": "single",
+    "category": "ADJ",
+    "note": "ADR 0014-0017 rewrite [auto-waived VERB] [auto-waived NOUN]",
+    "waive": [
+      "VERB",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "rank",
+    "category": "VERB_TRANS",
+    "note": "ADR 0014-0017 rewrite [auto-waived ADJ] [auto-waived NOUN]",
+    "forms": {
+      "third": "ranks"
+    },
+    "waive": [
+      "ADJ",
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "duplicate",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN",
+      "ADJ"
+    ],
+    "note": "ADR 0014",
+    "forms": {
+      "third": "duplicates"
+    }
+  },
+  {
+    "lemma": "digit",
+    "category": "NOUN",
+    "note": "ADR 0016",
+    "forms": {
+      "plural": "digits"
+    }
+  },
+  {
+    "lemma": "span",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite [auto-waived VERB]",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "meaningless",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite"
+  },
+  {
+    "lemma": "unblock",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "unblocks",
+      "ing": "unblocking"
+    }
+  },
+  {
+    "lemma": "brand",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite [auto-waived VERB]",
+    "forms": {
+      "plural": "brands"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "asymmetry",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "asymmetries"
+    }
+  },
+  {
+    "lemma": "assume",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "assumes"
+    }
+  },
+  {
+    "lemma": "mention",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite [auto-waived NOUN]",
+    "forms": {
+      "third": "mentions",
+      "past": "mentioned",
+      "ing": "mentioning"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "register",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "registers"
+    }
+  },
+  {
+    "lemma": "twin",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite [auto-waived ADJ] [auto-waived VERB]",
+    "waive": [
+      "ADJ",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "signature",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "signatures"
+    }
+  },
+  {
+    "lemma": "addressee",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "addressees"
+    }
+  },
+  {
+    "lemma": "status",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "statuses"
+    }
+  },
+  {
+    "lemma": "vocative",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "vocatives"
+    }
+  },
+  {
+    "lemma": "wait",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "waits",
+      "past": "waited"
+    }
+  },
+  {
+    "lemma": "blocker",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "blockers"
+    }
+  },
+  {
+    "lemma": "situation",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "situations"
+    }
+  },
+  {
+    "lemma": "exclude",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "excludes"
+    }
+  },
+  {
+    "lemma": "extent",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "extents"
+    }
+  },
+  {
+    "lemma": "author",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "contributor",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "contributors"
+    }
+  },
+  {
+    "lemma": "contradict",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "contradicts",
+      "past": "contradicted",
+      "ing": "contradicting"
+    }
+  },
+  {
+    "lemma": "decoration",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "decorations"
+    }
+  },
+  {
+    "lemma": "sweep",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "adversative",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite [auto-waived NOUN]",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "guidance",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "guidances"
+    }
+  },
+  {
+    "lemma": "convention",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "conventions"
+    }
+  },
+  {
+    "lemma": "character",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "characters"
+    }
+  },
+  {
+    "lemma": "quotation",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "quotations"
+    }
+  },
+  {
+    "lemma": "identifier",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "identifiers"
+    }
+  },
+  {
+    "lemma": "capital",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "capitals"
+    }
+  },
+  {
+    "lemma": "fold",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "folds",
+      "past": "folded"
+    }
+  },
+  {
+    "lemma": "strict",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite"
+  },
+  {
+    "lemma": "case",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "cases"
+    }
+  },
+  {
+    "lemma": "unquoted",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite"
+  },
+  {
+    "lemma": "miss",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "loud",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "ADV"
+    ]
+  },
+  {
+    "lemma": "flat",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "NOUN",
+      "ADV",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "row",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "rows"
+    }
+  },
+  {
+    "lemma": "product",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "products"
+    }
+  },
+  {
+    "lemma": "half",
+    "category": "NOUN",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "halves"
+    },
+    "waive": [
+      "ADJ",
+      "ADV",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "capitalized",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite [auto-waived VERB]",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "core",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "VERB"
+    ],
+    "note": "ADR 0018-0021 rewrite [auto-waived VERB]"
+  },
+  {
+    "lemma": "offer",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "offers",
+      "past": "offered"
+    }
+  },
+  {
+    "lemma": "group",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "plural": "groups"
+    }
+  },
+  {
+    "lemma": "inflect",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "inflects",
+      "ing": "inflecting"
+    }
+  },
+  {
+    "lemma": "belong",
+    "category": "VERB_INTRANS",
+    "note": "ADR 0018-0021 rewrite",
+    "forms": {
+      "third": "belongs",
+      "past": "belonged"
+    }
+  },
+  {
+    "lemma": "directed",
+    "category": "ADJ",
+    "note": "ADR 0018-0021 rewrite"
+  },
+  {
+    "lemma": "way",
+    "category": "NOUN",
+    "waive": [
+      "ADV"
+    ],
+    "note": "ADR 0018-0021 rewrite"
+  },
+  {
+    "lemma": "safe",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "ADV"
+    ],
+    "note": "ADR 0018-0021 rewrite [auto-waived ADV]"
+  },
+  {
+    "lemma": "advice",
+    "category": "NOUN",
+    "forms": {
+      "plural": "advices"
+    },
+    "note": "ADR 0020"
+  },
+  {
+    "lemma": "lowercase",
+    "category": "NOUN",
+    "waive": [
+      "ADJ",
+      "VERB"
+    ],
+    "note": "ADR 0018",
+    "forms": {
+      "plural": "lowercases"
+    }
+  },
+  {
+    "lemma": "candidate",
+    "category": "NOUN",
+    "note": "ADR 0020",
+    "forms": {
+      "plural": "candidates"
+    }
+  },
+  {
+    "lemma": "appositive",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "ADR 0018",
+    "forms": {
+      "plural": "appositives"
+    }
+  },
+  {
+    "lemma": "loose",
+    "category": "ADJ",
+    "waive": [
+      "VERB",
+      "ADV",
+      "NOUN"
+    ],
+    "note": "ADR 0019 [auto-waived NOUN]"
+  },
+  {
+    "lemma": "showcase",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0019",
+    "forms": {
+      "plural": "showcases"
+    }
+  },
+  {
+    "lemma": "answer",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0020",
+    "forms": {
+      "third": "answers",
+      "past": "answered"
+    }
+  },
+  {
+    "lemma": "introduce",
+    "category": "VERB_TRANS",
+    "note": "ADR 0018",
+    "forms": {
+      "third": "introduces"
+    }
+  },
+  {
+    "lemma": "notation",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "notations"
+    }
+  },
+  {
+    "lemma": "treadmill",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "treadmills"
+    }
+  },
+  {
+    "lemma": "mix",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "mixes"
+    }
+  },
+  {
+    "lemma": "recognize",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "third": "recognizes"
+    }
+  },
+  {
+    "lemma": "string",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "measurement",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "measurements"
+    }
+  },
+  {
+    "lemma": "ordinal",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "ordinals"
+    }
+  },
+  {
+    "lemma": "unit",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "units"
+    }
+  },
+  {
+    "lemma": "separator",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "separators"
+    }
+  },
+  {
+    "lemma": "decimal",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "decimals"
+    }
+  },
+  {
+    "lemma": "negative",
+    "category": "ADJ",
+    "note": "ADR 0022-0025 rewrite [auto-waived VERB]",
+    "waive": [
+      "NOUN",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "value",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "quantity",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "quantities"
+    }
+  },
+  {
+    "lemma": "padding",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "paddings"
+    }
+  },
+  {
+    "lemma": "confuse",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "third": "confuses"
+    }
+  },
+  {
+    "lemma": "homograph",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "homographs"
+    }
+  },
+  {
+    "lemma": "defense",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "defenses"
+    }
+  },
+  {
+    "lemma": "pick",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "picks"
+    }
+  },
+  {
+    "lemma": "absolute",
+    "category": "ADJ",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "relative",
+    "category": "ADJ",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "floor",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "VERB"
+    ],
+    "forms": {
+      "plural": "floors"
+    }
+  },
+  {
+    "lemma": "flag",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "underrate",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "third": "underrates",
+      "past": "underrated"
+    }
+  },
+  {
+    "lemma": "absent",
+    "category": "ADJ",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "map",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "maps"
+    }
+  },
+  {
+    "lemma": "symbol",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite [auto-waived VERB]",
+    "forms": {
+      "plural": "symbols"
+    },
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "approximation",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "approximations"
+    }
+  },
+  {
+    "lemma": "refuse",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite [auto-waived NOUN]",
+    "forms": {
+      "third": "refuses"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "orthographic",
+    "category": "ADJ",
+    "note": "ADR 0022-0025 rewrite"
+  },
+  {
+    "lemma": "knowledge",
+    "category": "NOUN",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "plural": "knowledges"
+    }
+  },
+  {
+    "lemma": "ordinary",
+    "category": "ADJ",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0022"
+  },
+  {
+    "lemma": "meet",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "met",
+      "ppart": "met",
+      "ing": "meeting",
+      "third": "meets"
+    },
+    "waive": [
+      "NOUN",
+      "ADJ"
+    ],
+    "note": "ADR 0024 [auto-waived ADJ]"
+  },
+  {
+    "lemma": "by",
+    "category": "PREP_V",
+    "note": "ADR 0022-0025 rewrite"
+  },
+  {
+    "lemma": "go",
+    "category": "VERB_INTRANS",
+    "forms": {
+      "third": "goes",
+      "past": "went",
+      "ppart": "gone",
+      "ing": "going"
+    },
+    "waive": [
+      "NOUN",
+      "ADJ"
+    ],
+    "note": "ADR 0022-0025 rewrite [auto-waived ADJ]"
+  },
+  {
+    "lemma": "property",
+    "category": "NOUN",
+    "forms": {
+      "plural": "properties"
+    },
+    "note": "ADR 0022-0025 rewrite"
+  },
+  {
+    "lemma": "ignore",
+    "category": "VERB_TRANS",
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "third": "ignores"
+    }
+  },
+  {
+    "lemma": "touch",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0022-0025 rewrite",
+    "forms": {
+      "third": "touches"
+    }
+  },
+  {
+    "lemma": "fall",
+    "category": "VERB_INTRANS",
+    "forms": {
+      "past": "fell",
+      "ppart": "fallen",
+      "ing": "falling"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0023"
+  },
+  {
+    "lemma": "repair",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0023",
+    "forms": {
+      "plural": "repairs"
+    }
+  },
+  {
+    "lemma": "run",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0022",
+    "forms": {
+      "plural": "runs"
+    }
+  },
+  {
+    "lemma": "warning",
+    "category": "NOUN",
+    "note": "ADR 0023 [auto-waived ADJ]",
+    "forms": {
+      "plural": "warnings"
+    },
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "size",
+    "category": "NOUN",
+    "waive": [
+      "VERB",
+      "ADJ"
+    ],
+    "note": "ADR 0022 [auto-waived ADJ]",
+    "forms": {
+      "plural": "sizes"
+    }
+  },
+  {
+    "lemma": "gain",
+    "category": "VERB_TRANS",
+    "note": "ADR 0026-0028 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "past": "gained",
+      "ing": "gaining"
+    }
+  },
+  {
+    "lemma": "precedent",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite [auto-waived ADJ]",
+    "forms": {
+      "plural": "precedents"
+    },
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "hypothesis",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "hypotheses"
+    }
+  },
+  {
+    "lemma": "assert",
+    "category": "VERB_TRANS",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "third": "asserts"
+    }
+  },
+  {
+    "lemma": "connective",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "connectives"
+    }
+  },
+  {
+    "lemma": "debt",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "debts"
+    }
+  },
+  {
+    "lemma": "proposal",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "proposals"
+    }
+  },
+  {
+    "lemma": "unnatural",
+    "category": "ADJ",
+    "note": "ADR 0026-0028 rewrite"
+  },
+  {
+    "lemma": "decompose",
+    "category": "VERB_TRANS",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "third": "decomposes"
+    }
+  },
+  {
+    "lemma": "wording",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "wordings"
+    }
+  },
+  {
+    "lemma": "override",
+    "category": "VERB_TRANS",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "past": "overrode",
+      "ppart": "overridden",
+      "ing": "overriding",
+      "third": "overrides"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "prompt",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite [auto-waived ADV]",
+    "waive": [
+      "VERB",
+      "ADJ",
+      "ADV"
+    ],
+    "forms": {
+      "plural": "prompts"
+    }
+  },
+  {
+    "lemma": "unreadable",
+    "category": "ADJ",
+    "note": "ADR 0026-0028 rewrite"
+  },
+  {
+    "lemma": "extractor",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "extractors"
+    }
+  },
+  {
+    "lemma": "intro",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "introes"
+    }
+  },
+  {
+    "lemma": "dash",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite [auto-waived ADV] [auto-waived ADJ]",
+    "waive": [
+      "VERB",
+      "ADV",
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "dashes"
+    }
+  },
+  {
+    "lemma": "bullet",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "bullets"
+    }
+  },
+  {
+    "lemma": "guess",
+    "category": "VERB_TRANS",
+    "note": "ADR 0026-0028 rewrite",
+    "waive": [
+      "NOUN"
+    ],
+    "forms": {
+      "third": "guesses",
+      "past": "guessed"
+    }
+  },
+  {
+    "lemma": "ordered",
+    "category": "ADJ",
+    "note": "ADR 0026-0028 rewrite"
+  },
+  {
+    "lemma": "procedure",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "procedures"
+    }
+  },
+  {
+    "lemma": "step",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "degree",
+    "category": "NOUN",
+    "note": "ADR 0026-0028 rewrite [auto-waived ADJ]",
+    "forms": {
+      "plural": "degrees"
+    },
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "valid",
+    "category": "ADJ",
+    "note": "ADR 0026-0028 rewrite"
+  },
+  {
+    "lemma": "paragraph",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "paragraphs"
+    }
+  },
+  {
+    "lemma": "line",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0026-0028 rewrite"
+  },
+  {
+    "lemma": "format",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "formats"
+    }
+  },
+  {
+    "lemma": "reason",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "ADR 0026-0028 rewrite",
+    "forms": {
+      "plural": "reasons"
+    }
+  },
+  {
+    "lemma": "pay",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "paid",
+      "ppart": "paid",
+      "ing": "paying",
+      "third": "pays"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "ADR 0026"
+  },
+  {
+    "lemma": "continuity",
+    "category": "NOUN",
+    "note": "ADR 0026"
+  },
+  {
+    "lemma": "skill",
+    "category": "NOUN",
+    "note": "ADR 0027",
+    "forms": {
+      "plural": "skills"
+    }
+  },
+  {
+    "lemma": "attestation",
+    "category": "NOUN",
+    "note": "ADR 0027",
+    "forms": {
+      "plural": "attestations"
+    }
+  },
+  {
+    "lemma": "topic",
+    "category": "NOUN",
+    "note": "ADR 0026",
+    "forms": {
+      "plural": "topics"
+    }
+  },
+  {
+    "lemma": "orthography",
+    "category": "NOUN",
+    "note": "ADR 0027"
+  },
+  {
+    "lemma": "inner",
+    "category": "ADJ",
+    "note": "ADR 0028 [auto-waived NOUN]",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "fact",
+    "category": "NOUN",
+    "note": "ADR 0027",
+    "forms": {
+      "plural": "facts"
+    }
   }
 ]

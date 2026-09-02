@@ -1,8 +1,28 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 5
 original: The writer repeats the noun.
-context_before: 'The language bans every Anaphoric Pronoun: - "it" - "its" - "they" - "them" - "their" - "he" - "him" - "his" - "she" - "her" - "this" - "that" - "these" - "those"'
-context_after: 'The language allows 4 Indexical Pronouns: - "I" - "you" - "my" - "your"'
+context_before: |-
+  The language bans every Anaphoric Pronoun:
+  - "it"
+  - "its"
+  - "they"
+  - "them"
+  - "their"
+  - "he"
+  - "him"
+  - "his"
+  - "she"
+  - "her"
+  - "this"
+  - "that"
+  - "these"
+  - "those"
+context_after: |-
+  The language allows 4 Indexical Pronouns:
+  - "I"
+  - "you"
+  - "my"
+  - "your"
 original_metrics:
   sentences: 1
   parsed: 1
@@ -26,7 +46,7 @@ proposals:
     cost: 53.260000000000005
     words: 16
     terms: 0
-  diagnosis: '"the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: zero, by] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  diagnosis: '"the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: every parser produces zero ambiguities. every parser has one parse. the system builds no discourse layer.
@@ -152,7 +172,7 @@ proposals:
     cost: 52.720000000000006
     words: 15
     terms: 0
-  diagnosis: '"the design removes reference ambiguities by construction": WORD: "by" is not a minglish word | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  diagnosis: '"the design removes reference ambiguities by construction": STYLE: "construction" — a singular noun needs a determiner: "the construction" (mass nouns take "the"); "reference ambiguities" is a defined term — write "Reference Ambiguities" (see CONTEXT.md); "reference" — a singular noun needs a determiner: "the reference" (mass nouns take "the") | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design does not create reference ambiguities. the system does not build a discourse layer.

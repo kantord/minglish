@@ -5,45 +5,47 @@ Status: proposed (tentative)
 
 ## Context
 
-Self-hosting is impossible without naming things: "Minglish needs a
-lexicon", the file "seed.json", the tools Lexgen and WordNet. Names are an
-open class — curating them into the lexicon is the wrong tool. Quoting all
-names works but is heavier than English needs.
+The Dogfood needs Names. The sentence "Minglish needs a lexicon" has a
+Name. The file "seed.json" is a Name. The tool Lexgen is a Name. The
+database WordNet is a Name. The Names are not a Closed Class. The Lexicon is the wrong tool. A Name does not belong in the Lexicon. A quoted span can hold every Name. The quoted spans are heavy.
 
 ## Decision
 
-One open-class NAME token, produced two ways:
+A Name has 2 shapes:
+- a capitalized word
+- a quoted span
 
-- **Capitalized token(s)** — the standard English proper-noun convention,
-  **fail-loud**: an unquoted NAME requires capitalized ∧ mid-sentence ∧ not
-  a lexicon word in lowercase. Consecutive capitalized tokens merge into one
-  NAME. A sentence-initial capital folds to the lexicon or **errors** with
-  guidance (introduce the name appositively or quote it) — a typo or OOV
-  word must never silently become a name. A mid-sentence capitalized word
-  whose lowercase is a lexicon word also errors (caps-typo, or a colliding
-  name that needs quotes). *I* is always the pronoun, never a name.
-- **A double-quoted span** — verbatim identifiers whose case/spelling cannot
-  be distorted: "seed.json", code strings. Any characters allowed inside.
-  Scope limit: a quoted span is a **single thing** (one opaque NP).
-  *Quotation* — mentioning a sentence or phrase as language ("the writer
-  types \"the agent retries the request\"") — is a different construction,
-  deliberately NOT covered here; it needs its own future design (see
-  docs/ideas.md), likely with recursive parsing of the quoted span.
+A capitalized word is a Name. The rule is the convention of English. The
+rule is strict. An unquoted Name must have a capital. An unquoted Name
+must sit inside the sentence. An unquoted Name does not match a word of the Lexicon. If a capitalized word follows a capitalized word,
+then the Linter merges the 2 words into one Name. If a capitalized word opens a
+sentence, then the Linter folds the word into the Lexicon. If the Lexicon
+does not have the word, then the Linter shows an error. The error suggests an appositive or suggests a quoted span. The Linter does not turn a typo into a
+Name. If a capitalized word has a twin in the Lexicon, then the Linter shows an error. The error names a typo or names a
+Name with a Collision. The word "I" is the pronoun. The word "I" is not a
+Name.
 
-Grammar: NAME is a singular NP by itself, and an appositive may follow a
-noun ("the file \"seed.json\"", "the tool Lexgen"). Names never inflect, are
-referentially opaque (repeat the name; no anaphora — consistent with
-ADR 0002), and take a flat cost in the metric (frequency is meaningless for
-names).
+A quoted span is a Name. A quoted span keeps the case of the identifier. A
+quoted span keeps the spelling of the identifier. The file "seed.json" is
+one example. A quoted span allows every character. A quoted span is one
+thing. A quoted span is one opaque Noun Phrase. A quotation is a different
+construction. The decision does not cover a quotation. A quotation needs a
+future design. The file "docs/ideas.md" describes the design. The design
+parses the quoted span.
+
+A Name is a singular Noun Phrase. A Name can follow a noun. The phrase
+"the tool Lexgen" is one example. A Name does not inflect. A Name is
+opaque. The writer repeats the Name. The rule matches the decision "0002".
+A Name has a flat expense in the metric. The frequency of a Name is
+meaningless.
 
 ## Consequences
 
-- (2026-09-01, dogfood ADR 0001) The appositive form is also allowed inside
-  an of-PP: "every form of the file \"lexicon.tsv\"".
-
-- minglish can finally talk about itself, its files, and its tools —
-  several dogfood rows unblock.
-- Coverage/cost tooling must treat NAME tokens specially (not lexicon
-  misses; flat cost).
-- A future lowercase brand name at sentence-initial position must be
-  capitalized in minglish orthography or introduced appositively.
+- The decision "0027" allowed the appositive inside the phrase of a Noun
+  Preposition.
+- The language can describe the language. The language can describe the
+  files. The language can describe the tools. The Names unblocked rows of
+  the Dogfood.
+- A Name is not a miss of the Lexicon. A Name has a flat expense.
+- If a brand does not have a capital, then the brand needs a capital at the front of a sentence. A writer
+  can introduce the brand with a noun.

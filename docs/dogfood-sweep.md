@@ -13,57 +13,27 @@
 | 0007-conditionals.md | 32/32 |
 | 0008-redirect-vs-ban.md | 41/41 |
 | 0009-modals.md | 41/41 |
-| 0010-simple-past.md | 0/10 |
-| 0011-pp-attachment.md | 0/13 |
-| 0012-pair-validity.md | 0/14 |
-| 0013-generic-bare-plurals.md | 0/14 |
-| 0014-universal-and-no.md | 0/21 |
-| 0015-compounds-transparency.md | 0/18 |
-| 0016-have-and-one.md | 0/16 |
-| 0017-existential-some.md | 0/7 |
-| 0018-proper-names.md | 0/18 |
-| 0019-imperatives.md | 0/11 |
-| 0020-no-first-person-plural.md | 0/12 |
-| 0021-but.md | 0/10 |
-| 0022-digits.md | 0/22 |
-| 0023-per-sense-synonyms.md | 0/20 |
-| 0024-percent.md | 0/14 |
-| 0025-approximation.md | 0/11 |
-| 0026-causal-connectives.md | 0/17 |
-| 0027-domain-model.md | 0/21 |
-| 0028-enumeration.md | 0/15 |
+| 0010-simple-past.md | 40/40 |
+| 0011-pp-attachment.md | 32/32 |
+| 0012-pair-validity.md | 33/33 |
+| 0013-generic-bare-plurals.md | 38/38 |
+| 0014-universal-and-no.md | 65/65 |
+| 0015-compounds-transparency.md | 52/52 |
+| 0016-have-and-one.md | 30/30 |
+| 0017-existential-some.md | 24/24 |
+| 0018-proper-names.md | 56/56 |
+| 0019-imperatives.md | 38/38 |
+| 0020-no-first-person-plural.md | 31/31 |
+| 0021-but.md | 33/33 |
+| 0022-digits.md | 63/63 |
+| 0023-per-sense-synonyms.md | 57/57 |
+| 0024-percent.md | 41/41 |
+| 0025-approximation.md | 30/30 |
+| 0026-causal-connectives.md | 61/61 |
+| 0027-domain-model.md | 81/81 |
+| 0028-enumeration.md | 49/49 |
 
-**Aggregate: 387/671 sentences (58%)**
+**Aggregate: 1241/1241 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
-- term ×4
-- adr ×4
-- closed-class ×3
-- same ×3
-- three ×3
-- bare ×3
-- position ×3
-- sentence-initial ×3
-- digits ×3
-- per ×2
-- of-pps ×2
-- generic ×2
-- singular ×2
-- quantified ×2
-- this ×2
-- they ×2
-- head-noun ×2
-- transparency ×2
-- become ×2
-- both ×2
-- stays ×2
-- all ×2
-- core ×2
-- fiat ×2
-- by ×2
-- becomes ×2
-- first ×2
-- digit ×2
-- second ×2
-- gains ×2

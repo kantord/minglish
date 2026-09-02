@@ -5,28 +5,41 @@ Status: proposed (tentative)
 
 ## Context
 
-With generic (bare plural, ADR 0013), universal (*every*) and universal
-negative (*no*, ADR 0014) in place, ¬∀ ("not all") still had no home — it
-was deferred from ADR 0014 precisely to here.
+The language had 3 quantified Sentence Shapes:
+- the Bare Plural
+- the word "every"
+- the word "no"
+
+The Negation of a universal statement did not have a home. The decision
+"0014" deferred the Negation of a universal statement to the decision
+"0017".
 
 ## Decision
 
-- **some** (QUANT_EXIST) + **plural** noun, **subject position only**, first
-  token = existential signature: "some agents retry the request" (at least
-  one, possibly more).
-- **Negated predicates are allowed** under *some* — "some agents do not
-  retry the request" is unambiguous in English (¬ can only scope under ∃),
-  and it is exactly ¬∀. The quantification square is complete:
-  ∀ *every* · ¬∃ *no* · ∃ *some* · ¬∀ *some … not* · generic bare plural.
-- Fences: *some* + singular banned (English "some agent" drifts to the
-  unknown-identity reading — a different meaning); the "approximately"
-  reading ("some twenty files") never enters; object position banned (same
-  buried-operator argument as *no*, ADR 0014).
+The word "some" has the Form Tag "QUANT_EXIST". The word "some" takes a
+plural noun. The word "some" appears in the subject. The word "some" is the
+First Token of an existential statement. The sentence "some agents retry
+the request" is one example. The word "some" marks one thing at the
+minimum.
+
+The word "some" allows a Negation. The sentence "some agents do not retry
+the request" has one Parse in English. The Negation stays inside the
+quantifier. The sentence marks the Negation of a universal statement. The square of the quantifiers has 5 members:
+- the word "every"
+- the word "no"
+- the word "some"
+- the phrase "some … not"
+- the Bare Plural
+
+The phrase "some agent" is a Ban, because the phrase has a different
+meaning in English. The phrase "some twenty files" is a Ban. The word
+"some" does not appear in the object, because the reader does not see a quantifier in the object.
 
 ## Consequences
 
-- All four corners of quantification have exactly one form each, and each
-  quantified sentence type announces itself in its first token.
-- *some* takes the full plural predicate set including negation — unlike
-  *every*/*no*, whose positive-only restriction stays justified by their
-  genuine scope ambiguity with negation.
+- Every corner of the quantification has one Sentence Shape. Every quantified
+  sentence announces the Sentence Shape with the First Token.
+- The word "some" takes the full set of the plural predicates. The set
+  includes the Negation. The word "every" takes a positive predicate. The
+  word "no" takes a positive predicate. The 2 words have a real Scope
+  Ambiguity with a Negation.

@@ -6,31 +6,50 @@ ADR 0005 (adds *did*).
 
 ## Context
 
-Tense is the best-evidenced structural gap: TENSE ×5 (+ASPECT ×4) in the
-sampled-web-text inventory (corpus/untranslatable.tsv), and two translation
-pairs had to flatten past to present — silent meaning loss. The classic
-danger of *-ed* forms — the reduced-relative garden path ("the file stored
-in the cache…") — is already structurally excluded: v0 has no passives and
-no participle constructions (ADR 0003), so an *-ed* form can only be a
-finite past verb. The `_ED` surfaces already exist in the lexicon via full
-paradigms.
+The evidence of the Tense is strong. The file "corpus/untranslatable.tsv"
+counts 5 sentences. The sentences need the past Tense. 4 sentences need an
+aspect. 2 Translation Pairs flattened the past Tense into the present
+Tense. The rewrite dropped a claim.
+
+A past verb can cause a Reduced Relative. The sentence "the file stored in
+the cache fails" is one example. The language bans the Passive. The
+language bans the Reduced Relative. A past verb has one Parse, because the
+Passive is a Ban. The Lexicon contains every past Surface Form.
 
 ## Decision
 
-- Simple past is part of minglish: lexical verbs use their `_ED` forms.
-- Closed-class additions: *was* (COPULA_SG_PAST), *were* (COPULA_PL_PAST),
-  *did* (NEG_AUX_PAST — past negation carrier: "did not delete").
-- Still out: future (*will* deferred), perfect and progressive aspect
-  (*have/be* + participle machinery would reopen the reduced-relative and
-  passive doors), *could/might/would* (counterfactuals), contractions.
-- Same fencing obligations as the present forms: *was/were* copular only,
-  *did* negation-carrier only.
+The language has the past Tense. A verb uses the past Surface Form. The
+language enables 3 Function Words:
+- "was"
+- "were"
+- "did"
+
+The Form Tag of "was" is "COPULA_SG_PAST". The Form Tag of "were" is
+"COPULA_PL_PAST". The Form Tag of "did" is "NEG_AUX_PAST". The word "did"
+carries a past Negation. The sentence "the agent did not delete the file"
+is one example.
+
+The language does not have the future Tense. The maintainers deferred the
+word "will". The language does not have the perfect aspect. The language
+does not have the Progressive. The perfect aspect needs a Participle. A
+Participle reopens the Reduced Relative and reopens the Passive. The
+language bans every contraction.
+
+The language does not have 3 words:
+- "could"
+- "might"
+- "would"
+
+The past Surface Forms have the rules of the present Surface Forms. The
+word "was" is a Copula. The word "were" is a Copula. The word "did" carries
+a Negation. The word "did" has one role.
 
 ## Consequences
 
-- Reports of past events become faithfully expressible; the pairs corpus no
-  longer needs to cheat on tense.
-- Epistemic/aspectual nuance ("has been failing") remains inexpressible —
-  accepted, revisit only with corpus evidence.
-- The *-ed*-unambiguity argument depends on passives/participles staying
-  banned; if a future ADR admits them, this ADR must be revisited first.
+- The language can say a report of a past action. The Translation Pairs do
+  not cheat on the Tense.
+- The language cannot say the phrase "has been failing". The Gap is
+  acceptable. If the corpus needs the aspect, then the maintainers revisit
+  the Gap.
+- The argument depends on the Ban of the Passive. If a future decision
+  allows the Passive, then the maintainers revisit the decision.

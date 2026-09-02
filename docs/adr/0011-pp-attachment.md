@@ -5,34 +5,50 @@ Status: proposed (tentative)
 
 ## Context
 
-"the system stores the report in the database" — verb or noun attachment?
-PP attachment is the canonical structural ambiguity; an LR grammar surfaces
-it as a conflict and something must legislate it. Per ADR 0006's enforcement
-hierarchy, the fix belongs in the set of valid structures, not in scoring.
+The sentence "the system stores the report in the database" has 2 Parses
+in English. The Prepositional Phrase attaches to the verb or attaches to
+the noun. The attachment of a Prepositional Phrase is a classic
+ambiguity of the structure. The Grammar shows an error. A rule must decide
+the attachment. The decision "0006" puts the rule into the Sentence Shapes.
 
 ## Decision
 
-Attachment is a lexical property of the preposition:
+The preposition decides the attachment. The language has 2 kinds of the
+prepositions:
+- the Noun Preposition
+- the Verb Preposition
 
-- **PREP_N** — *of* only. Attaches to the immediately preceding noun
-  ("a copy of the report"). Of-PPs in English are near-universally nominal,
-  so this matches reader priors (ADR 0006 §2).
-- **PREP_V** — all other prepositions (*in, from, to, with, on, at, for*).
-  Attach to the clause's verb, always.
-- Bound: at most **one PREP_V PP per clause** in v0 — multiple-PP ordering
-  ambiguity is excluded until priced; PREP_N PPs are not multiplied either
-  (no "of the X of the Y" chains yet).
+The word "of" is the Noun Preposition. The Form Tag of "of" is "PREP_N".
+The Noun Preposition attaches to the prior noun. The phrase "a copy of the
+report" is one example. The reader expects the attachment to the noun, so
+the rule matches the reader.
 
-The parse is thereby deterministic from the token stream alone.
+The Form Tag "PREP_V" covers 7 Verb Prepositions:
+- "in"
+- "from"
+- "to"
+- "with"
+- "on"
+- "at"
+- "for"
+
+A Verb Preposition attaches to the verb of the clause. If a clause has 2
+Verb Prepositions, then the order is ambiguous. The language bans 2 Verb
+Prepositions in one clause. The language bans a chain of the word "of".
+The phrase "the copy of the report of the user" is one example. The tokens
+decide the Parse.
 
 ## Consequences
 
-- Noun-attaching intent with a non-*of* preposition must be rephrased,
-  usually via *of* ("the input from the user" → "the input of the user") —
-  the system converts a silent ambiguity into an explicit rewrite.
-- Alternatives rejected: verb-attachment-for-everything (makes "a copy of
-  the report" unreadable), nearest-attachment (fights reader priors on
-  instrument/location PPs), score-based disambiguation (violates the
-  enforcement hierarchy).
-- Corpus and pairs updated to comply; two sentences were rephrased, which is
-  the mechanism working, not a regression.
+- If a writer puts a Verb Preposition on a noun, then the writer
+  restructures the phrase with "of". The writer changes the phrase "the
+  input from the user" into the phrase "the input of the user". The rule
+  turns a silent ambiguity into an explicit rewrite.
+- The maintainers rejected 3 alternatives. One alternative puts every
+  preposition on the verb. The alternative breaks the phrase "a copy of the
+  report". One alternative puts a preposition on the prior word. The
+  alternative conflicts with the expectation of the reader. One alternative
+  decides the attachment with a score. The alternative violates the
+  decision "0006".
+- The maintainers updated the corpus. The maintainers applied the rule, so the
+  maintainers restructured 2 sentences.

@@ -6,6 +6,8 @@ Auxiliaries	form	NOUN_PL	auxiliary
 Auxiliary	form	NOUN_SG	auxiliary
 Ban	form	NOUN_SG	ban
 Bans	form	NOUN_PL	ban
+Bare Plural	form	NOUN_SG	bare plural
+Bare Plurals	form	NOUN_PL	bare plural
 Categories	form	NOUN_PL	category
 Category	form	NOUN_SG	category
 Closed Class	form	NOUN_SG	closed class
@@ -16,6 +18,8 @@ Collision	form	NOUN_SG	collision
 Collisions	form	NOUN_PL	collision
 Complement	form	NOUN_SG	complement
 Complements	form	NOUN_PL	complement
+Compound	form	NOUN_SG	compound
+Compounds	form	NOUN_PL	compound
 Conditional	form	NOUN_SG	conditional
 Conditionals	form	NOUN_PL	conditional
 Conjunct	form	NOUN_SG	conjunct
@@ -36,11 +40,15 @@ Dependency Length	form	NOUN_SG	dependency length
 Dependency Lengths	form	NOUN_PL	dependency length
 Discourse Layer	form	NOUN_SG	discourse layer
 Discourse Layers	form	NOUN_PL	discourse layer
+Dogfood	form	NOUN_SG	dogfood
+Dogfoods	form	NOUN_PL	dogfood
 Embedding Depth	form	NOUN_SG	embedding depth
 Embedding Depths	form	NOUN_PL	embedding depth
 English	name	-	English
 Enumeration	form	NOUN_SG	enumeration
 Enumerations	form	NOUN_PL	enumeration
+First Token	form	NOUN_SG	first token
+First Tokens	form	NOUN_PL	first token
 Form Tag	form	NOUN_SG	form tag
 Form Tags	form	NOUN_PL	form tag
 Function Word	form	NOUN_SG	function word
@@ -49,24 +57,35 @@ Gap	form	NOUN_SG	gap
 Gaps	form	NOUN_PL	gap
 Grammar	form	NOUN_SG	grammar
 Grammars	form	NOUN_PL	grammar
+Head Noun	form	NOUN_SG	head noun
+Head Nouns	form	NOUN_PL	head noun
+Imperative	form	NOUN_SG	imperative
+Imperatives	form	NOUN_PL	imperative
 Indexical Pronoun	form	NOUN_SG	indexical pronoun
 Indexical Pronouns	form	NOUN_PL	indexical pronoun
 Language Model	form	NOUN_SG	language model
 Language Models	form	NOUN_PL	language model
 Lemma	form	NOUN_SG	lemma
 Lemmas	form	NOUN_PL	lemma
+Lexer	form	NOUN_SG	lexer
+Lexers	form	NOUN_PL	lexer
 Lexgen	name	-	Lexgen
 Lexicon	form	NOUN_SG	lexicon
 Lexicons	form	NOUN_PL	lexicon
 Linter	form	NOUN_SG	linter
 Linters	form	NOUN_PL	linter
+Markdown	name	-	Markdown
 Minglish	name	-	Minglish
 Modifier	form	NOUN_SG	modifier
 Modifiers	form	NOUN_PL	modifier
+Name	form	NOUN_SG	name
+Names	form	NOUN_PL	name
 Negation	form	NOUN_SG	negation
 Negations	form	NOUN_PL	negation
 Noun Phrase	form	NOUN_SG	noun phrase
 Noun Phrases	form	NOUN_PL	noun phrase
+Noun Preposition	form	NOUN_SG	noun preposition
+Noun Prepositions	form	NOUN_PL	noun preposition
 Open Dependencies	form	NOUN_PL	open dependency
 Open Dependency	form	NOUN_SG	open dependency
 Paradigm	form	NOUN_SG	paradigm
@@ -83,12 +102,16 @@ Progressive	form	NOUN_SG	progressive
 Progressives	form	NOUN_PL	progressive
 Prohibition	form	NOUN_SG	prohibition
 Prohibitions	form	NOUN_PL	prohibition
+Propositional Loss	form	NOUN_SG	propositional loss
+Propositional Losses	form	NOUN_PL	propositional loss
 Redirect	form	NOUN_SG	redirect
 Redirects	form	NOUN_PL	redirect
 Reduced Relative	form	NOUN_SG	reduced relative
 Reduced Relatives	form	NOUN_PL	reduced relative
 Reference Ambiguities	form	NOUN_PL	reference ambiguity
 Reference Ambiguity	form	NOUN_SG	reference ambiguity
+Register Loss	form	NOUN_SG	register loss
+Register Losses	form	NOUN_PL	register loss
 Rejected Sense	form	NOUN_SG	rejected sense
 Rejected Senses	form	NOUN_PL	rejected sense
 Rejection	form	NOUN_SG	rejection
@@ -99,6 +122,8 @@ Seed	form	NOUN_SG	seed
 Seeds	form	NOUN_PL	seed
 Sentence Shape	form	NOUN_SG	sentence shape
 Sentence Shapes	form	NOUN_PL	sentence shape
+Structure Loss	form	NOUN_SG	structure loss
+Structure Losses	form	NOUN_PL	structure loss
 Surface Form	form	NOUN_SG	surface form
 Surface Forms	form	NOUN_PL	surface form
 Tense	form	NOUN_SG	tense
@@ -106,6 +131,8 @@ Tenses	form	NOUN_PL	tense
 Translation Pair	form	NOUN_SG	translation pair
 Translation Pairs	form	NOUN_PL	translation pair
 Triage	name	-	Triage
+Verb Preposition	form	NOUN_SG	verb preposition
+Verb Prepositions	form	NOUN_PL	verb preposition
 Waiver	form	NOUN_SG	waiver
 Waivers	form	NOUN_PL	waiver
 WordNet	name	-	WordNet
@@ -113,6 +140,8 @@ a	form	DET_SG	a
 abilities	form	NOUN_PL	ability
 ability	form	NOUN_SG	ability
 about	form	APPROX	about
+absent	form	ADJ	absent
+absolute	form	ADJ	absolute
 accept	form	VERB_TRANS_BASE	accept
 acceptable	form	ADJ	acceptable
 accepted	form	VERB_TRANS_ED	accept
@@ -124,9 +153,24 @@ actions	form	NOUN_PL	action
 add	form	VERB_TRANS_BASE	add
 added	form	VERB_TRANS_ED	add
 adding	form	VERB_TRANS_ING	add
+addressee	form	NOUN_SG	addressee
+addressees	form	NOUN_PL	addressee
 adds	form	VERB_TRANS_3SG	add
 adjective	form	NOUN_SG	adjective
 adjectives	form	NOUN_PL	adjective
+admit	form	VERB_TRANS_BASE	admit
+admits	form	VERB_TRANS_3SG	admit
+admitted	form	VERB_TRANS_ED	admit
+admitting	form	VERB_TRANS_ING	admit
+adopt	form	VERB_TRANS_BASE	adopt
+adopted	form	VERB_TRANS_ED	adopt
+adopting	form	VERB_TRANS_ING	adopt
+adopts	form	VERB_TRANS_3SG	adopt
+adversative	form	ADJ	adversative
+advice	form	NOUN_SG	advice
+advices	form	NOUN_PL	advice
+affect	form	NOUN_SG	affect
+affects	form	NOUN_PL	affect
 against	form	PREP_V	against
 agent	form	NOUN_SG	agent
 agents	form	NOUN_PL	agent
@@ -149,12 +193,31 @@ anaphoric	form	ADJ	anaphoric
 anaphoric pronoun	term	-	Anaphoric Pronoun
 anaphoric pronouns	term	-	Anaphoric Pronouns
 and	form	CONJ	and
+announce	form	VERB_TRANS_BASE	announce
+announced	form	VERB_TRANS_ED	announce
+announces	form	VERB_TRANS_3SG	announce
+announcing	form	VERB_TRANS_ING	announce
+answer	form	VERB_TRANS_BASE	answer
+answered	form	VERB_TRANS_ED	answer
+answering	form	VERB_TRANS_ING	answer
+answers	form	VERB_TRANS_3SG	answer
 apparent	form	ADJ	apparent
 appear	form	VERB_INTRANS_BASE	appear
 appeared	form	VERB_INTRANS_ED	appear
 appearing	form	VERB_INTRANS_ING	appear
 appears	form	VERB_INTRANS_3SG	appear
+applied	form	VERB_TRANS_ED	apply
+applies	form	VERB_TRANS_3SG	apply
+apply	form	VERB_TRANS_BASE	apply
+applying	form	VERB_TRANS_ING	apply
+appositive	form	NOUN_SG	appositive
+appositives	form	NOUN_PL	appositive
+approximate	form	ADJ	approximate
+approximation	form	NOUN_SG	approximation
+approximations	form	NOUN_PL	approximation
 are	form	COPULA_PL	are
+argument	form	NOUN_SG	argument
+arguments	form	NOUN_PL	argument
 arrive	form	VERB_INTRANS_BASE	arrive
 arrived	form	VERB_INTRANS_ED	arrive
 arrives	form	VERB_INTRANS_3SG	arrive
@@ -162,15 +225,35 @@ arriving	form	VERB_INTRANS_ING	arrive
 as	ban	-	"as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); comparison has no minglish Surface Form yet
 aspect	form	NOUN_SG	aspect
 aspects	form	NOUN_PL	aspect
+assert	form	VERB_TRANS_BASE	assert
+asserted	form	VERB_TRANS_ED	assert
+asserting	form	VERB_TRANS_ING	assert
+asserts	form	VERB_TRANS_3SG	assert
+assume	form	VERB_TRANS_BASE	assume
+assumed	form	VERB_TRANS_ED	assume
+assumes	form	VERB_TRANS_3SG	assume
+assuming	form	VERB_TRANS_ING	assume
+asymmetries	form	NOUN_PL	asymmetry
+asymmetry	form	NOUN_SG	asymmetry
 at	form	PREP_V	at
 attach	form	VERB_INTRANS_BASE	attach
 attached	form	VERB_INTRANS_ED	attach
 attaches	form	VERB_INTRANS_3SG	attach
 attaching	form	VERB_INTRANS_ING	attach
+attachment	form	NOUN_SG	attachment
+attachments	form	NOUN_PL	attachment
 attest	form	VERB_TRANS_BASE	attest
+attestation	form	NOUN_SG	attestation
+attestations	form	NOUN_PL	attestation
 attested	form	VERB_TRANS_ED	attest
 attesting	form	VERB_TRANS_ING	attest
 attests	form	VERB_TRANS_3SG	attest
+audit	form	VERB_TRANS_BASE	audit
+audited	form	VERB_TRANS_ED	audit
+auditing	form	VERB_TRANS_ING	audit
+audits	form	VERB_TRANS_3SG	audit
+author	form	NOUN_SG	author
+authors	form	NOUN_PL	author
 auxiliaries	term	-	Auxiliaries
 auxiliary	term	-	Auxiliary
 available	form	ADJ	available
@@ -185,52 +268,98 @@ banned	form	VERB_TRANS_ED	ban
 banning	form	VERB_TRANS_ING	ban
 bans	form	VERB_TRANS_3SG	ban
 bans	term	-	Bans
+bare	form	ADJ	bare
+bare plural	term	-	Bare Plural
+bare plurals	term	-	Bare Plurals
 base	form	ADJ	base
 beat	form	VERB_TRANS_BASE	beat
 beaten	form	VERB_TRANS_ED	beat
 beating	form	VERB_TRANS_ING	beat
 beats	form	VERB_TRANS_3SG	beat
 because	form	REASON	because
+belong	form	VERB_INTRANS_BASE	belong
+belonged	form	VERB_INTRANS_ED	belong
+belonging	form	VERB_INTRANS_ING	belong
+belongs	form	VERB_INTRANS_3SG	belong
 between	form	PREP_V	between
 big	form	ADJ	big
 binaries	form	NOUN_PL	binary
 binary	form	NOUN_SG	binary
 block	form	NOUN_SG	block
+blocker	form	NOUN_SG	blocker
+blockers	form	NOUN_PL	blocker
 blocks	form	NOUN_PL	block
 blunt	form	ADJ	blunt
 bound	form	NOUN_SG	bound
 boundaries	form	NOUN_PL	boundary
 boundary	form	NOUN_SG	boundary
 bounds	form	NOUN_PL	bound
+bracketing	form	NOUN_SG	bracketing
+bracketings	form	NOUN_PL	bracketing
 branch	form	NOUN_SG	branch
 branches	form	NOUN_PL	branch
 branching	form	NOUN_SG	branching
 branchings	form	NOUN_PL	branching
+brand	form	NOUN_SG	brand
+brands	form	NOUN_PL	brand
+break	form	VERB_TRANS_BASE	break
+breaking	form	VERB_TRANS_ING	break
+breaks	form	VERB_TRANS_3SG	break
+broke	form	VERB_TRANS_ED	break
+broken	form	VERB_TRANS_ED	break
+bug	form	NOUN_SG	bug
+bugs	form	NOUN_PL	bug
 build	form	VERB_TRANS_BASE	build
 build	reject	NOUN	compilation
 building	form	VERB_TRANS_ING	build
 builds	form	VERB_TRANS_3SG	build
 built	form	VERB_TRANS_ED	build
+bullet	form	NOUN_SG	bullet
+bullets	form	NOUN_PL	bullet
 but	form	CONJ	but
+by	form	PREP_V	by
+cache	form	NOUN_SG	cache
+caches	form	NOUN_PL	cache
 came	form	VERB_INTRANS_ED	come
 can	form	MODAL_CAN	can
+candidate	form	NOUN_SG	candidate
+candidates	form	NOUN_PL	candidate
 cannot	form	MODAL_CAN_NEG	cannot
+capital	form	NOUN_SG	capital
+capitalized	form	ADJ	capitalized
+capitals	form	NOUN_PL	capital
 carried	form	VERB_TRANS_ED	carry
 carries	form	VERB_TRANS_3SG	carry
 carry	form	VERB_TRANS_BASE	carry
 carrying	form	VERB_TRANS_ING	carry
+case	form	NOUN_SG	case
+cases	form	NOUN_PL	case
+catch	form	VERB_TRANS_BASE	catch
+catches	form	VERB_TRANS_3SG	catch
+catching	form	VERB_TRANS_ING	catch
 categories	term	-	Categories
 category	term	-	Category
+caught	form	VERB_TRANS_ED	catch
+causal	form	ADJ	causal
 cause	form	VERB_TRANS_BASE	cause
 caused	form	VERB_TRANS_ED	cause
 causes	form	VERB_TRANS_3SG	cause
 causing	form	VERB_TRANS_ING	cause
+chain	form	NOUN_SG	chain
+chains	form	NOUN_PL	chain
 change	form	VERB_TRANS_BASE	change
 changed	form	VERB_TRANS_ED	change
 changes	form	VERB_TRANS_3SG	change
 changing	form	VERB_TRANS_ING	change
+character	form	NOUN_SG	character
+characters	form	NOUN_PL	character
 charisma	form	NOUN_SG	charisma
 charismas	form	NOUN_PL	charisma
+cheap	form	ADJ	cheap
+cheat	form	VERB_INTRANS_BASE	cheat
+cheated	form	VERB_INTRANS_ED	cheat
+cheating	form	VERB_INTRANS_ING	cheat
+cheats	form	VERB_INTRANS_3SG	cheat
 check	form	VERB_TRANS_BASE	check
 check	reject	NOUN	test
 checked	form	VERB_TRANS_ED	check
@@ -249,14 +378,25 @@ clarities	form	NOUN_PL	clarity
 clarity	form	NOUN_SG	clarity
 class	form	NOUN_SG	class
 classes	form	NOUN_PL	class
+classic	form	ADJ	classic
 clause	form	NOUN_SG	clause
 clauses	form	NOUN_PL	clause
+clean	form	VERB_TRANS_BASE	clean
+cleaned	form	VERB_TRANS_ED	clean
+cleaning	form	VERB_TRANS_ING	clean
+cleans	form	VERB_TRANS_3SG	clean
 clear	form	ADJ	clear
 closed	form	ADJ	closed
 closed class	term	-	Closed Class
 closed classes	term	-	Closed Classes
 cognitive load	term	-	Cognitive Load
 cognitive loads	term	-	Cognitive Loads
+coin	form	VERB_TRANS_BASE	coin
+coinage	form	NOUN_SG	coinage
+coinages	form	NOUN_PL	coinage
+coined	form	VERB_TRANS_ED	coin
+coining	form	VERB_TRANS_ING	coin
+coins	form	VERB_TRANS_3SG	coin
 collide	form	VERB_INTRANS_BASE	collide
 collided	form	VERB_INTRANS_ED	collide
 collides	form	VERB_INTRANS_3SG	collide
@@ -265,6 +405,8 @@ collision	term	-	Collision
 collisions	term	-	Collisions
 colon	form	NOUN_SG	colon
 colons	form	NOUN_PL	colon
+column	form	NOUN_SG	column
+columns	form	NOUN_PL	column
 come	form	VERB_INTRANS_BASE	come
 comes	form	VERB_INTRANS_3SG	come
 comfortable	form	ADJ	comfortable
@@ -281,9 +423,14 @@ compiler	form	NOUN_SG	compiler
 compilers	form	NOUN_PL	compiler
 complement	term	-	Complement
 complements	term	-	Complements
+complete	form	ADJ	complete
 compound	form	ADJ	compound
+compound	term	-	Compound
+compounds	term	-	Compounds
 comprehension	form	NOUN_SG	comprehension
 comprehensions	form	NOUN_PL	comprehension
+concept	form	NOUN_SG	concept
+concepts	form	NOUN_PL	concept
 condition	form	NOUN_SG	condition
 conditional	term	-	Conditional
 conditionals	term	-	Conditionals
@@ -292,10 +439,16 @@ conflict	form	VERB_INTRANS_BASE	conflict
 conflicted	form	VERB_INTRANS_ED	conflict
 conflicting	form	VERB_INTRANS_ING	conflict
 conflicts	form	VERB_INTRANS_3SG	conflict
+confuse	form	VERB_TRANS_BASE	confuse
+confused	form	VERB_TRANS_ED	confuse
+confuses	form	VERB_TRANS_3SG	confuse
+confusing	form	VERB_TRANS_ING	confuse
 conjunct	term	-	Conjunct
 conjunction	form	NOUN_SG	conjunction
 conjunctions	form	NOUN_PL	conjunction
 conjuncts	term	-	Conjuncts
+connective	form	NOUN_SG	connective
+connectives	form	NOUN_PL	connective
 consequent	form	NOUN_SG	consequent
 consequents	form	NOUN_PL	consequent
 consider	form	VERB_TRANS_BASE	consider
@@ -317,10 +470,20 @@ context	form	NOUN_SG	context
 context need	term	-	Context Need
 context needs	term	-	Context Needs
 contexts	form	NOUN_PL	context
+continuities	form	NOUN_PL	continuity
+continuity	form	NOUN_SG	continuity
 contraction	form	NOUN_SG	contraction
 contractions	form	NOUN_PL	contraction
+contradict	form	VERB_TRANS_BASE	contradict
+contradicted	form	VERB_TRANS_ED	contradict
+contradicting	form	VERB_TRANS_ING	contradict
+contradicts	form	VERB_TRANS_3SG	contradict
 contrast	form	NOUN_SG	contrast
 contrasts	form	NOUN_PL	contrast
+contributor	form	NOUN_SG	contributor
+contributors	form	NOUN_PL	contributor
+convention	form	NOUN_SG	convention
+conventions	form	NOUN_PL	convention
 coordination	term	-	Coordination
 coordinations	term	-	Coordinations
 copies	form	NOUN_PL	copy
@@ -328,6 +491,9 @@ copula	term	-	Copula
 copulas	term	-	Copulas
 copy	form	NOUN_SG	copy
 copy	reject	VERB	duplicate
+core	form	ADJ	core
+corner	form	NOUN_SG	corner
+corners	form	NOUN_PL	corner
 corpora	form	NOUN_PL	corpus
 corpus	form	NOUN_SG	corpus
 correct	form	ADJ	correct
@@ -356,13 +522,25 @@ curate	form	VERB_TRANS_BASE	curate
 curated	form	VERB_TRANS_ED	curate
 curates	form	VERB_TRANS_3SG	curate
 curating	form	VERB_TRANS_ING	curate
+curation	form	NOUN_SG	curation
+curations	form	NOUN_PL	curation
+current	form	ADJ	current
+danger	form	NOUN_SG	danger
+dangerous	form	ADJ	dangerous
+dangers	form	NOUN_PL	danger
+dash	form	NOUN_SG	dash
+dashes	form	NOUN_PL	dash
 data	form	NOUN_SG	data
 database	form	NOUN_SG	database
 databases	form	NOUN_PL	database
+debt	form	NOUN_SG	debt
+debts	form	NOUN_PL	debt
 decide	form	VERB_TRANS_BASE	decide
 decided	form	VERB_TRANS_ED	decide
 decides	form	VERB_TRANS_3SG	decide
 deciding	form	VERB_TRANS_ING	decide
+decimal	form	NOUN_SG	decimal
+decimals	form	NOUN_PL	decimal
 decision	form	NOUN_SG	decision
 decisions	form	NOUN_PL	decision
 declaration	form	NOUN_SG	declaration
@@ -373,7 +551,15 @@ declared loss	term	-	Declared Loss
 declared losses	term	-	Declared Losses
 declares	form	VERB_TRANS_3SG	declare
 declaring	form	VERB_TRANS_ING	declare
+decompose	form	VERB_TRANS_BASE	decompose
+decomposed	form	VERB_TRANS_ED	decompose
+decomposes	form	VERB_TRANS_3SG	decompose
+decomposing	form	VERB_TRANS_ING	decompose
+decoration	form	NOUN_SG	decoration
+decorations	form	NOUN_PL	decoration
 deep	form	ADJ	deep
+defense	form	NOUN_SG	defense
+defenses	form	NOUN_PL	defense
 defer	form	VERB_TRANS_BASE	defer
 deferred	form	VERB_TRANS_ED	defer
 deferring	form	VERB_TRANS_ING	defer
@@ -382,17 +568,28 @@ define	form	VERB_TRANS_BASE	define
 defined	form	VERB_TRANS_ED	define
 defines	form	VERB_TRANS_3SG	define
 defining	form	VERB_TRANS_ING	define
+definite	form	NOUN_SG	definite
+definites	form	NOUN_PL	definite
+definition	form	NOUN_SG	definition
+definitions	form	NOUN_PL	definition
+degree	form	NOUN_SG	degree
+degrees	form	NOUN_PL	degree
 delete	form	VERB_TRANS_BASE	delete
 deleted	form	VERB_TRANS_ED	delete
 deletes	form	VERB_TRANS_3SG	delete
 deleting	form	VERB_TRANS_ING	delete
+deliberate	form	ADJ	deliberate
 demonstrative	form	NOUN_SG	demonstrative
 demonstratives	form	NOUN_PL	demonstrative
 dense	form	ADJ	dense
 densities	form	NOUN_PL	density
 density	form	NOUN_SG	density
+depend	form	VERB_INTRANS_BASE	depend
+depended	form	VERB_INTRANS_ED	depend
 dependency length	term	-	Dependency Length
 dependency lengths	term	-	Dependency Lengths
+depending	form	VERB_INTRANS_ING	depend
+depends	form	VERB_INTRANS_3SG	depend
 derive	form	VERB_TRANS_BASE	derive
 derived	form	VERB_TRANS_ED	derive
 derives	form	VERB_TRANS_3SG	derive
@@ -404,6 +601,8 @@ describing	form	VERB_TRANS_ING	describe
 design	form	NOUN_SG	design
 design	reject	VERB	plan
 designs	form	NOUN_PL	design
+determiner	form	NOUN_SG	determiner
+determiners	form	NOUN_PL	determiner
 deterministic	form	ADJ	deterministic
 did	form	NEG_AUX_PAST	did
 diff	form	NOUN_SG	diff
@@ -417,12 +616,20 @@ differs	form	VERB_INTRANS_3SG	differ
 difficulties	form	NOUN_PL	difficulty
 difficulty	form	NOUN_SG	difficulty
 diffs	form	NOUN_PL	diff
+digit	form	NOUN_SG	digit
+digits	form	NOUN_PL	digit
+directed	form	ADJ	directed
+disagree	form	VERB_INTRANS_BASE	disagree
+disagreed	form	VERB_INTRANS_ED	disagree
+disagreeing	form	VERB_INTRANS_ING	disagree
+disagrees	form	VERB_INTRANS_3SG	disagree
 discourse	form	NOUN_SG	discourse
 discourse layer	term	-	Discourse Layer
 discourse layers	term	-	Discourse Layers
 discourses	form	NOUN_PL	discourse
 distance	form	NOUN_SG	distance
 distances	form	NOUN_PL	distance
+distinct	form	ADJ	distinct
 do	form	NEG_AUX_BASE	do
 document	form	NOUN_SG	document
 document	reject	VERB	record
@@ -430,6 +637,10 @@ documents	form	NOUN_PL	document
 doer	form	NOUN_SG	doer
 doers	form	NOUN_PL	doer
 does	form	NEG_AUX_3SG	does
+dogfood	term	-	Dogfood
+dogfoods	term	-	Dogfoods
+domain	form	NOUN_SG	domain
+domains	form	NOUN_PL	domain
 drift	form	VERB_INTRANS_BASE	drift
 drifted	form	VERB_INTRANS_ED	drift
 drifting	form	VERB_INTRANS_ING	drift
@@ -438,6 +649,10 @@ drop	form	VERB_TRANS_BASE	drop
 dropped	form	VERB_TRANS_ED	drop
 dropping	form	VERB_TRANS_ING	drop
 drops	form	VERB_TRANS_3SG	drop
+duplicate	form	VERB_TRANS_BASE	duplicate
+duplicated	form	VERB_TRANS_ED	duplicate
+duplicates	form	VERB_TRANS_3SG	duplicate
+duplicating	form	VERB_TRANS_ING	duplicate
 each	ban	-	write "every" with a singular noun (ADR 0014)
 earn	form	VERB_TRANS_BASE	earn
 earned	form	VERB_TRANS_ED	earn
@@ -494,14 +709,27 @@ evidences	form	NOUN_PL	evidence
 exact	form	ADJ	exact
 example	form	NOUN_SG	example
 examples	form	NOUN_PL	example
+exception	form	NOUN_SG	exception
+exceptions	form	NOUN_PL	exception
+exclude	form	VERB_TRANS_BASE	exclude
+excluded	form	VERB_TRANS_ED	exclude
+excludes	form	VERB_TRANS_3SG	exclude
+excluding	form	VERB_TRANS_ING	exclude
 exist	form	VERB_INTRANS_BASE	exist
 existed	form	VERB_INTRANS_ED	exist
+existential	form	ADJ	existential
 existing	form	VERB_INTRANS_ING	exist
 exists	form	VERB_INTRANS_3SG	exist
 expand	form	VERB_TRANS_BASE	expand
 expanded	form	VERB_TRANS_ED	expand
 expanding	form	VERB_TRANS_ING	expand
 expands	form	VERB_TRANS_3SG	expand
+expect	form	VERB_TRANS_BASE	expect
+expectation	form	NOUN_SG	expectation
+expectations	form	NOUN_PL	expectation
+expected	form	VERB_TRANS_ED	expect
+expecting	form	VERB_TRANS_ING	expect
+expects	form	VERB_TRANS_3SG	expect
 expense	form	NOUN_SG	expense
 expenses	form	NOUN_PL	expense
 expensive	form	ADJ	expensive
@@ -509,37 +737,72 @@ explain	form	VERB_TRANS_BASE	explain
 explained	form	VERB_TRANS_ED	explain
 explaining	form	VERB_TRANS_ING	explain
 explains	form	VERB_TRANS_3SG	explain
+explicit	form	ADJ	explicit
 express	ban	-	write "say" ("the language can say a Prohibition")
 expresses	ban	-	write "says"
 expressive	form	ADJ	expressive
 expressiveness	form	NOUN_SG	expressiveness
 expressivenesses	form	NOUN_PL	expressiveness
+extent	form	NOUN_SG	extent
+extents	form	NOUN_PL	extent
+extractor	form	NOUN_SG	extractor
+extractors	form	NOUN_PL	extractor
+fact	form	NOUN_SG	fact
+facts	form	NOUN_PL	fact
 fail	form	VERB_INTRANS_BASE	fail
 fail	reject	NOUN	failure
 failed	form	VERB_INTRANS_ED	fail
 failing	form	VERB_INTRANS_ING	fail
 fails	form	VERB_INTRANS_3SG	fail
+fall	form	VERB_INTRANS_BASE	fall
+fallen	form	VERB_INTRANS_ED	fall
+falling	form	VERB_INTRANS_ING	fall
+falls	form	VERB_INTRANS_3SG	fall
+false	form	ADJ	false
 familiar	form	ADJ	familiar
 familiarities	form	NOUN_PL	familiarity
 familiarity	form	NOUN_SG	familiarity
+fell	form	VERB_INTRANS_ED	fall
 fetch	form	VERB_TRANS_BASE	fetch
 fetched	form	VERB_TRANS_ED	fetch
 fetches	form	VERB_TRANS_3SG	fetch
 fetching	form	VERB_TRANS_ING	fetch
+fiat	form	ADJ	fiat
+field	form	NOUN_SG	field
+fields	form	NOUN_PL	field
 file	form	NOUN_SG	file
 file	reject	VERB	submit
 files	form	NOUN_PL	file
 find	form	VERB_TRANS_BASE	find
 find	reject	NOUN	discovery
+findability	form	NOUN_SG	findability
+findabilitys	form	NOUN_PL	findability
 finding	form	VERB_TRANS_ING	find
 findings	ban	-	write "results" ("the file describes the results")
 finds	form	VERB_TRANS_3SG	find
 first	ban	-	ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
+first token	term	-	First Token
+first tokens	term	-	First Tokens
 five	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 fix	form	VERB_TRANS_BASE	fix
 fixed	form	VERB_TRANS_ED	fix
 fixes	form	VERB_TRANS_3SG	fix
 fixing	form	VERB_TRANS_ING	fix
+flag	form	VERB_TRANS_BASE	flag
+flagged	form	VERB_TRANS_ED	flag
+flagging	form	VERB_TRANS_ING	flag
+flags	form	VERB_TRANS_3SG	flag
+flat	form	ADJ	flat
+flatten	form	VERB_TRANS_BASE	flatten
+flattened	form	VERB_TRANS_ED	flatten
+flattening	form	VERB_TRANS_ING	flatten
+flattens	form	VERB_TRANS_3SG	flatten
+floor	form	NOUN_SG	floor
+floors	form	NOUN_PL	floor
+fold	form	VERB_TRANS_BASE	fold
+folded	form	VERB_TRANS_ED	fold
+folding	form	VERB_TRANS_ING	fold
+folds	form	VERB_TRANS_3SG	fold
 follow	form	VERB_TRANS_BASE	follow
 followed	form	VERB_TRANS_ED	follow
 following	form	VERB_TRANS_ING	follow
@@ -549,19 +812,28 @@ force	form	NOUN_SG	force
 forces	form	NOUN_PL	force
 form tag	term	-	Form Tag
 form tags	term	-	Form Tags
+format	form	NOUN_SG	format
+formats	form	NOUN_PL	format
 formulation	form	NOUN_SG	formulation
 formulations	form	NOUN_PL	formulation
 found	form	VERB_TRANS_ED	find
 four	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
+frame	form	NOUN_SG	frame
+frames	form	NOUN_PL	frame
 free	form	ADJ	free
 frequencies	form	NOUN_PL	frequency
 frequency	form	NOUN_SG	frequency
 from	form	PREP_V	from
 front	form	NOUN_SG	front
 fronts	form	NOUN_PL	front
+full	form	ADJ	full
 function word	term	-	Function Word
 function words	term	-	Function Words
 future	form	ADJ	future
+gain	form	VERB_TRANS_BASE	gain
+gained	form	VERB_TRANS_ED	gain
+gaining	form	VERB_TRANS_ING	gain
+gains	form	VERB_TRANS_3SG	gain
 gap	term	-	Gap
 gaps	term	-	Gaps
 gather	form	VERB_TRANS_BASE	gather
@@ -573,13 +845,24 @@ general	form	ADJ	general
 generated	form	ADJ	generated
 generator	form	NOUN_SG	generator
 generators	form	NOUN_PL	generator
+generic	form	ADJ	generic
+get	form	VERB_TRANS_BASE	get
+gets	form	VERB_TRANS_3SG	get
+getting	form	VERB_TRANS_ING	get
 give	form	VERB_TRANS_BASE	give
 given	form	VERB_TRANS_ED	give
 gives	form	VERB_TRANS_3SG	give
 giving	form	VERB_TRANS_ING	give
+glossaries	form	NOUN_PL	glossary
+glossary	form	NOUN_SG	glossary
+go	form	VERB_INTRANS_BASE	go
 goal	form	NOUN_SG	goal
 goals	form	NOUN_PL	goal
+goes	form	VERB_INTRANS_3SG	go
+going	form	VERB_INTRANS_ING	go
+gone	form	VERB_INTRANS_ED	go
 good	form	ADJ	good
+got	form	VERB_TRANS_ED	get
 grammar	term	-	Grammar
 grammars	term	-	Grammars
 grew	form	VERB_INTRANS_ED	grow
@@ -587,19 +870,31 @@ ground	form	VERB_TRANS_BASE	ground
 grounded	form	VERB_TRANS_ED	ground
 grounding	form	VERB_TRANS_ING	ground
 grounds	form	VERB_TRANS_3SG	ground
+group	form	NOUN_SG	group
+groups	form	NOUN_PL	group
 grow	form	VERB_INTRANS_BASE	grow
 growing	form	VERB_INTRANS_ING	grow
 grown	form	VERB_INTRANS_ED	grow
 grows	form	VERB_INTRANS_3SG	grow
 guard	form	NOUN_SG	guard
 guards	form	NOUN_PL	guard
+guess	form	VERB_TRANS_BASE	guess
+guessed	form	VERB_TRANS_ED	guess
+guesses	form	VERB_TRANS_3SG	guess
+guessing	form	VERB_TRANS_ING	guess
+guidance	form	NOUN_SG	guidance
+guidances	form	NOUN_PL	guidance
 had	form	VERB_TRANS_ED	have
+half	form	NOUN_SG	half
+halves	form	NOUN_PL	half
 handwritten	form	ADJ	handwritten
 has	form	VERB_TRANS_3SG	have
 have	form	VERB_TRANS_BASE	have
 having	form	VERB_TRANS_ING	have
 he	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 head	form	NOUN_SG	head
+head noun	term	-	Head Noun
+head nouns	term	-	Head Nouns
 heads	form	NOUN_PL	head
 hearer	form	NOUN_SG	hearer
 hearers	form	NOUN_PL	hearer
@@ -620,22 +915,53 @@ holding	form	VERB_TRANS_ING	hold
 holds	form	VERB_TRANS_3SG	hold
 hole	form	NOUN_SG	hole
 holes	form	NOUN_PL	hole
+home	form	NOUN_SG	home
+homes	form	NOUN_PL	home
+homograph	form	NOUN_SG	homograph
+homographs	form	NOUN_PL	homograph
+honest	form	ADJ	honest
 hurt	form	VERB_TRANS_BASE	hurt
 hurting	form	VERB_TRANS_ING	hurt
 hurts	form	VERB_TRANS_3SG	hurt
+hyphenated	form	ADJ	hyphenated
+hypotheses	form	NOUN_PL	hypothesis
+hypothesis	form	NOUN_SG	hypothesis
 i	form	PRON_1SG	i
 ideal	form	ADJ	ideal
 identical	form	ADJ	identical
+identifier	form	NOUN_SG	identifier
+identifiers	form	NOUN_PL	identifier
+identities	form	NOUN_PL	identity
+identity	form	NOUN_SG	identity
 if	form	SCONJ_COND	if
+ignore	form	VERB_TRANS_BASE	ignore
+ignored	form	VERB_TRANS_ED	ignore
+ignores	form	VERB_TRANS_3SG	ignore
+ignoring	form	VERB_TRANS_ING	ignore
+imperative	term	-	Imperative
+imperatives	term	-	Imperatives
 improvement	form	NOUN_SG	improvement
 improvements	form	NOUN_PL	improvement
 in	form	PREP_V	in
+include	form	VERB_TRANS_BASE	include
+included	form	VERB_TRANS_ED	include
+includes	form	VERB_TRANS_3SG	include
+including	form	VERB_TRANS_ING	include
 indexical	form	ADJ	indexical
 indexical pronoun	term	-	Indexical Pronoun
 indexical pronouns	term	-	Indexical Pronouns
+infinitive	form	NOUN_SG	infinitive
+infinitives	form	NOUN_PL	infinitive
+inflect	form	VERB_INTRANS_BASE	inflect
+inflected	form	VERB_INTRANS_ED	inflect
+inflecting	form	VERB_INTRANS_ING	inflect
 inflection	form	NOUN_SG	inflection
 inflections	form	NOUN_PL	inflection
+inflects	form	VERB_INTRANS_3SG	inflect
+information	form	NOUN_SG	information
+informations	form	NOUN_PL	information
 initial	form	ADJ	initial
+inner	form	ADJ	inner
 input	form	NOUN_SG	input
 input	reject	VERB	enter
 inputs	form	NOUN_PL	input
@@ -646,18 +972,34 @@ instructions	form	NOUN_PL	instruction
 interrogative	ban	-	the language has no questions yet - write "a question" as a noun, or restructure
 into	form	PREP_V	into
 intransitive	form	ADJ	intransitive
+intro	form	NOUN_SG	intro
+introduce	form	VERB_TRANS_BASE	introduce
+introduced	form	VERB_TRANS_ED	introduce
+introduces	form	VERB_TRANS_3SG	introduce
+introducing	form	VERB_TRANS_ING	introduce
+introes	form	NOUN_PL	intro
 invariant	form	NOUN_SG	invariant
 invariants	form	NOUN_PL	invariant
+invent	form	VERB_TRANS_BASE	invent
+invented	form	VERB_TRANS_ED	invent
+inventing	form	VERB_TRANS_ING	invent
+invents	form	VERB_TRANS_3SG	invent
 irregular	form	ADJ	irregular
 is	form	COPULA_SG	is
 it	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 item	form	NOUN_SG	item
 items	form	NOUN_PL	item
 its	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+jargon	form	NOUN_SG	jargon
+jargons	form	NOUN_PL	jargon
 join	form	VERB_TRANS_BASE	join
 joined	form	VERB_TRANS_ED	join
 joining	form	VERB_TRANS_ING	join
 joins	form	VERB_TRANS_3SG	join
+judge	form	VERB_TRANS_BASE	judge
+judged	form	VERB_TRANS_ED	judge
+judges	form	VERB_TRANS_3SG	judge
+judging	form	VERB_TRANS_ING	judge
 justified	form	VERB_TRANS_ED	justify
 justifies	form	VERB_TRANS_3SG	justify
 justify	form	VERB_TRANS_BASE	justify
@@ -671,6 +1013,8 @@ kinds	form	NOUN_PL	kind
 knew	form	VERB_TRANS_ED	know
 know	form	VERB_TRANS_BASE	know
 knowing	form	VERB_TRANS_ING	know
+knowledge	form	NOUN_SG	knowledge
+knowledges	form	NOUN_PL	knowledge
 known	form	VERB_TRANS_ED	know
 knows	form	VERB_TRANS_3SG	know
 language	form	NOUN_SG	language
@@ -681,16 +1025,25 @@ last	form	ADJ	last
 late	form	ADJ	late
 layer	form	NOUN_SG	layer
 layers	form	NOUN_PL	layer
+learn	form	VERB_TRANS_BASE	learn
+learned	form	VERB_TRANS_ED	learn
+learning	form	VERB_TRANS_ING	learn
+learns	form	VERB_TRANS_3SG	learn
+legal	form	ADJ	legal
 lemma	term	-	Lemma
 lemmas	term	-	Lemmas
 length	form	NOUN_SG	length
 lengths	form	NOUN_PL	length
+lexer	term	-	Lexer
+lexers	term	-	Lexers
 lexicon	term	-	Lexicon
 lexicons	term	-	Lexicons
 limit	form	VERB_TRANS_BASE	limit
 limited	form	VERB_TRANS_ED	limit
 limiting	form	VERB_TRANS_ING	limit
 limits	form	VERB_TRANS_3SG	limit
+line	form	NOUN_SG	line
+lines	form	NOUN_PL	line
 link	form	VERB_TRANS_BASE	link
 linked	form	VERB_TRANS_ED	link
 linking	form	VERB_TRANS_ING	link
@@ -705,11 +1058,21 @@ list	form	NOUN_SG	list
 lists	form	NOUN_PL	list
 load	form	NOUN_SG	load
 loads	form	NOUN_PL	load
+logic	form	NOUN_SG	logic
+logics	form	NOUN_PL	logic
 long	form	ADJ	long
+lookahead	form	NOUN_SG	lookahead
+lookaheads	form	NOUN_PL	lookahead
+loose	form	ADJ	loose
 loss	form	NOUN_SG	loss
 losses	form	NOUN_PL	loss
+loud	form	ADJ	loud
+lowercase	form	NOUN_SG	lowercase
+lowercases	form	NOUN_PL	lowercase
 machine	form	NOUN_SG	machine
 machines	form	NOUN_PL	machine
+macro	form	NOUN_SG	macro
+macros	form	NOUN_PL	macro
 made	form	VERB_TRANS_ED	make
 main	form	ADJ	main
 maintainer	form	NOUN_SG	maintainer
@@ -718,6 +1081,10 @@ make	form	VERB_TRANS_BASE	make
 makes	form	VERB_TRANS_3SG	make
 making	form	VERB_TRANS_ING	make
 mandatory	form	ADJ	mandatory
+map	form	VERB_TRANS_BASE	map
+mapped	form	VERB_TRANS_ED	map
+mapping	form	VERB_TRANS_ING	map
+maps	form	VERB_TRANS_3SG	map
 mark	form	VERB_TRANS_BASE	mark
 marked	form	VERB_TRANS_ED	mark
 marker	form	NOUN_SG	marker
@@ -730,16 +1097,28 @@ matches	form	VERB_TRANS_3SG	match
 matching	form	VERB_TRANS_ING	match
 may	ban	-	for permission write "can"; for possibility rephrase the sentence (ADR 0009)
 meaning	form	NOUN_SG	meaning
+meaningless	form	ADJ	meaningless
 meanings	form	NOUN_PL	meaning
 measure	form	VERB_TRANS_BASE	measure
 measured	form	VERB_TRANS_ED	measure
+measurement	form	NOUN_SG	measurement
+measurements	form	NOUN_PL	measurement
 measures	form	VERB_TRANS_3SG	measure
 measuring	form	VERB_TRANS_ING	measure
 mechanical	form	ADJ	mechanical
 mechanism	form	NOUN_SG	mechanism
 mechanisms	form	NOUN_PL	mechanism
+meet	form	VERB_TRANS_BASE	meet
+meeting	form	VERB_TRANS_ING	meet
+meets	form	VERB_TRANS_3SG	meet
+member	form	NOUN_SG	member
+members	form	NOUN_PL	member
 memories	form	NOUN_PL	memory
 memory	form	NOUN_SG	memory
+mention	form	VERB_TRANS_BASE	mention
+mentioned	form	VERB_TRANS_ED	mention
+mentioning	form	VERB_TRANS_ING	mention
+mentions	form	VERB_TRANS_3SG	mention
 merge	form	VERB_TRANS_BASE	merge
 merged	form	VERB_TRANS_ED	merge
 merges	form	VERB_TRANS_3SG	merge
@@ -747,12 +1126,19 @@ merging	form	VERB_TRANS_ING	merge
 message	form	NOUN_SG	message
 message	reject	VERB	notify
 messages	form	NOUN_PL	message
+met	form	VERB_TRANS_ED	meet
 metric	form	NOUN_SG	metric
 metrics	form	NOUN_PL	metric
 migrate	form	VERB_TRANS_BASE	migrate
 migrated	form	VERB_TRANS_ED	migrate
 migrates	form	VERB_TRANS_3SG	migrate
 migrating	form	VERB_TRANS_ING	migrate
+minimum	form	NOUN_SG	minimum
+minimums	form	NOUN_PL	minimum
+miss	form	NOUN_SG	miss
+misses	form	NOUN_PL	miss
+mix	form	NOUN_SG	mix
+mixes	form	NOUN_PL	mix
 modal	form	NOUN_SG	modal
 modals	form	NOUN_PL	modal
 model	form	NOUN_SG	model
@@ -763,12 +1149,22 @@ monitor	form	VERB_TRANS_BASE	monitor
 monitored	form	VERB_TRANS_ED	monitor
 monitoring	form	VERB_TRANS_ING	monitor
 monitors	form	VERB_TRANS_3SG	monitor
+move	form	VERB_TRANS_BASE	move
+moved	form	VERB_TRANS_ED	move
+moves	form	VERB_TRANS_3SG	move
+moving	form	VERB_TRANS_ING	move
 must	form	MODAL_MUST	must
 my	form	POSS_1SG	my
 name	form	VERB_TRANS_BASE	name
+name	term	-	Name
 named	form	VERB_TRANS_ED	name
 names	form	VERB_TRANS_3SG	name
+names	term	-	Names
 naming	form	VERB_TRANS_ING	name
+narrow	form	VERB_TRANS_BASE	narrow
+narrowed	form	VERB_TRANS_ED	narrow
+narrowing	form	VERB_TRANS_ING	narrow
+narrows	form	VERB_TRANS_3SG	narrow
 natural	form	ADJ	natural
 naturalness	form	NOUN_SG	naturalness
 naturalnesses	form	NOUN_PL	naturalness
@@ -780,6 +1176,7 @@ needs	form	VERB_TRANS_3SG	need
 negated	ban	-	"negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation"
 negation	term	-	Negation
 negations	term	-	Negations
+negative	form	ADJ	negative
 nested	form	ADJ	nested
 new	form	ADJ	new
 nine	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
@@ -789,15 +1186,21 @@ noises	form	NOUN_PL	noise
 noisy	form	ADJ	noisy
 normative	form	ADJ	normative
 not	form	NEG	not
+notation	form	NOUN_SG	notation
+notations	form	NOUN_PL	notation
 note	form	NOUN_SG	note
 note	reject	VERB	record
 notes	form	NOUN_PL	note
 noun	form	NOUN_SG	noun
 noun phrase	term	-	Noun Phrase
 noun phrases	term	-	Noun Phrases
+noun preposition	term	-	Noun Preposition
+noun prepositions	term	-	Noun Prepositions
 nouns	form	NOUN_PL	noun
 number	form	NOUN_SG	number
 numbers	form	NOUN_PL	number
+numeral	form	NOUN_SG	numeral
+numerals	form	NOUN_PL	numeral
 object	form	NOUN_SG	object
 objects	form	NOUN_PL	object
 obligation	form	NOUN_SG	obligation
@@ -807,11 +1210,16 @@ occurred	form	VERB_INTRANS_ED	occur
 occurring	form	VERB_INTRANS_ING	occur
 occurs	form	VERB_INTRANS_3SG	occur
 of	form	PREP_N	of
+offer	form	VERB_TRANS_BASE	offer
+offered	form	VERB_TRANS_ED	offer
+offering	form	VERB_TRANS_ING	offer
+offers	form	VERB_TRANS_3SG	offer
 old	form	ADJ	old
 on	form	PREP_V	on
 one	form	NUM_SG	one
 ongoing	form	ADJ	ongoing
 only	ban	-	"only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence
+opaque	form	ADJ	opaque
 open	form	VERB_TRANS_BASE	open
 open	reject	ADJ	unlocked
 open dependencies	term	-	Open Dependencies
@@ -827,8 +1235,15 @@ option	form	NOUN_SG	option
 options	form	NOUN_PL	option
 or	form	CONJ	or
 order	form	NOUN_SG	order
+ordered	form	ADJ	ordered
 orders	form	NOUN_PL	order
+ordinal	form	NOUN_SG	ordinal
+ordinals	form	NOUN_PL	ordinal
+ordinary	form	ADJ	ordinary
 original	form	ADJ	original
+orthographic	form	ADJ	orthographic
+orthographies	form	NOUN_PL	orthography
+orthography	form	NOUN_SG	orthography
 other	ban	-	"other" refers to something already named - repeat the noun, or name the second thing
 our	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
 output	form	NOUN_SG	output
@@ -839,12 +1254,28 @@ outranked	form	VERB_TRANS_ED	outrank
 outranking	form	VERB_TRANS_ING	outrank
 outranks	form	VERB_TRANS_3SG	outrank
 over	form	PREP_V	over
+overridden	form	VERB_TRANS_ED	override
+override	form	VERB_TRANS_BASE	override
+overrides	form	VERB_TRANS_3SG	override
+overriding	form	VERB_TRANS_ING	override
+overrode	form	VERB_TRANS_ED	override
 overshoot	form	VERB_INTRANS_BASE	overshoot
 overshooting	form	VERB_INTRANS_ING	overshoot
 overshoots	form	VERB_INTRANS_3SG	overshoot
 overshot	form	VERB_INTRANS_ED	overshoot
+pack	form	NOUN_SG	pack
+packs	form	NOUN_PL	pack
+padding	form	NOUN_SG	padding
+paddings	form	NOUN_PL	padding
+paid	form	VERB_TRANS_ED	pay
+pair	form	NOUN_SG	pair
+pairs	form	NOUN_PL	pair
 paradigm	term	-	Paradigm
 paradigms	term	-	Paradigms
+paragraph	form	NOUN_SG	paragraph
+paragraphs	form	NOUN_PL	paragraph
+paraphrase	form	NOUN_SG	paraphrase
+paraphrases	form	NOUN_PL	paraphrase
 parse	form	VERB_TRANS_BASE	parse
 parse	term	-	Parse
 parsed	form	VERB_TRANS_ED	parse
@@ -860,8 +1291,14 @@ parts	form	NOUN_PL	part
 passive	term	-	Passive
 passives	term	-	Passives
 past	form	ADJ	past
+pattern	form	NOUN_SG	pattern
+patterns	form	NOUN_PL	pattern
+pay	form	VERB_TRANS_BASE	pay
+paying	form	VERB_TRANS_ING	pay
+pays	form	VERB_TRANS_3SG	pay
 people	form	NOUN_PL	person
 percent	form	PERCENT	percent
+perfect	form	ADJ	perfect
 permanent	form	ADJ	permanent
 permission	form	NOUN_SG	permission
 permissions	form	NOUN_PL	permission
@@ -870,6 +1307,10 @@ permits	ban	-	write "allows"
 person	form	NOUN_SG	person
 phrase	form	NOUN_SG	phrase
 phrases	form	NOUN_PL	phrase
+pick	form	VERB_TRANS_BASE	pick
+picked	form	VERB_TRANS_ED	pick
+picking	form	VERB_TRANS_ING	pick
+picks	form	VERB_TRANS_3SG	pick
 pin	form	VERB_TRANS_BASE	pin
 pinned	form	VERB_TRANS_ED	pin
 pinning	form	VERB_TRANS_ING	pin
@@ -883,18 +1324,28 @@ planning	form	VERB_TRANS_ING	plan
 plans	form	VERB_TRANS_3SG	plan
 pleasant	form	ADJ	pleasant
 please	ban	-	politeness markers are not minglish - state the instruction directly or write "you must ..."
+plural	form	ADJ	plural
 point	form	NOUN_SG	point
 points	form	NOUN_PL	point
 policies	form	NOUN_PL	policy
 policy	form	NOUN_SG	policy
 politeness	form	NOUN_SG	politeness
 politenesses	form	NOUN_PL	politeness
+position	form	NOUN_SG	position
+positions	form	NOUN_PL	position
+positive	form	ADJ	positive
+possession	form	NOUN_SG	possession
+possessions	form	NOUN_PL	possession
 possessive	form	ADJ	possessive
 possibilities	form	NOUN_PL	possibility
 possibility	form	NOUN_SG	possibility
+precedent	form	NOUN_SG	precedent
+precedents	form	NOUN_PL	precedent
 precise	form	ADJ	precise
 precision	form	NOUN_SG	precision
 precisions	form	NOUN_PL	precision
+predicate	form	NOUN_SG	predicate
+predicates	form	NOUN_PL	predicate
 predict	form	VERB_TRANS_BASE	predict
 predicted	form	VERB_TRANS_ED	predict
 predicting	form	VERB_TRANS_ING	predict
@@ -908,8 +1359,18 @@ prepositional phrase	term	-	Prepositional Phrase
 prepositional phrases	term	-	Prepositional Phrases
 prepositions	form	NOUN_PL	preposition
 present	form	ADJ	present
+pressure	form	NOUN_SG	pressure
+pressures	form	NOUN_PL	pressure
+prevent	form	VERB_TRANS_BASE	prevent
+prevented	form	VERB_TRANS_ED	prevent
+preventing	form	VERB_TRANS_ING	prevent
+prevents	form	VERB_TRANS_3SG	prevent
 primary	form	ADJ	primary
 prior	form	ADJ	prior
+problem	form	NOUN_SG	problem
+problems	form	NOUN_PL	problem
+procedure	form	NOUN_SG	procedure
+procedures	form	NOUN_PL	procedure
 process	form	NOUN_SG	process
 process	reject	VERB	handle
 processes	form	NOUN_PL	process
@@ -917,6 +1378,8 @@ produce	form	VERB_TRANS_BASE	produce
 produced	form	VERB_TRANS_ED	produce
 produces	form	VERB_TRANS_3SG	produce
 producing	form	VERB_TRANS_ING	produce
+product	form	NOUN_SG	product
+products	form	NOUN_PL	product
 profile	form	NOUN_SG	profile
 profiles	form	NOUN_PL	profile
 program	form	NOUN_SG	program
@@ -928,32 +1391,60 @@ prohibition	term	-	Prohibition
 prohibitions	term	-	Prohibitions
 project	form	NOUN_SG	project
 projects	form	NOUN_PL	project
+promotion	form	NOUN_SG	promotion
+promotions	form	NOUN_PL	promotion
+prompt	form	NOUN_SG	prompt
+prompts	form	NOUN_PL	prompt
 pronoun	form	NOUN_SG	pronoun
 pronouns	form	NOUN_PL	pronoun
+properties	form	NOUN_PL	property
+property	form	NOUN_SG	property
+proposal	form	NOUN_SG	proposal
+proposals	form	NOUN_PL	proposal
+propositional loss	term	-	Propositional Loss
+propositional losses	term	-	Propositional Losses
 prose	form	NOUN_SG	prose
 proses	form	NOUN_PL	prose
 protect	form	VERB_TRANS_BASE	protect
 protected	form	VERB_TRANS_ED	protect
 protecting	form	VERB_TRANS_ING	protect
 protects	form	VERB_TRANS_3SG	protect
+provisional	form	ADJ	provisional
 proxies	form	NOUN_PL	proxy
 proxy	form	NOUN_SG	proxy
+purpose	form	NOUN_SG	purpose
+purposes	form	NOUN_PL	purpose
 put	form	VERB_TRANS_BASE	put
 puts	form	VERB_TRANS_3SG	put
 putting	form	VERB_TRANS_ING	put
 qualities	form	NOUN_PL	quality
 quality	form	NOUN_SG	quality
+quantification	form	NOUN_SG	quantification
+quantifications	form	NOUN_PL	quantification
+quantified	form	ADJ	quantified
+quantifier	form	NOUN_SG	quantifier
+quantifiers	form	NOUN_PL	quantifier
+quantities	form	NOUN_PL	quantity
+quantity	form	NOUN_SG	quantity
 question	form	NOUN_SG	question
 questions	form	NOUN_PL	question
 queue	form	NOUN_SG	queue
 queue	reject	VERB	wait
 queues	form	NOUN_PL	queue
+quotation	form	NOUN_SG	quotation
+quotations	form	NOUN_PL	quotation
 quoted	form	ADJ	quoted
+rank	form	VERB_TRANS_BASE	rank
+ranked	form	VERB_TRANS_ED	rank
+ranking	form	VERB_TRANS_ING	rank
+ranks	form	VERB_TRANS_3SG	rank
 rare	form	ADJ	rare
 rarities	form	NOUN_PL	rarity
 rarity	form	NOUN_SG	rarity
+ratio	form	NOUN_SG	ratio
 rationale	form	NOUN_SG	rationale
 rationales	form	NOUN_PL	rationale
+ratios	form	NOUN_PL	ratio
 reactive	form	ADJ	reactive
 read	form	VERB_TRANS_BASE	read
 read	reject	NOUN	text
@@ -969,6 +1460,19 @@ reappear	form	VERB_INTRANS_BASE	reappear
 reappeared	form	VERB_INTRANS_ED	reappear
 reappearing	form	VERB_INTRANS_ING	reappear
 reappears	form	VERB_INTRANS_3SG	reappear
+reason	form	NOUN_SG	reason
+reasons	form	NOUN_PL	reason
+rebuild	form	VERB_TRANS_BASE	rebuild
+rebuilding	form	VERB_TRANS_ING	rebuild
+rebuilds	form	VERB_TRANS_3SG	rebuild
+rebuilt	form	VERB_TRANS_ED	rebuild
+recast	form	VERB_TRANS_BASE	recast
+recasting	form	VERB_TRANS_ING	recast
+recasts	form	VERB_TRANS_3SG	recast
+recognize	form	VERB_TRANS_BASE	recognize
+recognized	form	VERB_TRANS_ED	recognize
+recognizes	form	VERB_TRANS_3SG	recognize
+recognizing	form	VERB_TRANS_ING	recognize
 record	form	VERB_TRANS_BASE	record
 recorded	form	VERB_TRANS_ED	record
 recording	form	VERB_TRANS_ING	record
@@ -991,6 +1495,18 @@ referent	form	NOUN_SG	referent
 referents	form	NOUN_PL	referent
 refering	form	VERB_INTRANS_ING	refer
 refers	form	VERB_INTRANS_3SG	refer
+refuse	form	VERB_TRANS_BASE	refuse
+refused	form	VERB_TRANS_ED	refuse
+refuses	form	VERB_TRANS_3SG	refuse
+refusing	form	VERB_TRANS_ING	refuse
+register	form	NOUN_SG	register
+register loss	term	-	Register Loss
+register losses	term	-	Register Losses
+registers	form	NOUN_PL	register
+regret	form	VERB_TRANS_BASE	regret
+regrets	form	VERB_TRANS_3SG	regret
+regretted	form	VERB_TRANS_ED	regret
+regretting	form	VERB_TRANS_ING	regret
 reject	form	VERB_TRANS_BASE	reject
 reject	reject	NOUN	outcast
 rejected	form	VERB_TRANS_ED	reject
@@ -1002,10 +1518,25 @@ rejections	term	-	Rejections
 rejects	form	VERB_TRANS_3SG	reject
 relation	form	NOUN_SG	relation
 relations	form	NOUN_PL	relation
+relative	form	ADJ	relative
+remedies	form	NOUN_PL	remedy
+remedy	form	NOUN_SG	remedy
 remove	form	VERB_TRANS_BASE	remove
 removed	form	VERB_TRANS_ED	remove
 removes	form	VERB_TRANS_3SG	remove
 removing	form	VERB_TRANS_ING	remove
+rename	form	VERB_TRANS_BASE	rename
+renamed	form	VERB_TRANS_ED	rename
+renames	form	VERB_TRANS_3SG	rename
+renaming	form	VERB_TRANS_ING	rename
+rendering	form	NOUN_SG	rendering
+renderings	form	NOUN_PL	rendering
+reopen	form	VERB_TRANS_BASE	reopen
+reopened	form	VERB_TRANS_ED	reopen
+reopening	form	VERB_TRANS_ING	reopen
+reopens	form	VERB_TRANS_3SG	reopen
+repair	form	NOUN_SG	repair
+repairs	form	NOUN_PL	repair
 repeat	form	VERB_TRANS_BASE	repeat
 repeated	form	VERB_TRANS_ED	repeat
 repeating	form	VERB_TRANS_ING	repeat
@@ -1065,15 +1596,27 @@ revisit	form	VERB_TRANS_BASE	revisit
 revisited	form	VERB_TRANS_ED	revisit
 revisiting	form	VERB_TRANS_ING	revisit
 revisits	form	VERB_TRANS_3SG	revisit
+reward	form	VERB_TRANS_BASE	reward
+rewarded	form	VERB_TRANS_ED	reward
+rewarding	form	VERB_TRANS_ING	reward
+rewards	form	VERB_TRANS_3SG	reward
 rewrite	form	NOUN_SG	rewrite
 rewrites	form	NOUN_PL	rewrite
 right	form	NOUN_SG	right
 rights	form	NOUN_PL	right
 robotic	form	ADJ	robotic
+role	form	NOUN_SG	role
+roles	form	NOUN_PL	role
+row	form	NOUN_SG	row
+rows	form	NOUN_PL	row
 rule	form	NOUN_SG	rule
 rules	form	NOUN_PL	rule
+run	form	NOUN_SG	run
+runs	form	NOUN_PL	run
+safe	form	ADJ	safe
 said	form	VERB_TRANS_ED	say
 same	ban	-	"same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023)
+sat	form	VERB_INTRANS_ED	sit
 save	form	VERB_TRANS_BASE	save
 saved	form	VERB_TRANS_ED	save
 saves	form	VERB_TRANS_3SG	save
@@ -1118,6 +1661,8 @@ separate	form	VERB_TRANS_BASE	separate
 separated	form	VERB_TRANS_ED	separate
 separates	form	VERB_TRANS_3SG	separate
 separating	form	VERB_TRANS_ING	separate
+separator	form	NOUN_SG	separator
+separators	form	NOUN_PL	separator
 server	form	NOUN_SG	server
 servers	form	NOUN_PL	server
 session	form	NOUN_SG	session
@@ -1133,18 +1678,38 @@ she	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 short	form	ADJ	short
 show	form	VERB_TRANS_BASE	show
 show	reject	NOUN	display
+showcase	form	NOUN_SG	showcase
+showcases	form	NOUN_PL	showcase
 showed	form	VERB_TRANS_ED	show
 showing	form	VERB_TRANS_ING	show
 shown	form	VERB_TRANS_ED	show
 shows	form	VERB_TRANS_3SG	show
+signal	form	NOUN_SG	signal
+signals	form	NOUN_PL	signal
+signature	form	NOUN_SG	signature
+signatures	form	NOUN_PL	signature
+silent	form	ADJ	silent
 since	ban	-	"since" is causal or temporal - for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
+single	form	ADJ	single
+singular	form	ADJ	singular
+sit	form	VERB_INTRANS_BASE	sit
+sits	form	VERB_INTRANS_3SG	sit
+sitting	form	VERB_INTRANS_ING	sit
+situation	form	NOUN_SG	situation
+situations	form	NOUN_PL	situation
 six	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
+size	form	NOUN_SG	size
+sizes	form	NOUN_PL	size
+skill	form	NOUN_SG	skill
+skills	form	NOUN_PL	skill
 small	form	ADJ	small
 so	form	RESULT	so
 some	form	QUANT_EXIST	some
 source	form	NOUN_SG	source
 source	reject	VERB	find
 sources	form	NOUN_PL	source
+span	form	NOUN_SG	span
+spans	form	NOUN_PL	span
 speaker	form	NOUN_SG	speaker
 speakers	form	NOUN_PL	speaker
 spelling	form	NOUN_SG	spelling
@@ -1152,6 +1717,8 @@ spellings	form	NOUN_PL	spelling
 split	form	VERB_TRANS_BASE	split
 splits	form	VERB_TRANS_3SG	split
 splitting	form	VERB_TRANS_ING	split
+square	form	NOUN_SG	square
+squares	form	NOUN_PL	square
 stall	form	VERB_INTRANS_BASE	stall
 stalled	form	VERB_INTRANS_ED	stall
 stalling	form	VERB_INTRANS_ING	stall
@@ -1165,6 +1732,14 @@ state	form	NOUN_SG	state
 statement	form	NOUN_SG	statement
 statements	form	NOUN_PL	statement
 states	form	NOUN_PL	state
+status	form	NOUN_SG	status
+statuses	form	NOUN_PL	status
+stay	form	VERB_INTRANS_BASE	stay
+stayed	form	VERB_INTRANS_ED	stay
+staying	form	VERB_INTRANS_ING	stay
+stays	form	VERB_INTRANS_3SG	stay
+step	form	NOUN_SG	step
+steps	form	NOUN_PL	step
 stop	form	VERB_TRANS_BASE	stop
 stop	reject	NOUN	halt
 stopped	form	VERB_TRANS_ED	stop
@@ -1175,7 +1750,14 @@ store	reject	NOUN	shop
 stored	form	VERB_TRANS_ED	store
 stores	form	VERB_TRANS_3SG	store
 storing	form	VERB_TRANS_ING	store
+strict	form	ADJ	strict
+string	form	NOUN_SG	string
+strings	form	NOUN_PL	string
+strong	form	ADJ	strong
+structural	form	ADJ	structural
 structure	form	NOUN_SG	structure
+structure loss	term	-	Structure Loss
+structure losses	term	-	Structure Losses
 structures	form	NOUN_PL	structure
 style	form	NOUN_SG	style
 styles	form	NOUN_PL	style
@@ -1183,6 +1765,8 @@ subject	form	NOUN_SG	subject
 subjects	form	NOUN_PL	subject
 subset	form	NOUN_SG	subset
 subsets	form	NOUN_PL	subset
+subsystem	form	NOUN_SG	subsystem
+subsystems	form	NOUN_PL	subsystem
 suggest	form	VERB_TRANS_BASE	suggest
 suggested	form	VERB_TRANS_ED	suggest
 suggesting	form	VERB_TRANS_ING	suggest
@@ -1194,10 +1778,16 @@ surprises	form	NOUN_PL	surprise
 swap	form	NOUN_SG	swap
 swap	reject	VERB	replace
 swaps	form	NOUN_PL	swap
+sweep	form	NOUN_SG	sweep
+sweeps	form	NOUN_PL	sweep
 sweet	form	ADJ	sweet
 sweet	reject	NOUN	candy
+symbol	form	NOUN_SG	symbol
+symbols	form	NOUN_PL	symbol
 synonym	form	NOUN_SG	synonym
 synonyms	form	NOUN_PL	synonym
+syntax	form	NOUN_SG	syntax
+syntaxes	form	NOUN_PL	syntax
 system	form	NOUN_SG	system
 systems	form	NOUN_PL	system
 table	form	NOUN_SG	table
@@ -1212,12 +1802,15 @@ taste	form	NOUN_SG	taste
 tastes	form	NOUN_PL	taste
 team	form	NOUN_SG	team
 teams	form	NOUN_PL	team
+technical	form	ADJ	technical
 tell	form	VERB_TRANS_BASE	tell
 telling	form	VERB_TRANS_ING	tell
 tells	form	VERB_TRANS_3SG	tell
 ten	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 tense	term	-	Tense
 tenses	term	-	Tenses
+term	form	NOUN_SG	term
+terms	form	NOUN_PL	term
 test	form	NOUN_SG	test
 test	reject	VERB	check
 tests	form	NOUN_PL	test
@@ -1247,9 +1840,19 @@ to	form	PREP_V	to
 token	form	NOUN_SG	token
 tokens	form	NOUN_PL	token
 told	form	VERB_TRANS_ED	tell
+tolerate	form	VERB_TRANS_BASE	tolerate
+tolerated	form	VERB_TRANS_ED	tolerate
+tolerates	form	VERB_TRANS_3SG	tolerate
+tolerating	form	VERB_TRANS_ING	tolerate
 took	form	VERB_TRANS_ED	take
 tool	form	NOUN_SG	tool
 tools	form	NOUN_PL	tool
+topic	form	NOUN_SG	topic
+topics	form	NOUN_PL	topic
+touch	form	VERB_TRANS_BASE	touch
+touched	form	VERB_TRANS_ED	touch
+touches	form	VERB_TRANS_3SG	touch
+touching	form	VERB_TRANS_ING	touch
 trade	form	VERB_TRANS_BASE	trade
 traded	form	VERB_TRANS_ED	trade
 trades	form	VERB_TRANS_3SG	trade
@@ -1261,6 +1864,11 @@ translation	form	NOUN_SG	translation
 translation pair	term	-	Translation Pair
 translation pairs	term	-	Translation Pairs
 translations	form	NOUN_PL	translation
+transparencies	form	NOUN_PL	transparency
+transparency	form	NOUN_SG	transparency
+transparent	form	ADJ	transparent
+treadmill	form	NOUN_SG	treadmill
+treadmills	form	NOUN_PL	treadmill
 tree	form	NOUN_SG	tree
 trees	form	NOUN_PL	tree
 trust	form	VERB_TRANS_BASE	trust
@@ -1269,13 +1877,43 @@ trusting	form	VERB_TRANS_ING	trust
 trusts	form	VERB_TRANS_3SG	trust
 truth	form	NOUN_SG	truth
 truths	form	NOUN_PL	truth
+turn	form	VERB_TRANS_BASE	turn
+turned	form	VERB_TRANS_ED	turn
+turning	form	VERB_TRANS_ING	turn
+turns	form	VERB_TRANS_3SG	turn
+twin	form	NOUN_SG	twin
+twins	form	NOUN_PL	twin
 two	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 tying	form	VERB_INTRANS_ING	tie
 typo	form	NOUN_SG	typo
 typos	form	NOUN_PL	typo
+unblock	form	VERB_TRANS_BASE	unblock
+unblocked	form	VERB_TRANS_ED	unblock
+unblocking	form	VERB_TRANS_ING	unblock
+unblocks	form	VERB_TRANS_3SG	unblock
+underrate	form	VERB_TRANS_BASE	underrate
+underrated	form	VERB_TRANS_ED	underrate
+underrates	form	VERB_TRANS_3SG	underrate
+underrating	form	VERB_TRANS_ING	underrate
+unfold	form	VERB_TRANS_BASE	unfold
+unfolded	form	VERB_TRANS_ED	unfold
+unfolding	form	VERB_TRANS_ING	unfold
+unfolds	form	VERB_TRANS_3SG	unfold
+unit	form	NOUN_SG	unit
+units	form	NOUN_PL	unit
+universal	form	ADJ	universal
 unknown	form	ADJ	unknown
+unnatural	form	ADJ	unnatural
+unquoted	form	ADJ	unquoted
+unreadable	form	ADJ	unreadable
 unused	form	ADJ	unused
+update	form	VERB_TRANS_BASE	update
+updated	form	VERB_TRANS_ED	update
+updates	form	VERB_TRANS_3SG	update
+updating	form	VERB_TRANS_ING	update
 us	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
+usage	form	NOUN_SG	usage
+usages	form	NOUN_PL	usage
 use	form	VERB_TRANS_BASE	use
 use	reject	NOUN	usage
 used	form	VERB_TRANS_ED	use
@@ -1284,9 +1922,14 @@ user	form	NOUN_SG	user
 users	form	NOUN_PL	user
 uses	form	VERB_TRANS_3SG	use
 using	form	VERB_TRANS_ING	use
+valid	form	ADJ	valid
 validator	form	NOUN_SG	validator
 validators	form	NOUN_PL	validator
+value	form	NOUN_SG	value
+values	form	NOUN_PL	value
 verb	form	NOUN_SG	verb
+verb preposition	term	-	Verb Preposition
+verb prepositions	term	-	Verb Prepositions
 verbose	form	ADJ	verbose
 verbs	form	NOUN_PL	verb
 verified	form	VERB_TRANS_ED	verify
@@ -1295,18 +1938,33 @@ verify	form	VERB_TRANS_BASE	verify
 verifying	form	VERB_TRANS_ING	verify
 version	form	NOUN_SG	version
 versions	form	NOUN_PL	version
+violate	form	VERB_TRANS_BASE	violate
+violated	form	VERB_TRANS_ED	violate
+violates	form	VERB_TRANS_3SG	violate
+violating	form	VERB_TRANS_ING	violate
+vocative	form	NOUN_SG	vocative
+vocatives	form	NOUN_PL	vocative
+wait	form	VERB_INTRANS_BASE	wait
+waited	form	VERB_INTRANS_ED	wait
+waiting	form	VERB_INTRANS_ING	wait
+waits	form	VERB_INTRANS_3SG	wait
 waive	form	VERB_TRANS_BASE	waive
 waived	form	VERB_TRANS_ED	waive
 waiver	term	-	Waiver
 waivers	term	-	Waivers
 waives	form	VERB_TRANS_3SG	waive
 waiving	form	VERB_TRANS_ING	waive
+warning	form	NOUN_SG	warning
+warnings	form	NOUN_PL	warning
 was	form	COPULA_SG_PAST	was
+way	form	NOUN_SG	way
+ways	form	NOUN_PL	way
 we	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
 weigh	form	VERB_TRANS_BASE	weigh
 weighed	form	VERB_TRANS_ED	weigh
 weighing	form	VERB_TRANS_ING	weigh
 weighs	form	VERB_TRANS_3SG	weigh
+went	form	VERB_INTRANS_ED	go
 were	form	COPULA_PL_PAST	were
 where	ban	-	no relative clauses - split the sentence and repeat the noun (ADR 0010)
 whole	form	ADJ	whole
@@ -1317,6 +1975,8 @@ with	form	PREP_V	with
 won	form	VERB_INTRANS_ED	win
 word	form	NOUN_SG	word
 word	reject	VERB	write
+wording	form	NOUN_SG	wording
+wordings	form	NOUN_PL	wording
 words	form	NOUN_PL	word
 work	form	NOUN_SG	work
 works	form	NOUN_PL	work

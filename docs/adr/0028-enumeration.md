@@ -5,34 +5,49 @@ Status: proposed (tentative). First block-level structure.
 
 ## Context
 
-Paragraph repair on ADR 0002 turned "Banned: … (it, they, he, she, this,
-that, these, those)" into nine sentences, one per pronoun. The proposal was
-valid and unreadable. Lists are how technical prose enumerates members of
-a set; the language had only sentences, so a list became repetition.
+The repair of the paragraphs turned the list of the pronouns into 9
+sentences. The proposal was valid. The proposal was unreadable. Technical
+texts enumerate the members of a set with a list. The language had one
+kind of the structures. The structure was the sentence. The language
+turned a list into a repetition.
 
 ## Decision
 
-- An **Enumeration** is a block, not a sentence: one plain statement
-  ending in a colon, then one line per item starting with `- `.
-- By fiat the items enumerate the statement's **last noun phrase**. That
-  phrase must be plural, counted with digits, or `every <noun>`; it must
-  end the statement (no trailing prepositional phrase or adjective, no
-  coordination tail). A digit count must equal the item count.
-- An **item is one noun phrase**: a quoted word, a Capitalized term, a
-  name, or `the <noun>`. Clauses are not items; nested lists do not exist.
-- The tools treat a block as one unit: `just lint` takes it as one argument
-  with newlines; the corpus, the document lint, the ADR extractor and the
-  paragraph repair flow group an intro line and its items. In markdown the
-  dashes render as bullets.
-- Deferred: ordered (numbered) lists whose items are clauses (steps,
-  rules); a colon inside a sentence; an intro that is a question.
+An Enumeration is a block. An Enumeration is not a sentence. The block has
+one plain statement. The statement ends with a colon. The block has one
+line for every item. The string "- " opens every item.
+
+The items enumerate the last Noun Phrase of the statement. The Noun Phrase
+is plural. A quantity has a plural noun. The phrase "every <noun>" is
+legal. The Noun Phrase is the last phrase of the statement. A Prepositional Phrase does not
+follow the Noun Phrase. An adjective does not follow the Noun Phrase. A
+Coordination does not follow the Noun Phrase. If the statement has a
+quantity, then the number of the items matches the quantity.
+
+An item is one Noun Phrase. The language allows 4 kinds of the items:
+- a quoted word
+- a capitalized term
+- a Name
+- the phrase "the <noun>"
+
+A clause is not an item. A nested list does not exist.
+
+Every tool reads a block. The block is one unit. The command "just lint" takes a block
+in one argument. The corpus keeps the intro with the items. The tool "lint-file" keeps the intro with the items. The extractor of the decisions
+keeps the intro with the items. The repair of the paragraphs keeps the
+intro with the items. Markdown turns a dash into a bullet.
+
+The maintainers deferred 3 questions. One question is an ordered list. The
+items of an ordered list are clauses. The steps of a procedure are one
+example. One question is an inner colon. One question is the
+intro. A future design can accept a question in the intro.
 
 ## Consequences
 
-- "The language allows 4 pronouns: - "I" - "you" - "my" - "your"" replaces
-  four sentences, and the count is checked.
-- The intro's syntactic role is fixed narrowly on purpose: only the object
-  (or copular complement) can be enumerated, so a reader never has to
-  guess which phrase the list expands.
-- The first construction that spans lines; the extractor's line-based
-  contract gains one exception, marked with ⏎ in its output.
+- One block replaces 4 sentences. The Linter checks the number of the
+  items.
+- The role of the intro is small. The items enumerate the object or
+  enumerate the Complement. The reader does not guess the phrase of the
+  list.
+- A block has lines. A sentence has one line. The extractor marks the
+  boundary of a line with the symbol "⏎".

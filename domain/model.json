@@ -157,7 +157,12 @@
     "definition": "people curate the Seed. people choose every Lemma.",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "curates",
+      "past": "curated",
+      "ing": "curating"
+    }
   },
   {
     "lemma": "lint",
@@ -178,17 +183,27 @@
     "definition": "the Linter parses a sentence. the Linter finds the Parse of the sentence.",
     "waive": [
       "NOUN"
-    ]
+    ],
+    "forms": {
+      "third": "parses"
+    }
   },
   {
     "lemma": "waive",
     "category": "VERB_TRANS",
-    "definition": "the maintainers waive the Redirect of a Rejected Sense. the Waiver records the choice."
+    "definition": "the maintainers waive the Redirect of a Rejected Sense. the Waiver records the choice.",
+    "forms": {
+      "third": "waives"
+    }
   },
   {
     "lemma": "attest",
     "category": "VERB_TRANS",
-    "definition": "the data attests the words. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form."
+    "definition": "the data attests the words. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form.",
+    "forms": {
+      "third": "attests",
+      "ing": "attesting"
+    }
   },
   {
     "lemma": "anaphoric",
@@ -375,5 +390,87 @@
       "name": "English"
     },
     "definition": "English is the language of the original texts. Minglish is a subset of English."
+  },
+  {
+    "lemma": "bare plural",
+    "category": "NOUN",
+    "definition": "a Bare Plural is a plural noun. a Bare Plural does not have a determiner. a Bare Plural names a kind. the sentence \"machines find collisions\" has a Bare Plural."
+  },
+  {
+    "lemma": "noun preposition",
+    "category": "NOUN",
+    "definition": "a Noun Preposition attaches to the prior noun. the word \"of\" is the Noun Preposition. the language has one Noun Preposition."
+  },
+  {
+    "lemma": "verb preposition",
+    "category": "NOUN",
+    "definition": "a Verb Preposition attaches to the verb of the clause. the word \"in\" is a Verb Preposition. a clause has one Verb Preposition."
+  },
+  {
+    "lemma": "propositional loss",
+    "category": "NOUN",
+    "definition": "a Propositional Loss changes a claim of the original sentence. a Propositional Loss drops a quantifier or drops a doer. a Translation Pair cannot have a Propositional Loss.",
+    "forms": {
+      "plural": "propositional losses"
+    }
+  },
+  {
+    "lemma": "register loss",
+    "category": "NOUN",
+    "definition": "a Register Loss drops the politeness of the original sentence or drops the emphasis of the original sentence. a Translation Pair declares every Register Loss.",
+    "forms": {
+      "plural": "register losses"
+    }
+  },
+  {
+    "lemma": "structure loss",
+    "category": "NOUN",
+    "definition": "a Structure Loss changes the order of the information. a Passive of the original sentence causes a Structure Loss. a Translation Pair declares every Structure Loss.",
+    "forms": {
+      "plural": "structure losses"
+    }
+  },
+  {
+    "lemma": "dogfood",
+    "category": "NOUN",
+    "definition": "the Dogfood is a test of the language. the maintainers lint the documents of the project. the Dogfood finds the Gaps of the language."
+  },
+  {
+    "lemma": "compound",
+    "category": "NOUN",
+    "definition": "a Compound has 2 nouns. a determiner does not separate the 2 nouns. the phrase \"discourse layer\" is a Compound. the language bans every Compound. a writer uses a term or uses a paraphrase."
+  },
+  {
+    "lemma": "first token",
+    "category": "NOUN",
+    "definition": "the First Token of a sentence announces the Sentence Shape. the word \"if\" is the First Token of a Conditional. every Sentence Shape has a distinct First Token."
+  },
+  {
+    "lemma": "head noun",
+    "category": "NOUN",
+    "definition": "the Head Noun of a Compound is the last noun of the Compound. the Head Noun names the kind of the thing."
+  },
+  {
+    "lemma": "name",
+    "category": "NOUN",
+    "definition": "a Name is one token. a Name is a capitalized word or is a quoted span. a Name does not inflect. the writer repeats a Name."
+  },
+  {
+    "lemma": "imperative",
+    "category": "NOUN",
+    "definition": "an Imperative is a Sentence Shape. a verb opens an Imperative. the sentence \"delete the file\" is an Imperative. the reader is the addressee of an Imperative."
+  },
+  {
+    "lemma": "lexer",
+    "category": "NOUN",
+    "definition": "the Lexer splits a sentence into tokens. the Lexer gives a Form Tag to every token. the Lexer recognizes a Name and recognizes a quantity by the shape."
+  },
+  {
+    "lemma": "markdown",
+    "category": "NAME",
+    "forms": {
+      "name": "Markdown"
+    },
+    "definition": "Markdown is the format of the documents. Markdown turns a dash into a bullet."
   }
 ]

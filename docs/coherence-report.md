@@ -77,167 +77,159 @@
 
 ## docs/adr/0010-simple-past.md
 
-- Sentences: 10; parse: 0/10 (0%)
-- Topic continuity: 0/7 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 40; parse: 40/40 (100%)
+- Topic continuity: 10/31 consecutive pairs share the subject with the sentence before (32%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - concession: 1 ✗ no form
-  - condition: 1 ✓ if …, then
-  - sequence: 1 ✗ no form
+  - reason: 1 ✓ , because
+  - condition: 2 ✓ if …, then
 
 ## docs/adr/0011-pp-attachment.md
 
-- Sentences: 14; parse: 0/14 (0%)
-- Topic continuity: 0/9 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 32; parse: 32/32 (100%)
+- Topic continuity: 10/25 consecutive pairs share the subject with the sentence before (40%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - contrast: 1 ✓ but
+  - result: 2 ✓ , so
+  - condition: 2 ✓ if …, then
 
 ## docs/adr/0012-pair-validity.md
 
-- Sentences: 15; parse: 0/15 (0%)
-- Topic continuity: 0/8 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 33; parse: 33/33 (100%)
+- Topic continuity: 9/25 consecutive pairs share the subject with the sentence before (36%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
   - result: 1 ✓ , so
   - reason: 1 ✓ , because
-  - contrast: 1 ✓ but
-  - condition: 1 ✓ if …, then
-  - sequence: 4 ✗ no form
-  - exemplification: 1 ✗ no form
+  - condition: 5 ✓ if …, then
 
 ## docs/adr/0013-generic-bare-plurals.md
 
-- Sentences: 14; parse: 0/14 (0%)
-- Topic continuity: 0/9 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 38; parse: 38/38 (100%)
+- Topic continuity: 9/30 consecutive pairs share the subject with the sentence before (30%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 1 ✓ if …, then
+  - result: 1 ✓ , so
 
 ## docs/adr/0014-universal-and-no.md
 
-- Sentences: 21; parse: 0/21 (0%)
-- Topic continuity: 0/17 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 65; parse: 65/65 (100%)
+- Topic continuity: 23/53 consecutive pairs share the subject with the sentence before (43%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - condition: 1 ✓ if …, then
+  - reason: 1 ✓ , because
+  - condition: 5 ✓ if …, then
   - sequence: 4 ✗ no form
-  - exemplification: 2 ✗ no form
 
 ## docs/adr/0015-compounds-transparency.md
 
-- Sentences: 19; parse: 0/19 (0%)
-- Topic continuity: 0/13 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 52; parse: 52/52 (100%)
+- Topic continuity: 19/40 consecutive pairs share the subject with the sentence before (48%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - contrast: 2 ✓ but
-  - condition: 2 ✓ if …, then
+  - result: 1 ✓ , so
+  - reason: 1 ✓ , because
+  - condition: 3 ✓ if …, then
 
 ## docs/adr/0016-have-and-one.md
 
-- Sentences: 16; parse: 0/16 (0%)
-- Topic continuity: 0/10 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 30; parse: 30/30 (100%)
+- Topic continuity: 11/25 consecutive pairs share the subject with the sentence before (44%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 1 ✓ if …, then
-  - elaboration: 1 ✗ no form
+  - result: 2 ✓ , so
+  - reason: 1 ✓ , because
+  - condition: 2 ✓ if …, then
 
 ## docs/adr/0017-existential-some.md
 
-- Sentences: 7; parse: 0/7 (0%)
-- Topic continuity: 0/3 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 24; parse: 24/24 (100%)
+- Topic continuity: 8/17 consecutive pairs share the subject with the sentence before (47%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - concession: 1 ✗ no form
+  - reason: 2 ✓ , because
   - sequence: 2 ✗ no form
 
 ## docs/adr/0018-proper-names.md
 
-- Sentences: 19; parse: 0/19 (0%)
-- Topic continuity: 2/11 consecutive pairs share the subject with the sentence before (18%)
+- Sentences: 56; parse: 56/56 (100%)
+- Topic continuity: 21/50 consecutive pairs share the subject with the sentence before (42%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - contrast: 1 ✓ but
-  - sequence: 1 ✗ no form
-  - elaboration: 2 ✗ no form
+  - condition: 5 ✓ if …, then
 
 ## docs/adr/0019-imperatives.md
 
-- Sentences: 11; parse: 0/11 (0%)
-- Topic continuity: 1/8 consecutive pairs share the subject with the sentence before (12%)
+- Sentences: 38; parse: 38/38 (100%)
+- Topic continuity: 14/32 consecutive pairs share the subject with the sentence before (44%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - contrast: 2 ✓ but
+  - result: 1 ✓ , so
+  - condition: 2 ✓ if …, then
   - sequence: 1 ✗ no form
 
 ## docs/adr/0020-no-first-person-plural.md
 
-- Sentences: 12; parse: 0/12 (0%)
-- Topic continuity: 1/8 consecutive pairs share the subject with the sentence before (12%)
+- Sentences: 31; parse: 31/31 (100%)
+- Topic continuity: 10/24 consecutive pairs share the subject with the sentence before (42%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - contrast: 3 ✓ but
+  - condition: 1 ✓ if …, then
 
 ## docs/adr/0021-but.md
 
-- Sentences: 10; parse: 0/10 (0%)
-- Topic continuity: 0/7 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 33; parse: 33/33 (100%)
+- Topic continuity: 15/28 consecutive pairs share the subject with the sentence before (54%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
-  - contrast: 7 ✓ but
-  - sequence: 2 ✗ no form
+  - reason: 2 ✓ , because
+  - contrast: 19 ✓ but
+  - sequence: 1 ✗ no form
 
 ## docs/adr/0022-digits.md
 
-- Sentences: 22; parse: 0/22 (0%)
-- Topic continuity: 2/17 consecutive pairs share the subject with the sentence before (12%)
+- Sentences: 63; parse: 63/63 (100%)
+- Topic continuity: 22/52 consecutive pairs share the subject with the sentence before (42%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - condition: 2 ✓ if …, then
   - sequence: 1 ✗ no form
 
 ## docs/adr/0023-per-sense-synonyms.md
 
-- Sentences: 20; parse: 0/20 (0%)
-- Topic continuity: 4/13 consecutive pairs share the subject with the sentence before (31%)
+- Sentences: 57; parse: 57/57 (100%)
+- Topic continuity: 13/47 consecutive pairs share the subject with the sentence before (28%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - contrast: 2 ✓ but
-  - condition: 1 ✓ if …, then
-  - sequence: 3 ✗ no form
+  - reason: 1 ✓ , because
+  - condition: 4 ✓ if …, then
+  - sequence: 1 ✗ no form
 
 ## docs/adr/0024-percent.md
 
-- Sentences: 14; parse: 0/14 (0%)
-- Topic continuity: 4/11 consecutive pairs share the subject with the sentence before (36%)
+- Sentences: 41; parse: 41/41 (100%)
+- Topic continuity: 10/32 consecutive pairs share the subject with the sentence before (31%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - sequence: 1 ✗ no form
+  - condition: 2 ✓ if …, then
 
 ## docs/adr/0025-approximation.md
 
-- Sentences: 11; parse: 0/11 (0%)
-- Topic continuity: 1/7 consecutive pairs share the subject with the sentence before (14%)
+- Sentences: 30; parse: 30/30 (100%)
+- Topic continuity: 7/25 consecutive pairs share the subject with the sentence before (28%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 2 ✓ , because
-  - sequence: 3 ✗ no form
+  - result: 1 ✓ , so
+  - reason: 1 ✓ , because
 
 ## docs/adr/0026-causal-connectives.md
 
-- Sentences: 17; parse: 0/17 (0%)
-- Topic continuity: 1/12 consecutive pairs share the subject with the sentence before (8%)
+- Sentences: 61; parse: 61/61 (100%)
+- Topic continuity: 14/49 consecutive pairs share the subject with the sentence before (29%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 18 ✓ , so
-  - reason: 10 ✓ , because
+  - result: 21 ✓ , so
+  - reason: 12 ✓ , because
+  - condition: 3 ✓ if …, then
+  - sequence: 1 ✗ no form
   - purpose: 2 ✗ no form
-  - elaboration: 1 ✗ no form
 
 ## docs/adr/0027-domain-model.md
 
-- Sentences: 21; parse: 0/21 (0%)
-- Topic continuity: 0/12 consecutive pairs share the subject with the sentence before (0%)
+- Sentences: 81; parse: 81/81 (100%)
+- Topic continuity: 29/74 consecutive pairs share the subject with the sentence before (39%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - reason: 2 ✓ , because
-  - concession: 1 ✗ no form
+  - reason: 1 ✓ , because
+  - condition: 3 ✓ if …, then
 
 ## docs/adr/0028-enumeration.md
 
-- Sentences: 15; parse: 0/15 (0%)
-- Topic continuity: 3/10 consecutive pairs share the subject with the sentence before (30%)
+- Sentences: 49; parse: 49/49 (100%)
+- Topic continuity: 8/40 consecutive pairs share the subject with the sentence before (20%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - sequence: 2 ✗ no form
-  - elaboration: 1 ✗ no form
+  - condition: 1 ✓ if …, then
+  - sequence: 1 ✗ no form
 

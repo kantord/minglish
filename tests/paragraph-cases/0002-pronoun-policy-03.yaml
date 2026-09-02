@@ -2,7 +2,22 @@ source: docs/adr/0002-pronoun-policy.md
 index: 3
 original: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 context_before: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
-context_after: 'The language bans every Anaphoric Pronoun: - "it" - "its" - "they" - "them" - "their" - "he" - "him" - "his" - "she" - "her" - "this" - "that" - "these" - "those"'
+context_after: |-
+  The language bans every Anaphoric Pronoun:
+  - "it"
+  - "its"
+  - "they"
+  - "them"
+  - "their"
+  - "he"
+  - "him"
+  - "his"
+  - "she"
+  - "her"
+  - "this"
+  - "that"
+  - "these"
+  - "those"
 original_metrics:
   sentences: 4
   parsed: 4
@@ -31,7 +46,7 @@ proposals:
     cost: 88.82
     words: 31
     terms: 0
-  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "the allowed words include i, you, my, and your": WORD: "include" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
+  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "the allowed words include i, you, my, and your": STYLE: "allowed … include" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows the pronoun i. the tool lexgen allows the pronoun you. the tool lexgen allows the word my. the tool lexgen allows the word your.
@@ -129,7 +144,7 @@ proposals:
     cost: 108.04999999999998
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen includes the pronoun i": WORD: "includes" is not a minglish word | "the tool Lexgen includes the pronoun you": WORD: "includes" is not a minglish word | "the tool Lexgen includes the word my": WORD: "includes" is not a minglish word | "the tool Lexgen includes the word your": WORD: "includes" is not a minglish word'
+  diagnosis: '"the tool Lexgen includes the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen includes the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen includes the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen includes the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: 'GAP: the available verbs (attest, build, check, choose, consider, contain, cost, create, delete, derive, describe, edit, expand, explain, fetch, find, have, match, migrate, need, open, optimize, pin, plan, produce, read, record, reduce, reject, repeat, replace, retry, return, save, say, send, show, start, stop, store, use, waive, write) do not express permission or inclusion for the concepts "allows" or "includes".'
@@ -297,7 +312,7 @@ proposals:
     cost: 153.42999999999995
     words: 51
     terms: 0
-  diagnosis: '"the lexical entries include i and you and my and your": WORD: "lexical" is not a minglish word [all unknown words: lexical, include] | "i names the person that the writer describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "you names the person that the reader describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "my describes the person that the writer describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "your describes the person that the reader describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the lexical entries do not include other pronouns": WORD: "lexical" is not a minglish word [all unknown words: lexical, include, other]'
+  diagnosis: '"the lexical entries include i and you and my and your": WORD: "lexical" is not a minglish word | "i names the person that the writer describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "you names the person that the reader describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "my describes the person that the writer describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "your describes the person that the reader describes": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the lexical entries do not include other pronouns": WORD: "lexical" is not a minglish word [all unknown words: lexical, other]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the declarations list contains the words i and you and my and your. the word i is a word for the writer. the word you is a word for the user. the word my is a word for the writer. the word your is a word for the user. the declarations list does not contain other words.
