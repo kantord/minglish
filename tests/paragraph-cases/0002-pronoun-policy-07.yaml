@@ -13,7 +13,7 @@ original_metrics:
   terms: 1
 verdict: unreviewed
 note: mechanism does not ban words; paragraph is stale (ban advice exists now); wording unnatural
-best: the Lexicon does not contain every pronoun. the Linter bans the pronoun. the Linter must explain a Ban. the Linter must name the noun. the writer must repeat the noun. the future validator needs a mechanism. the mechanism stores a message. the message names the word. the Linter bans the word.
+best: The Linter bans the pronouns. The Linter rejects the sentence. The Linter does not give a message. The message explains the Ban. The writer does not know the Ban. The Linter needs a mechanism. The mechanism gives a message for a word. The word is a Ban. The writer reads the message. The Linter does not have the mechanism. The maintainers defer the mechanism.
 proposals:
 - text: the banned pronouns fall out of the lexicon. the banned pronouns fall from the lexicon. a future validator needs a mechanism. the mechanism stores a banned word and a message. the writer uses the message. the project defers the mechanism.
   drops: oov, hyphenated compound, deferred as a standalone word
@@ -1129,5 +1129,116 @@ proposals:
     words: 51
     terms: 3
   diagnosis: '"The Linter has no mechanism for "banned" pronouns": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "The Linter rejects the "banned" pronoun": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The Rejection does not name the noun of the "banned" pronoun": STYLE: "does … name" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not parse a sentence with a banned pronoun. The Linter rejects the sentence. The Linter does not give a helpful message. The writer must find the reason. The Linter needs a mechanism. The mechanism gives a message for a word. The word is a Ban. The writer sees the message. The Linter does not have the mechanism. The maintainers defer the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 6
+    continuity_pairs: 9
+    continuity_ok: 4
+    cost: 225.3
+    words: 65
+    terms: 6
+  diagnosis: '"The Linter does not parse a sentence with a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "does … parse" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The Linter does not give a helpful message": WORD: "helpful" is not a minglish word | "The writer must find the reason": WORD: "reason" is not a minglish word | "The writer sees the message": WORD: "sees" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter bans the pronouns. The Linter rejects the sentence. The Linter does not give a message. The message explains the Ban. The writer does not know the Ban. The Linter needs a mechanism. The mechanism gives a message for a word. The word is a Ban. The writer reads the message. The Linter does not have the mechanism. The maintainers defer the mechanism.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 11
+    parsed: 11
+    continuity_pairs: 10
+    continuity_ok: 5
+    cost: 219.62000000000003
+    words: 64
+    terms: 8
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter bans some pronouns. The ban is a Gap. The Gap has a cost. The project accepts the cost. The Gap does not have a message. Every Rejection needs one message. The message tells the writer to repeat the noun. The plan requires a mechanism. The mechanism adds the message to a Rejection. The project defers the mechanism.
+  drops: explanation of OOV, writer-facing, future validator
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 4
+    continuity_pairs: 9
+    continuity_ok: 3
+    cost: 190.07999999999998
+    words: 59
+    terms: 6
+  diagnosis: '"The Linter bans some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "The ban is a Gap": STYLE: "ban … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "ban" is a verb in minglish and cannot follow a determiner | "The Gap has a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "has … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The project accepts the cost": STYLE: "accepts … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "The message tells the writer to repeat the noun": WORD: "tells" is not a minglish word | "The plan requires a mechanism": STYLE: "plan … requires" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "plan" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter bans some pronouns. The Linter does not give a message to the Rejection of a banned pronoun. Every Rejection has one message. The message uses the word "repeat". The message refers to the noun. The project defers the addition of the mechanism. The mechanism gives the message to the Rejection. The project accepts the expense of the deferral.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 4
+    continuity_pairs: 7
+    continuity_ok: 5
+    cost: 198.29000000000002
+    words: 60
+    terms: 5
+  diagnosis: '"The Linter bans some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "The Linter does not give a message to the Rejection of a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "does … give" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The project defers the addition of the mechanism": WORD: "addition" is not a minglish word | "The project accepts the expense of the deferral": WORD: "deferral" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every Linter Rejection has one message. The message tells the writer to repeat the noun. The Linter does not give the message to the Rejection of a banned pronoun. The project defers the mechanism. The mechanism gives the message to the Rejection. The project accepts the expense of the deferment.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 2
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 167.01000000000005
+    words: 50
+    terms: 5
+  diagnosis: '"Every Linter Rejection has one message": STYLE: "Linter Rejection" — noun-noun compounds are not minglish; write "the Rejection of the Linter", or one transparent word (ADR 0015) | "The message tells the writer to repeat the noun": WORD: "tells" is not a minglish word | "The Linter does not give the message to the Rejection of a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "does … give" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The project accepts the expense of the deferment": WORD: "deferment" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not parse a sentence with a Banned Pronoun. The Linter cannot parse the sentence because the word is not in the Lexicon. The Lexicon does not contain every Banned Pronoun. A future Validator must check every Banned Pronoun. The Validator must give a message to the writer. The message says "repeat the noun you mean". The design of the Validator is deferred.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 1
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 234.41000000000005
+    words: 65
+    terms: 7
+  diagnosis: '"The Linter does not parse a sentence with a Banned Pronoun": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes | "The Linter cannot parse the sentence because the word is not in the Lexicon": STYLE: "cannot … parse" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003); a comma before "because" is mandatory — "<clause>, because <clause>" (ADR 0026) | "The Lexicon does not contain every Banned Pronoun": WORD: "Banned" is not a minglish word — minglish words are lowercase ("banned"); a name that equals a word needs quotes | "A future Validator must check every Banned Pronoun": WORD: "Validator" is not a minglish word — minglish words are lowercase ("validator"); a name that equals a word needs quotes | "The Validator must give a message to the writer": WORD: "Validator" is not a minglish word — minglish words are lowercase ("validator"); a name that equals a word needs quotes | "The design of the Validator is deferred": WORD: "Validator" is not a minglish word — minglish words are lowercase ("validator"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not parse a sentence with a "banned" pronoun. The Linter cannot parse the sentence, because the Lexicon does not contain the pronoun. The Lexicon contains every allowed pronoun. A future validator must check every "banned" pronoun. The validator must give a message to the writer. The message says "repeat the noun you mean". The design of the validator is deferred.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 3
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 234.23000000000005
+    words: 63
+    terms: 4
+  diagnosis: '"The Linter does not parse a sentence with a "banned" pronoun": STYLE: "does … parse" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The Lexicon contains every allowed pronoun": STYLE: "contains … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every allowed pronoun" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "A future validator must check every "banned" pronoun": STYLE: "must … check" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "The design of the validator is deferred": STYLE: "deferred" is transitive in minglish and needs an object; "is … deferred" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter does not parse a sentence with a "banned" pronoun. The Linter cannot parse the sentence, because the Lexicon does not contain the pronoun. The Lexicon contains every pronoun. A future validator must check every "banned" pronoun. The validator must give a message to the writer. The message says "repeat the noun you mean". The team deferred the design of the validator.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 5
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 232.93000000000004
+    words: 63
+    terms: 4
+  diagnosis: '"The Linter does not parse a sentence with a "banned" pronoun": STYLE: "does … parse" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "A future validator must check every "banned" pronoun": STYLE: "must … check" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash

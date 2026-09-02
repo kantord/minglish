@@ -13,7 +13,12 @@ original_metrics:
   terms: 0
 verdict: unreviewed
 note: 'same: enumeration list; also sentence casing (capital first letter) and the pronoun I'
-best: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your".
+best: |-
+  The language allows 4 Indexical Pronouns:
+  - "i"
+  - "you"
+  - "my"
+  - "your"
 proposals:
 - text: a note describes the allowed words. the allowed words include i, you, my, and your. i is a pronoun. you is a pronoun. my is a possessive. your is a possessive.
   drops: parenthetical annotations, colon punctuation, register of bullet-list specification, explicit numbering of pronoun types
@@ -810,4 +815,40 @@ proposals:
     - "my"
     - "your": WORD: item 4: """ is not a minglish word — a quote is not closed — quotes come in pairs
   count: 2
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language allows 4 Indexical Pronouns:
+    - "i"
+    - "you"
+    - "my"
+    - "your"
+  drops: parenthetical form labels, colon usage
+  valid: true
+  metrics:
+    sentences: 1
+    parsed: 1
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 36.129999999999995
+    words: 10
+    terms: 1
+  count: 2
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language allows 4 pronouns:
+    - "i"
+    - "you"
+    - "my"
+    - "your"
+  drops: parenthetical category labels
+  valid: true
+  metrics:
+    sentences: 1
+    parsed: 1
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 27.129999999999995
+    words: 9
+    terms: 0
+  count: 1
   model: deepseek/deepseek-v4-flash

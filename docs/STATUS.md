@@ -66,6 +66,10 @@ derivable from the code, ADRs, or git history.
   must itself parse — never feed the model an invalid example.
 - The user runs all `git commit`s and all API-spending runs (agenttest,
   autofix) themselves; those runs are milestones, not routine.
+- Between milestones, `just replay` is the proxy: it re-validates every
+  stored paragraph proposal (tests/paragraph-cases/) against the current
+  linter, no API. A linter change should raise valid counts and lower the
+  no-advice count; a language change that lowers them needs a reason.
 - Every review of linter output, rewrites, or agent snapshots goes through
   `docs/review-checklist.md` (known failure types; append, never delete).
 - Dogfood flow: lint own docs → useful flag → rewrite in place (English

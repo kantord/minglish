@@ -658,7 +658,7 @@ proposals:
     cost: 54.69
     words: 17
     terms: 2
-  count: 4
+  count: 5
   model: deepseek/deepseek-v4-flash
 - text: the language removes every reference ambiguity. the language does not have a discourse layer. the project does not plan a discourse layer.
   drops: none
@@ -779,5 +779,46 @@ proposals:
     cost: 54.69
     words: 17
     terms: 2
+  count: 2
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer. The team does not plan to build a Discourse Layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 85.50999999999998
+    words: 27
+    terms: 3
+  diagnosis: '"The team does not plan to build a Discourse Layer": STYLE: "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "plan" is transitive in minglish and needs an object'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer. The team has no plan for a Discourse Layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 81.67999999999998
+    words: 26
+    terms: 3
+  diagnosis: '"The team has no plan for a Discourse Layer": STYLE: "has … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "plan" is a verb in minglish and cannot follow a determiner; "plan" is transitive in minglish and needs an object'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer. The team does not plan a Discourse Layer.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 79.97999999999998
+    words: 25
+    terms: 3
   count: 1
   model: deepseek/deepseek-v4-flash

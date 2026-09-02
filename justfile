@@ -40,6 +40,11 @@ autofix-paragraphs file out="docs/paragraph-report.md" *FLAGS:
 define +TERM:
     python3 scripts/define.py {{TERM}}
 
+# no-LLM proxy: re-validate every stored paragraph proposal against the current
+# linter and report valid counts, no-advice rejections, blocking words (seconds)
+replay:
+    python3 scripts/replay-stats.py
+
 # review paragraph cases: all (one screen each), one in detail, or set a verdict
 review-paragraphs *ARGS:
     python3 scripts/paragraph-review.py {{ARGS}}

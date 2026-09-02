@@ -1190,3 +1190,129 @@ proposals:
   diagnosis: '"The pronouns are 2200 of the OOV tokens": not recognizable as a minglish-like sentence | "The Gap of the pronouns is the biggest Gap of a Closed Class": WORD: "biggest" is not a minglish word | "The language bans the object of every Anaphoric Pronoun": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "The language bans the possessive of every Anaphoric Pronoun": not recognizable as a minglish-like sentence | "Instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence | "The document of the research describes a finding": not recognizable as a minglish-like sentence | "The finding says "ambiguity" migrates": STYLE: "migrates" is transitive in minglish and needs an object; "says … migrates" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The finding says the reference across sentences is the place of the ambiguity": STYLE: "says … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The ambiguity reappears after the sentences are split": WORD: "after" is not a minglish word | "The document of the research names the finding": not recognizable as a minglish-like sentence | "The finding is "ambiguity migrates"": not recognizable as a minglish-like sentence | "The document of the research describes the finding": not recognizable as a minglish-like sentence'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: The report of Triage shows the data of UD-EWT. The data shows about 2,200 pronouns. The pronouns are the second largest gap of the Closed Class. Every third-person pronoun is anaphoric. The sentence "it failed" is anaphoric. The resolution of "it failed" requires a Discourse Layer. The research of the project identifies the source of the ambiguity. The ambiguity reappears after every sentence splits. The ambiguity is the cross-sentence reference. Every first-person pronoun and every second-person pronoun is indexical. The indexical pronouns refer to the speaker or refer to the hearer. The indexical pronouns are never anaphoric. The indexical pronouns carry no Reference Ambiguity. The instructional text uses the indexical pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 14
+    parsed: 5
+    continuity_pairs: 13
+    continuity_ok: 8
+    cost: 441.3999999999997
+    words: 111
+    terms: 3
+  diagnosis: '"The data shows about 2,200 pronouns": WORD: "2,200" is not a minglish word | "The pronouns are the second largest gap of the Closed Class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest, gap] | "Every third-person pronoun is anaphoric": WORD: "third-person" is not a minglish word | "The research of the project identifies the source of the ambiguity": WORD: "identifies" is not a minglish word | "The ambiguity reappears after every sentence splits": WORD: "after" is not a minglish word | "The ambiguity is the cross-sentence reference": WORD: "cross-sentence" is not a minglish word | "Every first-person pronoun and every second-person pronoun is indexical": WORD: "first-person" is not a minglish word [all unknown words: first-person, second-person] | "The indexical pronouns are never anaphoric": WORD: "never" is not a minglish word | "The indexical pronouns carry no Reference Ambiguity": STYLE: "indexical pronouns" is a defined term — write "Indexical Pronouns" (see CONTEXT.md); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage shows the data of UD-EWT. The data shows about 2200 pronouns. The pronouns are a gap of the Closed Class. The gap is the largest gap of the Closed Class. Every third person pronoun is anaphoric. The sentence "it failed" is anaphoric. The resolution of "it failed" requires a Discourse Layer. The research of the project finds the source of the ambiguity. The ambiguity reappears when every sentence splits. The ambiguity is the reference across sentences. Every first person pronoun and every second person pronoun is an Indexical Pronoun. The Indexical Pronouns refer to the speaker or refer to the hearer. The Indexical Pronouns are not anaphoric. The Indexical Pronouns do not carry a Reference Ambiguity. The instructional text uses the Indexical Pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 9
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 459.2499999999997
+    words: 124
+    terms: 9
+  diagnosis: '"The pronouns are a gap of the Closed Class": WORD: "gap" is not a minglish word — "Gap" is a defined term — write it capitalized (see CONTEXT.md) | "The gap is the largest gap of the Closed Class": WORD: "gap" is not a minglish word — "Gap" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: gap, largest] | "Every third person pronoun is anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "The ambiguity reappears when every sentence splits": WORD: "when" is not a minglish word | "The ambiguity is the reference across sentences": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "Every first person pronoun and every second person pronoun is an Indexical Pronoun": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage shows the data of UD-EWT. The data shows about 2200 pronouns. The pronouns are a Gap of the Closed Class. The Gap is the largest Gap of the Closed Class. The pronouns of the speaker or of the hearer are Indexical Pronouns. The pronouns of another person are anaphoric. The sentence "it failed" is anaphoric. The resolution of "it failed" requires a Discourse Layer. The research of the project finds the source of the ambiguity. The ambiguity reappears after every sentence splits. The ambiguity is the reference across sentences. The Indexical Pronouns refer to the speaker or refer to the hearer. The Indexical Pronouns are not anaphoric. The Indexical Pronouns do not carry a Reference Ambiguity. The instructional text uses the Indexical Pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 10
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 450.0799999999997
+    words: 124
+    terms: 12
+  diagnosis: '"The Gap is the largest Gap of the Closed Class": WORD: "largest" is not a minglish word | "The pronouns of the speaker or of the hearer are Indexical Pronouns": not recognizable as a minglish-like sentence | "The pronouns of another person are anaphoric": WORD: "another" is not a minglish word | "The ambiguity reappears after every sentence splits": WORD: "after" is not a minglish word | "The ambiguity is the reference across sentences": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage measures the Coverage of the Lexicon against the UD-EWT corpora. The data shows pronouns are about 2,200 of the unknown tokens. Pronouns are the second biggest Closed Class Gap. Anaphoric pronouns refer to a noun of a prior sentence. The sentence "the token failed" has an anaphoric pronoun. The sentence needs a Discourse Layer. The research finds the ambiguity. The ambiguity reappears after the process splits the sentences. The ambiguity is a Reference Ambiguity. Indexical Pronouns refer to the speaker or refer to the hearer. Indexical Pronouns are never anaphoric. Indexical Pronouns carry no Reference Ambiguity. Instructional text uses Indexical Pronouns.
+  drops: dropped parenthetical citation, dropped dash for apposition, dropped "our" (register), dropped "findings" (register), dropped "exactly where" (register), dropped "constantly" (affect)
+  valid: false
+  metrics:
+    sentences: 13
+    parsed: 6
+    continuity_pairs: 12
+    continuity_ok: 8
+    cost: 412.2099999999998
+    words: 102
+    terms: 11
+  diagnosis: '"Triage measures the Coverage of the Lexicon against the UD-EWT corpora": not recognizable as a minglish-like sentence | "The data shows pronouns are about 2,200 of the unknown tokens": WORD: "2,200" is not a minglish word | "Pronouns are the second biggest Closed Class Gap": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, biggest] | "The ambiguity reappears after the process splits the sentences": WORD: "after" is not a minglish word | "Indexical Pronouns are never anaphoric": WORD: "never" is not a minglish word | "Indexical Pronouns carry no Reference Ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "Instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage measures the Coverage of the Lexicon. The data attests pronouns. Pronouns are about 2,200 of the unknown tokens. Pronouns are a Closed Class Gap. Anaphoric pronouns refer to a noun of a prior sentence. The sentence "the token failed" has an anaphoric pronoun. The sentence needs a Discourse Layer. The research finds the ambiguity. The ambiguity reappears. The process splits the sentences. The ambiguity is a Reference Ambiguity. Indexical Pronouns refer to the speaker or refer to the hearer. Indexical Pronouns are not anaphoric. Indexical Pronouns do not carry a Reference Ambiguity. Instructional text uses Indexical Pronouns.
+  drops: dropped parenthetical citation, dropped dash for apposition, dropped "our" (register), dropped "findings" (register), dropped "exactly where" (register), dropped "constantly" (affect), dropped "second" (ordinal), dropped "biggest" (superlative), dropped "after" (temporal relation)
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 12
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 393.45999999999987
+    words: 98
+    terms: 11
+  diagnosis: '"Pronouns are about 2,200 of the unknown tokens": WORD: "2,200" is not a minglish word | "Pronouns are a Closed Class Gap": STYLE: "Closed Class Gap" — noun-noun compounds are not minglish; write "the Gap of the Closed Class", or one transparent word (ADR 0015) | "Instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage measures the Coverage of the Lexicon. The data attests pronouns. About 2,200 pronouns are unknown tokens. Pronouns are a Gap of the Closed Class. Anaphoric pronouns refer to a noun of a prior sentence. The sentence "the token failed" has an anaphoric pronoun. The sentence needs a Discourse Layer. The research finds the ambiguity. The ambiguity reappears. The process splits the sentences. The ambiguity is a Reference Ambiguity. Indexical Pronouns refer to the speaker or refer to the hearer. Indexical Pronouns are not anaphoric. Indexical Pronouns do not carry a Reference Ambiguity. Instructional text uses Indexical Pronouns.
+  drops: dropped parenthetical citation, dropped dash for apposition, dropped "our" (register), dropped "findings" (register), dropped "exactly where" (register), dropped "constantly" (affect), dropped "second" (ordinal), dropped "biggest" (superlative), dropped "after" (temporal relation), dropped "2,200" (count with comma)
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 13
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 393.45999999999987
+    words: 98
+    terms: 11
+  diagnosis: '"About 2,200 pronouns are unknown tokens": WORD: "2,200" is not a minglish word | "Instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage shows pronouns are about 2200 tokens of the unknown words. every pronoun is a Function Word. the second largest Gap of the Closed Class is the pronouns. third person pronouns are anaphoric. if the Linter resolves "it failed", then the Linter needs a Discourse Layer. the research describes the cross-sentence reference. if the parser splits a sentence, then the ambiguity reappears. the ambiguity reappears at the cross-sentence reference. first person pronouns and second person pronouns are Indexical Pronouns. an Indexical Pronoun refers to the speaker or refers to the hearer. an Indexical Pronoun is never anaphoric. an Indexical Pronoun carries no Reference Ambiguity. instructional text uses Indexical Pronouns constantly.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 13
+    parsed: 4
+    continuity_pairs: 12
+    continuity_ok: 5
+    cost: 455.78999999999985
+    words: 110
+    terms: 12
+  diagnosis: '"Triage shows pronouns are about 2200 tokens of the unknown words": STYLE: "shows … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the second largest Gap of the Closed Class is the pronouns": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "third person pronouns are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the research describes the cross-sentence reference": WORD: "cross-sentence" is not a minglish word | "the ambiguity reappears at the cross-sentence reference": WORD: "cross-sentence" is not a minglish word | "first person pronouns and second person pronouns are Indexical Pronouns": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "an Indexical Pronoun is never anaphoric": WORD: "never" is not a minglish word | "an Indexical Pronoun carries no Reference Ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "instructional text uses Indexical Pronouns constantly": WORD: "constantly" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage checks the unknown words. the unknown words include about 2200 pronouns. every pronoun is a Function Word. the Gap of the Closed Class is the pronouns. the pronouns are the largest part of the Gap. a pronoun of "he" or uses "she" or uses "it" is anaphoric. if the Linter resolves "it failed", then the Linter needs a Discourse Layer. the research describes the reference across sentences. if the parser splits a sentence, then the ambiguity reappears. the ambiguity reappears at the reference across sentences. a pronoun of "i" or uses "you" is an Indexical Pronoun. an Indexical Pronoun refers to the speaker or refers to the hearer. an Indexical Pronoun is not anaphoric. an Indexical Pronoun does not have a Reference Ambiguity. instructional text uses Indexical Pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 9
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 486.71000000000004
+    words: 129
+    terms: 13
+  diagnosis: '"the unknown words include about 2200 pronouns": WORD: "include" is not a minglish word | "the pronouns are the largest part of the Gap": WORD: "largest" is not a minglish word [all unknown words: largest, part] | "a pronoun of "he" or uses "she" or uses "it" is anaphoric": not recognizable as a minglish-like sentence | "the ambiguity reappears at the reference across sentences": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "a pronoun of "i" or uses "you" is an Indexical Pronoun": STYLE: "uses … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Triage checks the unknown words. the unknown words contain about 2200 pronouns. every pronoun is a Function Word. the Gap of the Closed Class is the pronouns. the pronouns dominate the Gap. every pronoun of "he" is anaphoric. every pronoun of "she" is anaphoric. every pronoun of "it" is anaphoric. if the Linter resolves "it failed", then the Linter needs a Discourse Layer. the research describes the reference. the reference goes across sentences. if the parser splits a sentence, then the ambiguity reappears. the ambiguity reappears at the reference. the reference goes across sentences. every pronoun of "i" is an Indexical Pronoun. every pronoun of "you" is an Indexical Pronoun. an Indexical Pronoun refers to the speaker or refers to the hearer. an Indexical Pronoun is not anaphoric. an Indexical Pronoun does not carry a Reference Ambiguity. instructional text uses Indexical Pronouns.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 20
+    parsed: 16
+    continuity_pairs: 19
+    continuity_ok: 13
+    cost: 556.9499999999999
+    words: 142
+    terms: 14
+  diagnosis: '"the pronouns dominate the Gap": WORD: "dominate" is not a minglish word | "the reference goes across sentences": WORD: "goes" is not a minglish word | "the reference goes across sentences": WORD: "goes" is not a minglish word | "instructional text uses Indexical Pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash

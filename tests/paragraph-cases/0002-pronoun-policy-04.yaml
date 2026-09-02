@@ -1063,3 +1063,99 @@ proposals:
     terms: 2
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: The language does not have anaphora. The language does not have a Discourse Layer. The project does not plan a Discourse Layer for the current version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 83.13
+    words: 26
+    terms: 2
+  diagnosis: '"The language does not have anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The project does not plan a Discourse Layer for the current version": WORD: "current" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have the anaphora. The language does not have a Discourse Layer. The project does not plan a Discourse Layer for the first version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 83.56
+    words: 27
+    terms: 2
+  diagnosis: '"The project does not plan a Discourse Layer for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have the anaphora. The language does not have a Discourse Layer. The project does not plan a Discourse Layer for the version "v0".
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 87.63999999999999
+    words: 27
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have anaphora. The language does not have a Discourse Layer. The project does not plan a Discourse Layer.
+  drops: register (informal "machinery", "v0"), affect (neutral), complexity (slash construction)
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 72.21
+    words: 22
+    terms: 2
+  diagnosis: '"The language does not have anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 2
+  model: deepseek/deepseek-v4-flash
+- text: The language has no anaphora. The language has no Discourse Layer. The project does not plan a Discourse Layer.
+  drops: register (informal "machinery", "v0"), affect (neutral), complexity (slash construction)
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 65.41
+    words: 19
+    terms: 2
+  diagnosis: '"The language has no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "The language has no Discourse Layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have a Discourse Layer. The project does not plan a Discourse Layer for version 0.
+  drops: slash-joined compound, "machinery", "exists", "v0" abbreviation
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 59.88000000000001
+    words: 19
+    terms: 2
+  diagnosis: '"The project does not plan a Discourse Layer for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language does not have a Discourse Layer. The project does not plan a Discourse Layer.
+  drops: version indicator, specificity about "v0"
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 50.18000000000001
+    words: 16
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
