@@ -50,7 +50,7 @@ Declared loss: none (lossless per ADR 0012)
 > It is not possible to delete the lexicon.
 
 AFTER (5 words, cost 17.9, **76%** of original) — 1 sentence(s), each parses uniquely ✓, peak-open 2, right-branching 25%
-> You cannot delete the lexicon
+> You cannot delete the Lexicon
 
 Declared loss: impersonal-scope
 

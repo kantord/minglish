@@ -91,6 +91,10 @@ impl std::fmt::Display for LexError {
 pub struct Lexicon {
     forms: BTreeMap<String, String>,
     lemmas: BTreeMap<String, String>,
+    /// lowercase spelling of a defined term → its Capitalized form (ADR 0027)
+    terms: BTreeMap<String, String>,
+    /// defined proper names (domain model NAME entries): may start a sentence
+    names: std::collections::BTreeSet<String>,
     rejects: BTreeMap<String, Vec<(String, String)>>,
     bans: BTreeMap<String, String>,
 }
@@ -102,6 +106,8 @@ impl Lexicon {
         let mut lemmas = BTreeMap::new();
         let mut rejects: BTreeMap<String, Vec<(String, String)>> = BTreeMap::new();
         let mut bans: BTreeMap<String, String> = BTreeMap::new();
+        let mut terms: BTreeMap<String, String> = BTreeMap::new();
+        let mut names = std::collections::BTreeSet::new();
         for line in text.lines().filter(|l| !l.starts_with('#')) {
             let f: Vec<&str> = line.split('\t').collect();
             let [surface, kind, tag, value] = f[..] else { continue };
@@ -117,15 +123,27 @@ impl Lexicon {
                 "ban" => {
                     bans.insert(surface.to_string(), value.to_string());
                 }
+                "term" => {
+                    terms.insert(surface.to_string(), value.to_string());
+                }
+                "name" => {
+                    names.insert(surface.to_string());
+                }
                 _ => {}
             }
         }
-        Ok(Lexicon { forms, lemmas, rejects, bans })
+        Ok(Lexicon { forms, lemmas, terms, names, rejects, bans })
     }
 
     /// The form-tag of an enabled surface form, if any.
     pub fn tag_of(&self, word: &str) -> Option<&str> {
         self.forms.get(word).map(String::as_str)
+    }
+
+    /// The Capitalized form of a defined term written in lowercase
+    /// ("reference ambiguity" → "Reference Ambiguity"), ADR 0027.
+    pub fn term(&self, lowercase: &str) -> Option<&str> {
+        self.terms.get(lowercase).map(String::as_str)
     }
 
     /// The lemma of an enabled surface form.
@@ -179,108 +197,43 @@ impl Lexicon {
         piece: &str,
         out: &mut Vec<(usize, Tok)>,
     ) -> Result<(), LexError> {
-        for raw in piece.split_whitespace() {
-            let mut word = raw.trim_end_matches('.');
-            let mut had_comma = false;
-            if let Some(stripped) = word.strip_suffix(',') {
-                word = stripped;
-                had_comma = true;
-            }
-            if !word.is_empty() {
-                let pos = out.len();
-                // ADR 0022: digits are a lexer class, not lexicon words;
-                // ADR 0025: a "~" prefix is the symbol form of "about"
-                let (approx, word) = match word.strip_prefix('~') {
-                    Some(rest) if !rest.is_empty() => (true, rest),
-                    _ => (false, word),
-                };
-                if approx {
-                    out.push((pos, Tok::Approx("~".to_string())));
+        let raws: Vec<&str> = piece.split_whitespace().collect();
+        let mut i = 0;
+        while i < raws.len() {
+            // ADR 0027: a multi-word defined term ("Anaphoric Pronouns") is the
+            // longest run of capitalized words whose joined form is a lexicon
+            // surface; punctuation may only trail the last word
+            if raws[i].chars().next().is_some_and(|c| c.is_uppercase()) {
+                let mut matched = None;
+                for k in (2..=4).rev() {
+                    if i + k > raws.len() {
+                        continue;
+                    }
+                    let inner_clean = raws[i..i + k - 1].iter().all(|w| clean(w) == (*w, false));
+                    let (last, comma) = clean(raws[i + k - 1]);
+                    let joined = format!("{} {last}", raws[i..i + k - 1].join(" "));
+                    if inner_clean && self.forms.contains_key(&joined) {
+                        matched = Some((k, joined, comma));
+                        break;
+                    }
                 }
-                let pos = out.len();
-                if let Some(numeral) = number_token(word) {
-                    let tok = numeral.map_err(|suggestion| LexError {
-                        word: word.to_string(),
-                        position: pos,
-                        suggestion: Some(suggestion),
-                        banned: false,
-                    })?;
+                if let Some((k, joined, comma)) = matched {
+                    let pos = out.len();
+                    let tag = &self.forms[&joined];
+                    let tok = tag_to_tok(tag, &joined).expect("term tag");
                     out.push((pos, tok));
-                    if had_comma {
+                    if comma {
                         let pos = out.len();
                         out.push((pos, Tok::Comma));
                     }
+                    i += k;
                     continue;
                 }
-                let capitalized = word.chars().next().is_some_and(|c| c.is_uppercase());
-                // ADR 0018, fail-loud: unquoted NAME only when capitalized,
-                // mid-sentence, and not a lexicon word in lowercase. A
-                // sentence-initial capital folds to the lexicon or errors —
-                // never silently becomes a name (typos must stay loud).
-                let folded;
-                let word = if !self.forms.contains_key(word) {
-                    folded = word.to_lowercase();
-                    let known_lower = self.forms.contains_key(&folded);
-                    if known_lower && (pos == 0 || word == "I") {
-                        folded.as_str()
-                    } else if capitalized && known_lower {
-                        return Err(LexError {
-                            word: word.to_string(),
-                            position: pos,
-                            suggestion: Some(format!(
-                                "minglish words are lowercase (\"{folded}\"); a name \
-                                 that equals a word needs quotes"
-                            )),
-                            banned: false,
-                        });
-                    } else if capitalized && pos > 0 {
-                        out.push((pos, Tok::Name(word.to_string())));
-                        continue;
-                    } else if capitalized {
-                        return Err(LexError {
-                            word: word.to_string(),
-                            position: pos,
-                            suggestion: Some(
-                                "a name cannot start a sentence — introduce it \
-                                 (\"the tool Lexgen …\") or quote it; or if this \
-                                 is a command, use a minglish verb in lowercase \
-                                 (\"delete the file\")"
-                                    .to_string(),
-                            ),
-                            banned: false,
-                        });
-                    } else {
-                        word
-                    }
-                } else {
-                    word
-                };
-                if let Some(advice) = self.bans.get(word) {
-                    return Err(LexError {
-                        word: word.to_string(),
-                        position: pos,
-                        suggestion: Some(advice.clone()),
-                        banned: true,
-                    });
-                }
-                let tag = self.forms.get(word).ok_or_else(|| LexError {
-                    word: word.to_string(),
-                    position: pos,
-                    suggestion: self.rejects.get(word).map(|rs| {
-                        rs.iter()
-                            .map(|(pos, sugg)| format!("as a {pos} use \"{sugg}\""))
-                            .collect::<Vec<_>>()
-                            .join("; ")
-                    }),
-                    banned: false,
-                })?;
-                let tok = tag_to_tok(tag, word).ok_or_else(|| LexError {
-                    word: word.to_string(),
-                    position: pos,
-                    suggestion: Some(format!("its category {tag} is not yet usable in any sentence structure")),
-                    banned: false,
-                })?;
-                out.push((pos, tok));
+            }
+            let (word, had_comma) = clean(raws[i]);
+            i += 1;
+            if !word.is_empty() {
+                self.tokenize_word(word, out)?;
             }
             if had_comma {
                 let pos = out.len();
@@ -288,6 +241,122 @@ impl Lexicon {
             }
         }
         Ok(())
+    }
+
+    fn tokenize_word(&self, word: &str, out: &mut Vec<(usize, Tok)>) -> Result<(), LexError> {
+        let pos = out.len();
+        // ADR 0022: digits are a lexer class, not lexicon words;
+        // ADR 0025: a "~" prefix is the symbol form of "about"
+        let (approx, word) = match word.strip_prefix('~') {
+            Some(rest) if !rest.is_empty() => (true, rest),
+            _ => (false, word),
+        };
+        if approx {
+            out.push((pos, Tok::Approx("~".to_string())));
+        }
+        let pos = out.len();
+        if let Some(numeral) = number_token(word) {
+            let tok = numeral.map_err(|suggestion| LexError {
+                word: word.to_string(),
+                position: pos,
+                suggestion: Some(suggestion),
+                banned: false,
+            })?;
+            out.push((pos, tok));
+            return Ok(());
+        }
+        let capitalized = word.chars().next().is_some_and(|c| c.is_uppercase());
+        // ADR 0018, fail-loud: unquoted NAME only when capitalized,
+        // mid-sentence, and not a lexicon word in lowercase. A
+        // sentence-initial capital folds to the lexicon or errors —
+        // never silently becomes a name (typos must stay loud).
+        let folded;
+        let word = if !self.forms.contains_key(word) {
+            folded = word.to_lowercase();
+            let known_lower = self.forms.contains_key(&folded);
+            if known_lower && (pos == 0 || word == "I") {
+                folded.as_str()
+            } else if capitalized && known_lower {
+                return Err(LexError {
+                    word: word.to_string(),
+                    position: pos,
+                    suggestion: Some(format!(
+                        "minglish words are lowercase (\"{folded}\"); a name \
+                         that equals a word needs quotes"
+                    )),
+                    banned: false,
+                });
+            } else if capitalized && (pos > 0 || self.names.contains(word)) {
+                out.push((pos, Tok::Name(word.to_string())));
+                return Ok(());
+            } else if capitalized {
+                return Err(LexError {
+                    word: word.to_string(),
+                    position: pos,
+                    suggestion: Some(
+                        "a name cannot start a sentence — introduce it \
+                         (\"the tool Lexgen …\") or quote it; or if this \
+                         is a command, use a minglish verb in lowercase \
+                         (\"delete the file\")"
+                            .to_string(),
+                    ),
+                    banned: false,
+                });
+            } else {
+                word
+            }
+        } else {
+            word
+        };
+        // ADR 0027: a defined term written in lowercase
+        if let Some(cap) = self.terms.get(word) {
+            if !self.forms.contains_key(word) {
+                return Err(LexError {
+                    word: word.to_string(),
+                    position: pos,
+                    suggestion: Some(format!(
+                        "\"{cap}\" is a defined term — write it capitalized (see CONTEXT.md)"
+                    )),
+                    banned: false,
+                });
+            }
+        }
+        if let Some(advice) = self.bans.get(word) {
+            return Err(LexError {
+                word: word.to_string(),
+                position: pos,
+                suggestion: Some(advice.clone()),
+                banned: true,
+            });
+        }
+        let tag = self.forms.get(word).ok_or_else(|| LexError {
+            word: word.to_string(),
+            position: pos,
+            suggestion: self.rejects.get(word).map(|rs| {
+                rs.iter()
+                    .map(|(pos, sugg)| format!("as a {pos} use \"{sugg}\""))
+                    .collect::<Vec<_>>()
+                    .join("; ")
+            }),
+            banned: false,
+        })?;
+        let tok = tag_to_tok(tag, word).ok_or_else(|| LexError {
+            word: word.to_string(),
+            position: pos,
+            suggestion: Some(format!("its category {tag} is not yet usable in any sentence structure")),
+            banned: false,
+        })?;
+        out.push((pos, tok));
+        Ok(())
+    }
+}
+
+/// Strip a trailing period and comma: ("word,", true) for "word,." / "word,".
+fn clean(raw: &str) -> (&str, bool) {
+    let w = raw.trim_end_matches('.');
+    match w.strip_suffix(',') {
+        Some(s) => (s, true),
+        None => (w, false),
     }
 }
 

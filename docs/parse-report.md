@@ -15,7 +15,7 @@ right-branching share, and fronted tokens before the main head.
 | an error stops the process | 2 | 2 | 1 | 25% | 2 |
 | the agent creates a report from the data | 3 | 5 | 1 | 29% | 2 |
 | the parser rejects the sentence | 2 | 2 | 1 | 25% | 2 |
-| the linter finds a collision in the lexicon | 3 | 5 | 1 | 29% | 2 |
+| the Linter finds a Collision in the Lexicon | 3 | 5 | 1 | 29% | 2 |
 | the compiler builds the program | 2 | 2 | 1 | 25% | 2 |
 | the agent deletes the old file | 3 | 3 | 1 | 20% | 2 |
 | a message arrives from the queue | 3 | 3 | 1 | 20% | 2 |
@@ -39,29 +39,29 @@ right-branching share, and fronted tokens before the main head.
 | if the test fails, then the agent retries the request | 5 | 8 | 2 | 10% | 8 |
 | if the queue is empty, then the server stops the process | 5 | 9 | 2 | 9% | 9 |
 | the agent must check the input | 2 | 2 | 1 | 20% | 3 |
-| you cannot delete the lexicon | 2 | 2 | 1 | 25% | 2 |
+| you cannot delete the Lexicon | 2 | 2 | 1 | 25% | 2 |
 | the user can open a session | 2 | 2 | 1 | 20% | 3 |
 | the agent must not delete your report | 3 | 3 | 1 | 17% | 4 |
 | the compiler built the program | 2 | 2 | 1 | 25% | 2 |
 | the queue was empty | 2 | 2 | 1 | 0% | 3 |
 | the user did not open a session | 3 | 3 | 1 | 17% | 4 |
 | the tests were old | 2 | 2 | 1 | 0% | 3 |
-| machines find collisions | 1 | 1 | 1 | 50% | 1 |
+| machines find Collisions | 1 | 1 | 1 | 50% | 1 |
 | agents retry requests | 1 | 1 | 1 | 50% | 1 |
 | old files are big | 2 | 2 | 1 | 0% | 3 |
-| people do not find collisions | 3 | 3 | 1 | 25% | 3 |
+| people do not find Collisions | 3 | 3 | 1 | 25% | 3 |
 | every agent retries the request | 2 | 2 | 1 | 25% | 2 |
 | every user of the system opens a session | 4 | 4 | 1 | 29% | 5 |
-| no agent can delete the lexicon | 2 | 2 | 1 | 20% | 3 |
+| no agent can delete the Lexicon | 2 | 2 | 1 | 20% | 3 |
 | no test was old | 2 | 2 | 1 | 0% | 3 |
 | the agent checks every request | 2 | 2 | 1 | 25% | 2 |
-| every word has one tag | 2 | 2 | 1 | 25% | 2 |
+| every word has one Form Tag | 2 | 2 | 1 | 25% | 2 |
 | the user has one session | 2 | 2 | 1 | 25% | 2 |
 | i have your report | 2 | 2 | 1 | 33% | 1 |
 | some agents retry the request | 2 | 2 | 1 | 25% | 2 |
 | some agents do not retry the request | 3 | 3 | 1 | 17% | 4 |
-| some words have one tag | 2 | 2 | 1 | 25% | 2 |
-| the tool Lexgen builds the lexicon | 2 | 2 | 1 | 40% | 3 |
+| some words have one Form Tag | 2 | 2 | 1 | 25% | 2 |
+| the tool Lexgen builds the Lexicon | 2 | 2 | 1 | 40% | 3 |
 | the file "seed.json" is the source of the truth | 3 | 4 | 1 | 25% | 5 |
 | the database WordNet attests the senses of the words | 3 | 3 | 1 | 38% | 3 |
 | check the input of the user | 3 | 3 | 1 | 40% | 0 |
@@ -74,12 +74,12 @@ right-branching share, and fronted tokens before the main head.
 | the server stores a copy of 2 reports | 3 | 3 | 1 | 29% | 2 |
 | the copies are identical | 2 | 2 | 1 | 0% | 3 |
 | 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 22% | 7 |
-| people write every form of the file "lexicon.tsv" | 3 | 3 | 1 | 43% | 1 |
-| the expense of a reversal grows with the seed | 4 | 4 | 1 | 25% | 5 |
-| the tool Lexgen expands the paradigms with about 10 rules | 4 | 6 | 1 | 33% | 3 |
-| every verb has ~5 forms | 3 | 3 | 1 | 20% | 2 |
+| people write every Surface Form of the file "lexicon.tsv" | 3 | 3 | 1 | 43% | 1 |
+| the expense of a reversal grows with the Seed | 4 | 4 | 1 | 25% | 5 |
+| the tool Lexgen expands the Paradigms with about 10 rules | 4 | 6 | 1 | 33% | 3 |
+| every verb has ~5 Surface Forms | 3 | 3 | 1 | 20% | 2 |
 | about 43 percent of the swaps did not reduce the ambiguity | 4 | 6 | 1 | 20% | 8 |
-| the expense of a reversal grows with the seed, so the maintainers record the decision | 4 | 5 | 2 | 27% | 10 |
+| the expense of a reversal grows with the Seed, so the maintainers record the decision | 4 | 5 | 2 | 27% | 10 |
 | the agent retries the request, because the test failed | 3 | 4 | 2 | 22% | 6 |
 
 **Aggregate:** 73 sentences parsed; mean peak-open 2.7, worst 5 (ceiling ≈ 4).

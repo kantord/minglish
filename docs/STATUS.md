@@ -5,9 +5,10 @@ derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 
-- `CONTEXT.md` — glossary (authoritative vocabulary; "Rejection" defines the
-  ban/gap/load-warning triage that governs all linting work).
-- `docs/adr/0001–0026` — every language and policy decision, each citing its
+- `domain/model.json` — the domain model (ADR 0027): every project term with
+  its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
+  written Capitalized in minglish text. `just define <Term>` looks one up.
+- `docs/adr/0001–0027` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -73,8 +74,8 @@ derivable from the code, ADRs, or git history.
 
 ## Metrics snapshot (2026-09-01)
 
-- Lexicon 488 forms (ADR 0001 rewrite ≈55 lemmas; ADR 0002 paragraph runs ≈40
-  jargon lemmas); corpus 70/70 parse; grammar LR(1)-clean, zero
+- Lexicon 652 forms incl. 24 Capitalized term nouns (ADR 0027); corpus 70/70
+  parse; grammar LR(1)-clean, zero
   precedence declarations (CI-enforced).
 - agenttest first-try trajectory: 44 → 51 → 48 → 52 of 54 (run 5). Predictions registered for run 6: "please delete the file" should
   snapshot to the bare imperative (skill now teaches it); the no-must case

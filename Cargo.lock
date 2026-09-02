@@ -134,6 +134,7 @@ name = "diagnose"
 version = "0.1.0"
 dependencies = [
  "grammar",
+ "serde_json",
 ]
 
 [[package]]

@@ -14,6 +14,9 @@ notes where. Add an entry when a new type is caught; never delete one.
   ("please delete" → "you must delete"; ADR 0019) or the reverse.
 - **Participant invented or lost**: passive → active with a guessed doer;
   impersonal narrowed to *you* without noting it (ADR 0012).
+- **Concept decomposed into general words**: a defined term paraphrased away
+  ("the ambiguity of the reference" for Reference Ambiguity). Reads unnatural
+  and loses the definition. Use the Capitalized term (ADR 0027).
 - **Nominalization blind spot**: verb → noun rewrites read as dense and score
   well while hiding the event ("the process stops" → "the stop of the
   process"); the cost metric does not see it (findings §5).

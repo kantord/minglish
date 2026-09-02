@@ -13,7 +13,7 @@ rejected sentence, keep its meaning; change only what the error requires.
 
 - Everything is lowercase, except: sentence-start capitals are allowed;
   `I` is always the pronoun; a capitalized word mid-sentence is a proper
-  name (e.g. `the tool Lexgen builds the lexicon`).
+  name (e.g. `the tool Lexgen builds the Lexicon`).
 - A name may not start a sentence unquoted — introduce it (`the tool
   Lexgen …`) or quote it (`"lexgen" …`).
 - Double quotes hold verbatim identifiers, treated as one thing:
@@ -33,21 +33,21 @@ rejected sentence, keep its meaning; change only what the error requires.
    Prohibition: `do not delete my report`
 5. Modal: `the agent must check the input` · `the agent must not delete
    your report` · `the user can open a session` · `you cannot delete the
-   lexicon`
+   Lexicon`
 6. Conditional — comma and then are mandatory, condition first:
    `if the test fails, then the agent retries the request`
 7. Coordination (binary only): `the server stores the message and returns
    the result` · `the test fails or the agent retries the request`
 8. Quantified (first word signals the type):
-   - generic (kind-level, tolerates exceptions): `machines find collisions`
+   - generic (kind-level, tolerates exceptions): `machines find Collisions`
    - universal: `every agent retries the request`
    - none: `no agent retries the request` (subject only; no second negation;
      never with must)
    - some / not-all: `some agents retry the request` ·
      `some agents do not retry the request` (some + plural, subject only)
-9. Possession: `every word has one tag` (`one` means exactly one)
+9. Possession: `every word has one Form Tag` (`one` means exactly one)
 11. Causal (comma mandatory, never sentence-initial, no `and`/`or` inside):
-    cause given, result new: `the seed grows, so the expense grows` ·
+    cause given, result new: `the Seed grows, so the expense grows` ·
     result given, reason new: `the agent retries the request, because the
     test failed`. `since`, `hence`, `therefore`, `thus`, `as` do not exist.
 10. Counts are digits with a plural noun: `the agent deleted 3 files` ·

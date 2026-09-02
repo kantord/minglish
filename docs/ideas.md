@@ -29,6 +29,10 @@ are clean; CC BY-SA vector sets fit the existing fetch-not-vendor pattern.
 
 ## Core lexicon + jargon addon packs
 
+**Realized 2026-09-02 as the domain model (ADR 0027)**: `domain/model.json` is
+the first pack — same schema as the seed plus definitions; adds, never
+overrides. Other-domain packs remain future work.
+
 Split the seed into a domain-neutral core (function words + general
 vocabulary) and optional domain packs (tech, cooking, …). A minglish text
 declares core + packs; lexgen lints the combined set.

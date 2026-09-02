@@ -1,5 +1,5 @@
-# minglish seed corpus — target sentences the language must accept
-# one sentence per line; lowercase; drives the lexicon coverage metric
+# minglish Seed corpus — target sentences the language must accept
+# one sentence per line; lowercase; drives the Lexicon Coverage metric
 the agent reads the file
 the server returns an error
 the user sends a message to the server
@@ -7,7 +7,7 @@ the system stores the result in the database
 an error stops the process
 the agent creates a report from the data
 the parser rejects the sentence
-the linter finds a collision in the lexicon
+the Linter finds a Collision in the Lexicon
 the compiler builds the program
 the agent deletes the old file
 a message arrives from the queue
@@ -31,29 +31,29 @@ the server stores a copy of the report at the database
 if the test fails, then the agent retries the request
 if the queue is empty, then the server stops the process
 the agent must check the input
-you cannot delete the lexicon
+you cannot delete the Lexicon
 the user can open a session
 the agent must not delete your report
 the compiler built the program
 the queue was empty
 the user did not open a session
 the tests were old
-machines find collisions
+machines find Collisions
 agents retry requests
 old files are big
-people do not find collisions
+people do not find Collisions
 every agent retries the request
 every user of the system opens a session
-no agent can delete the lexicon
+no agent can delete the Lexicon
 no test was old
 the agent checks every request
-every word has one tag
+every word has one Form Tag
 the user has one session
 i have your report
 some agents retry the request
 some agents do not retry the request
-some words have one tag
-the tool Lexgen builds the lexicon
+some words have one Form Tag
+the tool Lexgen builds the Lexicon
 the file "seed.json" is the source of the truth
 the database WordNet attests the senses of the words
 check the input of the user
@@ -66,10 +66,10 @@ the user has 2 sessions
 the server stores a copy of 2 reports
 the copies are identical
 43 percent of the swaps did not reduce the ambiguity
-people write every form of the file "lexicon.tsv"
-the expense of a reversal grows with the seed
-the tool Lexgen expands the paradigms with about 10 rules
-every verb has ~5 forms
+people write every Surface Form of the file "lexicon.tsv"
+the expense of a reversal grows with the Seed
+the tool Lexgen expands the Paradigms with about 10 rules
+every verb has ~5 Surface Forms
 about 43 percent of the swaps did not reduce the ambiguity
-the expense of a reversal grows with the seed, so the maintainers record the decision
+the expense of a reversal grows with the Seed, so the maintainers record the decision
 the agent retries the request, because the test failed

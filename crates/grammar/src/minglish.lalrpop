@@ -303,6 +303,8 @@ OfPP: Tree = {
 };
 
 NPInner: Tree = {
+    // a defined or quoted name inside an of-PP: "every sentence of Minglish"
+    <nm:LName> => nm,
     // appositive name inside an of-PP: "every form of the file "lexicon.tsv""
     <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> =>
         nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm)]),

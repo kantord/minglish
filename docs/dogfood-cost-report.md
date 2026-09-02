@@ -16,16 +16,16 @@ original.
 | 5 | 13 | 49.3 | 13 | 42.8 | 0.87 |
 | 6 | 16 | 62.9 | 18 | 59.0 | 0.94 |
 | 7 | 11 | 36.1 | 15 | 46.7 | 1.29 |
-| 8 | 18 | 77.2 | 35 | 112.7 | 1.46 |
+| 8 | 18 | 77.2 | 38 | 124.7 | 1.62 |
 | 9 | 7 | 21.6 | 5 | 19.3 | 0.89 |
 | 10 | 33 | 137.7 | 53 | 184.8 | 1.34 |
-| 11 | 23 | 94.3 | 27 | 94.6 | 1.00 |
-| 12 | 30 | 169.3 | 64 | 259.5 | 1.53 |
+| 11 | 23 | 94.3 | 30 | 106.6 | 1.13 |
+| 12 | 30 | 169.3 | 67 | 271.6 | 1.60 |
 | 13 | 6 | 23.1 | 9 | 30.9 | 1.34 |
 | 14 | 26 | 108.5 | 32 | 123.5 | 1.14 |
 | 15 | 28 | 114.5 | 20 | 68.2 | 0.60 |
 
-**Aggregate:** 15 pairs — words 251 → 343 (+37%), cost 1045.8 → 1217.5 (**ratio 1.16**)
+**Aggregate:** 15 pairs — words 251 → 352 (+40%), cost 1045.8 → 1253.6 (**ratio 1.20**)
 
 ## Before → after
 
@@ -33,7 +33,7 @@ original.
 > Word choice must stay a human judgment.
 
 AFTER (17 words, cost 52.0, **211%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 27%
-> People must choose the words of the lexicon. Machines must not choose the words of the lexicon.
+> People must choose the words of the Lexicon. Machines must not choose the words of the Lexicon.
 
 Declared loss: nominalization,continuity
 
@@ -41,7 +41,7 @@ Declared loss: nominalization,continuity
 > …the critical safety property is exactly the kind of check humans miss and machines don't.
 
 AFTER (10 words, cost 36.7, **68%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 2, right-branching 25%
-> People cannot find every collision. Machines can find every collision.
+> People cannot find every Collision. Machines can find every Collision.
 
 Declared loss: nominalization,emphasis
 
@@ -73,7 +73,7 @@ Declared loss: redundancy
 > Curation stays human and cheap: one JSON entry per word; the machine owns inflection and safety.
 
 AFTER (18 words, cost 59.0, **94%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 32%
-> People choose the words. Every word has one entry. The machine writes the inflections and finds the collisions.
+> People choose the words. Every word has one entry. The machine writes the inflections and finds the Collisions.
 
 Declared loss: nominalization,continuity
 
@@ -81,15 +81,15 @@ Declared loss: nominalization,continuity
 > Reference data is used only for checking - never for choosing words.
 
 AFTER (15 words, cost 46.7, **129%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 23%
-> The linter checks the words with the data. The data does not choose the words.
+> The Linter checks the words with the data. The data does not choose the words.
 
 Declared loss: nominalization
 
 **8.** BEFORE (18 words, cost 77.2)
 > minglish needs a lexicon: every allowed surface form, each with exactly one form-tag, plus redirects for rejected uses.
 
-AFTER (35 words, cost 112.7, **146%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 23%
-> The language needs a lexicon. The lexicon contains every form of the words. Every form has one tag. A word can have an unused sense. The lexicon can contain a replacement for the unused sense.
+AFTER (38 words, cost 124.7, **162%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 23%
+> The language needs a Lexicon. The Lexicon contains every Surface Form of the words. Every Surface Form has one Form Tag. A word can have an unused sense. The Lexicon can contain a replacement for the unused sense.
 
 Declared loss: terminology
 
@@ -112,16 +112,16 @@ Declared loss: emphasis,comparative
 **11.** BEFORE (23 words, cost 94.3)
 > At the same time, hand-writing every inflected surface form (full paradigms, ~5 forms per verb) is toil that invites typos and silent gaps.
 
-AFTER (27 words, cost 94.6, **100%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 19%
-> Every verb has about 5 forms. If people write every form, then the lexicon has typos. If people write every form, then the lexicon has hidden gaps.
+AFTER (30 words, cost 106.6, **113%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 19%
+> Every verb has about 5 Surface Forms. If people write every Surface Form, then the Lexicon has typos. If people write every Surface Form, then the Lexicon has hidden holes.
 
 Declared loss: affect
 
 **12.** BEFORE (30 words, cost 169.3)
 > A Rust tool (crates/lexgen) expands paradigms with ~10 regular-morphology rules, enforces the linter invariants (collision-free, cross-POS completeness, no unattested forms) as hard build errors, and deterministically emits lexicon.tsv and docs/lexicon-report.md.
 
-AFTER (64 words, cost 259.5, **153%** of original) — 8 sentence(s), each parses uniquely ✓, peak-open 6, right-branching 32%
-> The tool Lexgen expands the paradigms with about 10 rules. The tool Lexgen checks the invariants. No form has 2 tags. An unused sense has a replacement or has a waiver. The data attests every form. If a test fails, then the tool Lexgen returns an error. The tool Lexgen writes the file "lexicon.tsv" and writes the file "docs/lexicon-report.md". The tool Lexgen is deterministic.
+AFTER (67 words, cost 271.6, **160%** of original) — 8 sentence(s), each parses uniquely ✓, peak-open 6, right-branching 32%
+> The tool Lexgen expands the Paradigms with about 10 rules. The tool Lexgen checks the invariants. No Surface Form has 2 Form Tags. An unused sense has a replacement or has a Waiver. The data attests every Surface Form. If a test fails, then the tool Lexgen returns an error. The tool Lexgen writes the file "lexicon.tsv" and writes the file "docs/lexicon-report.md". The tool Lexgen is deterministic.
 
 Declared loss: detail
 
@@ -137,7 +137,7 @@ Declared loss: none (lossless per ADR 0012)
 > The committed-generated-file pattern requires discipline (and eventually a CI check) that lexicon.tsv matches seed.json; a hand-edit to the TSV is a build error waiting to happen.
 
 AFTER (32 words, cost 123.5, **114%** of original) — 4 sentence(s), each parses uniquely ✓, peak-open 6, right-branching 25%
-> The repository stores the generated files. The generated files can drift from the seed. The script "scripts/check.sh" finds the differences. If a person edits the file "lexicon.tsv", then the script "scripts/check.sh" fails.
+> The repository stores the generated files. The generated files can drift from the Seed. The script "scripts/check.sh" finds the differences. If a person edits the file "lexicon.tsv", then the script "scripts/check.sh" fails.
 
 Declared loss: idiom,update
 
@@ -145,7 +145,7 @@ Declared loss: idiom,update
 > Reversing this later (e.g. moving to a database or to per-word files) means migrating accumulated curation, which gets more expensive as the seed grows — hence this ADR.
 
 AFTER (20 words, cost 68.2, **60%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 26%
-> A reversal migrates every entry. The expense of a reversal grows with the seed, so the maintainers record the decision.
+> A reversal migrates every entry. The expense of a reversal grows with the Seed, so the maintainers record the decision.
 
 Declared loss: example
 

@@ -6,3 +6,6 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 grammar = { path = "../grammar" }
+
+[dev-dependencies]
+serde_json = "1"

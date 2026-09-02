@@ -403,6 +403,28 @@ fn build_system_prompt() -> String {
     for (group, words) in by_group {
         out.push_str(&format!("{group}: {}\n", words.join(", ")));
     }
+    // ADR 0027: defined terms, one unit each, Capitalized in text
+    if let Ok(text) = std::fs::read_to_string("domain/model.json") {
+        if let Ok(model) = serde_json::from_str::<serde_json::Value>(&text) {
+            out.push_str("\nDefined terms (write noun terms Capitalized, as one unit; they mean exactly this):\n");
+            for e in model.as_array().into_iter().flatten() {
+                let lemma = e["lemma"].as_str().unwrap_or("");
+                let cat = e["category"].as_str().unwrap_or("");
+                let def = e["definition"].as_str().unwrap_or("");
+                let shown = if let Some(n) = e["forms"]["name"].as_str() {
+                    n.to_string()
+                } else if cat == "NOUN" || cat == "NAME" {
+                    lemma.split(' ').map(|w| {
+                        let mut c = w.chars();
+                        c.next().map(|f| f.to_uppercase().collect::<String>() + c.as_str()).unwrap_or_default()
+                    }).collect::<Vec<_>>().join(" ")
+                } else {
+                    lemma.to_string()
+                };
+                out.push_str(&format!("- {shown} ({}): {def}\n", cat.to_lowercase()));
+            }
+        }
+    }
     out
 }
 

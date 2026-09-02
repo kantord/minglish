@@ -135,24 +135,24 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
   )
 )
 
-### the linter finds a collision in the lexicon
+### the Linter finds a Collision in the Lexicon
 open=3 maxdep=5 depth=1 right=29% fronted=2
 (S h=1
   (NP h=1
     the
-    linter
+    Linter
   )
   (VP h=0
     finds
     (NP h=1
       a
-      collision
+      Collision
     )
     (PP h=1
       in
       (NP h=1
         the
-        lexicon
+        Lexicon
       )
     )
   )
@@ -618,7 +618,7 @@ open=2 maxdep=2 depth=1 right=20% fronted=3
   )
 )
 
-### you cannot delete the lexicon
+### you cannot delete the Lexicon
 open=2 maxdep=2 depth=1 right=25% fronted=2
 (S h=1
   you
@@ -628,7 +628,7 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
       delete
       (NP h=1
         the
-        lexicon
+        Lexicon
       )
     )
   )
@@ -735,7 +735,7 @@ open=2 maxdep=2 depth=1 right=0% fronted=3
   )
 )
 
-### machines find collisions
+### machines find Collisions
 open=1 maxdep=1 depth=1 right=50% fronted=1
 (S h=1
   (NPGen h=0
@@ -744,7 +744,7 @@ open=1 maxdep=1 depth=1 right=50% fronted=1
   (VP h=0
     find
     (NPGen h=0
-      collisions
+      Collisions
     )
   )
 )
@@ -776,7 +776,7 @@ open=2 maxdep=2 depth=1 right=0% fronted=3
   )
 )
 
-### people do not find collisions
+### people do not find Collisions
 open=3 maxdep=3 depth=1 right=25% fronted=3
 (S h=1
   (NPGen h=0
@@ -788,7 +788,7 @@ open=3 maxdep=3 depth=1 right=25% fronted=3
     (VP h=0
       find
       (NPGen h=0
-        collisions
+        Collisions
       )
     )
   )
@@ -833,7 +833,7 @@ open=4 maxdep=4 depth=1 right=29% fronted=5
   )
 )
 
-### no agent can delete the lexicon
+### no agent can delete the Lexicon
 open=2 maxdep=2 depth=1 right=20% fronted=3
 (S h=1
   (NP h=1
@@ -846,7 +846,7 @@ open=2 maxdep=2 depth=1 right=20% fronted=3
       delete
       (NP h=1
         the
-        lexicon
+        Lexicon
       )
     )
   )
@@ -881,7 +881,7 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
   )
 )
 
-### every word has one tag
+### every word has one Form Tag
 open=2 maxdep=2 depth=1 right=25% fronted=2
 (S h=1
   (NP h=1
@@ -892,7 +892,7 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
     has
     (NP h=1
       one
-      tag
+      Form Tag
     )
   )
 )
@@ -962,7 +962,7 @@ open=3 maxdep=3 depth=1 right=17% fronted=4
   )
 )
 
-### some words have one tag
+### some words have one Form Tag
 open=2 maxdep=2 depth=1 right=25% fronted=2
 (S h=1
   (NP h=1
@@ -973,12 +973,12 @@ open=2 maxdep=2 depth=1 right=25% fronted=2
     have
     (NP h=1
       one
-      tag
+      Form Tag
     )
   )
 )
 
-### the tool Lexgen builds the lexicon
+### the tool Lexgen builds the Lexicon
 open=2 maxdep=2 depth=1 right=40% fronted=3
 (S h=1
   (NPAppos h=1
@@ -990,7 +990,7 @@ open=2 maxdep=2 depth=1 right=40% fronted=3
     builds
     (NP h=1
       the
-      lexicon
+      Lexicon
     )
   )
 )
@@ -1249,7 +1249,7 @@ open=4 maxdep=6 depth=1 right=22% fronted=7
   )
 )
 
-### people write every form of the file "lexicon.tsv"
+### people write every Surface Form of the file "lexicon.tsv"
 open=3 maxdep=3 depth=1 right=43% fronted=1
 (S h=1
   (NPGen h=0
@@ -1259,7 +1259,7 @@ open=3 maxdep=3 depth=1 right=43% fronted=1
     write
     (NP h=1
       every
-      form
+      Surface Form
       (OfPP h=1
         of
         (NPAppos h=1
@@ -1272,7 +1272,7 @@ open=3 maxdep=3 depth=1 right=43% fronted=1
   )
 )
 
-### the expense of a reversal grows with the seed
+### the expense of a reversal grows with the Seed
 open=4 maxdep=4 depth=1 right=25% fronted=5
 (S h=1
   (NP h=1
@@ -1292,13 +1292,13 @@ open=4 maxdep=4 depth=1 right=25% fronted=5
       with
       (NP h=1
         the
-        seed
+        Seed
       )
     )
   )
 )
 
-### the tool Lexgen expands the paradigms with about 10 rules
+### the tool Lexgen expands the Paradigms with about 10 rules
 open=4 maxdep=6 depth=1 right=33% fronted=3
 (S h=1
   (NPAppos h=1
@@ -1310,7 +1310,7 @@ open=4 maxdep=6 depth=1 right=33% fronted=3
     expands
     (NP h=1
       the
-      paradigms
+      Paradigms
     )
     (PP h=1
       with
@@ -1323,7 +1323,7 @@ open=4 maxdep=6 depth=1 right=33% fronted=3
   )
 )
 
-### every verb has ~5 forms
+### every verb has ~5 Surface Forms
 open=3 maxdep=3 depth=1 right=20% fronted=2
 (S h=1
   (NP h=1
@@ -1335,7 +1335,7 @@ open=3 maxdep=3 depth=1 right=20% fronted=2
     (NP h=2
       ~
       5
-      forms
+      Surface Forms
     )
   )
 )
@@ -1368,7 +1368,7 @@ open=4 maxdep=6 depth=1 right=20% fronted=8
   )
 )
 
-### the expense of a reversal grows with the seed, so the maintainers record the decision
+### the expense of a reversal grows with the Seed, so the maintainers record the decision
 open=4 maxdep=5 depth=2 right=27% fronted=10
 (Causal h=2
   (Clause h=1
@@ -1389,7 +1389,7 @@ open=4 maxdep=5 depth=2 right=27% fronted=10
         with
         (NP h=1
           the
-          seed
+          Seed
         )
       )
     )

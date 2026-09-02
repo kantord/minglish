@@ -36,6 +36,18 @@ agenttest concurrency="64":
 autofix-paragraphs file out="docs/paragraph-report.md" *FLAGS:
     cargo run -p agenttest -- paragraphs {{file}} {{out}} {{FLAGS}}
 
+# print a domain term's definition: just define "Anaphoric Pronoun"
+define +TERM:
+    python3 scripts/define.py {{TERM}}
+
+# review paragraph cases: all (one screen each), one in detail, or set a verdict
+review-paragraphs *ARGS:
+    python3 scripts/paragraph-review.py {{ARGS}}
+
+# set a verdict on paragraph case N: just verdict 3 needs-fix "why"
+verdict N VERDICT *NOTE:
+    python3 scripts/paragraph-review.py {{N}} {{VERDICT}} {{NOTE}}
+
 # MILESTONE: propose minglish fixes for a markdown file's prose (never edits
 # the source; output needs ADR 0012 meaning review)
 autofix file out="docs/autofix-report.md":

@@ -106,26 +106,6 @@
     "note": "the judicial verb sense is banned"
   },
   {
-    "lemma": "linter",
-    "category": "NOUN",
-    "forms": {
-      "plural": "linters"
-    },
-    "note": "domain jargon; not in reference data"
-  },
-  {
-    "lemma": "collision",
-    "category": "NOUN"
-  },
-  {
-    "lemma": "lexicon",
-    "category": "NOUN",
-    "forms": {
-      "plural": "lexicons"
-    },
-    "note": "plural rare but correct; acknowledged"
-  },
-  {
     "lemma": "compiler",
     "category": "NOUN"
   },
@@ -533,14 +513,6 @@
     "note": "universal negative; subject-only, first-token signature (ADR 0014)"
   },
   {
-    "lemma": "tag",
-    "category": "NOUN",
-    "reject": {
-      "VERB": "mark"
-    },
-    "note": "transparent single word for the category label concept (ADR 0015)"
-  },
-  {
     "lemma": "binary",
     "category": "NOUN",
     "waive": [
@@ -586,10 +558,6 @@
       "VERB"
     ],
     "note": "verb sense (sense danger) irrelevant to domain"
-  },
-  {
-    "lemma": "attest",
-    "category": "VERB_TRANS"
   },
   {
     "lemma": "need",
@@ -863,14 +831,6 @@
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
   },
   {
-    "lemma": "form",
-    "category": "NOUN",
-    "reject": {
-      "VERB": "create"
-    },
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
     "lemma": "option",
     "category": "NOUN",
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
@@ -928,32 +888,6 @@
     }
   },
   {
-    "lemma": "gap",
-    "category": "NOUN",
-    "waive": [
-      "VERB"
-    ],
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
-    "lemma": "lemma",
-    "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)",
-    "forms": {
-      "plural": "lemmas"
-    }
-  },
-  {
-    "lemma": "category",
-    "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
-    "lemma": "waiver",
-    "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
     "lemma": "note",
     "category": "NOUN",
     "reject": {
@@ -963,11 +897,6 @@
   },
   {
     "lemma": "rationale",
-    "category": "NOUN",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
-    "lemma": "paradigm",
     "category": "NOUN",
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
   },
@@ -1114,11 +1043,6 @@
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
   },
   {
-    "lemma": "waive",
-    "category": "VERB_TRANS",
-    "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
-  },
-  {
     "lemma": "optimize",
     "category": "VERB_TRANS",
     "note": "needed by the ADR 0001 minglish rewrite (dogfood, 2026-09-01)"
@@ -1225,14 +1149,6 @@
     "note": "closed-class quantity marker after a digit count: \"43 percent of the swaps\" (ADR 0024)"
   },
   {
-    "lemma": "seed",
-    "category": "NOUN",
-    "waive": [
-      "VERB"
-    ],
-    "note": "the curated word list (ADR 0001); verb sense (to sow) irrelevant to domain"
-  },
-  {
     "lemma": "describe",
     "category": "VERB_TRANS",
     "note": "the redirect target of report-as-verb; a redirect must point at an enabled word (ADR 0023)"
@@ -1309,7 +1225,7 @@
   {
     "lemma": "as",
     "category": "BANNED",
-    "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); comparison has no minglish form yet"
+    "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); comparison has no minglish Surface Form yet"
   },
   {
     "lemma": "pronoun",
@@ -1394,17 +1310,6 @@
     }
   },
   {
-    "lemma": "triage",
-    "category": "NOUN",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
-    "waive": [
-      "VERB"
-    ],
-    "forms": {
-      "plural": "triages"
-    }
-  },
-  {
     "lemma": "design",
     "category": "NOUN",
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
@@ -1469,11 +1374,6 @@
     "waive": [
       "NOUN"
     ]
-  },
-  {
-    "lemma": "anaphoric",
-    "category": "ADJ",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)"
   },
   {
     "lemma": "instructional",
@@ -1621,11 +1521,6 @@
     ]
   },
   {
-    "lemma": "indexical",
-    "category": "ADJ",
-    "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
-  },
-  {
     "lemma": "closed",
     "category": "ADJ",
     "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
@@ -1727,12 +1622,12 @@
   },
   {
     "lemma": "against",
-    "category": "PREP",
+    "category": "PREP_V",
     "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
   },
   {
     "lemma": "across",
-    "category": "PREP",
+    "category": "PREP_V",
     "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
   },
   {
@@ -1797,5 +1692,280 @@
       "ppart": "occurred",
       "ing": "occurring"
     }
+  },
+  {
+    "lemma": "choice",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "count",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "proxy",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "quality",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "share",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "change",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "ambiguous",
+    "category": "ADJ",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "structure",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "permanent",
+    "category": "ADJ",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "original",
+    "category": "ADJ",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "translation",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "meaning",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "politeness",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "plural": "politenesses"
+    }
+  },
+  {
+    "lemma": "emphasis",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "loss",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "declare",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "claim",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "define",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "give",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "forms": {
+      "past": "gave",
+      "ppart": "given"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "reader",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "resolve",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "remove",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "measure",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "fix",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "spelling",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "name",
+    "category": "VERB_TRANS",
+    "waive": [
+      "NOUN"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "keep",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "kept",
+      "ppart": "kept"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "drop",
+    "category": "VERB_TRANS",
+    "forms": {
+      "past": "dropped",
+      "ppart": "dropped",
+      "ing": "dropping"
+    },
+    "waive": [
+      "NOUN"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "base",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "VERB"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "into",
+    "category": "PREP_V",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "decide",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "enable",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "hole",
+    "category": "NOUN",
+    "waive": [
+      "VERB"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "kind",
+    "category": "NOUN",
+    "waive": [
+      "ADJ"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "add",
+    "category": "VERB_TRANS",
+    "note": "needed by domain-model definitions (ADR 0027)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "good",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "ADV"
+    ],
+    "note": "needed by domain-model definitions (ADR 0027)"
+  },
+  {
+    "lemma": "declaration",
+    "category": "NOUN",
+    "note": "needed by domain-model definitions (ADR 0027)"
   }
 ]

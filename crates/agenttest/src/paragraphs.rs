@@ -40,6 +40,9 @@ pub struct ParaCase {
     /// whenever `best` changes).
     #[serde(default = "unreviewed")]
     verdict: String,
+    /// Free-text reviewer note (set with scripts/paragraph-review.py).
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    note: String,
     /// The highest-ranked valid proposal (parse → continuity → cost).
     #[serde(default)]
     best: String,
@@ -135,12 +138,13 @@ impl Words {
     /// (quoted / capitalized mid-sentence), a digit count, nor punctuation.
     fn unknown_words(&self, sentence: &str) -> Vec<String> {
         let mut out = Vec::new();
-        for (i, tok) in tokens(sentence).into_iter().enumerate() {
+        for tok in tokens(sentence) {
             if tok.starts_with('"') || tok == "," {
                 continue;
             }
             let digits = tok.trim_start_matches('~').chars().all(|c| c.is_ascii_digit());
-            let name = i > 0 && tok.chars().next().is_some_and(|c| c.is_uppercase());
+            // capitalized anywhere: a name or a defined term (ADR 0018, 0027)
+            let name = tok.chars().next().is_some_and(|c| c.is_uppercase());
             let w = tok.to_lowercase();
             if !digits && !name && !self.tags.contains_key(&w) && !out.contains(&w) {
                 out.push(w);
@@ -416,9 +420,40 @@ fn process(
     case.context_after = paras.get(i + 1).cloned().unwrap_or_default();
     let (om, verdicts) = measure(lexicon, words, &paras[i]);
     case.original_metrics = om.clone();
+    // the language moves under stored proposals: re-validate every one
+    // against the current lexicon before ranking
+    for p in case.proposals.iter_mut() {
+        if p.text.starts_with("GAP:") || p.text.starts_with("API error") {
+            continue;
+        }
+        let (m, v) = measure(lexicon, words, &p.text);
+        let bad: Vec<String> = v.iter().filter(|(_, ok, _)| !ok).map(|(s, _, d)| format!("\"{s}\": {d}")).collect();
+        p.valid = bad.is_empty();
+        p.metrics = m;
+        p.diagnosis = (!bad.is_empty()).then(|| bad.join(" | "));
+    }
     let clean = om.parsed == om.sentences;
     if clean || dry_run {
-        println!("  {} {}: {}/{} parse", if clean { "✓" } else { "·" }, i + 1, om.parsed, om.sentences);
+        let best = case
+            .proposals
+            .iter()
+            .filter(|p| p.valid)
+            .max_by_key(|p| rank_key(p))
+            .map(|p| p.text.clone())
+            .unwrap_or_default();
+        if best != case.best {
+            case.best = best;
+            case.verdict = "unreviewed".to_string();
+        }
+        println!(
+            "  {} {}: {}/{} parse, {} valid of {} stored",
+            if clean { "✓" } else { "·" },
+            i + 1,
+            om.parsed,
+            om.sentences,
+            case.proposals.iter().filter(|p| p.valid).count(),
+            case.proposals.len()
+        );
         std::fs::write(&path, serde_yaml::to_string(&case).unwrap()).expect("write case");
         return case;
     }
@@ -557,30 +592,31 @@ fn write_report(cases: &[ParaCase], file: &str, out_path: &str, dry_run: bool) {
         }
         let mut ranked: Vec<&Proposal> = c.proposals.iter().collect();
         ranked.sort_by_key(|p| std::cmp::Reverse(rank_key(p)));
-        for (k, p) in ranked.iter().enumerate() {
-            let tag = if !p.valid {
-                "rejected"
-            } else if p.text == c.best {
-                "best"
-            } else {
-                "valid"
-            };
+        if let Some(b) = ranked.iter().find(|p| p.text == c.best) {
             out.push_str(&format!(
-                "**Proposal {} ({tag}, ×{})** — {}{}\n\n> {}\n\n",
-                k + 1,
-                p.count,
-                if p.valid { fmt(&p.metrics) } else { "invalid".to_string() },
-                if p.drops.is_empty() { String::new() } else { format!(" · drops: {}", p.drops) },
-                p.text
+                "**Best** — {}{}\n\n> {}\n\n",
+                fmt(&b.metrics),
+                if b.drops.is_empty() { String::new() } else { format!(" · drops: {}", b.drops) },
+                b.text
             ));
-            if let Some(d) = &p.diagnosis {
-                out.push_str(&format!("  - {d}\n\n"));
+        } else {
+            out.push_str("*(no valid proposal yet)*\n\n");
+        }
+        out.push_str(&format!("verdict: `{}`{}\n\n", c.verdict, if c.note.is_empty() { String::new() } else { format!(" — {}", c.note) }));
+        let others = ranked.iter().filter(|p| p.text != c.best).count();
+        if others > 0 {
+            out.push_str(&format!("<details><summary>{others} other proposal(s)</summary>\n\n"));
+            for p in ranked.iter().filter(|p| p.text != c.best) {
+                out.push_str(&format!(
+                    "- ({}, ×{}) {}{}\n",
+                    if p.valid { "valid" } else { "rejected" },
+                    p.count,
+                    p.text,
+                    p.diagnosis.as_ref().map(|d| format!("\n  - {d}")).unwrap_or_default()
+                ));
             }
+            out.push_str("\n</details>\n\n");
         }
-        if c.proposals.is_empty() {
-            out.push_str("*(no proposals yet)*\n\n");
-        }
-        out.push_str(&format!("verdict: `{}`\n\n", c.verdict));
     }
     std::fs::write(out_path, &out).expect("write report");
 }

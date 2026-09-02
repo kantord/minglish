@@ -107,6 +107,30 @@ fn skill_examples_parse() {
     assert_all_parse(&lexicon, &examples, "skills/minglish/SKILL.md");
 }
 
+/// Every definition in the domain model is minglish (ADR 0027).
+#[test]
+fn domain_definitions_parse() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    let text = std::fs::read_to_string(repo("domain/model.json")).unwrap();
+    let model: serde_json::Value = serde_json::from_str(&text).unwrap();
+    let mut bad = Vec::new();
+    for e in model.as_array().unwrap() {
+        let lemma = e["lemma"].as_str().unwrap_or("?");
+        let def = e["definition"].as_str().unwrap_or("");
+        for seg in def.split(". ").map(|s| s.trim().trim_end_matches('.').trim()).filter(|s| !s.is_empty()) {
+            match diagnose(&lexicon, seg) {
+                Diagnosis::Clean(_) => {}
+                d => bad.push(format!("{lemma}: {seg}  ← {}", match d {
+                    Diagnosis::Word(m) => m,
+                    Diagnosis::Style(f) | Diagnosis::Ambiguous { findings: f, .. } => f.join("; "),
+                    _ => "unrecognizable".to_string(),
+                })),
+            }
+        }
+    }
+    assert!(bad.is_empty(), "domain/model.json: definitions that do not parse:\n  {}", bad.join("\n  "));
+}
+
 /// Ban advice (lexicon.tsv ban rows) quotes fixes — they must parse.
 #[test]
 fn ban_advice_examples_parse() {
@@ -122,7 +146,7 @@ fn ban_advice_examples_parse() {
     assert_all_parse(&lexicon, &examples, "lexicon.tsv ban advice");
 }
 
-/// Linter findings quote fixes. Drive every finding through the rejected
+/// linter findings quote fixes. Drive every finding through the rejected
 /// test sentences and check each quoted example.
 #[test]
 fn linter_advice_examples_parse() {
@@ -148,7 +172,7 @@ fn linter_advice_examples_parse() {
         "the project does not plan a discourse mechanism",
         "the word i is a pronoun",
         "my is a pronoun",
-        "the pronouns are not in the lexicon",
+        "the pronouns are not in the Lexicon",
         "the design is consistent with the project",
         "the mechanism stores a word and a message",
         "the cost is big",
@@ -159,8 +183,8 @@ fn linter_advice_examples_parse() {
         "the agent deleted 1 file",
         "the copies are the same",
         "the agent deleted three files",
-        "Remove the file",
-        "the lexicon does not contain the banned pronouns",
+        "Discard the file",
+        "the Lexicon does not contain the banned pronouns",
         "pronouns for the speaker are indexical",
         "the frequencies are of pronouns",
         "the speaker or the hearer reads the file",
@@ -170,6 +194,7 @@ fn linter_advice_examples_parse() {
         "the report shows pronouns are big",
         "the report shows that the test fails",
         "the i pronoun is indexical",
+        "the language does not have a discourse layer",
         "the point of the copy of the report fails",
     ];
     let mut examples = Vec::new();
@@ -188,5 +213,5 @@ fn linter_advice_examples_parse() {
     examples.sort();
     examples.dedup();
     assert!(examples.len() >= 5, "expected several advice examples, found {}", examples.len());
-    assert_all_parse(&lexicon, &examples, "linter advice");
+    assert_all_parse(&lexicon, &examples, "Linter advice");
 }

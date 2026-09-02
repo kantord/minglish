@@ -13,6 +13,10 @@ parse rate → topic continuity → cost; display order, never a gate) ·
 `verdict` — your judgment of `best`: `ideal` | `needs-fix` | `unreviewed`
 (auto-reset whenever `best` changes).
 
+Review without opening the YAML: `just review-paragraphs` (one screen per
+case), `just review-paragraphs N` (one case, all valid proposals), `just
+verdict N ideal|needs-fix "note"`.
+
 Accepted rewrites are applied to the source by hand. Metrics: parse =
 sentences that parse; continuity = consecutive pairs whose second subject
 noun appears in the first sentence; cost = Σ (9 − zipf) per word, as

@@ -338,7 +338,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         {
             out.push(format!(
                 "\"{} {} {}\" — a verb form cannot modify a noun; say who does it: \
-                 \"the linter bans the pronouns\", or split the sentence",
+                 \"the Linter bans the pronouns\", or split the sentence",
                 word(&w[0]), word(&w[1]), word(&w[2])
             ));
         }
@@ -377,7 +377,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         match (toks.get(j), toks.get(j + 1)) {
             (Some(Tok::PrepV(p) | Tok::PrepN(p)), _) => out.push(format!(
                 "\"{} {p} …\" — the copula takes an adjective or a noun phrase, not a \
-                 prepositional phrase; use a verb: \"the lexicon contains the pronouns\" (ADR 0003)",
+                 prepositional phrase; use a verb: \"the Lexicon contains the pronouns\" (ADR 0003)",
                 word(t)
             )),
             (Some(Tok::Adj(a)), Some(Tok::PrepV(p))) => out.push(format!(
@@ -476,10 +476,33 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
             _ => {}
         }
     }
+    // a defined multi-word term written in lowercase ("reference ambiguity")
+    // beats the compound rule below (ADR 0027)
+    let mut term_spans: Vec<(usize, usize)> = Vec::new();
+    for len in [3usize, 2] {
+        for i in 0..toks.len().saturating_sub(len - 1) {
+            if term_spans.iter().any(|&(s, e)| i < e && i + len > s) {
+                continue;
+            }
+            let ws: Vec<&str> = toks[i..i + len].iter().map(word).collect();
+            if ws.iter().any(|w| *w == "," || w.starts_with('"')) {
+                continue;
+            }
+            let joined = ws.join(" ").to_lowercase();
+            if let Some(cap) = lexicon.term(&joined) {
+                out.push(format!("\"{joined}\" is a defined term — write \"{cap}\" (see CONTEXT.md)"));
+                term_spans.push((i, i + len));
+            }
+        }
+    }
     // noun-noun compound (ADR 0015): two nouns in a row, unless the second
-    // is a noun form used in the verb slot (handled above)
+    // is a noun form used in the verb slot (handled above) or the pair is a
+    // defined term (handled just above)
     for (i, w) in toks.windows(2).enumerate() {
         if let (Tok::NounSg(a), Tok::NounSg(b) | Tok::NounPl(b)) = (&w[0], &w[1]) {
+            if term_spans.iter().any(|&(s, e)| i >= s && i + 1 < e) {
+                continue;
+            }
             let verb_slot = toks.get(i + 2).is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_)))
                 && lexicon.redirect(b, "VERB").is_some();
             if !verb_slot {

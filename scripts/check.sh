@@ -26,7 +26,7 @@ cargo run -q -p triage
 ./scripts/showcase.sh > /dev/null
 
 echo "== committed artifacts must match their sources =="
-if ! git diff --exit-code -- lexicon.tsv docs/lexicon-report.md \
+if ! git diff --exit-code -- lexicon.tsv docs/lexicon-report.md CONTEXT.md \
     docs/parse-report.md docs/cost-report.md docs/dogfood-cost-report.md \
     docs/triage-report.md docs/showcase.md; then
     echo "ERROR: generated files drifted from their sources — commit the regenerated versions"

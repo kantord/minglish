@@ -84,7 +84,7 @@ fn banned_structures_reject() {
         // about / ~ only before a digit count (ADR 0025)
         "the agent reads about the file",
         "about one file fails",
-        "~ 5 forms fail",
+        "~ 5 Surface Forms fail",
         // causal: comma mandatory, never sentence-initial, no coordination inside (ADR 0026)
         "the test fails so the agent retries the request",
         "because the test fails, the agent retries the request",
