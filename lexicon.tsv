@@ -2,6 +2,13 @@
 # surface	kind	tag	value   (value = lemma for forms, suggestion for rejects)
 a	form	DET_SG	a
 about	form	APPROX	about
+accept	form	VERB_TRANS_BASE	accept
+acceptable	form	ADJ	acceptable
+accepted	form	VERB_TRANS_ED	accept
+accepting	form	VERB_TRANS_ING	accept
+accepts	form	VERB_TRANS_3SG	accept
+across	form	PREP	across
+against	form	PREP	against
 agent	form	NOUN_SG	agent
 agents	form	NOUN_PL	agent
 algorithm	form	NOUN_SG	algorithm
@@ -19,6 +26,10 @@ anaphoras	form	NOUN_PL	anaphora
 anaphoric	form	ADJ	anaphoric
 and	form	CONJ	and
 apparent	form	ADJ	apparent
+appear	form	VERB_INTRANS_BASE	appear
+appeared	form	VERB_INTRANS_ED	appear
+appearing	form	VERB_INTRANS_ING	appear
+appears	form	VERB_INTRANS_3SG	appear
 are	form	COPULA_PL	are
 arrive	form	VERB_INTRANS_BASE	arrive
 arrived	form	VERB_INTRANS_ED	arrive
@@ -53,6 +64,10 @@ carry	form	VERB_TRANS_BASE	carry
 carrying	form	VERB_TRANS_ING	carry
 categories	form	NOUN_PL	category
 category	form	NOUN_SG	category
+cause	form	VERB_TRANS_BASE	cause
+caused	form	VERB_TRANS_ED	cause
+causes	form	VERB_TRANS_3SG	cause
+causing	form	VERB_TRANS_ING	cause
 check	form	VERB_TRANS_BASE	check
 check	reject	NOUN	test
 checked	form	VERB_TRANS_ED	check
@@ -65,6 +80,8 @@ chose	form	VERB_TRANS_ED	choose
 chosen	form	VERB_TRANS_ED	choose
 clarities	form	NOUN_PL	clarity
 clarity	form	NOUN_SG	clarity
+class	form	NOUN_SG	class
+classes	form	NOUN_PL	class
 closed	form	ADJ	closed
 collide	form	VERB_INTRANS_BASE	collide
 collided	form	VERB_INTRANS_ED	collide
@@ -93,6 +110,8 @@ contains	form	VERB_TRANS_3SG	contain
 copies	form	NOUN_PL	copy
 copy	form	NOUN_SG	copy
 copy	reject	VERB	duplicate
+corpora	form	NOUN_PL	corpus
+corpus	form	NOUN_SG	corpus
 cost	form	VERB_TRANS_BASE	cost
 cost	reject	NOUN	expense
 costed	form	VERB_TRANS_ED	cost
@@ -162,6 +181,7 @@ entry	form	NOUN_SG	entry
 error	form	NOUN_SG	error
 errors	form	NOUN_PL	error
 every	form	QUANT_UNIV	every
+exact	form	ADJ	exact
 example	form	NOUN_SG	example
 examples	form	NOUN_PL	example
 expand	form	VERB_TRANS_BASE	expand
@@ -190,7 +210,9 @@ files	form	NOUN_PL	file
 find	form	VERB_TRANS_BASE	find
 find	reject	NOUN	discovery
 finding	form	VERB_TRANS_ING	find
+findings	ban	-	write "results" ("the file describes the results")
 finds	form	VERB_TRANS_3SG	find
+first	ban	-	ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
 five	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 for	form	PREP_V	for
 form	form	NOUN_SG	form
@@ -246,6 +268,11 @@ irregular	form	ADJ	irregular
 is	form	COPULA_SG	is
 it	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 its	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+knew	form	VERB_TRANS_ED	know
+know	form	VERB_TRANS_BASE	know
+knowing	form	VERB_TRANS_ING	know
+known	form	VERB_TRANS_ED	know
+knows	form	VERB_TRANS_3SG	know
 language	form	NOUN_SG	language
 languages	form	NOUN_PL	language
 layer	form	NOUN_SG	layer
@@ -293,6 +320,10 @@ noun	form	NOUN_SG	noun
 nouns	form	NOUN_PL	noun
 object	form	NOUN_SG	object
 objects	form	NOUN_PL	object
+occur	form	VERB_INTRANS_BASE	occur
+occurred	form	VERB_INTRANS_ED	occur
+occurring	form	VERB_INTRANS_ING	occur
+occurs	form	VERB_INTRANS_3SG	occur
 of	form	PREP_N	of
 old	form	ADJ	old
 on	form	PREP_V	on
@@ -309,6 +340,7 @@ optimizing	form	VERB_TRANS_ING	optimize
 option	form	NOUN_SG	option
 options	form	NOUN_PL	option
 or	form	CONJ	or
+other	ban	-	"other" refers to something already named - repeat the noun, or name the second thing
 our	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
 output	form	NOUN_SG	output
 output	reject	VERB	emit
@@ -324,11 +356,15 @@ pin	form	VERB_TRANS_BASE	pin
 pinned	form	VERB_TRANS_ED	pin
 pinning	form	VERB_TRANS_ING	pin
 pins	form	VERB_TRANS_3SG	pin
+place	form	NOUN_SG	place
+places	form	NOUN_PL	place
 plan	form	VERB_TRANS_BASE	plan
 planned	form	VERB_TRANS_ED	plan
 planning	form	VERB_TRANS_ING	plan
 plans	form	VERB_TRANS_3SG	plan
 please	ban	-	politeness markers are not minglish - state the instruction directly or write "you must ..."
+point	form	NOUN_SG	point
+points	form	NOUN_PL	point
 possessive	form	ADJ	possessive
 prefer	form	VERB_TRANS_BASE	prefer
 preferred	form	VERB_TRANS_ED	prefer
@@ -379,6 +415,8 @@ refer	form	VERB_INTRANS_BASE	refer
 refered	form	VERB_INTRANS_ED	refer
 reference	form	NOUN_SG	reference
 references	form	NOUN_PL	reference
+referent	form	NOUN_SG	referent
+referents	form	NOUN_PL	referent
 refering	form	VERB_INTRANS_ING	refer
 refers	form	VERB_INTRANS_3SG	refer
 reject	form	VERB_TRANS_BASE	reject
@@ -392,6 +430,7 @@ repeating	form	VERB_TRANS_ING	repeat
 repeats	form	VERB_TRANS_3SG	repeat
 repetition	form	NOUN_SG	repetition
 repetitions	form	NOUN_PL	repetition
+repetitive	form	ADJ	repetitive
 replace	form	VERB_TRANS_BASE	replace
 replaced	form	VERB_TRANS_ED	replace
 replacement	form	NOUN_SG	replacement
@@ -406,8 +445,14 @@ repository	form	NOUN_SG	repository
 request	form	NOUN_SG	request
 request	reject	VERB	ask
 requests	form	NOUN_PL	request
+require	form	VERB_TRANS_BASE	require
+required	form	VERB_TRANS_ED	require
+requires	form	VERB_TRANS_3SG	require
+requiring	form	VERB_TRANS_ING	require
 research	form	NOUN_SG	research
 researches	form	NOUN_PL	research
+resolution	form	NOUN_SG	resolution
+resolutions	form	NOUN_PL	resolution
 result	form	NOUN_SG	result
 result	reject	VERB	follow
 results	form	NOUN_PL	result
@@ -436,6 +481,7 @@ says	form	VERB_TRANS_3SG	say
 script	form	NOUN_SG	script
 script	reject	VERB	write
 scripts	form	NOUN_PL	script
+second	ban	-	ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
 seed	form	NOUN_SG	seed
 seeds	form	NOUN_PL	seed
 send	form	VERB_TRANS_BASE	send
@@ -505,7 +551,9 @@ ten	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 test	form	NOUN_SG	test
 test	reject	VERB	check
 tests	form	NOUN_PL	test
-that	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+text	form	NOUN_SG	text
+texts	form	NOUN_PL	text
+that	ban	-	"that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"
 the	form	DET	the
 their	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 them	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
@@ -513,11 +561,14 @@ then	form	THEN	then
 therefore	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 these	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 they	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+third	ban	-	ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
 this	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 those	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 three	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 thus	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 to	form	PREP_V	to
+token	form	NOUN_SG	token
+tokens	form	NOUN_PL	token
 tool	form	NOUN_SG	tool
 tools	form	NOUN_PL	tool
 triage	form	NOUN_SG	triage
@@ -552,6 +603,7 @@ waiving	form	VERB_TRANS_ING	waive
 was	form	COPULA_SG_PAST	was
 we	ban	-	name the group - "the maintainers", "the team" - or use an imperative; "we" hides who acts (ADR 0020)
 were	form	COPULA_PL_PAST	were
+where	ban	-	no relative clauses - split the sentence and repeat the noun (ADR 0010)
 with	form	PREP_V	with
 word	form	NOUN_SG	word
 word	reject	VERB	write

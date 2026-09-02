@@ -159,6 +159,7 @@ the advice:
 ```
 ✗ every agent does not retry the request
   STYLE:
+    - "does … retry" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
     - "every … not" is scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns> do not …" (ADR 0014)
 ✓ no agent retries the request
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%
@@ -167,6 +168,7 @@ the advice:
 
 ✗ no agent must check the input
   STYLE:
+    - "must … check" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
     - "no … must" is ambiguous — for prohibition write, for example, "agents must not check the input" (bare plural + must not, ADR 0014)
 ✓ agents must not check the input
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
@@ -204,6 +206,7 @@ the advice:
 
 ✗ the agent has deleted the file
   STYLE:
+    - "has … deleted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
     - perfect aspect ("has <verb>-ed") is not in minglish — use the simple past (ADR 0016)
 ✓ the agent deleted the file
   parses uniquely — peak-open 2, max-dep 2, depth 1, right-branching 25%

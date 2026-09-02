@@ -4,18 +4,18 @@
 
 ## Summary
 
-- 255 lemmas, 488 surface forms, 42 redirects, 61 waivers
-- Lemmas per category: ADJ 26, APPROX 1, BANNED 36, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 97, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 8, VERB_TRANS 49
+- 280 lemmas, 534 surface forms, 42 redirects, 71 waivers
+- Lemmas per category: ADJ 29, APPROX 1, BANNED 42, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 105, NUM_SG 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP 2, PREP_N 1, PREP_V 7, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCONJ_COND 1, THEN 1, VERB_INTRANS 10, VERB_TRANS 53
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.34 (higher = more common; everyday words sit at 4.5+)
+- Mean zipf: 4.36 (higher = more common; everyday words sit at 4.5+)
 - Rarest 5: anaphora (0.00), anaphoric (0.00), indexical (0.00), linter (0.00), validator (0.00)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
 
-- Mean senses: 5.3 (upper bound — WordNet oversplits)
-- Top 5: carry (40), check (25), come (21), reduce (20), have (19)
+- Mean senses: 5.5 (upper bound — WordNet oversplits)
+- Top 5: carry (40), point (26), check (25), come (21), reduce (20)
 
 ## Redirect findability guard (floor: zipf 3.5)
 
@@ -34,7 +34,6 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - queue (VERB) → "wait"
 - request (VERB) → "ask"
 - output (VERB) → "emit"
-- read (NOUN) → "text"
 - return (NOUN) → "response"
 - store (NOUN) → "shop"
 - stop (NOUN) → "halt"
@@ -52,7 +51,6 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - need (NOUN) → "necessity"
 - use (NOUN) → "usage"
 - edit (NOUN) → "revision"
-- effect (VERB) → "cause"
 - show (NOUN) → "display"
 
 ## Waivers (attested senses with no redirect)
@@ -118,6 +116,16 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - refer (NOUN)
 - unknown (NOUN)
 - possessive (NOUN)
+- token (ADJ)
+- token (VERB)
+- class (VERB)
+- place (VERB)
+- point (VERB)
+- referent (ADJ)
+- exact (VERB)
+- know (NOUN)
+- cause (NOUN)
+- text (VERB)
 
 ## Corpus coverage
 

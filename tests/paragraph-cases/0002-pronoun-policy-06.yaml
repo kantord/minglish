@@ -286,3 +286,237 @@ proposals:
   diagnosis: '"this effect is a cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the agent accepts the cost": WORD: "accepts" is not a minglish word | "the cost is consistent with the design of the project": not recognizable as a minglish-like sentence | "the design prefers clarity over naturalness": WORD: "prefers" is not a minglish word [all unknown words: prefers, over, naturalness]'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition is an accepted cost. the repetition is consistent with the clarity stance of the project.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 67.34
+    words: 21
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is an accepted cost": WORD: "accepted" is not a minglish word | "the repetition is consistent with the clarity stance of the project": WORD: "stance" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats. the repetition does not cost a lot. the repetition matches the clarity of the project.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 57.36999999999999
+    words: 18
+  diagnosis: '"the prose repeats": STYLE: "repeats" is transitive in minglish and needs an object | "the repetition does not cost a lot": WORD: "lot" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats words. the repetition costs little. the repetition matches the clarity of the project.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 54.05
+    words: 16
+  diagnosis: '"the repetition costs little": WORD: "little" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition is an accepted cost. the repetition is consistent with the clarity of the project. the project prefers clarity over naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 87.58
+    words: 26
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is an accepted cost": WORD: "accepted" is not a minglish word | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats the agent. the repetition costs the project. the repetition does not reduce the clarity of the project. the project uses clarity and does not use naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 94.4
+    words: 29
+  diagnosis: '"the project uses clarity and does not use naturalness": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats the agent. the repetition costs the project. the repetition does not reduce the clarity of the project. the project has clarity. the project does not have naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 3
+    cost: 95.47
+    words: 30
+  diagnosis: '"the project has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not have naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose contains repetition. the repetition is a cost. the cost is consistent with the project design. the design prefers clarity over naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 78.25999999999999
+    words: 23
+  diagnosis: '"the prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the cost is consistent with the project design": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense"; "project design" — noun-noun compounds are not minglish; write "the design of the project", or one transparent word (ADR 0015) | "the design prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats nouns. the repetition creates an expense. the expense is acceptable. the design of the project values clarity. the design does not value naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 91.67999999999998
+    words: 26
+  diagnosis: '"the expense is acceptable": WORD: "acceptable" is not a minglish word | "the design of the project values clarity": WORD: "values" is not a minglish word | "the design does not value naturalness": WORD: "value" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose repeats nouns. the repetition creates an expense. the team accepts the expense. the design of the project prefers clarity. the design does not prefer naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 96.31999999999998
+    words: 27
+  diagnosis: '"the team accepts the expense": WORD: "accepts" is not a minglish word | "the design of the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition is a cost. the project prefers clarity over naturalness. the team accepts the cost.
+  drops: hyphenated compound, dash punctuation, possessive, stance register
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 68.76
+    words: 20
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word | "the team accepts the cost": WORD: "accepts" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose contains repetition. the repetition has an expense. the project prefers clarity. the project does not prefer naturalness. the team accepts the expense.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 86.13
+    words: 24
+  diagnosis: '"the prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the team accepts the expense": WORD: "accepts" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition is an expense. the project chooses clarity. the project does not choose naturalness. the team allows the expense.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 82.44999999999999
+    words: 24
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project chooses clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not choose naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Prose is repetitive. the agent appears in the sentence many times. the project prefers clarity over naturalness. the cost is acceptable.
+  drops: stance, project's, hyphenated compound, dash punctuation
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 73.10000000000001
+    words: 21
+  diagnosis: '"Prose is repetitive": WORD: "repetitive" is not a minglish word | "the agent appears in the sentence many times": WORD: "appears" is not a minglish word [all unknown words: appears, many, times] | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word | "the cost is acceptable": WORD: "acceptable" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: prose has repetition. the agent occurs in the sentence multiple times. the project prefers clarity to naturalness. the cost is consistent with the design.
+  drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 81.05999999999999
+    words: 24
+  diagnosis: '"prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the agent occurs in the sentence multiple times": WORD: "occurs" is not a minglish word [all unknown words: occurs, multiple, times] | "the project prefers clarity to naturalness": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the cost is consistent with the design": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: prose contains repetition. the agent appears in the sentence many times. the project prefers clarity to naturalness. the expense matches the design.
+  drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over, consistent, cost (as noun)
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 78.07999999999998
+    words: 22
+  diagnosis: '"prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the agent appears in the sentence many times": WORD: "appears" is not a minglish word [all unknown words: appears, many, times] | "the project prefers clarity to naturalness": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition is a cost. the cost is consistent with the design of the project. the design prefers clarity over naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 79.44
+    words: 25
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the cost is consistent with the design of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense" | "the design prefers clarity over naturalness": WORD: "over" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose has repetition. the repetition causes an expense. the expense is consistent. the design of the project prefers clarity. the design does not prefer naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 3
+    cost: 89.65999999999998
+    words: 26
+  diagnosis: '"the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition causes an expense": WORD: "causes" is not a minglish word | "the design of the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the repetition is an expense. the project has a design. the design prefers clarity. the design does not prefer naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 80.45
+    words: 24
+  diagnosis: '"the prose is repetitive": WORD: "repetitive" is not a minglish word | "the design prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash

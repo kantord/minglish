@@ -29,7 +29,9 @@ fn example_sentences(lexicon: &Lexicon, text: &str, open: char, close: char) -> 
         let template = span.contains('<') || span.contains('…') || span.contains("...");
         let fragment = span.starts_with(|c: char| !c.is_alphanumeric() && c != '"');
         let counter_example = before.trim_end().ends_with("not");
-        if words >= 3 && !template && !fragment && !counter_example && has_verb(lexicon, span) {
+        // `"span" — advice` echoes the writer's own words, not an example
+        let echo = rest.trim_start().starts_with('—');
+        if words >= 3 && !template && !fragment && !counter_example && !echo && has_verb(lexicon, span) {
             out.push(span.to_string());
         }
     }
@@ -137,6 +139,15 @@ fn linter_advice_examples_parse() {
         "the copies are the same",
         "the agent deleted three files",
         "Remove the file",
+        "the lexicon does not contain the banned pronouns",
+        "pronouns for the speaker are indexical",
+        "the frequencies are of pronouns",
+        "the speaker or the hearer reads the file",
+        "the first pronoun fails",
+        "the findings are big",
+        "the design prefers clarity",
+        "the report shows pronouns are big",
+        "the report shows that the test fails",
     ];
     let mut examples = Vec::new();
     for p in probes {

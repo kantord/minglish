@@ -672,7 +672,7 @@
   {
     "lemma": "that",
     "category": "BANNED",
-    "advice": "third-person reference is banned - repeat the noun you mean (ADR 0002)"
+    "advice": "\"that\" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: \"the report shows the result\""
   },
   {
     "lemma": "these",
@@ -1629,5 +1629,173 @@
     "lemma": "closed",
     "category": "ADJ",
     "note": "surfaced by the ADR 0002 paragraph run 2 (2026-09-02)"
+  },
+  {
+    "lemma": "first",
+    "category": "BANNED",
+    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
+  },
+  {
+    "lemma": "second",
+    "category": "BANNED",
+    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
+  },
+  {
+    "lemma": "third",
+    "category": "BANNED",
+    "advice": "ordinals are not in minglish yet (ADR 0022) - name the thing instead: \"the speaker\", \"the hearer\", or a quoted name"
+  },
+  {
+    "lemma": "findings",
+    "category": "BANNED",
+    "advice": "write \"results\" (\"the file describes the results\")"
+  },
+  {
+    "lemma": "where",
+    "category": "BANNED",
+    "advice": "no relative clauses - split the sentence and repeat the noun (ADR 0010)"
+  },
+  {
+    "lemma": "other",
+    "category": "BANNED",
+    "advice": "\"other\" refers to something already named - repeat the noun, or name the second thing"
+  },
+  {
+    "lemma": "corpus",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "forms": {
+      "plural": "corpora"
+    }
+  },
+  {
+    "lemma": "token",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "ADJ",
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "class",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "place",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "point",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "resolution",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
+  },
+  {
+    "lemma": "referent",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "ADJ"
+    ],
+    "forms": {
+      "plural": "referents"
+    }
+  },
+  {
+    "lemma": "exact",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "against",
+    "category": "PREP",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
+  },
+  {
+    "lemma": "across",
+    "category": "PREP",
+    "note": "surfaced by the ADR 0002 paragraph run 3 (2026-09-02)"
+  },
+  {
+    "lemma": "know",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "forms": {
+      "past": "knew",
+      "ppart": "known"
+    },
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "require",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+  },
+  {
+    "lemma": "accept",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+  },
+  {
+    "lemma": "cause",
+    "category": "VERB_TRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "waive": [
+      "NOUN"
+    ]
+  },
+  {
+    "lemma": "text",
+    "category": "NOUN",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "waive": [
+      "VERB"
+    ]
+  },
+  {
+    "lemma": "repetitive",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+  },
+  {
+    "lemma": "acceptable",
+    "category": "ADJ",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+  },
+  {
+    "lemma": "appear",
+    "category": "VERB_INTRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)"
+  },
+  {
+    "lemma": "occur",
+    "category": "VERB_INTRANS",
+    "note": "surfaced by the ADR 0002 paragraph run 4 (2026-09-02)",
+    "forms": {
+      "past": "occurred",
+      "ppart": "occurred",
+      "ing": "occurring"
+    }
   }
 ]

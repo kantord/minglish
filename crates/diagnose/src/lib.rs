@@ -268,6 +268,78 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             ));
         }
     }
+    // bare singular noun: "prefers clarity" — every singular noun takes a
+    // determiner (mass nouns take "the")
+    for (i, t) in toks.iter().enumerate() {
+        if let Tok::NounSg(n) = t {
+            let prev = i.checked_sub(1).map(|j| &toks[j]);
+            let determined = prev.is_some_and(|p| {
+                is_det(p) || matches!(p, Tok::Adj(_) | Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_))
+            });
+            let mentioned = toks.get(i + 1).is_some_and(|nx| matches!(nx, Tok::Name(_)));
+            if !determined && !mentioned && i > 0 {
+                out.push(format!(
+                    "\"{n}\" — a singular noun needs a determiner: \"the {n}\" (mass nouns take \"the\")"
+                ));
+            }
+        }
+    }
+    // clause as object: "shows pronouns are …" — two finite verbs and no
+    // connective between them
+    {
+        let is_verbish = |t: &Tok| {
+            is_finite_verb(t)
+                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
+                    | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoPast(_))
+        };
+        let verbs: Vec<usize> = toks.iter().enumerate().filter(|(_, t)| is_verbish(t)).map(|(i, _)| i).collect();
+        if let [a, b, ..] = verbs[..] {
+            let connective = toks[a..b].iter().any(|t| matches!(t, Tok::Conj(_) | Tok::If(_) | Tok::Then(_) | Tok::So(_) | Tok::Because(_) | Tok::Comma));
+            let reduced_relative = matches!(toks[a], Tok::VtEd(_) | Tok::ViEd(_)) && a >= 1 && matches!(toks[a - 1], Tok::NounSg(_) | Tok::NounPl(_));
+            if !connective && !reduced_relative {
+                out.push(format!(
+                    "\"{} … {}\" — a clause cannot be the object of a verb; state the fact in its own \
+                     sentence, or name it: \"the report shows the result\"",
+                    word(&toks[a]), word(&toks[b])
+                ));
+            }
+        }
+    }
+    // participle as a noun modifier: "the banned pronouns" (no participial
+    // adjectives; the verb keeps the form)
+    for w in toks.windows(3) {
+        if is_det(&w[0]) && matches!(w[1], Tok::VtEd(_) | Tok::VtIng(_) | Tok::ViEd(_) | Tok::ViIng(_))
+            && matches!(w[2], Tok::NounSg(_) | Tok::NounPl(_))
+        {
+            out.push(format!(
+                "\"{} {} {}\" — a verb form cannot modify a noun; say who does it: \
+                 \"the linter bans the pronouns\", or split the sentence",
+                word(&w[0]), word(&w[1]), word(&w[2])
+            ));
+        }
+    }
+    // a preposition other than "of" right after a subject noun attaches to
+    // the verb, not the noun (ADR 0011): "pronouns for the speaker are …"
+    {
+        let first_verb = toks.iter().position(|t| {
+            is_finite_verb(t)
+                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
+                    | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))
+        });
+        if let Some(v) = first_verb {
+            for i in 1..v {
+                if matches!(toks[i - 1], Tok::NounSg(_) | Tok::NounPl(_)) {
+                    if let Tok::PrepV(p) = &toks[i] {
+                        out.push(format!(
+                            "\"{} {p} …\" — only \"of\" attaches to a noun; \"{p}\" attaches to the verb. \
+                             Write \"the {} of …\", or move the phrase after the verb (ADR 0011)",
+                            word(&toks[i - 1]), word(&toks[i - 1])
+                        ));
+                    }
+                }
+            }
+        }
+    }
     // copula + prepositional phrase / adjective + PP (ADR 0003; ADR 0023 deferral)
     for (i, t) in toks.iter().enumerate() {
         if !matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
@@ -278,7 +350,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             j += 1;
         }
         match (toks.get(j), toks.get(j + 1)) {
-            (Some(Tok::PrepV(p)), _) => out.push(format!(
+            (Some(Tok::PrepV(p) | Tok::PrepN(p)), _) => out.push(format!(
                 "\"{} {p} …\" — the copula takes an adjective or a noun phrase, not a \
                  prepositional phrase; use a verb: \"the lexicon contains the pronouns\" (ADR 0003)",
                 word(t)
@@ -302,8 +374,13 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         while matches!(toks.get(j), Some(Tok::Adj(_))) {
             j += 1;
         }
+        let verb_before = toks[..i].iter().any(|t| {
+            is_finite_verb(t)
+                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
+                    | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))
+        });
         if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
-            && toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::Comma | Tok::Conj(_)))
+            && (!verb_before || toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::Comma | Tok::Conj(_))))
         {
             out.push(
                 "noun phrases cannot be coordinated — repeat the verb: \"the mechanism stores \

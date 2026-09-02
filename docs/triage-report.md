@@ -9,29 +9,29 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 ## Sentence buckets
 
 - **Perfect** (every token usable as-is): 2 (0.1%)
-- **Close** (1–2 problem tokens): 460 (22.6%)
-- **Far** (3+ problem tokens): 1575 (77.3%)
+- **Close** (1–2 problem tokens): 465 (22.8%)
+- **Far** (3+ problem tokens): 1570 (77.1%)
 
 ## Token verdicts
 
 | verdict | tokens | share |
 |---|---|---|
-| OK | 6532 | 29.9% |
+| OK | 6683 | 30.6% |
 | REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 1147 | 5.3% |
+| MISMATCH (enabled word, uncovered POS) | 1149 | 5.3% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 12046 | 55.1% |
+| OOV | 11893 | 54.4% |
 
 ## OOV by gold UPOS
 
-- NOUN: 3863
-- VERB: 1977
-- ADJ: 1732
+- NOUN: 3798
+- VERB: 1904
+- ADJ: 1731
 - PRON: 1147
 - ADV: 1085
 - AUX: 639
 - NUM: 502
-- ADP: 424
+- ADP: 410
 - DET: 270
 - SCONJ: 199
 - INTJ: 112
@@ -40,7 +40,7 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 
 ## Top missing lemmas (curation candidates — human decides)
 
-be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (×127), will/AUX (×116), this/DET (×111), that/PRON (×105), would/AUX (×91), go/VERB (×86), he/PRON (×82), that/SCONJ (×81), get/VERB (×75), great/ADJ (×72), by/ADP (×71), 's/PART (×70), service/NOUN (×67), know/VERB (×64), what/PRON (×59), make/VERB (×58), just/ADV (×57), very/ADV (×57), place/NOUN (×54), want/VERB (×53), our/PRON (×50), time/NOUN (×50), thanks/NOUN (×49), this/PRON (×49), there/PRON (×48), all/DET (×46), up/ADP (×46), any/DET (×45), could/AUX (×44), take/VERB (×44), his/PRON (×40), think/VERB (×40), food/NOUN (×39), look/VERB (×38), as/ADP (×36), here/ADV (×36)
+be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (×127), will/AUX (×116), this/DET (×111), that/PRON (×105), would/AUX (×91), go/VERB (×86), he/PRON (×82), that/SCONJ (×81), get/VERB (×75), great/ADJ (×72), by/ADP (×71), 's/PART (×70), service/NOUN (×67), what/PRON (×59), make/VERB (×58), just/ADV (×57), very/ADV (×57), want/VERB (×53), our/PRON (×50), time/NOUN (×50), thanks/NOUN (×49), this/PRON (×49), there/PRON (×48), all/DET (×46), up/ADP (×46), any/DET (×45), could/AUX (×44), take/VERB (×44), his/PRON (×40), think/VERB (×40), food/NOUN (×39), look/VERB (×38), as/ADP (×36), here/ADV (×36), as/SCONJ (×35), see/VERB (×35)
 
 ## Redirect hits (the rejection rules doing their job)
 
@@ -93,5 +93,5 @@ be/AUX (×317), it/PRON (×207), good/ADJ (×157), they/PRON (×139), we/PRON (�
 - i'm the king — *'m (AUX, OOV); king (NOUN, OOV)*
 - yeah — *yeah (INTJ, OOV)*
 - sounds exciting. — *sounds (VERB, OOV); exciting (ADJ, OOV)*
-- you know, whatever. — *know (VERB, OOV); whatever (INTJ, OOV)*
+- you know, whatever. — *whatever (INTJ, OOV)*
 

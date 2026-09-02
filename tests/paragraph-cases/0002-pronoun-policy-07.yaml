@@ -11,7 +11,7 @@ original_metrics:
   cost: 116.8
   words: 28
 verdict: unreviewed
-best: ''
+best: the lexicon does not contain the pronouns. the validator must have a mechanism. the mechanism bans a word. the mechanism has a message. the message repeats the noun. the writer needs the mechanism. the project defers the mechanism.
 proposals:
 - text: the banned pronouns fall out of the lexicon. the banned pronouns fall from the lexicon. a future validator needs a mechanism. the mechanism stores a banned word and a message. the writer uses the message. the project defers the mechanism.
   drops: oov, hyphenated compound, deferred as a standalone word
@@ -284,5 +284,212 @@ proposals:
     cost: 145.15999999999997
     words: 44
   diagnosis: '"the lexicon has no pronouns": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the mechanism creates an error message for the writer": not recognizable as a minglish-like sentence | "the error message tells the writer to repeat the noun": WORD: "tells" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain some words. the lexicon does not contain the banned pronouns. a future validator must have a mechanism. the mechanism bans a word. the mechanism sends a message. the message says "repeat the noun you mean". the project defers the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 5
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 155.19
+    words: 45
+  diagnosis: '"the lexicon does not contain some words": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the mechanism bans a word and sends a message. the message says "repeat the noun you mean". the project defers the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 100.70000000000002
+    words: 30
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence'
+  count: 2
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the validator must produce an error that says "repeat the noun you mean". the validator needs a mechanism that bans a word and produces a message. the team defers the mechanism to the future.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 144.42999999999998
+    words: 42
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the validator must produce an error that says "repeat the noun you mean"": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the validator needs a mechanism that bans a word and produces a message": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the team defers the mechanism to the future": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the banned pronouns do not appear in the lexicon. the validator must produce an error. the error says "repeat the noun you mean". the mechanism bans a word. the mechanism produces a message. the validator needs the mechanism. the team defers the mechanism to a future version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 6
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 161.27999999999997
+    words: 47
+  diagnosis: '"the banned pronouns do not appear in the lexicon": WORD: "appear" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the validator must produce an error. the error says "repeat the noun you mean". the mechanism bans a word. the mechanism produces a message. the validator needs the mechanism. the team defers the mechanism to a future version.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 6
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 160.50999999999996
+    words: 46
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the system does not report a useful error for the writer. the future validator must contain a mechanism for a banned word and a message. the team defers the mechanism.
+  drops: parenthetical aside, compound adjectives, semicolon style
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 125.26
+    words: 38
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report a useful error for the writer": WORD: "useful" is not a minglish word | "the future validator must contain a mechanism for a banned word and a message": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the system does not report an error for the writer. the future validator must contain a mechanism. the mechanism stores a banned word and stores a message. the team defers the mechanism.
+  drops: useful, noun-coordination
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 134.56000000000003
+    words: 40
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report an error for the writer": STYLE: "report an" — a word mentioned as a word must be quoted: "report \"an\"" (ADR 0018) | "the mechanism stores a banned word and stores a message": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the system does not report an error for the writer. the mechanism stores a word. the mechanism stores a message. the future validator contains the mechanism. the team defers the mechanism.
+  drops: useful, noun-coordination
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 1
+    cost: 130.51
+    words: 39
+  diagnosis: '"the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report an error for the writer": STYLE: "report an" — a word mentioned as a word must be quoted: "report \"an\"" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain banned pronouns. the project must build a mechanism for banned pronouns. the mechanism must produce a message for the writer. the message must repeat the noun that the writer means. the validator defers this mechanism.
+  drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 139.84999999999997
+    words: 40
+  diagnosis: '"the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the project must build a mechanism for banned pronouns": not recognizable as a minglish-like sentence | "the message must repeat the noun that the writer means": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, means] | "the validator defers this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain banned pronouns. the project must build a mechanism for banned pronouns. the mechanism must produce a message for the writer. the message must repeat the noun. the writer means the noun. the validator defers the mechanism.
+  drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness, relative-clause
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 3
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 143.60999999999996
+    words: 41
+  diagnosis: '"the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the project must build a mechanism for banned pronouns": not recognizable as a minglish-like sentence | "the writer means the noun": WORD: "means" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'GAP: "means" is not in the word list, and no available word expresses "intends" or "refers to" in the required sense.'
+  drops: ''
+  valid: false
+  metrics:
+    sentences: 0
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 0.0
+    words: 0
+  diagnosis: 'GAP: "means" is not in the word list, and no available word expresses "intends" or "refers to" in the required sense.'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the validator must check the banned words. the validator must produce a message for the writer. the message says repeat the noun. the team defers the mechanism.
+  drops: genre (future‑work note), register (parenthetical aside, hyphenated compound), affect (urgency)
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 123.89999999999999
+    words: 35
+  diagnosis: '"the lexicon does not contain the banned pronouns": STYLE: "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the validator must check the banned words": STYLE: "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the message says repeat the noun": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the pronouns. the linter bans the pronouns. the validator must check the words. the linter bans the words. the validator produces a message for the writer. the message says the writer repeats the noun. the team defers the mechanism.
+  drops: genre (future‑work note), register (hyphenated compound)
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 6
+    continuity_pairs: 6
+    continuity_ok: 1
+    cost: 161.53999999999996
+    words: 44
+  diagnosis: '"the message says the writer repeats the noun": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the pronouns. the linter bans the pronouns. the validator must check the words. the linter bans the words. the validator produces a message for the writer. the message instructs the writer. the writer repeats the noun. the team defers the mechanism.
+  drops: genre (future‑work note), register (hyphenated compound)
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 7
+    continuity_pairs: 7
+    continuity_ok: 2
+    cost: 169.63
+    words: 46
+  diagnosis: '"the message instructs the writer": WORD: "instructs" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain banned pronouns. the validator must have a mechanism for banned words. the mechanism has a message. the message repeats the noun. the writer needs the mechanism. the project defers the mechanism.
+  drops: temporal detail ("currently", "in the future"), parenthetical ("OOV"), hyphenated compounds, semicolon coordination
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 124.65999999999998
+    words: 36
+  diagnosis: '"the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the validator must have a mechanism for banned words": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the pronouns. the validator must have a mechanism. the mechanism bans a word. the mechanism has a message. the message repeats the noun. the writer needs the mechanism. the project defers the mechanism.
+  drops: temporal detail ("currently", "in the future"), parenthetical ("OOV"), hyphenated compounds, semicolon coordination
+  valid: true
+  metrics:
+    sentences: 7
+    parsed: 7
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 127.7
+    words: 38
   count: 1
   model: deepseek/deepseek-v4-flash
