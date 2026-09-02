@@ -36,10 +36,17 @@ fn main() {
     let mut errors = Vec::new();
     let mut trees = Vec::new();
     for (_, mg, _) in &pairs {
+        let mut in_quote = false;
         for raw in mg.split_whitespace() {
+            // a quoted span (any length) is one NAME: skip every word inside it
+            let quotes = raw.matches('"').count();
+            let inside = in_quote || raw.starts_with('"');
+            if quotes % 2 == 1 {
+                in_quote = !in_quote;
+            }
             // NAMEs (quoted or capitalized, ADR 0018) and digits (ADR 0022)
             // are lexer classes, not lexicon words
-            if raw.starts_with('"')
+            if inside
                 || raw.chars().next().is_some_and(|c| c.is_uppercase())
                 || raw.trim_end_matches('.').chars().all(|c| c.is_ascii_digit())
             {

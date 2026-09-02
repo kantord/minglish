@@ -1,34 +1,56 @@
 # 0003 — Copula: is/are only, present tense, no passive/progressive
 
 Date: 2026-08-31
-Status: proposed (tentative — same review point as ADR 0002)
+Status: proposed (tentative — same review point as ADR 0002; rewritten in minglish 2026-09-02)
 
 ## Context
 
-*be* is the single largest missing lemma in triage (~850 AUX tokens in
-UD-EWT). Predication ("the file is old") is unavoidable for general text.
-But the full *be* paradigm drags in tense (*was/were*), aspect
-(*been/being*), and — via *be* + participle — the passive and progressive
-constructions, all grammar-tier decisions not yet made. The reduced-relative
-and participle ambiguities are the nastiest residual class our research
-identified.
+Triage counts about 850 tokens of the word "be" in the corpus. The word
+"be" makes a big hole in the Coverage. Every text needs the Copula. The
+sentence "the file is old" needs the Copula.
+
+The Paradigm of "be" contains "was". The Paradigm of "be" contains "been".
+The Paradigm of "be" contains "being". The Surface Forms mark the Tense and
+mark the aspect. If a Participle follows a Copula, then the sentence is not a plain
+statement. The sentence is a Passive or is a Progressive.
+
+The maintainers did not decide 4 questions:
+- the Tense
+- the aspect
+- the Passive
+- the Progressive
+
+The Participles cause big ambiguities. A Reduced Relative is one ambiguity
+of the Participles.
 
 ## Decision
 
-- Enabled: *is* (COPULA_SG) and *are* (COPULA_PL) as a dedicated fiat
-  category — not VERB_*, because the copula's slot is unique (takes ADJ or
-  NOUN-phrase complements, no objects).
-- Intended restriction (enforceable only once a grammar tier exists): copula
-  complements are ADJ or noun phrases only. *is* + participle ("is stored",
-  "is running") is out of v0 — no passive, no progressive.
-- Not enabled: *be, am, been, being*. (*was/were* later added by ADR 0010.)
+The language enables 2 Copulas:
+- "is"
+- "are"
+
+The Form Tag of "is" is "COPULA_SG". The Form Tag of "are" is "COPULA_PL".
+A Copula is not a verb. A Copula takes a Complement. A Copula does not take
+an object.
+
+A Complement is an adjective or is a Noun Phrase. A Complement is not a
+Participle. The language bans the Passive. The language bans the
+Progressive. The sentence "the file is stored" is a Passive. The sentence
+"the agent is running" is a Progressive.
+
+The language does not enable 4 Surface Forms of "be":
+- "be"
+- "am"
+- "been"
+- "being"
+
+The decision "0010" added "was". The decision "0010" added "were".
 
 ## Consequences
 
-- Property statements and class membership become expressible ("the queue is
-  empty", "the parser is a program").
-- No way to express past states or ongoing processes yet; revisit with the
-  tense question.
-- The complement restriction is documentation-only until the grammar tier;
-  triage counts any *is/are* token as OK because token-level checking cannot
-  see the construction.
+- The language can say the sentence "the queue is empty". The language can
+  say the sentence "the parser is a program".
+- The language cannot say a past state. The language cannot say an ongoing
+  process. The maintainers decide the Tense in a future decision.
+- The Grammar enforces the Complement. Triage does not see the Complement,
+  because Triage checks the tokens.

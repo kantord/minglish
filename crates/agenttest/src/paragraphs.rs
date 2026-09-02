@@ -225,10 +225,23 @@ pub fn paragraphs(text: &str) -> Vec<String> {
         {
             continue;
         }
-        // an Enumeration block (ADR 0028) stays one paragraph and one unit
+        // an Enumeration block (ADR 0028) is one unit, whether it is the whole
+        // paragraph or ends it; the prose before it is its own paragraph
         let ls: Vec<&str> = block.lines().map(str::trim).collect();
-        if ls.len() > 1 && ls[0].ends_with(':') && ls[1..].iter().all(|l| l.starts_with("- ")) {
-            out.push(ls.join("\n"));
+        let k = (0..ls.len()).find(|&i| ls[i].ends_with(':') && i + 1 < ls.len() && ls[i + 1..].iter().all(|l| l.starts_with("- ")));
+        if let Some(k) = k {
+            // the intro is the last sentence of the (possibly wrapped) text before the items
+            let text = normalize(&ls[..=k].join(" "));
+            let (prose, intro) = match text.rfind(". ") {
+                Some(cut) => (text[..cut + 1].to_string(), text[cut + 2..].to_string()),
+                None => (String::new(), text.clone()),
+            };
+            if !prose.trim().is_empty() {
+                out.push(prose.trim().to_string());
+            }
+            let mut block = vec![intro];
+            block.extend(ls[k + 1..].iter().map(|l| l.to_string()));
+            out.push(block.join("\n"));
             continue;
         }
         // split bullets into their own paragraphs
@@ -466,6 +479,13 @@ fn process(
     }
     case.source = file.to_string();
     case.index = i + 1;
+    if !case.original.is_empty() && case.original != paras[i] {
+        // the source paragraph changed: old proposals stay as replay data,
+        // but the best and its verdict no longer apply
+        case.best.clear();
+        case.verdict = unreviewed();
+        case.note = "source paragraph changed; stored proposals are replay data only".to_string();
+    }
     case.original = paras[i].clone();
     case.context_before = i.checked_sub(1).map(|j| paras[j].clone()).unwrap_or_default();
     case.context_after = paras.get(i + 1).cloned().unwrap_or_default();
@@ -514,11 +534,19 @@ fn process(
         .filter(|(_, ok, _)| !ok)
         .map(|(s, _, d)| format!("  - \"{s}\": {d}"))
         .collect();
+    // the whole document is the context (ADRs are short); the target is marked
+    let document: String = paras
+        .iter()
+        .enumerate()
+        .map(|(j, p)| if j == i { format!(">>> {p} <<<") } else { p.clone() })
+        .collect::<Vec<_>>()
+        .join("\n\n");
     let user = format!(
-        "Rewrite this paragraph in minglish.\n\nPrevious paragraph (context only, do not \
-         rewrite):\n  {}\n\nPARAGRAPH:\n  {}\n\nNext paragraph (context only):\n  {}\n\n\
-         Linter rejections:\n{}\n",
-        case.context_before, paras[i], case.context_after, flags.join("\n")
+        "Rewrite ONLY the paragraph marked >>> <<< in minglish. The rest of the document \
+         is context: use it to understand what the paragraph means, do not rewrite it.\n\n\
+         DOCUMENT:\n{document}\n\nPARAGRAPH TO REWRITE:\n  {}\n\nLinter rejections:\n{}\n",
+        paras[i],
+        flags.join("\n")
     );
     // each trial is an independent conversation with up to MAX_ROUNDS repair
     // rounds; every attempt (failures included) becomes a proposal

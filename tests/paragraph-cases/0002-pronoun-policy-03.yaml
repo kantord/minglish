@@ -1,18 +1,18 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 3
-original: 'Allowed: i (PRON_1SG), you (PRON_2), my (POSS_1SG), your (POSS_2).'
-context_before: 'Banned: all anaphoric pronouns and pronominal demonstratives (it, they, he, she, this, that, these, those, and their object/possessive forms). The writer repeats the noun instead.'
-context_after: No anaphora/discourse machinery exists or is planned for v0.
+original: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
+context_before: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
+context_after: 'The language bans every Anaphoric Pronoun: - "it" - "its" - "they" - "them" - "their" - "he" - "him" - "his" - "she" - "her" - "this" - "that" - "these" - "those"'
 original_metrics:
-  sentences: 1
-  parsed: 0
-  continuity_pairs: 0
-  continuity_ok: 0
-  cost: 48.8
-  words: 9
-  terms: 0
+  sentences: 4
+  parsed: 4
+  continuity_pairs: 3
+  continuity_ok: 2
+  cost: 143.20000000000002
+  words: 33
+  terms: 6
 verdict: unreviewed
-note: 'same: enumeration list; also sentence casing (capital first letter) and the pronoun I'
+note: source paragraph changed; stored proposals are replay data only
 best: |-
   The language allows 4 Indexical Pronouns:
   - "i"
@@ -31,7 +31,7 @@ proposals:
     cost: 88.82
     words: 31
     terms: 0
-  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "the allowed words include i, you, my, and your": WORD: "include" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
+  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "the allowed words include i, you, my, and your": WORD: "include" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows the pronoun i. the tool lexgen allows the pronoun you. the tool lexgen allows the word my. the tool lexgen allows the word your.
@@ -115,7 +115,7 @@ proposals:
     cost: 113.04999999999997
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018) | "the tool Lexgen allows the adjective my": WORD: "adjective" is not a minglish word | "the tool Lexgen allows the adjective your": WORD: "adjective" is not a minglish word'
+  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows the adjective my": STYLE: "adjective my" — a word mentioned as a word must be quoted: "adjective \"my\"" (ADR 0018); "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen allows the adjective your": STYLE: "adjective your" — a word mentioned as a word must be quoted: "adjective \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen includes the pronoun i. the tool Lexgen includes the pronoun you. the tool Lexgen includes the word my. the tool Lexgen includes the word your.
@@ -157,7 +157,7 @@ proposals:
     cost: 113.38999999999996
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018) | "the tool Lexgen allows the pronoun my": STYLE: "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "the tool Lexgen allows the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows the pronoun my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "the tool Lexgen allows the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen permits the pronoun i. the tool Lexgen permits the pronoun you. the tool Lexgen permits the pronoun my. the tool Lexgen permits the pronoun your.
@@ -171,7 +171,7 @@ proposals:
     cost: 116.30999999999999
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen permits the pronoun i": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun you": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun my": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun your": WORD: "permits" is not a minglish word'
+  diagnosis: '"the tool Lexgen permits the pronoun i": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun you": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun my": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun your": WORD: "permits" is banned in minglish — write "allows"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: i is a pronoun. the tool Lexgen has the pronoun i. you is a pronoun. the tool Lexgen has the pronoun you. my is a pronoun. the tool Lexgen has the pronoun my. your is a pronoun. the tool Lexgen has the pronoun your.
@@ -185,7 +185,7 @@ proposals:
     cost: 153.01999999999998
     words: 44
     terms: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen has the pronoun i": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "the tool Lexgen has the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018) | "my is a pronoun": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "the tool Lexgen has the pronoun my": STYLE: "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "your is a pronoun": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen has the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018)'
+  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen has the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "the tool Lexgen has the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "my is a pronoun": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "the tool Lexgen has the pronoun my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "your is a pronoun": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen has the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your.
@@ -199,7 +199,7 @@ proposals:
     cost: 57.859999999999985
     words: 17
     terms: 0
-  diagnosis: '"the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your.
@@ -213,7 +213,7 @@ proposals:
     cost: 66.07000000000001
     words: 19
     terms: 0
-  diagnosis: '"the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your": WORD: "permits" is not a minglish word'
+  diagnosis: '"the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your": WORD: "permits" is banned in minglish — write "allows"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your.
@@ -227,7 +227,7 @@ proposals:
     cost: 59.36999999999998
     words: 19
     terms: 0
-  diagnosis: '"the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018); "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018); "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the sentence allows the word i. the sentence allows the word you. the sentence allows the word my. the sentence allows the word your.
@@ -241,7 +241,7 @@ proposals:
     cost: 68.94999999999997
     words: 24
     terms: 0
-  diagnosis: '"the sentence allows the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the sentence allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the sentence allows the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the sentence allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)'
+  diagnosis: '"the sentence allows the word i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the sentence allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the sentence allows the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the sentence allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the sentence contains the word i. the sentence contains the word you. the sentence contains the word my. the sentence contains the word your.
@@ -255,7 +255,7 @@ proposals:
     cost: 68.91
     words: 24
     terms: 0
-  diagnosis: '"the sentence contains the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the sentence contains the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the sentence contains the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the sentence contains the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)'
+  diagnosis: '"the sentence contains the word i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the sentence contains the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the sentence contains the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the sentence contains the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon contains the word i. the lexicon contains the word you. the lexicon contains the word my. the lexicon contains the word your.
@@ -283,7 +283,7 @@ proposals:
     cost: 150.68
     words: 55
     terms: 0
-  diagnosis: '"the grammar allows the words i and you and my and your": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "the word i is a pronoun for one person": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a pronoun for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a possessive for one person": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a possessive for the user": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the grammar does not allow other pronouns": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: grammar, other]'
+  diagnosis: '"the grammar allows the words i and you and my and your": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "the word i is a pronoun for one person": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a pronoun for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a possessive for one person": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a possessive for the user": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the grammar does not allow other pronouns": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: grammar, other]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexical entries include i and you and my and your. i names the person that the writer describes. you names the person that the reader describes. my describes the person that the writer describes. your describes the person that the reader describes. the lexical entries do not include other pronouns.
@@ -311,7 +311,7 @@ proposals:
     cost: 149.50999999999996
     words: 57
     terms: 0
-  diagnosis: '"the declarations list contains the words i and you and my and your": STYLE: "list" — a singular noun needs a determiner: "the list" (mass nouns take "the") | "the word i is a word for the writer": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a word for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a word for the writer": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a word for the user": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the declarations list does not contain other words": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
+  diagnosis: '"the declarations list contains the words i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "list" — a singular noun needs a determiner: "the list" (mass nouns take "the"); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | "the word i is a word for the writer": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a word for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a word for the writer": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a word for the user": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the declarations list does not contain other words": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows i. the tool Lexgen allows you. the tool Lexgen allows my. the tool Lexgen allows your.
@@ -325,7 +325,7 @@ proposals:
     cost: 84.98999999999998
     words: 20
     terms: 0
-  diagnosis: '"the tool Lexgen allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows my": not recognizable as a minglish-like sentence | "the tool Lexgen allows your": not recognizable as a minglish-like sentence'
+  diagnosis: '"the tool Lexgen allows i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the tool Lexgen allows you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen allows your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 3
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen has the word i. the tool Lexgen has the word you. the tool Lexgen has the word my. the tool Lexgen has the word your.
@@ -339,7 +339,7 @@ proposals:
     cost: 98.22999999999998
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen has the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen has the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the tool Lexgen has the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen has the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen has the word i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen has the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen has the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen has the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen has the word "i". the tool Lexgen has the word "you". the tool Lexgen has the word "my". the tool Lexgen has the word "your".
@@ -366,7 +366,7 @@ proposals:
     cost: 29.459999999999997
     words: 9
     terms: 0
-  diagnosis: '"the tool Lexgen allows i, you, my, and your": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen allows i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 2
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows i. the tool Lexgen allows you. every user has my. every user has your.
@@ -380,7 +380,7 @@ proposals:
     cost: 67.21
     words: 18
     terms: 0
-  diagnosis: '"the tool Lexgen allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "every user has my": not recognizable as a minglish-like sentence | "every user has your": not recognizable as a minglish-like sentence'
+  diagnosis: '"the tool Lexgen allows i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the tool Lexgen allows you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "every user has my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "every user has your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows the word i. the tool Lexgen allows the word you. the tool Lexgen allows the word my. the tool Lexgen allows the word your.
@@ -394,7 +394,7 @@ proposals:
     cost: 105.02999999999997
     words: 28
     terms: 0
-  diagnosis: '"the tool Lexgen allows the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the tool Lexgen allows the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen allows the word i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows the word "i". the tool Lexgen allows the word "you". the tool Lexgen allows the word "my". the tool Lexgen allows the word "your".
@@ -435,7 +435,7 @@ proposals:
     cost: 36.78
     words: 15
     terms: 0
-  diagnosis: '"i allow i, you, my, and your": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool allows i, you, my, and your": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"i allow i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool allows i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your.
@@ -463,7 +463,7 @@ proposals:
     cost: 79.07
     words: 27
     terms: 0
-  diagnosis: '"the tool lexgen allows i and you and my and your": WORD: "lexgen" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
+  diagnosis: '"the tool lexgen allows i and you and my and your": WORD: "lexgen" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool "lexgen" allows i and you and my and your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
@@ -477,7 +477,7 @@ proposals:
     cost: 79.07
     words: 27
     terms: 0
-  diagnosis: '"the tool "lexgen" allows i and you and my and your": not recognizable as a minglish-like sentence | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence'
+  diagnosis: '"the tool "lexgen" allows i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows i. the tool lexgen allows you. the tool lexgen allows my. the tool lexgen allows your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
@@ -491,7 +491,7 @@ proposals:
     cost: 131.42
     words: 36
     terms: 0
-  diagnosis: '"the tool lexgen allows i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows your": WORD: "lexgen" is not a minglish word | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence'
+  diagnosis: '"the tool lexgen allows i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows your": WORD: "lexgen" is not a minglish word | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the system allows i, you, my, and your. the system bans all other pronouns. the system does not have an anaphora mechanism. the system does not plan an anaphora mechanism for version 0.
@@ -505,7 +505,7 @@ proposals:
     cost: 109.03999999999999
     words: 33
     terms: 0
-  diagnosis: '"the system allows i, you, my, and your": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans all other pronouns": WORD: "all" is banned in minglish — write "every" with a singular noun (ADR 0014) [all unknown words: all, other] | "the system does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not plan an anaphora mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
+  diagnosis: '"the system allows i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans all other pronouns": WORD: "all" is banned in minglish — write "every" with a singular noun (ADR 0014) [all unknown words: all, other] | "the system does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not plan an anaphora mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: i is a pronoun. you is a pronoun. my is a possessive. your is a possessive. the system allows i. the system allows you. the system allows my. the system allows your. the system bans every other pronoun. the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
@@ -519,7 +519,7 @@ proposals:
     cost: 176.35999999999996
     words: 58
     terms: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the system allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the system allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the system allows my": not recognizable as a minglish-like sentence | "the system allows your": not recognizable as a minglish-like sentence | "the system bans every other pronoun": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
+  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the system allows i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the system allows you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the system allows my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the system allows your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018) | "the system bans every other pronoun": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: every pronoun is a word. every pronoun has one form. i is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive. the system does not ban i, "you", "my", or "your". the system bans every pronoun that is not i, "you", "my", or "your". the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
@@ -533,7 +533,7 @@ proposals:
     cost: 206.30999999999997
     words: 69
     terms: 0
-  diagnosis: '"every pronoun has one form": WORD: "form" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence | "the system does not ban i, "you", "my", or "your"": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans every pronoun that is not i, "you", "my", or "your"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"'
+  diagnosis: '"every pronoun has one form": WORD: "form" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the system does not ban i, "you", "my", or "your"": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans every pronoun that is not i, "you", "my", or "your"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter allows the word i. the linter allows the word you. the linter allows the word my. the linter allows the word your.
@@ -575,7 +575,7 @@ proposals:
     cost: 134.57999999999996
     words: 36
     terms: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen accepts i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen accepts you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen accepts my": not recognizable as a minglish-like sentence | "the tool Lexgen accepts your": not recognizable as a minglish-like sentence'
+  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen accepts i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the tool Lexgen accepts you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen accepts my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen accepts your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the pronoun "i" is an indexical pronoun. the language allows the pronoun "you". the pronoun "you" is an indexical pronoun. the language allows the word "my". the word "my" is a possessive form. the language allows the word "your". the word "your" is a possessive form.
@@ -656,7 +656,7 @@ proposals:
     cost: 144.26999999999998
     words: 46
     terms: 0
-  diagnosis: '""my" is a possessive of "i"": not recognizable as a minglish-like sentence | ""your" is a possessive of "you"": not recognizable as a minglish-like sentence'
+  diagnosis: '""my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a pronoun. "your" is a pronoun. "my" refers to the writer. "your" refers to the reader.
@@ -765,7 +765,7 @@ proposals:
     cost: 124.73999999999997
     words: 36
     terms: 0
-  diagnosis: '"the word "my" is a possessive of "i"": not recognizable as a minglish-like sentence | "the word "your" is a possessive of "you"": not recognizable as a minglish-like sentence'
+  diagnosis: '"the word "my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the word "your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-

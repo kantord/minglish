@@ -6,17 +6,24 @@ import re, sys
 
 text = open(sys.argv[1]).read()
 prose = []
+blocks = []
 for para in text.split("\n\n"):
     para = para.strip()
     if not para or para.startswith("#") or para.startswith(("Date:", "Status:")):
         continue
-    lines = para.splitlines()
-    # an Enumeration block (intro ending in ":" + "- item" lines) stays one unit
-    if len(lines) > 1 and lines[0].rstrip().endswith(":") and all(l.lstrip().startswith("- ") for l in lines[1:]):
-        block = "\n".join([lines[0].strip()] + [l.strip() for l in lines[1:]])
-        block = re.sub(r"`([^`]+)`", r'"\1"', block)
-        print(block.replace("\n", "\u23ce"))  # one line: ⏎ marks the item breaks
-        continue
+    lines = [l.strip() for l in para.splitlines()]
+    # an Enumeration block (intro line ending in ":" + "- item" lines) stays one
+    # unit, whether it is the whole paragraph or ends it
+    k = next((i for i, l in enumerate(lines) if l.endswith(":") and i + 1 < len(lines) and all(x.startswith("- ") for x in lines[i + 1:])), None)
+    if k is not None:
+        text = re.sub(r"\s+", " ", " ".join(re.sub(r"^(?:[-*]|\d+\.)\s+", "", l) for l in lines[:k + 1]))
+        cut = text.rfind(". ")
+        before, intro = (text[:cut + 1], text[cut + 2:]) if cut >= 0 else ("", text)
+        block = re.sub(r"`([^`]+)`", r'"\1"', "\n".join([intro] + lines[k + 1:]))
+        blocks.append(block.replace("\n", "\u23ce"))  # one line: ⏎ marks the item breaks
+        lines = [before] if before.strip() else []
+        if not lines:
+            continue
     # unwrap; strip bullet/number markers at line starts
     lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in lines]
     prose.append(re.sub(r"\s+", " ", " ".join(lines)))
@@ -32,3 +39,5 @@ for s in re.split(r"(?<=[.!?]) ", body):
     if not s or len(s.split()) < 3 or re.fullmatch(r"[\d\W]+", s):
         continue  # drop bare numbers / list fragments / punctuation shards
     print(s)
+for b in blocks:
+    print(b)

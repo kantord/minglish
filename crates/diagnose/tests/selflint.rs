@@ -196,6 +196,13 @@ fn linter_advice_examples_parse() {
         "the i pronoun is indexical",
         "the language does not have a discourse layer",
         "the pronouns are \"it\", \"they\", and \"those\"",
+        "instructional text uses Indexical Pronouns",
+        "the team defers the mechanism to the future",
+        "the pronouns are about 2200 of the unknown tokens",
+        "the document describes the finding",
+        "resolving the pronoun requires a Discourse Layer",
+        "the language bans the possessive of every Anaphoric Pronoun",
+        "the tool Lexgen allows my",
         "the point of the copy of the report fails",
     ];
     let mut examples = Vec::new();

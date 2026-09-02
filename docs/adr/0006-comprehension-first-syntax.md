@@ -1,68 +1,77 @@
 # 0006 — Syntax principle: comprehension-first branching, minimal context need
 
 Date: 2026-08-31
-Status: accepted (governing principle for all grammar-tier decisions)
+Status: accepted (governing principle for all grammar-tier decisions; rewritten in minglish 2026-09-02)
 
 ## Context
 
-Grammar decisions need a tie-breaker. Our research findings
-(docs/research/cnl-design-findings.md) ground sentence difficulty in
-measurable cognitive load: peak simultaneously-open dependencies (comfortable
-ceiling ≈4), dependency length, and center-embedding depth predict "hard to
-mentally unpack" better than any stylistic rule. They also showed categorical
-structural bans overshoot — a heavily left-branching sentence was effortless
-when it carried little load — so the right constraints are load bounds, not
-shape prohibitions. Human readers and LLMs share the relevant profile: both
-integrate left-to-right under a bounded working context.
+The Grammar needs a rule for a decision. The research grounds the
+difficulty of a sentence in the Cognitive Load. The file
+`docs/research/cnl-design-findings.md` describes the research. The 3
+metrics predict the difficulty. A rule of the style does not predict the
+difficulty.
+
+A Ban of a shape overshoots. One sentence had a heavy branch. The sentence
+carried a small load, so the sentence was easy. A good constraint puts a
+bound on the load. A good constraint does not ban a shape.
+
+A reader has the profile of a Language Model. A reader reads a
+sentence in the order of the words. A Language Model reads a sentence in
+the order of the words. The reader has a small memory. The Language Model
+has a small memory.
 
 ## Decision
 
-Ranked criteria for every syntactic-structure decision, in order:
+The maintainers weigh 5 criteria:
+- the Cognitive Load
+- the familiarity
+- the Context Need
+- the density
+- the expressiveness
 
-1. **Cognitive load first.** Prefer the structure that minimizes open
-   dependencies, dependency length, and embedding — branching rules exist to
-   aid human and LLM understanding, per cognitive-science results, not per
-   taste or tradition.
-2. **Fallback: the most common, least confusing construction.** When the
-   ideal branching is unavailable, choose the most frequent standard-English
-   pattern — familiarity is itself a processing aid, and surprise is a cost.
-3. **Minimal context need.** A sentence should be interpretable with as
-   little prior context as possible. This is why anaphora is banned
-   (ADR 0002), why nouns are repeated, and why scope rules are fixed rather
-   than context-dependent.
+The Cognitive Load outranks the familiarity. The familiarity outranks the
+Context Need. The Context Need outranks the density. The density outranks
+the expressiveness.
 
-4. **Density within the bounds.** The target is precise, meaning-dense text
-   that is nonetheless cheap to process: prefer the *shortest* formulation
-   that stays inside the load bounds. Verbosity is not free — text that
-   under-compresses its meaning adds noise, and noise creates its own
-   reading ambiguity. Rules that force extra words (repeated nouns,
-   mandatory *then*) are justified only because they remove more ambiguity
-   than the added length costs; a rule that pads without disambiguating
-   fails this criterion.
+If a structure has a small Cognitive Load, then the structure wins. The
+rules of the branching help a reader and help a Language Model. The rules do not follow a taste.
+The rules do not follow a tradition.
 
-5. **Expressiveness, subordinate.** Sounding natural, charismatic, and
-   expressive is a genuine goal — minglish text should be pleasant to read,
-   not robotic — but it never overrides criteria 1–4. Where two valid
-   formulations tie on load, density, and context need, prefer the more
-   expressive one; never trade precision or clarity for charisma.
+If the ideal branching is not available, then the maintainers choose the
+common construction of English. A familiar construction helps the reader.
+A surprise costs the reader.
 
-Corollaries: constraints are stated as bounds (e.g. fronted material limited
-by weight) rather than bans on shapes; and when a rule forces longer text,
-the trade must be earned — length is cheaper than load, but never free.
+A sentence needs a small context. The rule explains the Ban of the
+Anaphoric Pronouns. The rule explains the repetition of the nouns. The rule
+explains the rule of the scope.
 
-Enforcement hierarchy: the **primary tool is the set of valid sentence
-structures** — comprehension properties (notably right-branching, which the
-head-initial templates make structurally inevitable) are built into the
-grammar, so bad shapes are unwritable rather than merely penalized. Scoring
-parsed sentences is the **secondary** tool: it verifies the claim
-empirically, monitors residual load, and gathers the evidence for future
-bounds — it is not the mechanism that keeps text readable.
+The target is a dense text. A dense text carries a precise meaning. The
+maintainers prefer the short formulation inside the bounds. A long text is
+not free. A verbose text is noisy. The noise causes ambiguities. If a
+rule adds words, then the rule must remove an ambiguity. The repetition of
+the nouns removes an ambiguity. The word "then" removes an ambiguity.
+
+The expressiveness is a real goal. A text of Minglish is pleasant. A text of
+Minglish is not robotic. The 4 criteria outrank the
+expressiveness. If 2 formulations tie on the 4 criteria, then the
+maintainers choose the expressive formulation. The maintainers do not
+trade the precision for the charisma.
+
+A constraint is a bound. A constraint is not a Ban of a shape. If a rule
+adds words, then the rule must earn the words. The maintainers accept a
+long text for a small load.
+
+The primary tool is the set of the Sentence Shapes. The Grammar builds the
+comprehension into the Sentence Shapes. Every Sentence Shape puts the head at the front of the sentence. The language cannot say a bad shape. The score of a sentence is the
+secondary tool. The score verifies the claim. The score
+monitors the load. The score gathers the evidence for a future bound. The score
+does not protect the readability of the text.
 
 ## Consequences
 
-- Every future grammar ADR must justify its choice against these three
-  criteria, in this order.
-- Metrics for (1) already exist in the research findings and can be
-  implemented over parse output when the grammar tier arrives.
-- "Natural-sounding" loses to "measurably easier" whenever they conflict —
-  but criterion 2 keeps the loss small.
+- Every future decision of the Grammar must justify the choice against the
+  5 criteria.
+- The research defines the metrics of the Cognitive Load. The tool
+  "parse-report" measures the metrics on the Parse of a sentence.
+- If a natural formulation conflicts with an easy formulation, then the easy
+  formulation wins. The familiarity limits the loss.

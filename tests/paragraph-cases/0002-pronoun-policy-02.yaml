@@ -1,18 +1,18 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 2
-original: 'Banned: all anaphoric pronouns and pronominal demonstratives (it, they, he, she, this, that, these, those, and their object/possessive forms). The writer repeats the noun instead.'
-context_before: 'Triage against UD-EWT (docs/triage-report.md) shows pronouns are ~2,200 of the OOV tokens — the second-largest closed-class gap. But third-person pronouns are anaphoric: resolving "it failed" requires a discourse layer, and our research findings identify cross-sentence reference as exactly where ambiguity reappears after sentences are split (docs/research/cnl-design-findings.md, "Ambiguity migrates"). First- and second-person pronouns are indexical (speaker/hearer), never anaphoric, and carry no reference ambiguity; instructional text uses them constantly.'
-context_after: 'Allowed: i (PRON_1SG), you (PRON_2), my (POSS_1SG), your (POSS_2).'
+original: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
+context_before: Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are pronouns. The pronouns make a big hole in the Coverage.
+context_after: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 original_metrics:
-  sentences: 2
-  parsed: 0
-  continuity_pairs: 1
+  sentences: 5
+  parsed: 5
+  continuity_pairs: 4
   continuity_ok: 0
-  cost: 97.98
-  words: 25
-  terms: 1
+  cost: 182.57999999999996
+  words: 53
+  terms: 2
 verdict: needs-fix
-note: 'needs an enumeration construction: intro sentence + bullet list of quoted items, not one sentence per item'
+note: intro sentence invented ('every word carries one meaning'); the block should enumerate the 3 enabled words with their Form Tags stated after
 best: the Linter bans every Anaphoric Pronoun. the Linter bans "it". the Linter bans "they". the Linter bans "he". the Linter bans "she". the Linter bans "this". the Linter bans "that". the Linter bans "these". the Linter bans "those". the writer repeats the noun.
 proposals:
 - text: the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the user repeats the noun instead.
@@ -571,7 +571,7 @@ proposals:
     cost: 166.13
     words: 41
     terms: 0
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "covers" is not a minglish word [all unknown words: covers, forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. anaphoric pronouns are "it" and "they" and "he" and "she". the tool Lexgen bans demonstratives. demonstratives are "this" and "that" and "these" and "those". the ban includes object forms and possessive forms of these words. the writer repeats the noun.
@@ -725,7 +725,7 @@ proposals:
     cost: 183.88000000000005
     words: 47
     terms: 2
-  diagnosis: '"the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object of the pronouns and bans the possessive of the pronouns": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object of the pronouns and bans the possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun. the linter also bans every pronominal demonstrative. the pronominal demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those". the linter also bans the object forms and the possessive forms of these words. the writer does not use these words. the writer repeats the noun.
@@ -767,7 +767,7 @@ proposals:
     cost: 198.25
     words: 50
     terms: 4
-  diagnosis: '"the demonstratives are "it", "they", "he", "she", "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter bans every possessive of a demonstrative": not recognizable as a minglish-like sentence'
+  diagnosis: '"the demonstratives are "it", "they", "he", "she", "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter bans every possessive of a demonstrative": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the writer repeats the noun.
@@ -822,7 +822,7 @@ proposals:
     cost: 340.43999999999994
     words: 81
     terms: 11
-  diagnosis: '"the design bans the object of every Anaphoric Pronoun": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the design bans the possessive of every Anaphoric Pronoun": not recognizable as a minglish-like sentence'
+  diagnosis: '"the design bans the object of every Anaphoric Pronoun": AMBIGUOUS (2 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the design bans the possessive of every Anaphoric Pronoun": STYLE: "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design bans every Anaphoric Pronoun. the design bans every demonstrative. every Anaphoric Pronoun is "it". every Anaphoric Pronoun is "they". every Anaphoric Pronoun is "he". every Anaphoric Pronoun is "she". every Anaphoric Pronoun is "this". every Anaphoric Pronoun is "that". every Anaphoric Pronoun is "these". every Anaphoric Pronoun is "those". every Anaphoric Pronoun has an object form. every Anaphoric Pronoun has a possessive form. the design bans the object form of an Anaphoric Pronoun. the design bans the possessive form of an Anaphoric Pronoun. the writer repeats the noun. the writer does not use a pronoun.
@@ -878,7 +878,7 @@ proposals:
     cost: 141.00999999999993
     words: 40
     terms: 3
-  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the copies of the object and the copies of the possessive of the pronouns": STYLE: "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the copies of the object and the copies of the possessive of the pronouns": STYLE: "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun and bans every pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the language bans the object forms and bans the possessive forms of the pronouns. the writer repeats the noun.
@@ -906,7 +906,7 @@ proposals:
     cost: 148.06
     words: 41
     terms: 3
-  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of a pronoun and bans the possessive of a pronoun": not recognizable as a minglish-like sentence'
+  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of a pronoun and bans the possessive of a pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every Anaphoric Pronoun. the Anaphoric Pronoun "it" is a Ban. the Anaphoric Pronoun "they" is a Ban. the Anaphoric Pronoun "he" is a Ban. the Anaphoric Pronoun "she" is a Ban. the word "this" is a Ban. the word "that" is a Ban. the word "these" is a Ban. the word "those" is a Ban. the language bans the object of a pronoun. the language bans the possessive of a pronoun. the writer repeats the noun.
@@ -920,7 +920,7 @@ proposals:
     cost: 271.65000000000003
     words: 79
     terms: 14
-  diagnosis: '"the language bans the possessive of a pronoun": not recognizable as a minglish-like sentence'
+  diagnosis: '"the language bans the possessive of a pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans every anaphoric pronoun. the language bans every pronominal demonstrative. the writer repeats the noun. the noun replaces the anaphoric pronoun. the noun replaces the pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the language bans the object forms of the pronouns. the language bans the possessive forms of the pronouns.
@@ -1088,7 +1088,7 @@ proposals:
     cost: 267.6800000000001
     words: 60
     terms: 11
-  diagnosis: '"The Linter rejects anaphoric pronouns and demonstratives": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the Linter bans every possessive of the pronouns": not recognizable as a minglish-like sentence'
+  diagnosis: '"The Linter rejects anaphoric pronouns and demonstratives": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the Linter bans every possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun and every demonstrative. The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". The language also bans the object forms and the possessive forms of the pronouns. The writer repeats the noun.
@@ -1130,7 +1130,7 @@ proposals:
     cost: 174.45000000000005
     words: 50
     terms: 1
-  diagnosis: '"The 8 pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language bans every possessive of the pronouns": not recognizable as a minglish-like sentence'
+  diagnosis: '"The 8 pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language bans every possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The research of the project found an ambiguity. The ambiguity reappears in the reference of a pronoun across sentences. Every anaphoric pronoun causes the ambiguity. The pronoun "it" is an anaphoric pronoun. The pronoun "they" is an anaphoric pronoun. The pronoun "he" is an anaphoric pronoun. The pronoun "she" is an anaphoric pronoun. The pronoun "this" is an anaphoric pronoun. The pronoun "that" is an anaphoric pronoun. The pronoun "these" is an anaphoric pronoun. The pronoun "those" is an anaphoric pronoun. The object forms of the anaphoric pronouns cause the ambiguity. The possessive forms of the anaphoric pronouns cause the ambiguity. The language bans every anaphoric pronoun. The writer repeats the noun of the anaphoric pronoun.
@@ -1158,7 +1158,7 @@ proposals:
     cost: 464.84999999999997
     words: 116
     terms: 0
-  diagnosis: '"The reference crosses sentences": WORD: "crosses" is not a minglish word | "The possessive of an anaphoric pronoun causes the ambiguity": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md)'
+  diagnosis: '"The reference crosses sentences": WORD: "crosses" is not a minglish word | "The possessive of an anaphoric pronoun causes the ambiguity": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The research of the project found an ambiguity. The ambiguity reappears in the reference of a pronoun. The reference goes across sentences. Every Anaphoric Pronoun causes the ambiguity. The pronoun "it" is an Anaphoric Pronoun. The pronoun "they" is an Anaphoric Pronoun. The pronoun "he" is an Anaphoric Pronoun. The pronoun "she" is an Anaphoric Pronoun. The pronoun "this" is an Anaphoric Pronoun. The pronoun "that" is an Anaphoric Pronoun. The pronoun "these" is an Anaphoric Pronoun. The pronoun "those" is an Anaphoric Pronoun. The object of an Anaphoric Pronoun causes the ambiguity. The possessive of an Anaphoric Pronoun causes the ambiguity. The language bans every Anaphoric Pronoun. The writer repeats the noun of the Anaphoric Pronoun.
@@ -1172,7 +1172,7 @@ proposals:
     cost: 467.24
     words: 117
     terms: 13
-  diagnosis: '"The reference goes across sentences": WORD: "goes" is not a minglish word | "The possessive of an Anaphoric Pronoun causes the ambiguity": not recognizable as a minglish-like sentence'
+  diagnosis: '"The reference goes across sentences": WORD: "goes" is not a minglish word | "The possessive of an Anaphoric Pronoun causes the ambiguity": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every anaphoric pronoun. The language bans every pronominal demonstrative. The writer does not use "it". The writer does not use "they". The writer does not use "he". The writer does not use "she". The writer does not use "this". The writer does not use "that". The writer does not use "these". The writer does not use "those". The writer does not use the object forms of an anaphoric pronoun. The writer does not use the possessive forms of an anaphoric pronoun. The writer repeats the noun.
@@ -1200,7 +1200,7 @@ proposals:
     cost: 280.11
     words: 86
     terms: 0
-  diagnosis: '"The writer does not use the possessive of an anaphoric pronoun": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"The writer does not use the possessive of an anaphoric pronoun": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun. The language bans every demonstrative. The writer does not use "it". The writer does not use "they". The writer does not use "he". The writer does not use "she". The writer does not use "this". The writer does not use "that". The writer does not use "these". The writer does not use "those". The writer does not use the object of an Anaphoric Pronoun. The writer does not use the possessive of an Anaphoric Pronoun. The writer repeats the noun.
@@ -1214,7 +1214,7 @@ proposals:
     cost: 280.11
     words: 86
     terms: 3
-  diagnosis: '"The writer does not use the possessive of an Anaphoric Pronoun": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"The writer does not use the possessive of an Anaphoric Pronoun": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter bans every anaphoric pronoun. the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". the Linter bans every object form of an anaphoric pronoun. the Linter bans every possessive form of an anaphoric pronoun. the writer does not use an anaphoric pronoun. the writer repeats the noun.
@@ -1261,7 +1261,7 @@ proposals:
     - "this"
     - "that"
     - "these"
-    - "those"": STYLE: intro: unexpected Det("the") at word 5 — no sanctioned sentence structure continues this way | "the Linter bans every possessive of an Anaphoric Pronoun": not recognizable as a minglish-like sentence
+    - "those"": STYLE: intro: unexpected Det("the") at word 5 — no sanctioned sentence structure continues this way | "the Linter bans every possessive of an Anaphoric Pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-

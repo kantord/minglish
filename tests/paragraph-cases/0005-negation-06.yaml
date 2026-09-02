@@ -1,0 +1,141 @@
+source: docs/adr/0005-negation.md
+index: 6
+original: A Negation of a Copula uses "is not" or uses "are not". A Negation of a Copula does not need an Auxiliary.
+context_before: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
+context_after: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
+original_metrics:
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 1
+  cost: 71.38000000000001
+  words: 22
+  terms: 5
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
+best: The document "ADR 0010" added the word "did". The document "ADR 0010" added the word "later". Minglish does not allow the word "doesn't". Minglish does not allow the word "don't".
+proposals:
+- text: The Seed does not enable the word "doesn't". The Seed does not enable the word "don't". The Seed does not enable the word "later". The Seed does not enable the word "by". The Seed does not enable the word "contractions". The Seed does not enable the word "orthography". The Seed does not enable the word "minglish". The Linter does not accept the sentence. The Linter does not parse the sentence. The Linter rejects the sentence. The sentence is a Gap. The sentence says the words do not exist. The sentence says ADR 0010 adds the words. The language does not have the words. The language does not have the contractions. The orthography of the language does not have contractions. The orthography of Minglish does not have contractions. The language does not have the word "minglish". The language is Minglish. Minglish is the name of the language. The name of the language is "Minglish". The sentence cannot say the name. The sentence is a Gap. The maintainers must fix the Gap.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 24
+    parsed: 17
+    continuity_pairs: 23
+    continuity_ok: 17
+    cost: 565.9699999999996
+    words: 170
+    terms: 13
+  diagnosis: '"The sentence says the words do not exist": STYLE: "says … exist" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The sentence says ADR 0010 adds the words": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022) | "The orthography of the language does not have contractions": WORD: "orthography" is not a minglish word | "The orthography of Minglish does not have contractions": WORD: "orthography" is not a minglish word | "Minglish is the name of the language": STYLE: "is … name" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner | "The name of the language is "Minglish"": STYLE: "name … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner | "The sentence cannot say the name": STYLE: "cannot … say" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner; "name" is transitive in minglish and needs an object'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable "doesn't". The Seed does not enable "don't". The Seed does not enable "later". The Seed does not enable "by". The Seed does not enable "contractions". The Seed does not enable "orthography". The Seed does not enable "minglish". The Linter does not accept the sentence. The Linter does not parse the sentence. The Linter rejects the sentence. The sentence is a Gap. The sentence says the words do not appear. The sentence says ADR 10 adds the words. The language does not have the words. The language does not have contractions. The orthography of the language does not have contractions. Minglish is a language. Minglish does not have contractions. The language does not have the word "minglish". The language is Minglish. The sentence cannot say Minglish. The sentence is a Gap. The maintainers must fix the Gap.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 23
+    parsed: 20
+    continuity_pairs: 22
+    continuity_ok: 16
+    cost: 496.3099999999997
+    words: 141
+    terms: 13
+  diagnosis: '"The sentence says the words do not appear": STYLE: "says … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The sentence says ADR 10 adds the words": STYLE: "adds" is a verb in minglish and cannot follow a determiner; "says … adds" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The orthography of the language does not have contractions": WORD: "orthography" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable "doesn't". The Seed does not enable "don't". The Seed does not enable "later". The Seed does not enable "by". The Seed does not enable "contractions". The Seed does not enable "orthography". The Seed does not enable "minglish". The Linter does not accept the sentence. The Linter does not parse the sentence. The Linter rejects the sentence. The sentence is a Gap. The sentence makes a claim. The claim says the words do not appear. The sentence makes a claim. The claim says ADR 10 adds the words. The language does not have the words. The language does not use "doesn't". The language does not use "don't". The language does not use "later". The language does not use "by". The language does not use "contractions". The language does not use "orthography". The language does not use "minglish". Minglish is a language. The orthography of the language does not use contractions. The language does not use the word "minglish". The language is Minglish. The sentence cannot name Minglish. The sentence is a Gap. The maintainers must fix the Gap.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 30
+    parsed: 27
+    continuity_pairs: 29
+    continuity_ok: 24
+    cost: 616.8399999999991
+    words: 182
+    terms: 13
+  diagnosis: '"The claim says the words do not appear": STYLE: "says … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The claim says ADR 10 adds the words": STYLE: "adds" is a verb in minglish and cannot follow a determiner; "says … adds" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The orthography of the language does not use contractions": WORD: "orthography" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable the contractions "doesn't" and "don't". ADR 0010 adds the rule later. The orthography of Minglish bans every contraction.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 92.08
+    words: 23
+    terms: 1
+  diagnosis: '"The Seed does not enable the contractions "doesn''t" and "don''t"": STYLE: "does … enable" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "ADR 0010 adds the rule later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "The orthography of Minglish bans every contraction": WORD: "orthography" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable "doesn't". The Seed does not enable "don't". The rule of Minglish bans every contraction. The later ADR 0010 adds the rule.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 98.49000000000001
+    words: 26
+    terms: 2
+  diagnosis: '"The later ADR 0010 adds the rule": WORD: "later" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable "doesn't". The Seed does not enable "don't". The Grammar bans "doesn't". The Grammar bans "don't". The Grammar of Minglish bans every Surface Form of "do not". The ADR 0010 adds the rule.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 5
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 133.71999999999997
+    words: 37
+    terms: 6
+  diagnosis: '"The ADR 0010 adds the rule": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed does not enable the word "doesn't". ADR 0010 added the word "did" later. The orthography of Minglish bans every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 122.07
+    words: 34
+    terms: 1
+  diagnosis: '"ADR 0010 added the word "did" later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "The orthography of Minglish bans every contraction": WORD: "orthography" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The document "ADR 0010" added the word "did". The document "ADR 0010" added the word "later". The rules of Minglish ban every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 5
+    parsed: 5
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 129.62999999999997
+    words: 35
+    terms: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The document "ADR 0010" added the word "did". The document "ADR 0010" added the word "later". Minglish does not allow the word "doesn't". Minglish does not allow the word "don't".
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 119.51999999999998
+    words: 30
+    terms: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash

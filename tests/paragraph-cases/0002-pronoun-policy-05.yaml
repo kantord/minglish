@@ -1,18 +1,18 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 5
-original: Zero reference ambiguity by construction; no discourse layer to build.
-context_before: No anaphora/discourse machinery exists or is planned for v0.
-context_after: Prose is repetitive ("the agent … the agent …") — accepted cost, consistent with the project's clarity-over-naturalness stance.
+original: The writer repeats the noun.
+context_before: 'The language bans every Anaphoric Pronoun: - "it" - "its" - "they" - "them" - "their" - "he" - "him" - "his" - "she" - "her" - "this" - "that" - "these" - "those"'
+context_after: 'The language allows 4 Indexical Pronouns: - "I" - "you" - "my" - "your"'
 original_metrics:
   sentences: 1
-  parsed: 0
+  parsed: 1
   continuity_pairs: 0
   continuity_ok: 0
-  cost: 38.580000000000005
-  words: 10
+  cost: 17.689999999999998
+  words: 5
   terms: 0
-verdict: unreviewed
-note: almost ideal; slightly unnatural but very close
+verdict: needs-fix
+note: almost ideal; 'The Grammar bans <phrase>' reads as an exhaustive list where the source gives examples - needs an exemplification form
 best: The design of the language removes every Reference Ambiguity. The design of the language does not build a Discourse Layer. The design of the language does not have a Discourse Layer.
 proposals:
 - text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.
@@ -26,7 +26,7 @@ proposals:
     cost: 53.260000000000005
     words: 16
     terms: 0
-  diagnosis: '"the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: zero, by, construction] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  diagnosis: '"the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: zero, by] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: every parser produces zero ambiguities. every parser has one parse. the system builds no discourse layer.
@@ -152,7 +152,7 @@ proposals:
     cost: 52.720000000000006
     words: 15
     terms: 0
-  diagnosis: '"the design removes reference ambiguities by construction": WORD: "by" is not a minglish word [all unknown words: by, construction] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  diagnosis: '"the design removes reference ambiguities by construction": WORD: "by" is not a minglish word | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design does not create reference ambiguities. the system does not build a discourse layer.

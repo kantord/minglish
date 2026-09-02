@@ -1,0 +1,16 @@
+source: docs/adr/0005-negation.md
+index: 10
+original: One Auxiliary enters the language. The Grammar limits the Auxiliary to one Sentence Shape.
+context_before: The language can say a Negation. The language can say a Prohibition. The 2 Sentence Shapes are natural sentences of English.
+context_after: The Grammar enforces the rule of the scope. The Grammar enforces the rule of the Auxiliary. Triage does not see the rules, because Triage checks the tokens.
+original_metrics:
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 47.91000000000001
+  words: 14
+  terms: 4
+verdict: unreviewed
+best: ''
+proposals: []

@@ -66,6 +66,15 @@ fn rejections_get_named_diagnoses() {
         ("the Linter bans 3 pronouns:\n- \"it\"\n- \"they\"", "counts 3 but"),
         ("the Linter bans the pronoun:\n- \"it\"", "must be plural"),
         ("the pronouns are \"it\", \"they\", and \"those\"", "inline list"),
+        ("instructional text uses Indexical Pronouns", "needs a determiner"),
+        ("the team defers the mechanism to the future", "is an adjective"),
+        ("the pronouns are about 2200 of the unknown tokens", "count needs its noun"),
+        ("the document describes the finding", "verb form in minglish"),
+        ("resolving the pronoun requires a Discourse Layer", "cannot be the subject"),
+        ("the language bans the possessive of every Anaphoric Pronoun", "of every"),
+        ("Triage measures the Coverage against the UD-EWT corpora", "follows its noun"),
+        ("the tool Lexgen allows my", "used as a word must be quoted"),
+        ("the pronouns of the speaker or of the hearer are indexical", "phrases cannot be coordinated"),
         ("the point of the copy of the report fails", "does not chain"),
     ];
     for (sentence, expect) in style_cases {

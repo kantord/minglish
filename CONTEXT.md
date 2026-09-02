@@ -16,13 +16,31 @@ undefined; add an entry before using one in code or docs.
 
 **attest** (verb trans) — the data attests the words. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form.
 
+**Auxiliary** (noun) — an Auxiliary is a Function Word. an Auxiliary helps a verb. the word "do" is an Auxiliary. the language uses an Auxiliary in a Negation. the language uses an Auxiliary in a Prohibition. the language does not use an Auxiliary in a plain statement.
+
 **Ban** (noun) — a Ban is a Rejection of an ambiguous structure. the Ban is permanent. the writer changes the sentence. the Linter explains the Ban.
 
 **Category** (noun) — a Category is the class of a Lemma. people choose one Category for every Lemma. the Category decides the Surface Forms of the Lemma.
 
 **Closed Class** (noun) — a Closed Class contains Function Words. a Closed Class does not grow. people cannot add a word to a Closed Class.
 
+**Cognitive Load** (noun) — the Cognitive Load of a sentence is the work of the reader. the Open Dependencies predict the Cognitive Load. the Dependency Length predicts the Cognitive Load. the Embedding Depth predicts the Cognitive Load.
+
 **Collision** (noun) — if 2 Lemmas produce one Surface Form, then the Surface Form is a Collision. if one Surface Form has 2 Form Tags, then the Surface Form is a Collision. Lexgen rejects every Collision.
+
+**Complement** (noun) — a Complement follows a Copula. a Complement is an adjective or is a Noun Phrase. a Complement is not a Participle.
+
+**Conditional** (noun) — a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word "if" opens the condition. the word "then" opens the consequent.
+
+**Conjunct** (noun) — a Conjunct is one phrase of a Coordination. every Conjunct carries the Modifiers of the Conjunct.
+
+**Constituent** (noun) — a Constituent is one part of a sentence. a Noun Phrase is a Constituent. a Prepositional Phrase is a Constituent.
+
+**Context Need** (noun) — the Context Need of a sentence is the prior text of the sentence. a reader needs the prior text. a good sentence has a small Context Need.
+
+**Coordination** (noun) — a Coordination joins 2 phrases with a conjunction. the 2 phrases have one Category. the language has 2 conjunctions.
+
+**Copula** (noun) — a Copula is the word "is" or is the word "are". a Copula links the subject of a sentence to a Complement. a Copula does not take an object.
 
 **Coverage** (noun) — if the Lexicon contains every word of a sentence, then the Coverage counts the sentence. the Coverage is a share of the corpus. the Coverage is a proxy. the Coverage does not measure the quality of the Redirects.
 
@@ -30,7 +48,13 @@ undefined; add an entry before using one in code or docs.
 
 **Declared Loss** (noun) — a translation can drop the politeness of the original sentence. a translation can drop the emphasis of the original sentence. the Translation Pair must declare every loss. a Declared Loss is a declaration of a loss. a translation cannot drop a claim.
 
+**Dependency Length** (noun) — the Dependency Length is a distance. the distance separates the 2 words of one relation. a long Dependency Length costs the reader.
+
 **Discourse Layer** (noun) — a Discourse Layer resolves the referent of an Anaphoric Pronoun. the language does not have a Discourse Layer.
+
+**Embedding Depth** (noun) — the Embedding Depth counts the clauses inside a clause. a deep embedding costs the reader.
+
+**English** (name) — English is the language of the original texts. Minglish is a subset of English.
 
 **Enumeration** (noun) — an Enumeration is a block. the block has a statement. the block has a list of the items. the statement ends with a colon. every item names one thing. the items enumerate the last Noun Phrase of the statement.
 
@@ -48,6 +72,8 @@ undefined; add an entry before using one in code or docs.
 
 **intransitive** (adj) — an intransitive verb does not need an object.
 
+**Language Model** (noun) — a Language Model is a program. a Language Model reads a text and writes a text. a Language Model has a small memory.
+
 **Lemma** (noun) — a Lemma is one entry of the Seed. a Lemma is the base spelling of a word. Lexgen expands every Lemma into the Surface Forms of the Lemma.
 
 **Lexgen** (name) — Lexgen is a tool. Lexgen builds the Lexicon from the Seed. Lexgen rejects every Collision.
@@ -60,7 +86,13 @@ undefined; add an entry before using one in code or docs.
 
 **Minglish** (name) — Minglish is the language of the project. every sentence of Minglish has one Parse.
 
+**Modifier** (noun) — a Modifier is an adjective or is a Prepositional Phrase. a Modifier describes one Noun Phrase. a Modifier does not cover a Coordination.
+
+**Negation** (noun) — a Negation is a statement. a Negation has the word "not". the word "not" changes the truth of the verb. the language uses "does not" for a verb and uses "is not" for a Copula.
+
 **Noun Phrase** (noun) — a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word.
+
+**Open Dependency** (noun) — an Open Dependency is a relation. the relation links 2 words of a sentence. the reader holds an Open Dependency in the memory. the comfortable bound is 4 Open Dependencies.
 
 **Paradigm** (noun) — a Paradigm contains every Surface Form of one Lemma. Lexgen builds the Paradigm of a Lemma from the Category of the Lemma.
 
@@ -68,7 +100,19 @@ undefined; add an entry before using one in code or docs.
 
 **parse** (verb trans) — the Linter parses a sentence. the Linter finds the Parse of the sentence.
 
+**Participle** (noun) — a Participle is a Surface Form of a verb. a Complement is not a Participle. if a Participle follows a noun, then the sentence has a Reduced Relative.
+
+**Passive** (noun) — a Passive drops the doer of a verb. the sentence "the file is stored" is a Passive. the language bans every Passive.
+
+**Prepositional Phrase** (noun) — a Prepositional Phrase has a preposition. a Prepositional Phrase has a Noun Phrase. a Prepositional Phrase attaches to a verb or attaches to a noun.
+
+**Progressive** (noun) — a Progressive has a Copula. a Progressive has a Participle. the sentence "the agent is running" is a Progressive. the language bans every Progressive.
+
+**Prohibition** (noun) — a Prohibition is a command. a Prohibition has the phrase "do not". the sentence "do not delete the file" is a Prohibition. a Prohibition is a Sentence Shape of the language.
+
 **Redirect** (noun) — a Redirect names a replacement for a Rejected Sense of a word. the Linter shows the Redirect to the writer.
+
+**Reduced Relative** (noun) — if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. the sentence "the file stored in the database fails" has a Reduced Relative. the language bans every Reduced Relative.
 
 **Reference Ambiguity** (noun) — if a reader cannot find the referent of a pronoun, then the sentence has a Reference Ambiguity. the design of the language removes every Reference Ambiguity.
 
@@ -76,11 +120,15 @@ undefined; add an entry before using one in code or docs.
 
 **Rejection** (noun) — if the Linter does not parse a sentence, then the sentence is a Rejection. a Rejection is a Ban or is a Gap. the Linter must explain every Rejection.
 
+**Scope Ambiguity** (noun) — if a reader cannot tell the Constituent of a word, then the sentence has a Scope Ambiguity. the word "not" causes a Scope Ambiguity in English.
+
 **Seed** (noun) — the Seed is the file "seed/seed.json". people edit the Seed. every entry of the Seed names one Lemma. the entry names the Category of the Lemma. Lexgen builds the Lexicon from the Seed.
 
 **Sentence Shape** (noun) — a Sentence Shape is a structure of a sentence. the Grammar defines every Sentence Shape. every sentence of the language uses one Sentence Shape.
 
 **Surface Form** (noun) — a Surface Form is one spelling of a word. the Lexicon contains every Surface Form of the language. the Lexicon gives one Form Tag to every Surface Form.
+
+**Tense** (noun) — the Tense of a verb marks the time of the action. the language has the present Tense. the language has the past Tense.
 
 **transitive** (adj) — a transitive verb needs an object.
 

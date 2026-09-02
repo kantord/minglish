@@ -6,7 +6,9 @@ action, not routine CI** — it spends API calls and produces outputs that
 need human review; this is a snapshot-boosted manual review flow, not a
 cheap replicable snapshot test.
 
-Fields: `input` (the rejected sentence) · `snapshot` (latest valid repair)
+Fields: `input` (the rejected sentence) · optional `context_before` /
+`context_after` (neighbouring sentences the model sees; only `input` is
+graded) · `snapshot` (latest valid repair)
 · `verdict` — your review of the snapshot against `docs/review-checklist.md`:
 `ideal` | `needs-fix` |
 `unreviewed` (auto-reset whenever a run changes the snapshot) ·

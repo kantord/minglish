@@ -1,0 +1,16 @@
+source: docs/adr/0005-negation.md
+index: 11
+original: The Grammar enforces the rule of the scope. The Grammar enforces the rule of the Auxiliary. Triage does not see the rules, because Triage checks the tokens.
+context_before: One Auxiliary enters the language. The Grammar limits the Auxiliary to one Sentence Shape.
+context_after: ''
+original_metrics:
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 2
+  cost: 91.13999999999999
+  words: 27
+  terms: 3
+verdict: unreviewed
+best: ''
+proposals: []

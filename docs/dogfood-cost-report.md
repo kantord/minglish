@@ -24,8 +24,29 @@ original.
 | 13 | 6 | 23.1 | 9 | 30.9 | 1.34 |
 | 14 | 26 | 108.5 | 32 | 123.5 | 1.14 |
 | 15 | 28 | 114.5 | 20 | 68.2 | 0.60 |
+| 16 | 16 | 89.2 | 23 | 86.1 | 0.97 |
+| 17 | 28 | 121.4 | 53 | 182.6 | 1.50 |
+| 18 | 19 | 90.5 | 33 | 143.2 | 1.58 |
+| 19 | 9 | 38.8 | 20 | 64.0 | 1.65 |
+| 20 | 10 | 38.6 | 26 | 85.5 | 2.22 |
+| 21 | 18 | 86.3 | 25 | 82.4 | 0.95 |
+| 22 | 24 | 98.7 | 36 | 119.4 | 1.21 |
+| 23 | 28 | 124.8 | 51 | 154.8 | 1.24 |
+| 24 | 13 | 54.5 | 14 | 51.9 | 0.95 |
+| 25 | 27 | 122.4 | 32 | 110.8 | 0.91 |
+| 26 | 15 | 51.5 | 23 | 73.2 | 1.42 |
+| 27 | 23 | 99.7 | 16 | 60.3 | 0.61 |
+| 28 | 35 | 116.5 | 47 | 147.3 | 1.26 |
+| 29 | 17 | 87.7 | 25 | 81.7 | 0.93 |
+| 30 | 26 | 97.3 | 36 | 116.1 | 1.19 |
+| 31 | 18 | 77.5 | 25 | 77.4 | 1.00 |
+| 32 | 16 | 58.8 | 25 | 88.7 | 1.51 |
+| 33 | 26 | 115.7 | 52 | 164.5 | 1.42 |
+| 34 | 34 | 143.8 | 62 | 202.5 | 1.41 |
+| 35 | 25 | 101.9 | 50 | 148.9 | 1.46 |
+| 36 | 11 | 37.0 | 14 | 47.9 | 1.30 |
 
-**Aggregate:** 15 pairs — words 251 → 352 (+40%), cost 1045.8 → 1253.6 (**ratio 1.20**)
+**Aggregate:** 36 pairs — words 689 → 1040 (+51%), cost 2898.5 → 3542.6 (**ratio 1.22**)
 
 ## Before → after
 
@@ -148,6 +169,174 @@ AFTER (20 words, cost 68.2, **60%** of original) — 2 sentence(s), each parses 
 > A reversal migrates every entry. The expense of a reversal grows with the Seed, so the maintainers record the decision.
 
 Declared loss: example
+
+**16.** BEFORE (16 words, cost 89.2)
+> Triage against UD-EWT shows pronouns are ~2,200 of the OOV tokens — the second-largest closed-class gap.
+
+AFTER (23 words, cost 86.1, **97%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 18%
+> Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are pronouns. The pronouns make a big hole in the Coverage.
+
+Declared loss: ranking,citation
+
+**17.** BEFORE (28 words, cost 121.4)
+> But third-person pronouns are anaphoric: resolving "it failed" requires a discourse layer, and our research findings identify cross-sentence reference as exactly where ambiguity reappears after sentences are split.
+
+AFTER (53 words, cost 182.6, **150%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 28%
+> An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
+
+Declared loss: emphasis,discourse-link
+
+**18.** BEFORE (19 words, cost 90.5)
+> First- and second-person pronouns are indexical (speaker/hearer), never anaphoric, and carry no reference ambiguity; instructional text uses them constantly.
+
+AFTER (33 words, cost 143.2, **158%** of original) — 4 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 24%
+> An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
+
+Declared loss: emphasis
+
+**19.** BEFORE (9 words, cost 38.8)
+> No anaphora/discourse machinery exists or is planned for v0.
+
+AFTER (20 words, cost 64.0, **165%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 18%
+> The language does not have a Discourse Layer. The maintainers do not plan a Discourse Layer for the initial version.
+
+Declared loss: none (lossless per ADR 0012)
+
+**20.** BEFORE (10 words, cost 38.6)
+> Zero reference ambiguity by construction; no discourse layer to build.
+
+AFTER (26 words, cost 85.5, **222%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 24%
+> The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer, so the maintainers do not build a Discourse Layer.
+
+Declared loss: none (lossless per ADR 0012)
+
+**21.** BEFORE (18 words, cost 86.3)
+> Prose is repetitive ("the agent … the agent …") — accepted cost, consistent with the project's clarity-over-naturalness stance.
+
+AFTER (25 words, cost 82.4, **95%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 19%
+> The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
+
+Declared loss: example,register
+
+**22.** BEFORE (24 words, cost 98.7)
+> be is the single largest missing lemma in triage (~850 AUX tokens in UD-EWT). Predication ("the file is old") is unavoidable for general text.
+
+AFTER (36 words, cost 119.4, **121%** of original) — 4 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 34%
+> Triage counts about 850 tokens of the word "be" in the corpus. The word "be" makes a big hole in the Coverage. Every text needs the Copula. The sentence "the file is old" needs the Copula.
+
+Declared loss: ranking
+
+**23.** BEFORE (28 words, cost 124.8)
+> But the full be paradigm drags in tense (was/were), aspect (been/being), and — via be + participle — the passive and progressive constructions, all grammar-tier decisions not yet made.
+
+AFTER (51 words, cost 154.8, **124%** of original) — 6 sentence(s), each parses uniquely ✓, peak-open 9, right-branching 30%
+> The Paradigm of "be" contains "was". The Paradigm of "be" contains "been". The Paradigm of "be" contains "being". The Surface Forms mark the Tense and mark the aspect. If a Participle follows a Copula, then the sentence is not a plain statement. The sentence is a Passive or is a Progressive.
+
+Declared loss: discourse-link,emphasis
+
+**24.** BEFORE (13 words, cost 54.5)
+> The reduced-relative and participle ambiguities are the nastiest residual class our research identified.
+
+AFTER (14 words, cost 51.9, **95%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 20%
+> The Participles cause big ambiguities. A Reduced Relative is one ambiguity of the Participles.
+
+Declared loss: ranking,affect
+
+**25.** BEFORE (27 words, cost 122.4)
+> Enabled: is (COPULA_SG) and are (COPULA_PL) as a dedicated fiat category — not VERB_*, because the copula's slot is unique (takes ADJ or NOUN-phrase complements, no objects).
+
+AFTER (32 words, cost 110.8, **91%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 16%
+> The Form Tag of "is" is "COPULA_SG". The Form Tag of "are" is "COPULA_PL". A Copula is not a verb. A Copula takes a Complement. A Copula does not take an object.
+
+Declared loss: none (lossless per ADR 0012)
+
+**26.** BEFORE (15 words, cost 51.5)
+> No way to express past states or ongoing processes yet; revisit with the tense question.
+
+AFTER (23 words, cost 73.2, **142%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 19%
+> The language cannot say a past state. The language cannot say an ongoing process. The maintainers decide the Tense in a future decision.
+
+Declared loss: none (lossless per ADR 0012)
+
+**27.** BEFORE (23 words, cost 99.7)
+> The complement restriction is documentation-only until the grammar tier; triage counts any is/are token as OK because token-level checking cannot see the construction.
+
+AFTER (16 words, cost 60.3, **61%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 26%
+> The Grammar enforces the Complement. Triage does not see the Complement, because Triage checks the tokens.
+
+Declared loss: update
+
+**28.** BEFORE (35 words, cost 116.5)
+> Coordination scope is among the worst structural ambiguities in English ("old men and women"; "the sensor and the valve in the cabinet"), but all of that is grammar-tier: the tokens themselves are indispensable and unambiguous.
+
+AFTER (47 words, cost 147.3, **126%** of original) — 6 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 25%
+> The scope of a Coordination causes big ambiguities in English. The phrase "old men and women" is ambiguous. The phrase "the sensor and the valve in the cabinet" is ambiguous. The Grammar decides the scope. The token "and" is not ambiguous. The token "or" is not ambiguous.
+
+Declared loss: ranking,emphasis
+
+**29.** BEFORE (17 words, cost 87.7)
+> but (×82) differs — adversative contrast is discourse-level meaning, the first word whose semantics exceeds propositional content.
+
+AFTER (25 words, cost 81.7, **93%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 22%
+> Triage counts about 82 tokens of the word "but". The word "but" is different, because "but" marks a contrast. A contrast is not a claim.
+
+Declared loss: ranking
+
+**30.** BEFORE (26 words, cost 97.3)
+> Modifiers never distribute over a coordination — each conjunct carries its own modifiers ("the old files and the old reports", never "the old files and reports").
+
+AFTER (36 words, cost 116.1, **119%** of original) — 4 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 23%
+> A Modifier does not cover a Coordination. Every Conjunct carries the Modifiers of the Conjunct. The phrase "the old files and the old reports" is correct. The phrase "the old files and reports" is not correct.
+
+Declared loss: none (lossless per ADR 0012)
+
+**31.** BEFORE (18 words, cost 77.5)
+> Texts get longer under rule 2 — the price of scope unambiguity, consistent with the repeat-the-noun pronoun policy.
+
+AFTER (25 words, cost 77.4, **100%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 25%
+> The rules add words to a text. The words are the expense of a clear scope. The rules match the Ban of the Anaphoric Pronouns.
+
+Declared loss: comparative
+
+**32.** BEFORE (16 words, cost 58.8)
+> not is ×204 in triage; prohibition ("do not delete the file") is core to instructional text.
+
+AFTER (25 words, cost 88.7, **151%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 35%
+> Triage counts about 204 tokens of the word "not" in the corpus. Instructions need Prohibitions. The sentence "do not delete the file" is a Prohibition.
+
+Declared loss: emphasis
+
+**33.** BEFORE (26 words, cost 115.7)
+> English verbal negation requires do-support, and do is an auxiliary — a category v0 otherwise avoids. Constituent negation ("not all users", "not old") introduces scope ambiguity.
+
+AFTER (52 words, cost 164.5, **142%** of original) — 7 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 28%
+> A Negation of a verb needs the word "do" in English. The word "do" is an Auxiliary. The language avoids Auxiliaries. The word "not" can change one Constituent. The phrase "not all users" is one example. The phrase "not old" is one example. A Negation of a Constituent causes a Scope Ambiguity.
+
+Declared loss: none (lossless per ADR 0012)
+
+**34.** BEFORE (34 words, cost 143.8)
+> do/does are negation carriers only: intended grammar permits them solely in do|does + not + VERB_BASE (and bare do not + VERB_BASE as a prohibition/imperative). Emphatic do ("the parser does accept it") and interrogative do are out.
+
+AFTER (62 words, cost 202.5, **141%** of original) — 8 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 30%
+> The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
+
+Declared loss: notation
+
+**35.** BEFORE (25 words, cost 101.9)
+> Scope rule, fixed: not negates the clause's main predicate, nothing else. Constituent negation is banned — no "not all users", no "a not old file".
+
+AFTER (50 words, cost 148.9, **146%** of original) — 6 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 27%
+> The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
+
+Declared loss: none (lossless per ADR 0012)
+
+**36.** BEFORE (11 words, cost 37.0)
+> One auxiliary enters the language, but fenced to a single construction.
+
+AFTER (14 words, cost 47.9, **130%** of original) — 2 sentence(s), each parses uniquely ✓, peak-open 3, right-branching 27%
+> One Auxiliary enters the language. The Grammar limits the Auxiliary to one Sentence Shape.
+
+Declared loss: discourse-link
 
 
 *Caveats: unigram surprisal ignores context and structure; meaning

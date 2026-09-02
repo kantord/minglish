@@ -4,15 +4,15 @@
 
 | ADR | parse rate |
 |---|---|
-| 0001-generated-lexicon-from-curated-seed.md | 70/70 |
-| 0002-pronoun-policy.md | 0/11 |
-| 0003-copula.md | 0/11 |
-| 0004-coordination.md | 0/11 |
-| 0005-negation.md | 0/13 |
-| 0006-comprehension-first-syntax.md | 0/23 |
-| 0007-conditionals.md | 0/11 |
-| 0008-redirect-vs-ban.md | 0/11 |
-| 0009-modals.md | 0/14 |
+| 0001-generated-lexicon-from-curated-seed.md | 69/69 |
+| 0002-pronoun-policy.md | 29/29 |
+| 0003-copula.md | 35/35 |
+| 0004-coordination.md | 33/33 |
+| 0005-negation.md | 43/43 |
+| 0006-comprehension-first-syntax.md | 64/64 |
+| 0007-conditionals.md | 32/32 |
+| 0008-redirect-vs-ban.md | 41/41 |
+| 0009-modals.md | 41/41 |
 | 0010-simple-past.md | 0/10 |
 | 0011-pp-attachment.md | 0/13 |
 | 0012-pair-validity.md | 0/14 |
@@ -29,38 +29,41 @@
 | 0023-per-sense-synonyms.md | 0/20 |
 | 0024-percent.md | 0/14 |
 | 0025-approximation.md | 0/11 |
+| 0026-causal-connectives.md | 0/17 |
+| 0027-domain-model.md | 0/21 |
+| 0028-enumeration.md | 0/15 |
 
-**Aggregate: 70/406 sentences (17%)**
+**Aggregate: 387/671 sentences (58%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
-- enabled ×8
-- banned ×5
-- deferred ×5
-- future ×4
-- bare ×4
-- same ×4
-- english ×3
-- scope ×3
-- grammar ×3
-- this ×3
+- term ×4
+- adr ×4
 - closed-class ×3
+- same ×3
 - three ×3
-- adr ×3
-- first ×3
-- second ×3
-- allowed ×2
-- zero ×2
-- intended ×2
-- compound ×2
-- token-level ×2
-- constituent ×2
-- negated ×2
-- auxiliary ×2
-- our ×2
+- bare ×3
+- position ×3
+- sentence-initial ×3
+- digits ×3
+- per ×2
+- of-pps ×2
+- generic ×2
+- singular ×2
+- quantified ×2
+- this ×2
 - they ×2
-- prefer ×2
-- when ×2
-- metrics ×2
-- writers ×2
-- ban ×2
+- head-noun ×2
+- transparency ×2
+- become ×2
+- both ×2
+- stays ×2
+- all ×2
+- core ×2
+- fiat ×2
+- by ×2
+- becomes ×2
+- first ×2
+- digit ×2
+- second ×2
+- gains ×2

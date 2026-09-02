@@ -243,5 +243,137 @@
     "lemma": "noun phrase",
     "category": "NOUN",
     "definition": "a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word."
+  },
+  {
+    "lemma": "copula",
+    "category": "NOUN",
+    "definition": "a Copula is the word \"is\" or is the word \"are\". a Copula links the subject of a sentence to a Complement. a Copula does not take an object."
+  },
+  {
+    "lemma": "complement",
+    "category": "NOUN",
+    "definition": "a Complement follows a Copula. a Complement is an adjective or is a Noun Phrase. a Complement is not a Participle."
+  },
+  {
+    "lemma": "participle",
+    "category": "NOUN",
+    "definition": "a Participle is a Surface Form of a verb. a Complement is not a Participle. if a Participle follows a noun, then the sentence has a Reduced Relative."
+  },
+  {
+    "lemma": "passive",
+    "category": "NOUN",
+    "definition": "a Passive drops the doer of a verb. the sentence \"the file is stored\" is a Passive. the language bans every Passive."
+  },
+  {
+    "lemma": "progressive",
+    "category": "NOUN",
+    "definition": "a Progressive has a Copula. a Progressive has a Participle. the sentence \"the agent is running\" is a Progressive. the language bans every Progressive."
+  },
+  {
+    "lemma": "tense",
+    "category": "NOUN",
+    "definition": "the Tense of a verb marks the time of the action. the language has the present Tense. the language has the past Tense."
+  },
+  {
+    "lemma": "reduced relative",
+    "category": "NOUN",
+    "definition": "if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. the sentence \"the file stored in the database fails\" has a Reduced Relative. the language bans every Reduced Relative."
+  },
+  {
+    "lemma": "coordination",
+    "category": "NOUN",
+    "definition": "a Coordination joins 2 phrases with a conjunction. the 2 phrases have one Category. the language has 2 conjunctions."
+  },
+  {
+    "lemma": "conjunct",
+    "category": "NOUN",
+    "definition": "a Conjunct is one phrase of a Coordination. every Conjunct carries the Modifiers of the Conjunct."
+  },
+  {
+    "lemma": "modifier",
+    "category": "NOUN",
+    "definition": "a Modifier is an adjective or is a Prepositional Phrase. a Modifier describes one Noun Phrase. a Modifier does not cover a Coordination."
+  },
+  {
+    "lemma": "prepositional phrase",
+    "category": "NOUN",
+    "definition": "a Prepositional Phrase has a preposition. a Prepositional Phrase has a Noun Phrase. a Prepositional Phrase attaches to a verb or attaches to a noun."
+  },
+  {
+    "lemma": "prohibition",
+    "category": "NOUN",
+    "definition": "a Prohibition is a command. a Prohibition has the phrase \"do not\". the sentence \"do not delete the file\" is a Prohibition. a Prohibition is a Sentence Shape of the language."
+  },
+  {
+    "lemma": "negation",
+    "category": "NOUN",
+    "definition": "a Negation is a statement. a Negation has the word \"not\". the word \"not\" changes the truth of the verb. the language uses \"does not\" for a verb and uses \"is not\" for a Copula."
+  },
+  {
+    "lemma": "auxiliary",
+    "category": "NOUN",
+    "definition": "an Auxiliary is a Function Word. an Auxiliary helps a verb. the word \"do\" is an Auxiliary. the language uses an Auxiliary in a Negation. the language uses an Auxiliary in a Prohibition. the language does not use an Auxiliary in a plain statement.",
+    "forms": {
+      "plural": "auxiliaries"
+    }
+  },
+  {
+    "lemma": "constituent",
+    "category": "NOUN",
+    "definition": "a Constituent is one part of a sentence. a Noun Phrase is a Constituent. a Prepositional Phrase is a Constituent."
+  },
+  {
+    "lemma": "scope ambiguity",
+    "category": "NOUN",
+    "definition": "if a reader cannot tell the Constituent of a word, then the sentence has a Scope Ambiguity. the word \"not\" causes a Scope Ambiguity in English.",
+    "forms": {
+      "plural": "scope ambiguities"
+    }
+  },
+  {
+    "lemma": "cognitive load",
+    "category": "NOUN",
+    "definition": "the Cognitive Load of a sentence is the work of the reader. the Open Dependencies predict the Cognitive Load. the Dependency Length predicts the Cognitive Load. the Embedding Depth predicts the Cognitive Load."
+  },
+  {
+    "lemma": "open dependency",
+    "category": "NOUN",
+    "definition": "an Open Dependency is a relation. the relation links 2 words of a sentence. the reader holds an Open Dependency in the memory. the comfortable bound is 4 Open Dependencies.",
+    "forms": {
+      "plural": "open dependencies"
+    }
+  },
+  {
+    "lemma": "dependency length",
+    "category": "NOUN",
+    "definition": "the Dependency Length is a distance. the distance separates the 2 words of one relation. a long Dependency Length costs the reader."
+  },
+  {
+    "lemma": "embedding depth",
+    "category": "NOUN",
+    "definition": "the Embedding Depth counts the clauses inside a clause. a deep embedding costs the reader."
+  },
+  {
+    "lemma": "context need",
+    "category": "NOUN",
+    "definition": "the Context Need of a sentence is the prior text of the sentence. a reader needs the prior text. a good sentence has a small Context Need."
+  },
+  {
+    "lemma": "language model",
+    "category": "NOUN",
+    "definition": "a Language Model is a program. a Language Model reads a text and writes a text. a Language Model has a small memory."
+  },
+  {
+    "lemma": "conditional",
+    "category": "NOUN",
+    "definition": "a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word \"if\" opens the condition. the word \"then\" opens the consequent."
+  },
+  {
+    "lemma": "english",
+    "category": "NAME",
+    "forms": {
+      "name": "English"
+    },
+    "definition": "English is the language of the original texts. Minglish is a subset of English."
   }
 ]

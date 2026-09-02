@@ -37,6 +37,12 @@ pub(crate) const MAX_ROUNDS: usize = 3;
 struct Case {
     kind: String,
     input: String,
+    /// Optional neighbouring sentences shown to the model as context; only
+    /// `input` is linted and graded (a realistic window, per review).
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    context_before: String,
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    context_after: String,
     #[serde(default = "unreviewed")]
     verdict: String,
     #[serde(default)]
@@ -196,11 +202,17 @@ fn process_case(
     };
 
     // trials are independent conversations — run them in parallel too
+    let context = match (case.context_before.trim(), case.context_after.trim()) {
+        ("", "") => String::new(),
+        (b, a) => format!(
+            "\n\nContext (do not rewrite; the sentence sits between these):\n  before: {b}\n  after: {a}"
+        ),
+    };
     let results: Vec<Trial> = std::thread::scope(|scope| {
         let handles: Vec<_> = (0..trials)
             .map(|_| {
                 scope.spawn(|| {
-                    run_trial(api_key, model, temperature, system_prompt, &case.input, &error, lexicon)
+                    run_trial(api_key, model, temperature, system_prompt, &case.input, &format!("{error}{context}"), lexicon)
                 })
             })
             .collect();

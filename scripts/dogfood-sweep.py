@@ -9,6 +9,7 @@ rows = []
 for adr in sorted(glob.glob("docs/adr/*.md")):
     sents = subprocess.run(["python3", "scripts/extract-sentences.py", adr],
                            capture_output=True, text=True).stdout.strip().splitlines()
+    sents = [x.replace("\u23ce", "\n") for x in sents]  # Enumeration blocks span lines
     if not sents:
         continue
     ok = 0

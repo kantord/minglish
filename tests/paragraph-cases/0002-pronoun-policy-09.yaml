@@ -1,0 +1,17 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 9
+original: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer, so the maintainers do not build a Discourse Layer.
+context_before: The language does not have a Discourse Layer. The maintainers do not plan a Discourse Layer for the initial version.
+context_after: The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
+original_metrics:
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 1
+  cost: 85.47999999999999
+  words: 26
+  terms: 3
+verdict: needs-fix
+note: almost usable but clunky and mechanical to the point of hurting comprehension
+best: ''
+proposals: []

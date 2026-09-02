@@ -6,35 +6,46 @@ trigger superseded by ADR 0023
 
 ## Context
 
-A rejected word sense can either carry a redirect ("use X instead") or be
-banned outright (the writer must rephrase). Our research showed mechanical
-substitution optimizes rarity, not clarity: suggestions like
-*need*→*necessitate* (1,349× rarer) are fixes no human or LLM would
-naturally produce. An unactionable lint message is worse than a blunt one —
-the writer stalls, or the LLM emits stilted low-frequency vocabulary, and
-the output quality the whole system exists for degrades.
+A Rejected Sense carries a Redirect or is a Ban. A Redirect names a
+replacement. If a sense is a Ban, then the writer restructures the
+sentence.
+
+The research showed one result. A mechanical replacement optimizes the
+rarity of the words. A mechanical replacement does not optimize the clarity
+of the words. One example is the Redirect of the word "need". The
+Redirect names the word "necessitate". The word "necessitate" is rare. A writer does not produce the word
+"necessitate". A Language Model does not produce the word "necessitate".
+
+A useless message is bad. A blunt message is acceptable. If the message is
+useless, then the writer stalls. If the message is useless, then the
+Language Model produces rare words. The rare words hurt the quality of the
+text.
 
 ## Decision
 
-When curating a rejected sense:
+The maintainers use 2 tools:
+- a Redirect
+- a Ban
 
-1. **Redirect** only when the suggestion is a word the writer would
-   plausibly have chosen themselves — common (small zipf gap to the rejected
-   word), and a genuine synonym of the rejected sense.
-2. **Ban** (no substitute offered; error says to rephrase) when no such word
-   exists. Forcing a sentence-level rephrase is more productive than
-   coercing an unfindable word.
-3. The existing report-level frequency guard (zipf delta > 1.0) is the
-   trigger for review: a flagged redirect should usually be demoted to a ban
-   or given a better suggestion, not waved through.
+A Redirect names a common word. A Redirect names a synonym of the Rejected
+Sense. A writer chooses the word. If a word is rare, then the word is not a
+Redirect.
 
-Same logic applies to whole words: a word whose every sense would need an
-unfindable substitute is banned entirely rather than redirected.
+If a Rejected Sense does not have a synonym, then the sense is a Ban. A Ban
+gives one instruction to the writer. The writer restructures the sentence. A new
+sentence beats a rare word.
+
+The report of the Lexicon shows a rare Redirect. The maintainers review a
+rare Redirect. The decision "0023" changed the rule of the guard.
+
+The rule covers a whole word. If a sense does not have a common
+replacement, then the sense is a Ban. If the Bans cover every sense of the
+word, then the word is a Ban.
 
 ## Consequences
 
-- Redirects stay few and high-quality; the error channel stays trustworthy.
-- The future validator needs a "banned — rephrase" message type distinct
-  from "use X instead" (currently approximated by `waive`).
-- Ambiguous modals (e.g. *may*: permission vs possibility) become ban
-  candidates, since neither sense has a common one-word substitute.
+- The Redirects are rare. The Redirects are good.
+  The writer trusts the messages of the Linter.
+- A Ban has a message. A Redirect has a message. The 2 messages differ.
+- An ambiguous modal is a Ban. The word "may" is one example. The word
+  "may" has 2 senses. The senses do not have a common replacement.

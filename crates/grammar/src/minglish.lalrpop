@@ -289,9 +289,10 @@ NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl>, NPNum, NPPct };
 
 // [about] <digits> [adj] <plural noun> [of-PP] — a count, optionally
 // approximate (ADR 0022, 0025).
+// "the 2 words": a definite count is allowed (the set is already known)
 NPNum: Tree = {
-    <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> <o:OfPP?> =>
-        nd("NP", 3, vec![ap, Some(n), a, Some(nn), o]),
+    <d:LDet?> <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> <o:OfPP?> =>
+        nd("NP", 4, vec![d, ap, Some(n), a, Some(nn), o]),
 };
 
 // <digits> percent of <plural NP> — a share of a named set; plural agreement
@@ -325,8 +326,8 @@ NPInner: Tree = {
     <d:LDet> <a:LAdj?> <n:LNounSg> <nm:LName> =>
         nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm)]),
     NPi<LNum, LNounSg>,
-    <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> =>
-        nd("NP", 3, vec![ap, Some(n), a, Some(nn)]),
+    <d:LDet?> <ap:LApprox?> <n:LNumPl> <a:LAdj?> <nn:LNounPl> =>
+        nd("NP", 4, vec![d, ap, Some(n), a, Some(nn)]),
     NPi<LDet, LNounSg>,
     NPi<LDet, LNounPl>,
     NPi<LDetSg, LNounSg>,

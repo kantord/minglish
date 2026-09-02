@@ -1,0 +1,141 @@
+source: docs/adr/0005-negation.md
+index: 7
+original: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
+context_before: A Negation of a Copula uses "is not" or uses "are not". A Negation of a Copula does not need an Auxiliary.
+context_after: The decision did not enable "did". The decision "0010" added "did". The language bans every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
+original_metrics:
+  sentences: 6
+  parsed: 6
+  continuity_pairs: 5
+  continuity_ok: 2
+  cost: 148.86999999999998
+  words: 50
+  terms: 4
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
+best: The Linter can lint the statement Negated. the Linter can lint the Prohibition. the Linter writes every sentence in Minglish.
+proposals:
+- text: The Linter can lint negated statements. The Linter can lint prohibitions. The Linter expresses the negated statements and the prohibitions in English.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 96.63
+    words: 22
+    terms: 3
+  diagnosis: '"The Linter can lint negated statements": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "The Linter can lint prohibitions": WORD: "prohibitions" is not a minglish word — "Prohibitions" is a defined term — write it capitalized (see CONTEXT.md) | "The Linter expresses the negated statements and the prohibitions in English": WORD: "expresses" is banned in minglish — write "says" [all unknown words: expresses, negated, prohibitions]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter can lint a statement that has "not". The Linter can lint a command that has "do not". The Linter says the statement and the command in English.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 97.53999999999999
+    words: 29
+    terms: 3
+  diagnosis: '"The Linter can lint a statement that has "not"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter can lint a command that has "do not"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A statement can have "not". A command can have "do not". The Linter can lint the statement. The Linter can lint the command. The Linter says the statement and the command in English.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 4
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 108.83
+    words: 33
+    terms: 3
+  diagnosis: '"The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter can lint a Negated Statement. the Linter can lint a Prohibition. the Linter expresses every sentence in Minglish.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 90.45
+    words: 20
+    terms: 4
+  diagnosis: '"The Linter can lint a Negated Statement": WORD: "Statement" is not a minglish word — minglish words are lowercase ("statement"); a name that equals a word needs quotes | "the Linter expresses every sentence in Minglish": WORD: "expresses" is banned in minglish — write "says"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter can lint a Negated statement. the Linter can lint a Prohibition. the Linter writes every sentence in Minglish.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 89.7
+    words: 20
+    terms: 4
+  diagnosis: '"The Linter can lint a Negated statement": STYLE: "Negated statement" — the name follows its noun: "the statement Negated" (ADR 0018); "can … lint" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "statement" — a singular noun needs a determiner: "the statement" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Linter can lint the statement Negated. the Linter can lint the Prohibition. the Linter writes every sentence in Minglish.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 88.96
+    words: 20
+    terms: 4
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language can express negated statement and prohibition sentences. the language uses the words "not" and "do not" for the expressions. the language expresses prohibition with imperative and modal shapes.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 101.26000000000002
+    words: 30
+    terms: 0
+  diagnosis: '"The language can express negated statement and prohibition sentences": WORD: "express" is banned in minglish — write "say" ("the language can say a Prohibition") [all unknown words: express, negated, prohibition] | "the language uses the words "not" and "do not" for the expressions": WORD: "expressions" is not a minglish word | "the language expresses prohibition with imperative and modal shapes": WORD: "expresses" is banned in minglish — write "says" [all unknown words: expresses, prohibition, imperative]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language can say a negated statement. the language can say a prohibition. a negated statement uses "not". a prohibition uses a Sentence Shape with "do not" or uses a Sentence Shape with "must not".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 111.92000000000004
+    words: 35
+    terms: 2
+  diagnosis: '"The language can say a negated statement": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "the language can say a prohibition": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md) | "a negated statement uses "not"": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "a prohibition uses a Sentence Shape with "do not" or uses a Sentence Shape with "must not"": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language can say a statement with "not". the language can say a command with "do not". the language can say a command with "must not".
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 69.35999999999999
+    words: 26
+    terms: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash

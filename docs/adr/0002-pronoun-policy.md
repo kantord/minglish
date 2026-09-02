@@ -1,32 +1,62 @@
 # 0002 — Pronouns: third person banned, indexicals allowed
 
 Date: 2026-08-31
-Status: proposed (tentative — revisit once real corpus experience exists)
+Status: proposed (tentative — revisit once real corpus experience exists; rewritten in minglish 2026-09-02, see docs/dogfood-adr-0002.md)
 
 ## Context
 
-Triage against UD-EWT (docs/triage-report.md) shows pronouns are ~2,200 of
-the OOV tokens — the second-largest closed-class gap. But third-person
-pronouns are anaphoric: resolving "it failed" requires a discourse layer, and
-our research findings identify cross-sentence reference as exactly where
-ambiguity reappears after sentences are split
-(docs/research/cnl-design-findings.md, "Ambiguity migrates"). First- and
-second-person pronouns are indexical (speaker/hearer), never anaphoric, and
-carry no reference ambiguity; instructional text uses them constantly.
+Triage counts the unknown tokens of the corpus. About 2200 unknown tokens
+are pronouns. The pronouns make a big hole in the Coverage.
+
+An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must
+find the noun. The sentence "it failed" needs a Discourse Layer. The file
+`docs/research/cnl-design-findings.md` describes the results of the
+research. If a tool splits a sentence into 2 sentences, then the ambiguity
+reappears in the pronouns of the sentences.
+
+An Indexical Pronoun refers to the writer or refers to the reader. An
+Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not
+cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 
 ## Decision
 
-- Banned: all anaphoric pronouns and pronominal demonstratives (*it, they,
-  he, she, this, that, these, those*, and their object/possessive forms).
-  The writer repeats the noun instead.
-- Allowed: *i* (PRON_1SG), *you* (PRON_2), *my* (POSS_1SG), *your* (POSS_2).
-- No anaphora/discourse machinery exists or is planned for v0.
+The language bans every Anaphoric Pronoun:
+- "it"
+- "its"
+- "they"
+- "them"
+- "their"
+- "he"
+- "him"
+- "his"
+- "she"
+- "her"
+- "this"
+- "that"
+- "these"
+- "those"
+
+The writer repeats the noun.
+
+The language allows 4 Indexical Pronouns:
+- "I"
+- "you"
+- "my"
+- "your"
+
+The Form Tag of "I" is "PRON_1SG". The Form Tag of "you" is "PRON_2". The
+Form Tag of "my" is "POSS_1SG". The Form Tag of "your" is "POSS_2".
+
+The language does not have a Discourse Layer. The maintainers do not plan a
+Discourse Layer for the initial version.
 
 ## Consequences
 
-- Zero reference ambiguity by construction; no discourse layer to build.
-- Prose is repetitive ("the agent … the agent …") — accepted cost, consistent
-  with the project's clarity-over-naturalness stance.
-- Banned pronouns currently just fall out of the lexicon (OOV). A
-  writer-facing "repeat the noun you mean" error message needs a
-  banned-word-with-message mechanism in the future validator; deferred.
+- The design of the language removes every Reference Ambiguity. The
+  language does not have a Discourse Layer, so the maintainers do not build
+  a Discourse Layer.
+- The prose repeats the nouns. The repetition is an acceptable expense. The
+  project prefers the clarity of the prose to the naturalness of the prose.
+- The Lexicon contains a Ban for every Anaphoric Pronoun. The Linter
+  explains the Ban to the writer. The Linter says "repeat the noun you
+  mean".

@@ -1,0 +1,142 @@
+source: docs/adr/0005-negation.md
+index: 8
+original: The decision did not enable "did". The decision "0010" added "did". The language bans every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
+context_before: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
+context_after: The language can say a Negation. The language can say a Prohibition. The 2 Sentence Shapes are natural sentences of English.
+original_metrics:
+  sentences: 5
+  parsed: 5
+  continuity_pairs: 4
+  continuity_ok: 2
+  cost: 93.07
+  words: 28
+  terms: 0
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
+best: The language adds one verb. the verb uses one Sentence Shape.
+proposals:
+- text: The language adds one auxiliary verb. the auxiliary verb must use one Sentence Shape.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 52.410000000000004
+    words: 14
+    terms: 1
+  diagnosis: '"The language adds one auxiliary verb": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md) | "the auxiliary verb must use one Sentence Shape": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language adds one verb. the verb is an auxiliary verb. the verb must use one Sentence Shape.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 63.38
+    words: 18
+    terms: 1
+  diagnosis: '"the verb is an auxiliary verb": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language adds one verb. the verb uses one Sentence Shape.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 39.5
+    words: 11
+    terms: 1
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed adds one Function Word to the language. the Function Word does not leave the Copula. the Function Word does not leave the Negation. the Function Word does not leave the Modal.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 105.69999999999999
+    words: 33
+    terms: 7
+  diagnosis: '"the Function Word does not leave the Copula": WORD: "leave" is not a minglish word | "the Function Word does not leave the Negation": WORD: "leave" is not a minglish word | "the Function Word does not leave the Modal": WORD: "leave" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed adds one Function Word to the language. the Function Word does not appear in the Copula. the Function Word does not appear in the Negation. the Function Word does not appear in the Modal.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 112.36000000000001
+    words: 36
+    terms: 7
+  diagnosis: '"the Function Word does not appear in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Seed adds one Function Word to the language. the Function Word is not in the Copula. the Function Word is not in the Negation. the Function Word is not in the Modal.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 95.91999999999999
+    words: 33
+    terms: 7
+  diagnosis: '"the Function Word is not in the Copula": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Negation": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar adds the word "does" and the word "not". The Grammar adds the word "does" and the word "not" to one Sentence Shape.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 68.6
+    words: 24
+    terms: 3
+  diagnosis: '"The Grammar adds the word "does" and the word "not"": not recognizable as a minglish-like sentence | "The Grammar adds the word "does" and the word "not" to one Sentence Shape": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar adds "does" and "not". The Grammar adds "does" and "not" to one Sentence Shape.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 48.56000000000001
+    words: 16
+    terms: 3
+  diagnosis: '"The Grammar adds "does" and "not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar adds "does". The Grammar adds "not". The Grammar adds "does" and "not" to one Sentence Shape.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 57.690000000000005
+    words: 18
+    terms: 4
+  diagnosis: '"The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash

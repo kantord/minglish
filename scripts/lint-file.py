@@ -32,11 +32,20 @@ def paragraphs(text):
         para = para.strip()
         if not para or para.startswith("#") or para.startswith(("Date:", "Status:")) or para.startswith("|"):
             continue
-        lines = para.splitlines()
-        if len(lines) > 1 and lines[0].rstrip().endswith(":") and all(l.lstrip().startswith("- ") for l in lines[1:]):
-            out.append("\n".join([lines[0].strip()] + [l.strip() for l in lines[1:]]))  # Enumeration block
+        lines = [l.strip() for l in para.splitlines()]
+        # an Enumeration block (intro line ending in ":" + "- item" lines) is one
+        # unit, whether it is the whole paragraph or ends it
+        k = next((i for i, l in enumerate(lines) if l.endswith(":") and i + 1 < len(lines) and all(x.startswith("- ") for x in lines[i + 1:])), None)
+        if k is not None:
+            # the intro is the last sentence of the (possibly wrapped) text before the items
+            text = re.sub(r"\s+", " ", " ".join(re.sub(r"^(?:[-*]|\d+\.)\s+", "", l) for l in lines[:k + 1]))
+            cut = text.rfind(". ")
+            prose, intro = (text[:cut + 1], text[cut + 2:]) if cut >= 0 else ("", text)
+            if prose.strip():
+                out.append(prose.strip())
+            out.append("\n".join([intro] + lines[k + 1:]))
             continue
-        lines = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", l) for l in lines]
+        lines = [re.sub(r"^(?:[-*]|\d+\.)\s+", "", l) for l in lines]
         out.append(re.sub(r"\s+", " ", " ".join(lines)))
     return out
 

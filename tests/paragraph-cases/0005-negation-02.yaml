@@ -1,0 +1,145 @@
+source: docs/adr/0005-negation.md
+index: 2
+original: A Negation of a verb needs the word "do" in English. The word "do" is an Auxiliary. The language avoids Auxiliaries. The word "not" can change one Constituent. The phrase "not all users" is one example. The phrase "not old" is one example. A Negation of a Constituent causes a Scope Ambiguity.
+context_before: Triage counts about 204 tokens of the word "not" in the corpus. Instructions need Prohibitions. The sentence "do not delete the file" is a Prohibition.
+context_after: 'The language enables 3 Function Words: - "not" - "do" - "does"'
+original_metrics:
+  sentences: 7
+  parsed: 7
+  continuity_pairs: 6
+  continuity_ok: 2
+  cost: 164.47999999999993
+  words: 52
+  terms: 7
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
+best: |-
+  The language enables 3 words of a Closed Class. every word of a Closed Class carries one meaning.
+  - "not"
+  - "do"
+  - "does"
+proposals:
+- text: 'The Seed enables 3 words: "not", "do", and "does". The word "not" is a Function Word. The word "do" is a Function Word. The word "does" is a Function Word. The language uses "do" and "does" for negation only. The Grammar does not allow emphatic "do". The Grammar does not allow interrogative "do". The Grammar allows the form "do not" as a prohibition. The Grammar allows the form "does not" with a verb base. The Grammar does not allow constituent negation.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 3
+    continuity_pairs: 9
+    continuity_ok: 7
+    cost: 253.1200000000001
+    words: 81
+    terms: 9
+  diagnosis: '"The Seed enables 3 words: "not", "do", and "does"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language uses "do" and "does" for negation only": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: negation, only] | "The Grammar does not allow emphatic "do"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Grammar does not allow interrogative "do"": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure | "The Grammar allows the form "do not" as a prohibition": WORD: "form" is not a minglish word [all unknown words: form, as, prohibition] | "The Grammar allows the form "does not" with a verb base": WORD: "form" is not a minglish word | "The Grammar does not allow constituent negation": WORD: "constituent" is not a minglish word — "Constituent" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: constituent, negation]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Seed enables 3 words:
+    - "not"
+    - "do"
+    - "does"
+    The word "not" is a Function Word. The word "do" is a Function Word. The word "does" is a Function Word. The Grammar permits "do" and "does" only in a negation. The Grammar does not permit "do" for emphasis. The Grammar does not permit "do" for a question. The Grammar permits "do not" as an imperative. The Grammar permits "does not" with a verb base. The Grammar does not permit "not" with a noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 4
+    continuity_pairs: 9
+    continuity_ok: 8
+    cost: 251.06000000000006
+    words: 82
+    terms: 10
+  diagnosis: '"The Grammar permits "do" and "does" only in a negation": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, only, negation] | "The Grammar does not permit "do" for emphasis": WORD: "permit" is banned in minglish — write "allow" ("the Grammar allows the word") | "The Grammar does not permit "do" for a question": WORD: "permit" is banned in minglish — write "allow" ("the Grammar allows the word") | "The Grammar permits "do not" as an imperative": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, as, imperative] | "The Grammar permits "does not" with a verb base": WORD: "permits" is banned in minglish — write "allows" | "The Grammar does not permit "not" with a noun": WORD: "permit" is banned in minglish — write "allow" ("the Grammar allows the word")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Seed enables 3 words:
+    - "not"
+    - "do"
+    - "does"
+    The word "not" is a Function Word. The word "do" is a Function Word. The word "does" is a Function Word. The Grammar allows "do" and "does" in a negation. The Grammar does not allow "do" for emphasis. The Grammar does not allow "do" for a question. The Grammar allows "do not" as a command. The Grammar allows "does not" with a verb. The Grammar does not allow "not" with a noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 10
+    parsed: 7
+    continuity_pairs: 9
+    continuity_ok: 8
+    cost: 237.80000000000013
+    words: 80
+    terms: 10
+  diagnosis: '"The Grammar allows "do" and "does" in a negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar does not allow "do" for emphasis": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the") | "The Grammar allows "do not" as a command": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); comparison has no minglish Surface Form yet'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language enables 3 words:
+    - "not"
+    - "do"
+    - "does"
+    Every word has one meaning. "do" and "does" carry negation. "do" does not carry emphasis. "does" does not carry emphasis.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 94.19000000000003
+    words: 28
+    terms: 0
+  diagnosis: '""do" and "does" carry negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | ""do" does not carry emphasis": STYLE: "does … carry" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the") | ""does" does not carry emphasis": STYLE: "does … carry" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language enables 3 words:
+    - "not"
+    - "do"
+    - "does"
+    Every word has one meaning. "do" carries the Ban. "does" carries the Ban.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 68.42
+    words: 21
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language enables 3 function words. every function word carries one meaning.
+    - "not"
+    - "do"
+    - "does"
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 52.11000000000001
+    words: 15
+    terms: 0
+  diagnosis: '"The language enables 3 function words": WORD: "function" is not a minglish word | "every function word carries one meaning": WORD: "function" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The language enables 3 words of a Closed Class. every word of a Closed Class carries one meaning.
+    - "not"
+    - "do"
+    - "does"
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 65.63000000000002
+    words: 21
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash

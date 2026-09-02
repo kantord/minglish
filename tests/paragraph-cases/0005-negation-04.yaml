@@ -1,0 +1,141 @@
+source: docs/adr/0005-negation.md
+index: 4
+original: The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The Form Tag of "does" is "NEG_AUX_3SG".
+context_before: 'The language enables 3 Function Words: - "not" - "do" - "does"'
+context_after: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
+original_metrics:
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 2
+  cost: 71.54999999999998
+  words: 21
+  terms: 3
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
+best: A Copula uses "is not". a Copula uses "are not". a Copula does not use "do". a Copula does not use "does".
+proposals:
+- text: The copula does not use "do". the copula uses "not" after "is" or after "were".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 46.67
+    words: 15
+    terms: 0
+  diagnosis: '"The copula does not use "do"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md) | "the copula uses "not" after "is" or after "were"": WORD: "copula" is not a minglish word — "Copula" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: copula, after]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Copula does not use "do". the Copula uses "not" after "is" or after "were".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 46.67
+    words: 15
+    terms: 2
+  diagnosis: '"the Copula uses "not" after "is" or after "were"": WORD: "after" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Copula does not use "do". the Copula uses "not" with "is" or uses "not" with "were".
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 51.620000000000005
+    words: 17
+    terms: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence with a Copula uses "not" after the Copula. the sentence does not use "do".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 51.0
+    words: 16
+    terms: 2
+  diagnosis: '"A sentence with a Copula uses "not" after the Copula": WORD: "after" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence with a Copula puts "not" after the Copula. the sentence does not use "do".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 51.349999999999994
+    words: 16
+    terms: 2
+  diagnosis: '"A sentence with a Copula puts "not" after the Copula": WORD: "after" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence with a Copula has "not" after the Copula. the sentence does not use "do".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 49.50999999999999
+    words: 16
+    terms: 2
+  diagnosis: '"A sentence with a Copula has "not" after the Copula": WORD: "after" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A Copular negation uses "is not" or "are not". a Copular negation does not use "do" or "does".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 66.12
+    words: 18
+    terms: 2
+  diagnosis: '"A Copular negation uses "is not" or "are not"": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "a Copular negation does not use "do" or "does"": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A Copula uses "is not" or "are not". a Copula does not use "do" or "does".
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 49.26
+    words: 16
+    terms: 2
+  diagnosis: '"A Copula uses "is not" or "are not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "a Copula does not use "do" or "does"": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A Copula uses "is not". a Copula uses "are not". a Copula does not use "do". a Copula does not use "does".
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 73.96000000000002
+    words: 22
+    terms: 4
+  count: 1
+  model: deepseek/deepseek-v4-flash

@@ -305,13 +305,19 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     // determiner (mass nouns take "the")
     for (i, t) in toks.iter().enumerate() {
         if let Tok::NounSg(n) = t {
-            let prev = i.checked_sub(1).map(|j| &toks[j]);
+            // look back through adjectives to the word before the noun phrase
+            let mut j = i;
+            while j > 0 && matches!(toks[j - 1], Tok::Adj(_)) {
+                j -= 1;
+            }
+            let prev = j.checked_sub(1).map(|k| &toks[k]);
             let determined = prev.is_some_and(|p| {
-                is_det(p) || matches!(p, Tok::Adj(_) | Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_)
+                is_det(p) || matches!(p, Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_)
                     | Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_))
-            });
+            }) || (j == 0 && i > 0 && false);
             let mentioned = toks.get(i + 1).is_some_and(|nx| matches!(nx, Tok::Name(_)));
-            if !determined && !mentioned && i > 0 {
+            let sentence_initial_bare = j == 0;
+            if !determined && !mentioned && (i > 0 || sentence_initial_bare) {
                 out.push(format!(
                     "\"{n}\" — a singular noun needs a determiner: \"the {n}\" (mass nouns take \"the\")"
                 ));
@@ -337,6 +343,68 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
                     word(&toks[a]), word(&toks[b])
                 ));
             }
+        }
+    }
+    // (b) adjective used as a noun: "a possessive", "the future" at the end
+    for (i, t) in toks.iter().enumerate() {
+        if let Tok::Adj(a) = t {
+            let after_det = i > 0 && is_det(&toks[i - 1]);
+            let no_noun = !matches!(toks.get(i + 1), Some(Tok::Adj(_) | Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)));
+            if after_det && no_noun {
+                out.push(format!("\"{a}\" is an adjective — add the noun it describes: \"a {a} <noun>\""));
+            }
+        }
+    }
+    // (c) a count without its noun: "2200 of the tokens"
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::NumPl(_)) && matches!(w[1], Tok::PrepN(_)) {
+            out.push(format!(
+                "\"{} of …\" — a count needs its noun: \"{} pronouns\"; for a share write \"<digits> percent of …\" (ADR 0022, 0024)",
+                word(&w[0]), word(&w[0])
+            ));
+        }
+    }
+    // (d) -ing / -ed verb form after a determiner: "the finding"
+    for w in toks.windows(2) {
+        if is_det(&w[0]) && matches!(w[1], Tok::VtIng(_) | Tok::ViIng(_)) {
+            out.push(format!(
+                "\"{}\" is a verb form in minglish and cannot follow a determiner — name the thing with a noun",
+                word(&w[1])
+            ));
+        }
+    }
+    // (e) a verb form as the subject: "Resolving the pronoun requires …"
+    if let Some(Tok::VtIng(v) | Tok::ViIng(v)) = toks.first() {
+        out.push(format!(
+            "\"{v} …\" — a verb form cannot be the subject; name the doer: \"the Discourse Layer resolves the pronoun\""
+        ));
+    }
+    // (f) "of every": every is subject/object only (ADR 0014)
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::PrepN(_)) && matches!(w[1], Tok::Every(_)) {
+            out.push("\"of every\" — \"every\" cannot follow \"of\"; write \"of a <noun>\", or make the every-phrase the subject (ADR 0014)".to_string());
+        }
+    }
+    // (g) name before its noun: "UD-EWT corpora"
+    for w in toks.windows(2) {
+        if let (Tok::Name(n), Tok::NounSg(h) | Tok::NounPl(h)) = (&w[0], &w[1]) {
+            out.push(format!("\"{n} {h}\" — the name follows its noun: \"the {h} {n}\" (ADR 0018)"));
+        }
+    }
+    // (h) a pronoun mentioned as a word at the end or in a list: "allows my"
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_)) {
+            let last = i + 1 == toks.len();
+            let listed = matches!(toks.get(i + 1), Some(Tok::Conj(_))) && i > 0 && !matches!(toks[i - 1], Tok::Conj(_)) && i > 1;
+            if (last && i > 0) || listed {
+                out.push(format!("\"{}\" used as a word must be quoted: \"\\\"{}\\\"\" (ADR 0018)", word(t), word(t)));
+            }
+        }
+    }
+    // (i) coordinated prepositional phrases: "of the speaker or of the hearer"
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::Conj(_)) && matches!(w[1], Tok::PrepN(_) | Tok::PrepV(_)) {
+            out.push("phrases cannot be coordinated — split the sentence, one phrase each (ADR 0004)".to_string());
         }
     }
     // participle as a noun modifier: "the banned pronouns" (no participial

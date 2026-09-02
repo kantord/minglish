@@ -1,0 +1,16 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 11
+original: The Lexicon contains a Ban for every Anaphoric Pronoun. The Linter explains the Ban to the writer. The Linter says "repeat the noun you mean".
+context_before: The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
+context_after: ''
+original_metrics:
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 1
+  cost: 95.77
+  words: 25
+  terms: 6
+verdict: unreviewed
+best: ''
+proposals: []

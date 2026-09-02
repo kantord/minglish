@@ -670,7 +670,12 @@ fn enumerated_count(intro: &Tree) -> Result<Option<usize>, String> {
     if s.len() != 2 {
         return Err("the intro of an Enumeration cannot carry a coordination tail (ADR 0028)".into());
     }
-    let Tree::Node { label: pred, children: pc, .. } = &s[1] else {
+    let mut pred_node = &s[1];
+    // negation and modals wrap the verb phrase: descend to it
+    while let Tree::Node { label: "NegVP" | "ModalVP", children, .. } = pred_node {
+        pred_node = children.last().expect("wrapped VP");
+    }
+    let Tree::Node { label: pred, children: pc, .. } = pred_node else {
         return Err("intro predicate".into());
     };
     let np = match (*pred, pc.last()) {
@@ -679,7 +684,8 @@ fn enumerated_count(intro: &Tree) -> Result<Option<usize>, String> {
         _ => return Err("the intro must end in the noun phrase the items enumerate — no trailing prepositional phrase or adjective (ADR 0028)".into()),
     };
     let Tree::Node { label, children: nc, .. } = np else { unreachable!() };
-    let first = nc.first().and_then(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None });
+    let leaves: Vec<&str> = nc.iter().filter_map(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None }).collect();
+    let first = leaves.first().copied().map(|w| if w == "the" && leaves.len() > 1 { leaves[1] } else { w });
     let last_leaf = nc.iter().rev().find_map(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None });
     match (*label, first) {
         ("NPGen", _) => Ok(None),

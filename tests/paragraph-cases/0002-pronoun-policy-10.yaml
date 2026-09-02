@@ -1,0 +1,16 @@
+source: docs/adr/0002-pronoun-policy.md
+index: 10
+original: The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
+context_before: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer, so the maintainers do not build a Discourse Layer.
+context_after: The Lexicon contains a Ban for every Anaphoric Pronoun. The Linter explains the Ban to the writer. The Linter says "repeat the noun you mean".
+original_metrics:
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 0
+  cost: 82.37999999999998
+  words: 25
+  terms: 0
+verdict: unreviewed
+best: ''
+proposals: []

@@ -1,32 +1,44 @@
 # 0004 — Coordination: and/or enabled, but deferred
 
 Date: 2026-08-31
-Status: proposed (tentative — same review point as ADR 0002/0003)
+Status: proposed (tentative — same review point as ADR 0002/0003; rewritten in minglish 2026-09-02)
 
 ## Context
 
-*and* (×550) and *or* (×77) are top missing closed-class lemmas in triage.
-Coordination scope is among the worst structural ambiguities in English
-("old men and women"; "the sensor and the valve in the cabinet"), but all of
-that is grammar-tier: the tokens themselves are indispensable and
-unambiguous. *but* (×82) differs — adversative contrast is discourse-level
-meaning, the first word whose semantics exceeds propositional content.
+Triage counts about 550 tokens of the word "and" in the corpus. Triage
+counts about 77 tokens of the word "or" in the corpus. The 2 words make a
+big hole in the Coverage.
+
+The scope of a Coordination causes big ambiguities in English. The phrase
+"old men and women" is ambiguous. The phrase "the sensor and the valve in
+the cabinet" is ambiguous. The Grammar decides the scope. The token "and"
+is not ambiguous. The token "or" is not ambiguous.
+
+Triage counts about 82 tokens of the word "but". The word "but" is
+different, because "but" marks a contrast. A contrast is not a claim.
 
 ## Decision
 
-- Enabled: *and*, *or* as category CONJ.
-- Deferred: *but* and all other conjunctions. (*but* later enabled by ADR 0021.)
-- Intended grammar rules, recorded now, enforceable only later:
-  1. Coordination joins identical categories only.
-  2. Modifiers never distribute over a coordination — each conjunct carries
-     its own modifiers ("the old files and the old reports", never
-     "the old files and reports").
-  3. No shared-PP scope over conjuncts; attach per conjunct explicitly.
+The language enables 2 conjunctions:
+- "and"
+- "or"
+
+The Form Tag of "and" is "CONJ". The Form Tag of "or" is "CONJ". The
+language has 2 conjunctions. The maintainers deferred the word "but". The
+decision "0021" enabled the word "but".
+
+The Grammar enforces 3 rules. A Coordination joins 2 phrases of one
+Category. A Modifier does not cover a Coordination. Every Conjunct carries
+the Modifiers of the Conjunct. The phrase "the old files and the old
+reports" is correct. The phrase "the old files and reports" is not correct.
+A Prepositional Phrase does not cover a Coordination. A Prepositional Phrase
+attaches to one Conjunct.
 
 ## Consequences
 
-- Compound statements and alternatives become expressible.
-- Texts get longer under rule 2 — the price of scope unambiguity, consistent
-  with the repeat-the-noun pronoun policy.
-- Token-level triage counts every and/or as OK; the scope rules are
-  unmeasurable until a grammar tier exists.
+- The language can say a compound statement. The language can say an
+  alternative.
+- The rules add words to a text. The words are the expense of a clear
+  scope. The rules match the Ban of the Anaphoric Pronouns.
+- The Grammar enforces the rules. Triage does not see the scope, because
+  Triage checks the tokens.
