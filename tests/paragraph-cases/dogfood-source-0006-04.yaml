@@ -1,0 +1,150 @@
+source: docs/dogfood-source-0006.md
+index: 4
+original: 'Fallback: the most common, least confusing construction. When the ideal branching is unavailable, choose the most frequent standard-English pattern — familiarity is itself a processing aid, and surprise is a cost.'
+context_before: Cognitive load first. Prefer the structure that minimizes open dependencies, dependency length, and embedding — branching rules exist to aid human and LLM understanding, per cognitive-science results, not per taste or tradition.
+context_after: Minimal context need. A sentence should be interpretable with as little prior context as possible. This is why anaphora is banned (ADR 0002), why nouns are repeated, and why scope rules are fixed rather than context-dependent.
+original_metrics:
+  sentences: 2
+  parsed: 0
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 119.06
+  words: 31
+  terms: 0
+  connectives: 1
+verdict: unreviewed
+best: If the ideal branching is not available, then the writer chooses the common structure of English. The familiarity of the structure helps the reader. The surprise of a new structure costs the reader.
+proposals:
+- text: If the ideal branching does not exist, then the writer uses the common pattern of standard English. Familiarity helps the reader. Surprise costs the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 85.49
+    words: 25
+    terms: 0
+    connectives: 0
+  diagnosis: '"If the ideal branching does not exist, then the writer uses the common pattern of standard English": STYLE: "does … exist" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "Familiarity helps the reader": STYLE: "familiarity" — a singular noun needs a determiner: "the familiarity" (mass nouns take "the") | "Surprise costs the reader": STYLE: "surprise" — a singular noun needs a determiner: "the surprise" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The ideal branching is not available. The writer chooses the common pattern of standard English. The familiarity helps the reader. The surprise costs the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 81.73999999999998
+    words: 25
+    terms: 0
+    connectives: 0
+  diagnosis: '"The writer chooses the common pattern of standard English": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The writer uses the common pattern of standard English.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 28.59
+    words: 9
+    terms: 0
+    connectives: 0
+  diagnosis: '"The writer uses the common pattern of standard English": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If the good branching is not an option, then the agent chooses the most common pattern of English. Familiarity is an aid to the reader. Surprise is a cost to the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 95.65999999999998
+    words: 32
+    terms: 0
+    connectives: 0
+  diagnosis: '"If the good branching is not an option, then the agent chooses the most common pattern of English": WORD: "most" is banned in minglish — superlatives are deferred (ADR 0029) - write a Comparative with a standard, or name the top item | "Familiarity is an aid to the reader": WORD: "aid" is banned in minglish — write "help": "the rule helps the reader" | "Surprise is a cost to the reader": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "is … cost" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "surprise" — a singular noun needs a determiner: "the surprise" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A good branching is not an option. The agent chooses the common pattern of English. Familiarity helps the reader. The surprise is an expense to the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 84.71999999999998
+    words: 27
+    terms: 0
+    connectives: 0
+  diagnosis: '"Familiarity helps the reader": STYLE: "familiarity" — a singular noun needs a determiner: "the familiarity" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A good branching is not an option. The agent chooses the common pattern of English. The familiarity helps the reader. The surprise is an expense to the reader.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 85.99
+    words: 28
+    terms: 0
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If the ideal Branching is not available, then the writer chooses the most common structure of English. familiarity is a help to the reader and surprise is a cost to the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 93.98999999999997
+    words: 32
+    terms: 0
+    connectives: 1
+  diagnosis: '"If the ideal Branching is not available, then the writer chooses the most common structure of English": WORD: "Branching" is not a minglish word — minglish words are lowercase ("branching"); a name that equals a word needs quotes | "familiarity is a help to the reader and surprise is a cost to the reader": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "familiarity" — a singular noun needs a determiner: "the familiarity" (mass nouns take "the"); "help" is a verb in minglish and cannot follow a determiner; "help" is transitive in minglish and needs an object; "is … help" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "surprise" — a singular noun needs a determiner: "the surprise" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If the ideal branching is not available, then the writer chooses the most common structure of English. The familiarity of the structure helps the reader. The surprise of a new structure costs the reader.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 103.12999999999997
+    words: 34
+    terms: 0
+    connectives: 0
+  diagnosis: '"If the ideal branching is not available, then the writer chooses the most common structure of English": WORD: "most" is banned in minglish — superlatives are deferred (ADR 0029) - write a Comparative with a standard, or name the top item'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If the ideal branching is not available, then the writer chooses the common structure of English. The familiarity of the structure helps the reader. The surprise of a new structure costs the reader.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 100.12999999999997
+    words: 33
+    terms: 0
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash

@@ -1,0 +1,169 @@
+source: docs/dogfood-source-0006.md
+index: 3
+original: Cognitive load first. Prefer the structure that minimizes open dependencies, dependency length, and embedding — branching rules exist to aid human and LLM understanding, per cognitive-science results, not per taste or tradition.
+context_before: 'Ranked criteria for every syntactic-structure decision, in order:'
+context_after: 'Fallback: the most common, least confusing construction. When the ideal branching is unavailable, choose the most frequent standard-English pattern — familiarity is itself a processing aid, and surprise is a cost.'
+original_metrics:
+  sentences: 2
+  parsed: 0
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 135.13
+  words: 32
+  terms: 0
+  connectives: 3
+verdict: unreviewed
+best: The Cognitive Load is the first criterion. The Grammar must prefer a structure. The structure reduces every Open Dependency. The structure reduces every Dependency Length. The structure reduces every Embedding Depth. The rules of the branching exist. The rules help the reader. The rules help the Language Model. The results of the research ground the rules. The rules do not come from the taste. The rules do not come from the tradition.
+proposals:
+- text: The Grammar gives the most weight to the Cognitive Load of the sentence. every branching rule reduces the Open Dependencies of the sentence or reduces the Dependency Length or deepens the Embedding Depth of the sentence. the Grammar keeps every branching rule because the rule helps the reader and helps the Language Model. the Cognitive Load is a bound from Cognitive Science. the Grammar does not follow a taste or a tradition.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 236.58999999999997
+    words: 72
+    terms: 9
+    connectives: 5
+  diagnosis: '"The Grammar gives the most weight to the Cognitive Load of the sentence": WORD: "most" is banned in minglish — superlatives are deferred (ADR 0029) - write a Comparative with a standard, or name the top item [all unknown words: most, weight] | "every branching rule reduces the Open Dependencies of the sentence or reduces the Dependency Length or deepens the Embedding Depth of the sentence": WORD: "deepens" is not a minglish word | "the Grammar keeps every branching rule because the rule helps the reader and helps the Language Model": STYLE: "branching rule" — noun-noun compounds are not minglish; write "the rule of the branching", or one transparent word (ADR 0015); a comma before "because" is mandatory — "<clause>, because <clause>" (ADR 0026) | "the Cognitive Load is a bound from Cognitive Science": WORD: "Science" is not a minglish word — minglish words are lowercase ("science"); a name that equals a word needs quotes | "the Grammar does not follow a taste or a tradition": STYLE: "does … follow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar ranks the Cognitive Load of the sentence as the first criterion. the Cognitive Load of a sentence has 3 measures. the measures are the Open Dependencies, the Dependency Length, and the Embedding Depth. every branching rule of the Grammar reduces 1 measure or reduces more than 1 measure. the rule keeps the Cognitive Load of the sentence small. the rule helps the reader and helps the Language Model. the Cognitive Load is a bound from Cognitive Science. the Grammar does not follow a taste. the Grammar does not follow a tradition.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 3
+    continuity_pairs: 8
+    continuity_ok: 4
+    cost: 299.5199999999999
+    words: 93
+    terms: 12
+    connectives: 4
+  diagnosis: '"The Grammar ranks the Cognitive Load of the sentence as the first criterion": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "the Cognitive Load of a sentence has 3 measures": STYLE: "has … measures" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measures" is a verb in minglish and cannot follow a determiner; "measures" is transitive in minglish and needs an object | "the measures are the Open Dependencies, the Dependency Length, and the Embedding Depth": STYLE: "measures … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measures" is a verb in minglish and cannot follow a determiner; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "every branching rule of the Grammar reduces 1 measure or reduces more than 1 measure": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the rule keeps the Cognitive Load of the sentence small": not recognizable as a minglish-like sentence | "the Cognitive Load is a bound from Cognitive Science": WORD: "Science" is not a minglish word — minglish words are lowercase ("science"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Grammar ranks the Cognitive Load of the sentence as the first criterion. The Cognitive Load of a sentence has 3 measures:
+    - the Open Dependencies
+    - the Dependency Length
+    - the Embedding Depth
+    Every branching rule of the Grammar reduces one measure or reduces more than one measure. The rule keeps the Cognitive Load of the sentence small. The rule helps the reader and helps the Language Model. The Cognitive Load is a bound from Cognitive Science. The Grammar does not follow a taste. The Grammar does not follow a tradition.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 3
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 289.12999999999994
+    words: 89
+    terms: 12
+    connectives: 4
+  diagnosis: |-
+    "The Grammar ranks the Cognitive Load of the sentence as the first criterion. The Cognitive Load of a sentence has 3 measures:
+    - the Open Dependencies
+    - the Dependency Length
+    - the Embedding Depth": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) [all unknown words: as, -] | "Every branching rule of the Grammar reduces one measure or reduces more than one measure": STYLE: "branching rule" — noun-noun compounds are not minglish; write "the rule of the branching", or one transparent word (ADR 0015); "measure" is a verb in minglish and cannot follow a determiner; "measure" is transitive in minglish and needs an object; "reduces … measure" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The rule keeps the Cognitive Load of the sentence small": not recognizable as a minglish-like sentence | "The Cognitive Load is a bound from Cognitive Science": WORD: "Science" is not a minglish word — minglish words are lowercase ("science"); a name that equals a word needs quotes
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Cognitive Load is the first criterion. The Grammar must prefer the structure that minimizes the Open Dependencies, minimizes the Dependency Length, and minimizes the Embedding Depth. The branching rules exist to aid the understanding of a human reader and a Language Model. The research findings ground the rules. The rules do not come from taste or tradition.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 191.34000000000003
+    words: 58
+    terms: 6
+    connectives: 3
+  diagnosis: '"The Grammar must prefer the structure that minimizes the Open Dependencies, minimizes the Dependency Length, and minimizes the Embedding Depth": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, minimizes] | "The branching rules exist to aid the understanding of a human reader and a Language Model": WORD: "aid" is banned in minglish — write "help": "the rule helps the reader" [all unknown words: aid, understanding, human] | "The research findings ground the rules": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") | "The rules do not come from taste or tradition": STYLE: "taste" — a singular noun needs a determiner: "the taste" (mass nouns take "the"); "tradition" — a singular noun needs a determiner: "the tradition" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Cognitive Load is the first criterion. The Grammar must prefer the structure that minimizes every Open Dependency, minimizes every Dependency Length, and minimizes every Embedding Depth. The branching rules exist. The rules help the reader and the Language Model. The rules help the understanding. The research results ground the rules. The rules do not come from the taste. The rules do not come from the tradition.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 3
+    continuity_pairs: 7
+    continuity_ok: 4
+    cost: 216.93000000000015
+    words: 67
+    terms: 6
+    connectives: 2
+  diagnosis: '"The Grammar must prefer the structure that minimizes every Open Dependency, minimizes every Dependency Length, and minimizes every Embedding Depth": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, minimizes] | "The branching rules exist": STYLE: "branching rules" — noun-noun compounds are not minglish; write "the rules of the branching", or one transparent word (ADR 0015) | "The rules help the reader and the Language Model": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The rules help the understanding": WORD: "understanding" is not a minglish word | "The research results ground the rules": STYLE: "research results" — noun-noun compounds are not minglish; write "the results of the research", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Cognitive Load is the first criterion. The Grammar must prefer a structure. The structure reduces every Open Dependency. The structure reduces every Dependency Length. The structure reduces every Embedding Depth. The rules of the branching exist. The rules help the reader. The rules help the Language Model. The results of the research ground the rules. The rules do not come from the taste. The rules do not come from the tradition.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 11
+    parsed: 11
+    continuity_pairs: 10
+    continuity_ok: 7
+    cost: 225.4100000000001
+    words: 72
+    terms: 6
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Cognitive Load is the first criterion. The Linter prefers the Parse that minimizes the Open Dependencies, the Dependency Length, and the Embedding Depth. Every branching rule exists to help the reader and the Language Model. The cognitive science provides the reason for every branching rule. The taste and the tradition do not provide the reason.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 187.90000000000006
+    words: 56
+    terms: 7
+    connectives: 3
+  diagnosis: '"The Linter prefers the Parse that minimizes the Open Dependencies, the Dependency Length, and the Embedding Depth": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, minimizes] | "Every branching rule exists to help the reader and the Language Model": STYLE: "branching rule" — noun-noun compounds are not minglish; write "the rule of the branching", or one transparent word (ADR 0015); "exists … help" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The cognitive science provides the reason for every branching rule": WORD: "cognitive" is not a minglish word [all unknown words: cognitive, provides] | "The taste and the tradition do not provide the reason": WORD: "provide" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Cognitive Load is the first criterion. Every Parse has Open Dependencies, a Dependency Length, and an Embedding Depth. The Linter prefers the Parse that has the fewest Open Dependencies, the shortest Dependency Length, and the shallowest Embedding Depth. The cognitive science results give the reason for every branching rule. The taste and the tradition do not give the reason. Every branching rule helps the reader. Every branching rule helps the Language Model.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 1
+    continuity_pairs: 6
+    continuity_ok: 1
+    cost: 264.78000000000003
+    words: 73
+    terms: 11
+    connectives: 3
+  diagnosis: '"Every Parse has Open Dependencies, a Dependency Length, and an Embedding Depth": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The Linter prefers the Parse that has the fewest Open Dependencies, the shortest Dependency Length, and the shallowest Embedding Depth": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, fewest, shortest, shallowest] | "The cognitive science results give the reason for every branching rule": WORD: "cognitive" is not a minglish word | "The taste and the tradition do not give the reason": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "Every branching rule helps the reader": STYLE: "branching rule" — noun-noun compounds are not minglish; write "the rule of the branching", or one transparent word (ADR 0015) | "Every branching rule helps the Language Model": STYLE: "branching rule" — noun-noun compounds are not minglish; write "the rule of the branching", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Cognitive Load is the first criterion. Every Parse has 3 properties:
+    - Open Dependencies
+    - a Dependency Length
+    - an Embedding Depth
+    The Linter prefers the Parse with the fewest Open Dependencies, the shortest Dependency Length, and the shallowest Embedding Depth. The research findings give the reason for every branching rule. The taste does not give the reason. The tradition does not give the reason. Every rule of the branching helps the reader. Every rule of the branching helps the Language Model.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 4
+    continuity_pairs: 6
+    continuity_ok: 1
+    cost: 282.42
+    words: 80
+    terms: 11
+    connectives: 2
+  diagnosis: |-
+    "The Cognitive Load is the first criterion. Every Parse has 3 properties:
+    - Open Dependencies
+    - a Dependency Length
+    - an Embedding Depth": WORD: "Every" is not a minglish word — minglish words are lowercase ("every"); a name that equals a word needs quotes | "The Linter prefers the Parse with the fewest Open Dependencies, the shortest Dependency Length, and the shallowest Embedding Depth": WORD: "fewest" is not a minglish word [all unknown words: fewest, shortest, shallowest] | "The research findings give the reason for every branching rule": WORD: "findings" is banned in minglish — write "results" ("the file describes the results")
+  count: 1
+  model: deepseek/deepseek-v4-flash

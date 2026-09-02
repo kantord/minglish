@@ -1,0 +1,150 @@
+source: docs/dogfood-source-0006.md
+index: 11
+original: Metrics for (1) already exist in the research findings and can be implemented over parse output when the grammar tier arrives.
+context_before: Every future grammar ADR must justify its choice against these three criteria, in this order.
+context_after: '"Natural-sounding" loses to "measurably easier" whenever they conflict — but criterion 2 keeps the loss small.'
+original_metrics:
+  sentences: 1
+  parsed: 0
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 72.51
+  words: 21
+  terms: 0
+  connectives: 1
+verdict: unreviewed
+best: The results of the research describe the metrics for the Cognitive Load. the Linter can measure the Cognitive Load from the Parse of a sentence. the Grammar arrives after the Linter. the Linter uses the Grammar.
+proposals:
+- text: The research findings contain the metrics for Cognitive Load. the tool can apply the metrics to the Parse of a sentence. the Grammar must exist first.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 84.35999999999999
+    words: 26
+    terms: 3
+    connectives: 0
+  diagnosis: '"The research findings contain the metrics for Cognitive Load": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") | "the Grammar must exist first": STYLE: "must … exist" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research file describes the results. the results define the metrics for Cognitive Load. the Grammar must exist. the tool can apply the metrics to the Parse of a sentence.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 95.96999999999997
+    words: 30
+    terms: 3
+    connectives: 0
+  diagnosis: '"The research file describes the results": STYLE: "research file" — noun-noun compounds are not minglish; write "the file of the research", or one transparent word (ADR 0015) | "the results define the metrics for Cognitive Load": AMBIGUOUS (2 readings): "Cognitive Load" — a singular noun needs a determiner: "the Cognitive Load" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The file of the research describes the results. the results define the metrics of the Cognitive Load. the Grammar must exist. the tool can apply the metrics to the Parse of a sentence.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 99.71999999999997
+    words: 33
+    terms: 3
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Research Findings contain metrics for the Cognitive Load criteria. The Linter can implement the metrics from the Parse output. the Grammar must exist first.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 90.75999999999996
+    words: 24
+    terms: 4
+    connectives: 0
+  diagnosis: '"Research Findings contain metrics for the Cognitive Load criteria": STYLE: "Cognitive Load criteria" — noun-noun compounds are not minglish; write "the criteria of the Cognitive Load", or one transparent word (ADR 0015) | "The Linter can implement the metrics from the Parse output": WORD: "implement" is not a minglish word | "the Grammar must exist first": STYLE: "must … exist" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Research Findings of the document contain metrics for the Cognitive Load. the Grammar can calculate the metrics from the Parse. the Grammar must be available for the Parse.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 94.24999999999997
+    words: 29
+    terms: 5
+    connectives: 0
+  diagnosis: '"The Research Findings of the document contain metrics for the Cognitive Load": WORD: "Research" is not a minglish word — minglish words are lowercase ("research"); a name that equals a word needs quotes | "the Grammar can calculate the metrics from the Parse": WORD: "calculate" is not a minglish word | "the Grammar must be available for the Parse": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Research Findings contain metrics for the Cognitive Load criteria. the Linter can use the metrics from the Parse. the Grammar must define the Parse first.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 93.55999999999999
+    words: 26
+    terms: 5
+    connectives: 0
+  diagnosis: '"The Research Findings contain metrics for the Cognitive Load criteria": WORD: "Research" is not a minglish word — minglish words are lowercase ("research"); a name that equals a word needs quotes | "the Grammar must define the Parse first": STYLE: "must … define" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the research findings describe the metrics for the Cognitive Load. the Linter can measure the Cognitive Load from the Parse of a sentence. the Linter will use the Grammar when the Grammar arrives.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 114.05999999999997
+    words: 33
+    terms: 7
+    connectives: 0
+  diagnosis: '"the research findings describe the metrics for the Cognitive Load": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") | "the Linter will use the Grammar when the Grammar arrives": WORD: "will" is not a minglish word [all unknown words: will, when]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research results describe the metrics for the Cognitive Load. the Linter can measure the Cognitive Load from the Parse of a sentence. the Grammar arrives later. the Linter then uses the Grammar.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 115.39999999999998
+    words: 33
+    terms: 7
+    connectives: 0
+  diagnosis: '"The research results describe the metrics for the Cognitive Load": STYLE: "research results" — noun-noun compounds are not minglish; write "the results of the research", or one transparent word (ADR 0015) | "the Grammar arrives later": not recognizable as a minglish-like sentence | "the Linter then uses the Grammar": STYLE: "Linter then" — a word mentioned as a word must be quoted: "Linter \"then\"" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The results of the research describe the metrics for the Cognitive Load. the Linter can measure the Cognitive Load from the Parse of a sentence. the Grammar arrives after the Linter. the Linter uses the Grammar.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 124.98999999999998
+    words: 36
+    terms: 8
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash

@@ -11,6 +11,7 @@ original_metrics:
   cost: 71.38000000000001
   words: 22
   terms: 5
+  connectives: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The document "ADR 0010" added the word "did". The document "ADR 0010" added the word "later". Minglish does not allow the word "doesn't". Minglish does not allow the word "don't".
@@ -26,6 +27,7 @@ proposals:
     cost: 565.9699999999996
     words: 170
     terms: 13
+    connectives: 0
   diagnosis: '"The sentence says the words do not exist": STYLE: "says … exist" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The sentence says ADR 0010 adds the words": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022) | "Minglish is the name of the language": STYLE: "is … name" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner | "The name of the language is "Minglish"": STYLE: "name … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner | "The sentence cannot say the name": STYLE: "cannot … say" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "name" is a verb in minglish and cannot follow a determiner; "name" is transitive in minglish and needs an object'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -40,6 +42,7 @@ proposals:
     cost: 496.3099999999997
     words: 141
     terms: 13
+    connectives: 0
   diagnosis: '"The sentence says the words do not appear": STYLE: "says … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The sentence says ADR 10 adds the words": STYLE: "adds" is a verb in minglish and cannot follow a determiner; "says … adds" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -54,6 +57,7 @@ proposals:
     cost: 616.8399999999991
     words: 182
     terms: 13
+    connectives: 0
   diagnosis: '"The claim says the words do not appear": STYLE: "says … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The claim says ADR 10 adds the words": STYLE: "adds" is a verb in minglish and cannot follow a determiner; "says … adds" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -68,6 +72,7 @@ proposals:
     cost: 92.08
     words: 23
     terms: 1
+    connectives: 1
   diagnosis: '"The Seed does not enable the contractions "doesn''t" and "don''t"": STYLE: "does … enable" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "ADR 0010 adds the rule later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file")'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -82,6 +87,7 @@ proposals:
     cost: 98.49000000000001
     words: 26
     terms: 2
+    connectives: 0
   diagnosis: '"The later ADR 0010 adds the rule": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -96,6 +102,7 @@ proposals:
     cost: 133.71999999999997
     words: 37
     terms: 6
+    connectives: 0
   diagnosis: '"The ADR 0010 adds the rule": WORD: "0010" is not a minglish word — a number does not start with 0 (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -110,6 +117,7 @@ proposals:
     cost: 122.07
     words: 34
     terms: 1
+    connectives: 0
   diagnosis: '"ADR 0010 added the word "did" later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file")'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -124,6 +132,7 @@ proposals:
     cost: 129.62999999999997
     words: 35
     terms: 0
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The document "ADR 0010" added the word "did". The document "ADR 0010" added the word "later". Minglish does not allow the word "doesn't". Minglish does not allow the word "don't".
@@ -137,5 +146,6 @@ proposals:
     cost: 119.51999999999998
     words: 30
     terms: 0
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash

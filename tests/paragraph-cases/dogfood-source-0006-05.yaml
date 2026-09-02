@@ -1,0 +1,135 @@
+source: docs/dogfood-source-0006.md
+index: 5
+original: Minimal context need. A sentence should be interpretable with as little prior context as possible. This is why anaphora is banned (ADR 0002), why nouns are repeated, and why scope rules are fixed rather than context-dependent.
+context_before: 'Fallback: the most common, least confusing construction. When the ideal branching is unavailable, choose the most frequent standard-English pattern — familiarity is itself a processing aid, and surprise is a cost.'
+context_after: 'Density within the bounds. The target is precise, meaning-dense text that is nonetheless cheap to process: prefer the shortest formulation that stays inside the load bounds. Verbosity is not free — text that under-compresses its meaning adds noise, and noise creates its own reading ambiguity. Rules that force extra words (repeated nouns, mandatory then) are justified only because they remove more ambiguity than the added length costs; a rule that pads without disambiguating fails this criterion.'
+original_metrics:
+  sentences: 3
+  parsed: 0
+  continuity_pairs: 2
+  continuity_ok: 0
+  cost: 143.69000000000003
+  words: 36
+  terms: 0
+  connectives: 2
+verdict: unreviewed
+best: The Context Need of a sentence measures the prior text. a good sentence has a small Context Need. the reader does not need the prior text. the Context Need bans every Anaphoric Pronoun. the writer repeats the noun. the Context Need fixes every Scope Ambiguity. the Scope Ambiguities do not depend on the prior text.
+proposals:
+- text: The reader needs a small Context Need to understand a sentence. The sentence must need little prior text. The language bans every Anaphoric Pronoun because of this need. The writer repeats the noun because of this need. The Scope rules are fixed because of this need. The Scope rules do not depend on the context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 0
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 176.28000000000003
+    words: 55
+    terms: 2
+    connectives: 3
+  diagnosis: '"The reader needs a small Context Need to understand a sentence": WORD: "understand" is not a minglish word | "The sentence must need little prior text": WORD: "little" is not a minglish word | "The language bans every Anaphoric Pronoun because of this need": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "The writer repeats the noun because of this need": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "The Scope rules are fixed because of this need": WORD: "Scope" is not a minglish word — minglish words are lowercase ("scope"); a name that equals a word needs quotes | "The Scope rules do not depend on the context": WORD: "Scope" is not a minglish word — minglish words are lowercase ("scope"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every sentence needs a small Context Need. The Context Need of a sentence is the prior text of the sentence. The reader needs the prior text. The language bans every Anaphoric Pronoun. The Context Need is the reason. The writer repeats the noun. The Context Need is the reason. The scope rules are fixed. The scope rules do not depend on the context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 7
+    continuity_pairs: 8
+    continuity_ok: 2
+    cost: 198.98000000000013
+    words: 63
+    terms: 5
+    connectives: 0
+  diagnosis: '"The scope rules are fixed": STYLE: "are … fixed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "fixed" is transitive in minglish and needs an object; "scope rules" — noun-noun compounds are not minglish; write "the rules of the scope", or one transparent word (ADR 0015); passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "The scope rules do not depend on the context": STYLE: "scope rules" — noun-noun compounds are not minglish; write "the rules of the scope", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every sentence needs a small Context Need. The Context Need of a sentence is the prior text of the sentence. The reader needs the prior text. The language bans every Anaphoric Pronoun. The Context Need is the reason. The writer repeats the noun. The Context Need is the reason. The rules of the scope are fixed. The rules of the scope do not depend on the context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 8
+    continuity_pairs: 8
+    continuity_ok: 2
+    cost: 204.72000000000014
+    words: 67
+    terms: 5
+    connectives: 0
+  diagnosis: '"The rules of the scope are fixed": STYLE: "are … fixed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "fixed" is transitive in minglish and needs an object; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need little prior Context. every sentence should have a small Context Need. an Anaphoric Pronoun needs the prior text. the Linter bans every Anaphoric Pronoun. the writer repeats every noun. a Scope Ambiguity depends on the context. the language bans every Scope Ambiguity. the Grammar fixes the scope.
+  drops: the original mentions "ADR (0002)" which is dropped — it is a reference that would require a quote or a defined term.
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 6
+    continuity_pairs: 7
+    continuity_ok: 1
+    cost: 199.02000000000004
+    words: 51
+    terms: 7
+    connectives: 0
+  diagnosis: '"A sentence must need little prior Context": WORD: "little" is not a minglish word | "every sentence should have a small Context Need": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must have a small Context Need. the Context Need of a sentence is the prior text of the sentence. a reader needs the prior text. a good sentence has a small Context Need. an Anaphoric Pronoun needs the prior text. the Linter bans every Anaphoric Pronoun. the writer repeats every noun. a Scope Ambiguity depends on the context. the language bans every Scope Ambiguity. the Grammar fixes the scope.
+  drops: the original mentions "ADR (0002)" which is dropped — it is a reference that would require a quote or a defined term.
+  valid: true
+  metrics:
+    sentences: 10
+    parsed: 10
+    continuity_pairs: 9
+    continuity_ok: 1
+    cost: 251.98000000000013
+    words: 71
+    terms: 9
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is a measure. a good sentence has a small Context Need. the reader does not need prior text. this is why the language bans every Anaphoric Pronoun. the writer repeats the noun. the Scope Ambiguities of the language are fixed. the Scope Ambiguities do not depend on the prior text.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 3
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 183.86000000000004
+    words: 56
+    terms: 5
+    connectives: 0
+  diagnosis: '"The Context Need of a sentence is a measure": STYLE: "is … measure" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measure" is a verb in minglish and cannot follow a determiner; "measure" is transitive in minglish and needs an object | "the reader does not need prior text": STYLE: "does … need" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "this is why the language bans every Anaphoric Pronoun": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, why] | "the Scope Ambiguities of the language are fixed": STYLE: "are … fixed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "fixed" is transitive in minglish and needs an object; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is a measure of the prior text. a good sentence has a small Context Need. the reader does not need the prior text. the Context Need causes the ban on every Anaphoric Pronoun. the writer repeats the noun. the Context Need fixes every Scope Ambiguity. the Scope Ambiguities do not depend on the prior text.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 5
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 201.23000000000008
+    words: 61
+    terms: 7
+    connectives: 0
+  diagnosis: '"The Context Need of a sentence is a measure of the prior text": STYLE: "is … measure" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measure" is a verb in minglish and cannot follow a determiner | "the Context Need causes the ban on every Anaphoric Pronoun": STYLE: "ban" is a verb in minglish and cannot follow a determiner; "ban" is transitive in minglish and needs an object; "causes … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence measures the prior text. a good sentence has a small Context Need. the reader does not need the prior text. the Context Need bans every Anaphoric Pronoun. the writer repeats the noun. the Context Need fixes every Scope Ambiguity. the Scope Ambiguities do not depend on the prior text.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 7
+    parsed: 7
+    continuity_pairs: 6
+    continuity_ok: 2
+    cost: 189.17000000000007
+    words: 55
+    terms: 7
+    connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash

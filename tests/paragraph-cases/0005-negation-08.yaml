@@ -11,6 +11,7 @@ original_metrics:
   cost: 93.07
   words: 28
   terms: 0
+  connectives: 0
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The language adds one verb. the verb uses one Sentence Shape.
@@ -26,6 +27,7 @@ proposals:
     cost: 52.410000000000004
     words: 14
     terms: 1
+    connectives: 0
   diagnosis: '"The language adds one auxiliary verb": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md) | "the auxiliary verb must use one Sentence Shape": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -40,6 +42,7 @@ proposals:
     cost: 63.38
     words: 18
     terms: 1
+    connectives: 0
   diagnosis: '"the verb is an auxiliary verb": WORD: "auxiliary" is not a minglish word — "Auxiliary" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -54,6 +57,7 @@ proposals:
     cost: 39.5
     words: 11
     terms: 1
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Seed adds one Function Word to the language. the Function Word does not leave the Copula. the Function Word does not leave the Negation. the Function Word does not leave the Modal.
@@ -67,6 +71,7 @@ proposals:
     cost: 105.69999999999999
     words: 33
     terms: 7
+    connectives: 0
   diagnosis: '"the Function Word does not leave the Copula": WORD: "leave" is not a minglish word | "the Function Word does not leave the Negation": WORD: "leave" is not a minglish word | "the Function Word does not leave the Modal": WORD: "leave" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -81,6 +86,7 @@ proposals:
     cost: 112.36000000000001
     words: 36
     terms: 7
+    connectives: 0
   diagnosis: '"the Function Word does not appear in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -95,6 +101,7 @@ proposals:
     cost: 95.91999999999999
     words: 33
     terms: 7
+    connectives: 0
   diagnosis: '"the Function Word is not in the Copula": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Negation": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -109,6 +116,7 @@ proposals:
     cost: 68.6
     words: 24
     terms: 3
+    connectives: 2
   diagnosis: '"The Grammar adds the word "does" and the word "not"": not recognizable as a minglish-like sentence | "The Grammar adds the word "does" and the word "not" to one Sentence Shape": not recognizable as a minglish-like sentence'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -123,6 +131,7 @@ proposals:
     cost: 48.56000000000001
     words: 16
     terms: 3
+    connectives: 2
   diagnosis: '"The Grammar adds "does" and "not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -137,6 +146,7 @@ proposals:
     cost: 57.690000000000005
     words: 18
     terms: 4
+    connectives: 1
   diagnosis: '"The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash

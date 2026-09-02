@@ -363,6 +363,37 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             }
         }
     }
+    // "about" as a preposition (APPROX sits only before digits, ADR 0025)
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Approx(_)) && !matches!(toks.get(i + 1), Some(Tok::NumPl(_))) {
+            out.push("\"about\" exists only before digits (\"about 10 rules\"); for a topic write \"of\": \"a decision of the Grammar\", or restructure (ADR 0025)".to_string());
+        }
+    }
+    // resultative: verb + object + adjective ("keeps the loss small") — no such shape
+    for (i, t) in toks.iter().enumerate() {
+        if !is_finite_verb(t) {
+            continue;
+        }
+        // object = [det] [adj] noun; then an adjective right after it
+        let mut j = i + 1;
+        if toks.get(j).is_some_and(is_det) { j += 1; }
+        while matches!(toks.get(j), Some(Tok::Adj(_) | Tok::AdjLong(_))) { j += 1; }
+        if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
+            && matches!(toks.get(j + 1), Some(Tok::Adj(_) | Tok::AdjLong(_)))
+            && toks.get(j + 2).is_none()
+        {
+            out.push(format!(
+                "\"{} … {} {}\" — a verb cannot take an object and an adjective; use a verb that carries the result (\"limits the loss\"), or 2 sentences",
+                word(t), word(&toks[j]), word(&toks[j + 1])
+            ));
+        }
+    }
+    // a bare number as a complement: "the bound is 4" (measurements are deferred, ADR 0022)
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) && matches!(toks.get(i + 1), Some(Tok::NumPl(_))) && toks.get(i + 2).is_none() {
+            out.push("a number needs its noun: \"the bound is 4 Open Dependencies\"; a bare value is deferred (ADR 0022)".to_string());
+        }
+    }
     // a determiner before a Name: "the Triage" (a Name takes no determiner)
     for w in toks.windows(2) {
         if is_det(&w[0]) && matches!(w[1], Tok::Name(_)) && !matches!(w[0], Tok::NumPl(_)) {

@@ -1,0 +1,183 @@
+source: docs/dogfood-source-0006.md
+index: 7
+original: Expressiveness, subordinate. Sounding natural, charismatic, and expressive is a genuine goal — minglish text should be pleasant to read, not robotic — but it never overrides criteria 1–4. Where two valid formulations tie on load, density, and context need, prefer the more expressive one; never trade precision or clarity for charisma.
+context_before: 'Density within the bounds. The target is precise, meaning-dense text that is nonetheless cheap to process: prefer the shortest formulation that stays inside the load bounds. Verbosity is not free — text that under-compresses its meaning adds noise, and noise creates its own reading ambiguity. Rules that force extra words (repeated nouns, mandatory then) are justified only because they remove more ambiguity than the added length costs; a rule that pads without disambiguating fails this criterion.'
+context_after: 'Corollaries: constraints are stated as bounds (e.g. fronted material limited by weight) rather than bans on shapes; and when a rule forces longer text, the trade must be earned — length is cheaper than load, but never free.'
+original_metrics:
+  sentences: 2
+  parsed: 0
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 212.19
+  words: 51
+  terms: 0
+  connectives: 4
+verdict: unreviewed
+best: ''
+proposals:
+- text: Expressiveness is a goal. Minglish text should be pleasant to read. Minglish text should not be robotic. Expressiveness does not override the first 4 criteria. If 2 formulations tie on load, density, and Context Need, then prefer the more expressive formulation. Do not trade precision for charisma. Do not trade clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 0
+    continuity_pairs: 6
+    continuity_ok: 1
+    cost: 199.76000000000005
+    words: 53
+    terms: 1
+    connectives: 1
+  diagnosis: '"Expressiveness is a goal": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "Minglish text should be pleasant to read": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …" | "Minglish text should not be robotic": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …" | "Expressiveness does not override the first 4 criteria": STYLE: "does … override" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "If 2 formulations tie on load, density, and Context Need, then prefer the more expressive formulation": STYLE: "Context Need" — a singular noun needs a determiner: "the Context Need" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Do not trade precision for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit | "Do not trade clarity for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The expressiveness is a goal. The text of Minglish must be pleasant to read. The text of Minglish must not be robotic. The expressiveness does not override the first 4 criteria. The first 4 criteria are:
+    - the load
+    - the density
+    - the Context Need
+    - the clarity
+    If 2 formulations tie on the load, the density, and the Context Need, then prefer the more expressive formulation. Do not trade the precision for the charisma. Do not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 258.65000000000015
+    words: 80
+    terms: 2
+    connectives: 2
+  diagnosis: |-
+    "The expressiveness is a goal. The text of Minglish must be pleasant to read. The text of Minglish must not be robotic. The expressiveness does not override the first 4 criteria. The first 4 criteria are:
+    - the load
+    - the density
+    - the Context Need
+    - the clarity": WORD: "The" is not a minglish word — minglish words are lowercase ("the"); a name that equals a word needs quotes | "If 2 formulations tie on the load, the density, and the Context Need, then prefer the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The expressiveness is a goal. The text of Minglish must be pleasant to read. The text of Minglish must not be robotic. The expressiveness does not override the first 4 criteria. The first 4 criteria are 4 things:
+    - the load
+    - the density
+    - the Context Need
+    - the clarity
+    If 2 formulations tie on the load, the density, and the Context Need, then prefer the more expressive formulation. Do not trade the precision for the charisma. Do not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 265.1300000000001
+    words: 82
+    terms: 2
+    connectives: 2
+  diagnosis: |-
+    "The expressiveness is a goal. The text of Minglish must be pleasant to read. The text of Minglish must not be robotic. The expressiveness does not override the first 4 criteria. The first 4 criteria are 4 things:
+    - the load
+    - the density
+    - the Context Need
+    - the clarity": WORD: "The" is not a minglish word — minglish words are lowercase ("the"); a name that equals a word needs quotes | "If 2 formulations tie on the load, the density, and the Context Need, then prefer the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is subordinate. The goal of expressiveness is real. The text should be pleasant to read. The text should not be robotic. Criteria 1 to 4 always override expressiveness. If 2 valid formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation. The writer never trades precision for charisma. The writer never trades clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 0
+    continuity_pairs: 7
+    continuity_ok: 3
+    cost: 225.6700000000001
+    words: 65
+    terms: 1
+    connectives: 1
+  diagnosis: '"Expressiveness is subordinate": WORD: "subordinate" is not a minglish word | "The goal of expressiveness is real": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "The text should be pleasant to read": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …" | "The text should not be robotic": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …" | "Criteria 1 to 4 always override expressiveness": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "If 2 valid formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer never trades precision for charisma": WORD: "never" is not a minglish word | "The writer never trades clarity for charisma": WORD: "never" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a subordinate goal. The goal of the expressiveness is real. A text must be pleasant to read. A text must not be robotic. Criteria one to four always override the expressiveness. If 2 formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation. The writer does not trade precision for charisma. The writer does not trade clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 2
+    continuity_pairs: 7
+    continuity_ok: 4
+    cost: 233.11000000000004
+    words: 70
+    terms: 1
+    connectives: 1
+  diagnosis: '"Expressiveness is a subordinate goal": WORD: "subordinate" is not a minglish word | "A text must be pleasant to read": STYLE: "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "read" is transitive in minglish and needs an object | "Criteria one to four always override the expressiveness": WORD: "four" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: four, always] | "If 2 formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer does not trade precision for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit | "The writer does not trade clarity for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a lesser goal. The goal of the expressiveness is real. The text must be pleasant. The text must not be robotic. Criteria one to 3 always override the expressiveness. If 2 formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation. The writer does not trade the precision for the charisma. The writer does not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 5
+    continuity_pairs: 7
+    continuity_ok: 4
+    cost: 231.36000000000007
+    words: 72
+    terms: 1
+    connectives: 1
+  diagnosis: '"Expressiveness is a lesser goal": WORD: "lesser" is not a minglish word | "Criteria one to 3 always override the expressiveness": WORD: "always" is not a minglish word | "If 2 formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is subordinate to the load bounds. A sentence must be pleasant, not robotic, but charisma does not override the load bounds. If 2 formulations tie on load, density, and context need, then prefer the more expressive one. Do not trade precision for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 158.05
+    words: 44
+    terms: 0
+    connectives: 2
+  diagnosis: '"Expressiveness is subordinate to the load bounds": WORD: "subordinate" is not a minglish word | "A sentence must be pleasant, not robotic, but charisma does not override the load bounds": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015); "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "If 2 formulations tie on load, density, and context need, then prefer the more expressive one": STYLE: "context need" is a defined term — write "Context Need" (see CONTEXT.md); "context" — a singular noun needs a determiner: "the context" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Do not trade precision for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a secondary goal. A sentence must be pleasant, not robotic. The charisma does not override the load bounds. The load bounds are 4 criteria. If 2 formulations tie on the load, tie on the density, and tie on the Context Need, then prefer the more expressive one. Do not trade the precision for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 1
+    continuity_pairs: 5
+    continuity_ok: 1
+    cost: 189.66000000000008
+    words: 57
+    terms: 1
+    connectives: 1
+  diagnosis: '"Expressiveness is a secondary goal": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "A sentence must be pleasant, not robotic": STYLE: "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005) | "The charisma does not override the load bounds": STYLE: "does … override" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015) | "The load bounds are 4 criteria": STYLE: "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015) | "If 2 formulations tie on the load, tie on the density, and tie on the Context Need, then prefer the more expressive one": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The expressiveness is a secondary goal. A sentence must be pleasant. A sentence is not robotic. The charisma does not override the bounds of the load. The bounds of the load are 4 criteria. If 2 formulations tie on 3 things, then prefer the more expressive one. The 3 things are:
+    - the load
+    - the density
+    - the Context Need
+    Do not trade the precision for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 206.14000000000001
+    words: 66
+    terms: 1
+    connectives: 1
+  diagnosis: |-
+    "The expressiveness is a secondary goal. A sentence must be pleasant. A sentence is not robotic. The charisma does not override the bounds of the load. The bounds of the load are 4 criteria. If 2 formulations tie on 3 things, then prefer the more expressive one. The 3 things are:
+    - the load
+    - the density
+    - the Context Need": WORD: "A" is not a minglish word — minglish words are lowercase ("a"); a name that equals a word needs quotes
+  count: 1
+  model: deepseek/deepseek-v4-flash

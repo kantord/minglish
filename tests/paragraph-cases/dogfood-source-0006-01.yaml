@@ -1,0 +1,152 @@
+source: docs/dogfood-source-0006.md
+index: 1
+original: 'Grammar decisions need a tie-breaker. Our research findings (docs/research/cnl-design-findings.md) ground sentence difficulty in measurable cognitive load: peak simultaneously-open dependencies (comfortable ceiling ≈4), dependency length, and center-embedding depth predict "hard to mentally unpack" better than any stylistic rule. They also showed categorical structural bans overshoot — a heavily left-branching sentence was effortless when it carried little load — so the right constraints are load bounds, not shape prohibitions. Human readers and LLMs share the relevant profile: both integrate left-to-right under a bounded working context.'
+context_before: ''
+context_after: 'Ranked criteria for every syntactic-structure decision, in order:'
+original_metrics:
+  sentences: 4
+  parsed: 0
+  continuity_pairs: 3
+  continuity_ok: 1
+  cost: 373.6799999999998
+  words: 83
+  terms: 1
+  connectives: 4
+verdict: unreviewed
+best: ''
+proposals:
+- text: The research findings ground the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 parts. The first part is the peak of the Open Dependencies. The comfortable bound is 4 Open Dependencies. The second part is the Dependency Length. The third part is the Embedding Depth. The 3 parts predict the difficulty of a sentence. The findings show that a categorical Ban on a Sentence Shape overshoots. A left-branching sentence was effortless when the Cognitive Load was small. The right constraint is a bound on the Cognitive Load. A shape Ban is not the right constraint. Human readers and Language Models share the profile. Every reader integrates a sentence from the left to the right. The working context has a bound.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 14
+    parsed: 5
+    continuity_pairs: 13
+    continuity_ok: 6
+    cost: 401.0699999999998
+    words: 125
+    terms: 12
+    connectives: 1
+  diagnosis: '"The research findings ground the difficulty of a sentence in the Cognitive Load": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") | "The first part is the peak of the Open Dependencies": WORD: "peak" is not a minglish word | "The findings show that a categorical Ban on a Sentence Shape overshoots": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") [all unknown words: findings, that] | "A left-branching sentence was effortless when the Cognitive Load was small": WORD: "left-branching" is banned in minglish — describe the shape in a sentence: "the sentence has a heavy branch at the front" [all unknown words: left-branching, when] | "The right constraint is a bound on the Cognitive Load": STYLE: "right constraint" — noun-noun compounds are not minglish; write "the constraint of the right", or one transparent word (ADR 0015) | "A shape Ban is not the right constraint": STYLE: "right constraint" — noun-noun compounds are not minglish; write "the constraint of the right", or one transparent word (ADR 0015); "shape Ban" — noun-noun compounds are not minglish; write "the Ban of the shape", or one transparent word (ADR 0015) | "Human readers and Language Models share the profile": WORD: "Human" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "Every reader integrates a sentence from the left to the right": STYLE: "left" is an adjective — add the noun it describes: "a left <noun>" | "The working context has a bound": WORD: "working" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research results ground the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 parts. The first part is the maximum of the Open Dependencies. The comfortable bound is 4 Open Dependencies. The second part is the Dependency Length. The third part is the Embedding Depth. The 3 parts predict the difficulty of a sentence. The results show that a Ban on a Sentence Shape overshoots. A sentence that branches to the left was effortless when the Cognitive Load was small. The right constraint is a bound on the Cognitive Load. A Ban of a shape is not the right constraint. Every reader and every Language Model parses a sentence from the first token to the last token. The context of the reader has a bound.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 13
+    parsed: 7
+    continuity_pairs: 12
+    continuity_ok: 5
+    cost: 400.6899999999998
+    words: 130
+    terms: 12
+    connectives: 1
+  diagnosis: '"The research results ground the difficulty of a sentence in the Cognitive Load": STYLE: "research results" — noun-noun compounds are not minglish; write "the results of the research", or one transparent word (ADR 0015) | "The results show that a Ban on a Sentence Shape overshoots": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "A sentence that branches to the left was effortless when the Cognitive Load was small": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, when] | "The right constraint is a bound on the Cognitive Load": STYLE: "right constraint" — noun-noun compounds are not minglish; write "the constraint of the right", or one transparent word (ADR 0015) | "A Ban of a shape is not the right constraint": STYLE: "right constraint" — noun-noun compounds are not minglish; write "the constraint of the right", or one transparent word (ADR 0015) | "Every reader and every Language Model parses a sentence from the first token to the last token": STYLE: "first token" is a defined term — write "First Token" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The results of the research ground the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 parts. The first part is the maximum of the Open Dependencies. The comfortable bound is 4 Open Dependencies. The second part is the Dependency Length. The third part is the Embedding Depth. The 3 parts predict the difficulty of a sentence. The results show a fact. A Ban on a Sentence Shape overshoots. A sentence with a branch to the left was easy when the Cognitive Load of the sentence was small. The constraint of the right is a bound on the Cognitive Load. A Ban of a shape is not the constraint of the right. Every reader parses a sentence from the First Token to the last token. Every Language Model parses a sentence from the First Token to the last token. The context of the reader has a bound.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 11
+    continuity_pairs: 14
+    continuity_ok: 5
+    cost: 453.39999999999986
+    words: 151
+    terms: 14
+    connectives: 0
+  diagnosis: '"A Ban on a Sentence Shape overshoots": STYLE: "Ban on …" — only "of" attaches to a noun; "on" attaches to the verb. Write "the Ban of …", or move the phrase after the verb (ADR 0011) | "A sentence with a branch to the left was easy when the Cognitive Load of the sentence was small": WORD: "when" is banned in minglish — "when" is not in the language - write "if <clause>, then <clause>" (ADR 0007), or name the event: "after the split" (ADR 0033) | "Every reader parses a sentence from the First Token to the last token": AMBIGUOUS (5 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "Every Language Model parses a sentence from the First Token to the last token": AMBIGUOUS (5 readings): split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research findings ground sentence difficulty in measurable Cognitive Load. The Cognitive Load has 3 components. The first component is the peak of the Open Dependencies. The comfortable bound is 4 Open Dependencies. The second component is the Dependency Length. The third component is the Embedding Depth. The Cognitive Load predicts the difficulty of a sentence. A stylistic rule does not predict the difficulty. The findings also show that categorical structural bans overshoot. A left-branching sentence was effortless when the Cognitive Load was small. The right constraint is a load bound. The load bound does not ban a shape. Human readers and Language Models share the relevant profile. A Human reader integrates a sentence from the left to the right. A Language Model integrates a sentence from the left to the right. The integration uses a bounded working context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 2
+    continuity_pairs: 14
+    continuity_ok: 2
+    cost: 470.11999999999966
+    words: 139
+    terms: 10
+    connectives: 1
+  diagnosis: '"The research findings ground sentence difficulty in measurable Cognitive Load": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") [all unknown words: findings, measurable] | "The Cognitive Load has 3 components": WORD: "components" is not a minglish word | "The first component is the peak of the Open Dependencies": WORD: "component" is not a minglish word [all unknown words: component, peak] | "The second component is the Dependency Length": WORD: "component" is not a minglish word | "The third component is the Embedding Depth": WORD: "component" is not a minglish word | "A stylistic rule does not predict the difficulty": WORD: "stylistic" is not a minglish word | "The findings also show that categorical structural bans overshoot": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") [all unknown words: findings, also, that] | "A left-branching sentence was effortless when the Cognitive Load was small": WORD: "left-branching" is banned in minglish — describe the shape in a sentence: "the sentence has a heavy branch at the front" [all unknown words: left-branching, when] | "The right constraint is a load bound": STYLE: "load bound" — noun-noun compounds are not minglish; write "the bound of the load", or one transparent word (ADR 0015); "right constraint" — noun-noun compounds are not minglish; write "the constraint of the right", or one transparent word (ADR 0015) | "The load bound does not ban a shape": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "load bound" — noun-noun compounds are not minglish; write "the bound of the load", or one transparent word (ADR 0015) | "Human readers and Language Models share the relevant profile": WORD: "Human" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "A Human reader integrates a sentence from the left to the right": STYLE: "Human reader" — the name follows its noun: "the reader Human" (ADR 0018); "a Human" — a Name takes no determiner: write "Human", or introduce it with a noun: "the tool Human" (ADR 0018); "left" is an adjective — add the noun it describes: "a left <noun>"; "reader" — a singular noun needs a determiner: "the reader" (mass nouns take "the") | "A Language Model integrates a sentence from the left to the right": STYLE: "left" is an adjective — add the noun it describes: "a left <noun>" | "The integration uses a bounded working context": WORD: "integration" is not a minglish word [all unknown words: integration, bounded, working]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research results ground sentence difficulty in Cognitive Load. The Cognitive Load has 3 measures. The first measure is the peak number of Open Dependencies. The comfortable bound is 4 Open Dependencies. The second measure is the Dependency Length. The third measure is the Embedding Depth. The Cognitive Load predicts the difficulty of a sentence. A rule of style does not predict the difficulty. The results also show that a structural ban can overshoot. A sentence that branches to the left was effortless when the Cognitive Load was small. The correct constraint is a bound of the load. The bound of the load does not ban a shape. A person and a Language Model share the relevant profile. A person reads a sentence from the left side to the right side. A Language Model reads a sentence from the left side to the right side. The process uses a small working context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 4
+    continuity_pairs: 15
+    continuity_ok: 3
+    cost: 473.13999999999965
+    words: 152
+    terms: 10
+    connectives: 1
+  diagnosis: '"The research results ground sentence difficulty in Cognitive Load": STYLE: "Cognitive Load" — a singular noun needs a determiner: "the Cognitive Load" (mass nouns take "the"); "research results" — noun-noun compounds are not minglish; write "the results of the research", or one transparent word (ADR 0015); "sentence difficulty" — noun-noun compounds are not minglish; write "the difficulty of the sentence", or one transparent word (ADR 0015); "sentence" — a singular noun needs a determiner: "the sentence" (mass nouns take "the") | "The Cognitive Load has 3 measures": STYLE: "has … measures" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measures" is a verb in minglish and cannot follow a determiner; "measures" is transitive in minglish and needs an object | "The first measure is the peak number of Open Dependencies": WORD: "peak" is not a minglish word | "The second measure is the Dependency Length": STYLE: "measure … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measure" is a verb in minglish and cannot follow a determiner | "The third measure is the Embedding Depth": STYLE: "measure … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "measure" is a verb in minglish and cannot follow a determiner | "A rule of style does not predict the difficulty": STYLE: "does … predict" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "style" — a singular noun needs a determiner: "the style" (mass nouns take "the") | "The results also show that a structural ban can overshoot": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, that] | "A sentence that branches to the left was effortless when the Cognitive Load was small": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, when] | "A person and a Language Model share the relevant profile": WORD: "relevant" is not a minglish word | "A person reads a sentence from the left side to the right side": WORD: "side" is not a minglish word | "A Language Model reads a sentence from the left side to the right side": WORD: "side" is not a minglish word | "The process uses a small working context": WORD: "working" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The results of the research ground the difficulty of a sentence in the Cognitive Load. The Cognitive Load uses 3 numbers. The first number is the maximum count of Open Dependencies. The comfortable bound is 4 Open Dependencies. The second number is the Dependency Length. The third number is the Embedding Depth. The Cognitive Load predicts the difficulty of a sentence. The rules of the style do not predict the difficulty. The results also show that a structural ban can overshoot. A sentence that branches to the left was effortless when the Cognitive Load was small. The correct constraint is a bound of the load. The bound of the load does not ban a shape. A person and a Language Model share the profile. A person reads a sentence from the first token to the last token. A Language Model reads a sentence from the first token to the last token. The process uses a small context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 10
+    continuity_pairs: 15
+    continuity_ok: 5
+    cost: 478.94999999999965
+    words: 157
+    terms: 10
+    connectives: 1
+  diagnosis: '"The first number is the maximum count of Open Dependencies": STYLE: "is … count" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The results also show that a structural ban can overshoot": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, that] | "A sentence that branches to the left was effortless when the Cognitive Load was small": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, when] | "A person and a Language Model share the profile": STYLE: "Language Model share" — noun-noun compounds are not minglish; write "the share of the Language Model", or one transparent word (ADR 0015); "share the" — a word mentioned as a word must be quoted: "share \"the\"" (ADR 0018); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "A person reads a sentence from the first token to the last token": AMBIGUOUS (5 readings): "first token" is a defined term — write "First Token" (see CONTEXT.md); split the sentence, or move the prepositional phrase so each attachment is explicit | "A Language Model reads a sentence from the first token to the last token": AMBIGUOUS (5 readings): "first token" is a defined term — write "First Token" (see CONTEXT.md); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research grounds the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 metrics. The first metric is the count of Open Dependencies. The comfortable ceiling of the Open Dependencies is 4. The second metric is the Dependency Length. The third metric is the Embedding Depth. The 3 metrics predict the difficulty better than a stylistic rule. The research also shows a problem of a categorical ban. A categorical ban rejects a Sentence Shape. The Shape can be easy when the Cognitive Load is low. The correct constraint is a bound on the Cognitive Load. The bound is not a prohibition of a Shape. Human readers and Language Models share the relevant profile. Both groups read a sentence from the left to the right. Both groups have a bounded working context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 15
+    parsed: 5
+    continuity_pairs: 14
+    continuity_ok: 8
+    cost: 430.4899999999997
+    words: 135
+    terms: 10
+    connectives: 2
+  diagnosis: '"The first metric is the count of Open Dependencies": STYLE: "count" is a verb in minglish and cannot follow a determiner; "is … count" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The comfortable ceiling of the Open Dependencies is 4": WORD: "ceiling" is not a minglish word | "The 3 metrics predict the difficulty better than a stylistic rule": WORD: "stylistic" is not a minglish word | "The research also shows a problem of a categorical ban": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both | "A categorical ban rejects a Sentence Shape": STYLE: "ban … rejects" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "categorical" is an adjective — add the noun it describes: "a categorical <noun>" | "The Shape can be easy when the Cognitive Load is low": WORD: "Shape" is not a minglish word — minglish words are lowercase ("shape"); a name that equals a word needs quotes [all unknown words: when, low] | "The bound is not a prohibition of a Shape": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md) | "Human readers and Language Models share the relevant profile": WORD: "Human" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "Both groups read a sentence from the left to the right": WORD: "Both" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "Both groups have a bounded working context": WORD: "Both" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") [all unknown words: bounded, working]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research grounds the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 metrics. The first metric is the Open Dependencies of the sentence. A comfortable limit for the Open Dependencies is 4. The second metric is the Dependency Length. The third metric is the Embedding Depth. The 3 metrics predict the difficulty of the sentence. The prediction is more accurate than the prediction of a simple rule. The research also shows a problem of a categorical ban. A categorical ban rejects a Sentence Shape. The Shape can be effortless when the Cognitive Load is small. The correct constraint is a bound on the Cognitive Load. The bound is not a Prohibition of a Shape. A human reader and a Language Model share the relevant profile. The 2 groups read a sentence from the left to the right. The 2 groups use a bounded working context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 16
+    parsed: 7
+    continuity_pairs: 15
+    continuity_ok: 8
+    cost: 465.5299999999997
+    words: 150
+    terms: 11
+    connectives: 2
+  diagnosis: '"A comfortable limit for the Open Dependencies is 4": STYLE: "comfortable" is an adjective — add the noun it describes: "a comfortable <noun>"; "limit … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "limit" is transitive in minglish and needs an object; a number needs its noun: "the bound is 4 Open Dependencies"; a bare value is deferred (ADR 0022) | "The prediction is more accurate than the prediction of a simple rule": WORD: "prediction" is not a minglish word [all unknown words: prediction, accurate, simple] | "The research also shows a problem of a categorical ban": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both | "A categorical ban rejects a Sentence Shape": STYLE: "ban … rejects" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "categorical" is an adjective — add the noun it describes: "a categorical <noun>" | "The Shape can be effortless when the Cognitive Load is small": WORD: "Shape" is not a minglish word — minglish words are lowercase ("shape"); a name that equals a word needs quotes | "The bound is not a Prohibition of a Shape": WORD: "Shape" is not a minglish word — minglish words are lowercase ("shape"); a name that equals a word needs quotes | "A human reader and a Language Model share the relevant profile": WORD: "human" is not a minglish word [all unknown words: human, relevant] | "The 2 groups read a sentence from the left to the right": STYLE: "left" is an adjective — add the noun it describes: "a left <noun>" | "The 2 groups use a bounded working context": WORD: "bounded" is not a minglish word [all unknown words: bounded, working]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The research grounds the difficulty of a sentence in the Cognitive Load. The Cognitive Load has 3 metrics. The first metric is the Open Dependencies of the sentence. The comfortable bound of the Open Dependencies is 4. The second metric is the Dependency Length. The third metric is the Embedding Depth. The 3 metrics predict the difficulty of the sentence. The 3 metrics produce a better prediction than a Ban on a Shape. The research also shows a problem. The problem of a Ban on a Shape is the overshoot. A sentence can be effortless when the Cognitive Load is small. The correct constraint is a bound on the Cognitive Load. The bound is not a Prohibition of a shape. A reader and a Language Model share the relevant profile. A reader reads a sentence from the start to the end. A Language Model reads a sentence from the start to the end. A reader uses a working context. A Language Model uses a working context. The context has a size bound.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 19
+    parsed: 8
+    continuity_pairs: 18
+    continuity_ok: 9
+    cost: 523.9099999999997
+    words: 172
+    terms: 14
+    connectives: 2
+  diagnosis: '"The comfortable bound of the Open Dependencies is 4": STYLE: a number needs its noun: "the bound is 4 Open Dependencies"; a bare value is deferred (ADR 0022) | "The 3 metrics produce a better prediction than a Ban on a Shape": WORD: "prediction" is not a minglish word | "The research also shows a problem": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both | "The problem of a Ban on a Shape is the overshoot": WORD: "Shape" is not a minglish word — minglish words are lowercase ("shape"); a name that equals a word needs quotes | "A sentence can be effortless when the Cognitive Load is small": WORD: "when" is banned in minglish — "when" is not in the language - write "if <clause>, then <clause>" (ADR 0007), or name the event: "after the split" (ADR 0033) | "A reader and a Language Model share the relevant profile": WORD: "relevant" is not a minglish word | "A reader reads a sentence from the start to the end": STYLE: "end" is a verb in minglish and cannot follow a determiner; "reads … start" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "start" is a verb in minglish — as a noun use "beginning"; "start" is transitive in minglish and needs an object | "A Language Model reads a sentence from the start to the end": STYLE: "end" is a verb in minglish and cannot follow a determiner; "reads … start" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "start" is a verb in minglish — as a noun use "beginning"; "start" is transitive in minglish and needs an object | "A reader uses a working context": WORD: "working" is not a minglish word | "A Language Model uses a working context": WORD: "working" is not a minglish word | "The context has a size bound": STYLE: "size bound" — noun-noun compounds are not minglish; write "the bound of the size", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash

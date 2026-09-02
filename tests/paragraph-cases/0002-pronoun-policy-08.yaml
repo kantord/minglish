@@ -11,6 +11,7 @@ original_metrics:
   cost: 63.970000000000006
   words: 20
   terms: 2
+  connectives: 0
 verdict: needs-fix
 note: '''auxiliary'' became ''verb''; the meaning is: one specific Auxiliary (''do'') enters the language, fenced to one Sentence Shape'
 best: ''

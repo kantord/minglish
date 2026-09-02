@@ -68,6 +68,10 @@ pub struct Metrics {
     /// defined terms used (ADR 0027): Capitalized term surfaces in the text
     #[serde(default)]
     pub terms: usize,
+    /// connectives and blocks used (and, or, but, so, because, if/then, than,
+    /// Enumeration, Step Block): a proxy for natural, non-fragmented prose
+    #[serde(default)]
+    pub connectives: usize,
 }
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -378,16 +382,23 @@ fn measure(lexicon: &Lexicon, words: &Words, para: &str) -> (Metrics, Vec<(Strin
     m.words = w;
     m.cost = c;
     m.terms = words.term_uses(para);
+    m.connectives = para
+        .split(|c: char| !c.is_alphanumeric())
+        .filter(|w| matches!(*w, "and" | "or" | "but" | "so" | "because" | "if" | "than"))
+        .count()
+        + para.matches("\n- ").count().min(1)
+        + usize::from(grammar::is_step_block(para));
     (m, verdicts)
 }
 
-/// parse rate → topic continuity → defined terms used → cost. Display
-/// order only, never a gate.
-fn rank_key(p: &Proposal) -> (bool, i64, i64, i64, i64) {
+/// parse rate → fewer units (less fragmentation) → connectives and blocks
+/// used → defined terms → cost. Topic continuity is reported, not ranked:
+/// ranking on it rewarded the mechanical "the X … the X …" chains the
+/// maintainer rejected. Display order only, never a gate.
+fn rank_key(p: &Proposal) -> (bool, i64, i64, i64, i64, i64) {
     let m = &p.metrics;
     let parse = if m.sentences == 0 { 0 } else { (1000 * m.parsed / m.sentences) as i64 };
-    let cont = if m.continuity_pairs == 0 { 1000 } else { (1000 * m.continuity_ok / m.continuity_pairs) as i64 };
-    (p.valid, parse, cont, m.terms as i64, -(m.cost * 10.0) as i64)
+    (p.valid, parse, -(m.sentences as i64), m.connectives as i64, m.terms as i64, -(m.cost * 10.0) as i64)
 }
 
 // ------------------------------------------------------------------ run --
@@ -421,9 +432,12 @@ pub fn run(
          \"every <noun>\", then one line per item starting with \"- \", each item a \
          noun phrase (a quoted word, a Capitalized term, or \"the <noun>\"). Example:\n\
          The language allows 4 pronouns:\n- \"I\"\n- \"you\"\n- \"my\"\n- \"your\"\n Keep every claim of the \
-         original (ADR 0012: never drop or change a proposition); split \
-         sentences freely; keep the given-before-new order — start each \
-         sentence from a noun the previous sentence mentioned when you can. \
+         original (ADR 0012: never drop or change a proposition). Write natural \
+         prose, not a chain of short sentences: keep roughly the sentence count of \
+         the original, join related claims with the connectives the language has \
+         (and, or, but; \", so\" / \", because\"; \"if …, then …\"; a comparative \
+         with \"than\"), and use an Enumeration for a list. Do NOT start consecutive \
+         sentences with the same subject when a connective can join them. \
          Reply with the rewritten paragraph (sentences separated by periods, \
          with normal sentence casing: a capital first letter, names and defined terms \
          Capitalized, everything else lowercase; a word mentioned AS A WORD is \
@@ -668,7 +682,7 @@ fn fmt(m: &Metrics) -> String {
     } else {
         format!("{}/{}", m.continuity_ok, m.continuity_pairs)
     };
-    format!("parse {}/{} · continuity {cont} · terms {} · cost {:.0} ({} words)", m.parsed, m.sentences, m.terms, m.cost, m.words)
+    format!("parse {}/{} · connectives {} · terms {} · continuity {cont} · cost {:.0} ({} words)", m.parsed, m.sentences, m.connectives, m.terms, m.cost, m.words)
 }
 
 fn write_report(cases: &[ParaCase], file: &str, out_path: &str, dry_run: bool) {

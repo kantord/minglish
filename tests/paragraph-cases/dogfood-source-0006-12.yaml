@@ -1,0 +1,152 @@
+source: docs/dogfood-source-0006.md
+index: 12
+original: '"Natural-sounding" loses to "measurably easier" whenever they conflict — but criterion 2 keeps the loss small.'
+context_before: Metrics for (1) already exist in the research findings and can be implemented over parse output when the grammar tier arrives.
+context_after: ''
+original_metrics:
+  sentences: 1
+  parsed: 0
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 70.44999999999997
+  words: 16
+  terms: 0
+  connectives: 1
+verdict: unreviewed
+best: ''
+proposals:
+- text: If a Natural-sounding formulation conflicts with a measurably easier formulation, then the idea chooses the measurably easier formulation. Criterion 2 keeps the loss of naturalness small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 104.31
+    words: 26
+    terms: 0
+    connectives: 0
+  diagnosis: '"If a Natural-sounding formulation conflicts with a measurably easier formulation, then the idea chooses the measurably easier formulation": WORD: "measurably" is not a minglish word | "Criterion 2 keeps the loss of naturalness small": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "keeps" is a verb in minglish and cannot follow a determiner; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a Natural-sounding formulation conflicts with a formulation that is easier, then the idea chooses the easier formulation. Criterion 2 keeps the loss of naturalness small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 95.04999999999998
+    words: 26
+    terms: 0
+    connectives: 0
+  diagnosis: '"If a Natural-sounding formulation conflicts with a formulation that is easier, then the idea chooses the easier formulation": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "Criterion 2 keeps the loss of naturalness small": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "keeps" is a verb in minglish and cannot follow a determiner; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A Natural-sounding formulation conflicts with a formulation that is easier. The idea chooses the easier formulation. Criterion 2 keeps the loss of naturalness small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 89.59
+    words: 24
+    terms: 0
+    connectives: 0
+  diagnosis: '"A Natural-sounding formulation conflicts with a formulation that is easier": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The idea chooses the easier formulation": STYLE: "easier" needs the standard: "easier than <noun phrase>" (ADR 0030); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the") | "Criterion 2 keeps the loss of naturalness small": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "keeps" is a verb in minglish and cannot follow a determiner; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a natural-sounding formulation conflicts with a measurably easier formulation, then the easier formulation wins. Criterion 2 limits the loss of naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 88.65000000000002
+    words: 22
+    terms: 0
+    connectives: 0
+  diagnosis: '"If a natural-sounding formulation conflicts with a measurably easier formulation, then the easier formulation wins": WORD: "natural-sounding" is not a minglish word [all unknown words: natural-sounding, measurably] | "Criterion 2 limits the loss of naturalness": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "limits" is a verb in minglish and cannot follow a determiner; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a natural formulation conflicts with a measurable formulation, then the measurable formulation wins. The second criterion limits the loss of the naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 82.73999999999998
+    words: 23
+    terms: 0
+    connectives: 0
+  diagnosis: '"If a natural formulation conflicts with a measurable formulation, then the measurable formulation wins": WORD: "measurable" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a natural formulation conflicts with an easier formulation, then the easier formulation wins. The second criterion limits the loss of the naturalness.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 80.69
+    words: 23
+    terms: 0
+    connectives: 0
+  diagnosis: '"If a natural formulation conflicts with an easier formulation, then the easier formulation wins": STYLE: "easier" needs the standard: "easier than <noun phrase>" (ADR 0030); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a sentence is natural and is measurable, then the natural sentence loses to the measurable sentence. Criterion 2 keeps the loss small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 75.50999999999998
+    words: 23
+    terms: 0
+    connectives: 1
+  diagnosis: '"If a sentence is natural and is measurable, then the natural sentence loses to the measurable sentence": WORD: "measurable" is not a minglish word | "Criterion 2 keeps the loss small": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "keeps … loss small" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences; "keeps" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: If a sentence is natural and is measurable, then the natural sentence loses to the measurable sentence. The criterion keeps the loss small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 73.77999999999999
+    words: 23
+    terms: 0
+    connectives: 1
+  diagnosis: '"If a sentence is natural and is measurable, then the natural sentence loses to the measurable sentence": WORD: "measurable" is not a minglish word | "The criterion keeps the loss small": STYLE: "keeps … loss small" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A natural sentence conflicts with a different sentence. The different sentence is easier. The easy sentence wins. Criterion 2 keeps the loss small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 76.99999999999999
+    words: 23
+    terms: 0
+    connectives: 0
+  diagnosis: '"The different sentence is easier": STYLE: "easier" needs the standard: "easier than <noun phrase>" (ADR 0030) | "Criterion 2 keeps the loss small": STYLE: "criterion" — a singular noun needs a determiner: "the criterion" (mass nouns take "the"); "keeps … loss small" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences; "keeps" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash

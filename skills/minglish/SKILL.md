@@ -93,6 +93,26 @@ rejected sentence, keep its meaning; change only what the error requires.
   And the Linter shows an error
   ```
 
+## Style: natural, not mechanical
+
+A chain of short subject-verb-object sentences that all start with the same
+noun is valid but unreadable. Prefer the joined forms the language has, and
+keep roughly the sentence count of the source:
+
+- join a cause and a result: `the load is small, so the sentence is easy`
+- give a reason: `the reader repeats the noun, because the language bans
+  every Anaphoric Pronoun`
+- contrast: `the rule adds words but removes an ambiguity`
+- list members in an Enumeration, not one sentence per member
+- state a comparison with its standard: `a paraphrase is longer than a
+  Compound`
+
+Bad (valid, mechanical): `The rules exist. The rules help a reader. The
+rules help a Language Model. The rules do not follow a taste.`
+Good: `the rules of the branching help a reader and help a Language Model`
+· `the rules follow the results of the science, so the rules do not follow
+a taste`
+
 ## Hard bans (rewrite instead)
 
 - Third-person pronouns (`it, they, he, she, this, that`): repeat the noun.

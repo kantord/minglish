@@ -11,6 +11,7 @@ original_metrics:
   cost: 85.47999999999999
   words: 26
   terms: 3
+  connectives: 1
 verdict: needs-fix
 note: almost usable but clunky and mechanical to the point of hurting comprehension
 best: ''

@@ -11,6 +11,7 @@ original_metrics:
   cost: 148.86999999999998
   words: 50
   terms: 4
+  connectives: 0
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The Linter can lint the statement Negated. the Linter can lint the Prohibition. the Linter writes every sentence in Minglish.
@@ -26,6 +27,7 @@ proposals:
     cost: 96.63
     words: 22
     terms: 3
+    connectives: 1
   diagnosis: '"The Linter can lint negated statements": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "The Linter can lint prohibitions": WORD: "prohibitions" is not a minglish word — "Prohibitions" is a defined term — write it capitalized (see CONTEXT.md) | "The Linter expresses the negated statements and the prohibitions in English": WORD: "expresses" is banned in minglish — write "says" [all unknown words: expresses, negated, prohibitions]'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -40,7 +42,8 @@ proposals:
     cost: 97.53999999999999
     words: 29
     terms: 3
-  diagnosis: '"The Linter can lint a statement that has "not"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter can lint a command that has "do not"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+    connectives: 1
+  diagnosis: '"The Linter can lint a statement that has "not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter can lint a command that has "do not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A statement can have "not". A command can have "do not". The Linter can lint the statement. The Linter can lint the command. The Linter says the statement and the command in English.
@@ -54,6 +57,7 @@ proposals:
     cost: 108.83
     words: 33
     terms: 3
+    connectives: 1
   diagnosis: '"The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -68,6 +72,7 @@ proposals:
     cost: 90.45
     words: 20
     terms: 4
+    connectives: 0
   diagnosis: '"The Linter can lint a Negated Statement": WORD: "Statement" is not a minglish word — minglish words are lowercase ("statement"); a name that equals a word needs quotes | "the Linter expresses every sentence in Minglish": WORD: "expresses" is banned in minglish — write "says"'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -82,6 +87,7 @@ proposals:
     cost: 89.7
     words: 20
     terms: 4
+    connectives: 0
   diagnosis: '"The Linter can lint a Negated statement": STYLE: "Negated statement" — the name follows its noun: "the statement Negated" (ADR 0018); "a Negated" — a Name takes no determiner: write "Negated", or introduce it with a noun: "the tool Negated" (ADR 0018); "can … lint" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "statement" — a singular noun needs a determiner: "the statement" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -96,6 +102,7 @@ proposals:
     cost: 88.96
     words: 20
     terms: 4
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language can express negated statement and prohibition sentences. the language uses the words "not" and "do not" for the expressions. the language expresses prohibition with imperative and modal shapes.
@@ -109,6 +116,7 @@ proposals:
     cost: 101.26000000000002
     words: 30
     terms: 0
+    connectives: 3
   diagnosis: '"The language can express negated statement and prohibition sentences": WORD: "express" is banned in minglish — write "say" ("the language can say a Prohibition") [all unknown words: express, negated, prohibition] | "the language uses the words "not" and "do not" for the expressions": WORD: "expressions" is not a minglish word | "the language expresses prohibition with imperative and modal shapes": WORD: "expresses" is banned in minglish — write "says" [all unknown words: expresses, prohibition, imperative]'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -123,6 +131,7 @@ proposals:
     cost: 111.92000000000004
     words: 35
     terms: 2
+    connectives: 1
   diagnosis: '"The language can say a negated statement": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "the language can say a prohibition": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md) | "a negated statement uses "not"": WORD: "negated" is banned in minglish — "negated" cannot modify a noun - write "a statement with \"not\"" or "a Negation" | "a prohibition uses a Sentence Shape with "do not" or uses a Sentence Shape with "must not"": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -137,5 +146,6 @@ proposals:
     cost: 69.35999999999999
     words: 26
     terms: 0
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash

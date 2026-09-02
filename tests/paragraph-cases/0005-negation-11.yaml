@@ -11,6 +11,7 @@ original_metrics:
   cost: 91.13999999999999
   words: 27
   terms: 3
+  connectives: 1
 verdict: unreviewed
 best: ''
 proposals: []

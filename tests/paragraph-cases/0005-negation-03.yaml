@@ -15,6 +15,7 @@ original_metrics:
   cost: 29.509999999999998
   words: 9
   terms: 1
+  connectives: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: |-
@@ -34,6 +35,7 @@ proposals:
     cost: 160.49000000000004
     words: 52
     terms: 4
+    connectives: 1
   diagnosis: '"The Grammar does not allow "do" as a verb": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "The Grammar allows "do" only in the phrase "do not" or "does not" plus a base verb": WORD: "only" is banned in minglish — "only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence [all unknown words: only, plus] | ""do not" plus a base verb forms a prohibition": WORD: "plus" is not a minglish word [all unknown words: plus, forms, prohibition] | "The Grammar does not allow "do" for emphasis": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -48,6 +50,7 @@ proposals:
     cost: 147.23000000000002
     words: 49
     terms: 4
+    connectives: 1
   diagnosis: '"The Grammar bans "do" as a verb": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "The Grammar uses "do" only in "do not" or "does not" with a base verb": WORD: "only" is banned in minglish — "only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence | ""do not" with a base verb gives a prohibition": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -62,6 +65,7 @@ proposals:
     cost: 159.56000000000006
     words: 54
     terms: 4
+    connectives: 1
   diagnosis: '"The Grammar allows "do" in the phrase "do not" or in the phrase "does not" with a base verb": STYLE: phrases cannot be coordinated — split the sentence, one phrase each (ADR 0004) | "The phrase "do not" with a base verb is a prohibition": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -76,6 +80,7 @@ proposals:
     cost: 154.05000000000007
     words: 46
     terms: 4
+    connectives: 2
   diagnosis: '"Do and does are negation carriers": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: negation, carriers] | "The Grammar allows do not and does not only before a base verb": WORD: "only" is banned in minglish — "only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence | "The Grammar allows do not before a base verb as an imperative prohibition": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) [all unknown words: as, imperative, prohibition] | "The Grammar does not allow emphatic do": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Grammar does not allow interrogative do": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -90,6 +95,7 @@ proposals:
     cost: 152.16000000000003
     words: 47
     terms: 4
+    connectives: 2
   diagnosis: '"The word "do" and the word "does" carry negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar permits "do not" and "does not" with a base verb": WORD: "permits" is banned in minglish — write "allows" | "The Grammar permits "do not" with a base verb as a command": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, as] | "The Grammar does not permit emphatic "do"": WORD: "permit" is banned in minglish — write "allow" ("the Grammar allows the word") | "The Grammar does not permit interrogative "do"": WORD: "permit" is banned in minglish — write "allow" ("the Grammar allows the word") [all unknown words: permit, interrogative]'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -104,6 +110,7 @@ proposals:
     cost: 153.31000000000003
     words: 49
     terms: 4
+    connectives: 2
   diagnosis: '"The word "do" and the word "does" carry a negative sense": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "do not" and "does not" with a base verb": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "do not" with a base verb for a prohibition": WORD: "prohibition" is not a minglish word — "Prohibition" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar does not allow emphatic "do"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The Grammar does not allow interrogative "do"": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -118,6 +125,7 @@ proposals:
     cost: 164.35000000000005
     words: 52
     terms: 3
+    connectives: 0
   diagnosis: '"Every verb "do" carries a negation": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md) | "The Grammar permits "do" only in "do not" with a verb": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, only] | "The Grammar permits "does" only in "does not" with a verb": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, only] | "The Grammar permits "do not" in an imperative": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, imperative] | "The language does not have an emphatic "do"": STYLE: "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The language does not have an interrogative "do"": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -132,6 +140,7 @@ proposals:
     cost: 128.77
     words: 45
     terms: 3
+    connectives: 2
   diagnosis: '"The Grammar allows "do" only with "not" and a verb": WORD: "only" is banned in minglish — "only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence | "The Grammar allows "does" only with "not" and a verb": WORD: "only" is banned in minglish — "only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence | "The language does not use "do" for emphasis": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "emphasis" — a singular noun needs a determiner: "the emphasis" (mass nouns take "the")'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -146,6 +155,7 @@ proposals:
     cost: 194.97000000000006
     words: 66
     terms: 5
+    connectives: 4
   diagnosis: '"The Grammar allows "do" with "not" and a verb": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar does not allow "do" with a verb and no "not"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "does" with "not" and a verb": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar does not allow "does" with a verb and no "not"": STYLE: "does … allow" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no not" — a Name takes no determiner: write "not", or introduce it with a noun: "the tool not" (ADR 0018); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar allows "do not" in an imperative": WORD: "imperative" is not a minglish word — "Imperative" is a defined term — write it capitalized (see CONTEXT.md) | "The language does not have an emphatic "do"": STYLE: "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The language does not have an interrogative "do"": WORD: "interrogative" is banned in minglish — the language has no questions yet - write "a question" as a noun, or restructure'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -164,5 +174,6 @@ proposals:
     cost: 29.509999999999998
     words: 9
     terms: 1
+    connectives: 1
   count: 3
   model: deepseek/deepseek-v4-flash

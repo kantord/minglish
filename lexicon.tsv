@@ -192,6 +192,7 @@ after	form	PREP_V	after
 against	form	PREP_V	against
 agent	form	NOUN_SG	agent
 agents	form	NOUN_PL	agent
+aid	ban	-	write "help": "the rule helps the reader"
 algorithm	form	NOUN_SG	algorithm
 algorithms	form	NOUN_PL	algorithm
 all	ban	-	write "every" with a singular noun (ADR 0014)
@@ -199,6 +200,7 @@ allow	form	VERB_TRANS_BASE	allow
 allowed	form	VERB_TRANS_ED	allow
 allowing	form	VERB_TRANS_ING	allow
 allows	form	VERB_TRANS_3SG	allow
+also	ban	-	"also" adds a second claim - write the claim as its own sentence; the reader keeps both
 alternative	form	NOUN_SG	alternative
 alternatives	form	NOUN_PL	alternative
 ambiguities	form	NOUN_PL	ambiguity
@@ -367,6 +369,7 @@ cases	form	NOUN_PL	case
 catch	form	VERB_TRANS_BASE	catch
 catches	form	VERB_TRANS_3SG	catch
 catching	form	VERB_TRANS_ING	catch
+categorical	form	ADJ_LONG	categorical
 categories	term	-	Categories
 category	term	-	Category
 caught	form	VERB_TRANS_ED	catch
@@ -539,6 +542,8 @@ copy	reject	VERB	duplicate
 core	form	ADJ_LONG	core
 corner	form	NOUN_SG	corner
 corners	form	NOUN_PL	corner
+corollaries	form	NOUN_PL	corollary
+corollary	form	NOUN_SG	corollary
 corpora	form	NOUN_PL	corpus
 corpus	form	NOUN_SG	corpus
 correct	form	ADJ_LONG	correct
@@ -716,6 +721,7 @@ edits	form	VERB_TRANS_3SG	edit
 effect	form	NOUN_SG	effect
 effect	reject	VERB	cause
 effects	form	NOUN_PL	effect
+effortless	form	ADJ_LONG	effortless
 eight	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 embedding	form	NOUN_SG	embedding
 embedding depth	term	-	Embedding Depth
@@ -888,6 +894,7 @@ frequencies	form	NOUN_PL	frequency
 frequency	form	NOUN_SG	frequency
 from	form	PREP_V	from
 front	form	NOUN_SG	front
+fronted	ban	-	write "at the front": "the text at the front of the sentence"
 fronts	form	NOUN_PL	front
 full	form	ADJ	full
 fuller	form	ADJ_CMP	full
@@ -1041,6 +1048,10 @@ instructional	form	ADJ_LONG	instructional
 instructions	form	NOUN_PL	instruction
 integer	form	NOUN_SG	integer
 integers	form	NOUN_PL	integer
+integrate	form	VERB_TRANS_BASE	integrate
+integrated	form	VERB_TRANS_ED	integrate
+integrates	form	VERB_TRANS_3SG	integrate
+integrating	form	VERB_TRANS_ING	integrate
 interrogative	ban	-	the language has no questions yet - write "a question" as a noun, or restructure
 into	form	PREP_V	into
 intransitive	form	ADJ_LONG	intransitive
@@ -1105,6 +1116,9 @@ learn	form	VERB_TRANS_BASE	learn
 learned	form	VERB_TRANS_ED	learn
 learning	form	VERB_TRANS_ING	learn
 learns	form	VERB_TRANS_3SG	learn
+left	form	ADJ	left
+left-branching	ban	-	describe the shape in a sentence: "the sentence has a heavy branch at the front"
+lefter	form	ADJ_CMP	left
 legal	form	ADJ_LONG	legal
 lemma	term	-	Lemma
 lemmas	term	-	Lemmas
@@ -1240,6 +1254,7 @@ monitored	form	VERB_TRANS_ED	monitor
 monitoring	form	VERB_TRANS_ING	monitor
 monitors	form	VERB_TRANS_3SG	monitor
 more	form	MORE	more
+most	ban	-	superlatives are deferred (ADR 0029) - write a Comparative with a standard, or name the top item
 move	form	VERB_TRANS_BASE	move
 moved	form	VERB_TRANS_ED	move
 moves	form	VERB_TRANS_3SG	move
@@ -1721,6 +1736,7 @@ rewards	form	VERB_TRANS_3SG	reward
 rewrite	form	NOUN_SG	rewrite
 rewrites	form	NOUN_PL	rewrite
 right	form	NOUN_SG	right
+right-branching	ban	-	write "branches to the right" as a sentence: "every Sentence Shape puts the head at the front"
 rights	form	NOUN_PL	right
 robotic	form	ADJ_LONG	robotic
 role	form	NOUN_SG	role
@@ -1751,6 +1767,8 @@ scale words	term	-	Scale Words
 scales	form	NOUN_PL	scale
 scenario	form	NOUN_SG	scenario
 scenarioes	form	NOUN_PL	scenario
+science	form	NOUN_SG	science
+sciences	form	NOUN_PL	science
 scope	form	NOUN_SG	scope
 scope ambiguities	term	-	Scope Ambiguities
 scope ambiguity	term	-	Scope Ambiguity
@@ -1803,6 +1821,8 @@ shares	form	NOUN_PL	share
 she	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 short	form	ADJ	short
 shorter	form	ADJ_CMP	short
+shortest	ban	-	superlatives are deferred (ADR 0029) - write "short", or a Comparative: "shorter than …"
+should	ban	-	"should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …"
 show	form	VERB_TRANS_BASE	show
 show	reject	NOUN	display
 showcase	form	NOUN_SG	showcase
@@ -1966,7 +1986,7 @@ tests	form	NOUN_PL	test
 text	form	NOUN_SG	text
 texts	form	NOUN_PL	text
 than	form	THAN	than
-that	ban	-	"that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"
+that	ban	-	"that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)
 the	form	DET	the
 their	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 them	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
@@ -2121,8 +2141,10 @@ weigh	form	VERB_TRANS_BASE	weigh
 weighed	form	VERB_TRANS_ED	weigh
 weighing	form	VERB_TRANS_ING	weigh
 weighs	form	VERB_TRANS_3SG	weigh
+weight	ban	-	write "load" (Cognitive Load) or "size"
 went	form	VERB_INTRANS_ED	go
 were	form	COPULA_PL_PAST	were
+when	ban	-	"when" is not in the language - write "if <clause>, then <clause>" (ADR 0007), or name the event: "after the split" (ADR 0033)
 where	ban	-	no relative clauses - split the sentence and repeat the noun (ADR 0010)
 whole	form	ADJ_LONG	whole
 win	form	VERB_INTRANS_BASE	win

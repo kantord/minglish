@@ -4,9 +4,9 @@
 
 ## Summary
 
-- 894 lemmas, 1916 surface forms, 40 redirects, 450 waivers
+- 910 lemmas, 1928 surface forms, 40 redirects, 455 waivers
 - Domain model: 86 terms with definitions (ADR 0027)
-- Lemmas per category: ADJ 145, APPROX 1, BANNED 46, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 434, NUM_SG 1, ORD 3, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 17, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, THAN 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 172
+- Lemmas per category: ADJ 148, APPROX 1, BANNED 56, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 436, NUM_SG 1, ORD 3, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 17, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, THAN 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 173
 
 ## Frequency (open-class lemmas)
 
@@ -15,7 +15,7 @@
 
 ## Residual polysemy (WordNet senses within the enabled POS)
 
-- Mean senses: 5.3 (upper bound — WordNet oversplits)
+- Mean senses: 5.2 (upper bound — WordNet oversplits)
 - Top 5: break (59), make (49), give (44), take (42), carry (40)
 
 ## Redirect findability guard (floor: zipf 3.5)
@@ -495,6 +495,11 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - reserve (NOUN)
 - spoken (VERB)
 - transition (VERB)
+- integrate (ADJ)
+- left (NOUN)
+- left (ADV)
+- left (VERB)
+- corollary (ADJ)
 - curate (NOUN)
 - lint (NOUN)
 - parse (NOUN)

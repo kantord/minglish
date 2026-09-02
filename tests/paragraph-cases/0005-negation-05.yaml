@@ -11,6 +11,7 @@ original_metrics:
   cost: 202.53000000000003
   words: 62
   terms: 9
+  connectives: 0
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The Grammar defines one scope for "not". "Not" changes the truth of the verb. "Not" does not change a Noun Phrase. The Grammar bans "not all users". The Grammar bans "a not old file".
@@ -26,6 +27,7 @@ proposals:
     cost: 118.64
     words: 35
     terms: 4
+    connectives: 0
   diagnosis: '""Not" negates the main verb of the clause": WORD: "negates" is not a minglish word | ""Not" does not negate a Noun Phrase": WORD: "negate" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -40,6 +42,7 @@ proposals:
     cost: 108.70000000000002
     words: 34
     terms: 4
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Grammar gives one meaning to every Function Word. The word "not" negates the main verb of a clause. The language bans constituent negation. The language does not allow the phrase "not all users". The language does not allow the phrase "a not old file".
@@ -53,6 +56,7 @@ proposals:
     cost: 145.69000000000003
     words: 45
     terms: 2
+    connectives: 0
   diagnosis: '"The word "not" negates the main verb of a clause": WORD: "negates" is not a minglish word | "The language bans constituent negation": WORD: "constituent" is not a minglish word — "Constituent" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: constituent, negation]'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -67,6 +71,7 @@ proposals:
     cost: 124.93
     words: 40
     terms: 3
+    connectives: 0
   diagnosis: '"The word "not" changes the meaning of the verb of a sentence": AMBIGUOUS (5 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -81,6 +86,7 @@ proposals:
     cost: 120.53000000000003
     words: 39
     terms: 3
+    connectives: 2
   diagnosis: '"The language bans a sentence with "not" and a Noun Phrase": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The language bans a sentence with "not" and an adjective": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -95,6 +101,7 @@ proposals:
     cost: 110.20000000000003
     words: 35
     terms: 1
+    connectives: 0
   diagnosis: '"The word "not" negates the predicate of the clause": WORD: "negates" is not a minglish word | "The language bans the negation of a Noun Phrase": WORD: "negation" is not a minglish word — "Negation" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
@@ -109,7 +116,8 @@ proposals:
     cost: 114.69000000000001
     words: 39
     terms: 1
-  diagnosis: '"The word "not" changes the meaning of the verb of the sentence": AMBIGUOUS (5 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "The language bans a "not" that describes a Noun Phrase": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"'
+    connectives: 0
+  diagnosis: '"The word "not" changes the meaning of the verb of the sentence": AMBIGUOUS (5 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "The language bans a "not" that describes a Noun Phrase": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The word "not" changes the verb of the sentence. "not" changes the meaning of the verb. The language bans "not" with a Noun Phrase. "not all users" uses "not" with a Noun Phrase. The language does not allow "not all users". "a not old file" uses "not" with a Noun Phrase. The language does not allow "a not old file".
@@ -123,5 +131,6 @@ proposals:
     cost: 182.41000000000003
     words: 60
     terms: 3
+    connectives: 0
   count: 1
   model: deepseek/deepseek-v4-flash

@@ -762,7 +762,7 @@
   {
     "lemma": "that",
     "category": "BANNED",
-    "advice": "\"that\" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: \"the report shows the result\""
+    "advice": "\"that\" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: \"the report shows the result\"; as a relative (the file that fails), split: \"the file fails. the file …\" (ADR 0010)"
   },
   {
     "lemma": "these",
@@ -6970,6 +6970,109 @@
     "note": "ADR 0035",
     "forms": {
       "plural": "transitions"
+    }
+  },
+  {
+    "lemma": "should",
+    "category": "BANNED",
+    "advice": "\"should\" is a deferred modal (ADR 0009) - for an obligation write \"must\"; for advice write a Conditional: \"if …, then the writer …\""
+  },
+  {
+    "lemma": "when",
+    "category": "BANNED",
+    "advice": "\"when\" is not in the language - write \"if <clause>, then <clause>\" (ADR 0007), or name the event: \"after the split\" (ADR 0033)"
+  },
+  {
+    "lemma": "also",
+    "category": "BANNED",
+    "advice": "\"also\" adds a second claim - write the claim as its own sentence; the reader keeps both"
+  },
+  {
+    "lemma": "most",
+    "category": "BANNED",
+    "advice": "superlatives are deferred (ADR 0029) - write a Comparative with a standard, or name the top item"
+  },
+  {
+    "lemma": "shortest",
+    "category": "BANNED",
+    "advice": "superlatives are deferred (ADR 0029) - write \"short\", or a Comparative: \"shorter than …\""
+  },
+  {
+    "lemma": "fronted",
+    "category": "BANNED",
+    "advice": "write \"at the front\": \"the text at the front of the sentence\""
+  },
+  {
+    "lemma": "aid",
+    "category": "BANNED",
+    "advice": "write \"help\": \"the rule helps the reader\""
+  },
+  {
+    "lemma": "weight",
+    "category": "BANNED",
+    "advice": "write \"load\" (Cognitive Load) or \"size\""
+  },
+  {
+    "lemma": "right-branching",
+    "category": "BANNED",
+    "advice": "write \"branches to the right\" as a sentence: \"every Sentence Shape puts the head at the front\""
+  },
+  {
+    "lemma": "left-branching",
+    "category": "BANNED",
+    "advice": "describe the shape in a sentence: \"the sentence has a heavy branch at the front\""
+  },
+  {
+    "lemma": "integrate",
+    "category": "VERB_TRANS",
+    "note": "ADR 0006 run [auto-waived ADJ]",
+    "forms": {
+      "third": "integrates"
+    },
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "categorical",
+    "category": "ADJ",
+    "note": "ADR 0006 run"
+  },
+  {
+    "lemma": "effortless",
+    "category": "ADJ",
+    "note": "ADR 0006 run"
+  },
+  {
+    "lemma": "left",
+    "category": "ADJ",
+    "waive": [
+      "NOUN",
+      "ADV",
+      "VERB"
+    ],
+    "note": "ADR 0006 run",
+    "forms": {
+      "comparative": "lefter"
+    }
+  },
+  {
+    "lemma": "corollary",
+    "category": "NOUN",
+    "forms": {
+      "plural": "corollaries"
+    },
+    "note": "ADR 0006 run [auto-waived ADJ]",
+    "waive": [
+      "ADJ"
+    ]
+  },
+  {
+    "lemma": "science",
+    "category": "NOUN",
+    "note": "skill style example",
+    "forms": {
+      "plural": "sciences"
     }
   }
 ]
