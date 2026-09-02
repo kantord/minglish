@@ -518,3 +518,120 @@ proposals:
   diagnosis: '"the tool bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans the forms of "this"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "that"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "these"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "those"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are "it", "they", "he", "she". pronominal demonstratives are "this", "that", "these", "those". the ban covers the object forms and the possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 166.13
+    words: 41
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are "it", "they", "he", "she"": not recognizable as a minglish-like sentence | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "covers" is not a minglish word [all unknown words: covers, these]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns. anaphoric pronouns are "it" and "they" and "he" and "she". the tool Lexgen bans demonstratives. demonstratives are "this" and "that" and "these" and "those". the ban includes object forms and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 3
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 177.25000000000006
+    words: 46
+  diagnosis: '"anaphoric pronouns are "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "includes" is not a minglish word [all unknown words: includes, these]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns. "it" is an anaphoric pronoun. "they" is an anaphoric pronoun. "he" is an anaphoric pronoun. "she" is an anaphoric pronoun. the tool Lexgen bans demonstratives. "this" is a demonstrative. "that" is a demonstrative. "these" is a demonstrative. "those" is a demonstrative. the ban contains object forms of these words. the ban contains possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 13
+    parsed: 11
+    continuity_pairs: 12
+    continuity_ok: 1
+    cost: 273.33
+    words: 68
+  diagnosis: '"the ban contains object forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the ban contains possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words. the writer repeats the noun instead of the banned word.
+  drops: no
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 143.03999999999996
+    words: 38
+  diagnosis: '"the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer repeats the noun instead of the banned word": WORD: "instead" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter bans anaphoric pronouns and demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 124.04999999999995
+    words: 33
+  diagnosis: '"the linter bans anaphoric pronouns and demonstratives": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words": STYLE: "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter bans anaphoric pronouns. the linter bans demonstratives. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the linter bans the object forms of the pronouns. the linter bans the possessive forms of the pronouns. the writer repeats the noun.
+  drops: conciseness
+  valid: false
+  metrics:
+    sentences: 13
+    parsed: 12
+    continuity_pairs: 12
+    continuity_ok: 11
+    cost: 286.31000000000006
+    words: 64
+  diagnosis: '"the linter bans the object forms of the pronouns": STYLE: "object forms" — noun-noun compounds are not minglish; write "the forms of the object", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 135.75
+    words: 37
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns and demonstrative words. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 132.83999999999995
+    words: 38
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and demonstrative words": STYLE: "demonstrative words" — noun-noun compounds are not minglish; write "the words of the demonstrative", or one transparent word (ADR 0015); "demonstrative" — a singular noun needs a determiner: "the demonstrative" (mass nouns take "the") | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words": STYLE: "banned … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "object forms" — noun-noun compounds are not minglish; write "the forms of the object", or one transparent word (ADR 0015); "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the tool Lexgen bans anaphoric pronouns and the words of the demonstrative. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their". the linter also bans the forms of the object and the forms of the possessive of the banned pronouns. the writer repeats the noun.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 167.92000000000002
+    words: 49
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and the words of the demonstrative": not recognizable as a minglish-like sentence | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their"": not recognizable as a minglish-like sentence | "the linter also bans the forms of the object and the forms of the possessive of the banned pronouns": WORD: "also" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash

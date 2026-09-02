@@ -11,7 +11,7 @@ original_metrics:
   cost: 86.35
   words: 18
 verdict: unreviewed
-best: ''
+best: the prose is repetitive. the prose repeats "the agent". the repetition has an acceptable expense. the repetition matches the project. the project prefers the clarity. the project does not prefer the naturalness.
 proposals:
 - text: the prose is repetitive, the agent mentions the agent. the project accepts this cost. the cost is consistent with the clarity of the project. the project prefers clarity over naturalness.
   drops: dashes, scare quotes, hyphenated compound, stance metaphor, register of "accepted" as adjective
@@ -518,5 +518,120 @@ proposals:
     cost: 80.45
     words: 24
   diagnosis: '"the prose is repetitive": WORD: "repetitive" is not a minglish word | "the design prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive , but the team accepts the cost . the repetition is consistent with the clarity of the project . the project does not prefer naturalness .
+  drops: dash, possessive inflection, compound adjective, scare-quote framing
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 81.29
+    words: 26
+  diagnosis: '"the prose is repetitive , but the team accepts the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive . the team accepts the expense . the repetition matches the clarity of the project . the project does not have a preference for naturalness .
+  drops: adjective prepositional phrase, contraction, stance owning
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 82.11999999999999
+    words: 26
+  diagnosis: '"the project does not have a preference for naturalness": WORD: "preference" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive . the team accepts the expense . the repetition matches the clarity of the project . the project does not prefer the naturalness .
+  drops: nominalization
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 77.00999999999999
+    words: 24
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the prose has the repetition of "the agent". the cost of the repetition is acceptable. the repetition is consistent with the project preference for clarity over naturalness.
+  drops: dashes, possessive apostrophe, hyphenated compound, scare quotes
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 3
+    cost: 99.15999999999997
+    words: 31
+  diagnosis: '"the prose has the repetition of "the agent"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the cost of the repetition is acceptable": STYLE: "cost … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense" | "the repetition is consistent with the project preference for clarity over naturalness": WORD: "preference" is not a minglish word [all unknown words: preference, over]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the prose repeats "the agent". the repetition has an acceptable expense. the repetition matches the project. the project prefers clarity. the project does not prefer naturalness.
+  drops: stance, hyphenated compound, scare quotes, quoted term, "consistent" replaced with "matches", "over" replaced with separate sentences
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 4
+    cost: 106.33999999999999
+    words: 30
+  diagnosis: '"the project prefers clarity": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the") | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the prose repeats "the agent". the repetition has an acceptable expense. the repetition matches the project. the project prefers the clarity. the project does not prefer the naturalness.
+  drops: stance, hyphenated compound, scare quotes, quoted term, "consistent" replaced with "matches", "over" replaced with separate sentences
+  valid: true
+  metrics:
+    sentences: 6
+    parsed: 6
+    continuity_pairs: 5
+    continuity_ok: 4
+    cost: 108.87999999999997
+    words: 32
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the repetition is an accepted cost. the cost is consistent with a project stance. the stance prefers clarity over naturalness.
+  drops: original's attributive noun (`clarity-over-naturalness stance`), dash, scare quotes, register (dash-as-pause)
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 83.56
+    words: 24
+  diagnosis: '"the repetition is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with a project stance": WORD: "stance" is not a minglish word | "the stance prefers clarity over naturalness": WORD: "stance" is not a minglish word [all unknown words: stance, over]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the repetition is an accepted cost. the cost is consistent with a project choice. the choice prefers clarity to naturalness.
+  drops: stance, over
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 80.14999999999999
+    words: 24
+  diagnosis: '"the repetition is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with a project choice": WORD: "choice" is not a minglish word | "the choice prefers clarity to naturalness": WORD: "choice" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the prose is repetitive. the team accepts the repetition. the acceptance is consistent with the project design. the design prefers clarity to naturalness.
+  drops: choice, stance, over
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 77.90999999999998
+    words: 23
+  diagnosis: '"the acceptance is consistent with the project design": WORD: "acceptance" is not a minglish word | "the design prefers clarity to naturalness": AMBIGUOUS (2 readings): "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash

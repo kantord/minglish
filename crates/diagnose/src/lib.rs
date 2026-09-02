@@ -260,6 +260,30 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             ));
         }
     }
+    // "the i pronoun": a word used as a name goes after the noun, in quotes
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_)) && matches!(w[1], Tok::NounSg(_) | Tok::NounPl(_)) {
+            out.push(format!(
+                "\"{} {}\" — a word used as a name follows the noun in quotes: \"the {} \\\"{}\\\"\" (ADR 0018)",
+                word(&w[0]), word(&w[1]), word(&w[1]), word(&w[0])
+            ));
+        }
+    }
+    // of-chains (ADR 0011): "the point of the split of the sentences"
+    {
+        let ofs: Vec<usize> = toks.iter().enumerate().filter(|(_, t)| matches!(t, Tok::PrepN(_))).map(|(i, _)| i).collect();
+        for w in ofs.windows(2) {
+            let between = &toks[w[0] + 1..w[1]];
+            if !between.iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Conj(_) | Tok::Comma | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))) {
+                out.push(
+                    "\"of … of\" — \"of\" does not chain; name the inner thing in its own sentence, \
+                     or drop one level (ADR 0011)"
+                        .to_string(),
+                );
+                break;
+            }
+        }
+    }
     if let [first, Tok::CopSg(_) | Tok::CopPl(_), ..] = toks {
         if matches!(first, Tok::Pron2(_) | Tok::Poss(_) | Tok::Det(_) | Tok::DetSg(_)) {
             out.push(format!(
@@ -274,7 +298,8 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         if let Tok::NounSg(n) = t {
             let prev = i.checked_sub(1).map(|j| &toks[j]);
             let determined = prev.is_some_and(|p| {
-                is_det(p) || matches!(p, Tok::Adj(_) | Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_))
+                is_det(p) || matches!(p, Tok::Adj(_) | Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_)
+                    | Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_))
             });
             let mentioned = toks.get(i + 1).is_some_and(|nx| matches!(nx, Tok::Name(_)));
             if !determined && !mentioned && i > 0 {

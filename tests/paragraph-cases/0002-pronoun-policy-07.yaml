@@ -493,3 +493,119 @@ proposals:
     words: 38
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the banned pronouns. the validator must reject a banned pronoun. the validator must say "repeat the noun you mean". the validator does not have this mechanism. the team deferred the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 133.76
+    words: 36
+  diagnosis: '"the lexicon does not contain the banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the validator must reject a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "must … reject" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the validator does not have this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon omits the banned pronouns. the linter bans the pronouns. the validator must reject the banned pronoun. the validator must say "repeat the noun you mean". the validator does not have the mechanism. the team deferred the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 151.13000000000002
+    words: 39
+  diagnosis: '"the lexicon omits the banned pronouns": WORD: "omits" is not a minglish word | "the validator must reject the banned pronoun": STYLE: "must … reject" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "the banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not store the banned pronouns. the linter bans the pronouns. the validator rejects the pronoun. the validator says "repeat the noun you mean". the validator does not have the mechanism. the team deferred the mechanism.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 5
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 143.92000000000002
+    words: 38
+  diagnosis: '"the lexicon does not store the banned pronouns": STYLE: "does … store" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the banned pronouns do not appear in the lexicon. the future validator must show an error message that says "repeat the noun you mean". the validator needs a mechanism for banned words with a message. the design is deferred.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 133.99
+    words: 39
+  diagnosis: '"the banned pronouns do not appear in the lexicon": STYLE: "banned … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the future validator must show an error message that says "repeat the noun you mean"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the validator needs a mechanism for banned words with a message": STYLE: "needs … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the design is deferred": STYLE: "deferred" is transitive in minglish and needs an object; "is … deferred" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter bans the pronouns. the pronouns do not appear in the lexicon. the future validator must show an error message. the error message says "repeat the noun you mean". the validator needs a mechanism. the mechanism uses a banned word with a message. the team defers the design.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 4
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 173.29000000000002
+    words: 49
+  diagnosis: '"the future validator must show an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015); "must … show" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the error message says "repeat the noun you mean"": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the mechanism uses a banned word with a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "uses … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the linter bans the pronouns. the pronouns do not appear in the lexicon. the future validator must show the message of the error. the message of the error says "repeat the noun you mean". the validator needs a mechanism. the mechanism uses the word of the ban with a message. the team defers the design.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 6
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 180.19
+    words: 55
+  diagnosis: '"the mechanism uses the word of the ban with a message": STYLE: "ban" is a verb in minglish and cannot follow a determiner; "ban" is transitive in minglish and needs an object; "uses … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain banned pronouns. a future validator must contain a mechanism. the mechanism bans a word and gives a message. the writer must repeat the noun. the project defers the mechanism.
+  drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 121.67999999999999
+    words: 34
+  diagnosis: '"the lexicon does not contain banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the mechanism bans a word and gives a message": WORD: "gives" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain banned pronouns. every banned pronoun is unknown to the lexicon. a future validator must contain a mechanism. the mechanism bans a word and shows a message. the writer must repeat the noun. the project defers the mechanism.
+  drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 150.25
+    words: 42
+  diagnosis: '"the lexicon does not contain banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "every banned pronoun is unknown to the lexicon": STYLE: "banned … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "unknown to …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the lexicon does not contain the pronouns. the linter bans the pronouns. the pronouns are unknown. the future validator must contain a mechanism. the mechanism bans a word. the mechanism shows a message. the writer must repeat the noun. the project defers the mechanism.
+  drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast, "every banned pronoun" structure, "unknown to" pattern
+  valid: true
+  metrics:
+    sentences: 8
+    parsed: 8
+    continuity_pairs: 7
+    continuity_ok: 3
+    cost: 158.20999999999998
+    words: 44
+  count: 1
+  model: deepseek/deepseek-v4-flash

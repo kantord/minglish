@@ -60,6 +60,8 @@ fn rejections_get_named_diagnoses() {
         ("pronouns for the speaker are indexical", "attaches to the verb"),
         ("the design prefers clarity", "needs a determiner"),
         ("the report shows pronouns are big", "cannot be the object"),
+        ("the i pronoun is indexical", "follows the noun in quotes"),
+        ("the point of the copy of the report fails", "does not chain"),
     ];
     for (sentence, expect) in style_cases {
         match diagnose(&lexicon, sentence) {

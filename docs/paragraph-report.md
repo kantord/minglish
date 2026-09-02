@@ -20,223 +20,277 @@
 
   - "a big gap exists in the closed class": WORD: "exists" is not a minglish word | "the research results show ambiguity reappears": STYLE: "research results" — noun-noun compounds are not minglish; write "the results of the research", or one transparent word (ADR 0015) | "then ambiguity reappears": not recognizable as a minglish-like sentence | "instructional prose uses the pronouns of the speaker": not recognizable as a minglish-like sentence | "instructional prose uses the pronouns of the hearer": not recognizable as a minglish-like sentence
 
-**Proposal 3 (rejected, ×1)** — invalid · drops: none
+**Proposal 3 (rejected, ×1)** — invalid · drops: ordinals (first, second, third), temporal sequencing (after), universal quantifiers (always, never), demonstratives (this, these), discourse markers (but), comparative (biggest), noun-noun compounds (reference ambiguity), indefinite quantifier (another), complementizer "that"
+
+> the report shows the result of the triage at the corpus "UD-EWT". the triage shows that pronouns are about 2200 of the unknown tokens. the pronouns create a gap. the gap is the biggest gap of closed class words. the pronouns of the person who is not the speaker and not the hearer are anaphoric. the sentence "it failed" contains a pronoun. the resolution of the pronoun requires the layer of the discourse. the research finds the ambiguity in the reference from one sentence to another sentence. the ambiguity reappears when the system splits the sentences. the research describes the effect in the document "docs/research/cnl-design-findings.md". the pronouns of the speaker are indexical. the pronouns of the hearer are indexical. the pronouns of the speaker refer to the speaker. the pronouns of the hearer refer to the hearer. the pronouns of the speaker are not anaphoric. the pronouns of the hearer are not anaphoric. the pronouns of the speaker do not carry the ambiguity of the reference. the pronouns of the hearer do not carry the ambiguity of the reference. instructional text uses the pronouns of the speaker. instructional text uses the pronouns of the hearer.
+
+  - "the triage shows that pronouns are about 2200 of the unknown tokens": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the gap is the biggest gap of closed class words": WORD: "biggest" is not a minglish word | "the pronouns of the person who is not the speaker and not the hearer are anaphoric": WORD: "who" is not a minglish word | "the research finds the ambiguity in the reference from one sentence to another sentence": WORD: "another" is not a minglish word | "the ambiguity reappears when the system splits the sentences": WORD: "when" is not a minglish word | "instructional text uses the pronouns of the speaker": not recognizable as a minglish-like sentence | "instructional text uses the pronouns of the hearer": not recognizable as a minglish-like sentence
+
+**Proposal 4 (rejected, ×1)** — invalid · drops: none
 
 > the report triage uses the corpus "ud ewt". the report shows that pronouns are about 2200 of the tokens that the parser does not know. the pronouns are a big gap in the closed class. a pronoun of the person that is not the speaker and is not the hearer is anaphoric. the anaphora "it failed" needs a layer of the discourse. the research found the place of the ambiguity. the ambiguity reappears. the system splits sentences. the ambiguity reappears at the place of a reference across a sentence. a pronoun of the speaker is indexical. a pronoun of the hearer is indexical. the pronouns refer to the speaker. the pronouns refer to the hearer. the pronouns are not anaphoric. the pronouns do not carry the ambiguity of the reference. instructional prose uses the pronouns a lot.
 
   - "the report triage uses the corpus "ud ewt"": STYLE: "report triage" — noun-noun compounds are not minglish; write "the triage of the report", or one transparent word (ADR 0015) | "the report shows that pronouns are about 2200 of the tokens that the parser does not know": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, know] | "the pronouns are a big gap in the closed class": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "a pronoun of the person that is not the speaker and is not the hearer is anaphoric": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the ambiguity reappears at the place of a reference across a sentence": WORD: "across" is not a minglish word — its category PREP is not yet usable in any sentence structure | "instructional prose uses the pronouns a lot": WORD: "lot" is not a minglish word
 
-**Proposal 4 (rejected, ×1)** — invalid · drops: none
+**Proposal 5 (rejected, ×1)** — invalid · drops: none
 
 > the report of the triage "docs/triage-report.md" shows the triage of the database UD-EWT. about 2200 of the unknown words are pronouns. pronouns form the biggest gap of the closed class. the pronouns of the speaker are indexical. the pronouns of the hearer are indexical. the pronouns of the speaker refer to the speaker. the pronouns of the hearer refer to the hearer. the pronouns of the speaker are not anaphoric. the pronouns of the hearer are not anaphoric. the pronouns of the speaker do not carry the ambiguity of a reference. the pronouns of the hearer do not carry the ambiguity of a reference. instructional prose uses the pronouns of the speaker. instructional prose uses the pronouns of the hearer. the pronouns of a person not the speaker and not the hearer are anaphoric. the sentence "it failed" contains an anaphoric pronoun. the resolution of the anaphoric pronoun needs a discourse layer. the research shows that a reference across sentences is the place where ambiguity reappears. the research is in the document "docs/research/cnl-design-findings.md". the document says "ambiguity migrates".
 
   - "about 2200 of the unknown words are pronouns": not recognizable as a minglish-like sentence | "pronouns form the biggest gap of the closed class": WORD: "biggest" is not a minglish word [all unknown words: biggest, class] | "instructional prose uses the pronouns of the speaker": not recognizable as a minglish-like sentence | "instructional prose uses the pronouns of the hearer": not recognizable as a minglish-like sentence | "the pronouns of a person not the speaker and not the hearer are anaphoric": not recognizable as a minglish-like sentence | "the resolution of the anaphoric pronoun needs a discourse layer": WORD: "resolution" is not a minglish word | "the research shows that a reference across sentences is the place where ambiguity reappears": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, across, place, where] | "the research is in the document "docs/research/cnl-design-findings.md"": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the lexicon contains the pronouns" (ADR 0003)
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: none
 
 > the triage report shows the frequencies. the frequencies are of pronouns. the pronouns are about 2200 unused words. the pronouns create a big gap of closed words. the pronouns of the third person are anaphoric. the sentence "it failed" uses an anaphoric pronoun. the system needs the layer of the discourse for the anaphora. the research describes the reference of the sentence. the reference of the sentence goes across sentences. the ambiguity reappears. the ambiguity reappears at the reference of the sentence. the pronouns of the first person are indexical. the pronoun of the first person refers to the speaker. the pronouns of the second person are indexical. the pronoun of the second person refers to the hearer. the pronouns of the first person and the pronouns of the second person are not anaphoric. the pronouns of the first person and the pronouns of the second person carry no reference ambiguity. instructional prose uses the pronouns of the first person and the pronouns of the second person.
 
   - "the triage report shows the frequencies": STYLE: "triage report" — noun-noun compounds are not minglish; write "the report of the triage", or one transparent word (ADR 0015) | "the frequencies are of pronouns": not recognizable as a minglish-like sentence | "the pronouns create a big gap of closed words": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the pronouns of the third person are anaphoric": WORD: "third" is not a minglish word | "the reference of the sentence goes across sentences": WORD: "goes" is not a minglish word [all unknown words: goes, across] | "the pronouns of the first person are indexical": WORD: "first" is not a minglish word | "the pronoun of the first person refers to the speaker": WORD: "first" is not a minglish word | "the pronouns of the second person are indexical": WORD: "second" is not a minglish word | "the pronoun of the second person refers to the hearer": WORD: "second" is not a minglish word | "the pronouns of the first person and the pronouns of the second person are not anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second] | "the pronouns of the first person and the pronouns of the second person carry no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, second] | "instructional prose uses the pronouns of the first person and the pronouns of the second person": WORD: "first" is not a minglish word [all unknown words: first, second]
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: none
+**Proposal 7 (rejected, ×1)** — invalid · drops: ordinals (first, second, third), demonstratives (this, these), discourse markers (but), compound nouns (discourse layer), temporal sequencing (after), comparative (largest), indefinite quantifier (some), register/formality
+
+> the report the tool triage at the corpus UD minus EWT shows the result. the tool shows that pronouns are about 2200 of the unknown tokens. the pronouns form a gap. the gap is the biggest gap of closed class words. the pronouns of the person that is not the speaker and not the hearer are anaphoric. the sentence "it failed" contains a pronoun. the resolution of the pronoun requires the layer of the discourse. the research finds the ambiguity in the reference that goes from one sentence to another sentence. the ambiguity reappears after the system splits the sentences. the research describes the effect in the document the document "docs slash research slash cnl minus design minus findings dot md". the pronouns of the speaker are indexical. the pronouns of the hearer are indexical. the pronouns of the speaker refer to the speaker. the pronouns of the hearer refer to the hearer. the pronouns of the speaker are never anaphoric. the pronouns of the hearer are never anaphoric. the pronouns of the speaker carry no reference ambiguity. the pronouns of the hearer carry no reference ambiguity. instructional text uses the pronouns of the speaker always. instructional text uses the pronouns of the hearer always.
+
+  - "the report the tool triage at the corpus UD minus EWT shows the result": WORD: "minus" is not a minglish word | "the tool shows that pronouns are about 2200 of the unknown tokens": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns form a gap": STYLE: "form a" — a word mentioned as a word must be quoted: "form \"a\"" (ADR 0018); "form" is a noun in minglish — as a verb use "create"; "form" — a singular noun needs a determiner: "the form" (mass nouns take "the") | "the gap is the biggest gap of closed class words": WORD: "biggest" is not a minglish word | "the pronouns of the person that is not the speaker and not the hearer are anaphoric": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the research finds the ambiguity in the reference that goes from one sentence to another sentence": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" [all unknown words: that, goes, another] | "the ambiguity reappears after the system splits the sentences": WORD: "after" is not a minglish word | "the research describes the effect in the document the document "docs slash research slash cnl minus design minus findings dot md"": STYLE: "document the" — a word mentioned as a word must be quoted: "document \"the\"" (ADR 0018) | "the pronouns of the speaker are never anaphoric": WORD: "never" is not a minglish word | "the pronouns of the hearer are never anaphoric": WORD: "never" is not a minglish word | "the pronouns of the speaker carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the pronouns of the hearer carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "instructional text uses the pronouns of the speaker always": WORD: "always" is not a minglish word | "instructional text uses the pronouns of the hearer always": WORD: "always" is not a minglish word
+
+**Proposal 8 (rejected, ×1)** — invalid · drops: none
+
+> the report shows the frequencies of the pronouns. the tokens that the parser does not know include about 2200 pronouns. the pronouns are a big gap in the closed class of words. the pronouns that refer to a person who is not the speaker or the hearer are anaphoric. the resolution of "it failed" requires a layer. the layer is the layer of the discourse. the research document describes the ambiguity. the ambiguity is the ambiguity of the references between sentences. the ambiguity reappears. the parser splits sentences. the ambiguity reappears at that time. the pronouns that refer to the speaker and the pronouns that refer to the hearer are indexical. the pronouns that refer to the speaker refer to the speaker. the pronouns that refer to the hearer refer to the hearer. the pronouns that refer to the speaker and the pronouns that refer to the hearer are not anaphoric. the pronouns that refer to the speaker and the pronouns that refer to the hearer carry no reference ambiguity. the instructional text uses the pronouns that refer to the speaker and the pronouns that refer to the hearer.
+
+  - "the tokens that the parser does not know include about 2200 pronouns": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" [all unknown words: that, include] | "the pronouns are a big gap in the closed class of words": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the pronouns that refer to a person who is not the speaker or the hearer are anaphoric": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" [all unknown words: that, who] | "the resolution of "it failed" requires a layer": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the research document describes the ambiguity": STYLE: "research document" — noun-noun compounds are not minglish; write "the document of the research", or one transparent word (ADR 0015) | "the ambiguity is the ambiguity of the references between sentences": WORD: "between" is not a minglish word | "the ambiguity reappears at that time": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" [all unknown words: that, time] | "the pronouns that refer to the speaker and the pronouns that refer to the hearer are indexical": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns that refer to the speaker refer to the speaker": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns that refer to the hearer refer to the hearer": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns that refer to the speaker and the pronouns that refer to the hearer are not anaphoric": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns that refer to the speaker and the pronouns that refer to the hearer carry no reference ambiguity": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the instructional text uses the pronouns that refer to the speaker and the pronouns that refer to the hearer": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result"
+
+**Proposal 9 (rejected, ×1)** — invalid · drops: ordinal (third), noun-noun compound (research documents), temporal word (time, when), clause-as-object (shows pronouns are), determiner errors (singular count nouns), negation structure (carry no → do not carry)
+
+> the triage of the corpus UD-EWT has a result. the result shows pronouns are about 2200 of the unknown tokens. the pronouns form a big gap in the closed class. the i pronoun is indexical. the you pronoun is indexical. the i pronoun refers to the speaker. the you pronoun refers to the hearer. the i pronoun is not anaphoric. the you pronoun is not anaphoric. the i pronoun and the you pronoun do not carry the ambiguity of the reference. instructional text uses the i pronoun and the you pronoun. the pronoun of the speaker and the pronoun of the hearer are indexical. the pronoun of the third person is anaphoric. the sentence "it failed" requires the layer of the discourse. the ambiguity reappears at the point of the split of the sentences. the documents of the research describe the effect.
+
+  - "the result shows pronouns are about 2200 of the unknown tokens": STYLE: "shows … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the pronouns form a big gap in the closed class": STYLE: "form a" — a word mentioned as a word must be quoted: "form \"a\"" (ADR 0018); "form" is a noun in minglish — as a verb use "create"; "form" — a singular noun needs a determiner: "the form" (mass nouns take "the") | "the i pronoun is indexical": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the you pronoun is indexical": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun refers to the speaker": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the you pronoun refers to the hearer": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun is not anaphoric": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the you pronoun is not anaphoric": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun and the you pronoun do not carry the ambiguity of the reference": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "instructional text uses the i pronoun and the you pronoun": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the pronoun of the speaker and the pronoun of the hearer are indexical": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronoun of the third person is anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the ambiguity reappears at the point of the split of the sentences": STYLE: "reappears … split" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "split" is a verb in minglish and cannot follow a determiner
+
+**Proposal 10 (rejected, ×1)** — invalid · drops: none
 
 > the report triage on the corpus "ud ewt" shows that pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed class. the resolution of an anaphoric reference requires a discourse layer. the research found that cross sentence reference is the place where ambiguity reappears. the ambiguity reappears after the system splits sentences. the pronouns "i" and "you" are indexical. the pronoun "i" refers to the speaker. the pronoun "you" refers to the hearer. the pronouns "i" and "you" are not anaphoric. the pronouns "i" and "you" do not carry the ambiguity of the reference. the instructional prose uses the pronouns "i" and "you" constantly.
 
   - "the report triage on the corpus "ud ewt" shows that pronouns are about 2200 of the unknown tokens": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the pronouns are the second largest gap in the closed class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "the resolution of an anaphoric reference requires a discourse layer": WORD: "requires" is not a minglish word | "the research found that cross sentence reference is the place where ambiguity reappears": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, cross, where] | "the ambiguity reappears after the system splits sentences": WORD: "after" is not a minglish word | "the pronouns "i" and "you" are indexical": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronouns "i" and "you" are not anaphoric": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronouns "i" and "you" do not carry the ambiguity of the reference": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the instructional prose uses the pronouns "i" and "you" constantly": WORD: "constantly" is not a minglish word
 
-**Proposal 7 (rejected, ×1)** — invalid · drops: none
+**Proposal 11 (rejected, ×1)** — invalid · drops: none
 
 > the triage of the report against the corpus ud ewt shows pronouns are about 2200 of the unknown words. the pronouns are the biggest gap of the closed words after the first gap. pronouns for the speaker or the hearer are indexical. pronouns for the speaker or the hearer are not anaphoric. pronouns for the speaker or the hearer do not carry ambiguities of reference. instructional prose uses pronouns for the speaker or the hearer in every sentence. pronouns for people that are not the speaker or the hearer are anaphoric. the agent uses a prior sentence to resolve "it failed". the agent needs a discourse layer for the resolution of the anaphora. the research shows cross sentence reference is the place where ambiguities reappear. the ambiguities reappear when the tool splits the sentences. the document "docs/research/cnl-design-findings.md" describes the research. the document says "ambiguity migrates".
 
   - "the triage of the report against the corpus ud ewt shows pronouns are about 2200 of the unknown words": WORD: "against" is not a minglish word [all unknown words: against, corpus, ud, ewt] | "the pronouns are the biggest gap of the closed words after the first gap": WORD: "biggest" is not a minglish word [all unknown words: biggest, after, first] | "pronouns for the speaker or the hearer are indexical": not recognizable as a minglish-like sentence | "pronouns for the speaker or the hearer are not anaphoric": not recognizable as a minglish-like sentence | "pronouns for the speaker or the hearer do not carry ambiguities of reference": not recognizable as a minglish-like sentence | "instructional prose uses pronouns for the speaker or the hearer in every sentence": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "pronouns for people that are not the speaker or the hearer are anaphoric": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the agent uses a prior sentence to resolve "it failed"": WORD: "resolve" is not a minglish word | "the agent needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research shows cross sentence reference is the place where ambiguities reappear": WORD: "cross" is not a minglish word [all unknown words: cross, place, where] | "the ambiguities reappear when the tool splits the sentences": WORD: "when" is not a minglish word
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: informal citation style, dash, hyphenated compounds, colon, semicolon, parenthetical glosses
+**Proposal 12 (rejected, ×1)** — invalid · drops: informal citation style, dash, hyphenated compounds, colon, semicolon, parenthetical glosses
 
 > the report triage against the corpus ud ewt shows that pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed class. some pronouns are anaphoric. the sentence "it failed" has an anaphoric reference. the resolution of an anaphoric reference requires a discourse layer. the research found that cross sentence reference is the place where ambiguity reappears. the ambiguity reappears after the system splits sentences. the pronouns i and you are indexical. the pronoun i refers to the speaker. the pronoun you refers to the hearer. the pronouns i and you are never anaphoric. the pronouns i and you carry no reference ambiguity. the instructional prose uses the pronouns i and you constantly.
 
   - "the report triage against the corpus ud ewt shows that pronouns are about 2200 of the unknown tokens": WORD: "against" is not a minglish word — its category PREP is not yet usable in any sentence structure [all unknown words: ud, ewt, that] | "the pronouns are the second largest gap in the closed class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "the resolution of an anaphoric reference requires a discourse layer": WORD: "requires" is not a minglish word | "the research found that cross sentence reference is the place where ambiguity reappears": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, cross, where] | "the ambiguity reappears after the system splits sentences": WORD: "after" is not a minglish word | "the pronouns i and you are indexical": not recognizable as a minglish-like sentence | "the pronoun i refers to the speaker": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the pronoun you refers to the hearer": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018) | "the pronouns i and you are never anaphoric": WORD: "never" is not a minglish word | "the pronouns i and you carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the instructional prose uses the pronouns i and you constantly": WORD: "constantly" is not a minglish word
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: none
+**Proposal 13 (rejected, ×1)** — invalid · drops: none
 
 > the report "docs/triage-report.md" shows the triage against the database UD-EWT. pronouns are about 2,200 of the unknown words. pronouns form the second biggest closed class gap. the pronouns for the speaker and the hearer are indexical. the pronouns for the speaker and the hearer refer to the speaker and the hearer. the pronouns for the speaker and the hearer are not anaphoric. the pronouns for the speaker and the hearer carry no reference ambiguity. instructional prose uses the pronouns for the speaker and the hearer constantly. the pronouns for other people are anaphoric. the sentence "it failed" contains an anaphoric pronoun. resolving the anaphoric pronoun requires a discourse layer. the research findings show that cross-sentence reference is the exact place where ambiguity reappears. the research findings appear in the document "docs/research/cnl-design-findings.md". the document says "ambiguity migrates".
 
   - "the report "docs/triage-report.md" shows the triage against the database UD-EWT": WORD: "against" is not a minglish word | "pronouns are about 2,200 of the unknown words": WORD: "2,200" is not a minglish word | "pronouns form the second biggest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, biggest, class] | "the pronouns for the speaker and the hearer are indexical": not recognizable as a minglish-like sentence | "the pronouns for the speaker and the hearer refer to the speaker and the hearer": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronouns for the speaker and the hearer are not anaphoric": not recognizable as a minglish-like sentence | "the pronouns for the speaker and the hearer carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "instructional prose uses the pronouns for the speaker and the hearer constantly": WORD: "constantly" is not a minglish word | "the pronouns for other people are anaphoric": WORD: "other" is not a minglish word | "resolving the anaphoric pronoun requires a discourse layer": WORD: "resolving" is not a minglish word [all unknown words: resolving, requires] | "the research findings show that cross-sentence reference is the exact place where ambiguity reappears": WORD: "findings" is not a minglish word [all unknown words: findings, that, cross-sentence, exact, place, where] | "the research findings appear in the document "docs/research/cnl-design-findings.md"": WORD: "findings" is not a minglish word [all unknown words: findings, appear]
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: none
+**Proposal 14 (rejected, ×1)** — invalid · drops: none
 
 > the triage of the report on the corpus ud ewt shows pronouns are about 2200 of the unknown words. the pronouns are the second gap of the closed words. pronouns for the speaker or pronouns for the hearer are indexical. pronouns for the speaker or pronouns for the hearer are not anaphoric. pronouns for the speaker or pronouns for the hearer do not carry ambiguities of reference. instructional prose uses pronouns for the speaker in every sentence. instructional prose uses pronouns for the hearer in every sentence. pronouns for people that are not the speaker are anaphoric. pronouns for people that are not the hearer are anaphoric. the agent uses a prior sentence to find the referent of "it failed". the agent needs a discourse layer for the finding of the referent of the anaphora. the research shows reference across sentences is the place where ambiguities reappear. the ambiguities reappear on the split of the sentences. the document "docs/research/cnl-design-findings.md" describes the research. the document says "ambiguity migrates".
 
   - "the triage of the report on the corpus ud ewt shows pronouns are about 2200 of the unknown words": WORD: "corpus" is not a minglish word [all unknown words: corpus, ud, ewt] | "the pronouns are the second gap of the closed words": WORD: "second" is not a minglish word | "pronouns for the speaker or pronouns for the hearer are indexical": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "pronouns for the speaker or pronouns for the hearer are not anaphoric": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "pronouns for the speaker or pronouns for the hearer do not carry ambiguities of reference": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "instructional prose uses pronouns for the speaker in every sentence": not recognizable as a minglish-like sentence | "instructional prose uses pronouns for the hearer in every sentence": not recognizable as a minglish-like sentence | "pronouns for people that are not the speaker are anaphoric": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "pronouns for people that are not the hearer are anaphoric": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the agent uses a prior sentence to find the referent of "it failed"": WORD: "referent" is not a minglish word | "the agent needs a discourse layer for the finding of the referent of the anaphora": WORD: "referent" is not a minglish word | "the research shows reference across sentences is the place where ambiguities reappear": WORD: "across" is not a minglish word [all unknown words: across, place, where] | "the ambiguities reappear on the split of the sentences": STYLE: "split" is a verb in minglish and cannot follow a determiner
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
 
 > the triage report "docs/triage-report.md" shows the triage of the database UD-EWT. pronouns are about 2200 of the unknown words. pronouns form the second large closed gap. the pronouns for the speaker are indexical. the pronouns for the hearer are indexical. the pronouns for the speaker refer to the speaker. the pronouns for the hearer refer to the hearer. the pronouns for the speaker are not anaphoric. the pronouns for the hearer are not anaphoric. the pronouns for the speaker do not carry an ambiguity of a reference. the pronouns for the hearer do not carry an ambiguity of a reference. instructional prose uses the pronouns for the speaker. instructional prose uses the pronouns for the hearer. the pronouns for a person not the speaker and not the hearer are anaphoric. the sentence "it failed" contains an anaphoric pronoun. the resolution of the anaphoric pronoun needs a discourse layer. the research shows that a reference across sentences is the place where ambiguity reappears. the research is in the document "docs/research/cnl-design-findings.md". the document says "ambiguity migrates".
 
   - "the triage report "docs/triage-report.md" shows the triage of the database UD-EWT": STYLE: "triage report" — noun-noun compounds are not minglish; write "the report of the triage", or one transparent word (ADR 0015) | "pronouns are about 2200 of the unknown words": not recognizable as a minglish-like sentence | "pronouns form the second large closed gap": WORD: "second" is not a minglish word [all unknown words: second, large] | "the pronouns for the speaker are indexical": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the hearer are indexical": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the speaker refer to the speaker": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the hearer refer to the hearer": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the speaker are not anaphoric": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the hearer are not anaphoric": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns for the speaker do not carry an ambiguity of a reference": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the pronouns for the hearer do not carry an ambiguity of a reference": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "instructional prose uses the pronouns for the speaker": not recognizable as a minglish-like sentence | "instructional prose uses the pronouns for the hearer": not recognizable as a minglish-like sentence | "the pronouns for a person not the speaker and not the hearer are anaphoric": not recognizable as a minglish-like sentence | "the resolution of the anaphoric pronoun needs a discourse layer": WORD: "resolution" is not a minglish word | "the research shows that a reference across sentences is the place where ambiguity reappears": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, across, place, where] | "the research is in the document "docs/research/cnl-design-findings.md"": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the lexicon contains the pronouns" (ADR 0003)
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: hyphenation, parentheses, dashes, citation, register/affect loss of hedging and emphasis
+**Proposal 16 (rejected, ×1)** — invalid · drops: hyphenation, parentheses, dashes, citation, register/affect loss of hedging and emphasis
 
 > the triage report shows about 2200 pronouns in the oov tokens. pronouns are the second biggest closed class gap. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer. the research findings show cross sentence reference is where ambiguity reappears after the system splits sentences. first person pronouns and second person pronouns are indexical. indexical pronouns refer to the speaker or the hearer. indexical pronouns are not anaphoric. indexical pronouns carry no reference ambiguity. instructional prose uses indexical pronouns often.
 
   - "the triage report shows about 2200 pronouns in the oov tokens": WORD: "oov" is not a minglish word | "pronouns are the second biggest closed class gap": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, biggest] | "third person pronouns are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the sentence "it failed" needs a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the research findings show cross sentence reference is where ambiguity reappears after the system splits sentences": WORD: "findings" is banned in minglish — write "results" ("the file describes the results") [all unknown words: findings, cross, where, after] | "first person pronouns and second person pronouns are indexical": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "indexical pronouns refer to the speaker or the hearer": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "indexical pronouns carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "instructional prose uses indexical pronouns often": WORD: "often" is not a minglish word
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: none
+**Proposal 17 (rejected, ×1)** — invalid · drops: none
 
 > the report triage against the corpus ud ewt shows that pronouns are about 2200 of the tokens that the system does not know. the pronouns are the second largest gap in the closed class. but third person pronouns are anaphoric. the anaphora "it failed" needs a discourse layer. the research found that cross sentence reference is the place where ambiguity reappears after the system splits sentences. first person pronouns are indexical. second person pronouns are indexical. the pronouns refer to the speaker or the hearer. the pronouns are not anaphoric. the pronouns carry no reference ambiguity. instructional text uses the pronouns constantly.
 
   - "the report triage against the corpus ud ewt shows that pronouns are about 2200 of the tokens that the system does not know": WORD: "against" is not a minglish word — its category PREP is not yet usable in any sentence structure [all unknown words: ud, ewt, that, know] | "the pronouns are the second largest gap in the closed class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "but third person pronouns are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the anaphora "it failed" needs a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the research found that cross sentence reference is the place where ambiguity reappears after the system splits sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, cross, where, after] | "first person pronouns are indexical": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "second person pronouns are indexical": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the pronouns refer to the speaker or the hearer": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronouns carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "instructional text uses the pronouns constantly": WORD: "text" is not a minglish word [all unknown words: text, constantly]
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class", "large", "unknown", "cross sentence"
+**Proposal 18 (rejected, ×1)** — invalid · drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class", "large", "unknown", "cross sentence"
 
 > the report on triage shows pronouns have about 2200 of the rare words. the gap is big. the anaphoric pronouns are the pronouns for person three. the sentence "it failed" needs a discourse layer. the research describes reference across sentences. reference across sentences is the place where ambiguity returns after the tool splits sentences. the pronouns for person one and person two are indexical. the pronouns for person one and person two refer to the speaker or the hearer. the pronouns for person one and person two are never anaphoric. the pronouns for person one and person two carry no ambiguity. instructional prose uses the pronouns for person one and person two.
 
   - "the report on triage shows pronouns have about 2200 of the rare words": not recognizable as a minglish-like sentence | "the anaphoric pronouns are the pronouns for person three": WORD: "three" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research describes reference across sentences": WORD: "reference" is not a minglish word [all unknown words: reference, across] | "reference across sentences is the place where ambiguity returns after the tool splits sentences": WORD: "reference" is not a minglish word [all unknown words: reference, across, place, where, after, splits] | "the pronouns for person one and person two are indexical": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, indexical] | "the pronouns for person one and person two refer to the speaker or the hearer": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, refer, speaker, hearer] | "the pronouns for person one and person two are never anaphoric": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, never] | "the pronouns for person one and person two carry no ambiguity": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) [all unknown words: two, carry] | "instructional prose uses the pronouns for person one and person two": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022)
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: hyphenation, ordinal words, "findings", "cross" as a modifier, "where", "after" as subordinator, "or" in noun coordination, "no" as object quantifier, "often", noun-noun compounds
+**Proposal 19 (rejected, ×1)** — invalid · drops: hyphenation, ordinal words, "findings", "cross" as a modifier, "where", "after" as subordinator, "or" in noun coordination, "no" as object quantifier, "often", noun-noun compounds
 
 > the triage report shows about 2200 pronouns in the unknown tokens. pronouns are a big gap in the closed class. the pronouns of the speaker and the hearer are indexical. the pronouns of a third person are anaphoric. the sentence "it failed" needs the layer of the discourse. the research results show that ambiguity reappears after the system splits sentences. the ambiguity of the reference reappears with cross sentence reference. a person pronoun of the speaker refers to the speaker. a person pronoun of the hearer refers to the hearer. a person pronoun of the speaker does not carry the ambiguity of the reference. a person pronoun of the hearer does not carry the ambiguity of the reference. instructional prose uses the person pronouns of the speaker and the hearer.
 
   - "the triage report shows about 2200 pronouns in the unknown tokens": STYLE: "triage report" — noun-noun compounds are not minglish; write "the report of the triage", or one transparent word (ADR 0015) | "pronouns are a big gap in the closed class": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns of the speaker and the hearer are indexical": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the pronouns of a third person are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the research results show that ambiguity reappears after the system splits sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, after] | "the ambiguity of the reference reappears with cross sentence reference": WORD: "cross" is not a minglish word | "a person pronoun of the speaker refers to the speaker": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015) | "a person pronoun of the hearer refers to the hearer": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015) | "a person pronoun of the speaker does not carry the ambiguity of the reference": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015) | "a person pronoun of the hearer does not carry the ambiguity of the reference": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015) | "instructional prose uses the person pronouns of the speaker and the hearer": STYLE: "person pronouns" — noun-noun compounds are not minglish; write "the pronouns of the person", or one transparent word (ADR 0015); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 20 (rejected, ×1)** — invalid · drops: none
 
 > the report triage against the corpus ud ewt shows pronouns are about 2200 of the unknown words. the pronouns are the second biggest gap in the closed class words. pronouns for the speaker or the hearer are indexical. pronouns for the speaker or the hearer are not anaphoric. pronouns for the speaker or the hearer carry no reference ambiguities. instructional prose uses pronouns for the speaker or the hearer every sentence. pronouns for people other than the speaker or the hearer are anaphoric. the agent resolves "it failed" from a prior sentence. the agent needs a discourse layer for the resolution. the research findings show cross sentence reference is the exact place where ambiguities reappear. the ambiguities reappear after the tool splits the sentences. the document "docs/research/cnl-design-findings.md" describes the findings. the document says "ambiguity migrates".
 
   - "the report triage against the corpus ud ewt shows pronouns are about 2200 of the unknown words": WORD: "against" is not a minglish word [all unknown words: against, corpus, ud, ewt] | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is not a minglish word [all unknown words: second, biggest, class] | "pronouns for the speaker or the hearer are indexical": not recognizable as a minglish-like sentence | "pronouns for the speaker or the hearer are not anaphoric": not recognizable as a minglish-like sentence | "pronouns for the speaker or the hearer carry no reference ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguities" — noun-noun compounds are not minglish; write "the ambiguities of the reference", or one transparent word (ADR 0015) | "instructional prose uses pronouns for the speaker or the hearer every sentence": STYLE: "hearer every" — a word mentioned as a word must be quoted: "hearer \"every\"" (ADR 0018) | "pronouns for people other than the speaker or the hearer are anaphoric": WORD: "other" is not a minglish word [all unknown words: other, than] | "the agent resolves "it failed" from a prior sentence": WORD: "resolves" is not a minglish word | "the agent needs a discourse layer for the resolution": WORD: "resolution" is not a minglish word | "the research findings show cross sentence reference is the exact place where ambiguities reappear": WORD: "findings" is not a minglish word [all unknown words: findings, cross, exact, place, where] | "the ambiguities reappear after the tool splits the sentences": WORD: "after" is not a minglish word | "the document "docs/research/cnl-design-findings.md" describes the findings": WORD: "findings" is not a minglish word
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: none
+**Proposal 21 (rejected, ×1)** — invalid · drops: parentheses, dashes, hyphenated compound adjectives, comparative/superlative forms, discourse markers ("but"), register (formal/informal), affect (emphasis on "exactly" and "constantly")
+
+> the report docs slash triage minus report dot md shows the triage of the corpus UD minus EWT. the triage shows that pronouns are about 2200 of the tokens that are unknown. the pronouns form the second largest gap of closed class words. but the pronouns of the third person are anaphoric. the sentence "it failed" contains a pronoun. the resolution of the pronoun requires a discourse layer. the research finds the ambiguity in cross minus sentence reference. the ambiguity reappears after the system splits the sentences. the research describes this effect in the document docs slash research slash cnl minus design minus findings dot md. the pronouns of the first person and the second person are indexical. the pronouns of the first person refer to the speaker. the pronouns of the second person refer to the hearer. these pronouns are never anaphoric. these pronouns carry no reference ambiguity. instructional text uses these pronouns always.
+
+  - "the report docs slash triage minus report dot md shows the triage of the corpus UD minus EWT": WORD: "docs" is not a minglish word [all unknown words: docs, slash, minus, dot, md] | "the triage shows that pronouns are about 2200 of the tokens that are unknown": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns form the second largest gap of closed class words": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "but the pronouns of the third person are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the resolution of the pronoun requires a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the research finds the ambiguity in cross minus sentence reference": WORD: "cross" is not a minglish word [all unknown words: cross, minus] | "the ambiguity reappears after the system splits the sentences": WORD: "after" is not a minglish word | "the research describes this effect in the document docs slash research slash cnl minus design minus findings dot md": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, docs, slash, cnl, minus, findings, dot, md] | "the pronouns of the first person and the second person are indexical": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "the pronouns of the first person refer to the speaker": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the pronouns of the second person refer to the hearer": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "these pronouns are never anaphoric": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, never] | "these pronouns carry no reference ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "instructional text uses these pronouns always": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, always]
+
+**Proposal 22 (rejected, ×1)** — invalid · drops: none
 
 > the triage report shows the frequencies of pronouns. the pronouns are about 2200 tokens in the set of unused words. the pronouns form the second largest gap of closed words. the third person pronouns are anaphoric. the sentence "it failed" uses an anaphoric pronoun. resolving this anaphora requires a discourse layer. the research findings describe cross sentence reference. the ambiguity reappears after the system splits sentences. the ambiguity reappears at the point of cross sentence reference. the first and second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. these pronouns are never anaphoric. these pronouns carry no reference ambiguity. instructional prose uses these pronouns often.
 
   - "the triage report shows the frequencies of pronouns": STYLE: "triage report" — noun-noun compounds are not minglish; write "the report of the triage", or one transparent word (ADR 0015) | "the pronouns are about 2200 tokens in the set of unused words": WORD: "tokens" is not a minglish word [all unknown words: tokens, set] | "the pronouns form the second largest gap of closed words": WORD: "second" is not a minglish word [all unknown words: second, largest] | "the third person pronouns are anaphoric": WORD: "third" is not a minglish word | "resolving this anaphora requires a discourse layer": WORD: "resolving" is not a minglish word [all unknown words: resolving, this, requires] | "the research findings describe cross sentence reference": WORD: "findings" is not a minglish word [all unknown words: findings, cross] | "the ambiguity reappears after the system splits sentences": WORD: "after" is not a minglish word | "the ambiguity reappears at the point of cross sentence reference": WORD: "point" is not a minglish word [all unknown words: point, cross] | "the first and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word | "these pronouns are never anaphoric": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, never] | "these pronouns carry no reference ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "instructional prose uses these pronouns often": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, often]
 
-**Proposal 18 (rejected, ×1)** — invalid
+**Proposal 23 (rejected, ×1)** — invalid
 
 > the report shows pronouns are about 2200 of the unknown words. pronouns are a big gap. the gap is the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research shows ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first person pronouns are indexical. second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. the first person pronoun is not anaphoric. the second person pronoun is not anaphoric. the first person pronoun carries no reference ambiguity. the second person pronoun carries no reference ambiguity. instructional prose uses the first person pronoun and the second person pronoun.
 
   - "the report shows pronouns are about 2200 of the unknown words": WORD: "unknown" is not a minglish word | "the gap is the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows ambiguity reappears after the system splits sentences": WORD: "reappears" is not a minglish word [all unknown words: reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, indexical] | "second person pronouns are indexical": WORD: "second" is not a minglish word [all unknown words: second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "the first person pronoun is not anaphoric": WORD: "first" is not a minglish word | "the second person pronoun is not anaphoric": WORD: "second" is not a minglish word | "the first person pronoun carries no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, carries, reference] | "the second person pronoun carries no reference ambiguity": WORD: "second" is not a minglish word [all unknown words: second, carries, reference] | "instructional prose uses the first person pronoun and the second person pronoun": WORD: "first" is not a minglish word [all unknown words: first, second]
 
-**Proposal 19 (rejected, ×1)** — invalid
+**Proposal 24 (rejected, ×1)** — invalid
 
 > the report shows that pronouns are about 2200 of the unknown words. pronouns are a big gap. the gap is the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research shows that ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first person pronouns are indexical. second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. the first person pronoun is not anaphoric. the second person pronoun is not anaphoric. the first person pronoun carries no reference ambiguity. the second person pronoun carries no reference ambiguity. instructional prose uses the first person pronoun and the second person pronoun.
 
   - "the report shows that pronouns are about 2200 of the unknown words": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, unknown] | "the gap is the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows that ambiguity reappears after the system splits sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, indexical] | "second person pronouns are indexical": WORD: "second" is not a minglish word [all unknown words: second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "the first person pronoun is not anaphoric": WORD: "first" is not a minglish word | "the second person pronoun is not anaphoric": WORD: "second" is not a minglish word | "the first person pronoun carries no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, carries, reference] | "the second person pronoun carries no reference ambiguity": WORD: "second" is not a minglish word [all unknown words: second, carries, reference] | "instructional prose uses the first person pronoun and the second person pronoun": WORD: "first" is not a minglish word [all unknown words: first, second]
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: none
+**Proposal 25 (rejected, ×1)** — invalid · drops: none
 
 > the report of the triage shows the frequencies of pronouns. the pronouns are about 2200 words in the unused forms. the pronouns form a big gap of closed words. the third person pronouns are anaphoric. the sentence "it failed" uses an anaphoric pronoun. the system needs a discourse layer for the anaphora. the research describes cross sentence reference. the ambiguity reappears when the system splits sentences. the ambiguity reappears at cross sentence reference. the first person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronouns are indexical. the second person pronoun refers to the hearer. the first person pronouns and the second person pronouns are never anaphoric. the first person pronouns and the second person pronouns carry no reference ambiguity. instructional prose uses the first person pronouns and the second person pronouns often.
 
   - "the report of the triage shows the frequencies of pronouns": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the pronouns are about 2200 words in the unused forms": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns form a big gap of closed words": STYLE: "form a" — a word mentioned as a word must be quoted: "form \"a\"" (ADR 0018); "form" is a noun in minglish — as a verb use "create" | "the third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the system needs a discourse layer for the anaphora": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the research describes cross sentence reference": WORD: "cross" is not a minglish word | "the ambiguity reappears when the system splits sentences": WORD: "when" is not a minglish word | "the ambiguity reappears at cross sentence reference": WORD: "cross" is not a minglish word | "the first person pronouns are indexical": WORD: "first" is not a minglish word | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word | "the second person pronouns are indexical": WORD: "second" is not a minglish word | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word | "the first person pronouns and the second person pronouns are never anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second, never] | "the first person pronouns and the second person pronouns carry no reference ambiguity": WORD: "first" is not a minglish word [all unknown words: first, second] | "instructional prose uses the first person pronouns and the second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]
 
-**Proposal 21 (rejected, ×1)** — invalid
+**Proposal 26 (rejected, ×1)** — invalid
 
 > GAP: the required meaning involves several concepts (proper names "ud ewt", ordinal "third", ordinal "second", "set", "closed classes", "cross-sentence reference", "indexical", "speaker/hearer", "discourse layer", "resolution") that are not present in the minglish word list and cannot be expressed with the available vocabulary and sentence shapes.
 
   - GAP: the required meaning involves several concepts (proper names "ud ewt", ordinal "third", ordinal "second", "set", "closed classes", "cross-sentence reference", "indexical", "speaker/hearer", "discourse layer", "resolution") that are not present in the minglish word list and cannot be expressed with the available vocabulary and sentence shapes.
 
-**Proposal 22 (rejected, ×1)** — invalid
+**Proposal 27 (rejected, ×1)** — invalid
 
 > GAP: Cannot express "out of vocabulary", "tokens", "third person", "first person", "second person", "refer", "speaker", "hearer", "boundaries", "between", or "that" with the available word list and sentence shapes. The original claims about pronoun classes, anaphoricity, indexicality, and the OOV gap require words and structures not present in minglish.
 
   - GAP: Cannot express "out of vocabulary", "tokens", "third person", "first person", "second person", "refer", "speaker", "hearer", "boundaries", "between", or "that" with the available word list and sentence shapes. The original claims about pronoun classes, anaphoricity, indexicality, and the OOV gap require words and structures not present in minglish.
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: none
+**Proposal 28 (rejected, ×1)** — invalid · drops: none
+
+> the report docs/triage-report.md shows the frequencies of pronouns. the pronouns are about 2200 of the tokens that the parser does not know. the pronouns are a big gap in the closed class words. the pronouns of the third person are anaphoric. the resolution of "it failed" requires a layer of the discourse. the research document describes the ambiguity of the references across sentences. the ambiguity reappears when the parser splits sentences. the pronouns of the first person and the pronouns of the second person are indexical. the pronouns of the first person refer to the speaker. the pronouns of the second person refer to the hearer. the pronouns of the first person and the pronouns of the second person are not anaphoric. the pronouns of the first person and the pronouns of the second person carry no reference ambiguity. the instructional text uses the pronouns of the first person and the pronouns of the second person.
+
+  - "the report docs/triage-report.md shows the frequencies of pronouns": WORD: "docs/triage-report.md" is not a minglish word | "the pronouns are about 2200 of the tokens that the parser does not know": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns are a big gap in the closed class words": STYLE: "class words" — noun-noun compounds are not minglish; write "the words of the class", or one transparent word (ADR 0015) | "the pronouns of the third person are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the resolution of "it failed" requires a layer of the discourse": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the research document describes the ambiguity of the references across sentences": WORD: "across" is not a minglish word — its category PREP is not yet usable in any sentence structure | "the ambiguity reappears when the parser splits sentences": WORD: "when" is not a minglish word | "the pronouns of the first person and the pronouns of the second person are indexical": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "the pronouns of the first person refer to the speaker": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the pronouns of the second person refer to the hearer": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the pronouns of the first person and the pronouns of the second person are not anaphoric": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "the pronouns of the first person and the pronouns of the second person carry no reference ambiguity": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "the instructional text uses the pronouns of the first person and the pronouns of the second person": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second]
+
+**Proposal 29 (rejected, ×1)** — invalid · drops: none
 
 > the report triage against the corpus ud ewt shows that pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed class. the resolution of an anaphoric reference requires a discourse layer. the research found that cross sentence reference is the place where ambiguity reappears. the ambiguity reappears after the system splits sentences. the pronouns i and you are indexical. the pronoun i refers to the speaker. the pronoun you refers to the hearer. the pronouns i and you are never anaphoric. the pronouns i and you carry no reference ambiguity. the instructional prose uses the pronouns i and you constantly.
 
   - "the report triage against the corpus ud ewt shows that pronouns are about 2200 of the unknown tokens": WORD: "against" is not a minglish word — its category PREP is not yet usable in any sentence structure [all unknown words: ud, ewt, that] | "the pronouns are the second largest gap in the closed class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "the resolution of an anaphoric reference requires a discourse layer": WORD: "requires" is not a minglish word | "the research found that cross sentence reference is the place where ambiguity reappears": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, cross, where] | "the ambiguity reappears after the system splits sentences": WORD: "after" is not a minglish word | "the pronouns i and you are indexical": not recognizable as a minglish-like sentence | "the pronoun i refers to the speaker": STYLE: "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the pronoun you refers to the hearer": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018) | "the pronouns i and you are never anaphoric": WORD: "never" is not a minglish word | "the pronouns i and you carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the instructional prose uses the pronouns i and you constantly": WORD: "constantly" is not a minglish word
 
-**Proposal 24 (rejected, ×1)** — invalid
+**Proposal 30 (rejected, ×1)** — invalid
 
 > the report on the ud ewt data shows about 2200 pronouns are in the set of unknown words. the set of pronouns is the second large gap in the closed classes. third person pronouns are anaphoric. an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails. the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences. first person pronouns and second person pronouns are indexical. the indexical pronouns refer to the speaker or the hearer. the indexical pronouns are not anaphoric. the indexical pronouns do not carry ambiguity in reference. instructional prose uses the indexical pronouns often.
 
   - "the report on the ud ewt data shows about 2200 pronouns are in the set of unknown words": WORD: "ud" is not a minglish word [all unknown words: ud, ewt, set, unknown] | "the set of pronouns is the second large gap in the closed classes": WORD: "set" is not a minglish word [all unknown words: set, second, large, closed, classes] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails": WORD: "resolution" is not a minglish word | "the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, cross, reference, as, place, where, after, splits] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the indexical pronouns refer to the speaker or the hearer": WORD: "indexical" is not a minglish word [all unknown words: indexical, refer, speaker, hearer] | "the indexical pronouns are not anaphoric": WORD: "indexical" is not a minglish word | "the indexical pronouns do not carry ambiguity in reference": WORD: "indexical" is not a minglish word [all unknown words: indexical, carry, reference] | "instructional prose uses the indexical pronouns often": WORD: "indexical" is not a minglish word [all unknown words: indexical, often]
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: citation markers, dash typography, hyphenated compounds, parenthetical gloss, register "constantly"
+**Proposal 31 (rejected, ×1)** — invalid · drops: citation markers, dash typography, hyphenated compounds, parenthetical gloss, register "constantly"
 
 > the report triage against ud ewt shows about 2200 pronouns are in the set of unknown words. the set of pronouns is the second large gap in the closed classes. third person pronouns are anaphoric. an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails. the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences. first person pronouns and second person pronouns are indexical. the indexical pronouns refer to the speaker or the hearer. the indexical pronouns are not anaphoric. the indexical pronouns do not carry ambiguity in reference. instructional prose uses the indexical pronouns often.
 
   - "the report triage against ud ewt shows about 2200 pronouns are in the set of unknown words": WORD: "against" is not a minglish word [all unknown words: against, ud, ewt, set, unknown] | "the set of pronouns is the second large gap in the closed classes": WORD: "set" is not a minglish word [all unknown words: set, second, large, closed, classes] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "an anaphoric pronoun needs a discourse layer for the resolution of the sentence the test fails": WORD: "resolution" is not a minglish word | "the research findings describe the cross sentence reference as the place where ambiguity returns after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, cross, reference, as, place, where, after, splits] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the indexical pronouns refer to the speaker or the hearer": WORD: "indexical" is not a minglish word [all unknown words: indexical, refer, speaker, hearer] | "the indexical pronouns are not anaphoric": WORD: "indexical" is not a minglish word | "the indexical pronouns do not carry ambiguity in reference": WORD: "indexical" is not a minglish word [all unknown words: indexical, carry, reference] | "instructional prose uses the indexical pronouns often": WORD: "indexical" is not a minglish word [all unknown words: indexical, often]
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms, ordinal words "first", "second", "third", words "refer", "speaker", "hearer", "never", "often", "carry", "reference", "cross", "unknown", "tokens", "corpus", "resolution", "biggest", "closed", "class", "exact", "location", "reappearance", "after", "split", "indexical"
+**Proposal 32 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms, ordinal words "first", "second", "third", words "refer", "speaker", "hearer", "never", "often", "carry", "reference", "cross", "unknown", "tokens", "corpus", "resolution", "biggest", "closed", "class", "exact", "location", "reappearance", "after", "split", "indexical"
 
 > the report on triage shows pronouns are ~2200 of the words that the parser does not know in the corpus UD EWT. the pronouns are the next biggest gap in the closed words. the pronouns for a person who is not the speaker or the hearer are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. the pronouns for the speaker and the pronouns for the hearer are indexical. the pronouns for the speaker and the pronouns for the hearer refer to the speaker or the hearer. the pronouns for the speaker and the pronouns for the hearer are not anaphoric. the pronouns for the speaker and the pronouns for the hearer have no ambiguity of reference. the instructional prose uses the pronouns for the speaker and the pronouns for the hearer often.
 
   - "the report on triage shows pronouns are ~2200 of the words that the parser does not know in the corpus UD EWT": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, know, corpus] | "the pronouns are the next biggest gap in the closed words": WORD: "next" is not a minglish word [all unknown words: next, biggest, closed] | "the pronouns for a person who is not the speaker or the hearer are anaphoric": WORD: "who" is not a minglish word [all unknown words: who, speaker, hearer] | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "the pronouns for the speaker and the pronouns for the hearer are indexical": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, indexical] | "the pronouns for the speaker and the pronouns for the hearer refer to the speaker or the hearer": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, refer] | "the pronouns for the speaker and the pronouns for the hearer are not anaphoric": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer] | "the pronouns for the speaker and the pronouns for the hearer have no ambiguity of reference": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, reference] | "the instructional prose uses the pronouns for the speaker and the pronouns for the hearer often": WORD: "speaker" is not a minglish word [all unknown words: speaker, hearer, often]
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: markdown formatting, parenthetical citations, hyphenated compounds, dash, token, OOV, closed-class, gap, resolving, discourse layer, our, findings, identify, exactly, where, reappears, after, split, indexical, speaker/hearer, never, carry, reference, text, them, constantly
+**Proposal 33 (rejected, ×1)** — invalid · drops: markdown formatting, parenthetical citations, hyphenated compounds, dash, token, OOV, closed-class, gap, resolving, discourse layer, our, findings, identify, exactly, where, reappears, after, split, indexical, speaker/hearer, never, carry, reference, text, them, constantly
 
 > the report docs/triage-report.md shows that pronouns are about 2200 of the unknown words. pronouns are the second largest closed class gap. third person pronouns are anaphoric. if the parser reads "it failed", then the parser needs a discourse layer. the research findings show that ambiguity reappears after the system splits sentences. the ambiguity reappears at cross sentence reference. first and second person pronouns are indexical. the first person pronoun refers to the speaker. the second person pronoun refers to the hearer. these pronouns are not anaphoric. these pronouns carry no reference ambiguity. instructional prose uses these pronouns.
 
   - "the report docs/triage-report.md shows that pronouns are about 2200 of the unknown words": WORD: "docs/triage-report.md" is not a minglish word [all unknown words: docs/triage-report.md, that, unknown] | "pronouns are the second largest closed class gap": WORD: "second" is not a minglish word [all unknown words: second, largest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "if the parser reads "it failed", then the parser needs a discourse layer": not recognizable as a minglish-like sentence | "the research findings show that ambiguity reappears after the system splits sentences": WORD: "findings" is not a minglish word [all unknown words: findings, that, reappears, after, splits] | "the ambiguity reappears at cross sentence reference": WORD: "reappears" is not a minglish word [all unknown words: reappears, cross, reference] | "first and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the first person pronoun refers to the speaker": WORD: "first" is not a minglish word [all unknown words: first, refers, speaker] | "the second person pronoun refers to the hearer": WORD: "second" is not a minglish word [all unknown words: second, refers, hearer] | "these pronouns are not anaphoric": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "these pronouns carry no reference ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, carry, reference] | "instructional prose uses these pronouns": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: affect (ranking "second largest"), detail (explicit "closed-class" term, "cross-sentence reference" phrasing), register (ordinal numbers used as labels "third person" rewritten to "person 3", "first person" to "person 1")
+**Proposal 34 (rejected, ×1)** — invalid · drops: ordinal (second), superlative (largest), negation adverb (never), frequency adverb (constantly), compound nouns (reference ambiguity, discourse layer, cross sentence reference), demonstrative (this), exact location (exactly where after)
+
+> the triage of the corpus UD-EWT shows pronouns are about 2200 of the unknown tokens. the pronouns are a big gap in the closed class. the i pronoun and the you pronoun are indexical. the i pronoun refers to the speaker. the you pronoun refers to the hearer. the i pronoun and the you pronoun are not anaphoric. the i pronoun and the you pronoun carry no ambiguity of reference. instructional text uses the i pronoun and the you pronoun. the third person pronoun is anaphoric. the sentence "it failed" requires a layer of discourse. the ambiguity reappears at the time when the system splits sentences. the research documents describe the effect.
+
+  - "the triage of the corpus UD-EWT shows pronouns are about 2200 of the unknown tokens": STYLE: "shows … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the pronouns are a big gap in the closed class": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the i pronoun and the you pronoun are indexical": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun refers to the speaker": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the you pronoun refers to the hearer": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun and the you pronoun are not anaphoric": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the i pronoun and the you pronoun carry no ambiguity of reference": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "reference" — a singular noun needs a determiner: "the reference" (mass nouns take "the") | "instructional text uses the i pronoun and the you pronoun": STYLE: "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the third person pronoun is anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the sentence "it failed" requires a layer of discourse": AMBIGUOUS (2 readings): "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit | "the ambiguity reappears at the time when the system splits sentences": WORD: "time" is not a minglish word [all unknown words: time, when] | "the research documents describe the effect": STYLE: "research documents" — noun-noun compounds are not minglish; write "the documents of the research", or one transparent word (ADR 0015)
+
+**Proposal 35 (rejected, ×1)** — invalid · drops: none
+
+> the report docs/triage-report.md shows the frequencies of pronouns. the pronouns are about 2200 of the tokens that the parser does not know. the pronouns are the second biggest gap in the closed class words. the third person pronouns are anaphoric. the resolution of "it failed" requires a discourse layer. the research docs/research/cnl-design-findings.md describes the ambiguity of cross sentence references. the ambiguity reappears after the parser splits sentences. the first person and second person pronouns are indexical. these pronouns refer to the speaker or the hearer. these pronouns are not anaphoric. these pronouns carry no reference ambiguity. the instructional text uses these pronouns often.
+
+  - "the report docs/triage-report.md shows the frequencies of pronouns": WORD: "docs/triage-report.md" is not a minglish word | "the pronouns are about 2200 of the tokens that the parser does not know": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, biggest] | "the third person pronouns are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the resolution of "it failed" requires a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the research docs/research/cnl-design-findings.md describes the ambiguity of cross sentence references": WORD: "docs/research/cnl-design-findings.md" is not a minglish word [all unknown words: docs/research/cnl-design-findings.md, cross] | "the ambiguity reappears after the parser splits sentences": WORD: "after" is not a minglish word | "the first person and second person pronouns are indexical": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second] | "these pronouns refer to the speaker or the hearer": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "these pronouns are not anaphoric": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "these pronouns carry no reference ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the instructional text uses these pronouns often": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, often]
+
+**Proposal 36 (rejected, ×1)** — invalid · drops: affect (ranking "second largest"), detail (explicit "closed-class" term, "cross-sentence reference" phrasing), register (ordinal numbers used as labels "third person" rewritten to "person 3", "first person" to "person 1")
 
 > the triage report shows pronouns are about 2200 of the out of vocabulary tokens. the pronouns are the big gap in the categories that do not grow. person 3 pronouns are anaphoric. the sentence "it failed" needs a discourse layer. the research shows that ambiguity returns at the boundaries between sentences. person 1 pronouns and person 2 pronouns are not anaphoric. person 1 pronouns refer to the speaker. person 2 pronouns refer to the hearer. these pronouns have no ambiguity. instructional prose uses person 1 pronouns and person 2 pronouns often.
 
   - "the triage report shows pronouns are about 2200 of the out of vocabulary tokens": WORD: "out" is not a minglish word [all unknown words: out, vocabulary, tokens] | "the pronouns are the big gap in the categories that do not grow": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "person 3 pronouns are anaphoric": not recognizable as a minglish-like sentence | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows that ambiguity returns at the boundaries between sentences": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, boundaries, between] | "person 1 pronouns and person 2 pronouns are not anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "person 1 pronouns refer to the speaker": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) [all unknown words: refer, speaker] | "person 2 pronouns refer to the hearer": WORD: "refer" is not a minglish word [all unknown words: refer, hearer] | "these pronouns have no ambiguity": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "instructional prose uses person 1 pronouns and person 2 pronouns often": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms
+**Proposal 37 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose, comma intonations, relative clauses, gerund forms
 
 > the report on triage shows pronouns are ~2200 of the unknown tokens in the corpus UD EWT. the pronouns are the second biggest gap in the closed class words. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. first person pronouns and second person pronouns are indexical. first person pronouns and second person pronouns refer to the speaker or the hearer. first person pronouns and second person pronouns are never anaphoric. first person pronouns and second person pronouns carry no ambiguity of reference. the instructional prose uses first person pronouns and second person pronouns often.
 
   - "the report on triage shows pronouns are ~2200 of the unknown tokens in the corpus UD EWT": WORD: "unknown" is not a minglish word [all unknown words: unknown, tokens, corpus] | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is not a minglish word [all unknown words: second, biggest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "first person pronouns and second person pronouns refer to the speaker or the hearer": WORD: "first" is not a minglish word [all unknown words: first, second, refer, speaker, hearer] | "first person pronouns and second person pronouns are never anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second, never] | "first person pronouns and second person pronouns carry no ambiguity of reference": WORD: "first" is not a minglish word [all unknown words: first, second, carry, reference] | "the instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class"
+**Proposal 38 (rejected, ×1)** — invalid · drops: ud ewt reference, document reference, hyphenated compounds, ordinal words, "findings", "text", "constantly", "closed class"
 
 > the report on triage shows pronouns have about 2200 of the unknown words. the gap is large. the pronouns for person 3 are anaphoric. the sentence "it failed" needs a discourse layer. the research describes cross sentence reference. cross sentence reference is the place where ambiguity comes back after the tool splits sentences. the pronouns for person 1 and person 2 are indexical. the pronouns for person 1 and person 2 refer to the speaker or the hearer. the pronouns for person 1 and person 2 are never anaphoric. the pronouns for person 1 and person 2 carry no ambiguity. instructional prose uses the pronouns for person 1 and person 2.
 
   - "the report on triage shows pronouns have about 2200 of the unknown words": WORD: "unknown" is not a minglish word | "the gap is large": WORD: "large" is not a minglish word | "the pronouns for person 3 are anaphoric": not recognizable as a minglish-like sentence | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research describes cross sentence reference": WORD: "cross" is not a minglish word [all unknown words: cross, reference] | "cross sentence reference is the place where ambiguity comes back after the tool splits sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, place, where, back, after, splits] | "the pronouns for person 1 and person 2 are indexical": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns for person 1 and person 2 refer to the speaker or the hearer": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) [all unknown words: refer, speaker, hearer] | "the pronouns for person 1 and person 2 are never anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns for person 1 and person 2 carry no ambiguity": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "instructional prose uses the pronouns for person 1 and person 2": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: register (bracketed citations, hyphenated compounds, "against"), affect (explanation of "second-largest" as a gap type), detail (explicit mention of "UD-EWT" corpus name and document paths)
+**Proposal 39 (rejected, ×1)** — invalid · drops: register (bracketed citations, hyphenated compounds, "against"), affect (explanation of "second-largest" as a gap type), detail (explicit mention of "UD-EWT" corpus name and document paths)
 
 > the triage report shows pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed categories. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer. the research shows cross sentence reference is the place where ambiguity returns after a split. first person pronouns and second person pronouns are indexical. these pronouns refer to the speaker or the hearer. the pronouns have no reference ambiguity. instructional prose uses first person pronouns and second person pronouns often.
 
   - "the triage report shows pronouns are about 2200 of the unknown tokens": WORD: "unknown" is not a minglish word [all unknown words: unknown, tokens] | "the pronouns are the second largest gap in the closed categories": WORD: "second" is not a minglish word [all unknown words: second, largest, closed] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer": not recognizable as a minglish-like sentence | "the research shows cross sentence reference is the place where ambiguity returns after a split": WORD: "cross" is not a minglish word [all unknown words: cross, reference, place, where, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "these pronouns refer to the speaker or the hearer": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, refer, speaker, hearer] | "the pronouns have no reference ambiguity": WORD: "reference" is not a minglish word | "instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: tone (directness), hyphenated compounds, register (academic), structural compactness
+**Proposal 40 (rejected, ×1)** — invalid · drops: tone (directness), hyphenated compounds, register (academic), structural compactness
 
 > the report triage of the repository shows the test set of the tool UD-EWT has about 2200 unknown words. the pronouns are the second common gap in the generated class of words. the pronouns of the third person are anaphoric. the discourse layer must resolve the reference of the sentence "it failed". the research findings of the team show the ambiguity reappears in the cross sentence reference after the system splits the sentences. the pronouns of the first person and the pronouns of the second person are indexical. the pronouns of the first person and the pronouns of the second person are not anaphoric. the pronouns of the first person and the pronouns of the second person carry no ambiguity of reference. the instructional prose uses the pronouns of the first person and the pronouns of the second person.
 
   - "the report triage of the repository shows the test set of the tool UD-EWT has about 2200 unknown words": WORD: "set" is not a minglish word [all unknown words: set, unknown] | "the pronouns are the second common gap in the generated class of words": WORD: "second" is not a minglish word [all unknown words: second, class] | "the pronouns of the third person are anaphoric": WORD: "third" is not a minglish word | "the discourse layer must resolve the reference of the sentence "it failed"": WORD: "resolve" is not a minglish word [all unknown words: resolve, reference] | "the research findings of the team show the ambiguity reappears in the cross sentence reference after the system splits the sentences": WORD: "findings" is not a minglish word [all unknown words: findings, reappears, cross, reference, after, splits] | "the pronouns of the first person and the pronouns of the second person are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "the pronouns of the first person and the pronouns of the second person are not anaphoric": WORD: "first" is not a minglish word [all unknown words: first, second] | "the pronouns of the first person and the pronouns of the second person carry no ambiguity of reference": WORD: "first" is not a minglish word [all unknown words: first, second, carry, reference] | "the instructional prose uses the pronouns of the first person and the pronouns of the second person": WORD: "first" is not a minglish word [all unknown words: first, second]
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: ordinal numbers, academic register, precision of "cross-sentence"
+**Proposal 41 (rejected, ×1)** — invalid · drops: register (parenthetical citations, dash), affect (hedging "about"), quotation marks around cited phrase
+
+> the report triage against the corpus UD-EWT shows pronouns are about 2200 of the unknown tokens. the pronouns are the second largest gap in the closed class. i pronouns and you pronouns are indexical. i refers to the speaker. you refers to the hearer. i pronouns and you pronouns are never anaphoric. i pronouns and you pronouns carry no reference ambiguity. instructional text uses i and you constantly. third person pronouns are anaphoric. the sentence "it failed" requires a discourse layer. cross sentence reference is exactly the place where ambiguity reappears after the system splits sentences. the research documents describe this effect.
+
+  - "the report triage against the corpus UD-EWT shows pronouns are about 2200 of the unknown tokens": WORD: "against" is not a minglish word — its category PREP is not yet usable in any sentence structure | "the pronouns are the second largest gap in the closed class": WORD: "second" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: second, largest] | "i pronouns and you pronouns are indexical": not recognizable as a minglish-like sentence | "i refers to the speaker": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you refers to the hearer": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "i pronouns and you pronouns are never anaphoric": WORD: "never" is not a minglish word | "i pronouns and you pronouns carry no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "instructional text uses i and you constantly": WORD: "constantly" is not a minglish word | "third person pronouns are anaphoric": WORD: "third" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the sentence "it failed" requires a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "cross sentence reference is exactly the place where ambiguity reappears after the system splits sentences": WORD: "cross" is not a minglish word [all unknown words: cross, exactly, where, after] | "the research documents describe this effect": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
+
+**Proposal 42 (rejected, ×1)** — invalid · drops: ordinal numbers, academic register, precision of "cross-sentence"
 
 > the triage report shows about 2200 words are unknown in the test data of the tool UD-EWT. the pronouns are the second common gap in the generated words. the pronouns of person 3 are anaphoric. the discourse layer must find the meaning of the sentence "it failed". the research shows the ambiguity appears in the sentence reference after the system splits the sentences. the pronouns of person 1 and the pronouns of person 2 are not anaphoric. the pronouns of person 1 and the pronouns of person 2 have no ambiguity. the instructional prose uses the pronouns of person 1 and the pronouns of person 2.
 
   - "the triage report shows about 2200 words are unknown in the test data of the tool UD-EWT": WORD: "unknown" is not a minglish word | "the pronouns are the second common gap in the generated words": WORD: "second" is not a minglish word | "the pronouns of person 3 are anaphoric": not recognizable as a minglish-like sentence | "the discourse layer must find the meaning of the sentence "it failed"": WORD: "meaning" is not a minglish word | "the research shows the ambiguity appears in the sentence reference after the system splits the sentences": WORD: "appears" is not a minglish word [all unknown words: appears, reference, after, splits] | "the pronouns of person 1 and the pronouns of person 2 are not anaphoric": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the pronouns of person 1 and the pronouns of person 2 have no ambiguity": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "the instructional prose uses the pronouns of person 1 and the pronouns of person 2": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016)
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: ordinal numbers, academic register, precision of "cross-sentence"
+**Proposal 43 (rejected, ×1)** — invalid · drops: ordinal numbers, academic register, precision of "cross-sentence"
 
 > the triage report shows about 2200 words are not known in the test data of the tool UD-EWT. the pronouns are the next common gap in the generated words. the pronouns of person three are anaphoric. the discourse layer must find the referent of the sentence "it failed". the research shows the ambiguity appears in the cross sentence reference after the system splits the sentences. the pronouns of person one and the pronouns of person two are not anaphoric. the pronouns of person one and the pronouns of person two have no ambiguity. the instructional prose uses the pronouns of person one and the pronouns of person two.
 
   - "the triage report shows about 2200 words are not known in the test data of the tool UD-EWT": WORD: "known" is not a minglish word | "the pronouns are the next common gap in the generated words": WORD: "next" is not a minglish word | "the pronouns of person three are anaphoric": WORD: "three" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the discourse layer must find the referent of the sentence "it failed"": WORD: "referent" is not a minglish word | "the research shows the ambiguity appears in the cross sentence reference after the system splits the sentences": WORD: "appears" is not a minglish word [all unknown words: appears, cross, reference, after, splits] | "the pronouns of person one and the pronouns of person two are not anaphoric": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the pronouns of person one and the pronouns of person two have no ambiguity": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022) | "the instructional prose uses the pronouns of person one and the pronouns of person two": WORD: "two" is banned in minglish — counts are digits: write "3 files", not "three files" (ADR 0022)
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: parenthetical glosses, hyphenated modifier, dash, colon, semicolon
+**Proposal 44 (rejected, ×1)** — invalid · drops: parenthetical glosses, hyphenated modifier, dash, colon, semicolon
 
 > the report "docs/triage-report.md" shows the gap of pronouns is about 2200 of the out-of-vocabulary tokens. the gap of pronouns is the second largest closed-class gap. pronouns for a person who is not the speaker or the hearer are anaphoric. for example the sentence "it failed" requires a discourse layer to resolve the pronoun. the research findings in "docs/research/cnl-design-findings.md" identify cross-sentence reference as the place where ambiguity reappears after the parser splits sentences. pronouns for the speaker and the hearer are indexical. indexical pronouns are never anaphoric. indexical pronouns carry no reference ambiguity. instructional text uses indexical pronouns constantly.
 
   - "the report "docs/triage-report.md" shows the gap of pronouns is about 2200 of the out-of-vocabulary tokens": WORD: "pronouns" is not a minglish word | "the gap of pronouns is the second largest closed-class gap": WORD: "pronouns" is not a minglish word | "pronouns for a person who is not the speaker or the hearer are anaphoric": WORD: "pronouns" is not a minglish word | "for example the sentence "it failed" requires a discourse layer to resolve the pronoun": WORD: "example" is not a minglish word | "the research findings in "docs/research/cnl-design-findings.md" identify cross-sentence reference as the place where ambiguity reappears after the parser splits sentences": WORD: "findings" is not a minglish word | "pronouns for the speaker and the hearer are indexical": WORD: "pronouns" is not a minglish word | "indexical pronouns are never anaphoric": WORD: "indexical" is not a minglish word | "indexical pronouns carry no reference ambiguity": WORD: "indexical" is not a minglish word | "instructional text uses indexical pronouns constantly": WORD: "instructional" is not a minglish word
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose
+**Proposal 45 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound "second-largest", dash punctuation, hyphenated phrase "closed-class", quote marks around example, hyphenated "cross-sentence", hyphenated "third-person", "our" possessive, "findings" noun, "identify" verb, "reappears" verb, "split" verb, "carry" verb, "constantly" adverb, "never" adverb, register of formal academic prose
 
 > the triage report shows pronouns are about 2,200 of the unknown tokens in the corpus UD EWT. the pronouns are the second biggest gap in the closed class words. third person pronouns are anaphoric. the sentence "it failed" needs a discourse layer for the resolution of the anaphora. the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences. first person pronouns and second person pronouns are indexical. they refer to the speaker or the hearer. they are never anaphoric. they carry no ambiguity of reference. the instructional prose uses first person pronouns and second person pronouns often.
 
   - "the triage report shows pronouns are about 2,200 of the unknown tokens in the corpus UD EWT": WORD: "2,200" is not a minglish word [all unknown words: 2,200, unknown, tokens, corpus] | "the pronouns are the second biggest gap in the closed class words": WORD: "second" is not a minglish word [all unknown words: second, biggest, closed, class] | "third person pronouns are anaphoric": WORD: "third" is not a minglish word | "the sentence "it failed" needs a discourse layer for the resolution of the anaphora": WORD: "resolution" is not a minglish word | "the research describes cross sentence reference as the exact location of the reappearance of the ambiguity after the split of sentences": WORD: "cross" is not a minglish word [all unknown words: cross, reference, as, exact, location, reappearance, after, split] | "first person pronouns and second person pronouns are indexical": WORD: "first" is not a minglish word [all unknown words: first, second, indexical] | "they refer to the speaker or the hearer": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, refer, speaker, hearer] | "they are never anaphoric": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, never] | "they carry no ambiguity of reference": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: they, carry, reference] | "the instructional prose uses first person pronouns and second person pronouns often": WORD: "first" is not a minglish word [all unknown words: first, second, often]
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: parenthetical citations, dash, hyphenated compounds, register of "triage" as a noun, "anaphoric" as a technical term, "indexical" as a technical term, "closed-class", "OOV", "token", "discourse layer", "cross-sentence reference", "speaker/hearer" notation
+**Proposal 46 (rejected, ×1)** — invalid · drops: parenthetical citations, dash, hyphenated compounds, register of "triage" as a noun, "anaphoric" as a technical term, "indexical" as a technical term, "closed-class", "OOV", "token", "discourse layer", "cross-sentence reference", "speaker/hearer" notation
 
 > the report in docs/triage-report.md shows the frequencies of tokens from the ud-ewt corpus. the pronouns are about 2200 of the tokens that the parser does not know. the pronouns form the second-largest closed-class gap. the pronouns for the speaker and the hearer refer to the speaker and the hearer. the pronouns for the speaker and the hearer never refer to a prior noun. the pronouns for the speaker and the hearer carry no reference ambiguity. the instructional text uses the pronouns for the speaker and the hearer constantly. the pronouns for a third person refer to a prior noun. the resolution of the pronoun for a third person requires a discourse layer. the research findings identify cross-sentence reference as the point where ambiguity reappears after the system splits the sentences. the document docs/research/cnl-design-findings.md describes the finding. the finding states that ambiguity migrates.
 
   - "the report in docs/triage-report.md shows the frequencies of tokens from the ud-ewt corpus": WORD: "docs/triage-report.md" is not a minglish word | "the pronouns are about 2200 of the tokens that the parser does not know": WORD: "pronouns" is not a minglish word | "the pronouns form the second-largest closed-class gap": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer refer to the speaker and the hearer": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer never refer to a prior noun": WORD: "pronouns" is not a minglish word | "the pronouns for the speaker and the hearer carry no reference ambiguity": WORD: "pronouns" is not a minglish word | "the instructional text uses the pronouns for the speaker and the hearer constantly": WORD: "instructional" is not a minglish word | "the pronouns for a third person refer to a prior noun": WORD: "pronouns" is not a minglish word | "the resolution of the pronoun for a third person requires a discourse layer": WORD: "resolution" is not a minglish word | "the research findings identify cross-sentence reference as the point where ambiguity reappears after the system splits the sentences": WORD: "findings" is not a minglish word | "the document docs/research/cnl-design-findings.md describes the finding": WORD: "document" is not a minglish word | "the finding states that ambiguity migrates": WORD: "states" is not a minglish word
 
-**Proposal 38 (rejected, ×1)** — invalid · drops: register of triage/paper genre, hyphenated compound adjectives, parenthetical citations, dash-connective, "anaphoric" and "indexical" technical terms, "discourse layer" concept, "OOV" abbreviation, "UD-EWT" corpus name, "docs/" path references, percentage approximation "~", "second-largest" comparison, "resolving" gerund, "constantly" adverb
+**Proposal 47 (rejected, ×1)** — invalid · drops: register of triage/paper genre, hyphenated compound adjectives, parenthetical citations, dash-connective, "anaphoric" and "indexical" technical terms, "discourse layer" concept, "OOV" abbreviation, "UD-EWT" corpus name, "docs/" path references, percentage approximation "~", "second-largest" comparison, "resolving" gerund, "constantly" adverb
 
 > the triage report shows pronouns are about 2200 of the out of vocabulary tokens. the pronouns are the second largest closed class gap. pronouns for the speaker or the hearer are not anaphoric. pronouns for the speaker or the hearer carry no reference ambiguities. instructional text uses pronouns for the speaker and the hearer often. the research findings show cross sentence reference is the location where ambiguity reappears after the process splits sentences.
 
   - "the triage report shows pronouns are about 2200 of the out of vocabulary tokens": WORD: "triage" is not a minglish word | "the pronouns are the second largest closed class gap": WORD: "pronouns" is not a minglish word | "pronouns for the speaker or the hearer are not anaphoric": WORD: "pronouns" is not a minglish word | "pronouns for the speaker or the hearer carry no reference ambiguities": WORD: "pronouns" is not a minglish word | "instructional text uses pronouns for the speaker and the hearer often": WORD: "instructional" is not a minglish word | "the research findings show cross sentence reference is the location where ambiguity reappears after the process splits sentences": WORD: "findings" is not a minglish word
 
-**Proposal 39 (rejected, ×1)** — invalid · drops: dashes, parentheses, document references, percentage symbols, hyphenated compounds, register "but"
+**Proposal 48 (rejected, ×1)** — invalid · drops: dashes, parentheses, document references, percentage symbols, hyphenated compounds, register "but"
 
 > the report on triage against ud ewt shows pronouns have about 2200 of the out of vocabulary tokens. the gap is the second largest closed class gap. the pronouns for the third person are anaphoric. the sentence "it failed" needs a discourse layer. the research findings describe cross sentence reference. this reference is the place where ambiguity reappears after the tool splits sentences. the pronouns for the first person and the second person are indexical. they refer to the speaker or the hearer. they are never anaphoric. they carry no reference ambiguity. instructional text uses the pronouns for the first person and the second person constantly.
 
@@ -258,223 +312,277 @@ verdict: `unreviewed`
 
 > the linter bans anaphoric pronouns. the linter bans demonstratives. the writer repeats the noun.
 
-**Proposal 3 (rejected, ×1)** — invalid · drops: compactness, list style
+**Proposal 3 (rejected, ×1)** — invalid · drops: conciseness
+
+> the linter bans anaphoric pronouns. the linter bans demonstratives. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the linter bans the object forms of the pronouns. the linter bans the possessive forms of the pronouns. the writer repeats the noun.
+
+  - "the linter bans the object forms of the pronouns": STYLE: "object forms" — noun-noun compounds are not minglish; write "the forms of the object", or one transparent word (ADR 0015)
+
+**Proposal 4 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns. "it" is an anaphoric pronoun. "they" is an anaphoric pronoun. "he" is an anaphoric pronoun. "she" is an anaphoric pronoun. the tool Lexgen bans demonstratives. "this" is a demonstrative. "that" is a demonstrative. "these" is a demonstrative. "those" is a demonstrative. the ban contains object forms of these words. the ban contains possessive forms of these words. the writer repeats the noun.
+
+  - "the ban contains object forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the ban contains possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
+
+**Proposal 5 (rejected, ×1)** — invalid · drops: compactness, list style
 
 > the tool Lexgen bans anaphoric pronouns. the tool bans pronominal demonstratives. the tool bans "it". the tool bans "they". the tool bans "he". the tool bans "she". the tool bans "this". the tool bans "that". the tool bans "these". the tool bans "those". the tool bans the forms of "this". the tool bans the forms of "that". the tool bans the forms of "these". the tool bans the forms of "those". the writer repeats the noun. the writer does not use anaphoric pronouns. the writer does not use demonstratives.
 
   - "the tool bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans the forms of "this"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "that"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "these"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool bans the forms of "those"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit
 
-**Proposal 4 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
 
   - "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, object, possessive]
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: none
+**Proposal 7 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen does not use pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, and those. the tool Lexgen does not use the object forms of these words. the tool Lexgen does not use the possessive forms of these words. the writer repeats the noun. the writer does not use the pronouns.
 
   - "the tool Lexgen does not use the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the tool Lexgen does not use the object forms of these words": WORD: "object" is not a minglish word [all unknown words: object, these] | "the tool Lexgen does not use the possessive forms of these words": WORD: "possessive" is not a minglish word [all unknown words: possessive, these]
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: none
+**Proposal 8 (rejected, ×1)** — invalid · drops: none
 
 > the linter rejects anaphoric pronouns. the linter rejects the words it, they, he, she, this, that, these, and those. the linter rejects the forms of these words. the writer repeats the noun.
 
   - "the linter rejects the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the linter rejects the forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 7 (rejected, ×1)** — invalid · drops: none
+**Proposal 9 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use pronominal demonstratives. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
 
   - "the tool Lexgen does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, object, possessive]
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: none
+**Proposal 10 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns. anaphoric pronouns are "it" and "they" and "he" and "she". the tool Lexgen bans demonstratives. demonstratives are "this" and "that" and "these" and "those". the ban includes object forms and possessive forms of these words. the writer repeats the noun.
+
+  - "anaphoric pronouns are "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "includes" is not a minglish word [all unknown words: includes, these]
+
+**Proposal 11 (rejected, ×1)** — invalid · drops: none
 
 > the linter bans anaphoric pronouns and demonstratives. the writer repeats the noun.
 
   - "the linter bans anaphoric pronouns and demonstratives": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: none
+**Proposal 12 (rejected, ×1)** — invalid · drops: none
 
 > the linter bans anaphoric pronouns and demonstrative pronouns. the writer repeats the noun.
 
   - "the linter bans anaphoric pronouns and demonstrative pronouns": STYLE: "demonstrative pronouns" — noun-noun compounds are not minglish; write "the pronouns of the demonstrative", or one transparent word (ADR 0015)
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: none
+**Proposal 13 (rejected, ×1)** — invalid · drops: none
 
 > the linter bans anaphoric pronouns and pronominal demonstratives. the writer repeats the noun.
 
   - "the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: none
+**Proposal 14 (rejected, ×1)** — invalid · drops: none
 
 > the linter bans anaphoric pronouns and the pronouns of the demonstrative. the writer repeats the noun.
 
   - "the linter bans anaphoric pronouns and the pronouns of the demonstrative": not recognizable as a minglish-like sentence
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
 
 > the linter bans every anaphoric pronoun and every pronominal demonstrative. the writer repeats the noun.
 
   - "the linter bans every anaphoric pronoun and every pronominal demonstrative": WORD: "pronominal" is not a minglish word
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention
+**Proposal 16 (rejected, ×1)** — invalid · drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention
 
 > the rule does not allow anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are i and you and the forms of i and you. pronominal demonstratives are the forms of this and that. the writer repeats the noun. the writer does not use a pronoun.
 
   - "the rule does not allow anaphoric pronouns and pronominal demonstratives": WORD: "allow" is not a minglish word [all unknown words: allow, pronominal, demonstratives] | "anaphoric pronouns are i and you and the forms of i and you": not recognizable as a minglish-like sentence | "pronominal demonstratives are the forms of this and that": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives, this, that]
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: imperative tone, parenthetical list, possessive forms mention, object/possessive forms mention
+**Proposal 17 (rejected, ×1)** — invalid · drops: imperative tone, parenthetical list, possessive forms mention, object/possessive forms mention
 
 > the rule bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are i, he, she, they, and their forms. pronominal demonstratives are this, that, these, and those. the writer repeats the noun. the writer does not use a pronoun.
 
   - "the rule bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "anaphoric pronouns are i, he, she, they, and their forms": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: he, she, they, their] | "pronominal demonstratives are this, that, these, and those": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives, this, that, these, those]
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: none
+**Proposal 18 (rejected, ×1)** — invalid · drops: none
 
 > the linter rejects anaphoric pronouns. the linter rejects demonstrative pronouns. the words it, they, he, she, this, that, these, and those are not allowed. the object forms and possessive forms of these words are also not allowed. the writer repeats the noun.
 
   - "the linter rejects demonstrative pronouns": WORD: "demonstrative" is not a minglish word | "the words it, they, he, she, this, that, these, and those are not allowed": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, allowed] | "the object forms and possessive forms of these words are also not allowed": WORD: "object" is not a minglish word [all unknown words: object, possessive, these, also, allowed]
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 19 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the tool bans "it" and "they" and "he" and "she". the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those". the writer repeats the noun. the writer does not use anaphoric pronouns. the writer does not use pronominal demonstratives.
 
   - "the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the writer does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention, copular list structure
+**Proposal 20 (rejected, ×1)** — invalid · drops: third-person pronoun examples, list of demonstratives, possessive forms mention, object/possessive forms mention, copular list structure
 
 > the rule rejects anaphoric pronouns and pronominal demonstratives. i and you are anaphoric pronouns. the forms of i and you are anaphoric pronouns. the forms of this and that are pronominal demonstratives. the writer repeats the noun. the writer does not use a pronoun.
 
   - "the rule rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "i and you are anaphoric pronouns": not recognizable as a minglish-like sentence | "the forms of i and you are anaphoric pronouns": not recognizable as a minglish-like sentence | "the forms of this and that are pronominal demonstratives": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, that, pronominal, demonstratives]
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: <none>
+**Proposal 21 (rejected, ×1)** — invalid · drops: <none>
 
 > the tool lexgen bans pronouns and demonstratives. the writer repeats a noun. the writer does not use a pronoun or a demonstrative.
 
   - "the tool lexgen bans pronouns and demonstratives": WORD: "lexgen" is not a minglish word | "the writer does not use a pronoun or a demonstrative": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: <none>
+**Proposal 22 (rejected, ×1)** — invalid · drops: <none>
 
 > the tool lexgen bans anaphoric pronouns and pronominal demonstratives. the writer repeats a noun. the writer does not use an anaphoric pronoun or a pronominal demonstrative.
 
   - "the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "the writer does not use an anaphoric pronoun or a pronominal demonstrative": WORD: "pronominal" is not a minglish word
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: none
+**Proposal 23 (rejected, ×1)** — invalid · drops: none
+
+> the linter bans anaphoric pronouns and demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words. the writer repeats the noun.
+
+  - "the linter bans anaphoric pronouns and demonstratives": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words": STYLE: "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence
+
+**Proposal 24 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns and demonstrative words. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words. the writer repeats the noun.
+
+  - "the tool Lexgen bans anaphoric pronouns and demonstrative words": STYLE: "demonstrative words" — noun-noun compounds are not minglish; write "the words of the demonstrative", or one transparent word (ADR 0015); "demonstrative" — a singular noun needs a determiner: "the demonstrative" (mass nouns take "the") | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words": STYLE: "banned … are" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "object forms" — noun-noun compounds are not minglish; write "the forms of the object", or one transparent word (ADR 0015); "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence
+
+**Proposal 25 (rejected, ×1)** — invalid · drops: none
 
 > the linter rejects anaphoric pronouns and pronominal demonstratives. the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words. the writer repeats the noun.
 
   - "the linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words": WORD: "bans" is not a minglish word [all unknown words: bans, it, they, he, she, this, that, these, those, object, possessive]
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: none
+**Proposal 26 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans every anaphoric pronoun. the tool Lexgen bans every demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the demonstratives are "this", "that", "these", "those". the tool Lexgen bans the object form of every anaphoric pronoun. the tool Lexgen bans the possessive form of every anaphoric pronoun. the tool Lexgen bans the object form of every demonstrative. the tool Lexgen bans the possessive form of every demonstrative. the writer repeats the noun.
 
   - "the anaphoric pronouns are "it", "they", "he", "she"": not recognizable as a minglish-like sentence | "the demonstratives are "this", "that", "these", "those"": not recognizable as a minglish-like sentence | "the tool Lexgen bans the object form of every anaphoric pronoun": STYLE: "object form" — noun-noun compounds are not minglish; write "the form of the object", or one transparent word (ADR 0015) | "the tool Lexgen bans the possessive form of every anaphoric pronoun": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool Lexgen bans the object form of every demonstrative": STYLE: "object form" — noun-noun compounds are not minglish; write "the form of the object", or one transparent word (ADR 0015) | "the tool Lexgen bans the possessive form of every demonstrative": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: none
+**Proposal 27 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans every anaphoric pronoun and every pronoun of the demonstrative. every banned word is "it", "they", "he", "she", "this", "that", "these", or "those". the writer repeats the noun.
 
   - "the tool Lexgen bans every anaphoric pronoun and every pronoun of the demonstrative": not recognizable as a minglish-like sentence | "every banned word is "it", "they", "he", "she", "this", "that", "these", or "those"": not recognizable as a minglish-like sentence
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: none
+**Proposal 28 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and their object and possessive forms. the writer repeats the noun.
 
   - "the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and their object and possessive forms": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: none
+**Proposal 29 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words. the writer repeats the noun.
+
+  - "the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
+
+**Proposal 30 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans every anaphoric pronoun and every demonstrative pronoun. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of "it", "they", "he", "she", "this", "that", "these", "those". the writer repeats the noun.
 
   - "the tool Lexgen bans every anaphoric pronoun and every demonstrative pronoun": STYLE: "demonstrative pronoun" — noun-noun compounds are not minglish; write "the pronoun of the demonstrative", or one transparent word (ADR 0015) | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of "it", "they", "he", "she", "this", "that", "these", "those"": not recognizable as a minglish-like sentence
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: none
+**Proposal 31 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
 
   - "the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, it, they, he, she, this, that, these, those, object, possessive] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: none
+**Proposal 32 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
 
   - "the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstratives] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, it, they, he, she, this, that, these, those, object, possessive] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: none
+**Proposal 33 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns and the words of the demonstrative. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their". the linter also bans the forms of the object and the forms of the possessive of the banned pronouns. the writer repeats the noun.
+
+  - "the tool Lexgen bans anaphoric pronouns and the words of the demonstrative": not recognizable as a minglish-like sentence | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their"": not recognizable as a minglish-like sentence | "the linter also bans the forms of the object and the forms of the possessive of the banned pronouns": WORD: "also" is not a minglish word
+
+**Proposal 34 (rejected, ×1)** — invalid · drops: none
 
 > every anaphoric pronoun is banned. every pronominal demonstrative is banned. the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
 
   - "every anaphoric pronoun is banned": WORD: "banned" is not a minglish word | "every pronominal demonstrative is banned": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstrative, banned] | "the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "banned" is not a minglish word [all unknown words: banned, include, it, they, he, she, this, that, these, those, object, possessive]
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: formality, listing style, inclusive mention of inflections
+**Proposal 35 (rejected, ×1)** — invalid · drops: formality, listing style, inclusive mention of inflections
 
 > the tool lexgen bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns include "it" and "they" and "he" and "she". pronominal demonstratives include "this" and "that" and "these" and "those" and their forms. the writer repeats the noun. the writer does not use these words.
 
   - "the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "anaphoric pronouns include "it" and "they" and "he" and "she"": WORD: "include" is not a minglish word | "pronominal demonstratives include "this" and "that" and "these" and "those" and their forms": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, include, their] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: none
+**Proposal 36 (rejected, ×1)** — invalid · drops: none
 
 > the rule bans anaphoric pronouns. the rule bans pronominal demonstratives. the anaphoric pronouns are it, they, he, she, this, that, these, those. the rule also bans the object forms and possessive forms of these words. the writer repeats the noun.
 
   - "the rule bans anaphoric pronouns": WORD: "bans" is not a minglish word | "the rule bans pronominal demonstratives": WORD: "bans" is not a minglish word [all unknown words: bans, pronominal, demonstratives] | "the anaphoric pronouns are it, they, he, she, this, that, these, those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule also bans the object forms and possessive forms of these words": WORD: "also" is not a minglish word [all unknown words: also, bans, object, possessive, these]
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: none
+**Proposal 37 (rejected, ×1)** — invalid · drops: none
 
 > the rule prohibits anaphoric pronouns. the rule prohibits pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule prohibits the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
 
   - "the rule prohibits anaphoric pronouns": WORD: "prohibits" is not a minglish word | "the rule prohibits pronominal demonstratives": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, pronominal, demonstratives] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule prohibits the object forms and possessive forms of the anaphoric pronouns": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, object, possessive]
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: none
+**Proposal 38 (rejected, ×1)** — invalid · drops: none
+
+> the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are "it", "they", "he", "she". pronominal demonstratives are "this", "that", "these", "those". the ban covers the object forms and the possessive forms of these words. the writer repeats the noun.
+
+  - "the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are "it", "they", "he", "she"": not recognizable as a minglish-like sentence | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "covers" is not a minglish word [all unknown words: covers, these]
+
+**Proposal 39 (rejected, ×1)** — invalid · drops: none
 
 > the rule does not allow anaphoric pronouns. the rule does not allow pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule does not allow the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
 
   - "the rule does not allow anaphoric pronouns": WORD: "allow" is not a minglish word | "the rule does not allow pronominal demonstratives": WORD: "allow" is not a minglish word [all unknown words: allow, pronominal, demonstratives] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule does not allow the object forms and possessive forms of the anaphoric pronouns": WORD: "allow" is not a minglish word [all unknown words: allow, object, possessive]
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: none
+**Proposal 40 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans every anaphoric pronoun and every demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the demonstratives are "this", "that", "these", "those". the tool Lexgen bans the object forms and the possessive forms of every anaphoric pronoun and every demonstrative. the writer repeats the noun.
 
   - "the tool Lexgen bans every anaphoric pronoun and every demonstrative": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the anaphoric pronouns are "it", "they", "he", "she"": not recognizable as a minglish-like sentence | "the demonstratives are "this", "that", "these", "those"": not recognizable as a minglish-like sentence | "the tool Lexgen bans the object forms and the possessive forms of every anaphoric pronoun and every demonstrative": STYLE: "object forms" — noun-noun compounds are not minglish; write "the forms of the object", or one transparent word (ADR 0015); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: none
+**Proposal 41 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen bans every anaphoric pronoun and every pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the tool Lexgen also bans the object forms and the possessive forms of every anaphoric pronoun and every pronominal demonstrative. the writer repeats the noun.
 
   - "the tool Lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are "it", "they", "he", "she"": not recognizable as a minglish-like sentence | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the tool Lexgen also bans the object forms and the possessive forms of every anaphoric pronoun and every pronominal demonstrative": WORD: "also" is not a minglish word [all unknown words: also, pronominal]
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: list format, parentheses, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification
+**Proposal 42 (rejected, ×1)** — invalid · drops: list format, parentheses, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification
 
 > the person writes the noun. the writer does not use an anaphoric pronoun. the writer does not use a pronominal demonstrative. i does not refer to an entity. you does not refer to an entity. my refers to the writer. your refers to the reader. the tool Linter rejects a sentence with an anaphoric pronoun. the tool Linter rejects a sentence with a pronominal demonstrative. the tool Linter rejects a sentence with the word it. the tool Linter rejects a sentence with the word they. the tool Linter rejects a sentence with the word he. the tool Linter rejects a sentence with the word she. the tool Linter rejects a sentence with the word this. the tool Linter rejects a sentence with the word that. the tool Linter rejects a sentence with the word these. the tool Linter rejects a sentence with the word those. the tool Linter rejects a sentence with the word their. the tool Linter rejects a sentence with the word its. the tool Linter rejects a sentence with the word his. the tool Linter rejects a sentence with the word hers.
 
   - "the writer does not use a pronominal demonstrative": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, demonstrative] | "i does not refer to an entity": WORD: "refer" is not a minglish word [all unknown words: refer, entity] | "you does not refer to an entity": WORD: "refer" is not a minglish word [all unknown words: refer, entity] | "my refers to the writer": WORD: "refers" is not a minglish word | "your refers to the reader": WORD: "refers" is not a minglish word [all unknown words: refers, reader] | "the tool Linter rejects a sentence with an anaphoric pronoun": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with a pronominal demonstrative": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes [all unknown words: pronominal, demonstrative] | "the tool Linter rejects a sentence with the word it": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word they": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word he": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word she": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word this": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word that": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word these": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word those": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word their": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word its": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word his": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes | "the tool Linter rejects a sentence with the word hers": WORD: "Linter" is not a minglish word — minglish words are lowercase ("linter"); a name that equals a word needs quotes
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words
+**Proposal 43 (rejected, ×1)** — invalid · drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words
 
 > the writer repeats the noun. the writer does not use the word it. the writer does not use the word they. the writer does not use the word he. the writer does not use the word she. the writer does not use the word this. the writer does not use the word that. the writer does not use the word these. the writer does not use the word those. the writer does not use the word their. the writer does not use the word its. the writer does not use the word his. the writer does not use the word hers. the word i is not an anaphoric word. the word you is not an anaphoric word. the word my refers to the writer. the word your refers to the person who reads the text. the tool "linter" rejects a sentence with an anaphoric word. the tool "linter" rejects a sentence with the word it. the tool "linter" rejects a sentence with the word they. the tool "linter" rejects a sentence with the word he. the tool "linter" rejects a sentence with the word she. the tool "linter" rejects a sentence with the word this. the tool "linter" rejects a sentence with the word that. the tool "linter" rejects a sentence with the word these. the tool "linter" rejects a sentence with the word those. the tool "linter" rejects a sentence with the word their. the tool "linter" rejects a sentence with the word its. the tool "linter" rejects a sentence with the word his. the tool "linter" rejects a sentence with the word hers.
 
   - "the writer does not use the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer does not use the word hers": WORD: "hers" is not a minglish word | "the word i is not an anaphoric word": not recognizable as a minglish-like sentence | "the word you is not an anaphoric word": not recognizable as a minglish-like sentence | "the word my refers to the writer": WORD: "refers" is not a minglish word | "the word your refers to the person who reads the text": WORD: "refers" is not a minglish word [all unknown words: refers, who, text] | "the tool "linter" rejects a sentence with the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects a sentence with the word hers": WORD: "hers" is not a minglish word
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words, explicit mention of each banned word as a word token
+**Proposal 44 (rejected, ×1)** — invalid · drops: list format, hyphenation, colon, "banned" as heading, "instead" as adverb, demonstrative classification, possessive forms classification, object forms classification, singular/plural distinction for banned words, explicit mention of each banned word as a word token
 
 > the writer repeats the noun. the word i is not a third person word. the word you is not a third person word. the word my shows the writer. the word your shows the person who reads the report. the tool "linter" rejects a third person word. the tool "linter" rejects the word it. the tool "linter" rejects the word they. the tool "linter" rejects the word he. the tool "linter" rejects the word she. the tool "linter" rejects the word this. the tool "linter" rejects the word that. the tool "linter" rejects the word these. the tool "linter" rejects the word those. the tool "linter" rejects the word their. the tool "linter" rejects the word its. the tool "linter" rejects the word his. the tool "linter" does not have the word hers.
 
   - "the word i is not a third person word": WORD: "third" is not a minglish word | "the word you is not a third person word": WORD: "third" is not a minglish word | "the word my shows the writer": not recognizable as a minglish-like sentence | "the word your shows the person who reads the report": WORD: "who" is not a minglish word | "the tool "linter" rejects a third person word": WORD: "third" is not a minglish word | "the tool "linter" rejects the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word that": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" rejects the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool "linter" does not have the word hers": WORD: "hers" is not a minglish word
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: imperative form, colon notation, parenthetical list, bullet style
+**Proposal 45 (rejected, ×1)** — invalid · drops: no
+
+> the linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words. the writer repeats the noun instead of the banned word.
+
+  - "the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the writer repeats the noun instead of the banned word": WORD: "instead" is not a minglish word
+
+**Proposal 46 (rejected, ×1)** — invalid · drops: imperative form, colon notation, parenthetical list, bullet style
 
 > a linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words. the user repeats the noun instead of every banned word.
 
   - "a linter bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words": WORD: "bans" is not a minglish word | "the user repeats the noun instead of every banned word": WORD: "repeats" is not a minglish word
 
-**Proposal 38 (rejected, ×1)** — invalid · drops: none
+**Proposal 47 (rejected, ×1)** — invalid · drops: none
 
 > the tool bans anaphoric pronouns and pronominal demonstratives. the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms. the person who writes repeats the noun.
 
   - "the tool bans anaphoric pronouns and pronominal demonstratives": WORD: "bans" is not a minglish word | "the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms": WORD: "ban" is not a minglish word | "the person who writes repeats the noun": WORD: "who" is not a minglish word
 
-**Proposal 39 (rejected, ×1)** — invalid · drops: imperative mood, colon punctuation, parenthetical list, register of a specification rule
+**Proposal 48 (rejected, ×1)** — invalid · drops: imperative mood, colon punctuation, parenthetical list, register of a specification rule
 
 > the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the user repeats the noun instead.
 
@@ -488,219 +596,235 @@ verdict: `unreviewed`
 
 > Allowed: i (PRON_1SG), you (PRON_2), my (POSS_1SG), your (POSS_2).
 
-**Proposal 1 (best, ×1)** — parse 4/4 · continuity 3/3 · cost 98 (28 words) · drops: none
+**Proposal 1 (best, ×2)** — parse 4/4 · continuity 3/3 · cost 87 (24 words) · drops: none
+
+> the linter allows the word "i". the linter allows the word "you". the linter allows the word "my". the linter allows the word "your".
+
+**Proposal 2 (valid, ×1)** — parse 4/4 · continuity 3/3 · cost 98 (28 words) · drops: none
 
 > the tool Lexgen has the word "i". the tool Lexgen has the word "you". the tool Lexgen has the word "my". the tool Lexgen has the word "your".
 
-**Proposal 2 (valid, ×1)** — parse 4/4 · continuity 3/3 · cost 105 (28 words) · drops: none
+**Proposal 3 (valid, ×1)** — parse 4/4 · continuity 3/3 · cost 105 (28 words) · drops: none
 
 > the tool Lexgen allows the word "i". the tool Lexgen allows the word "you". the tool Lexgen allows the word "my". the tool Lexgen allows the word "your".
 
-**Proposal 3 (rejected, ×1)** — invalid · drops: none
+**Proposal 4 (rejected, ×1)** — invalid · drops: none
 
 > every pronoun is a word. every pronoun has one form. i is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive. the system does not ban i, "you", "my", or "your". the system bans every pronoun that is not i, "you", "my", or "your". the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
 
   - "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence | "the system does not ban i, "you", "my", or "your"": not recognizable as a minglish-like sentence | "the system bans every pronoun that is not i, "you", "my", or "your"": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 4 (rejected, ×1)** — invalid · drops: none
+**Proposal 5 (rejected, ×1)** — invalid · drops: none
 
 > the tool "lexgen" allows i and you and my and your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
 
   - "the tool "lexgen" allows i and you and my and your": not recognizable as a minglish-like sentence | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen allows i. the tool lexgen allows you. the tool lexgen allows my. the tool lexgen allows your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
 
   - "the tool lexgen allows i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows your": WORD: "lexgen" is not a minglish word | ""my" is a possessive": not recognizable as a minglish-like sentence | ""your" is a possessive": not recognizable as a minglish-like sentence
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: none
+**Proposal 7 (rejected, ×1)** — invalid · drops: none
 
 > i is a pronoun. you is a pronoun. my is a possessive. your is a possessive. the system allows i. the system allows you. the system allows my. the system allows your. the system bans every other pronoun. the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
 
   - "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the system allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the system allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the system allows my": not recognizable as a minglish-like sentence | "the system allows your": not recognizable as a minglish-like sentence | "the system bans every other pronoun": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing
 
-**Proposal 7 (rejected, ×1)** — invalid
+**Proposal 8 (rejected, ×1)** — invalid
 
 > GAP: the available verbs (attest, build, check, choose, consider, contain, cost, create, delete, derive, describe, edit, expand, explain, fetch, find, have, match, migrate, need, open, optimize, pin, plan, produce, read, record, reduce, reject, repeat, replace, retry, return, save, say, send, show, start, stop, store, use, waive, write) do not express permission or inclusion for the concepts "allows" or "includes".
 
   - GAP: the available verbs (attest, build, check, choose, consider, contain, cost, create, delete, derive, describe, edit, expand, explain, fetch, find, have, match, migrate, need, open, optimize, pin, plan, produce, read, record, reduce, reject, repeat, replace, retry, return, save, say, send, show, start, stop, store, use, waive, write) do not express permission or inclusion for the concepts "allows" or "includes".
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: none
+**Proposal 9 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon has the pronouns i, you, my, and your.
 
   - "the lexicon has the pronouns i, you, my, and your": not recognizable as a minglish-like sentence
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: none
+**Proposal 10 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon allows the pronouns i, you, my, and your.
 
   - "the lexicon allows the pronouns i, you, my, and your": WORD: "allows" is not a minglish word
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: none
+**Proposal 11 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon contains the pronouns i, you, my, and your.
 
   - "the lexicon contains the pronouns i, you, my, and your": not recognizable as a minglish-like sentence
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: none
+**Proposal 12 (rejected, ×2)** — invalid · drops: none
 
 > the tool Lexgen allows i, you, my, and your.
 
   - "the tool Lexgen allows i, you, my, and your": not recognizable as a minglish-like sentence
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: none
+**Proposal 13 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen allows i, you, my, and your.
 
   - "the tool lexgen allows i, you, my, and your": WORD: "lexgen" is not a minglish word
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: none
+**Proposal 14 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your.
 
   - "the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your": WORD: "allows" is not a minglish word [all unknown words: allows, possessive]
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your.
 
   - "the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your": WORD: "ban" is not a minglish word
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: none
+**Proposal 16 (rejected, ×1)** — invalid · drops: none
 
 > the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your.
 
   - "the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name [all unknown words: first, second]
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 17 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your.
 
   - "the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your": WORD: "permits" is not a minglish word [all unknown words: permits, possessive]
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: parenthesis notation, colon formatting, category labels (PRON_1SG, PRON_2, POSS_1SG, POSS_2)
+**Proposal 18 (rejected, ×1)** — invalid · drops: parenthesis notation, colon formatting, category labels (PRON_1SG, PRON_2, POSS_1SG, POSS_2)
 
 > the sentence allows the word i. the sentence allows the word you. the sentence allows the word my. the sentence allows the word your.
 
   - "the sentence allows the word i": WORD: "allows" is not a minglish word | "the sentence allows the word you": WORD: "allows" is not a minglish word | "the sentence allows the word my": WORD: "allows" is not a minglish word | "the sentence allows the word your": WORD: "allows" is not a minglish word
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: permission nuance, category labels (PRON_1SG, PRON_2, POSS_1SG, POSS_2), colon formatting
+**Proposal 19 (rejected, ×1)** — invalid · drops: permission nuance, category labels (PRON_1SG, PRON_2, POSS_1SG, POSS_2), colon formatting
 
 > the sentence contains the word i. the sentence contains the word you. the sentence contains the word my. the sentence contains the word your.
 
   - "the sentence contains the word i": not recognizable as a minglish-like sentence | "the sentence contains the word you": not recognizable as a minglish-like sentence | "the sentence contains the word my": not recognizable as a minglish-like sentence | "the sentence contains the word your": not recognizable as a minglish-like sentence
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: permission nuance, category labels, colon formatting
+**Proposal 20 (rejected, ×1)** — invalid · drops: permission nuance, category labels, colon formatting
 
 > the lexicon contains the word i. the lexicon contains the word you. the lexicon contains the word my. the lexicon contains the word your.
 
   - "the lexicon contains the word i": not recognizable as a minglish-like sentence | "the lexicon contains the word you": not recognizable as a minglish-like sentence | "the lexicon contains the word my": not recognizable as a minglish-like sentence | "the lexicon contains the word your": not recognizable as a minglish-like sentence
 
-**Proposal 20 (rejected, ×2)** — invalid · drops: none
+**Proposal 21 (rejected, ×3)** — invalid · drops: none
 
 > the tool Lexgen allows i. the tool Lexgen allows you. the tool Lexgen allows my. the tool Lexgen allows your.
 
   - "the tool Lexgen allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows my": not recognizable as a minglish-like sentence | "the tool Lexgen allows your": not recognizable as a minglish-like sentence
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: parenthetical annotations, colon punctuation, register of bullet-list specification, explicit numbering of pronoun types
+**Proposal 22 (rejected, ×2)** — invalid · drops: none
+
+> the linter allows the word i. the linter allows the word you. the linter allows the word my. the linter allows the word your.
+
+  - "the linter allows the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the linter allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the linter allows the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the linter allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)
+
+**Proposal 23 (rejected, ×1)** — invalid · drops: parenthetical annotations, colon punctuation, register of bullet-list specification, explicit numbering of pronoun types
 
 > a note describes the allowed words. the allowed words include i, you, my, and your. i is a pronoun. you is a pronoun. my is a possessive. your is a possessive.
 
   - "a note describes the allowed words": WORD: "allowed" is not a minglish word | "the allowed words include i, you, my, and your": WORD: "allowed" is not a minglish word | "i is a pronoun": WORD: "pronoun" is not a minglish word | "you is a pronoun": WORD: "pronoun" is not a minglish word | "my is a possessive": WORD: "possessive" is not a minglish word | "your is a possessive": WORD: "possessive" is not a minglish word
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: none
+**Proposal 24 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen allows the pronoun i and the pronoun you and the possessive my and the possessive your. the tool lexgen does not allow other pronouns.
 
   - "the tool lexgen allows the pronoun i and the pronoun you and the possessive my and the possessive your": WORD: "lexgen" is not a minglish word | "the tool lexgen does not allow other pronouns": WORD: "lexgen" is not a minglish word
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: none
+**Proposal 25 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen has the word i. the tool Lexgen has the word you. the tool Lexgen has the word my. the tool Lexgen has the word your.
 
   - "the tool Lexgen has the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen has the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the tool Lexgen has the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen has the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: none
+**Proposal 26 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen allows the word i. the tool Lexgen allows the word you. the tool Lexgen allows the word my. the tool Lexgen allows the word your.
 
   - "the tool Lexgen allows the word i": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the tool Lexgen allows the word you": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the tool Lexgen allows the word my": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen allows the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018)
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: none
+**Proposal 27 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen includes the pronoun i. the tool Lexgen includes the pronoun you. the tool Lexgen includes the word my. the tool Lexgen includes the word your.
 
   - "the tool Lexgen includes the pronoun i": WORD: "includes" is not a minglish word | "the tool Lexgen includes the pronoun you": WORD: "includes" is not a minglish word | "the tool Lexgen includes the word my": WORD: "includes" is not a minglish word | "the tool Lexgen includes the word your": WORD: "includes" is not a minglish word
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: none
+**Proposal 28 (rejected, ×1)** — invalid · drops: none
 
 > the system allows i, you, my, and your. the system bans all other pronouns. the system does not have an anaphora mechanism. the system does not plan an anaphora mechanism for version 0.
 
   - "the system allows i, you, my, and your": not recognizable as a minglish-like sentence | "the system bans all other pronouns": WORD: "all" is banned in minglish — write "every" with a singular noun (ADR 0014) [all unknown words: all, other] | "the system does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "the system does not plan an anaphora mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: none
+**Proposal 29 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen allows the pronoun i. the tool lexgen allows the pronoun you. the tool lexgen allows the word my. the tool lexgen allows the word your.
 
   - "the tool lexgen allows the pronoun i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the pronoun you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the word my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the word your": WORD: "lexgen" is not a minglish word
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: none
+**Proposal 30 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen allows the pronoun i. the tool Lexgen allows the pronoun you. the tool Lexgen allows the adjective my. the tool Lexgen allows the adjective your.
 
   - "the tool Lexgen allows the pronoun i": WORD: "allows" is not a minglish word | "the tool Lexgen allows the pronoun you": WORD: "allows" is not a minglish word | "the tool Lexgen allows the adjective my": WORD: "allows" is not a minglish word [all unknown words: allows, adjective] | "the tool Lexgen allows the adjective your": WORD: "allows" is not a minglish word [all unknown words: allows, adjective]
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: none
+**Proposal 31 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen allows the pronoun i. the tool Lexgen allows the pronoun you. the tool Lexgen allows the pronoun my. the tool Lexgen allows the pronoun your.
 
   - "the tool Lexgen allows the pronoun i": WORD: "allows" is not a minglish word | "the tool Lexgen allows the pronoun you": WORD: "allows" is not a minglish word | "the tool Lexgen allows the pronoun my": WORD: "allows" is not a minglish word | "the tool Lexgen allows the pronoun your": WORD: "allows" is not a minglish word
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: none
+**Proposal 32 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen permits the pronoun i. the tool Lexgen permits the pronoun you. the tool Lexgen permits the pronoun my. the tool Lexgen permits the pronoun your.
 
   - "the tool Lexgen permits the pronoun i": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun you": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun my": WORD: "permits" is not a minglish word | "the tool Lexgen permits the pronoun your": WORD: "permits" is not a minglish word
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: none
+**Proposal 33 (rejected, ×1)** — invalid · drops: none
 
 > the declarations list contains the words i and you and my and your. the word i is a word for the writer. the word you is a word for the user. the word my is a word for the writer. the word your is a word for the user. the declarations list does not contain other words.
 
   - "the declarations list contains the words i and you and my and your": WORD: "declarations" is not a minglish word [all unknown words: declarations, list] | "the word i is a word for the writer": not recognizable as a minglish-like sentence | "the word you is a word for the user": not recognizable as a minglish-like sentence | "the word my is a word for the writer": not recognizable as a minglish-like sentence | "the word your is a word for the user": not recognizable as a minglish-like sentence | "the declarations list does not contain other words": WORD: "declarations" is not a minglish word [all unknown words: declarations, list, other]
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: none
+**Proposal 34 (rejected, ×1)** — invalid · drops: none
+
+> i is a pronoun. you is a pronoun. my is a possessive. your is a possessive. the tool Lexgen accepts i. the tool Lexgen accepts you. the tool Lexgen accepts my. the tool Lexgen accepts your.
+
+  - "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen accepts i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen accepts you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen accepts my": not recognizable as a minglish-like sentence | "the tool Lexgen accepts your": not recognizable as a minglish-like sentence
+
+**Proposal 35 (rejected, ×1)** — invalid · drops: none
 
 > the grammar allows the words i and you and my and your. the word i is a pronoun for one person. the word you is a pronoun for the user. the word my is a possessive for one person. the word your is a possessive for the user. the grammar does not allow other pronouns.
 
   - "the grammar allows the words i and you and my and your": WORD: "grammar" is not a minglish word [all unknown words: grammar, allows] | "the word i is a pronoun for one person": not recognizable as a minglish-like sentence | "the word you is a pronoun for the user": not recognizable as a minglish-like sentence | "the word my is a possessive for one person": WORD: "possessive" is not a minglish word | "the word your is a possessive for the user": WORD: "possessive" is not a minglish word | "the grammar does not allow other pronouns": WORD: "grammar" is not a minglish word [all unknown words: grammar, allow, other]
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: none
+**Proposal 36 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen allows i. the tool Lexgen allows you. every user has my. every user has your.
 
   - "the tool Lexgen allows i": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen allows you": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "every user has my": not recognizable as a minglish-like sentence | "every user has your": not recognizable as a minglish-like sentence
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: none
+**Proposal 37 (rejected, ×1)** — invalid · drops: none
 
 > the lexical entries include i and you and my and your. i names the person that the writer describes. you names the person that the reader describes. my describes the person that the writer describes. your describes the person that the reader describes. the lexical entries do not include other pronouns.
 
   - "the lexical entries include i and you and my and your": WORD: "lexical" is not a minglish word [all unknown words: lexical, include] | "i names the person that the writer describes": WORD: "names" is not a minglish word [all unknown words: names, that] | "you names the person that the reader describes": WORD: "names" is not a minglish word [all unknown words: names, that, reader] | "my describes the person that the writer describes": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "your describes the person that the reader describes": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, reader] | "the lexical entries do not include other pronouns": WORD: "lexical" is not a minglish word [all unknown words: lexical, include, other]
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: none
+**Proposal 38 (rejected, ×1)** — invalid · drops: none
 
 > the tool lexgen allows i and you and my and your. i is a pronoun. you is a pronoun. my is a possessive. your is a possessive.
 
   - "the tool lexgen allows i and you and my and your": WORD: "lexgen" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "your is a possessive": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: none
+**Proposal 39 (rejected, ×1)** — invalid · drops: none
 
 > i is a pronoun. the tool Lexgen has the pronoun i. you is a pronoun. the tool Lexgen has the pronoun you. my is a pronoun. the tool Lexgen has the pronoun my. your is a pronoun. the tool Lexgen has the pronoun your.
 
   - "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen has the pronoun i": not recognizable as a minglish-like sentence | "you is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen has the pronoun you": not recognizable as a minglish-like sentence | "my is a pronoun": not recognizable as a minglish-like sentence | "the tool Lexgen has the pronoun my": not recognizable as a minglish-like sentence | "your is a pronoun": not recognizable as a minglish-like sentence | "the tool Lexgen has the pronoun your": not recognizable as a minglish-like sentence
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: none
+**Proposal 40 (rejected, ×1)** — invalid · drops: none
 
 > i allow i, you, my, and your. the tool allows i, you, my, and your.
 
@@ -722,207 +846,259 @@ verdict: `unreviewed`
 
 > the tool does not find the anaphora. the tool does not find the discourse. the tool does not plan a mechanism of the anaphora.
 
-**Proposal 3 (valid, ×1)** — parse 3/3 · continuity 2/2 · cost 87 (30 words) · drops: none
+**Proposal 3 (valid, ×1)** — parse 3/3 · continuity 2/2 · cost 86 (30 words) · drops: none
+
+> the system does not have a mechanism of the anaphora. the system does not have a mechanism of the discourse. the system does not plan a layer of the discourse.
+
+**Proposal 4 (valid, ×1)** — parse 3/3 · continuity 2/2 · cost 87 (30 words) · drops: none
 
 > the project does not have a mechanism for the anaphora. the project does not have a mechanism for the discourse. the project does not plan a mechanism for the version.
 
-**Proposal 4 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 70 (23 words) · drops: none
+**Proposal 5 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 70 (23 words) · drops: none
 
 > the tool does not contain a mechanism of the anaphora. the team does not plan a mechanism of the discourse for the version.
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: none
 
 > the repository does not have an anaphora. the repository does not have a discourse. the team does not plan an anaphora. the team does not plan a discourse for the initial version.
 
   - "the team does not plan a discourse for the initial version": WORD: "version" is not a minglish word
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: none
+**Proposal 7 (rejected, ×1)** — invalid · drops: none
 
 > no tool has an anaphora. no tool has a discourse layer. the tool does not plan an anaphora. the tool does not plan a discourse layer.
 
   - "no tool has a discourse layer": not recognizable as a minglish-like sentence | "the tool does not plan a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 7 (rejected, ×1)** — invalid · drops: none
+**Proposal 8 (rejected, ×1)** — invalid · drops: none
 
 > i did not design a mechanism for the discourse. i do not plan a mechanism for the discourse. a mechanism for the anaphora does not appear. i do not plan a mechanism for the anaphora.
 
   - "i did not design a mechanism for the discourse": STYLE: "design a" — a word mentioned as a word must be quoted: "design \"a\"" (ADR 0018) | "a mechanism for the anaphora does not appear": WORD: "appear" is not a minglish word
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: none
+**Proposal 9 (rejected, ×1)** — invalid · drops: none
 
 > i did not "design a" mechanism for the discourse. i do not plan a mechanism for the discourse. a mechanism for the anaphora does not exist. i do not plan a mechanism for the anaphora.
 
   - "i did not "design a" mechanism for the discourse": not recognizable as a minglish-like sentence | "a mechanism for the anaphora does not exist": WORD: "exist" is not a minglish word
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: none
+**Proposal 10 (rejected, ×1)** — invalid · drops: none
 
 > the tool does not contain an anaphora mechanism. the tool has no anaphora mechanism. the team does not plan a mechanism of the discourse for the version.
 
   - "the tool does not contain an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015) | "the tool has no anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: none
+**Proposal 11 (rejected, ×1)** — invalid · drops: none
 
 > no anaphora exists and no discourse layer exists for the version 0. the tool does not plan an anaphora. the tool does not plan a discourse layer.
 
   - "no anaphora exists and no discourse layer exists for the version 0": WORD: "exists" is not a minglish word [all unknown words: exists, version] | "the tool does not plan a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: none
+**Proposal 12 (rejected, ×1)** — invalid · drops: none
 
 > the repository has no anaphora. the repository has no discourse. the team does not plan an anaphora. the team does not plan a discourse for the first version.
 
   - "the repository has no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the repository has no discourse": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the team does not plan a discourse for the first version": WORD: "first" is not a minglish word [all unknown words: first, version]
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: none
+**Proposal 13 (rejected, ×1)** — invalid · drops: none
 
 > the version is recent. i have no anaphora. the project does not plan a mechanism. the mechanism is for anaphora.
 
   - "the version is recent": WORD: "recent" is not a minglish word | "i have no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the mechanism is for anaphora": STYLE: "is for …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the lexicon contains the pronouns" (ADR 0003)
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: temporal precision (v0)
+**Proposal 14 (rejected, ×1)** — invalid · drops: temporal precision (v0)
 
 > the lexicon does not contain an anaphora mechanism or a discourse mechanism.
 
   - "the lexicon does not contain an anaphora mechanism or a discourse mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
+
+> the tool has no mechanism of the anaphora. the tool has no mechanism of the discourse.
+
+  - "the tool has no mechanism of the anaphora": AMBIGUOUS (2 readings): "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool has no mechanism of the discourse": AMBIGUOUS (2 readings): "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit
+
+**Proposal 16 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon for the old version does not contain an anaphora mechanism or a discourse mechanism.
 
   - "the lexicon for the old version does not contain an anaphora mechanism or a discourse mechanism": WORD: "version" is not a minglish word
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: none
+**Proposal 17 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism.
 
   - "the lexicon for the current version does not contain an anaphora mechanism or a discourse mechanism": WORD: "current" is not a minglish word [all unknown words: current, version]
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 18 (rejected, ×1)** — invalid · drops: none
 
 > the tool does not find anaphora in a discourse. the tool does not plan an anaphora mechanism.
 
   - "the tool does not find anaphora in a discourse": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015)
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: none
+**Proposal 19 (rejected, ×1)** — invalid · drops: none
+
+> the system has no anaphora mechanism. the system has no discourse mechanism. the system does not plan a discourse layer.
+
+  - "the system has no anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system has no discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system does not plan a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
+
+**Proposal 20 (rejected, ×1)** — invalid · drops: none
+
+> the tool does not plan an anaphora mechanism for the version. the tool does not plan a discourse mechanism for the version.
+
+  - "the tool does not plan an anaphora mechanism for the version": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the tool does not plan a discourse mechanism for the version": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
+
+**Proposal 21 (rejected, ×1)** — invalid · drops: none
 
 > the project has no anaphora mechanism. the project has no discourse mechanism. the project does not plan the mechanism for version 0.
 
   - "the project has no anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project has no discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan the mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: none
+**Proposal 22 (rejected, ×1)** — invalid · drops: none
 
 > the project has no anaphora machinery. the project has no discourse machinery. the project does not plan the machinery for version 0.
 
   - "the project has no anaphora machinery": WORD: "machinery" is not a minglish word | "the project has no discourse machinery": WORD: "machinery" is not a minglish word | "the project does not plan the machinery for version 0": WORD: "machinery" is not a minglish word
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: none
+**Proposal 23 (rejected, ×1)** — invalid · drops: none
+
+> the tool does not plan an anaphora mechanism for version zero. the tool does not plan a discourse mechanism for version zero.
+
+  - "the tool does not plan an anaphora mechanism for version zero": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the tool does not plan a discourse mechanism for version zero": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
+
+**Proposal 24 (rejected, ×1)** — invalid · drops: none
+
+> the system has no anaphora machinery. the system has no discourse machinery. the system does not plan a discourse layer for version 0.
+
+  - "the system has no anaphora machinery": WORD: "machinery" is not a minglish word | "the system has no discourse machinery": WORD: "machinery" is not a minglish word | "the system does not plan a discourse layer for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
+
+**Proposal 25 (rejected, ×1)** — invalid · drops: none
 
 > the system has no anaphora machinery and the system has no discourse machinery. the system does not have plans for an anaphora or a discourse layer.
 
   - "the system has no anaphora machinery and the system has no discourse machinery": WORD: "anaphora" is not a minglish word | "the system does not have plans for an anaphora or a discourse layer": WORD: "plans" is not a minglish word
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: none
+**Proposal 26 (rejected, ×1)** — invalid · drops: none
 
 > the system does not have an anaphora machinery or a discourse machinery. the system does not plan an anaphora machinery or a discourse machinery for version 0.
 
   - "the system does not have an anaphora machinery or a discourse machinery": WORD: "anaphora" is not a minglish word | "the system does not plan an anaphora machinery or a discourse machinery for version 0": WORD: "plan" is not a minglish word
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: none
+**Proposal 27 (rejected, ×1)** — invalid · drops: none
 
 > the project has no anaphora mechanism and the project has no discourse mechanism. the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism.
 
   - "the project has no anaphora mechanism and the project has no discourse mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: none
+**Proposal 28 (rejected, ×1)** — invalid · drops: none
 
 > the project has no anaphora machinery and the project has no discourse machinery. the project does not plan a discourse machinery and the project does not plan an anaphora machinery.
 
   - "the project has no anaphora machinery and the project has no discourse machinery": WORD: "machinery" is not a minglish word | "the project does not plan a discourse machinery and the project does not plan an anaphora machinery": WORD: "machinery" is not a minglish word
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: none
+**Proposal 29 (rejected, ×1)** — invalid · drops: none
 
 > the project does not have an anaphora mechanism. the project does not have a discourse mechanism. the project does not plan a discourse mechanism. the project does not plan an anaphora mechanism.
 
   - "the project does not have an anaphora mechanism": not recognizable as a minglish-like sentence | "the project does not have a discourse mechanism": not recognizable as a minglish-like sentence | "the project does not plan a discourse mechanism": not recognizable as a minglish-like sentence | "the project does not plan an anaphora mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: none
+**Proposal 30 (rejected, ×1)** — invalid · drops: none
 
 > i did not design a discourse mechanism. i do not plan a discourse mechanism. an anaphora mechanism does not exist. i do not plan an anaphora mechanism.
 
   - "i did not design a discourse mechanism": STYLE: "design a" — a word mentioned as a word must be quoted: "design \"a\"" (ADR 0018); "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015) | "i do not plan a discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015) | "an anaphora mechanism does not exist": WORD: "exist" is not a minglish word | "i do not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015)
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: none
+**Proposal 31 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon has no anaphora mechanism. the lexicon has no discourse mechanism. the team does not plan the anaphora mechanism. the team does not plan the discourse mechanism.
 
   - "the lexicon has no anaphora mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the lexicon has no discourse mechanism": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the team does not plan the anaphora mechanism": not recognizable as a minglish-like sentence | "the team does not plan the discourse mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 26 (rejected, ×2)** — invalid · drops: none
+**Proposal 32 (rejected, ×2)** — invalid · drops: none
 
 > the system does not contain an anaphora mechanism. the system does not contain a discourse mechanism. no agent plans the anaphora mechanism. no agent plans the discourse mechanism.
 
   - "the system does not contain an anaphora mechanism": not recognizable as a minglish-like sentence | "the system does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "no agent plans the anaphora mechanism": not recognizable as a minglish-like sentence | "no agent plans the discourse mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: none
+**Proposal 33 (rejected, ×1)** — invalid · drops: none
 
 > the repository has no anaphora machinery. the repository has no discourse machinery. the team does not plan an anaphora machinery. the team does not plan a discourse machinery for the initial version.
 
   - "the repository has no anaphora machinery": WORD: "machinery" is not a minglish word | "the repository has no discourse machinery": WORD: "machinery" is not a minglish word | "the team does not plan an anaphora machinery": WORD: "machinery" is not a minglish word | "the team does not plan a discourse machinery for the initial version": WORD: "machinery" is not a minglish word [all unknown words: machinery, version]
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: none
+**Proposal 34 (rejected, ×1)** — invalid · drops: none
 
 > the system does not contain an anaphora mechanism. the system does not contain a discourse mechanism. no agent plans the anaphora mechanism for the future. no agent plans the discourse mechanism for the future.
 
   - "the system does not contain an anaphora mechanism": not recognizable as a minglish-like sentence | "the system does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "no agent plans the anaphora mechanism for the future": not recognizable as a minglish-like sentence | "no agent plans the discourse mechanism for the future": not recognizable as a minglish-like sentence
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: technical precision of "machinery", the compound "anaphora/discourse", the phrase "or is planned"
+**Proposal 35 (rejected, ×1)** — invalid · drops: none
+
+> the system does not contain the anaphora mechanism. the system does not contain the discourse mechanism. the team does not plan the anaphora mechanism for the first version. the team does not plan the discourse mechanism for the first version.
+
+  - "the system does not contain the anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not contain the discourse mechanism": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora mechanism for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name | "the team does not plan the discourse mechanism for the first version": WORD: "first" is banned in minglish — ordinals are not in minglish yet (ADR 0022) - name the thing instead: "the speaker", "the hearer", or a quoted name
+
+**Proposal 36 (rejected, ×1)** — invalid · drops: technical precision of "machinery", the compound "anaphora/discourse", the phrase "or is planned"
 
 > the lexicon does not contain an anaphora tool. the lexicon does not contain a discourse tool. the maintainers do not plan a discourse tool for version 0.
 
   - "the lexicon does not contain an anaphora tool": WORD: "anaphora" is not a minglish word | "the lexicon does not contain a discourse tool": WORD: "discourse" is not a minglish word | "the maintainers do not plan a discourse tool for version 0": WORD: "plan" is not a minglish word
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: version number
+**Proposal 37 (rejected, ×1)** — invalid · drops: version number
 
 > the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism. the team does not plan the anaphora mechanism. the team does not plan the discourse mechanism.
 
   - "the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "the team does not plan the anaphora mechanism": not recognizable as a minglish-like sentence | "the team does not plan the discourse mechanism": not recognizable as a minglish-like sentence
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: none
+**Proposal 38 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism. the team does not plan the anaphora mechanism for the version. the team does not plan the discourse mechanism for the version.
 
   - "the lexicon does not contain an anaphora mechanism and the lexicon does not contain a discourse mechanism": not recognizable as a minglish-like sentence | "the team does not plan the anaphora mechanism for the version": WORD: "version" is not a minglish word | "the team does not plan the discourse mechanism for the version": WORD: "version" is not a minglish word
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: none
+**Proposal 39 (rejected, ×1)** — invalid · drops: none
 
 > the anaphora does not exist. the discourse does not exist. no agent plans the anaphora for version 0. no agent plans the discourse for version 0.
 
   - "the anaphora does not exist": WORD: "exist" is not a minglish word | "the discourse does not exist": WORD: "exist" is not a minglish word | "no agent plans the anaphora for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "no agent plans the discourse for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: none
+**Proposal 40 (rejected, ×1)** — invalid · drops: none
 
 > the anaphora machinery does not exist. the discourse machinery does not exist. no agent plans the anaphora machinery for version 0. no agent plans the discourse machinery for version 0.
 
   - "the anaphora machinery does not exist": WORD: "machinery" is not a minglish word [all unknown words: machinery, exist] | "the discourse machinery does not exist": WORD: "machinery" is not a minglish word [all unknown words: machinery, exist] | "no agent plans the anaphora machinery for version 0": WORD: "machinery" is not a minglish word | "no agent plans the discourse machinery for version 0": WORD: "machinery" is not a minglish word
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: none
+**Proposal 41 (rejected, ×1)** — invalid · drops: none
 
 > no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word. the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence. the version 0 has no anaphora and has no discourse layer. the team does not plan an anaphora for the version 0. the team does not plan a discourse layer for the version 0.
 
   - "no anaphora exists and no discourse layer exists for the version 0 ^ that sentence is wrong because "exists" is not a minglish word": WORD: "exists" is not a minglish word [all unknown words: exists, version, that, wrong, minglish] | "the tool does not plan a discourse layer ^ that sentence is wrong because it is not recognizable as a minglish-like sentence": WORD: "^" is not a minglish word [all unknown words: that, wrong, it, recognizable, as, minglish-like] | "the version 0 has no anaphora and has no discourse layer": WORD: "version" is not a minglish word | "the team does not plan an anaphora for the version 0": WORD: "version" is not a minglish word | "the team does not plan a discourse layer for the version 0": WORD: "version" is not a minglish word
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: none
+**Proposal 42 (rejected, ×1)** — invalid · drops: none
 
 > no anaphora exists in the current version. the project does not plan an anaphora mechanism.
 
   - "no anaphora exists in the current version": WORD: "exists" is not a minglish word [all unknown words: exists, current] | "the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015)
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: none
+**Proposal 43 (rejected, ×1)** — invalid · drops: none
 
 > i have no anaphora in the current version. the project does not plan a mechanism for anaphora.
 
   - "i have no anaphora in the current version": WORD: "current" is not a minglish word | "the project does not plan a mechanism for anaphora": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: none
+**Proposal 44 (rejected, ×1)** — invalid · drops: none
+
+> the system does not have anaphora or discourse tools. the team does not plan the anaphora or discourse tools for version one.
+
+  - "the system does not have anaphora or discourse tools": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora or discourse tools for version one": STYLE: "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "version" — a singular noun needs a determiner: "the version" (mass nouns take "the")
+
+**Proposal 45 (rejected, ×1)** — invalid · drops: none
+
+> the system does not have anaphora or discourse machinery. the team does not plan the anaphora or discourse machinery for the first version.
+
+  - "the system does not have anaphora or discourse machinery": WORD: "machinery" is not a minglish word | "the team does not plan the anaphora or discourse machinery for the first version": WORD: "machinery" is not a minglish word [all unknown words: machinery, first]
+
+**Proposal 46 (rejected, ×1)** — invalid · drops: none
 
 > the tool does not contain an anaphora mechanism and the mechanism does not exist. the team does not plan a discourse mechanism for the version.
 
@@ -936,199 +1112,229 @@ verdict: `unreviewed`
 
 > Zero reference ambiguity by construction; no discourse layer to build.
 
-**Proposal 1 (best, ×2)** — parse 2/2 · continuity 1/1 · cost 56 (20 words) · drops: none
+**Proposal 1 (best, ×1)** — parse 2/2 · continuity 1/1 · cost 53 (20 words) · drops: none
+
+> the system does not have the ambiguity of the reference. the system does not have the layer of the discourse.
+
+**Proposal 2 (valid, ×2)** — parse 2/2 · continuity 1/1 · cost 56 (20 words) · drops: none
 
 > the design does not have the ambiguity of the reference. the design does not build a layer of the discourse.
 
-**Proposal 2 (valid, ×1)** — parse 2/2 · continuity 1/1 · cost 78 (22 words) · drops: none
+**Proposal 3 (valid, ×1)** — parse 2/2 · continuity 1/1 · cost 57 (20 words) · drops: construction, by
+
+> the design does not have an ambiguity of the reference. the design does not build a layer of the discourse.
+
+**Proposal 4 (valid, ×1)** — parse 2/2 · continuity 1/1 · cost 78 (22 words) · drops: none
 
 > the tool Lexgen does not produce an ambiguity of the reference. the tool Lexgen does not build a layer of the discourse.
 
-**Proposal 3 (valid, ×1)** — parse 2/2 · continuity 1/1 · cost 86 (30 words) · drops: none
+**Proposal 5 (valid, ×1)** — parse 3/3 · continuity 2/2 · cost 85 (30 words) · drops: none
+
+> the design does not produce the ambiguities of the reference. the design does not have the layer of the discourse. the design does not build the layer of the discourse.
+
+**Proposal 6 (valid, ×1)** — parse 2/2 · continuity 1/1 · cost 86 (30 words) · drops: none
 
 > the system does not produce ambiguities of the reference. the system does not have a layer of the discourse, so the system does not build a layer of the discourse.
 
-**Proposal 4 (valid, ×1)** — parse 3/3 · continuity 1/2 · cost 71 (23 words) · drops: none
+**Proposal 7 (valid, ×1)** — parse 3/3 · continuity 1/2 · cost 71 (23 words) · drops: none
 
 > no reference has an ambiguity. no reference has a layer of the discourse. the tool does not build the layer of the discourse.
 
-**Proposal 5 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 42 (13 words) · drops: none
+**Proposal 8 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 42 (13 words) · drops: none
 
 > the design does not create ambiguities. the system does not build a layer.
 
-**Proposal 6 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 57 (20 words) · drops: "reference ambiguity" compound, "discourse layer" compound
+**Proposal 9 (valid, ×1)** — parse 2/2 · continuity 0/1 · cost 57 (20 words) · drops: "reference ambiguity" compound, "discourse layer" compound
 
 > the design does not produce the ambiguity of the reference. the project does not build the layer of the discourse.
 
-**Proposal 7 (rejected, ×1)** — invalid · drops: "reference" meaning
+**Proposal 10 (rejected, ×1)** — invalid · drops: "reference" meaning
 
 > the system does not have a discourse layer. the system does not have an anaphora. the system does not produce ambiguities.
 
   - "the system does not have a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 8 (rejected, ×2)** — invalid · drops: none
+**Proposal 11 (rejected, ×3)** — invalid · drops: none
 
 > the design has no reference ambiguity. the design does not build a layer of the discourse.
 
   - "the design has no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015)
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
+**Proposal 12 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
 
 > the tool Lexgen does not produce ambiguities. the tool has no discourse layer.
 
   - "the tool has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound, no-build-layer
+**Proposal 13 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound, no-build-layer
 
 > the tool Lexgen does not produce ambiguities. the tool does not have a discourse layer.
 
   - "the tool does not have a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
+**Proposal 14 (rejected, ×1)** — invalid · drops: no-zero, no-by/construction idiom, no-semicolon, no-dash compound
 
 > the tool Lexgen does not produce ambiguities. the tool does not build a discourse layer.
 
   - "the tool does not build a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen produces no reference ambiguity. the tool Lexgen does not build a layer of the discourse.
 
   - "the tool Lexgen produces no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015)
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: none
+**Proposal 16 (rejected, ×1)** — invalid · drops: none
 
 > the system produces no reference ambiguities. the system does not have a layer of the discourse, so the system does not build a layer of the discourse.
 
   - "the system produces no reference ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguities" — noun-noun compounds are not minglish; write "the ambiguities of the reference", or one transparent word (ADR 0015)
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: mention of references
+**Proposal 17 (rejected, ×1)** — invalid · drops: mention of references
 
 > the design does not create ambiguities. the system does not build a discourse layer.
 
   - "the system does not build a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: "reference" meaning
+**Proposal 18 (rejected, ×1)** — invalid · drops: "reference" meaning
 
 > the system does not have a discourse layer. the system does not have an anaphora. the system does not produce an ambiguities.
 
   - "the system does not have a discourse layer": not recognizable as a minglish-like sentence | "the system does not produce an ambiguities": STYLE: "an ambiguities" — a/an take a singular noun
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 19 (rejected, ×1)** — invalid · drops: none
 
 > no reference has an ambiguity. no reference has a discourse layer. the tool does not build the discourse layer.
 
   - "no reference has a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015) | "the tool does not build the discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015)
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: none
+**Proposal 20 (rejected, ×1)** — invalid · drops: none
+
+> the system has no reference ambiguity. the system has no discourse layer.
+
+  - "the system has no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the system has no discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
+
+**Proposal 21 (rejected, ×1)** — invalid · drops: none
 
 > no design contains ambiguity. the design does not have a discourse layer.
 
   - "no design contains ambiguity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not have a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: none
+**Proposal 22 (rejected, ×1)** — invalid · drops: none
 
 > zero ambiguity does not occur in the design. the design has no discourse layer.
 
   - "zero ambiguity does not occur in the design": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: zero, occur] | "the design has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: none
+**Proposal 23 (rejected, ×1)** — invalid · drops: none
 
 > the design does not contain ambiguity. the design does not contain a discourse layer.
 
   - "the design does not contain ambiguity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not contain a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: imperative force, semicolon structure, "by construction" nuance
+**Proposal 24 (rejected, ×1)** — invalid · drops: imperative force, semicolon structure, "by construction" nuance
 
 > the design has zero reference ambiguity. the design has no discourse layer to build.
 
   - "the design has zero reference ambiguity": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the design has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: none
+**Proposal 25 (rejected, ×1)** — invalid · drops: construction, by
+
+> the design has zero reference ambiguity. the design does not build a discourse layer.
+
+  - "the design has zero reference ambiguity": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the design does not build a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "does … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
+
+**Proposal 26 (rejected, ×1)** — invalid · drops: none
 
 > the design achieves no reference ambiguity. the design has no discourse layer to build.
 
   - "the design achieves no reference ambiguity": WORD: "achieves" is not a minglish word | "the design has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: none
+**Proposal 27 (rejected, ×1)** — invalid · drops: none
+
+> the design produces no reference ambiguities. the design has no discourse layer to build.
+
+  - "the design produces no reference ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguities" — noun-noun compounds are not minglish; write "the ambiguities of the reference", or one transparent word (ADR 0015) | "the design has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
+
+**Proposal 28 (rejected, ×1)** — invalid · drops: none
 
 > the system has zero reference ambiguity by construction. the system has no discourse layer to build.
 
   - "the system has zero reference ambiguity by construction": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the system has no discourse layer to build": WORD: "discourse" is not a minglish word
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: imperative tone, claim of "by construction", "zero" as an adjective, "to build" as purpose.
+**Proposal 29 (rejected, ×1)** — invalid · drops: imperative tone, claim of "by construction", "zero" as an adjective, "to build" as purpose.
 
 > the system has no discourse layer. the system has no anaphora. the system produces no reference ambiguity.
 
   - "the system has no discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system has no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system produces no reference ambiguity": WORD: "reference" is not a minglish word
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: "by construction", "resolution" concept, "development" role, "reference" term
+**Proposal 30 (rejected, ×1)** — invalid · drops: "by construction", "resolution" concept, "development" role, "reference" term
 
 > the system produces no ambiguities in the tag process of the word, so the team does not build a discourse layer
 
   - "the system produces no ambiguities in the tag process of the word, so the team does not build a discourse layer": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: "by construction", "resolution" concept, "development" role
+**Proposal 31 (rejected, ×1)** — invalid · drops: "by construction", "resolution" concept, "development" role
 
 > the system produces no ambiguities in the tag process of the reference, so the team does not build a discourse layer
 
   - "the system produces no ambiguities in the tag process of the reference, so the team does not build a discourse layer": WORD: "reference" is not a minglish word
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: emphatic "by construction", semicolon structure
+**Proposal 32 (rejected, ×1)** — invalid · drops: emphatic "by construction", semicolon structure
 
 > the system produces 0 ambiguities in the reference resolution process, so the development team does not build a discourse layer
 
   - "the system produces 0 ambiguities in the reference resolution process, so the development team does not build a discourse layer": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) [all unknown words: reference, resolution, development]
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: none
+**Proposal 33 (rejected, ×1)** — invalid · drops: none
 
 > the tool Lexgen guarantees no reference ambiguity. the tool Lexgen does not build a discourse layer.
 
   - "the tool Lexgen guarantees no reference ambiguity": WORD: "guarantees" is not a minglish word | "the tool Lexgen does not build a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015)
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: none
+**Proposal 34 (rejected, ×1)** — invalid · drops: none
 
 > the system produces zero reference ambiguities. the system has no discourse layer, so the system does not build a discourse layer.
 
   - "the system produces zero reference ambiguities": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the system has no discourse layer, so the system does not build a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: zero-as-number, semicolon structure, passive voice
+**Proposal 35 (rejected, ×1)** — invalid · drops: zero-as-number, semicolon structure, passive voice
 
 > the design of the system creates zero reference ambiguities. the system does not have a discourse layer. the team does not build a discourse layer.
 
   - "the design of the system creates zero reference ambiguities": WORD: "design" is not a minglish word | "the system does not have a discourse layer": WORD: "discourse" is not a minglish word | "the team does not build a discourse layer": WORD: "team" is not a minglish word
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: performative flair, fragmentary style
+**Proposal 36 (rejected, ×1)** — invalid · drops: performative flair, fragmentary style
 
 > every parser produces zero ambiguities. every parser has one parse. the system builds no discourse layer.
 
   - "every parser produces zero ambiguities": WORD: "produces" is not a minglish word | "every parser has one parse": WORD: "parse" is not a minglish word | "the system builds no discourse layer": WORD: "discourse" is not a minglish word
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: mention of references
+**Proposal 37 (rejected, ×1)** — invalid · drops: mention of references
 
 > the design has no ambiguities. the system does not build a discourse layer.
 
   - "the design has no ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the system does not build a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: imperative force, semicolon coordination, "zero", "by construction"
+**Proposal 38 (rejected, ×1)** — invalid · drops: imperative force, semicolon coordination, "zero", "by construction"
 
 > the design produces no reference ambiguity. the project does not build a discourse layer.
 
   - "the design produces no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the project does not build a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015)
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: none
+**Proposal 39 (rejected, ×1)** — invalid · drops: none
 
 > the design does not create reference ambiguities. the system does not build a discourse layer.
 
   - "the design does not create reference ambiguities": WORD: "reference" is not a minglish word | "the system does not build a discourse layer": not recognizable as a minglish-like sentence
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: none
+**Proposal 40 (rejected, ×1)** — invalid · drops: none
 
 > the design removes reference ambiguities by construction. the system has no discourse layer to build.
 
   - "the design removes reference ambiguities by construction": WORD: "removes" is not a minglish word [all unknown words: removes, reference, by, construction] | "the system has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: initial framing as a construction-time guarantee, compression
+**Proposal 41 (rejected, ×1)** — invalid · drops: initial framing as a construction-time guarantee, compression
 
 > no agent reads reference ambiguities in the design. the system does not build a discourse layer.
 
@@ -1142,235 +1348,285 @@ verdict: `unreviewed`
 
 > Prose is repetitive ("the agent … the agent …") — accepted cost, consistent with the project's clarity-over-naturalness stance.
 
-**Proposal 1 (rejected, ×1)** — invalid · drops: none
+**Proposal 1 (best, ×1)** — parse 6/6 · continuity 4/5 · cost 109 (32 words) · drops: stance, hyphenated compound, scare quotes, quoted term, "consistent" replaced with "matches", "over" replaced with separate sentences
+
+> the prose is repetitive. the prose repeats "the agent". the repetition has an acceptable expense. the repetition matches the project. the project prefers the clarity. the project does not prefer the naturalness.
+
+**Proposal 2 (valid, ×1)** — parse 4/4 · continuity 1/3 · cost 77 (24 words) · drops: nominalization
+
+> the prose is repetitive . the team accepts the expense . the repetition matches the clarity of the project . the project does not prefer the naturalness .
+
+**Proposal 3 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. the repetition costs the project. the repetition does not reduce the clarity of the project. the project uses clarity and does not use naturalness.
 
   - "the project uses clarity and does not use naturalness": not recognizable as a minglish-like sentence
 
-**Proposal 2 (rejected, ×1)** — invalid · drops: none
+**Proposal 4 (rejected, ×1)** — invalid · drops: adjective prepositional phrase, contraction, stance owning
+
+> the prose is repetitive . the team accepts the expense . the repetition matches the clarity of the project . the project does not have a preference for naturalness .
+
+  - "the project does not have a preference for naturalness": WORD: "preference" is not a minglish word
+
+**Proposal 5 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. the prose costs the agent. the cost of the prose is consistent with the project view: clarity is more important than naturalness.
 
   - "the cost of the prose is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than, naturalness]
 
-**Proposal 3 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: stance, hyphenated compound, scare quotes, quoted term, "consistent" replaced with "matches", "over" replaced with separate sentences
+
+> the prose is repetitive. the prose repeats "the agent". the repetition has an acceptable expense. the repetition matches the project. the project prefers clarity. the project does not prefer naturalness.
+
+  - "the project prefers clarity": STYLE: "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the") | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")
+
+**Proposal 7 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats words. the repetition costs little. the repetition matches the clarity of the project.
 
   - "the repetition costs little": WORD: "little" is not a minglish word
 
-**Proposal 4 (rejected, ×1)** — invalid · drops: none
+**Proposal 8 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. the repetition costs the project. the repetition does not reduce the clarity of the project. the project has clarity. the project does not have naturalness.
 
   - "the project has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not have naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: causation vocabulary, explicit stance marker ("consistent with"), "clarity-over-naturalness" as a compound concept, "cost" as a distinct word from expense
+**Proposal 9 (rejected, ×1)** — invalid · drops: choice, stance, over
+
+> the prose is repetitive. the team accepts the repetition. the acceptance is consistent with the project design. the design prefers clarity to naturalness.
+
+  - "the acceptance is consistent with the project design": WORD: "acceptance" is not a minglish word | "the design prefers clarity to naturalness": AMBIGUOUS (2 readings): "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit
+
+**Proposal 10 (rejected, ×1)** — invalid · drops: causation vocabulary, explicit stance marker ("consistent with"), "clarity-over-naturalness" as a compound concept, "cost" as a distinct word from expense
 
 > the prose has an effect. the agent appears many times in the prose. the effect is an expense. the team accepts the expense. the project has a design. the design is for clarity. the design does not prefer natural language.
 
   - "the agent appears many times in the prose": WORD: "appears" is not a minglish word [all unknown words: appears, many, times] | "the team accepts the expense": WORD: "accepts" is not a minglish word | "the design is for clarity": not recognizable as a minglish-like sentence | "the design does not prefer natural language": WORD: "prefer" is not a minglish word [all unknown words: prefer, natural]
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: "repetition" concept as noun, "consistent" relation, "over" contrast, "stance" framing
+**Proposal 11 (rejected, ×1)** — invalid · drops: "repetition" concept as noun, "consistent" relation, "over" contrast, "stance" framing
 
 > the prose repeats the agent. the prose repeats the agent. the project accepts the cost. the project uses clarity. the project does not use naturalness.
 
   - "the project accepts the cost": WORD: "accepts" is not a minglish word | "the project uses clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not use naturalness": WORD: "naturalness" is not a minglish word
 
-**Proposal 7 (rejected, ×1)** — invalid · drops: none
+**Proposal 12 (rejected, ×1)** — invalid · drops: none
 
 > the prose is repetitive. the repetition is an expense. the project has a design. the design prefers clarity. the design does not prefer naturalness.
 
   - "the prose is repetitive": WORD: "repetitive" is not a minglish word | "the design prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: none
+**Proposal 13 (rejected, ×1)** — invalid · drops: none
 
 > the prose has repetition. the repetition is an expense. the project chooses clarity. the project does not choose naturalness. the team allows the expense.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project chooses clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not choose naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: none
+**Proposal 14 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats nouns. the repetition creates an expense. the expense is acceptable. the design of the project values clarity. the design does not value naturalness.
 
   - "the expense is acceptable": WORD: "acceptable" is not a minglish word | "the design of the project values clarity": WORD: "values" is not a minglish word | "the design does not value naturalness": WORD: "value" is not a minglish word
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: none
+**Proposal 15 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats nouns. the repetition creates an expense. the team accepts the expense. the design of the project prefers clarity. the design does not prefer naturalness.
 
   - "the team accepts the expense": WORD: "accepts" is not a minglish word | "the design of the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: none
+**Proposal 16 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats. the repetition does not cost a lot. the repetition matches the clarity of the project.
 
   - "the prose repeats": STYLE: "repeats" is transitive in minglish and needs an object | "the repetition does not cost a lot": WORD: "lot" is not a minglish word
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: none
+**Proposal 17 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. the repetition of the agent is an accepted cost. the cost is consistent with the project view: clarity is more important than naturalness.
 
   - "the repetition of the agent is an accepted cost": WORD: "repetition" is not a minglish word [all unknown words: repetition, accepted] | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than, naturalness]
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: same, values-over structure, accept
+**Proposal 18 (rejected, ×1)** — invalid · drops: same, values-over structure, accept
 
 > the prose repeats the noun. the project considers clarity and does not consider naturalness. the team does not mind the cost.
 
   - "the project considers clarity and does not consider naturalness": WORD: "naturalness" is not a minglish word | "the team does not mind the cost": WORD: "mind" is not a minglish word
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: naturalness, mind
+**Proposal 19 (rejected, ×1)** — invalid · drops: naturalness, mind
 
 > the prose repeats the noun. the project uses clarity and does not use naturalness. the team does not find the cost to be a problem.
 
   - "the project uses clarity and does not use naturalness": WORD: "naturalness" is not a minglish word | "the team does not find the cost to be a problem": WORD: "be" is not a minglish word [all unknown words: be, problem]
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: dashes/em-dash (stylistic), quotes around example (lost), "agent … agent …" visual stylization, the noun phrase "clarity-over-naturalness stance" (rephrased as short clause)
+**Proposal 20 (rejected, ×1)** — invalid · drops: dashes/em-dash (stylistic), quotes around example (lost), "agent … agent …" visual stylization, the noun phrase "clarity-over-naturalness stance" (rephrased as short clause)
 
 > the prose repeats the agent. this repetition is an accepted cost. the cost is consistent with the project view: clarity is more important than naturalness.
 
   - "this repetition is an accepted cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, repetition, accepted] | "the cost is consistent with the project view: clarity is more important than naturalness": WORD: "view:" is not a minglish word [all unknown words: view, more, important, than, naturalness]
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 21 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. the agent repeats the agent. the cost of the repetition is common. the project has clarity. the project does not have common prose. the cost is consistent with the design. the design prefers clarity.
 
   - "the cost of the repetition is common": WORD: "repetition" is not a minglish word | "the project has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not have common prose": not recognizable as a minglish-like sentence | "the cost is consistent with the design": not recognizable as a minglish-like sentence | "the design prefers clarity": WORD: "prefers" is not a minglish word
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: parenthetical aside, dash, register of "stance", stylistic flourish
+**Proposal 22 (rejected, ×1)** — invalid · drops: dashes, possessive apostrophe, hyphenated compound, scare quotes
+
+> the prose is repetitive. the prose has the repetition of "the agent". the cost of the repetition is acceptable. the repetition is consistent with the project preference for clarity over naturalness.
+
+  - "the prose has the repetition of "the agent"": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the cost of the repetition is acceptable": STYLE: "cost … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "cost" is a verb in minglish — as a noun use "expense" | "the repetition is consistent with the project preference for clarity over naturalness": WORD: "preference" is not a minglish word [all unknown words: preference, over]
+
+**Proposal 23 (rejected, ×1)** — invalid · drops: parenthetical aside, dash, register of "stance", stylistic flourish
 
 > the prose repeats the agent. the repetition is an accepted cost. the cost is consistent with the project. the project prefers clarity over naturalness.
 
   - "the repetition is an accepted cost": WORD: "repetition" is not a minglish word [all unknown words: repetition, accepted] | "the cost is consistent with the project": not recognizable as a minglish-like sentence | "the project prefers clarity over naturalness": WORD: "prefers" is not a minglish word [all unknown words: prefers, over, naturalness]
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over, consistent, cost (as noun)
+**Proposal 24 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over, consistent, cost (as noun)
 
 > prose contains repetition. the agent appears in the sentence many times. the project prefers clarity to naturalness. the expense matches the design.
 
   - "prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the agent appears in the sentence many times": WORD: "appears" is not a minglish word [all unknown words: appears, many, times] | "the project prefers clarity to naturalness": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: none
+**Proposal 25 (rejected, ×1)** — invalid · drops: stance, over
+
+> the prose is repetitive. the repetition is an accepted cost. the cost is consistent with a project choice. the choice prefers clarity to naturalness.
+
+  - "the repetition is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with a project choice": WORD: "choice" is not a minglish word | "the choice prefers clarity to naturalness": WORD: "choice" is not a minglish word
+
+**Proposal 26 (rejected, ×1)** — invalid · drops: original's attributive noun (`clarity-over-naturalness stance`), dash, scare quotes, register (dash-as-pause)
+
+> the prose is repetitive. the repetition is an accepted cost. the cost is consistent with a project stance. the stance prefers clarity over naturalness.
+
+  - "the repetition is an accepted cost": STYLE: "cost" is transitive in minglish and needs an object; "is … accepted" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the cost is consistent with a project stance": WORD: "stance" is not a minglish word | "the stance prefers clarity over naturalness": WORD: "stance" is not a minglish word [all unknown words: stance, over]
+
+**Proposal 27 (rejected, ×1)** — invalid · drops: none
 
 > the prose has repetition. the repetition causes an expense. the expense is consistent. the design of the project prefers clarity. the design does not prefer naturalness.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition causes an expense": WORD: "causes" is not a minglish word | "the design of the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: "accepts", "this", "prefers", "over", "consistent with"
+**Proposal 28 (rejected, ×1)** — invalid · drops: "accepts", "this", "prefers", "over", "consistent with"
 
 > the prose repeats the agent. the repetition of the agent is a cost. the agent considers the cost. the cost matches the design of the project. the design of the project chooses clarity and not naturalness.
 
   - "the repetition of the agent is a cost": WORD: "repetition" is not a minglish word | "the agent considers the cost": STYLE: "cost" is transitive in minglish and needs an object | "the cost matches the design of the project": not recognizable as a minglish-like sentence | "the design of the project chooses clarity and not naturalness": WORD: "naturalness" is not a minglish word
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: none
+**Proposal 29 (rejected, ×1)** — invalid · drops: none
 
 > the prose contains repetition. the repetition has an expense. the project prefers clarity. the project does not prefer naturalness. the team accepts the expense.
 
   - "the prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project prefers clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not prefer naturalness": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the team accepts the expense": WORD: "accepts" is not a minglish word
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: "accepts", "uses", "uses" as verb, "naturalness" as noun, "over" relation
+**Proposal 30 (rejected, ×1)** — invalid · drops: "accepts", "uses", "uses" as verb, "naturalness" as noun, "over" relation
 
 > the prose repeats the agent. the project has a cost. the cost is the repetition. the project has clarity. the project does not have naturalness.
 
   - "the project has a cost": STYLE: "cost" is transitive in minglish and needs an object | "the cost is the repetition": WORD: "repetition" is not a minglish word | "the project has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not have naturalness": WORD: "naturalness" is not a minglish word
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: register (em-dash, hyphenated compound), affect (scare quotes, stance)
+**Proposal 31 (rejected, ×1)** — invalid · drops: register (em-dash, hyphenated compound), affect (scare quotes, stance)
 
 > the prose repeats the agent. this effect is a cost. the team accepts the cost. the cost is consistent with the design of the project. the design prefers clarity over naturalness.
 
   - "this effect is a cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the team accepts the cost": WORD: "accepts" is not a minglish word | "the cost is consistent with the design of the project": not recognizable as a minglish-like sentence | "the design prefers clarity over naturalness": WORD: "prefers" is not a minglish word [all unknown words: prefers, over, naturalness]
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: none
+**Proposal 32 (rejected, ×1)** — invalid · drops: none
 
 > the prose repeats the agent. this effect is a cost. the agent accepts the cost. the cost is consistent with the design of the project. the design prefers clarity over naturalness.
 
   - "this effect is a cost": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the agent accepts the cost": WORD: "accepts" is not a minglish word | "the cost is consistent with the design of the project": not recognizable as a minglish-like sentence | "the design prefers clarity over naturalness": WORD: "prefers" is not a minglish word [all unknown words: prefers, over, naturalness]
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: "repetitive" as adjective, "appears" as verb, "accept" as verb, "for" as purpose marker, "prefer" as verb
+**Proposal 33 (rejected, ×1)** — invalid · drops: "repetitive" as adjective, "appears" as verb, "accept" as verb, "for" as purpose marker, "prefer" as verb
 
 > the prose has repetition. the agent has repetition. the prose uses the agent. the project team accepts the cost. the design has clarity. the design does not use natural language.
 
   - "the prose has repetition": WORD: "repetition" is not a minglish word | "the agent has repetition": WORD: "repetition" is not a minglish word | "the project team accepts the cost": WORD: "accepts" is not a minglish word | "the design has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not use natural language": WORD: "natural" is not a minglish word
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: none
+**Proposal 34 (rejected, ×1)** — invalid · drops: none
 
 > the prose is repetitive. the agent repeats the agent. the cost of the repetition is common. the project has clarity. the project does not have common prose. the cost is consistent with the design. the design prefers clarity.
 
   - "the prose is repetitive": WORD: "repetitive" is not a minglish word | "the cost of the repetition is common": WORD: "repetition" is not a minglish word | "the project has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the project does not have common prose": not recognizable as a minglish-like sentence | "the cost is consistent with the design": not recognizable as a minglish-like sentence | "the design prefers clarity": WORD: "prefers" is not a minglish word
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: none
+**Proposal 35 (rejected, ×1)** — invalid · drops: none
 
 > the prose has repetition. the repetition is an accepted cost. the repetition is consistent with the clarity stance of the project.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is an accepted cost": WORD: "accepted" is not a minglish word | "the repetition is consistent with the clarity stance of the project": WORD: "stance" is not a minglish word
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: none
+**Proposal 36 (rejected, ×1)** — invalid · drops: none
 
 > the prose has repetition. the repetition is an accepted cost. the repetition is consistent with the clarity of the project. the project prefers clarity over naturalness.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is an accepted cost": WORD: "accepted" is not a minglish word | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word
 
-**Proposal 29 (rejected, ×1)** — invalid · drops: none
+**Proposal 37 (rejected, ×1)** — invalid · drops: none
 
 > the prose contains repetition. the repetition is a cost. the cost is consistent with the project design. the design prefers clarity over naturalness.
 
   - "the prose contains repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the cost is consistent with the project design": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense"; "project design" — noun-noun compounds are not minglish; write "the design of the project", or one transparent word (ADR 0015) | "the design prefers clarity over naturalness": WORD: "over" is not a minglish word
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: none
+**Proposal 38 (rejected, ×1)** — invalid · drops: none
 
 > the prose has repetition. the repetition is a cost. the cost is consistent with the design of the project. the design prefers clarity over naturalness.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the cost is consistent with the design of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense" | "the design prefers clarity over naturalness": WORD: "over" is not a minglish word
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: dashes, scare quotes, hyphenated compound, stance metaphor, register of "accepted" as adjective
+**Proposal 39 (rejected, ×1)** — invalid · drops: dash, possessive inflection, compound adjective, scare-quote framing
+
+> the prose is repetitive , but the team accepts the cost . the repetition is consistent with the clarity of the project . the project does not prefer naturalness .
+
+  - "the prose is repetitive , but the team accepts the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the repetition is consistent with the clarity of the project": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "the project does not prefer naturalness": STYLE: "does … prefer" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "naturalness" — a singular noun needs a determiner: "the naturalness" (mass nouns take "the")
+
+**Proposal 40 (rejected, ×1)** — invalid · drops: dashes, scare quotes, hyphenated compound, stance metaphor, register of "accepted" as adjective
 
 > the prose is repetitive, the agent mentions the agent. the project accepts this cost. the cost is consistent with the clarity of the project. the project prefers clarity over naturalness.
 
   - "the prose is repetitive, the agent mentions the agent": WORD: "prose" is not a minglish word | "the project accepts this cost": WORD: "project" is not a minglish word | "the cost is consistent with the clarity of the project": WORD: "consistent" is not a minglish word | "the project prefers clarity over naturalness": WORD: "project" is not a minglish word
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: none
+**Proposal 41 (rejected, ×1)** — invalid · drops: none
 
 > the design of the prose causes repetition. the writer says the agent does an action. the writer says the agent does another action. the repetition is an accepted expense. the design is consistent with the project. the project prefers clarity over naturalness.
 
   - "the design of the prose causes repetition": WORD: "causes" is not a minglish word [all unknown words: causes, repetition] | "the writer says the agent does an action": WORD: "action" is not a minglish word | "the writer says the agent does another action": WORD: "another" is not a minglish word [all unknown words: another, action] | "the repetition is an accepted expense": WORD: "repetition" is not a minglish word [all unknown words: repetition, accepted] | "the design is consistent with the project": not recognizable as a minglish-like sentence | "the project prefers clarity over naturalness": WORD: "prefers" is not a minglish word [all unknown words: prefers, over, naturalness]
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: hyphenated compound, dash punctuation, possessive, stance register
+**Proposal 42 (rejected, ×1)** — invalid · drops: hyphenated compound, dash punctuation, possessive, stance register
 
 > the prose has repetition. the repetition is a cost. the project prefers clarity over naturalness. the team accepts the cost.
 
   - "the prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the repetition is a cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word | "the team accepts the cost": WORD: "accepts" is not a minglish word
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: none
+**Proposal 43 (rejected, ×1)** — invalid · drops: none
 
 > the prose is repetitive. the agent repeats. this cost is accepted. the design has clarity. the design does not have naturalness. the team accepts the cost. the choice is consistent with the design.
 
   - "the prose is repetitive": WORD: "repetitive" is not a minglish word | "the agent repeats": STYLE: "repeats" is transitive in minglish and needs an object | "this cost is accepted": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: this, accepted] | "the design has clarity": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the design does not have naturalness": WORD: "naturalness" is not a minglish word | "the team accepts the cost": WORD: "accepts" is not a minglish word | "the choice is consistent with the design": WORD: "choice" is not a minglish word
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: dash, possessive, compound adjective, scare quotes
+**Proposal 44 (rejected, ×1)** — invalid · drops: dash, possessive, compound adjective, scare quotes
 
 > the prose repeats the same noun. the project values clarity over naturalness. the team accepts the cost.
 
   - "the prose repeats the same noun": WORD: "same" is banned in minglish — "same" has two meanings - for that very thing, repeat the noun with "the" ("the file", not "the same file"); for two things that match, write "identical" ("the copies are identical") (ADR 0023) | "the project values clarity over naturalness": WORD: "values" is not a minglish word [all unknown words: values, over, naturalness] | "the team accepts the cost": WORD: "accepts" is not a minglish word
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: scare quotes, parenthetical ellipsis, dashes, hyphenated compound, register of "stance"
+**Proposal 45 (rejected, ×1)** — invalid · drops: scare quotes, parenthetical ellipsis, dashes, hyphenated compound, register of "stance"
 
 > the prose is repetitive: the agent appears many times. the project accepts the cost. the project prefers clarity over naturalness.
 
   - "the prose is repetitive: the agent appears many times": WORD: "prose" is not a minglish word | "the project accepts the cost": WORD: "project" is not a minglish word | "the project prefers clarity over naturalness": WORD: "project" is not a minglish word
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation
+**Proposal 46 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation
 
 > Prose is repetitive. the agent appears in the sentence many times. the project prefers clarity over naturalness. the cost is acceptable.
 
   - "Prose is repetitive": WORD: "repetitive" is not a minglish word | "the agent appears in the sentence many times": WORD: "appears" is not a minglish word [all unknown words: appears, many, times] | "the project prefers clarity over naturalness": WORD: "over" is not a minglish word | "the cost is acceptable": WORD: "acceptable" is not a minglish word
 
-**Proposal 38 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over
+**Proposal 47 (rejected, ×1)** — invalid · drops: stance, project's, hyphenated compound, dash punctuation, stance, acceptable, over
 
 > prose has repetition. the agent occurs in the sentence multiple times. the project prefers clarity to naturalness. the cost is consistent with the design.
 
   - "prose has repetition": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the agent occurs in the sentence multiple times": WORD: "occurs" is not a minglish word [all unknown words: occurs, multiple, times] | "the project prefers clarity to naturalness": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the cost is consistent with the design": STYLE: "consistent with …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "cost" is a verb in minglish — as a noun use "expense"
 
-**Proposal 39 (rejected, ×1)** — invalid · drops: dashes, parentheses, scare quotes, "stance" as noun phrase
+**Proposal 48 (rejected, ×1)** — invalid · drops: dashes, parentheses, scare quotes, "stance" as noun phrase
 
 > the prose is repetitive, so the prose uses the word "the agent" many times. the prose is accepted. the project prefers clarity over naturalness, so the prose is consistent with the project.
 
@@ -1388,217 +1644,269 @@ verdict: `unreviewed`
 
 > the lexicon does not contain the pronouns. the validator must have a mechanism. the mechanism bans a word. the mechanism has a message. the message repeats the noun. the writer needs the mechanism. the project defers the mechanism.
 
-**Proposal 2 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (hyphenated compound)
+**Proposal 2 (valid, ×1)** — parse 8/8 · continuity 3/7 · cost 158 (44 words) · drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast, "every banned pronoun" structure, "unknown to" pattern
+
+> the lexicon does not contain the pronouns. the linter bans the pronouns. the pronouns are unknown. the future validator must contain a mechanism. the mechanism bans a word. the mechanism shows a message. the writer must repeat the noun. the project defers the mechanism.
+
+**Proposal 3 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (hyphenated compound)
 
 > the lexicon does not contain the pronouns. the linter bans the pronouns. the validator must check the words. the linter bans the words. the validator produces a message for the writer. the message instructs the writer. the writer repeats the noun. the team defers the mechanism.
 
   - "the message instructs the writer": WORD: "instructs" is not a minglish word
 
-**Proposal 3 (rejected, ×1)** — invalid · drops: none
+**Proposal 4 (rejected, ×1)** — invalid · drops: none
+
+> the linter bans the pronouns. the pronouns do not appear in the lexicon. the future validator must show the message of the error. the message of the error says "repeat the noun you mean". the validator needs a mechanism. the mechanism uses the word of the ban with a message. the team defers the design.
+
+  - "the mechanism uses the word of the ban with a message": STYLE: "ban" is a verb in minglish and cannot follow a determiner; "ban" is transitive in minglish and needs an object; "uses … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"
+
+**Proposal 5 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain the banned pronouns. the validator must produce an error. the error says "repeat the noun you mean". the mechanism bans a word. the mechanism produces a message. the validator needs the mechanism. the team defers the mechanism to a future version.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence
 
-**Proposal 4 (rejected, ×1)** — invalid · drops: none
+**Proposal 6 (rejected, ×1)** — invalid · drops: none
 
 > the banned pronouns do not appear in the lexicon. the validator must produce an error. the error says "repeat the noun you mean". the mechanism bans a word. the mechanism produces a message. the validator needs the mechanism. the team defers the mechanism to a future version.
 
   - "the banned pronouns do not appear in the lexicon": WORD: "appear" is not a minglish word
 
-**Proposal 5 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (hyphenated compound)
+**Proposal 7 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (hyphenated compound)
 
 > the lexicon does not contain the pronouns. the linter bans the pronouns. the validator must check the words. the linter bans the words. the validator produces a message for the writer. the message says the writer repeats the noun. the team defers the mechanism.
 
   - "the message says the writer repeats the noun": not recognizable as a minglish-like sentence
 
-**Proposal 6 (rejected, ×1)** — invalid · drops: "commands", "now", "check", "stores … and a" -> two sentences
+**Proposal 8 (rejected, ×1)** — invalid · drops: none
+
+> the lexicon does not store the banned pronouns. the linter bans the pronouns. the validator rejects the pronoun. the validator says "repeat the noun you mean". the validator does not have the mechanism. the team deferred the mechanism.
+
+  - "the lexicon does not store the banned pronouns": STYLE: "does … store" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence
+
+**Proposal 9 (rejected, ×1)** — invalid · drops: "commands", "now", "check", "stores … and a" -> two sentences
 
 > the word list does not include some pronouns. the pronouns are not in the lexicon. the future validator has a mechanism. the mechanism contains a word. the mechanism contains a message. every writer reads the message. the writer repeats the noun. the project does not create the mechanism.
 
   - "the word list does not include some pronouns": WORD: "list" is not a minglish word [all unknown words: list, include] | "the pronouns are not in the lexicon": not recognizable as a minglish-like sentence
 
-**Proposal 7 (rejected, ×2)** — invalid · drops: none
+**Proposal 10 (rejected, ×2)** — invalid · drops: none
 
 > the lexicon does not contain the banned pronouns. the mechanism bans a word and sends a message. the message says "repeat the noun you mean". the project defers the mechanism.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence
 
-**Proposal 8 (rejected, ×1)** — invalid · drops: none
+**Proposal 11 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain some words. the lexicon does not contain the banned pronouns. a future validator must have a mechanism. the mechanism bans a word. the mechanism sends a message. the message says "repeat the noun you mean". the project defers the mechanism.
 
   - "the lexicon does not contain some words": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence
 
-**Proposal 9 (rejected, ×1)** — invalid · drops: temporal detail ("currently", "in the future"), parenthetical ("OOV"), hyphenated compounds, semicolon coordination
+**Proposal 12 (rejected, ×1)** — invalid · drops: temporal detail ("currently", "in the future"), parenthetical ("OOV"), hyphenated compounds, semicolon coordination
 
 > the lexicon does not contain banned pronouns. the validator must have a mechanism for banned words. the mechanism has a message. the message repeats the noun. the writer needs the mechanism. the project defers the mechanism.
 
   - "the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the validator must have a mechanism for banned words": not recognizable as a minglish-like sentence
 
-**Proposal 10 (rejected, ×1)** — invalid · drops: useful, noun-coordination
+**Proposal 13 (rejected, ×1)** — invalid · drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast
+
+> the lexicon does not contain banned pronouns. every banned pronoun is unknown to the lexicon. a future validator must contain a mechanism. the mechanism bans a word and shows a message. the writer must repeat the noun. the project defers the mechanism.
+
+  - "the lexicon does not contain banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "every banned pronoun is unknown to the lexicon": STYLE: "banned … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "unknown to …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023)
+
+**Proposal 14 (rejected, ×1)** — invalid · drops: none
+
+> the lexicon omits the banned pronouns. the linter bans the pronouns. the validator must reject the banned pronoun. the validator must say "repeat the noun you mean". the validator does not have the mechanism. the team deferred the mechanism.
+
+  - "the lexicon omits the banned pronouns": WORD: "omits" is not a minglish word | "the validator must reject the banned pronoun": STYLE: "must … reject" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the"); "the banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence
+
+**Proposal 15 (rejected, ×1)** — invalid · drops: useful, noun-coordination
 
 > the lexicon does not contain the banned pronouns. the system does not report an error for the writer. the mechanism stores a word. the mechanism stores a message. the future validator contains the mechanism. the team defers the mechanism.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report an error for the writer": STYLE: "report an" — a word mentioned as a word must be quoted: "report \"an\"" (ADR 0018)
 
-**Proposal 11 (rejected, ×1)** — invalid · drops: "banned", "deferred", "missing", "defers", "version"
+**Proposal 16 (rejected, ×1)** — invalid · drops: currentness, writer-facing perspective, compound adjective "banned-word-with-message", parenthetical "OOV", semicolon-as-contrast
+
+> the lexicon does not contain banned pronouns. a future validator must contain a mechanism. the mechanism bans a word and gives a message. the writer must repeat the noun. the project defers the mechanism.
+
+  - "the lexicon does not contain banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the mechanism bans a word and gives a message": WORD: "gives" is not a minglish word
+
+**Proposal 17 (rejected, ×1)** — invalid · drops: none
+
+> the linter bans the pronouns. the pronouns do not appear in the lexicon. the future validator must show an error message. the error message says "repeat the noun you mean". the validator needs a mechanism. the mechanism uses a banned word with a message. the team defers the design.
+
+  - "the future validator must show an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015); "must … show" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the error message says "repeat the noun you mean"": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the mechanism uses a banned word with a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "uses … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the")
+
+**Proposal 18 (rejected, ×1)** — invalid · drops: "banned", "deferred", "missing", "defers", "version"
 
 > the validator does not have entries for the pronouns. the validator must show an error message. the error message says the writer must repeat the noun. the validator needs a mechanism. the mechanism stores the messages for the words. the team does not add the mechanism now.
 
   - "the validator must show an error message": not recognizable as a minglish-like sentence | "the error message says the writer must repeat the noun": not recognizable as a minglish-like sentence | "the team does not add the mechanism now": WORD: "add" is not a minglish word [all unknown words: add, now]
 
-**Proposal 12 (rejected, ×1)** — invalid · drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness, relative-clause
+**Proposal 19 (rejected, ×1)** — invalid · drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness, relative-clause
 
 > the lexicon does not contain banned pronouns. the project must build a mechanism for banned pronouns. the mechanism must produce a message for the writer. the message must repeat the noun. the writer means the noun. the validator defers the mechanism.
 
   - "the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the project must build a mechanism for banned pronouns": not recognizable as a minglish-like sentence | "the writer means the noun": WORD: "means" is not a minglish word
 
-**Proposal 13 (rejected, ×1)** — invalid · drops: nuance of "banned" (specific class of words), nuance of "you mean" (writer's intended referent), temporal nuance of "deferred" (deliberate future action)
+**Proposal 20 (rejected, ×1)** — invalid · drops: nuance of "banned" (specific class of words), nuance of "you mean" (writer's intended referent), temporal nuance of "deferred" (deliberate future action)
 
 > the lexicon has no pronouns. the agent does not find the pronouns. the future validator needs a mechanism. the mechanism creates an error message for the writer. the error message tells the writer to repeat the noun. the project does not create the mechanism.
 
   - "the lexicon has no pronouns": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the mechanism creates an error message for the writer": not recognizable as a minglish-like sentence | "the error message tells the writer to repeat the noun": WORD: "tells" is not a minglish word
 
-**Proposal 14 (rejected, ×1)** — invalid · drops: technical register (OOV, deferred), temporal division (past vs future), causality (needs because), explicit mention of "banned-word-with-message" concept
+**Proposal 21 (rejected, ×1)** — invalid · drops: technical register (OOV, deferred), temporal division (past vs future), causality (needs because), explicit mention of "banned-word-with-message" concept
 
 > the validator does not contain some pronouns. the validator did not contain some pronouns. the user reads an error message. the error message repeats the noun. the user needs the noun. the user needs a future validator. the future validator needs a mechanism. the mechanism stores a word and a message. the word is not in the lexicon. the team does not plan the mechanism.
 
   - "the validator does not contain some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the validator did not contain some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the user reads an error message": not recognizable as a minglish-like sentence | "the error message repeats the noun": not recognizable as a minglish-like sentence | "the mechanism stores a word and a message": not recognizable as a minglish-like sentence | "the word is not in the lexicon": not recognizable as a minglish-like sentence
 
-**Proposal 15 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (parenthetical aside, hyphenated compound), affect (urgency)
+**Proposal 22 (rejected, ×1)** — invalid · drops: genre (future‑work note), register (parenthetical aside, hyphenated compound), affect (urgency)
 
 > the lexicon does not contain the banned pronouns. the validator must check the banned words. the validator must produce a message for the writer. the message says repeat the noun. the team defers the mechanism.
 
   - "the lexicon does not contain the banned pronouns": STYLE: "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the validator must check the banned words": STYLE: "the banned words" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the message says repeat the noun": not recognizable as a minglish-like sentence
 
-**Proposal 16 (rejected, ×1)** — invalid · drops: none
+**Proposal 23 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain pronouns. the project bans these pronouns. the project does not create the mechanism for the error message. the error message says "repeat the noun you mean". the future validator needs the mechanism.
 
   - "the project bans these pronouns": WORD: "bans" is not a minglish word [all unknown words: bans, these] | "the project does not create the mechanism for the error message": not recognizable as a minglish-like sentence | "the error message says "repeat the noun you mean"": not recognizable as a minglish-like sentence
 
-**Proposal 17 (rejected, ×1)** — invalid · drops: useful, noun-coordination
+**Proposal 24 (rejected, ×1)** — invalid · drops: none
+
+> the lexicon does not contain the banned pronouns. the validator must reject a banned pronoun. the validator must say "repeat the noun you mean". the validator does not have this mechanism. the team deferred the mechanism.
+
+  - "the lexicon does not contain the banned pronouns": STYLE: "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the validator must reject a banned pronoun": STYLE: "a banned pronoun" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence; "must … reject" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun" — a singular noun needs a determiner: "the pronoun" (mass nouns take "the") | "the validator does not have this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
+
+**Proposal 25 (rejected, ×1)** — invalid · drops: useful, noun-coordination
 
 > the lexicon does not contain the banned pronouns. the system does not report an error for the writer. the future validator must contain a mechanism. the mechanism stores a banned word and stores a message. the team defers the mechanism.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report an error for the writer": STYLE: "report an" — a word mentioned as a word must be quoted: "report \"an\"" (ADR 0018) | "the mechanism stores a banned word and stores a message": not recognizable as a minglish-like sentence
 
-**Proposal 18 (rejected, ×1)** — invalid · drops: technical register (OOV, deferred), temporal distinction (past vs present), causality
+**Proposal 26 (rejected, ×1)** — invalid · drops: technical register (OOV, deferred), temporal distinction (past vs present), causality
 
 > the lexicon does not contain some pronouns. the user reads an error message. the error message repeats the noun. the user needs the noun. the user needs a future validator. the future validator stores a word and a message. the word is not in the lexicon. the team does not plan the mechanism.
 
   - "the lexicon does not contain some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the user reads an error message": not recognizable as a minglish-like sentence | "the error message repeats the noun": not recognizable as a minglish-like sentence | "the future validator stores a word and a message": not recognizable as a minglish-like sentence | "the word is not in the lexicon": not recognizable as a minglish-like sentence
 
-**Proposal 19 (rejected, ×1)** — invalid · drops: "banned", "deferred"
+**Proposal 27 (rejected, ×1)** — invalid · drops: "banned", "deferred"
 
 > the validator does not have entries for the pronouns. the validator shows an error message. the message says that the writer must repeat the noun. the validator must contain a mechanism for the missing words. the mechanism stores the messages. the team defers the mechanism to a future version.
 
   - "the validator shows an error message": not recognizable as a minglish-like sentence | "the message says that the writer must repeat the noun": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the validator must contain a mechanism for the missing words": WORD: "missing" is not a minglish word | "the team defers the mechanism to a future version": WORD: "defers" is not a minglish word [all unknown words: defers, version]
 
-**Proposal 20 (rejected, ×1)** — invalid · drops: "banned", "defers", "sees" -> "reads", "says repeat" -> "commands … to repeat", "deferred" -> "does not create now"
+**Proposal 28 (rejected, ×1)** — invalid · drops: "banned", "defers", "sees" -> "reads", "says repeat" -> "commands … to repeat", "deferred" -> "does not create now"
 
 > the validator does not check some pronouns. the pronouns are not in the lexicon. the future validator needs a mechanism. the mechanism stores a word and a message. every writer reads the message. the message commands the writer to repeat the noun. the project does not create the mechanism now.
 
   - "the validator does not check some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the pronouns are not in the lexicon": not recognizable as a minglish-like sentence | "the mechanism stores a word and a message": not recognizable as a minglish-like sentence | "the message commands the writer to repeat the noun": WORD: "commands" is not a minglish word | "the project does not create the mechanism now": WORD: "now" is not a minglish word
 
-**Proposal 21 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound adjectives, technical register (OOV, deferred)
+**Proposal 29 (rejected, ×1)** — invalid · drops: parenthetical citation, hyphenated compound adjectives, technical register (OOV, deferred)
 
 > the lexicon does not contain some pronouns. the lexicon did not contain these pronouns in the past. the user reads an error message. the error message repeats the noun that the user needs. the user needs a future validator. the validator needs a mechanism. the mechanism stores a banned word and a message. the team defers the work on this mechanism.
 
   - "the lexicon does not contain some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the lexicon did not contain these pronouns in the past": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: these, past] | "the user reads an error message": not recognizable as a minglish-like sentence | "the error message repeats the noun that the user needs": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the mechanism stores a banned word and a message": WORD: "banned" is not a minglish word | "the team defers the work on this mechanism": WORD: "defers" is not a minglish word [all unknown words: defers, work, this]
 
-**Proposal 22 (rejected, ×1)** — invalid · drops: parenthetical aside, compound adjectives, semicolon style
+**Proposal 30 (rejected, ×1)** — invalid · drops: parenthetical aside, compound adjectives, semicolon style
 
 > the lexicon does not contain the banned pronouns. the system does not report a useful error for the writer. the future validator must contain a mechanism for a banned word and a message. the team defers the mechanism.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the system does not report a useful error for the writer": WORD: "useful" is not a minglish word | "the future validator must contain a mechanism for a banned word and a message": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
 
-**Proposal 23 (rejected, ×1)** — invalid · drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness
+**Proposal 31 (rejected, ×1)** — invalid · drops: hyphenated-compound, parenthetical-annotation, deferred-status-as-standalone-claim, future-tense, "just" casualness
 
 > the lexicon does not contain banned pronouns. the project must build a mechanism for banned pronouns. the mechanism must produce a message for the writer. the message must repeat the noun that the writer means. the validator defers this mechanism.
 
   - "the lexicon does not contain banned pronouns": not recognizable as a minglish-like sentence | "the project must build a mechanism for banned pronouns": not recognizable as a minglish-like sentence | "the message must repeat the noun that the writer means": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, means] | "the validator defers this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)
 
-**Proposal 24 (rejected, ×1)** — invalid · drops: relative clause structure, "that" pronoun, "postponed" replaced with "deferred"
+**Proposal 32 (rejected, ×1)** — invalid · drops: relative clause structure, "that" pronoun, "postponed" replaced with "deferred"
 
 > the validator does not have a mechanism for words the lexicon does not contain. the lexicon must describe every word. the future validator needs a mechanism for rejected words. the mechanism creates an error message. the error message says "repeat the noun you mean". the team deferred the mechanism.
 
   - "the validator does not have a mechanism for words the lexicon does not contain": STYLE: "contain" is transitive in minglish and needs an object | "the future validator needs a mechanism for rejected words": not recognizable as a minglish-like sentence | "the mechanism creates an error message": not recognizable as a minglish-like sentence | "the error message says "repeat the noun you mean"": not recognizable as a minglish-like sentence | "the team deferred the mechanism": WORD: "deferred" is not a minglish word
 
-**Proposal 25 (rejected, ×1)** — invalid · drops: present-perfect "has banned" tone, enumerated list, parenthetical example, abbreviation OOV, deferred-as-noun
+**Proposal 33 (rejected, ×1)** — invalid · drops: present-perfect "has banned" tone, enumerated list, parenthetical example, abbreviation OOV, deferred-as-noun
 
 > the validator does not have a mechanism for words that are not in the lexicon. the lexicon must describe every word. the future validator needs a mechanism for rejected words. the mechanism must produce an error message. the error message must say "repeat the noun you mean". the team postponed the mechanism.
 
   - "the validator does not have a mechanism for words that are not in the lexicon": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the future validator needs a mechanism for rejected words": not recognizable as a minglish-like sentence | "the mechanism must produce an error message": not recognizable as a minglish-like sentence | "the error message must say "repeat the noun you mean"": not recognizable as a minglish-like sentence | "the team postponed the mechanism": WORD: "postponed" is not a minglish word
 
-**Proposal 26 (rejected, ×1)** — invalid · drops: nuance of "banned" (specific class of words), nuance of "you mean" (writer's intended referent), temporal nuance of "deferred" (deliberate future action)
+**Proposal 34 (rejected, ×1)** — invalid · drops: nuance of "banned" (specific class of words), nuance of "you mean" (writer's intended referent), temporal nuance of "deferred" (deliberate future action)
 
 > the lexicon does not contain some pronouns. the agent does not find these pronouns. the future validator needs a mechanism for the pronouns. the mechanism produces an error message for the writer. the message says repeat the noun. the project does not add the mechanism now.
 
   - "the lexicon does not contain some pronouns": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the agent does not find these pronouns": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the mechanism produces an error message for the writer": not recognizable as a minglish-like sentence | "the message says repeat the noun": not recognizable as a minglish-like sentence | "the project does not add the mechanism now": WORD: "add" is not a minglish word [all unknown words: add, now]
 
-**Proposal 27 (rejected, ×1)** — invalid · drops: parentheses, hyphenated adjectives, "currently", "just", "fall out", "error", "OOV"
+**Proposal 35 (rejected, ×1)** — invalid · drops: parentheses, hyphenated adjectives, "currently", "just", "fall out", "error", "OOV"
 
 > the validator does not check banned pronouns. the banned pronouns are not in the lexicon. the project needs a mechanism for the future validator. the mechanism stores a banned word and a message. a writer sees the message. the message says repeat the noun. the project defers the mechanism.
 
   - "the validator does not check banned pronouns": WORD: "banned" is not a minglish word | "the banned pronouns are not in the lexicon": WORD: "banned" is not a minglish word | "the mechanism stores a banned word and a message": WORD: "banned" is not a minglish word | "a writer sees the message": WORD: "sees" is not a minglish word | "the message says repeat the noun": not recognizable as a minglish-like sentence | "the project defers the mechanism": WORD: "defers" is not a minglish word
 
-**Proposal 28 (rejected, ×1)** — invalid · drops: none
+**Proposal 36 (rejected, ×1)** — invalid · drops: none
 
 > the banned pronouns do not have entries in the lexicon. a validator must show an error message. the message must tell the writer to repeat the noun. the validator needs a mechanism for the banned words. the mechanism must contain the messages. the validator will get the mechanism in the future. the team deferred the mechanism.
 
   - "the banned pronouns do not have entries in the lexicon": WORD: "banned" is not a minglish word | "a validator must show an error message": not recognizable as a minglish-like sentence | "the message must tell the writer to repeat the noun": WORD: "tell" is not a minglish word | "the validator needs a mechanism for the banned words": WORD: "banned" is not a minglish word | "the validator will get the mechanism in the future": WORD: "will" is not a minglish word [all unknown words: will, get] | "the team deferred the mechanism": WORD: "deferred" is not a minglish word
 
-**Proposal 29 (rejected, ×1)** — invalid
+**Proposal 37 (rejected, ×1)** — invalid
 
 > GAP: "means" is not in the word list, and no available word expresses "intends" or "refers to" in the required sense.
 
   - GAP: "means" is not in the word list, and no available word expresses "intends" or "refers to" in the required sense.
 
-**Proposal 30 (rejected, ×1)** — invalid · drops: none
+**Proposal 38 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain pronouns that the project bans. the project does not add the mechanism for the error message now. the error message says "repeat the noun you mean". the future validator needs the mechanism for the error message.
 
   - "the lexicon does not contain pronouns that the project bans": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: that, bans] | "the project does not add the mechanism for the error message now": WORD: "add" is not a minglish word [all unknown words: add, now] | "the error message says "repeat the noun you mean"": not recognizable as a minglish-like sentence | "the future validator needs the mechanism for the error message": not recognizable as a minglish-like sentence
 
-**Proposal 31 (rejected, ×1)** — invalid · drops: oov, hyphenated compound, deferred as a standalone word
+**Proposal 39 (rejected, ×1)** — invalid · drops: oov, hyphenated compound, deferred as a standalone word
 
 > the banned pronouns fall out of the lexicon. the banned pronouns fall from the lexicon. a future validator needs a mechanism. the mechanism stores a banned word and a message. the writer uses the message. the project defers the mechanism.
 
   - "the banned pronouns fall out of the lexicon": WORD: "banned" is not a minglish word | "the banned pronouns fall from the lexicon": WORD: "banned" is not a minglish word | "a future validator needs a mechanism": WORD: "future" is not a minglish word | "the mechanism stores a banned word and a message": WORD: "mechanism" is not a minglish word | "the writer uses the message": WORD: "writer" is not a minglish word | "the project defers the mechanism": WORD: "project" is not a minglish word
 
-**Proposal 32 (rejected, ×1)** — invalid · drops: parenthesis, hyphenated compounds, semi-colon, subject-position non-agent phrase, tone of discovery, deferred-as-title
+**Proposal 40 (rejected, ×1)** — invalid · drops: parenthesis, hyphenated compounds, semi-colon, subject-position non-agent phrase, tone of discovery, deferred-as-title
 
 > the validator lacks a mechanism for words that the lexicon does not contain. the lexicon must describe every known word. the future validator needs a mechanism for banned words. the mechanism must give an error message. every error message must say "repeat the noun you mean". the team deferred the mechanism.
 
   - "the validator lacks a mechanism for words that the lexicon does not contain": WORD: "lacks" is not a minglish word [all unknown words: lacks, that] | "the lexicon must describe every known word": WORD: "known" is not a minglish word | "the future validator needs a mechanism for banned words": WORD: "banned" is not a minglish word | "the mechanism must give an error message": WORD: "give" is not a minglish word | "every error message must say "repeat the noun you mean"": not recognizable as a minglish-like sentence | "the team deferred the mechanism": WORD: "deferred" is not a minglish word
 
-**Proposal 33 (rejected, ×1)** — invalid · drops: parenthetical, hyphenated compound adjectives, semicolon coordination, register (technical "OOV" → explicit claim), affect (urgency of "needs")
+**Proposal 41 (rejected, ×1)** — invalid · drops: parenthetical, hyphenated compound adjectives, semicolon coordination, register (technical "OOV" → explicit claim), affect (urgency of "needs")
 
 > the lexicon does not contain banned pronouns. the agent does not find them. the future validator needs a mechanism for banned words. the mechanism produces an error message for the writer. the message says repeat the noun you mean. the project defers the mechanism.
 
   - "the lexicon does not contain banned pronouns": WORD: "banned" is not a minglish word | "the agent does not find them": WORD: "them" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the future validator needs a mechanism for banned words": WORD: "banned" is not a minglish word | "the mechanism produces an error message for the writer": not recognizable as a minglish-like sentence | "the message says repeat the noun you mean": WORD: "mean" is not a minglish word | "the project defers the mechanism": WORD: "defers" is not a minglish word
 
-**Proposal 34 (rejected, ×1)** — invalid · drops: parenthetical "OOV", hyphenated adjective "writer-facing", proper-name-initial "Banned", quoted phrase "repeat the noun you mean"
+**Proposal 42 (rejected, ×1)** — invalid · drops: parenthetical "OOV", hyphenated adjective "writer-facing", proper-name-initial "Banned", quoted phrase "repeat the noun you mean"
 
 > the banned pronouns fall out of the lexicon. the tool lexgen needs a mechanism for the future validator. the mechanism stores a banned word with a message. the writer uses the message. the mechanism is deferred.
 
   - "the banned pronouns fall out of the lexicon": WORD: "banned" is not a minglish word | "the tool lexgen needs a mechanism for the future validator": WORD: "lexgen" is not a minglish word | "the mechanism stores a banned word with a message": WORD: "mechanism" is not a minglish word | "the writer uses the message": WORD: "writer" is not a minglish word | "the mechanism is deferred": WORD: "mechanism" is not a minglish word
 
-**Proposal 35 (rejected, ×1)** — invalid · drops: none
+**Proposal 43 (rejected, ×1)** — invalid · drops: none
 
 > the banned pronouns do not appear in the lexicon. the validator needs a mechanism for banned words. the mechanism shows a message to the user. the message says "repeat the noun you mean". the team defers this work.
 
   - "the banned pronouns do not appear in the lexicon": WORD: "banned" is not a minglish word | "the validator needs a mechanism for banned words": WORD: "validator" is not a minglish word | "the mechanism shows a message to the user": WORD: "mechanism" is not a minglish word | "the message says "repeat the noun you mean"": WORD: "says" is not a minglish word | "the team defers this work": WORD: "team" is not a minglish word
 
-**Proposal 36 (rejected, ×1)** — invalid · drops: none
+**Proposal 44 (rejected, ×1)** — invalid · drops: none
+
+> the banned pronouns do not appear in the lexicon. the future validator must show an error message that says "repeat the noun you mean". the validator needs a mechanism for banned words with a message. the design is deferred.
+
+  - "the banned pronouns do not appear in the lexicon": STYLE: "banned … appear" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the banned pronouns" — a verb form cannot modify a noun; say who does it: "the linter bans the pronouns", or split the sentence | "the future validator must show an error message that says "repeat the noun you mean"": WORD: "that" is banned in minglish — "that" has two senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence and name it: "the report shows the result" | "the validator needs a mechanism for banned words with a message": STYLE: "needs … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the design is deferred": STYLE: "deferred" is transitive in minglish and needs an object; "is … deferred" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003)
+
+**Proposal 45 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain the banned pronouns. the validator must produce an error that says "repeat the noun you mean". the validator needs a mechanism that bans a word and produces a message. the team defers the mechanism to the future.
 
   - "the lexicon does not contain the banned pronouns": not recognizable as a minglish-like sentence | "the validator must produce an error that says "repeat the noun you mean"": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the validator needs a mechanism that bans a word and produces a message": WORD: "that" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the team defers the mechanism to the future": not recognizable as a minglish-like sentence
 
-**Proposal 37 (rejected, ×1)** — invalid · drops: none
+**Proposal 46 (rejected, ×1)** — invalid · drops: none
 
 > the lexicon does not contain banned pronouns. the project defers the mechanism for the error message that says "repeat the noun you mean". the future validator needs this mechanism.
 

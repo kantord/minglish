@@ -11,7 +11,7 @@ original_metrics:
   cost: 38.580000000000005
   words: 10
 verdict: unreviewed
-best: the design does not have the ambiguity of the reference. the design does not build a layer of the discourse.
+best: the system does not have the ambiguity of the reference. the system does not have the layer of the discourse.
 proposals:
 - text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.
   drops: none
@@ -385,7 +385,7 @@ proposals:
     cost: 49.17999999999999
     words: 16
   diagnosis: '"the design has no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015)'
-  count: 2
+  count: 3
   model: deepseek/deepseek-v4-flash
 - text: the design does not have the ambiguity of the reference. the design does not build a layer of the discourse.
   drops: none
@@ -460,5 +460,80 @@ proposals:
     continuity_ok: 1
     cost: 70.60999999999999
     words: 23
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system has no reference ambiguity. the system has no discourse layer.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 39.64
+    words: 12
+  diagnosis: '"the system has no reference ambiguity": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguity" — noun-noun compounds are not minglish; write "the ambiguity of the reference", or one transparent word (ADR 0015) | "the system has no discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the system does not have the ambiguity of the reference. the system does not have the layer of the discourse.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 53.08
+    words: 20
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design produces no reference ambiguities. the design has no discourse layer to build.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 48.92000000000001
+    words: 14
+  diagnosis: '"the design produces no reference ambiguities": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); "reference ambiguities" — noun-noun compounds are not minglish; write "the ambiguities of the reference", or one transparent word (ADR 0015) | "the design has no discourse layer to build": STYLE: "build" is transitive in minglish and needs an object; "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "has … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not produce the ambiguities of the reference. the design does not have the layer of the discourse. the design does not build the layer of the discourse.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 3
+    parsed: 3
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 85.11999999999998
+    words: 30
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design has zero reference ambiguity. the design does not build a discourse layer.
+  drops: construction, by
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 48.03
+    words: 14
+  diagnosis: '"the design has zero reference ambiguity": WORD: "zero" is banned in minglish — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022) | "the design does not build a discourse layer": STYLE: "discourse layer" — noun-noun compounds are not minglish; write "the layer of the discourse", or one transparent word (ADR 0015); "does … build" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: the design does not have an ambiguity of the reference. the design does not build a layer of the discourse.
+  drops: construction, by
+  valid: true
+  metrics:
+    sentences: 2
+    parsed: 2
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 57.10000000000001
+    words: 20
   count: 1
   model: deepseek/deepseek-v4-flash

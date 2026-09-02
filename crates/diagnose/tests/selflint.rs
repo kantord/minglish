@@ -15,24 +15,45 @@ fn repo(path: &str) -> String {
 /// is a counter-example and is skipped; a span with no verb-like token is
 /// a phrase, not a sentence, and is skipped too.
 fn example_sentences(lexicon: &Lexicon, text: &str, open: char, close: char) -> Vec<String> {
+    // scan honoring backslash escapes, so advice like "the pronoun \"i\"" yields
+    // the example `the pronoun "i"` with its inner quotes intact
+    let chars: Vec<char> = text.chars().collect();
     let mut out = Vec::new();
-    let mut rest = text;
-    let mut consumed = 0usize;
-    while let Some(start) = rest.find(open) {
-        let before = &text[..consumed + start];
-        let after = &rest[start + open.len_utf8()..];
-        let Some(end) = after.find(close) else { break };
-        let span = after[..end].trim().trim_end_matches('.').trim();
-        consumed += start + open.len_utf8() + end + close.len_utf8();
-        rest = &after[end + close.len_utf8()..];
+    let mut i = 0;
+    while i < chars.len() {
+        if chars[i] != open {
+            i += 1;
+            continue;
+        }
+        let before: String = chars[..i].iter().collect();
+        let mut j = i + 1;
+        let mut span = String::new();
+        while j < chars.len() {
+            if chars[j] == '\\' && j + 1 < chars.len() {
+                span.push(chars[j + 1]);
+                j += 2;
+                continue;
+            }
+            if chars[j] == close {
+                break;
+            }
+            span.push(chars[j]);
+            j += 1;
+        }
+        if j >= chars.len() {
+            break;
+        }
+        let rest: String = chars[j + 1..].iter().collect();
+        i = j + 1;
+        let span = span.trim().trim_end_matches('.').trim().to_string();
         let words = span.split_whitespace().count();
         let template = span.contains('<') || span.contains('…') || span.contains("...");
         let fragment = span.starts_with(|c: char| !c.is_alphanumeric() && c != '"');
         let counter_example = before.trim_end().ends_with("not");
         // `"span" — advice` echoes the writer's own words, not an example
         let echo = rest.trim_start().starts_with('—');
-        if words >= 3 && !template && !fragment && !counter_example && !echo && has_verb(lexicon, span) {
-            out.push(span.to_string());
+        if words >= 3 && !template && !fragment && !counter_example && !echo && has_verb(lexicon, &span) {
+            out.push(span);
         }
     }
     out
@@ -148,6 +169,8 @@ fn linter_advice_examples_parse() {
         "the design prefers clarity",
         "the report shows pronouns are big",
         "the report shows that the test fails",
+        "the i pronoun is indexical",
+        "the point of the copy of the report fails",
     ];
     let mut examples = Vec::new();
     for p in probes {
