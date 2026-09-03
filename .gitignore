@@ -9,3 +9,10 @@
 # verified against data/checksums.sha256 (see data/README.md)
 /data/ud/
 /data/freq/
+
+# web playground
+/web/node_modules/
+/web/dist/
+/web/test-results/
+/web/playwright-report/
+/web/src/lib/wasm/

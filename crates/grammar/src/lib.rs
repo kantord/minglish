@@ -113,8 +113,9 @@ pub struct Lexicon {
 }
 
 impl Lexicon {
-    pub fn load(path: &str) -> Result<Lexicon, String> {
-        let text = std::fs::read_to_string(path).map_err(|e| format!("{path}: {e}"))?;
+    /// Parse the TSV contents of a lexicon file (used by `load`, and by the
+    /// wasm build, which embeds the file with `include_str!`).
+    pub fn from_tsv(text: &str) -> Result<Lexicon, String> {
         let mut forms = BTreeMap::new();
         let mut lemmas = BTreeMap::new();
         let mut rejects: BTreeMap<String, Vec<(String, String)>> = BTreeMap::new();
@@ -150,6 +151,11 @@ impl Lexicon {
             }
         }
         Ok(Lexicon { forms, lemmas, terms, names, comparatives, rejects, bans })
+    }
+
+    pub fn load(path: &str) -> Result<Lexicon, String> {
+        let text = std::fs::read_to_string(path).map_err(|e| format!("{path}: {e}"))?;
+        Self::from_tsv(&text)
     }
 
     /// The form-tag of an enabled surface form, if any.

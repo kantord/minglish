@@ -25,6 +25,18 @@ lint-file FILE:
 coherence:
     ./scripts/coherence.sh
 
+# run the wasm linter playground (static site, web/)
+web:
+    cd web && pnpm dev
+
+# build the playground (wasm + vite), ready for GitHub Pages
+web-build:
+    cd web && pnpm build
+
+# unit + e2e tests of the playground
+web-test:
+    cd web && pnpm build && pnpm test && pnpm test:e2e
+
 # MILESTONE: run the LLM repair-loop harness (needs OPENROUTER_API_KEY;
 # see tests/agent-cases/README.md — results need human review)
 agenttest concurrency="64":

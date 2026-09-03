@@ -1,0 +1,14 @@
+[package]
+name = "minglish-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+grammar = { path = "../grammar" }
+diagnose = { path = "../diagnose" }
+serde_json = "1"
+wasm-bindgen = "=0.2.126"

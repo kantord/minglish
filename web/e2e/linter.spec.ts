@@ -1,0 +1,33 @@
+import { expect, test } from '@playwright/test'
+
+test('lints a clean sentence and renders the parse tree', async ({ page }) => {
+  await page.goto('/')
+
+  await expect(page.getByRole('heading', { name: 'minglish' })).toBeVisible()
+
+  // the default sentence is linted on load.
+  await expect(page.getByText('parses uniquely')).toBeVisible()
+
+  // parse tree chart renders nodes.
+  const svg = page.locator('svg').first()
+  await expect(svg).toContainText('S')
+  await expect(svg).toContainText('reads')
+
+  // metrics are shown.
+ await expect(page.getByText('Open Dependencies')).toBeVisible()
+})
+
+test('shows a rejection for a banned pronoun', async ({ page }) => {
+  await page.goto('/')
+  await page.getByLabel('Examples').getByText('banned pronoun').click()
+  await expect(page.getByText('"it" is banned in minglish')).toBeVisible()
+})
+
+test('types a sentence and lints it on Ctrl+Enter', async ({ page }) => {
+  await page.goto('/')
+  const textarea = page.getByPlaceholder('type a sentence of minglish…')
+  await textarea.fill('the queue is empty')
+  await textarea.press('Control+Enter')
+  await expect(page.getByText('parses uniquely')).toBeVisible()
+  await expect(page.locator('span').filter({ hasText: /^empty$/ })).toBeVisible()
+})
