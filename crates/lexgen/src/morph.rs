@@ -118,4 +118,58 @@ mod tests {
         assert_eq!(gerund("see"), "seeing");
         assert_eq!(gerund("fail"), "failing");
     }
+
+    // Property tests: these functions are pure string transforms fed
+    // arbitrary lemma text (attested-form checking happens elsewhere, in
+    // seedcheck.py against real corpora — these properties are about
+    // *shape* and *crash-freedom*, not correctness of any one output).
+    // Regular English morphology always lands on a fixed suffix regardless
+    // of the input; any counterexample proptest finds here is either a bug
+    // or a lemma that belongs in a `forms` override, not the regular rules.
+    proptest::proptest! {
+        #[test]
+        fn no_panic_on_arbitrary_input(s in "\\PC{0,40}") {
+            // any Unicode text, including empty — every function here must
+            // return, never panic (byte-length vs. char-count mismatches
+            // in `doubled` are exactly the kind of bug this would catch)
+            let _ = pluralize(&s);
+            let _ = third_singular(&s);
+            let _ = past(&s);
+            let _ = gerund(&s);
+            let _ = comparative(&s);
+        }
+
+        #[test]
+        fn pluralize_and_third_singular_end_in_s(s in "[a-z]{1,20}") {
+            proptest::prop_assert!(pluralize(&s).ends_with('s'));
+            proptest::prop_assert!(third_singular(&s).ends_with('s'));
+        }
+
+        #[test]
+        fn past_ends_in_d(s in "[a-z]{0,20}") {
+            proptest::prop_assert!(past(&s).ends_with('d'));
+        }
+
+        #[test]
+        fn gerund_ends_in_ing(s in "[a-z]{0,20}") {
+            proptest::prop_assert!(gerund(&s).ends_with("ing"));
+        }
+
+        #[test]
+        fn comparative_when_some_ends_in_er(s in "[a-z]{1,20}") {
+            if let Some(c) = comparative(&s) {
+                proptest::prop_assert!(c.ends_with("er"));
+            }
+        }
+
+        #[test]
+        fn outputs_never_shrink_below_input(s in "[a-z]{1,20}") {
+            // every rule only appends or substitutes a trailing letter for
+            // a longer suffix; the result is never shorter than the input
+            proptest::prop_assert!(pluralize(&s).len() >= s.len());
+            proptest::prop_assert!(third_singular(&s).len() >= s.len());
+            proptest::prop_assert!(past(&s).len() >= s.len());
+            proptest::prop_assert!(gerund(&s).len() >= s.len());
+        }
+    }
 }

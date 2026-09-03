@@ -113,6 +113,13 @@ derivable from the code, ADRs, or git history.
   by hand after nine paragraph-repair runs; 0005 after one cold run; the other
   26 with no model run (lint-file + fix-gap-or-follow-advice). The problem
   archetypes met are logged in docs/rewrite-archetypes.md for the batch review.
+- Property-based tests (2026-09-03): `proptest` is a dev-dependency of
+  `grammar`, `diagnose`, and `lexgen` — crash-freedom fuzzing on `tokenize`/
+  `units`/`parse`/`diagnose`/morph.rs, plus a lexicon-driven generator in
+  `crates/diagnose/tests/proptest_generated.rs` asserting every generated
+  `Statement`/`Coordination` sentence parses and Tier-2 stays a superset of
+  Tier-1. Full survey and what's not yet built in docs/ideas.md,
+  "Property-based testing with proptest".
 - Lexicon ≈1770 forms, ≈95 domain terms; `just replay` is the no-LLM proxy.
   `scripts/seedcheck.py` pre-flights a batch of new lemmas (unattested forms,
   cross-POS waivers) so one lexgen run succeeds; its auto-waivers are noted

@@ -12,3 +12,4 @@ lalrpop = { version = "0.22", default-features = false }
 
 [dev-dependencies]
 insta = "1"
+proptest = "1.11.0"

@@ -8,6 +8,17 @@ fn repo(path: &str) -> String {
     format!("{}/../../{path}", env!("CARGO_MANIFEST_DIR"))
 }
 
+// diagnose() runs on arbitrary LLM-repair-proposal text (agenttest) and
+// arbitrary document prose (lint-file.py), not just well-formed minglish —
+// crash-freedom on any input is a real requirement.
+proptest::proptest! {
+    #[test]
+    fn diagnose_never_panics(s in "\\PC{0,200}") {
+        let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+        let _ = diagnose(&lexicon, &s);
+    }
+}
+
 #[test]
 fn tier2_is_a_superset_of_tier1() {
     let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();

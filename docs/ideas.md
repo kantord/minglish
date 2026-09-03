@@ -291,3 +291,88 @@ only covers a useful subset (declarations and signatures, not arbitrary
 expressions); and whether "unambiguous" here means the same thing ADR 0014
 means for parsing prose, or a weaker one-way (AST → sentence) guarantee
 without the reverse. Not sized yet — a research question, not a plan.
+
+## Property-based testing with proptest (2026-09-03)
+
+Full survey, prompted by wanting a systematic way to develop the grammar
+and linter more effectively — the ADR 0037 restructuring (CoordClause vs.
+Causal, an LALR state-merge conflict) was found and fixed by hand, one
+sentence at a time; a generator-driven property test would have surfaced
+the same conflict from a single generated example, with proptest's
+shrinking reducing it to the minimal repro automatically. `proptest = "1.11"`
+is now a dev-dependency of `grammar`, `diagnose`, and `lexgen`.
+
+**Built (2026-09-03):**
+
+1. **`crates/lexgen/src/morph.rs`** — crash-freedom on arbitrary Unicode
+   input, plus structural invariants regular English morphology always
+   satisfies regardless of the input lemma: `pluralize`/`third_singular`
+   end in "s", `past` ends in "d", `gerund` ends in "ing", `comparative`
+   (when `Some`) ends in "er", and no rule ever shrinks its input. These
+   don't check correctness (seedcheck.py's attested-form check against real
+   corpora does that) — they check *shape*, and catch the class of bug the
+   file's own doc-comment already worried about (a byte-length vs.
+   char-count mismatch in `doubled()` on non-ASCII input).
+2. **`crates/grammar/tests/fuzz_properties.rs`** — `tokenize`, `units`,
+   `is_enumeration`/`is_step_block`, and `parse`/`parse_text` never panic on
+   arbitrary text (not just well-formed minglish); `units` is idempotent on
+   its own output; the two block classifiers are mutually exclusive. These
+   matter because every one of these functions runs on real LLM-repair
+   proposals and arbitrary document prose in production use, not just
+   curated corpus lines.
+3. **`crates/diagnose/tests/diagnosis.rs`** — `diagnose()` never panics on
+   arbitrary text, same rationale (agenttest feeds it raw model output).
+4. **`crates/diagnose/tests/proptest_generated.rs`** — the highest-value
+   one: a generator built from real lexicon words (read live from
+   `lexicon.tsv`, never hardcoded) producing valid statements, including
+   the `CoordPred`/`CoordClause` shapes from ADR 0037, then asserting every
+   generated sentence parses AND that Tier-2 never rejects what Tier-1
+   accepts (generalizing the fixed-corpus `tier2_is_a_superset_of_tier1`
+   test to a much larger generated sample). Deliberately narrow — one verb
+   shape, one NP shape — not a generator for the whole grammar.
+
+**Identified, not yet built, ranked by expected value:**
+
+5. **A full sentence-shape generator** covering every `Sentence` production
+   (Conditional, Causal, Prohibition, Imperative, quantified subjects,
+   Complements, Enumeration/Step Block), not just the plain-statement slice
+   in `proptest_generated.rs`. This is the natural extension of #4 and the
+   biggest remaining win — it would make *every* future grammar change
+   get this kind of regression coverage for free, not just Coordination.
+   Sized at a day or so: mostly plumbing existing lexicon-tag categories
+   into `prop_oneof!` strategies, one production at a time.
+6. **Round-trip property**: for a tree produced by the generator in #5,
+   `Tree::render()` then reparse should reproduce an equivalent tree (or
+   at minimum, the same `Diagnosis::Clean`). Catches renderer/pretty-print
+   drift that snapshot tests only catch for the fixed corpus.
+7. **`units()` round-trip over generated documents**: join N independently
+   generated valid sentences (from #4/#5) with realistic paragraph
+   structure and assert `units()` recovers exactly N units. Complements
+   the idempotence property already built (#2) with a genuine multi-unit
+   check.
+8. **Lexicon-collision detection as a property test**, not just a
+   build-time script assertion: generate seed entries with a deliberately
+   induced surface-form collision across categories and assert `lexgen`'s
+   collision lint always fires. Lower priority — seed entries are hand-
+   curated, not adversarial, so this guards against a future refactor of
+   the lint itself weakening it, not against real collisions.
+9. **`number_token` (ADR 0022/0024/0029 digit/ordinal/percent/decimal
+   parsing) fuzzing**: crash-freedom on arbitrary digit-shaped strings, and
+   a round-trip property (format a generated number, parse it back to the
+   same value) — this function has the most intricate branching logic of
+   any single-purpose parser in the codebase and currently has no fuzz
+   coverage at all.
+10. **Domain-model schema fuzzing (ADR 0036)**: generate `domain/model.json`
+    entries with randomly malformed `kind`/`examples`/`member_of` fields and
+    assert `lexgen` always rejects them with a named error, never a panic
+    or a silent pass-through. Lower priority than #9; the schema is small
+    and hand-validated already.
+
+**Deliberately not pursued:** fuzzing `seedcheck.py` or other Python
+tooling — proptest is Rust-only; the Python side would need Hypothesis
+instead, a separate tool with a separate learning cost, not justified by
+the size of that surface. Property-testing `nd()`'s head-slot invariant
+directly was also considered and dropped: it's already a local `assert!`
+checked on every call site through the existing corpus and generated
+tests (#4), so a standalone property test would mostly duplicate that
+coverage without covering anything the assert doesn't already catch.
