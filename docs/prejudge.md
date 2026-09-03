@@ -44,6 +44,27 @@ Judgements are stored under `prejudge:` in each case with the proposal
 text they were made on; if a later run changes the best proposal, the
 report marks the row *stale* and the review skips it.
 
+## Spawning the judges (2026-09-03)
+
+Each judge is one bounded, scoped task — no shared state with the others,
+no need for the Claude Code harness's own reasoning. Since 2026-09-03 they
+run through `opencode run` on `openrouter/~deepseek/deepseek-v4-flash-latest`
+(the OpenRouter credential comes from opencode's own store, so no API key
+needs to live in the harness's shell — read it from
+`~/.local/share/opencode/auth.json`'s `.openrouter.key` field and pass it
+as `OPENROUTER_API_KEY` only to the `opencode run` invocation itself, never
+print or persist it elsewhere), not through Claude subagents — a naturalness
+or telephone judgement doesn't need a frontier model, and running it on a
+cheap one keeps a full document-level pass affordable. Budget about 2
+minutes per invocation (project indexing + the model call); `--auto`
+auto-approves file reads/writes so the run stays non-interactive. Give it
+the exact same prompt shape used for the Claude-subagent judges (see
+below): read the bundle file(s), write ONE named output file, nothing
+else. A judge that needs broader reasoning (the fidelity rater weighing
+subtle meaning shifts, or anything judging this project's own domain
+model) can still go to a Claude subagent — this is a cost lever for the
+bulk, mechanical judging passes, not a blanket replacement.
+
 ## Prompts
 
 Naturalness judge (input: bundle entries with `proposal` only):
