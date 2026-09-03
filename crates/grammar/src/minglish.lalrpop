@@ -131,9 +131,12 @@ LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
 
 // ----------------------------------------------------------------- macros
 
-// Verb predicate for one (transitive, intransitive) agreement pair.
+// Verb predicate for one (transitive, intransitive) agreement pair. A
+// colon right after the verb introduces an inline list of objects
+// (EXPERIMENT: "the mechanism stores: a word and a message").
 VPn<Vt, Vi>: Tree = {
     <v:Vt> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
+    <v:Vt> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAny> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
     <v:Vi> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
 };
 
@@ -364,6 +367,7 @@ ModalVP: Tree = {
 
 VBaseP: Tree = {
     <v:LVtBase> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
+    <v:LVtBase> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAny> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
     <v:LViBase> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
 };
 

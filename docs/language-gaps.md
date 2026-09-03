@@ -26,23 +26,26 @@ hitting a wall while trying to say a true thing, not from reading examples.
   `PREP_V` add, the exact slot "with" already had (ADR 0011) — no grammar
   change. All 7 original wanted sentences now parse verbatim.
 - ~~**Coordinated noun phrases as subject/object**~~. **Closed
-  2026-09-04, ADR 0040 — the Ban stays, deliberately.** Investigated
-  building the exact unambiguous design ADR 0004 already specified (every
-  conjunct keeps its own determiner and Modifier — "the old file and the
-  old report", never the elliptical "the old file and report" where the
-  Scope Ambiguity actually lives). That design is linguistically sound;
-  it isn't the problem. The problem is the parser: the noun-phrase
+  2026-09-04, ADR 0040 then ADR 0041.** ADR 0040: the *bare* form stays
+  banned, deliberately, not by oversight. The exact unambiguous design
+  ADR 0004 already specified (every conjunct keeps its own determiner and
+  Modifier — "the old file and the old report", never the elliptical "the
+  old file and report" where the Scope Ambiguity actually lives) is
+  linguistically sound; the parser is the problem. The noun-phrase
   sub-grammar is reused across roughly a dozen positions (subject,
   object, PP objects, appositives, copula complements…), far more than
-  `Clause` was for ADR 0037/0038, and every one of 3 different grammar
-  designs — reusing the shared NP nonterminal directly, reusing the
-  already-private of-PP-free variant, and a fully private conjunct
-  nonterminal built from scratch — produced genuine reduce/reduce LALR
-  conflicts, not the shift/reduce kind the earlier two ADRs resolved by
-  restructuring. Verified empirically each time, not assumed. The
-  existing alternative (repeat the verb: "the mechanism stores a word
-  and stores a message") stays the recommended, already-safe way to say
-  this.
+  `Clause` was for ADR 0037/0038, and 3 different designs — the shared NP
+  nonterminal directly, the already-private of-PP-free variant, a fully
+  private conjunct nonterminal — all produced genuine reduce/reduce LALR
+  conflicts in that bare position. ADR 0041, minutes later, from a
+  one-line suggestion: put a colon between the verb and the list ("the
+  mechanism stores: a word and a message"). The colon is a token nothing
+  else expects right after a verb, so it doesn't share the conflicted
+  state at all — zero conflicts, verified. Full-conjunct repetition still
+  required (the elliptical form still correctly rejects), binary only, on
+  both the finite and the bare verb form (so an Imperative/Prohibition
+  gets it too). Repeating the verb stays available and unaffected; this
+  is a second option, not a replacement.
 
 ## High-frequency missing words
 

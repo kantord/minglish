@@ -44,8 +44,9 @@
 | 0038-coordination-inside-clauses.md | 24/24 |
 | 0039-without.md | 8/8 |
 | 0040-coordinated-noun-phrases.md | 19/19 |
+| 0041-colon-list.md | 14/14 |
 
-**Aggregate: 1323/1323 sentences (100%)**
+**Aggregate: 1337/1337 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

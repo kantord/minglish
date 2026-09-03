@@ -1,8 +1,8 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0040: coordinated noun phrases stay
-banned — a documented LALR finding, not an oversight). Everything a
-fresh agent needs that is not
+Last updated: 2026-09-04 (ADR 0041: a colon opens an inline 2-item list
+— "the mechanism stores: a word and a message" — revising ADR 0040's
+ban on the bare form). Everything a fresh agent needs that is not
 derivable from the code, ADRs, or git history.
 
 ## Where everything lives
@@ -16,7 +16,7 @@ derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0040` — every language and policy decision, each citing its
+- `docs/adr/0001–0041` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -33,8 +33,10 @@ derivable from the code, ADRs, or git history.
   constructions from the 2026-09-03 full-corpus naturalness rewrite;
   clause-level "but" (ADR 0037), coordination inside a causal/conditional
   clause (ADR 0038), "without" (ADR 0039), and coordinated noun phrases
-  (ADR 0040, closed as a deliberate non-build) are resolved. What is left
-  is single missing words ("only", "other"), not constructions.
+  (ADR 0040 banned the bare form on a documented LALR finding; ADR 0041
+  reopened it behind a colon, "the mechanism stores: a word and a
+  message", which sidesteps the conflict entirely) are resolved. What is
+  left is single missing words ("only", "other"), not constructions.
 - `docs/prejudge.md` / `just prejudge` — blind sub-agent pre-judgement of
   paragraph repairs (naturalness score; telephone game: explain-then-rate
   fidelity) recorded under `prejudge:` in each case, docs/prejudge-report.md.
