@@ -1,24 +1,29 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 7
-original: The Form Tag of "I" is "PRON_1SG". The Form Tag of "you" is "PRON_2". The Form Tag of "my" is "POSS_1SG". The Form Tag of "your" is "POSS_2".
+original: |-
+  The 4 Indexical Pronouns have 4 Form Tags:
+  - "PRON_1SG"
+  - "PRON_2"
+  - "POSS_1SG"
+  - "POSS_2"
 context_before: |-
   The language allows 4 Indexical Pronouns:
   - "I"
   - "you"
   - "my"
   - "your"
-context_after: The language does not have a Discourse Layer. The maintainers do not plan a Discourse Layer for the initial version.
+context_after: The maintainers did not build a Discourse Layer and do not plan a Discourse Layer for the initial version.
 original_metrics:
-  sentences: 4
-  parsed: 4
-  continuity_pairs: 3
-  continuity_ok: 3
-  cost: 97.03
-  words: 28
-  terms: 4
-  connectives: 0
+  sentences: 1
+  parsed: 1
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 69.45
+  words: 12
+  terms: 2
+  connectives: 1
 verdict: unreviewed
-note: 'garbage: ''the statement Negated'', invented ''the Linter writes''; should be: the language can say a Negation / a Prohibition'
+note: source paragraph changed; stored proposals are replay data only
 best: ''
 proposals:
 - text: the banned pronouns fall out of the lexicon. the banned pronouns fall from the lexicon. a future validator needs a mechanism. the mechanism stores a banned word and a message. the writer uses the message. the project defers the mechanism.
@@ -33,7 +38,7 @@ proposals:
     words: 40
     terms: 0
     connectives: 1
-  diagnosis: '"the banned pronouns fall out of the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, out, lexicon] | "the banned pronouns fall from the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"the banned pronouns fall out of the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, out, lexicon] | "the banned pronouns fall from the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the banned pronouns do not appear in the lexicon. the validator needs a mechanism for banned words. the mechanism shows a message to the user. the message says "repeat the noun you mean". the team defers this work.
@@ -123,7 +128,7 @@ proposals:
     words: 49
     terms: 0
     connectives: 1
-  diagnosis: '"the validator does not check banned pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the banned pronouns are not in the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the message says repeat the noun": STYLE: "says … repeat" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the validator does not check banned pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the banned pronouns are not in the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the message says repeat the noun": STYLE: "says … repeat" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the validator does not check some pronouns. the pronouns are not in the lexicon. the future validator needs a mechanism. the mechanism stores a word and a message. every writer reads the message. the message commands the writer to repeat the noun. the project does not create the mechanism now.
@@ -138,7 +143,7 @@ proposals:
     words: 50
     terms: 0
     connectives: 1
-  diagnosis: '"the validator does not check some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronouns are not in the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a word and a message": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the message commands the writer to repeat the noun": STYLE: "message commands" — noun-noun compounds are not minglish; write "the commands of the message", or one transparent word (ADR 0015); "writer to …" — only "of" attaches to a noun; "to" attaches to the verb. Write "the writer of …", or move the phrase after the verb (ADR 0011) | "the project does not create the mechanism now": WORD: "now" is not a minglish word'
+  diagnosis: '"the validator does not check some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronouns are not in the lexicon": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, lexicon] | "the mechanism stores a word and a message": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the message commands the writer to repeat the noun": STYLE: "message commands" — noun-noun compounds are not minglish; write "the commands of the message", or one transparent word (ADR 0015); "writer to …" — only "of" attaches to a noun; "to" attaches to the verb. Write "the writer of …", or move the phrase after the verb (ADR 0011) | "the project does not create the mechanism now": WORD: "now" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the word list does not include some pronouns. the pronouns are not in the lexicon. the future validator has a mechanism. the mechanism contains a word. the mechanism contains a message. every writer reads the message. the writer repeats the noun. the project does not create the mechanism.
@@ -213,7 +218,7 @@ proposals:
     words: 61
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon does not contain some pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the lexicon did not contain these pronouns in the past": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, these, pronouns] | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun that the user needs": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the team defers the work on this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  diagnosis: '"the lexicon does not contain some pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the lexicon did not contain these pronouns in the past": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, these, pronouns] | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun that the user needs": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the mechanism stores a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "stores … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the team defers the work on this mechanism": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the validator does not contain some pronouns. the validator did not contain some pronouns. the user reads an error message. the error message repeats the noun. the user needs the noun. the user needs a future validator. the future validator needs a mechanism. the mechanism stores a word and a message. the word is not in the lexicon. the team does not plan the mechanism.
@@ -228,7 +233,7 @@ proposals:
     words: 65
     terms: 0
     connectives: 1
-  diagnosis: '"the validator does not contain some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the validator did not contain some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the mechanism stores a word and a message": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the word is not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the validator does not contain some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the validator did not contain some pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the mechanism stores a word and a message": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the word is not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon does not contain some pronouns. the user reads an error message. the error message repeats the noun. the user needs the noun. the user needs a future validator. the future validator stores a word and a message. the word is not in the lexicon. the team does not plan the mechanism.
@@ -243,7 +248,7 @@ proposals:
     words: 53
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon does not contain some pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the future validator stores a word and a message": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the word is not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the lexicon does not contain some pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the user reads an error message": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the error message repeats the noun": STYLE: "error message" — noun-noun compounds are not minglish; write "the message of the error", or one transparent word (ADR 0015) | "the future validator stores a word and a message": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the word is not in the lexicon": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the validator lacks a mechanism for words that the lexicon does not contain. the lexicon must describe every known word. the future validator needs a mechanism for banned words. the mechanism must give an error message. every error message must say "repeat the noun you mean". the team deferred the mechanism.
@@ -423,7 +428,7 @@ proposals:
     words: 38
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon does not contain the banned pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the system does not report a useful error for the writer": WORD: "useful" is not a minglish word | "the future validator must contain a mechanism for a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "must … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"the lexicon does not contain the banned pronouns": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns] | "the system does not report a useful error for the writer": WORD: "useful" is not a minglish word | "the future validator must contain a mechanism for a banned word and a message": STYLE: "a banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "must … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon does not contain the banned pronouns. the system does not report an error for the writer. the future validator must contain a mechanism. the mechanism stores a banned word and stores a message. the team defers the mechanism.

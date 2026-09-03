@@ -1,17 +1,17 @@
 source: docs/adr/0005-negation.md
 index: 5
-original: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
-context_before: The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The Form Tag of "does" is "NEG_AUX_3SG".
-context_after: A Negation of a Copula uses "is not" or uses "are not". A Negation of a Copula does not need an Auxiliary.
+original: The 2 Surface Forms of the Lemma "do" carry a Negation, so the Grammar must allow the Auxiliary in one pattern. The word "not" follows the Auxiliary and comes before a base verb. A Negation uses the pattern, and a Prohibition uses the bare pattern. The emphatic Auxiliary is a Ban, so the sentence "the parser does accept the file" is a Rejection. A question cannot use the Auxiliary.
+context_before: The word "not" has the Form Tag "NEG". The word "do" has the Form Tag "NEG_AUX_BASE", and the word "does" has the Form Tag "NEG_AUX_3SG".
+context_after: A Negation of a Copula does not need an Auxiliary, so the word "not" follows the Copula.
 original_metrics:
-  sentences: 8
-  parsed: 8
-  continuity_pairs: 7
-  continuity_ok: 2
-  cost: 202.53000000000003
-  words: 62
-  terms: 9
-  connectives: 0
+  sentences: 5
+  parsed: 5
+  continuity_pairs: 4
+  continuity_ok: 0
+  cost: 222.23999999999995
+  words: 69
+  terms: 12
+  connectives: 4
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The Grammar defines one scope for "not". "Not" changes the truth of the verb. "Not" does not change a Noun Phrase. The Grammar bans "not all users". The Grammar bans "a not old file".
@@ -87,7 +87,7 @@ proposals:
     words: 39
     terms: 3
     connectives: 2
-  diagnosis: '"The language bans a sentence with "not" and a Noun Phrase": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The language bans a sentence with "not" and an adjective": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The language bans a sentence with "not" and a Noun Phrase": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The language bans a sentence with "not" and an adjective": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The word "not" negates the predicate of the clause. The language bans the negation of a Noun Phrase. The language does not allow "not all users". The language does not allow "a not old file".

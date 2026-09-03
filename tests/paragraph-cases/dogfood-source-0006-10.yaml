@@ -408,3 +408,138 @@ proposals:
   diagnosis: '"Every future Grammar ADR uses the 3 criteria": not recognizable as a minglish-like sentence | "the ADR justifies the choice against the criteria in the order of the criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify the choice of the Grammar against the 3 criteria in the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 65.58
+    words: 21
+    terms: 2
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify the choice of the Grammar against the 3 criteria in the order of the criteria": STYLE: "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify the choice of the Grammar. The choice follows the 3 criteria in the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 1
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 71.63999999999999
+    words: 23
+    terms: 2
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify the choice of the Grammar": AMBIGUOUS (2 readings): "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify the choice of the Grammar. The choice follows the 3 criteria. The order of the criteria is the order of the list.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 83.21
+    words: 28
+    terms: 2
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify the choice of the Grammar": AMBIGUOUS (2 readings): "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify the choice of the ADR against the 3 criteria in the given order.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 62.839999999999996
+    words: 19
+    terms: 1
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify the choice of the ADR against the 3 criteria in the given order": STYLE: "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "order" — a singular noun needs a determiner: "the order" (mass nouns take "the"); "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018); "the given order" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify the choice of the ADR against the 3 criteria. The ADR follows the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 76.8
+    words: 23
+    terms: 1
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify the choice of the ADR against the 3 criteria": STYLE: "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018) | "The ADR follows the order of the criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR justifies the choice of the ADR against the 3 criteria. The ADR follows the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 74.39
+    words: 22
+    terms: 1
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR justifies the choice of the ADR against the 3 criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018) | "The ADR follows the order of the criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: every future Grammar ADR must justify every choice of the ADR against the 3 criteria, in the order of the criteria
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 68.85
+    words: 21
+    terms: 1
+    connectives: 0
+  diagnosis: '"every future Grammar ADR must justify every choice of the ADR against the 3 criteria, in the order of the criteria": STYLE: "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR must justify every choice of the ADR against the 3 criteria. The ADR follows the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 1
+    cost: 78.74
+    words: 23
+    terms: 1
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR must justify every choice of the ADR against the 3 criteria": STYLE: "must … justify" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018) | "The ADR follows the order of the criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every future Grammar ADR justifies every choice of the ADR against the 3 criteria. ADR follows the order of the criteria.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 75.06
+    words: 21
+    terms: 1
+    connectives: 0
+  diagnosis: '"Every future Grammar ADR justifies every choice of the ADR against the 3 criteria": STYLE: "the ADR" — a Name takes no determiner: write "ADR", or introduce it with a noun: "the tool ADR" (ADR 0018) | "ADR follows the order of the criteria": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file")'
+  count: 1
+  model: deepseek/deepseek-v4-flash

@@ -1,7 +1,7 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 3
-original: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
-context_before: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
+original: An Indexical Pronoun refers to the speaker or refers to the hearer. The reference is not anaphoric, so an Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
+context_before: Every Pronoun of the third person is an Anaphoric Pronoun. An Anaphoric Pronoun refers to a noun of a prior sentence, so the reader must find the noun. A Discourse Layer resolves the referent of "it", so the sentence "it failed" needs a Discourse Layer. If a tool splits a long sentence into 2 sentences, then the second sentence refers to the first sentence. The ambiguity of the long sentence reappears in the reference. The file "docs/research/cnl-design-findings.md" describes the problem.
 context_after: |-
   The language bans every Anaphoric Pronoun:
   - "it"
@@ -19,16 +19,16 @@ context_after: |-
   - "these"
   - "those"
 original_metrics:
-  sentences: 4
-  parsed: 4
-  continuity_pairs: 3
-  continuity_ok: 2
-  cost: 143.20000000000002
-  words: 33
-  terms: 6
-  connectives: 1
-verdict: needs-fix
-note: insanely unnatural and mechanical; hard to understand
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 0
+  cost: 128.06
+  words: 31
+  terms: 4
+  connectives: 2
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: |-
   The language allows 4 Indexical Pronouns:
   - "i"
@@ -348,7 +348,7 @@ proposals:
     words: 57
     terms: 0
     connectives: 3
-  diagnosis: '"the declarations list contains the words i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "list" — a singular noun needs a determiner: "the list" (mass nouns take "the"); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | "the word i is a word for the writer": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a word for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a word for the writer": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a word for the user": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the declarations list does not contain other words": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
+  diagnosis: '"the declarations list contains the words i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "list" — a singular noun needs a determiner: "the list" (mass nouns take "the"); "your" used as a word must be quoted: "\"your\"" (ADR 0018); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | "the word i is a word for the writer": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a word for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a word for the writer": STYLE: "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a word for the user": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the declarations list does not contain other words": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows i. the tool Lexgen allows you. the tool Lexgen allows my. the tool Lexgen allows your.
@@ -526,7 +526,7 @@ proposals:
     words: 27
     terms: 0
     connectives: 3
-  diagnosis: '"the tool "lexgen" allows i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | ""i" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the tool "lexgen" allows i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | ""i" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows i. the tool lexgen allows you. the tool lexgen allows my. the tool lexgen allows your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.

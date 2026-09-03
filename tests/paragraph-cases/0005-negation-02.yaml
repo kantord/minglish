@@ -1,21 +1,21 @@
 source: docs/adr/0005-negation.md
 index: 2
-original: A Negation of a verb needs the word "do" in English. The word "do" is an Auxiliary. The language avoids Auxiliaries. The word "not" can change one Constituent. The phrase "not all users" is one example. The phrase "not old" is one example. A Negation of a Constituent causes a Scope Ambiguity.
-context_before: Triage counts about 204 tokens of the word "not" in the corpus. Instructions need Prohibitions. The sentence "do not delete the file" is a Prohibition.
+original: A Negation of a verb needs the Auxiliary "do" in English, but the language avoids Auxiliaries. English allows a Negation of a Constituent, so the phrase "not all users" has a Scope Ambiguity. The phrase "not old" has a Scope Ambiguity.
+context_before: Triage counts about 204 tokens of the word "not" in the corpus. Instructions need Prohibitions, and the sentence "do not delete the file" is a Prohibition.
 context_after: |-
   The language enables 3 Function Words:
   - "not"
   - "do"
   - "does"
 original_metrics:
-  sentences: 7
-  parsed: 7
-  continuity_pairs: 6
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
   continuity_ok: 2
-  cost: 164.47999999999993
-  words: 52
+  cost: 136.92
+  words: 41
   terms: 7
-  connectives: 0
+  connectives: 2
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: |-

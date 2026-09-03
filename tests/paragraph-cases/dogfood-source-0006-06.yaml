@@ -57,7 +57,7 @@ proposals:
     words: 88
     terms: 0
     connectives: 2
-  diagnosis: '"the text carries heavy meaning": STYLE: "meaning" — a singular noun needs a determiner: "the meaning" (mass nouns take "the") | "the preferred formulation is the short sentence inside the load bounds": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015); "preferred … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the preferred formulation" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "the rule forces the repetition of the noun and forces the word "then"": STYLE: "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the rule is justified": STYLE: "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "justified" is transitive in minglish and needs an object; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "the rule removes more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "removes … added" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "the rule pads the text": WORD: "pads" is not a minglish word | "the rule does not pass the test": WORD: "pass" is not a minglish word'
+  diagnosis: '"the text carries heavy meaning": STYLE: "meaning" — a singular noun needs a determiner: "the meaning" (mass nouns take "the") | "the preferred formulation is the short sentence inside the load bounds": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015); "preferred … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the preferred formulation" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "the rule forces the repetition of the noun and forces the word "then"": STYLE: "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the rule is justified": STYLE: "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "justified" is transitive in minglish and needs an object; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "the rule removes more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "removes … added" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "the rule pads the text": WORD: "pads" is not a minglish word | "the rule does not pass the test": WORD: "pass" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The target is a dense text. the text is precise. the text must be cheap to process. prefer the shortest formulation that stays inside the load bounds. verbosity is not free. a text that undercompresses the meaning adds noise. noise creates a Scope Ambiguity for the reader. a Rule forces extra words (a repeated noun is a Rule, a mandatory "then" is a Rule). a Rule is justified only if the Rule removes more ambiguity than the added length costs. a Rule that pads the text without disambiguating the text fails the criterion.
@@ -192,7 +192,7 @@ proposals:
     words: 90
     terms: 0
     connectives: 4
-  diagnosis: '"The writer seeks a precise text": WORD: "seeks" is not a minglish word | "The text is dense and cheap to process": STYLE: "process" — a singular noun needs a determiner: "the process" (mass nouns take "the") | "If a text under-compresses the meaning of the text, then the text adds noise": WORD: "under-compresses" is not a minglish word | "The noise creates a reading ambiguity": STYLE: "a reading ambiguity" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "reading" is a verb form in minglish and cannot follow a determiner — name the thing with a noun | "A rule forces a repeated noun or forces a mandatory "then"": STYLE: "a repeated noun" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "mandatory then" — an adjective cannot modify a Name; write "then" alone, or "the mandatory <noun> then" (ADR 0018); "noun" — a singular noun needs a determiner: "the noun" (mass nouns take "the"); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015) | "The rule is justified, because the rule removes more ambiguity than the cost of the added length": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "cost" is a verb in minglish — as a noun use "expense"; "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "A rule does not disambiguate the text": WORD: "disambiguate" is not a minglish word | "The rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  diagnosis: '"The writer seeks a precise text": WORD: "seeks" is not a minglish word | "The text is dense and cheap to process": STYLE: "process" — a singular noun needs a determiner: "the process" (mass nouns take "the") | "If a text under-compresses the meaning of the text, then the text adds noise": WORD: "under-compresses" is not a minglish word | "The noise creates a reading ambiguity": STYLE: "a reading ambiguity" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "reading" is a verb form in minglish and cannot follow a determiner — name the thing with a noun | "A rule forces a repeated noun or forces a mandatory "then"": STYLE: "a repeated noun" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "mandatory then" — an adjective cannot modify a Name; write "then" alone, or "the mandatory <noun> then" (ADR 0018); "noun" — a singular noun needs a determiner: "the noun" (mass nouns take "the"); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037) | "The rule is justified, because the rule removes more ambiguity than the cost of the added length": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "cost" is a verb in minglish — as a noun use "expense"; "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "A rule does not disambiguate the text": WORD: "disambiguate" is not a minglish word | "The rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The target is a dense text. the text must pack meaning into a short span, so a reader does not pay a high Cognitive Load. a short formulation is good, but the load bounds must hold. verbosity adds noise, so a verbose text is ambiguous. a rule adds words, so the rule must remove more ambiguity than the added length costs. a rule that adds words without removing an ambiguity fails the criterion.
@@ -215,14 +215,14 @@ proposals:
   valid: false
   metrics:
     sentences: 7
-    parsed: 1
+    parsed: 2
     continuity_pairs: 6
     continuity_ok: 3
     cost: 258.54999999999995
     words: 76
     terms: 1
     connectives: 5
-  diagnosis: '"the text must pack meaning into a short span, so a reader does not pay a big Cognitive Load": STYLE: "pack meaning" — noun-noun compounds are not minglish; write "the meaning of the pack", or one transparent word (ADR 0015); "pack" — a singular noun needs a determiner: "the pack" (mass nouns take "the") | "a short formulation is good, but the bounds of the load must stay": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "verbosity adds noise, so a verbose text is ambiguous": WORD: "verbosity" is not a minglish word | "a rule adds words, so the rule must remove more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "a rule adds words without removing an ambiguity": WORD: "without" is not a minglish word | "the rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  diagnosis: '"the text must pack meaning into a short span, so a reader does not pay a big Cognitive Load": STYLE: "pack meaning" — noun-noun compounds are not minglish; write "the meaning of the pack", or one transparent word (ADR 0015); "pack" — a singular noun needs a determiner: "the pack" (mass nouns take "the") | "verbosity adds noise, so a verbose text is ambiguous": WORD: "verbosity" is not a minglish word | "a rule adds words, so the rule must remove more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "a rule adds words without removing an ambiguity": WORD: "without" is not a minglish word | "the rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The text must be dense. a short formulation is good, but the bounds of the load must stay. a verbose text adds noise, so the verbose text is ambiguous. a rule adds words. the rule must remove the ambiguity. the rule must not add the cost of the length. a rule adds words and does not remove the ambiguity. the rule fails the criterion.
@@ -230,14 +230,14 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 4
+    parsed: 5
     continuity_pairs: 7
     continuity_ok: 4
     cost: 207.82000000000002
     words: 64
     terms: 0
     connectives: 3
-  diagnosis: '"a short formulation is good, but the bounds of the load must stay": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "a verbose text adds noise, so the verbose text is ambiguous": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the") | "the rule must not add the cost of the length": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "must … add" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
+  diagnosis: '"a verbose text adds noise, so the verbose text is ambiguous": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the") | "the rule must not add the cost of the length": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "must … add" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the rule fails the criterion": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The load bounds guide the density. a precise text is cheap to process, so the writer prefers the shortest formulation inside the load bounds. a verbose text adds noise, and the noise causes a reading ambiguity. a rule forces extra words, because the rule removes more ambiguity than the extra length costs. a rule that pads without a disambiguation fails the criterion.
@@ -327,7 +327,7 @@ proposals:
     words: 19
     terms: 0
     connectives: 2
-  diagnosis: '"if a rule adds words and the rule does not remove an ambiguity, then the rule fails the criterion": STYLE: a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007)'
+  diagnosis: '"if a rule adds words and the rule does not remove an ambiguity, then the rule fails the criterion": STYLE: a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The target is dense text. a sentence must be cheap to process. the writer prefers the shortest formulation inside the load bounds. verbosity adds noise. noise creates a reading ambiguity. a rule forces extra words, so the rule must remove more ambiguity than the added length costs. a rule pads without disambiguating, so the rule fails the criterion.
@@ -418,5 +418,140 @@ proposals:
     terms: 0
     connectives: 5
   diagnosis: '"a short formulation inside the bounds of the load is better than a long formulation": AMBIGUOUS (2 readings): "formulation inside …" — only "of" attaches to a noun; "inside" attaches to the verb. Write "the formulation of …", or move the phrase after the verb (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "the short text adds noise, and noise creates an ambiguity": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "a rule forces superfluous words": WORD: "superfluous" is not a minglish word | "the rule is valid, because the rule removes more ambiguities than the length costs the reader": STYLE: "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The target of the density criterion is a precise text with a high meaning per word and a low processing cost, so a writer prefers the shortest formulation that stays inside the load bounds. Verbosity is not free, because a verbose text adds noise, and noise creates a Reference Ambiguity. a rule that forces extra words is justified only if the rule removes more ambiguity than the extra length costs. a rule that pads without disambiguating a structure fails this criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 283.9
+    words: 81
+    terms: 1
+    connectives: 6
+  diagnosis: '"The target of the density criterion is a precise text with a high meaning per word and a low processing cost, so a writer prefers the shortest formulation that stays inside the load bounds": WORD: "high" is not a minglish word [all unknown words: high, per, low, processing, shortest, that] | "Verbosity is not free, because a verbose text adds noise, and noise creates a Reference Ambiguity": WORD: "Verbosity" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "a rule that forces extra words is justified only if the rule removes more ambiguity than the extra length costs": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, extra, only] | "a rule that pads without disambiguating a structure fails this criterion": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, pads, without, disambiguating, this]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The density criterion prefers the shortest formulation inside the load bounds. a verbose text adds noise, and noise creates a Reference Ambiguity. a rule forces extra words, but the rule is justified only if the rule removes more ambiguity than the extra length costs. a rule pads a text without removing an ambiguity, so the rule fails the criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 212.29
+    words: 59
+    terms: 1
+    connectives: 5
+  diagnosis: '"The density criterion prefers the shortest formulation inside the load bounds": WORD: "shortest" is banned in minglish — superlatives are deferred (ADR 0029) - write "short", or a Comparative: "shorter than …" | "a verbose text adds noise, and noise creates a Reference Ambiguity": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "a rule forces extra words, but the rule is justified only if the rule removes more ambiguity than the extra length costs": WORD: "extra" is not a minglish word [all unknown words: extra, only] | "a rule pads a text without removing an ambiguity, so the rule fails the criterion": WORD: "pads" is not a minglish word [all unknown words: pads, without]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The density criterion prefers a short formulation inside the load bounds. Verbose text adds noise, and noise creates a Reference Ambiguity. a rule forces more words, but the rule is justified if the rule removes more ambiguity than the added length costs. a rule adds words without removing an ambiguity, so the rule fails the criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 202.33
+    words: 56
+    terms: 1
+    connectives: 5
+  diagnosis: '"The density criterion prefers a short formulation inside the load bounds": STYLE: "density criterion" — noun-noun compounds are not minglish; write "the criterion of the density", or one transparent word (ADR 0015); "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015) | "Verbose text adds noise, and noise creates a Reference Ambiguity": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the"); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "a rule forces more words, but the rule is justified if the rule removes more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; condition must come first — write: if <clause>, then <clause> (ADR 0007); passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "a rule adds words without removing an ambiguity, so the rule fails the criterion": WORD: "without" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The target is precise and meaning-dense text that the reader can process with a small Cognitive Load. Prefer the shortest formulation that stays inside every load bound. Verbose text under-compresses the meaning, so the text adds noise, and noise creates an ambiguity of its own. A rule forces extra words, so the rule is justified, because the rule removes more ambiguity than the added length costs. A rule that pads the text and does not disambiguate fails this criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 282.43
+    words: 79
+    terms: 1
+    connectives: 7
+  diagnosis: '"The target is precise and meaning-dense text that the reader can process with a small Cognitive Load": WORD: "meaning-dense" is not a minglish word [all unknown words: meaning-dense, that] | "Prefer the shortest formulation that stays inside every load bound": WORD: "shortest" is banned in minglish — superlatives are deferred (ADR 0029) - write "short", or a Comparative: "shorter than …" [all unknown words: shortest, that] | "Verbose text under-compresses the meaning, so the text adds noise, and noise creates an ambiguity of its own": WORD: "under-compresses" is not a minglish word [all unknown words: under-compresses, its, own] | "A rule forces extra words, so the rule is justified, because the rule removes more ambiguity than the added length costs": WORD: "extra" is not a minglish word | "A rule that pads the text and does not disambiguate fails this criterion": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, pads, disambiguate, this]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The target is precise and dense text: the reader processes the text with a small Cognitive Load. A writer prefers the short formulation that stays inside every load bound. A verbose text does not compress the meaning, so the text adds noise, and noise creates an ambiguity of its own. A rule forces additional words, so the rule is justified, because the rule removes more ambiguity than the added length costs. A rule pads the text and does not reduce an ambiguity: the rule fails this criterion.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 295.91999999999996
+    words: 87
+    terms: 1
+    connectives: 7
+  diagnosis: '"The target is precise and dense text: the reader processes the text with a small Cognitive Load": STYLE: "processes" is a noun in minglish — as a verb use "handle"; "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "A writer prefers the short formulation that stays inside every load bound": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "A verbose text does not compress the meaning, so the text adds noise, and noise creates an ambiguity of its own": WORD: "compress" is not a minglish word [all unknown words: compress, its, own] | "A rule forces additional words, so the rule is justified, because the rule removes more ambiguity than the added length costs": WORD: "additional" is not a minglish word | "A rule pads the text and does not reduce an ambiguity: the rule fails this criterion": WORD: "pads" is not a minglish word [all unknown words: pads, this]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The target is the precise and dense text. The reader handles the text with a small Cognitive Load. A writer prefers the short formulation: the formulation stays inside every load bound. A verbose text does not pack the meaning, so the text adds noise, and noise creates an ambiguity of the text. A rule forces more words, so the rule is justified, because the rule removes more ambiguity than the added length costs. A rule adds words and does not reduce an ambiguity: the rule fails the criterion.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 0
+    continuity_pairs: 5
+    continuity_ok: 1
+    cost: 295.73999999999995
+    words: 88
+    terms: 1
+    connectives: 7
+  diagnosis: '"The target is the precise and dense text": STYLE: "precise" is an adjective — add the noun it describes: "a precise <noun>"; "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "The reader handles the text with a small Cognitive Load": WORD: "handles" is not a minglish word | "A writer prefers the short formulation: the formulation stays inside every load bound": STYLE: "load bound" — noun-noun compounds are not minglish; write "the bound of the load", or one transparent word (ADR 0015); "prefers … stays" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "A verbose text does not pack the meaning, so the text adds noise, and noise creates an ambiguity of the text": STYLE: "noise" — a singular noun needs a determiner: "the noise" (mass nouns take "the"); "pack the" — a word mentioned as a word must be quoted: "pack \"the\"" (ADR 0018); "pack" — a singular noun needs a determiner: "the pack" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "A rule forces more words, so the rule is justified, because the rule removes more ambiguity than the added length costs": STYLE: "ambiguity" — a singular noun needs a determiner: "the ambiguity" (mass nouns take "the"); "costs" is transitive in minglish and needs an object; "is … justified" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "more <noun>" — comparatives of a quantity are deferred (ADR 0030); write "a bigger number of <nouns>", or restructure; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "the added length" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "A rule adds words and does not reduce an ambiguity: the rule fails the criterion": not recognizable as a minglish-like sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The target is a precise and dense text that is cheap to process. Prefer the shortest formulation that stays inside the load bounds. Verbosity adds noise, and noise creates a Reading Ambiguity. A Rule that forces extra words (repeated nouns, mandatory "then") is justified, because the Rule removes more Ambiguity than the added length costs. A Rule that adds words but does not disambiguate fails the Criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 241.49000000000004
+    words: 67
+    terms: 0
+    connectives: 5
+  diagnosis: '"The target is a precise and dense text that is cheap to process": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "Prefer the shortest formulation that stays inside the load bounds": WORD: "shortest" is banned in minglish — superlatives are deferred (ADR 0029) - write "short", or a Comparative: "shorter than …" [all unknown words: shortest, that] | "Verbosity adds noise, and noise creates a Reading Ambiguity": WORD: "Verbosity" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file") | "A Rule that forces extra words (repeated nouns, mandatory "then") is justified, because the Rule removes more Ambiguity than the added length costs": WORD: "Rule" is not a minglish word — minglish words are lowercase ("rule"); a name that equals a word needs quotes [all unknown words: that, extra] | "A Rule that adds words but does not disambiguate fails the Criterion": WORD: "Rule" is not a minglish word — minglish words are lowercase ("rule"); a name that equals a word needs quotes [all unknown words: that, disambiguate]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every sentence of the language is dense and precise but is cheap to process. Prefer the short formulation inside the load bounds. the Verbosity of a sentence adds noise, and noise creates a Reading Ambiguity. a rule that forces extra words (repeated nouns, mandatory "then") is justified, because the rule removes more Ambiguity than the added length costs. a rule that adds words but does not remove an Ambiguity fails the Criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 1
+    cost: 249.02
+    words: 72
+    terms: 0
+    connectives: 6
+  diagnosis: '"Every sentence of the language is dense and precise but is cheap to process": STYLE: "cheap to …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023); "process" — a singular noun needs a determiner: "the process" (mass nouns take "the") | "Prefer the short formulation inside the load bounds": STYLE: "load bounds" — noun-noun compounds are not minglish; write "the bounds of the load", or one transparent word (ADR 0015) | "the Verbosity of a sentence adds noise, and noise creates a Reading Ambiguity": WORD: "Reading" is not a minglish word — minglish words are lowercase ("reading"); a name that equals a word needs quotes | "a rule that forces extra words (repeated nouns, mandatory "then") is justified, because the rule removes more Ambiguity than the added length costs": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, extra] | "a rule that adds words but does not remove an Ambiguity fails the Criterion": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language is dense and precise. Every sentence is cheap for the process. Prefer the short formulation inside the bounds of the load. The Verbosity of a sentence adds noise, and noise creates a Reading Ambiguity. A rule forces extra words (repeated nouns, mandatory "then"). The rule is justified, because the rule removes more Ambiguity than the added length costs. A rule adds words but does not remove an Ambiguity. The rule fails the Criterion.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 1
+    continuity_pairs: 7
+    continuity_ok: 3
+    cost: 256.29
+    words: 75
+    terms: 0
+    connectives: 5
+  diagnosis: '"The language is dense and precise": not recognizable as a minglish-like sentence | "Every sentence is cheap for the process": STYLE: "cheap for …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "The Verbosity of a sentence adds noise, and noise creates a Reading Ambiguity": WORD: "Reading" is not a minglish word — minglish words are lowercase ("reading"); a name that equals a word needs quotes | "A rule forces extra words (repeated nouns, mandatory "then")": WORD: "extra" is not a minglish word | "The rule is justified, because the rule removes more Ambiguity than the added length costs": WORD: "Ambiguity" is not a minglish word — minglish words are lowercase ("ambiguity"); a name that equals a word needs quotes | "A rule adds words but does not remove an Ambiguity": WORD: "Ambiguity" is not a minglish word — minglish words are lowercase ("ambiguity"); a name that equals a word needs quotes | "The rule fails the Criterion": WORD: "Criterion" is not a minglish word — minglish words are lowercase ("criterion"); a name that equals a word needs quotes'
   count: 1
   model: deepseek/deepseek-v4-flash

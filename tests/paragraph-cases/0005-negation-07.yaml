@@ -1,17 +1,17 @@
 source: docs/adr/0005-negation.md
 index: 7
-original: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
-context_before: A Negation of a Copula uses "is not" or uses "are not". A Negation of a Copula does not need an Auxiliary.
-context_after: The decision did not enable "did". The decision "0010" added "did". The language bans every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
+original: The Grammar limits the scope of "not" to the main predicate of the clause, so a Negation of a Constituent is a Ban. The Linter rejects the phrase "not all users" and rejects the phrase "a not old file".
+context_before: A Negation of a Copula does not need an Auxiliary, so the word "not" follows the Copula.
+context_after: The decision does not enable "did", but the later decision "0010" added "did". The orthography of the language bans every contraction.
 original_metrics:
-  sentences: 6
-  parsed: 6
-  continuity_pairs: 5
-  continuity_ok: 2
-  cost: 148.86999999999998
-  words: 50
-  terms: 4
-  connectives: 0
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 123.04
+  words: 39
+  terms: 5
+  connectives: 2
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The Linter can lint the statement Negated. the Linter can lint the Prohibition. the Linter writes every sentence in Minglish.
@@ -43,7 +43,7 @@ proposals:
     words: 29
     terms: 3
     connectives: 1
-  diagnosis: '"The Linter can lint a statement that has "not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter can lint a command that has "do not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The Linter can lint a statement that has "not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter can lint a command that has "do not"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "The Linter says the statement and the command in English": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A statement can have "not". A command can have "do not". The Linter can lint the statement. The Linter can lint the command. The Linter says the statement and the command in English.
@@ -58,7 +58,7 @@ proposals:
     words: 33
     terms: 3
     connectives: 1
-  diagnosis: '"The Linter says the statement and the command in English": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The Linter says the statement and the command in English": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter can lint a Negated Statement. the Linter can lint a Prohibition. the Linter expresses every sentence in Minglish.

@@ -1,17 +1,17 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 2
-original: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
-context_before: Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are Pronouns. The Pronouns make a big hole in the Coverage.
-context_after: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
+original: Every Pronoun of the third person is an Anaphoric Pronoun. An Anaphoric Pronoun refers to a noun of a prior sentence, so the reader must find the noun. A Discourse Layer resolves the referent of "it", so the sentence "it failed" needs a Discourse Layer. If a tool splits a long sentence into 2 sentences, then the second sentence refers to the first sentence. The ambiguity of the long sentence reappears in the reference. The file "docs/research/cnl-design-findings.md" describes the problem.
+context_before: Triage counted the unknown tokens of the corpus "UD-EWT". The file "docs/triage-report.md" records the result. About 2200 unknown tokens are Pronouns, so the Pronouns are a big Gap in the Coverage. The Gap of one Closed Class is bigger than the Gap of the Pronouns.
+context_after: An Indexical Pronoun refers to the speaker or refers to the hearer. The reference is not anaphoric, so an Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 original_metrics:
-  sentences: 5
-  parsed: 5
-  continuity_pairs: 4
-  continuity_ok: 0
-  cost: 182.57999999999996
-  words: 53
-  terms: 3
-  connectives: 0
+  sentences: 6
+  parsed: 6
+  continuity_pairs: 5
+  continuity_ok: 1
+  cost: 276.6199999999999
+  words: 80
+  terms: 5
+  connectives: 2
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: |-
@@ -593,7 +593,7 @@ proposals:
     words: 59
     terms: 0
     connectives: 11
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the tool bans "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those"": WORD: "forms" is not a minglish word | "the writer does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the tool bans "it" and "they" and "he" and "she"": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those"": WORD: "forms" is not a minglish word | "the writer does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. the tool bans pronominal demonstratives. the tool bans "it". the tool bans "they". the tool bans "he". the tool bans "she". the tool bans "this". the tool bans "that". the tool bans "these". the tool bans "those". the tool bans the forms of "this". the tool bans the forms of "that". the tool bans the forms of "these". the tool bans the forms of "those". the writer repeats the noun. the writer does not use anaphoric pronouns. the writer does not use demonstratives.
@@ -638,7 +638,7 @@ proposals:
     words: 46
     terms: 0
     connectives: 7
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "anaphoric pronouns are "it" and "they" and "he" and "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "anaphoric pronouns are "it" and "they" and "he" and "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. "it" is an anaphoric pronoun. "they" is an anaphoric pronoun. "he" is an anaphoric pronoun. "she" is an anaphoric pronoun. the tool Lexgen bans demonstratives. "this" is a demonstrative. "that" is a demonstrative. "these" is a demonstrative. "those" is a demonstrative. the ban contains object forms of these words. the ban contains possessive forms of these words. the writer repeats the noun.
@@ -1192,7 +1192,7 @@ proposals:
     words: 41
     terms: 2
     connectives: 3
-  diagnosis: '"The language bans every Anaphoric Pronoun and every demonstrative": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language also bans the object forms and the possessive forms of the pronouns": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, pronouns]'
+  diagnosis: '"The language bans every Anaphoric Pronoun and every demonstrative": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language also bans the object forms and the possessive forms of the pronouns": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun. The language bans every demonstrative. The language bans 8 pronouns. The pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". The language bans the object forms of the pronouns. The language bans the possessive forms of the pronouns. The writer repeats the noun.

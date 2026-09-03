@@ -16,8 +16,8 @@ original: |-
   - "that"
   - "these"
   - "those"
-context_before: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
-context_after: The writer repeats the noun.
+context_before: An Indexical Pronoun refers to the speaker or refers to the hearer. The reference is not anaphoric, so an Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
+context_after: If a writer needs an Anaphoric Pronoun, then the writer repeats the noun.
 original_metrics:
   sentences: 1
   parsed: 1
@@ -43,7 +43,7 @@ proposals:
     words: 26
     terms: 0
     connectives: 2
-  diagnosis: '"the system has no anaphora machinery and the system has no discourse machinery": WORD: "machinery" is not a minglish word | "the system does not have plans for an anaphora or a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "plans" is transitive in minglish and needs an object'
+  diagnosis: '"the system has no anaphora machinery and the system has no discourse machinery": WORD: "machinery" is not a minglish word | "the system does not have plans for an anaphora or a discourse layer": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "plans" is transitive in minglish and needs an object; a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon does not contain an anaphora tool. the lexicon does not contain a discourse tool. the maintainers do not plan a discourse tool for version 0.
@@ -192,7 +192,7 @@ proposals:
     words: 30
     terms: 0
     connectives: 2
-  diagnosis: '"the project has no anaphora mechanism and the project has no discourse mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the project has no anaphora mechanism and the project has no discourse mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | "the project does not plan a discourse mechanism and the project does not plan an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the project does not have an anaphora mechanism. the project does not have a discourse mechanism. the project does not plan a discourse mechanism. the project does not plan an anaphora mechanism.
@@ -460,7 +460,7 @@ proposals:
     words: 25
     terms: 0
     connectives: 1
-  diagnosis: '"the tool does not contain an anaphora mechanism and the mechanism does not exist": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan a discourse mechanism for the version": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"the tool does not contain an anaphora mechanism and the mechanism does not exist": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … contain" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | "the team does not plan a discourse mechanism for the version": STYLE: "discourse mechanism" — noun-noun compounds are not minglish; write "the mechanism of the discourse", or one transparent word (ADR 0015); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool does not contain an anaphora mechanism. the tool has no anaphora mechanism. the team does not plan a mechanism of the discourse for the version.
@@ -652,7 +652,7 @@ proposals:
     words: 22
     terms: 0
     connectives: 2
-  diagnosis: '"the system does not have anaphora or discourse tools": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the team does not plan the anaphora or discourse tools for version one": STYLE: "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "version" — a singular noun needs a determiner: "the version" (mass nouns take "the")'
+  diagnosis: '"the system does not have anaphora or discourse tools": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037) | "the team does not plan the anaphora or discourse tools for version one": STYLE: "discourse tools" — noun-noun compounds are not minglish; write "the tools of the discourse", or one transparent word (ADR 0015); "discourse" — a singular noun needs a determiner: "the discourse" (mass nouns take "the"); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "version" — a singular noun needs a determiner: "the version" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the system does not contain the anaphora mechanism. the system does not contain the discourse mechanism. the team does not plan the anaphora mechanism for the first version. the team does not plan the discourse mechanism for the first version.
@@ -844,7 +844,7 @@ proposals:
     words: 20
     terms: 0
     connectives: 1
-  diagnosis: '"no anaphora exists and no discourse layer exists": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the project does not plan a discourse layer for the current version": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
+  diagnosis: '"no anaphora exists and no discourse layer exists": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014); a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | "the project does not plan a discourse layer for the current version": STYLE: "discourse layer" is a defined term — write "Discourse Layer" (see CONTEXT.md); "does … plan" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language does not have an anaphora and does not have a discourse layer. the project does not plan a discourse layer for the initial version.

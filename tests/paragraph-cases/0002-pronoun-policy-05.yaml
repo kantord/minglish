@@ -1,6 +1,6 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 5
-original: The writer repeats the noun.
+original: If a writer needs an Anaphoric Pronoun, then the writer repeats the noun.
 context_before: |-
   The language bans every Anaphoric Pronoun:
   - "it"
@@ -28,12 +28,12 @@ original_metrics:
   parsed: 1
   continuity_pairs: 0
   continuity_ok: 0
-  cost: 17.689999999999998
-  words: 5
-  terms: 0
+  cost: 50.03
+  words: 13
+  terms: 1
   connectives: 0
-verdict: needs-fix
-note: better than before; some parts still unnatural and hard to read
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: the system does not produce ambiguities of the reference. the system does not have a layer of the discourse, so the system does not build a layer of the discourse.
 proposals:
 - text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.

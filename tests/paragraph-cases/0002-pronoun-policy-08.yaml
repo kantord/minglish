@@ -1,18 +1,23 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 8
-original: The language does not have a Discourse Layer. The maintainers do not plan a Discourse Layer for the initial version.
-context_before: The Form Tag of "I" is "PRON_1SG". The Form Tag of "you" is "PRON_2". The Form Tag of "my" is "POSS_1SG". The Form Tag of "your" is "POSS_2".
-context_after: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer, so the maintainers do not build a Discourse Layer.
+original: The maintainers did not build a Discourse Layer and do not plan a Discourse Layer for the initial version.
+context_before: |-
+  The 4 Indexical Pronouns have 4 Form Tags:
+  - "PRON_1SG"
+  - "PRON_2"
+  - "POSS_1SG"
+  - "POSS_2"
+context_after: The construction of the language removes every Reference Ambiguity, so the maintainers do not need a Discourse Layer.
 original_metrics:
-  sentences: 2
-  parsed: 2
-  continuity_pairs: 1
+  sentences: 1
+  parsed: 1
+  continuity_pairs: 0
   continuity_ok: 0
-  cost: 63.970000000000006
-  words: 20
+  cost: 61.84000000000001
+  words: 19
   terms: 2
-  connectives: 0
-verdict: needs-fix
-note: '''auxiliary'' became ''verb''; the meaning is: one specific Auxiliary (''do'') enters the language, fenced to one Sentence Shape'
+  connectives: 1
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: ''
 proposals: []

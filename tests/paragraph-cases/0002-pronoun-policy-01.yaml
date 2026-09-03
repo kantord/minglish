@@ -1,17 +1,17 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 1
-original: Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are Pronouns. The Pronouns make a big hole in the Coverage.
+original: Triage counted the unknown tokens of the corpus "UD-EWT". The file "docs/triage-report.md" records the result. About 2200 unknown tokens are Pronouns, so the Pronouns are a big Gap in the Coverage. The Gap of one Closed Class is bigger than the Gap of the Pronouns.
 context_before: ''
-context_after: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
+context_after: Every Pronoun of the third person is an Anaphoric Pronoun. An Anaphoric Pronoun refers to a noun of a prior sentence, so the reader must find the noun. A Discourse Layer resolves the referent of "it", so the sentence "it failed" needs a Discourse Layer. If a tool splits a long sentence into 2 sentences, then the second sentence refers to the first sentence. The ambiguity of the long sentence reappears in the reference. The file "docs/research/cnl-design-findings.md" describes the problem.
 original_metrics:
-  sentences: 3
-  parsed: 3
-  continuity_pairs: 2
-  continuity_ok: 2
-  cost: 86.1
-  words: 23
-  terms: 3
-  connectives: 0
+  sentences: 4
+  parsed: 4
+  continuity_pairs: 3
+  continuity_ok: 1
+  cost: 162.04000000000002
+  words: 45
+  terms: 8
+  connectives: 2
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: ''
@@ -928,7 +928,7 @@ proposals:
     words: 119
     terms: 13
     connectives: 3
-  diagnosis: '"the report shows that Indexical Pronouns are about 2200 of the unknown tokens": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the Indexical Pronouns are the second biggest Gap of the Closed Class": WORD: "biggest" is not a minglish word | "the report says that Anaphoric Pronouns are anaphoric": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the research in "docs/research/cnl-design-findings.md" finds that cross-sentence reference is the exact place of reappearing ambiguity": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, cross-sentence] | "the Indexical Pronouns "i" and "you" are indexical": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the Indexical Pronouns are never anaphoric": WORD: "never" is not a minglish word | "the instructional text uses the Indexical Pronouns constantly": WORD: "constantly" is not a minglish word'
+  diagnosis: '"the report shows that Indexical Pronouns are about 2200 of the unknown tokens": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the Indexical Pronouns are the second biggest Gap of the Closed Class": WORD: "biggest" is not a minglish word | "the report says that Anaphoric Pronouns are anaphoric": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the research in "docs/research/cnl-design-findings.md" finds that cross-sentence reference is the exact place of reappearing ambiguity": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) [all unknown words: that, cross-sentence] | "the Indexical Pronouns "i" and "you" are indexical": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the Indexical Pronouns are never anaphoric": WORD: "never" is not a minglish word | "the instructional text uses the Indexical Pronouns constantly": WORD: "constantly" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The report "docs/triage-report.md" shows the Coverage of the corpus "UD-EWT". The report shows a result. The result is that Indexical Pronouns are about 2200 of the unknown tokens. The Indexical Pronouns are the Gap of the Closed Class. The Gap is big. The report says a result. The result is that Anaphoric Pronouns are anaphoric. If a sentence says "it failed", then the reader needs a Discourse Layer. The research in "docs/research/cnl-design-findings.md" finds a result. The result is that cross-sentence reference is the place of reappearing ambiguity. The place is exact. The research says "ambiguity migrates". The Indexical Pronoun "i" is indexical. The Indexical Pronoun "you" is indexical. The Indexical Pronouns refer to the speaker or refer to the hearer. The Indexical Pronouns are not anaphoric. The Indexical Pronouns do not carry a Reference Ambiguity. The instructional text uses the Indexical Pronouns.

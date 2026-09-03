@@ -6,8 +6,13 @@ original: |-
   - "you"
   - "my"
   - "your"
-context_before: The writer repeats the noun.
-context_after: The Form Tag of "I" is "PRON_1SG". The Form Tag of "you" is "PRON_2". The Form Tag of "my" is "POSS_1SG". The Form Tag of "your" is "POSS_2".
+context_before: If a writer needs an Anaphoric Pronoun, then the writer repeats the noun.
+context_after: |-
+  The 4 Indexical Pronouns have 4 Form Tags:
+  - "PRON_1SG"
+  - "PRON_2"
+  - "POSS_1SG"
+  - "POSS_2"
 original_metrics:
   sentences: 1
   parsed: 1

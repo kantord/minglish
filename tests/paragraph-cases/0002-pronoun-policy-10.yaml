@@ -1,17 +1,18 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 10
-original: The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
-context_before: The design of the language removes every Reference Ambiguity. The language does not have a Discourse Layer, so the maintainers do not build a Discourse Layer.
-context_after: The Lexicon contains a Ban for every Anaphoric Pronoun. The Linter explains the Ban to the writer. The Linter says "repeat the noun you mean".
+original: The prose repeats the nouns, so the prose is repetitive. The project accepts the repetition, because the project prefers the clarity over the naturalness.
+context_before: The construction of the language removes every Reference Ambiguity, so the maintainers do not need a Discourse Layer.
+context_after: The current Lexicon does not contain the Anaphoric Pronouns. The Linter finds an unknown word and does not explain the Ban. A writer needs the message "repeat the noun you mean". The message needs a new mechanism in a future validator, so the maintainers deferred the message.
 original_metrics:
-  sentences: 3
-  parsed: 3
-  continuity_pairs: 2
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
   continuity_ok: 0
-  cost: 82.37999999999998
-  words: 25
+  cost: 83.06999999999998
+  words: 24
   terms: 0
-  connectives: 0
+  connectives: 2
 verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: ''
 proposals: []

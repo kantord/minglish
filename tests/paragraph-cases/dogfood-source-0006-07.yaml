@@ -193,7 +193,7 @@ proposals:
     words: 42
     terms: 0
     connectives: 3
-  diagnosis: '"Expressiveness is a genuine goal, but it does not override criteria 1 through 4": WORD: "genuine" is not a minglish word [all unknown words: genuine, it, through] | "If 2 formulations tie on load, density, and context need, then the writer prefers the more expressive formulation": STYLE: "context need" is a defined term — write "Context Need" (see CONTEXT.md); "context" — a singular noun needs a determiner: "the context" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"Expressiveness is a genuine goal, but it does not override criteria 1 through 4": WORD: "genuine" is not a minglish word [all unknown words: genuine, it, through] | "If 2 formulations tie on load, density, and context need, then the writer prefers the more expressive formulation": STYLE: "context need" is a defined term — write "Context Need" (see CONTEXT.md); "context" — a singular noun needs a determiner: "the context" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -280,7 +280,7 @@ proposals:
     "Expressiveness is a real goal, but it does not override criteria 1, 2, 3, and 4": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "If 2 valid formulations tie on 3 measures, then prefer the more expressive one": STYLE: "measures" is a verb in minglish and cannot follow a determiner; "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); "tie … measures" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "The 3 measures are the Load, the Density, and the Context Need of the formulation:
     - the Load
     - the Density
-    - the Context Need": WORD: "Load" is not a minglish word — minglish words are lowercase ("load"); a name that equals a word needs quotes | "Do not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
+    - the Context Need": WORD: "Load" is not a minglish word — minglish words are lowercase ("load"); a name that equals a word needs quotes | "Do not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -319,7 +319,7 @@ proposals:
     words: 51
     terms: 3
     connectives: 4
-  diagnosis: '"Expressiveness is a goal, so a text of Minglish is pleasant, not robotic, but the goal does not override criteria 1 through 4": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "If 2 formulations tie on load, density, and Context Need, then the Linter prefers the more expressive one": STYLE: "Context Need" — a singular noun needs a determiner: "the Context Need" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The Linter does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"Expressiveness is a goal, so a text of Minglish is pleasant, not robotic, but the goal does not override criteria 1 through 4": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "If 2 formulations tie on load, density, and Context Need, then the Linter prefers the more expressive one": STYLE: "Context Need" — a singular noun needs a determiner: "the Context Need" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The Linter does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: Expressiveness is a goal. A text of Minglish is pleasant and is not robotic, but the goal does not override 4 criteria. The criteria are the load, the density, the Context Need, and the charisma. If 2 formulations tie on the load, on the density, and on the Context Need, then the Linter prefers the more expressive formulation. The Linter does not trade the precision for the charisma. The Linter does not trade the clarity for the charisma.
@@ -390,7 +390,7 @@ proposals:
     words: 56
     terms: 1
     connectives: 4
-  diagnosis: '"Expressiveness has a lower rank": WORD: "lower" is not a minglish word | "Minglish text must be pleasant to read and not robotic, but expressiveness does not override criteria 1 through 4": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "If 2 valid formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive one": STYLE: "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"Expressiveness has a lower rank": WORD: "lower" is not a minglish word | "Minglish text must be pleasant to read and not robotic, but expressiveness does not override criteria 1 through 4": WORD: "1" is not a minglish word — write "one" — exactly one stays a word (ADR 0016) | "If 2 valid formulations tie on the load, the density, and the Context Need, then the writer prefers the more expressive one": STYLE: "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -453,7 +453,7 @@ proposals:
     "Expressiveness is a goal, so a minglish text is pleasant to read and is not robotic, but it does not override criteria 1 through 4": WORD: "minglish" is not a minglish word [all unknown words: minglish, it, through] | "If 2 valid formulations tie on 3 criteria, then a writer prefers the more expressive one": STYLE: "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016) | "The 3 criteria are:
     - the load
     - the density
-    - the Context Need": STYLE: intro: unexpected Colon at word 4 — no sanctioned sentence structure continues this way | "A writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
+    - the Context Need": STYLE: intro: unexpected Colon at word 4 — no sanctioned sentence structure continues this way | "A writer does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: Expressiveness is a goal, so a text of Minglish is pleasant to read and is not robotic, but it does not override criteria 1 through 4. If 2 valid formulations tie on 3 criteria, then a writer prefers the more expressive one. The 3 criteria are the load, the density, and the Context Need. A writer does not trade the precision for the charisma. A writer does not trade the clarity for the charisma.
@@ -507,6 +507,141 @@ proposals:
     "Expressiveness is a goal of Minglish, but the goal is not the first criterion": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "A sentence must be pleasant to read, not robotic, but the preference for expressiveness does not override the load, the density, or the Context Need": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the"); "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "If 2 formulations tie on 3 criteria, then the Linter prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the") | "Every criterion is:
     - the Cognitive Load
     - the density
-    - the Context Need": STYLE: intro: unexpected Colon at word 3 — no sanctioned sentence structure continues this way | "The maintainers do not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
+    - the Context Need": STYLE: intro: unexpected Colon at word 3 — no sanctioned sentence structure continues this way | "The maintainers do not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is subordinate to the 4 criteria, so sounding natural, charismatic, and expressive is a genuine goal but never overrides the criteria. Minglish text should be pleasant to read, not robotic. If 2 formulations tie on load, density, and Context Need, then the Grammar prefers the more expressive formulation. The Grammar never trades precision or clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 214.7800000000001
+    words: 58
+    terms: 3
+    connectives: 5
+  diagnosis: '"Expressiveness is subordinate to the 4 criteria, so sounding natural, charismatic, and expressive is a genuine goal but never overrides the criteria": WORD: "subordinate" is not a minglish word [all unknown words: subordinate, sounding, charismatic, genuine, never] | "Minglish text should be pleasant to read, not robotic": WORD: "should" is banned in minglish — "should" is a deferred modal (ADR 0009) - for an obligation write "must"; for advice write a Conditional: "if …, then the writer …" | "If 2 formulations tie on load, density, and Context Need, then the Grammar prefers the more expressive formulation": STYLE: "Context Need" — a singular noun needs a determiner: "the Context Need" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The Grammar never trades precision or clarity for charisma": WORD: "never" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a goal but does not override the 4 criteria. Minglish text must be pleasant to read, not robotic. If 2 formulations tie on the load, the density, and the Context Need, then the Grammar prefers the more expressive formulation. The Grammar does not trade precision for charisma. The Grammar does not trade clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 198.88000000000002
+    words: 57
+    terms: 4
+    connectives: 2
+  diagnosis: '"Expressiveness is a goal but does not override the 4 criteria": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "Minglish text must be pleasant to read, not robotic": STYLE: "Minglish text" — the name follows its noun: "the text Minglish" (ADR 0018); "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023) | "If 2 formulations tie on the load, the density, and the Context Need, then the Grammar prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the"); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The Grammar does not trade precision for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); split the sentence, or move the prepositional phrase so each attachment is explicit | "The Grammar does not trade clarity for charisma": AMBIGUOUS (2 readings): "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; split the sentence, or move the prepositional phrase so each attachment is explicit'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The expressiveness is a goal but does not override the 4 criteria. The text Minglish is pleasant to read, not robotic. If 2 formulations tie on the load, then the Grammar prefers the more expressive formulation. If 2 formulations tie on the density, then the Grammar prefers the more expressive formulation. If 2 formulations tie on the Context Need, then the Grammar prefers the more expressive formulation. The Grammar does not trade the precision for the charisma. The Grammar does not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 3
+    continuity_pairs: 6
+    continuity_ok: 4
+    cost: 296.1100000000001
+    words: 87
+    terms: 6
+    connectives: 1
+  diagnosis: '"The text Minglish is pleasant to read, not robotic": STYLE: "is … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); "pleasant to …" — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023) | "If 2 formulations tie on the load, then the Grammar prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the") | "If 2 formulations tie on the density, then the Grammar prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the") | "If 2 formulations tie on the Context Need, then the Grammar prefers the more expressive formulation": STYLE: "formulation" — a singular noun needs a determiner: "the formulation" (mass nouns take "the")'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is subordinate to the 4 criteria. Minglish text must be pleasant to read and not robotic, but soundness does not override the criteria. If 2 valid formulations tie on load, density, and Context Need, then the Grammar prefers the more expressive one. The rule never trades precision or clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 0
+    cost: 189.42000000000007
+    words: 52
+    terms: 2
+    connectives: 4
+  diagnosis: '"Expressiveness is subordinate to the 4 criteria": WORD: "subordinate" is not a minglish word | "Minglish text must be pleasant to read and not robotic, but soundness does not override the criteria": WORD: "soundness" is not a minglish word | "If 2 valid formulations tie on load, density, and Context Need, then the Grammar prefers the more expressive one": STYLE: "Context Need" — a singular noun needs a determiner: "the Context Need" (mass nouns take "the"); "density" — a singular noun needs a determiner: "the density" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); "one" is not a Pronoun — repeat the noun: "the expressive formulation" (ADR 0016); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The rule never trades precision or clarity for charisma": WORD: "never" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a goal of the language. Minglish text must be pleasant to read and must not be robotic. The 4 criteria rank above expressiveness. The Grammar prefers the expressive formulation if 2 valid formulations tie on the load, the density, and the Context Need. The rule does not trade precision or clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 191.84000000000003
+    words: 55
+    terms: 2
+    connectives: 4
+  diagnosis: '"Expressiveness is a goal of the language": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "Minglish text must be pleasant to read and must not be robotic": STYLE: "Minglish text" — the name follows its noun: "the text Minglish" (ADR 0018); "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023) | "The 4 criteria rank above expressiveness": WORD: "above" is not a minglish word | "The Grammar prefers the expressive formulation if 2 valid formulations tie on the load, the density, and the Context Need": STYLE: "formulation if" — a word mentioned as a word must be quoted: "formulation \"if\"" (ADR 0018); condition must come first — write: if <clause>, then <clause> (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The rule does not trade precision or clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "clarity" — a singular noun needs a determiner: "the clarity" (mass nouns take "the"); "does … trade" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "precision" — a singular noun needs a determiner: "the precision" (mass nouns take "the"); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a goal. The text Minglish must be pleasant. The text must not be robotic. The 4 criteria rank above the expressiveness. The Grammar prefers the expressive formulation. If 2 valid formulations tie on the load, the density, and the Context Need, then the Grammar picks the expressive formulation. The rule does not trade the precision for the charisma. The rule does not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 5
+    continuity_pairs: 7
+    continuity_ok: 3
+    cost: 237.45000000000007
+    words: 70
+    terms: 3
+    connectives: 1
+  diagnosis: '"Expressiveness is a goal": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "The 4 criteria rank above the expressiveness": WORD: "above" is not a minglish word | "If 2 valid formulations tie on the load, the density, and the Context Need, then the Grammar picks the expressive formulation": STYLE: a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is subordinate. Minglish text must be pleasant to read, so the goal is not robotic, but expressiveness does not override the 4 criteria. If 2 formulations tie on the load, the density, and the context need, then prefer the expressive formulation, but do not trade the precision or the clarity for charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 182.98000000000008
+    words: 53
+    terms: 0
+    connectives: 5
+  diagnosis: '"Expressiveness is subordinate": WORD: "subordinate" is not a minglish word | "Minglish text must be pleasant to read, so the goal is not robotic, but expressiveness does not override the 4 criteria": STYLE: "Minglish text" — the name follows its noun: "the text Minglish" (ADR 0018); "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the"); "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "If 2 formulations tie on the load, the density, and the context need, then prefer the expressive formulation, but do not trade the precision or the clarity for charisma": STYLE: "charisma" — a singular noun needs a determiner: "the charisma" (mass nouns take "the"); "context need" is a defined term — write "Context Need" (see CONTEXT.md); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a goal, but the goal is subordinate. The text Minglish must be pleasant to read, so the text is not robotic. The expressiveness does not override the 4 criteria. If 2 formulations tie on the load, the density, and the Context Need, then prefer the expressive formulation. Do not trade the precision or the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 197.19000000000008
+    words: 60
+    terms: 1
+    connectives: 4
+  diagnosis: '"Expressiveness is a goal, but the goal is subordinate": WORD: "subordinate" is not a minglish word | "The text Minglish must be pleasant to read, so the text is not robotic": STYLE: "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023) | "If 2 formulations tie on the load, the density, and the Context Need, then prefer the expressive formulation": STYLE: a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Do not trade the precision or the clarity for the charisma": STYLE: a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Expressiveness is a goal. The goal of the expressiveness is subordinate to the 4 criteria. The text Minglish must be pleasant to read, so the text is not robotic. The expressiveness does not override the 4 criteria. If 2 formulations tie on the load, then the 2 formulations tie on the density, and the 2 formulations tie on the Context Need. Then prefer the expressive formulation. Do not trade the precision for the charisma. Do not trade the clarity for the charisma.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 3
+    continuity_pairs: 7
+    continuity_ok: 2
+    cost: 267.0200000000002
+    words: 82
+    terms: 1
+    connectives: 2
+  diagnosis: '"Expressiveness is a goal": STYLE: "expressiveness" — a singular noun needs a determiner: "the expressiveness" (mass nouns take "the") | "The goal of the expressiveness is subordinate to the 4 criteria": WORD: "subordinate" is not a minglish word | "The text Minglish must be pleasant to read, so the text is not robotic": STYLE: "must … read" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; an adjective cannot take a prepositional phrase yet ("cheap to …"); restructure with a verb, or split the sentence (deferred, ADR 0023) | "If 2 formulations tie on the load, then the 2 formulations tie on the density, and the 2 formulations tie on the Context Need": STYLE: a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "Then prefer the expressive formulation": STYLE: "then" opens a line only inside a Step Block (Given / When / Then / And lines, ADR 0034); in prose write the step as a plain sentence'
   count: 1
   model: deepseek/deepseek-v4-flash

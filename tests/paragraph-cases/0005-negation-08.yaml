@@ -1,17 +1,20 @@
 source: docs/adr/0005-negation.md
 index: 8
-original: The decision did not enable "did". The decision "0010" added "did". The language bans every contraction. The word "doesn't" is a contraction. The word "don't" is a contraction.
-context_before: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
-context_after: The language can say a Negation. The language can say a Prohibition. The 2 Sentence Shapes are natural sentences of English.
+original: The decision does not enable "did", but the later decision "0010" added "did". The orthography of the language bans every contraction.
+context_before: The Grammar limits the scope of "not" to the main predicate of the clause, so a Negation of a Constituent is a Ban. The Linter rejects the phrase "not all users" and rejects the phrase "a not old file".
+context_after: |-
+  The decision does not enable 2 contractions:
+  - "doesn't"
+  - "don't"
 original_metrics:
-  sentences: 5
-  parsed: 5
-  continuity_pairs: 4
-  continuity_ok: 2
-  cost: 93.07
-  words: 28
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 0
+  cost: 73.95
+  words: 21
   terms: 0
-  connectives: 0
+  connectives: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The language adds one verb. the verb uses one Sentence Shape.
@@ -117,7 +120,7 @@ proposals:
     words: 24
     terms: 3
     connectives: 2
-  diagnosis: '"The Grammar adds the word "does" and the word "not"": not recognizable as a minglish-like sentence | "The Grammar adds the word "does" and the word "not" to one Sentence Shape": not recognizable as a minglish-like sentence'
+  diagnosis: '"The Grammar adds the word "does" and the word "not"": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037) | "The Grammar adds the word "does" and the word "not" to one Sentence Shape": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Grammar adds "does" and "not". The Grammar adds "does" and "not" to one Sentence Shape.
@@ -132,7 +135,7 @@ proposals:
     words: 16
     terms: 3
     connectives: 2
-  diagnosis: '"The Grammar adds "does" and "not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The Grammar adds "does" and "not"": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Grammar adds "does" and "not" to one Sentence Shape": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Grammar adds "does". The Grammar adds "not". The Grammar adds "does" and "not" to one Sentence Shape.
@@ -147,6 +150,6 @@ proposals:
     words: 18
     terms: 4
     connectives: 1
-  diagnosis: '"The Grammar adds "does" and "not" to one Sentence Shape": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"The Grammar adds "does" and "not" to one Sentence Shape": STYLE: a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash

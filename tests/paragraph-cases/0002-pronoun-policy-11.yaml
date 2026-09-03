@@ -1,18 +1,18 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 11
-original: The Lexicon contains a Ban for every Anaphoric Pronoun. The Linter explains the Ban to the writer. The Linter says "repeat the noun you mean".
-context_before: The prose repeats the nouns. The repetition is an acceptable expense. The project prefers the clarity of the prose to the naturalness of the prose.
+original: The current Lexicon does not contain the Anaphoric Pronouns. The Linter finds an unknown word and does not explain the Ban. A writer needs the message "repeat the noun you mean". The message needs a new mechanism in a future validator, so the maintainers deferred the message.
+context_before: The prose repeats the nouns, so the prose is repetitive. The project accepts the repetition, because the project prefers the clarity over the naturalness.
 context_after: ''
 original_metrics:
-  sentences: 3
-  parsed: 3
-  continuity_pairs: 2
+  sentences: 4
+  parsed: 4
+  continuity_pairs: 3
   continuity_ok: 1
-  cost: 95.77
-  words: 25
-  terms: 6
-  connectives: 0
-verdict: needs-fix
-note: stale 'future Grammar'; parts are great, some constructions odd and unnatural
+  cost: 165.90999999999997
+  words: 47
+  terms: 4
+  connectives: 2
+verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: ''
 proposals: []

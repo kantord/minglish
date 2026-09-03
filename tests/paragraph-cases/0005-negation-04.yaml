@@ -1,21 +1,21 @@
 source: docs/adr/0005-negation.md
 index: 4
-original: The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The Form Tag of "does" is "NEG_AUX_3SG".
+original: The word "not" has the Form Tag "NEG". The word "do" has the Form Tag "NEG_AUX_BASE", and the word "does" has the Form Tag "NEG_AUX_3SG".
 context_before: |-
   The language enables 3 Function Words:
   - "not"
   - "do"
   - "does"
-context_after: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
+context_after: The 2 Surface Forms of the Lemma "do" carry a Negation, so the Grammar must allow the Auxiliary in one pattern. The word "not" follows the Auxiliary and comes before a base verb. A Negation uses the pattern, and a Prohibition uses the bare pattern. The emphatic Auxiliary is a Ban, so the sentence "the parser does accept the file" is a Rejection. A question cannot use the Auxiliary.
 original_metrics:
-  sentences: 3
-  parsed: 3
-  continuity_pairs: 2
-  continuity_ok: 2
-  cost: 71.54999999999998
-  words: 21
+  sentences: 2
+  parsed: 2
+  continuity_pairs: 1
+  continuity_ok: 1
+  cost: 85.46999999999998
+  words: 25
   terms: 3
-  connectives: 0
+  connectives: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
 best: The Copula does not use "do". the Copula uses "not" with "is" or uses "not" with "were".
@@ -136,7 +136,7 @@ proposals:
     words: 16
     terms: 2
     connectives: 2
-  diagnosis: '"A Copula uses "is not" or "are not"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "a Copula does not use "do" or "does"": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"A Copula uses "is not" or "are not"": STYLE: a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "a Copula does not use "do" or "does"": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; a comma before "or" is mandatory when a new clause follows — "<clause>, or <clause>"; no comma when "or" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: A Copula uses "is not". a Copula uses "are not". a Copula does not use "do". a Copula does not use "does".

@@ -438,3 +438,147 @@ proposals:
   diagnosis: '"The Grammar builds a right branch into every Sentence Shape": STYLE: "right branch" — noun-noun compounds are not minglish; write "the branch of the right", or one transparent word (ADR 0015) | "The score checks the load of the sentence, gathers the evidence for future bounds, and monitors the Residual Load": WORD: "Load" is not a minglish word — minglish words are lowercase ("load"); a name that equals a word needs quotes | "The mechanism makes the text readable": STYLE: "makes … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: The Grammar defines every valid Sentence Shape. the Grammar builds right-branching structures, because the head-initial templates make every sentence right-branching. the writer cannot write a bad shape, because the Grammar rejects the shape. scoring the Parse is the secondary tool. the Parse verifies the claim of the research, monitors the load, and gathers the evidence for future bounds. the Parse does not keep the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 2
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 244.73000000000016
+    words: 66
+    terms: 7
+    connectives: 3
+  diagnosis: '"the Grammar builds right-branching structures, because the head-initial templates make every sentence right-branching": WORD: "right-branching" is banned in minglish — write "branches to the right" as a sentence: "every Sentence Shape puts the head at the front" [all unknown words: right-branching, head-initial, templates] | "scoring the Parse is the secondary tool": WORD: "scoring" is not a minglish word | "the Parse verifies the claim of the research, monitors the load, and gathers the evidence for future bounds": STYLE: a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Parse does not keep the text readable": STYLE: "does … keep" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "keep … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Grammar defines every valid Sentence Shape. every Sentence Shape puts the head at the front, so the Grammar builds branches to the right. the writer cannot write a bad shape, because the Grammar rejects the shape. the tool scores the Parse. the Parse does 3 things:
+    - verifies the claim of the research
+    - monitors the load
+    - gathers the evidence for future bounds
+    the Parse is not the mechanism that keeps the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 2
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 243.50000000000014
+    words: 73
+    terms: 8
+    connectives: 3
+  diagnosis: |-
+    "every Sentence Shape puts the head at the front, so the Grammar builds branches to the right": AMBIGUOUS (4 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "the tool scores the Parse": STYLE: "tool scores" — noun-noun compounds are not minglish; write "the scores of the tool", or one transparent word (ADR 0015) | "the Parse does 3 things:
+    - verifies the claim of the research
+    - monitors the load
+    - gathers the evidence for future bounds": STYLE: intro: unexpected NumPl("3") at word 3 — no sanctioned sentence structure continues this way | "the Parse is not the mechanism that keeps the text readable": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar defines every valid Sentence Shape. every Sentence Shape puts the head at the front. the Grammar builds branches to the right. the writer cannot write a bad shape, because the Grammar rejects the shape. the scores of the tool check the Parse. the tool verifies the claim of the research. the tool monitors the load. the tool gathers the evidence for future bounds. the Parse does not keep the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 9
+    parsed: 8
+    continuity_pairs: 8
+    continuity_ok: 4
+    cost: 240.16000000000014
+    words: 73
+    terms: 7
+    connectives: 1
+  diagnosis: '"the Parse does not keep the text readable": STYLE: "does … keep" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "keep … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The Grammar makes bad Sentence Shapes unwritable, because the Grammar builds right-branching into every Sentence Shape. The right-branching is a comprehension property of the language, so the set of valid sentences is the primary tool of the enforcement hierarchy. The scoring of parsed sentences is a secondary tool: the scoring verifies the claim, monitors the residual load, and gathers the evidence for future bounds, but the scoring does not keep the text readable.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 259.11000000000007
+    words: 73
+    terms: 4
+    connectives: 4
+  diagnosis: '"The Grammar makes bad Sentence Shapes unwritable, because the Grammar builds right-branching into every Sentence Shape": WORD: "unwritable" is not a minglish word [all unknown words: unwritable, right-branching] | "The right-branching is a comprehension property of the language, so the set of valid sentences is the primary tool of the enforcement hierarchy": WORD: "right-branching" is banned in minglish — write "branches to the right" as a sentence: "every Sentence Shape puts the head at the front" [all unknown words: right-branching, enforcement, hierarchy] | "The scoring of parsed sentences is a secondary tool: the scoring verifies the claim, monitors the residual load, and gathers the evidence for future bounds, but the scoring does not keep the text readable": WORD: "scoring" is not a minglish word [all unknown words: scoring, residual]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The Grammar makes every Sentence Shape branch to the right, because every Sentence Shape puts the head at the front. A bad Sentence Shape cannot exist in the Grammar, so the set of valid sentences is the primary tool of the enforcement. The evaluation of parsed sentences is a secondary tool: the evaluation verifies the claim, monitors the load, and gathers the evidence for future bounds, but the evaluation does not keep the text readable.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 242.5200000000001
+    words: 75
+    terms: 5
+    connectives: 4
+  diagnosis: '"The Grammar makes every Sentence Shape branch to the right, because every Sentence Shape puts the head at the front": STYLE: "Sentence Shape branch" — noun-noun compounds are not minglish; write "the branch of the Sentence Shape", or one transparent word (ADR 0015) | "A bad Sentence Shape cannot exist in the Grammar, so the set of valid sentences is the primary tool of the enforcement": WORD: "enforcement" is not a minglish word | "The evaluation of parsed sentences is a secondary tool: the evaluation verifies the claim, monitors the load, and gathers the evidence for future bounds, but the evaluation does not keep the text readable": WORD: "evaluation" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The Grammar makes the branch of every Sentence Shape go to the right, because every Sentence Shape puts the head at the front. A bad Sentence Shape cannot exist in the Grammar, so the set of valid sentences is the primary tool of the enforcement. The check of parsed sentences is a secondary tool: the check verifies the claim, monitors the load, and gathers the evidence for future bounds, but the check does not keep the text readable.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 2
+    cost: 245.06000000000012
+    words: 78
+    terms: 5
+    connectives: 4
+  diagnosis: '"The Grammar makes the branch of every Sentence Shape go to the right, because every Sentence Shape puts the head at the front": STYLE: "makes … go" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014) | "A bad Sentence Shape cannot exist in the Grammar, so the set of valid sentences is the primary tool of the enforcement": WORD: "enforcement" is not a minglish word | "The check of parsed sentences is a secondary tool: the check verifies the claim, monitors the load, and gathers the evidence for future bounds, but the check does not keep the text readable": STYLE: "check … parsed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "check" is a verb in minglish — as a noun use "test"; "keep … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences; a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar is the primary tool, because the Grammar builds the right branching into every sentence. the head-initial templates force the right branching in every Parse, so a bad shape is not writable. the Linter is the secondary tool. the Linter checks the Parse of every sentence, monitors the load, and gives evidence for future bounds. the Parse of every sentence is the mechanism that keeps the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 245.32000000000014
+    words: 69
+    terms: 7
+    connectives: 3
+  diagnosis: '"The Grammar is the primary tool, because the Grammar builds the right branching into every sentence": STYLE: "right branching" — noun-noun compounds are not minglish; write "the branching of the right", or one transparent word (ADR 0015) | "the head-initial templates force the right branching in every Parse, so a bad shape is not writable": WORD: "head-initial" is not a minglish word [all unknown words: head-initial, templates, writable] | "the Linter checks the Parse of every sentence, monitors the load, and gives evidence for future bounds": STYLE: "evidence" — a singular noun needs a determiner: "the evidence" (mass nouns take "the"); "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Parse of every sentence is the mechanism that keeps the text readable": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar is the primary tool, because the Grammar builds the branching of the right into every sentence. the head words of the templates force the branching of the right in every Parse, so a writer cannot write a bad shape. the Linter is the secondary tool. the Linter checks the Parse of every sentence, so the Linter monitors the load of the sentence. the Linter gives the evidence for future bounds. the Parse of every sentence is the mechanism. the mechanism keeps the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 7
+    parsed: 3
+    continuity_pairs: 6
+    continuity_ok: 3
+    cost: 286.74
+    words: 86
+    terms: 9
+    connectives: 3
+  diagnosis: '"the head words of the templates force the branching of the right in every Parse, so a writer cannot write a bad shape": WORD: "templates" is not a minglish word | "the Linter checks the Parse of every sentence, so the Linter monitors the load of the sentence": AMBIGUOUS (4 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the Parse of every sentence is the mechanism": STYLE: "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014) | "the mechanism keeps the text readable": STYLE: "keeps … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar is the primary tool, because the Grammar builds the branching of the right into every sentence. the rules of the Grammar force the branching of the right in every Parse, so a writer cannot write a bad shape. the Linter is the secondary tool. the Linter checks the Parse of a sentence. the Linter monitors the load of the sentence. the Linter gives the evidence for future bounds. the Parse of a sentence is the mechanism. the mechanism makes the text readable.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 8
+    parsed: 6
+    continuity_pairs: 7
+    continuity_ok: 4
+    cost: 276.16
+    words: 84
+    terms: 10
+    connectives: 2
+  diagnosis: '"the rules of the Grammar force the branching of the right in every Parse, so a writer cannot write a bad shape": STYLE: "Grammar force" — noun-noun compounds are not minglish; write "the force of the Grammar", or one transparent word (ADR 0015); "cannot … write" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "force the" — a word mentioned as a word must be quoted: "force \"the\"" (ADR 0018); "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); "right in …" — only "of" attaches to a noun; "in" attaches to the verb. Write "the right of …", or move the phrase after the verb (ADR 0011) | "the mechanism makes the text readable": STYLE: "makes … text readable" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences'
+  count: 1
+  model: deepseek/deepseek-v4-flash

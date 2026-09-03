@@ -1,17 +1,18 @@
 source: docs/adr/0005-negation.md
 index: 11
-original: The Grammar enforces the rule of the scope. The Grammar enforces the rule of the Auxiliary. Triage does not see the rules, because Triage checks the tokens.
-context_before: One Auxiliary enters the language. The Grammar limits the Auxiliary to one Sentence Shape.
-context_after: ''
+original: The language gains one Auxiliary, but the Auxiliary appears in one pattern.
+context_before: The language can say a Negation and can say a Prohibition in natural sentences of English.
+context_after: The Grammar limits the Auxiliary to one pattern and fixes the scope of "not". Triage does not see the 2 rules, because Triage counts the tokens of a sentence. Triage accepts every token of the 3 Function Words.
 original_metrics:
-  sentences: 3
-  parsed: 3
-  continuity_pairs: 2
-  continuity_ok: 2
-  cost: 91.13999999999999
-  words: 27
-  terms: 3
+  sentences: 1
+  parsed: 1
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 39.47
+  words: 12
+  terms: 2
   connectives: 1
 verdict: unreviewed
+note: source paragraph changed; stored proposals are replay data only
 best: ''
 proposals: []

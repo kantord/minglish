@@ -1,16 +1,16 @@
 source: docs/adr/0005-negation.md
 index: 6
-original: A Negation of a Copula uses "is not" or uses "are not". A Negation of a Copula does not need an Auxiliary.
-context_before: The word "do" carries a Negation. The word "does" carries a Negation. The Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is the phrase "does not delete". A Prohibition uses the phrase "do not". The language bans the emphatic Auxiliary. The sentence "the parser does accept the file" is one example. The language bans the Auxiliary in a question.
-context_after: The Grammar fixes the scope of "not". The word "not" changes the truth of the main verb. The word "not" does not change a Constituent. The language bans a Negation of a Constituent. The phrase "not all users" is one example. The phrase "a not old file" is one example.
+original: A Negation of a Copula does not need an Auxiliary, so the word "not" follows the Copula.
+context_before: The 2 Surface Forms of the Lemma "do" carry a Negation, so the Grammar must allow the Auxiliary in one pattern. The word "not" follows the Auxiliary and comes before a base verb. A Negation uses the pattern, and a Prohibition uses the bare pattern. The emphatic Auxiliary is a Ban, so the sentence "the parser does accept the file" is a Rejection. A question cannot use the Auxiliary.
+context_after: The Grammar limits the scope of "not" to the main predicate of the clause, so a Negation of a Constituent is a Ban. The Linter rejects the phrase "not all users" and rejects the phrase "a not old file".
 original_metrics:
-  sentences: 2
-  parsed: 2
-  continuity_pairs: 1
-  continuity_ok: 1
-  cost: 71.38000000000001
-  words: 22
-  terms: 5
+  sentences: 1
+  parsed: 1
+  continuity_pairs: 0
+  continuity_ok: 0
+  cost: 56.09
+  words: 17
+  terms: 4
   connectives: 1
 verdict: unreviewed
 note: source paragraph changed; stored proposals are replay data only
@@ -73,7 +73,7 @@ proposals:
     words: 23
     terms: 1
     connectives: 1
-  diagnosis: '"The Seed does not enable the contractions "doesn''t" and "don''t"": STYLE: "does … enable" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "ADR 0010 adds the rule later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file")'
+  diagnosis: '"The Seed does not enable the contractions "doesn''t" and "don''t"": STYLE: "does … enable" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; a comma before "and" is mandatory when a new clause follows — "<clause>, and <clause>"; no comma when "and" only joins a predicate under the same subject (ADR 0037); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "ADR 0010 adds the rule later": WORD: "ADR" is not a minglish word — a name cannot start a sentence — introduce it ("the tool Lexgen …") or quote it; or if this is a command, use a minglish verb in lowercase ("delete the file")'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Seed does not enable "doesn't". The Seed does not enable "don't". The rule of Minglish bans every contraction. The later ADR 0010 adds the rule.

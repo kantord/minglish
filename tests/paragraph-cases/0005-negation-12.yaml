@@ -1,0 +1,17 @@
+source: docs/adr/0005-negation.md
+index: 12
+original: The Grammar limits the Auxiliary to one pattern and fixes the scope of "not". Triage does not see the 2 rules, because Triage counts the tokens of a sentence. Triage accepts every token of the 3 Function Words.
+context_before: The language gains one Auxiliary, but the Auxiliary appears in one pattern.
+context_after: ''
+original_metrics:
+  sentences: 3
+  parsed: 3
+  continuity_pairs: 2
+  continuity_ok: 1
+  cost: 127.15999999999998
+  words: 38
+  terms: 3
+  connectives: 2
+verdict: unreviewed
+best: ''
+proposals: []
