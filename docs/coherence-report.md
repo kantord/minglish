@@ -4,290 +4,415 @@
 
 ## docs/adr/0001-generated-lexicon-from-curated-seed.md
 
-- Sentences: 69; parse: 69/69 (100%)
-- Topic continuity: 17/60 consecutive pairs share the subject with the sentence before (28%)
+- Sentences: 54; parse: 54/54 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 7/37 consecutive pairs share the subject with the sentence before (19%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - condition: 4 ✓ if …, then
+  - result: 7 ✓ , so
+  - reason: 1 ✓ , because
+  - contrast: 2 ✓ but
+  - condition: 3 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0002-pronoun-policy.md
 
-- Sentences: 29; parse: 29/29 (100%)
-- Topic continuity: 9/20 consecutive pairs share the subject with the sentence before (45%)
+- Sentences: 25; parse: 25/25 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 3/14 consecutive pairs share the subject with the sentence before (21%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - condition: 1 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - result: 7 ✓ , so
+  - reason: 1 ✓ , because
+  - condition: 2 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0003-copula.md
 
-- Sentences: 36; parse: 36/36 (100%)
-- Topic continuity: 15/25 consecutive pairs share the subject with the sentence before (60%)
+- Sentences: 28; parse: 28/28 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 2/15 consecutive pairs share the subject with the sentence before (13%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
+  - result: 3 ✓ , so
+  - contrast: 1 ✓ but
   - condition: 1 ✓ if …, then
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0004-coordination.md
 
-- Sentences: 33; parse: 33/33 (100%)
-- Topic continuity: 11/26 consecutive pairs share the subject with the sentence before (42%)
+- Sentences: 24; parse: 24/24 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 4/13 consecutive pairs share the subject with the sentence before (31%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 2 ✓ , because
-  - contrast: 6 ✓ but
+  - result: 6 ✓ , so
+  - reason: 3 ✓ , because
+  - contrast: 8 ✓ but
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0005-negation.md
 
-- Sentences: 43; parse: 43/43 (100%)
-- Topic continuity: 15/34 consecutive pairs share the subject with the sentence before (44%)
+- Sentences: 24; parse: 24/24 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 4/12 consecutive pairs share the subject with the sentence before (33%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 5 ✓ , so
   - reason: 1 ✓ , because
+  - contrast: 3 ✓ but
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0006-comprehension-first-syntax.md
 
-- Sentences: 64; parse: 64/64 (100%)
-- Topic continuity: 21/51 consecutive pairs share the subject with the sentence before (41%)
+- Sentences: 58; parse: 58/58 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 9/40 consecutive pairs share the subject with the sentence before (22%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - result: 4 ✓ , so
+  - reason: 3 ✓ , because
+  - contrast: 4 ✓ but
   - condition: 6 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - sequence: 3 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0007-conditionals.md
 
-- Sentences: 32; parse: 32/32 (100%)
-- Topic continuity: 9/23 consecutive pairs share the subject with the sentence before (39%)
+- Sentences: 21; parse: 21/21 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 4/10 consecutive pairs share the subject with the sentence before (40%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
+  - result: 5 ✓ , so
   - reason: 1 ✓ , because
-  - condition: 13 ✓ if …, then
-  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
+  - condition: 12 ✓ if …, then
+  - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0008-redirect-vs-ban.md
 
-- Sentences: 41; parse: 41/41 (100%)
-- Topic continuity: 17/32 consecutive pairs share the subject with the sentence before (53%)
+- Sentences: 37; parse: 37/37 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 13/26 consecutive pairs share the subject with the sentence before (50%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 9 ✓ if …, then
+  - result: 6 ✓ , so
+  - reason: 3 ✓ , because
+  - contrast: 2 ✓ but
+  - condition: 6 ✓ if …, then
 
 ## docs/adr/0009-modals.md
 
-- Sentences: 41; parse: 41/41 (100%)
-- Topic continuity: 15/32 consecutive pairs share the subject with the sentence before (47%)
+- Sentences: 38; parse: 38/38 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 9/26 consecutive pairs share the subject with the sentence before (35%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 7 ✓ , so
+  - reason: 3 ✓ , because
   - condition: 2 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0010-simple-past.md
 
-- Sentences: 40; parse: 40/40 (100%)
-- Topic continuity: 10/31 consecutive pairs share the subject with the sentence before (32%)
+- Sentences: 31; parse: 31/31 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 3/19 consecutive pairs share the subject with the sentence before (16%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
+  - result: 6 ✓ , so
+  - reason: 2 ✓ , because
   - condition: 2 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0011-pp-attachment.md
 
-- Sentences: 32; parse: 32/32 (100%)
-- Topic continuity: 10/25 consecutive pairs share the subject with the sentence before (40%)
+- Sentences: 33; parse: 33/33 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 5/23 consecutive pairs share the subject with the sentence before (22%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - condition: 2 ✓ if …, then
+  - result: 11 ✓ , so
+  - reason: 1 ✓ , because
+  - condition: 3 ✓ if …, then
+  - sequence: 4 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0012-pair-validity.md
 
-- Sentences: 33; parse: 33/33 (100%)
-- Topic continuity: 9/25 consecutive pairs share the subject with the sentence before (36%)
+- Sentences: 41; parse: 41/41 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 12/28 consecutive pairs share the subject with the sentence before (43%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - result: 6 ✓ , so
   - reason: 1 ✓ , because
-  - condition: 5 ✓ if …, then
+  - contrast: 3 ✓ but
+  - condition: 6 ✓ if …, then
+  - sequence: 3 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0013-generic-bare-plurals.md
 
-- Sentences: 38; parse: 38/38 (100%)
-- Topic continuity: 9/30 consecutive pairs share the subject with the sentence before (30%)
+- Sentences: 39; parse: 39/39 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 5/25 consecutive pairs share the subject with the sentence before (20%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - result: 6 ✓ , so
+  - reason: 3 ✓ , because
+  - condition: 1 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0014-universal-and-no.md
 
-- Sentences: 65; parse: 65/65 (100%)
-- Topic continuity: 23/53 consecutive pairs share the subject with the sentence before (43%)
+- Sentences: 45; parse: 45/45 (100%)
+- Headings: 5; with a banned or wrong-sense word: 0
+- Topic continuity: 10/31 consecutive pairs share the subject with the sentence before (32%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
-  - condition: 5 ✓ if …, then
-  - sequence: 4 ✓ after/before/until + noun phrase (ADR 0033)
+  - result: 9 ✓ , so
+  - reason: 5 ✓ , because
+  - condition: 3 ✓ if …, then
+  - sequence: 7 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0015-compounds-transparency.md
 
-- Sentences: 52; parse: 52/52 (100%)
-- Topic continuity: 18/40 consecutive pairs share the subject with the sentence before (45%)
+- Sentences: 61; parse: 61/61 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 13/44 consecutive pairs share the subject with the sentence before (30%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - reason: 1 ✓ , because
-  - condition: 2 ✓ if …, then
+  - result: 5 ✓ , so
+  - contrast: 4 ✓ but
+  - condition: 7 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0016-have-and-one.md
 
-- Sentences: 30; parse: 30/30 (100%)
-- Topic continuity: 11/25 consecutive pairs share the subject with the sentence before (44%)
+- Sentences: 35; parse: 35/35 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 7/28 consecutive pairs share the subject with the sentence before (25%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 2 ✓ , so
-  - reason: 1 ✓ , because
+  - result: 5 ✓ , so
+  - reason: 4 ✓ , because
+  - contrast: 1 ✓ but
   - condition: 2 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0017-existential-some.md
 
-- Sentences: 24; parse: 24/24 (100%)
-- Topic continuity: 8/17 consecutive pairs share the subject with the sentence before (47%)
+- Sentences: 21; parse: 21/21 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 5/14 consecutive pairs share the subject with the sentence before (36%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 2 ✓ , because
+  - result: 2 ✓ , so
+  - reason: 3 ✓ , because
+  - condition: 1 ✓ if …, then
   - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0018-proper-names.md
 
-- Sentences: 56; parse: 56/56 (100%)
-- Topic continuity: 21/50 consecutive pairs share the subject with the sentence before (42%)
+- Sentences: 43; parse: 43/43 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 14/32 consecutive pairs share the subject with the sentence before (44%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 5 ✓ if …, then
+  - result: 4 ✓ , so
+  - reason: 3 ✓ , because
+  - contrast: 2 ✓ but
+  - condition: 8 ✓ if …, then
 
 ## docs/adr/0019-imperatives.md
 
-- Sentences: 38; parse: 38/38 (100%)
-- Topic continuity: 14/32 consecutive pairs share the subject with the sentence before (44%)
+- Sentences: 31; parse: 31/31 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 7/22 consecutive pairs share the subject with the sentence before (32%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - result: 9 ✓ , so
+  - reason: 1 ✓ , because
+  - contrast: 1 ✓ but
   - condition: 2 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0020-no-first-person-plural.md
 
-- Sentences: 31; parse: 31/31 (100%)
-- Topic continuity: 10/24 consecutive pairs share the subject with the sentence before (42%)
+- Sentences: 27; parse: 27/27 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 7/13 consecutive pairs share the subject with the sentence before (54%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 3 ✓ , so
+  - reason: 3 ✓ , because
   - condition: 1 ✓ if …, then
+  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0021-but.md
 
-- Sentences: 33; parse: 33/33 (100%)
-- Topic continuity: 15/28 consecutive pairs share the subject with the sentence before (54%)
+- Sentences: 25; parse: 25/25 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 8/19 consecutive pairs share the subject with the sentence before (42%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 2 ✓ , because
-  - contrast: 19 ✓ but
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - result: 8 ✓ , so
+  - reason: 3 ✓ , because
+  - contrast: 16 ✓ but
+  - sequence: 4 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0022-digits.md
 
-- Sentences: 63; parse: 63/63 (100%)
-- Topic continuity: 22/52 consecutive pairs share the subject with the sentence before (42%)
+- Sentences: 52; parse: 52/52 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 17/38 consecutive pairs share the subject with the sentence before (45%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 2 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - result: 10 ✓ , so
+  - reason: 4 ✓ , because
+  - contrast: 1 ✓ but
+  - condition: 3 ✓ if …, then
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0023-per-sense-synonyms.md
 
-- Sentences: 57; parse: 57/57 (100%)
-- Topic continuity: 13/47 consecutive pairs share the subject with the sentence before (28%)
+- Sentences: 61; parse: 61/61 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 11/48 consecutive pairs share the subject with the sentence before (23%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
-  - condition: 4 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - result: 13 ✓ , so
+  - reason: 4 ✓ , because
+  - condition: 7 ✓ if …, then
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0024-percent.md
 
-- Sentences: 41; parse: 41/41 (100%)
-- Topic continuity: 10/32 consecutive pairs share the subject with the sentence before (31%)
+- Sentences: 31; parse: 31/31 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 4/20 consecutive pairs share the subject with the sentence before (20%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - condition: 2 ✓ if …, then
+  - result: 8 ✓ , so
+  - reason: 6 ✓ , because
+  - condition: 1 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0025-approximation.md
 
-- Sentences: 30; parse: 30/30 (100%)
-- Topic continuity: 7/25 consecutive pairs share the subject with the sentence before (28%)
+- Sentences: 20; parse: 20/20 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 0/11 consecutive pairs share the subject with the sentence before (0%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - reason: 1 ✓ , because
+  - result: 8 ✓ , so
+  - reason: 2 ✓ , because
+  - sequence: 3 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0026-causal-connectives.md
 
-- Sentences: 61; parse: 61/61 (100%)
-- Topic continuity: 14/49 consecutive pairs share the subject with the sentence before (29%)
+- Sentences: 52; parse: 52/52 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 13/39 consecutive pairs share the subject with the sentence before (33%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 21 ✓ , so
-  - reason: 12 ✓ , because
+  - result: 25 ✓ , so
+  - reason: 15 ✓ , because
   - condition: 3 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
   - purpose: 2 ✗ no form
 
 ## docs/adr/0027-domain-model.md
 
-- Sentences: 81; parse: 81/81 (100%)
-- Topic continuity: 29/74 consecutive pairs share the subject with the sentence before (39%)
+- Sentences: 57; parse: 57/57 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 13/35 consecutive pairs share the subject with the sentence before (37%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - reason: 1 ✓ , because
-  - condition: 3 ✓ if …, then
+  - result: 8 ✓ , so
+  - reason: 2 ✓ , because
+  - contrast: 3 ✓ but
+  - condition: 4 ✓ if …, then
+  - sequence: 2 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0028-enumeration.md
 
-- Sentences: 49; parse: 49/49 (100%)
-- Topic continuity: 9/40 consecutive pairs share the subject with the sentence before (22%)
+- Sentences: 37; parse: 37/37 (100%)
+- Headings: 4; with a banned or wrong-sense word: 1
+- Topic continuity: 5/23 consecutive pairs share the subject with the sentence before (22%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 4 ✓ , so
+  - contrast: 2 ✓ but
   - condition: 1 ✓ if …, then
-  - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
+  - sequence: 3 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0029-ordinals-and-scales.md
 
-- Sentences: 49; parse: 49/49 (100%)
-- Topic continuity: 10/40 consecutive pairs share the subject with the sentence before (25%)
+- Sentences: 29; parse: 29/29 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 4/14 consecutive pairs share the subject with the sentence before (29%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 5 ✓ , so
+  - reason: 1 ✓ , because
   - condition: 1 ✓ if …, then
   - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0030-comparatives.md
 
-- Sentences: 33; parse: 33/33 (100%)
-- Topic continuity: 9/27 consecutive pairs share the subject with the sentence before (33%)
+- Sentences: 28; parse: 28/28 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 6/20 consecutive pairs share the subject with the sentence before (30%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
-  - condition: 3 ✓ if …, then
+  - result: 2 ✓ , so
+  - condition: 6 ✓ if …, then
 
 ## docs/adr/0031-complement-phrases.md
 
-- Sentences: 24; parse: 24/24 (100%)
-- Topic continuity: 6/21 consecutive pairs share the subject with the sentence before (29%)
+- Sentences: 20; parse: 20/20 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 6/13 consecutive pairs share the subject with the sentence before (46%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 3 ✓ , so
   - reason: 2 ✓ , because
+  - contrast: 2 ✓ but
   - condition: 2 ✓ if …, then
   - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0032-modal-be.md
 
-- Sentences: 30; parse: 30/30 (100%)
-- Topic continuity: 10/24 consecutive pairs share the subject with the sentence before (42%)
+- Sentences: 21; parse: 21/21 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 6/12 consecutive pairs share the subject with the sentence before (50%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - reason: 2 ✓ , because
   - condition: 2 ✓ if …, then
   - sequence: 1 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0033-time-prepositions.md
 
-- Sentences: 22; parse: 22/22 (100%)
-- Topic continuity: 3/17 consecutive pairs share the subject with the sentence before (18%)
+- Sentences: 15; parse: 15/15 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 1/8 consecutive pairs share the subject with the sentence before (12%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
-  - result: 1 ✓ , so
+  - result: 3 ✓ , so
+  - reason: 1 ✓ , because
+  - contrast: 1 ✓ but
   - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0034-step-block.md
 
-- Sentences: 48; parse: 48/48 (100%)
-- Topic continuity: 12/40 consecutive pairs share the subject with the sentence before (30%)
+- Sentences: 31; parse: 31/31 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 7/16 consecutive pairs share the subject with the sentence before (44%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 6 ✓ , so
   - reason: 1 ✓ , because
-  - contrast: 2 ✓ but
-  - condition: 2 ✓ if …, then
-  - sequence: 8 ✓ after/before/until + noun phrase (ADR 0033)
+  - contrast: 5 ✓ but
+  - condition: 3 ✓ if …, then
+  - sequence: 9 ✓ after/before/until + noun phrase (ADR 0033)
 
 ## docs/adr/0035-become.md
 
-- Sentences: 23; parse: 23/23 (100%)
+- Sentences: 18; parse: 18/18 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 5/11 consecutive pairs share the subject with the sentence before (45%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 1 ✓ , so
+  - contrast: 1 ✓ but
+  - condition: 1 ✓ if …, then
+
+## docs/adr/0036-domain-model-schema.md
+
+- Sentences: 32; parse: 32/32 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
 - Topic continuity: 10/18 consecutive pairs share the subject with the sentence before (56%)
 - Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 5 ✓ , so
+  - reason: 2 ✓ , because
+  - contrast: 2 ✓ but
+  - condition: 4 ✓ if …, then
+  - sequence: 3 ✓ after/before/until + noun phrase (ADR 0033)
+
+## docs/adr/0037-full-clause-coordination.md
+
+- Sentences: 27; parse: 27/27 (100%)
+- Headings: 4; with a banned or wrong-sense word: 0
+- Topic continuity: 6/18 consecutive pairs share the subject with the sentence before (33%)
+- Relation inventory (source connectives, indicative counts — hand-check before deciding; ✓ = minglish has a form):
+  - result: 2 ✓ , so
+  - reason: 1 ✓ , because
+  - contrast: 6 ✓ but
   - condition: 1 ✓ if …, then
+  - sequence: 5 ✓ after/before/until + noun phrase (ADR 0033)
 

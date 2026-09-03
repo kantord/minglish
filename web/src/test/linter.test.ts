@@ -28,9 +28,13 @@ describe('wasm linter', () => {
     })
     expect(result.tree).toBeDefined()
     const nodes = result.tree!.nodes
-    expect(nodes[0]).toMatchObject({ name: 'S', kind: 'node', parentId: null })
+    expect(nodes[0]).toMatchObject({ name: 'Statement', kind: 'node', parentId: null })
     const words = nodes.filter((n: TreeNode) => n.kind === 'word')
     expect(words.map((n) => n.name)).toEqual(['the', 'agent', 'reads', 'the', 'file'])
+    expect(words.map((n) => n.lemma)).toEqual(['the', 'agent', 'read', 'the', 'file'])
+    for (const w of words) {
+      expect(w.gloss).toBeTruthy()
+    }
 const parentIds = new Set(nodes.map((n) => n.parentId).filter(Boolean))
     for (const n of nodes.filter((n) => n.kind === 'node')) {
       expect(parentIds.has(n.id)).toBe(true)

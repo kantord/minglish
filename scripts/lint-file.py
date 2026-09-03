@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
-"""Document-level lint (measurement only, never gating).
+"""Document-level lint (measurement only, never gating) for any markdown
+file — not only this project's own ADR-shaped docs (docs/markdown-linting.md
+has the block-classification and heading rules).
 
-For a markdown file: per-sentence verdicts and parse rate; topic continuity
-(does the subject noun of each sentence appear in the sentence before it?);
-and a relation inventory — English coherence connectives in the source,
-grouped by relation type, marked by whether minglish has a form for them.
+For a markdown file: per-sentence verdicts and parse rate; a heading check
+(vocabulary-only — headings are titles, not sentences: see
+docs/markdown-linting.md); topic continuity (does the subject noun of each
+sentence appear in the sentence before it?); and a relation inventory —
+English coherence connectives in the source, grouped by relation type,
+marked by whether minglish has a form for them.
 
 Usage: lint-file.py FILE.md [--brief]   (brief: no per-sentence listing)
 """
 import re, subprocess, sys, collections, os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import mdblocks
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,41 +33,18 @@ RELATIONS = {
 }
 SKIP_FOR = True  # "for" is mostly a preposition; counted only as "for" + clause-ish is unreliable → skip
 
-def paragraphs(text):
-    out = []
-    for para in text.split("\n\n"):
-        para = para.strip()
-        if not para or para.startswith("#") or para.startswith(("Date:", "Status:")) or para.startswith("|"):
-            continue
-        lines = [l.strip() for l in para.splitlines()]
-        # a Step Block (Gherkin lines, ADR 0034) is one unit
-        if lines and all(l.startswith(("Given ", "When ", "Then ", "And ", "Feature:", "Scenario:")) for l in lines):
-            out.append("\n".join(lines))
-            continue
-        # an Enumeration block (intro line ending in ":" + "- item" lines) is one
-        # unit, whether it is the whole paragraph or ends it
-        k = next((i for i, l in enumerate(lines) if l.endswith(":") and i + 1 < len(lines) and all(x.startswith("- ") for x in lines[i + 1:])), None)
-        if k is not None:
-            # the intro is the last sentence of the (possibly wrapped) text before the items
-            text = re.sub(r"\s+", " ", " ".join(re.sub(r"^(?:[-*]|\d+\.)\s+", "", l) for l in lines[:k + 1]))
-            cut = text.rfind(". ")
-            prose, intro = (text[:cut + 1], text[cut + 2:]) if cut >= 0 else ("", text)
-            if prose.strip():
-                out.append(prose.strip())
-            out.append("\n".join([intro] + lines[k + 1:]))
-            continue
-        lines = [re.sub(r"^(?:[-*]|\d+\.)\s+", "", l) for l in lines]
-        out.append(re.sub(r"\s+", " ", " ".join(lines)))
-    return out
+# a leading ordinal/numbering marker on a heading ("0037 —", "1.", "Step 3:")
+# is structure, not vocabulary — never part of the word check
+_HEADING_MARKER = re.compile(r"^(?:[A-Za-z]+\s+)?\d+[.\-—:]?\s*")
+_ARTICLES = {"a", "an", "the", "of", "is", "are", "and", "or", "not", "to", "in", "on", "for", "with", "as"}
 
-def sentences(para):
-    if para.startswith(("Given ", "When ", "Then ", "And ", "Feature:", "Scenario:")):
-        return [para]  # Step Block = one unit
-    if "\n- " in para:
-        return [re.sub(r"`([^`]+)`", r'"\1"', para)]  # Enumeration block = one unit
-    body = re.sub(r"`([^`]+)`", r'"\1"', para)
-    body = re.sub(r"\*\*?", "", body)
-    body = body.replace("e.g.", "e~g~").replace("i.e.", "i~e~").replace("cf.", "cf~")
+
+def sentences(text):
+    """Prose sentences (with Enumeration/Step Block units kept whole, as
+    single multi-line strings) from a block's already-de-markdowned text."""
+    if "\n" in text:
+        return [text]  # Enumeration / Step Block: one unit
+    body = text.replace("e.g.", "e~g~").replace("i.e.", "i~e~").replace("cf.", "cf~")
     out = []
     for s in re.split(r"(?<=[.!?]) ", body):
         s = s.strip().rstrip(".").strip().replace("e~g~", "e.g.").replace("i~e~", "i.e.").replace("cf~", "cf.")
@@ -69,30 +53,55 @@ def sentences(para):
         out.append(s)
     return out
 
+
 def lint(sents):
-    """Batch the sentences through diagnose; return [(ok, first line of detail)]."""
+    """Batch the sentences through diagnose; return [(ok, first line of detail)].
+    A multi-line sentence (an Enumeration/Step Block unit) is echoed back
+    over several lines before its verdict detail, so the boundary is found
+    by line count, not by "the next non-empty line" (that would grab the
+    sentence's own second line as if it were the diagnosis)."""
     if not sents:
         return []
     r = subprocess.run(["cargo", "run", "-q", "-p", "diagnose", "--", *sents],
                        cwd=ROOT, capture_output=True, text=True)
-    verdicts, cur = [], None
-    for line in (r.stdout + r.stderr).splitlines():
-        if line.startswith(("✓", "✗")):
-            cur = [line.startswith("✓"), ""]
-            verdicts.append(cur)
-        elif cur is not None and line.strip() and not cur[1]:
-            cur[1] = line.strip()
-    return [(ok, d) for ok, d in verdicts]
+    lines = (r.stdout + r.stderr).splitlines()
+    verdicts = []
+    li = 0
+    for s in sents:
+        span = s.count("\n") + 1  # physical lines the echoed sentence occupies
+        while li < len(lines) and not lines[li].startswith(("✓", "✗")):
+            li += 1  # resync if a prior sentence's output ran short
+        if li >= len(lines):
+            break
+        ok = lines[li].startswith("✓")
+        li += span  # skip the rest of the echoed (possibly multi-line) sentence
+        detail = ""
+        while li < len(lines) and not lines[li].startswith(("✓", "✗")):
+            if lines[li].strip() and not detail:
+                detail = lines[li].strip()
+            li += 1
+        verdicts.append((ok, detail))
+    return verdicts
+
 
 def load_lexicon():
-    lemma, tag = {}, {}
+    lemma, tag, bans, rejects = {}, {}, {}, {}
     for line in open(os.path.join(ROOT, "lexicon.tsv")):
         if line.startswith("#"):
             continue
         f = line.rstrip("\n").split("\t")
-        if len(f) == 4 and f[1] == "form":
-            tag[f[0]] = f[2]; lemma[f[0]] = f[3]
-    return lemma, tag
+        if len(f) != 4:
+            continue
+        surface, kind, val3, val4 = f
+        if kind == "form":
+            tag[surface] = val3
+            lemma[surface] = val4
+        elif kind == "ban":
+            bans[surface] = val4
+        elif kind == "reject":
+            rejects[surface] = (val3, val4)
+    return lemma, tag, bans, rejects
+
 
 def content_lemmas(sent, lemma, tag):
     """Nouns (by lemma) and names in a sentence; subject = first noun/name."""
@@ -112,6 +121,32 @@ def content_lemmas(sent, lemma, tag):
             subj = key
     return subj, set(nouns)
 
+
+def lint_heading(text, tag, bans, rejects):
+    """A heading is a title, not a sentence (docs/markdown-linting.md): no
+    minglish sentence grammar applies. The check is vocabulary-only, and
+    only over lowercase words — a Capitalized word is a name/proper noun by
+    the same convention prose uses (ADR 0018) and is never checked, so this
+    stays usable on markdown that names real-world things minglish has no
+    entry for (a product, a brand, a person). Returns (banned, wrong_sense,
+    unknown) word lists; an empty heading check is a pass."""
+    body = _HEADING_MARKER.sub("", text, count=1)
+    banned, wrong, unknown = [], [], []
+    for tok in re.findall(r'"[^"]*"|[A-Za-z][A-Za-z\'-]*|\d+', body):
+        if tok.startswith('"') or tok[0].isdigit() or tok[0].isupper():
+            continue
+        w = tok.lower()
+        if w in _ARTICLES or w in tag:
+            continue
+        if w in bans:
+            banned.append((w, bans[w]))
+        elif w in rejects:
+            wrong.append((w, *rejects[w]))
+        else:
+            unknown.append(w)
+    return banned, wrong, unknown
+
+
 def relation_inventory(text):
     low = " " + re.sub(r"\s+", " ", text.lower()) + " "
     counts = collections.OrderedDict()
@@ -127,28 +162,38 @@ def relation_inventory(text):
         counts[rel] = (n, form)
     return counts
 
+
 def main():
     path = sys.argv[1]
     brief = "--brief" in sys.argv
     text = open(path).read()
-    lemma, tag = load_lexicon()
-    paras = paragraphs(text)
-    all_sents = [(pi, s) for pi, p in enumerate(paras) for s in sentences(p)]
+    lemma, tag, bans, rejects = load_lexicon()
+    blocks = mdblocks.parse_blocks(text)
+
+    headings = [b for b in blocks if b.kind == "heading"]
+    prose_blocks = [b for b in blocks if b.kind in ("prose", "enumeration", "step_block")]
+    all_sents = [(bi, s) for bi, b in enumerate(prose_blocks) for s in sentences(b.text)]
     verdicts = lint([s for _, s in all_sents])
     ok = sum(1 for v, _ in verdicts if v)
+
     print(f"# Document lint: {os.path.relpath(path, ROOT)}\n")
     print(f"- Sentences: {len(all_sents)}; parse: {ok}/{len(all_sents)}"
           f" ({100*ok/max(1,len(all_sents)):.0f}%)")
+
+    heading_checks = [(h, lint_heading(h.text, tag, bans, rejects)) for h in headings]
+    h_bad = sum(1 for _, (b, w, u) in heading_checks if b or w)
+    print(f"- Headings: {len(headings)}; with a banned or wrong-sense word: {h_bad}")
+
     # topic continuity within paragraphs
     pairs, breaks = 0, []
     prev = None
-    for (pi, s), (v, _) in zip(all_sents, verdicts):
+    for (bi, s), (v, _) in zip(all_sents, verdicts):
         subj, nouns = content_lemmas(s, lemma, tag)
-        if prev is not None and prev[0] == pi and subj is not None:
+        if prev is not None and prev[0] == bi and subj is not None:
             pairs += 1
             if subj not in prev[2]:
                 breaks.append((subj, s))
-        prev = (pi, subj, nouns)
+        prev = (bi, subj, nouns)
     cont = pairs - len(breaks)
     print(f"- Topic continuity: {cont}/{pairs} consecutive pairs share the subject with the sentence before"
           f" ({100*cont/max(1,pairs):.0f}%)")
@@ -157,9 +202,21 @@ def main():
     for rel, (n, form) in inv.items():
         if n:
             print(f"  - {rel}: {n}" + (f" ✓ {form}" if form else " ✗ no form"))
+
     if not brief:
+        if heading_checks:
+            print("\n## Headings\n")
+            for h, (b, w, u) in heading_checks:
+                mark = "✗" if (b or w) else "✓"
+                print(f"- {mark} {'#' * h.level} {h.text}")
+                for word, advice in b:
+                    print(f"  - banned: \"{word}\" — {advice}")
+                for word, cat, sug in w:
+                    print(f"  - wrong sense: \"{word}\" is attested as {cat} — {sug}")
+                if u:
+                    print(f"  - not in the minglish vocabulary: {', '.join(sorted(set(u)))}")
         print("\n## Sentences\n")
-        for (pi, s), (v, d) in zip(all_sents, verdicts):
+        for (bi, s), (v, d) in zip(all_sents, verdicts):
             mark = "✓" if v else "✗"
             print(f"- {mark} {s}" + ("" if v else f"\n  - {d}"))
         if breaks:

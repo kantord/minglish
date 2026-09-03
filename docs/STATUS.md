@@ -36,9 +36,14 @@ derivable from the code, ADRs, or git history.
   fidelity) recorded under `prejudge:` in each case, docs/prejudge-report.md.
   Runs on Claude Code sub-agents, so it costs no API key; it filters and
   flags, the human verdict stays `just verdict`.
-- `scripts/lint-file.py` / `just lint-file <md>` — document-level lint:
-  per-sentence verdicts, topic continuity, relation inventory. `just
-  coherence` regenerates `docs/coherence-report.md` over all ADRs.
+- `scripts/lint-file.py` / `just lint-file <md>` — document-level lint,
+  works on any markdown file (2026-09-03): per-sentence verdicts, a
+  heading check (vocabulary-only, not the sentence grammar), topic
+  continuity, relation inventory. Shared markdown structural parsing lives
+  in `scripts/mdblocks.py` (code fences, tables, blockquotes, links,
+  nested/task lists, headings) — see `docs/markdown-linting.md` for the
+  block-classification and heading rules and why. `just coherence`
+  regenerates `docs/coherence-report.md` over all ADRs.
 
 ## Open decision queue (in order, with standing recommendations)
 

@@ -9,11 +9,11 @@ test('lints a clean sentence and renders the parse tree', async ({ page }) => {
   await expect(page.getByText('parses uniquely')).toBeVisible()
 
   // parse tree chart renders nodes.
+  // parse tree chart renders the tree with full phrase names.
   const svg = page.locator('svg').first()
-  await expect(svg).toContainText('S')
+  await expect(svg).toContainText('Statement')
   await expect(svg).toContainText('reads')
-
-  // metrics are shown.
+  await expect(svg).toContainText('a determiner')
  await expect(page.getByText('Open Dependencies')).toBeVisible()
 })
 

@@ -5,6 +5,7 @@
 use diagnose::{diagnose, Diagnosis};
 use grammar::{parse_text, Lexicon, Metrics, Tok, Tree};
 use serde_json::{json, Value};
+use std::collections::BTreeMap;
 use std::sync::LazyLock;
 use wasm_bindgen::prelude::*;
 
@@ -164,21 +165,32 @@ fn metrics_json(m: Metrics) -> Value {
 /// `{ "nodes": [{ "id", "parentId", "name", "kind", "head" }] }`。
  /// `kind` is `"node"` for a phrase/sentence and `"word"` for a leaf; `head`
 /// marks the child that is its parent's syntactic head.
+/// Flatten a parse tree into rows for the tree chart:
+/// `{ "nodes": [{ "id", "parentId", "name", "kind", "head", "lemma", "gloss", "full" }] }`。
+/// `kind` is `"node"` for a phrase/sentence and `"word"` for a leaf; `head`
+/// marks the child that is its parent's syntactic head. Node names are full
+/// phrase names (no abbreviations); word leaves carry the lemma, a short
+/// gloss (the definition of its meaning, when the domain model has one),
+/// and the full definition for tooltips.
+
 fn tree_json(tree: &Tree) -> Value {
     let mut nodes: Vec<Value> = Vec::new();
     fn walk(tree: &Tree, parent: Option<&str>, head: bool, nodes: &mut Vec<Value>) -> String {
         let id = format!("n{}", nodes.len());
         match tree {
             Tree::Leaf { word, .. } => {
+                let (gloss, full) = gloss_for(word);
+                let lemma = LEXICON.lemma_of(word).unwrap_or(word).to_lowercase();
                 nodes.push(json!({
                     "id": id, "parentId": parent, "name": word, "kind": "word", "head": head,
+                    "lemma": lemma, "tag": tag_of_lex(word), "gloss": gloss, "full": full,
                 }));
             }
             Tree::Node { label, head: h, children } => {
                 nodes.push(json!({
-                    "id": id, "parentId": parent, "name": label, "kind": "node", "head": head,
+                    "id": id, "parentId": parent, "name": label_name(label), "kind": "node", "head": head,
                 }));
-                for (i, c) in children.iter().enumerate() {
+                for (i, c)in children.iter().enumerate() {
                     walk(c, Some(&id), i == *h, nodes);
                 }
             }
@@ -188,3 +200,173 @@ fn tree_json(tree: &Tree) -> Value {
     walk(tree, None, false, &mut nodes);
     json!({ "nodes": nodes })
 }
+
+/// Full descriptive phrase name for a grammar node label (no abbreviations).
+fn label_name(label: &str) -> &str {
+    match label {
+        "S" => "Statement",
+        "Clause" => "Clause",
+        "Cond" => "Conditional",
+        "Causal" => "Causal",
+        "Prohib" => "Prohibition",
+        "Imp" => "Imperative",
+        "NP" => "Noun Phrase",
+        "NPGen" => "Bare Plural",
+        "NPAppos" => "Noun Phrase with Name",
+        "NPPct" => "Percent Share",
+        "OfPP" => "of Phrase",
+        "PP" => "Prepositional Phrase",
+        "VP" => "Verb Phrase",
+        "NegVP" => "Negated Verb Phrase",
+        "ModalVP" => "Modal Verb Phrase",
+        "ModalCop" => "Modal Copula",
+        "CopPred" => "Copular Predicate",
+        "ComplPP" => "Complement",
+        "Cmp" => "Comparative",
+        "CoordPred" => "Predicate Coordination",
+        "CoordClause" => "Clause Coordination",
+        "Intro" => "Enumeration Intro",
+        "Enum" => "Enumeration",
+        "Steps" => "Step Block",
+        _ => label,
+    }
+}
+
+fn tag_of_lex(word: &str) -> &str {
+    LEXICON.tag_of(word).unwrap_or("")
+}
+
+/// Short display gloss for a surface form (the definition of its meaning,
+/// when the domain model has one), plus the full definition for tooltips.
+
+
+fn gloss_for(form: &str) -> (String, Option<String>) {
+    let lemma = LEXICON.lemma_of(form).unwrap_or(form).to_lowercase();
+    if let Some(full) = DOMAIN_DEFS.get(&lemma) {
+        return (truncate(full, 56), Some(full.clone()));
+    }
+    let cat = SEED_CATS.get(&lemma).cloned().unwrap_or_else(|| tag_category(tag_of_lex(form)));
+    let mut gloss = cat_phrase(&cat).to_string();
+    if lemma != form.to_lowercase() {
+        gloss.push_str(&format!(" ({lemma})"));
+    }
+    if let Some(note) = SEED_NOTES.get(&lemma) {
+        gloss.push_str(&format!(" — {}", truncate(note, 32)));
+    }
+    (truncate(&gloss, 64), None)
+}
+
+/// Form Tag → a short category phrase (e.g. "VERB_TRANS_3SG" → "a
+/// transitive verb"), used when the seed does not know the lemma.
+
+
+fn tag_category(tag: &str) -> String {
+    if tag.starts_with("VERB_TRANS") {
+        "VERB_TRANS".to_string()
+    } else if tag.starts_with("VERB_INTRANS") {
+        "VERB_INTRANS".to_string()
+    } else if tag.starts_with("COPULA") {
+        "COPULA".to_string()
+    } else if tag.starts_with("NEG_AUX") {
+        "NEG_AUX".to_string()
+    } else if tag.starts_with("MODAL") {
+        tag.to_string()
+    } else {
+        tag.to_string()
+    }
+}
+
+fn cat_phrase(cat: &str) -> &str {
+    match cat {
+        "DET" => "a determiner",
+        "DET_SG" => "a determiner (singular)",
+        "ADJ" => "an adjective",
+        "NOUN" => "a noun",
+        "VERB_TRANS" => "a transitive verb",
+        "VERB_INTRANS" => "an intransitive verb",
+        "PREP_N" => "a noun preposition",
+        "PREP_V" => "a verb preposition",
+        "PRON_1SG" => "a Pronoun (writer)",
+        "PRON_2" => "a Pronoun (reader)",
+        "POSS_1SG" => "a possessive",
+        "POSS_2" => "a possessive",
+        "COPULA" => "a Copula",
+        "CONJ" => "a conjunction",
+        "NEG" => "a negation",
+        "NEG_AUX" => "an Auxiliary",
+        "MODAL_MUST" => "a modal (must)",
+        "MODAL_CAN" => "a modal (can)",
+        "MODAL_CAN_NEG" => "a modal (cannot)",
+        "SCONJ_COND" => "a function word (if)",
+        "THEN" => "a function word (then)",
+        "QUANT_UNIV" => "a quantifier (every)",
+        "QUANT_NEG" => "a quantifier (no)",
+        "QUANT_EXIST" => "a quantifier (some)",
+        "NUM_SG" => "a number word (one)",
+        "PERCENT" => "a percent sign",
+        "APPROX" => "an approximator",
+        "RESULT" => "a causal connective (so)",
+        "REASON" => "a causal connective (because)",
+        "ORD" => "an ordinal",
+        "THAN" => "a comparative marker (than)",
+        "MORE" => "a comparative marker (more)",
+        "SCALE" => "a scale word",
+        "ADJ_CMP" => "an adjective (comparative)",
+        "ADJ_LONG" => "an adjective",
+        "BE" => "a Copula (be)",
+        "BECOME_SG" => "a Copula (become)",
+        "BECOME_PL" => "a Copula (become)",
+        "BECOME_PAST" => "a Copula (become)",
+        "NAME" => "a Name",
+        "COMMA" => "a comma",
+        "COLON" => "a colon",
+        _ => "a word",
+    }
+}
+
+fn truncate(s: &str, max: usize) -> String {
+    if s.chars().count() <= max {
+        s.to_string()
+    } else {
+        let mut cut = max;
+        while cut > 0 && !s.is_char_boundary(cut) { cut -= 1; }
+        let mut out: String = s[..cut].to_string();
+        out.push('…');
+        out
+    }
+}
+
+static DOMAIN_DEFS: LazyLock<BTreeMap<String, String>> = LazyLock::new(|| {
+    let model: Value = serde_json::from_str(include_str!("../../../domain/model.json")).expect("domain/model.json");
+    let mut defs = BTreeMap::new();
+    for e in model.as_array().into_iter().flatten() {
+        if let (Some(lemma), Some(def)) = (e["lemma"].as_str(), e["definition"].as_str()) {
+            defs.insert(lemma.to_lowercase(), def.to_string());
+        }
+    }
+    defs
+});
+
+static SEED_CATS: LazyLock<BTreeMap<String, String>> = LazyLock::new(|| {
+    let seed: Value = serde_json::from_str(include_str!("../../../seed/seed.json")).expect("seed/seed.json");
+    let mut cats = BTreeMap::new();
+    for e in seed.as_array().into_iter().flatten() {
+        if let Some(lemma) = e["lemma"].as_str() {
+            if let Some(cat) = e["category"].as_str() {
+                cats.insert(lemma.to_lowercase(), cat.to_string());
+            }
+        }
+    }
+    cats
+});
+
+static SEED_NOTES: LazyLock<BTreeMap<String, String>> = LazyLock::new(|| {
+    let seed: Value = serde_json::from_str(include_str!("../../../seed/seed.json")).expect("seed/seed.json");
+    let mut notes = BTreeMap::new();
+    for e in seed.as_array().into_iter().flatten() {
+        if let (Some(lemma), Some(note)) = (e["lemma"].as_str(), e["note"].as_str()) {
+            notes.insert(lemma.to_lowercase(), note.to_string());
+        }
+    }
+    notes
+});

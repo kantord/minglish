@@ -20,6 +20,10 @@ export interface TreeNode {
   name: string
   kind: 'node' | 'word'
   head: boolean
+  lemma?: string
+  tag?: string
+  gloss?: string
+  full?: string | null
 }
 
 export interface DiagnosisResult {
