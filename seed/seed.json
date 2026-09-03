@@ -457,6 +457,11 @@
     "note": "instrument/accompaniment PP attachment is the classic ambiguity; grammar tier must fix attachment"
   },
   {
+    "lemma": "without",
+    "category": "PREP_V",
+    "note": "ADR 0039: an absence attached to the verb, same slot and one-PP-per-clause bound as \"with\" (ADR 0011)"
+  },
+  {
     "lemma": "on",
     "category": "PREP_V"
   },

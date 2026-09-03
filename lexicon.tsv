@@ -2157,6 +2157,7 @@ win	form	VERB_INTRANS_BASE	win
 winning	form	VERB_INTRANS_ING	win
 wins	form	VERB_INTRANS_3SG	win
 with	form	PREP_V	with
+without	form	PREP_V	without
 won	form	VERB_INTRANS_ED	win
 word	form	NOUN_SG	word
 word	reject	VERB	write

@@ -10,10 +10,10 @@ hitting a wall while trying to say a true thing, not from reading examples.
 
 ## Constructions (highest-value; block a whole shape, not one word)
 
-- **Clause-level "but"** (10 rewrites wanted it). "but" only coordinates
-  inside a VP (ADR 0021); a full contrastive clause ("X, but Y") has no
-  shape and gets forced into 2 sentences or an inline-list misreading.
-  The single most requested fix.
+- ~~**Clause-level "but"**~~ (10 rewrites wanted it). **Closed
+  2026-09-03, ADR 0037.** "but" used to only coordinate inside a VP (ADR
+  0021); a full contrastive clause ("X, but Y") now has a shape (a comma
+  marks the new clause), the single most requested fix.
 - ~~**Coordination inside a causal or conditional clause**~~ (8+
   rewrites). **Closed 2026-09-04, ADR 0038.** "the test fails and the
   agent retries, so …" used to reject; a Conditional and a causal
@@ -22,11 +22,12 @@ hitting a wall while trying to say a true thing, not from reading examples.
   ADR 0037's top-level Coordination. Zero new LALR conflicts — the
   decision point sits behind the unique "if"/"so"/"because" markers, not
   the shared `Clause` reduction that caused ADR 0037's conflict.
-- **"without"** (7). No way to state an absence attached to a clause
-  ("split the sentence without an ambiguity"); always rerouted through a
-  negated clause or a Conditional, at a naturalness cost.
+- ~~**"without"**~~ (7). **Closed 2026-09-04, ADR 0039.** A plain
+  `PREP_V` add, the exact slot "with" already had (ADR 0011) — no grammar
+  change. All 7 original wanted sentences now parse verbatim.
 - **Coordinated noun phrases as subject/object** (ADR 0004 already fences
-  this; still the top workaround-forcing gap after the two above).
+  this; the top open construction gap now that "but", the causal/
+  conditional gap, and "without" are closed).
 
 ## High-frequency missing words
 

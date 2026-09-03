@@ -42,8 +42,9 @@
 | 0036-domain-model-schema.md | 32/32 |
 | 0037-full-clause-coordination.md | 27/27 |
 | 0038-coordination-inside-clauses.md | 24/24 |
+| 0039-without.md | 8/8 |
 
-**Aggregate: 1296/1296 sentences (100%)**
+**Aggregate: 1304/1304 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
