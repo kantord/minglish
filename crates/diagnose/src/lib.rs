@@ -182,6 +182,20 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             ));
         }
     }
+    // full-clause coordination (ADR 0037): a comma is mandatory when
+    // "but"/"and"/"or" opens a new clause (a new subject follows the
+    // conjunction) rather than joining a predicate under the same
+    // subject, which stays comma-free.
+    for i in 1..toks.len() {
+        if let Tok::Conj(cj) = &toks[i] {
+            if !matches!(toks[i - 1], Tok::Comma) && toks.get(i + 1).is_some_and(|n| is_det(n) || is_noun_head(n)) {
+                out.push(format!(
+                    "a comma before \"{cj}\" is mandatory when a new clause follows — \"<clause>, {cj} <clause>\"; \
+                     no comma when \"{cj}\" only joins a predicate under the same subject (ADR 0037)"
+                ));
+            }
+        }
+    }
     // no / some misplacement
     if toks.iter().skip(1).any(|t| matches!(t, Tok::No(_))) {
         out.push(
@@ -859,6 +873,11 @@ fn productions() -> Vec<Vec<Vec<Sym>>> {
     let mut p = vec![Vec::new(); N_NONTERMS];
     p[S2] = vec![
         vec![N(CL)],
+        // full-clause coordination (ADR 0037): comma mandatory; the
+        // comma-free shape is kept too as the "dirty" reading a writer
+        // reaches for, so it still gets a named Style advice instead of
+        // falling through as Unknown.
+        vec![N(CL), T(Term::Comma), T(Term::Conj), N(CL)],
         vec![N(CL), T(Term::Conj), N(CL)],
         vec![N(CL), T(Term::Conj), N(VPX)],
         vec![T(Term::If), N(CL), T(Term::Comma), T(Term::Then), N(CL)],

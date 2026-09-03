@@ -23,8 +23,8 @@
   parses uniquely — peak-open 5, max-dep 8, depth 2, right-branching 10%
 ✓ the server stores the message and returns the result
   parses uniquely — peak-open 3, max-dep 4, depth 1, right-branching 38%
-✓ the test fails or the agent retries the request
-  parses uniquely — peak-open 3, max-dep 4, depth 2, right-branching 25%
+✓ the test fails, or the agent retries the request
+  parses uniquely — peak-open 2, max-dep 3, depth 1, right-branching 22%
 ✓ machines find Collisions
   parses uniquely — peak-open 1, max-dep 1, depth 1, right-branching 50%
 ✓ every agent retries the request

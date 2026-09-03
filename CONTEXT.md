@@ -21,7 +21,7 @@ examples); "a X" after the tag is the category the term belongs to
 **attest** (verb trans) — if a database attests a word, then the database contains the word. the database WordNet attests the senses of a word. the file "mobypos" attests the Categories of a word. the rules of Lexgen can produce a wrong spelling, so Lexgen checks every Surface Form against the data. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form.
   Examples: `the file "mobypos" attests the noun "file".`
 
-**Auxiliary** (noun, category) · a Function Word — an Auxiliary is a Function Word and helps a verb. the word "do" is the Auxiliary of the language. a Negation uses the Auxiliary and a Prohibition uses the Auxiliary. a plain statement does not use the Auxiliary. the word "is" is a Copula and is not an Auxiliary.
+**Auxiliary** (noun, category) · a Function Word — an Auxiliary is a Function Word and helps a verb. the word "do" is the Auxiliary of the language. a Negation uses the Auxiliary, and a Prohibition uses the Auxiliary. a plain statement does not use the Auxiliary. the word "is" is a Copula and is not an Auxiliary.
   Examples: `do`
 
 **Ban** (noun, category) · a Rejection — a Ban is a Rejection of an ambiguous structure. a Ban is permanent, so the writer restructures the sentence. the Linter explains the Ban and names the structure. if a Ban covers every sense of a word, then the word is a Ban.
@@ -66,21 +66,21 @@ examples); "a X" after the tag is the category the term belongs to
 **Conjunct** (noun, category) — a Conjunct is one part of a Coordination. a Modifier describes one Conjunct, so the writer repeats the Modifier in the second Conjunct. a Prepositional Phrase attaches to one Conjunct.
   Examples: `the predicate "stores the message" is a Conjunct of "stores the message and returns the result".`
 
-**Constituent** (noun, category) — a Constituent is one part of a Parse. the Grammar builds the Parse from Constituents. a Noun Phrase is a Constituent and a Prepositional Phrase is a Constituent. the subject "the agent" is a Constituent of the sentence "the agent reads the file".
+**Constituent** (noun, category) — a Constituent is one part of a Parse. the Grammar builds the Parse from Constituents. a Noun Phrase is a Constituent, and a Prepositional Phrase is a Constituent. the subject "the agent" is a Constituent of the sentence "the agent reads the file".
   Examples: `the subject` · `the object` · `a Prepositional Phrase` · `the subject "the agent" is a Constituent of the sentence "the agent reads the file".`
 
 **Context Need** (noun, unique) — the Context Need is a quantity. the Context Need of a sentence measures the prior text, because the reader needs the prior text for the meaning of the sentence. the sentence "it failed" has a big Context Need, because the reader must find the referent of "it" in the prior text. a good sentence has a small Context Need.
   Examples: `the sentence "it failed" has a big Context Need.`
 
 **Coordination** (noun, category) — a Coordination joins 2 clauses or joins 2 predicates with a conjunction. the 2 Conjuncts have one kind, so a Noun Phrase cannot join a Noun Phrase. a Coordination has 2 Conjuncts.
-  Examples: `the server stores the message and returns the result.` · `the test fails or the agent retries the request.` · 
+  Examples: `the server stores the message and returns the result.` · `the test fails, or the agent retries the request.` · 
   ```
   the language has 2 conjunctions:
   - "and"
   - "or"
   ```
 
-**Copula** (noun, category) · a Function Word — a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word "is" is a Copula and the word "are" is a Copula. the past Tense uses the word "was" or uses the word "were".
+**Copula** (noun, category) · a Function Word — a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word "is" is a Copula, and the word "are" is a Copula. the past Tense uses the word "was" or uses the word "were".
   Examples: `is` · `are` · `was` · `were`
 
 **Coverage** (noun, unique) — the Coverage is a share of a corpus. the corpus is the file "data/ud/en_ewt-ud-test.conllu". the file holds sentences of English. if the Lexicon contains every word of a sentence, then the Lexicon covers the sentence. Triage counts the sentences of the corpus and measures the Coverage. the Coverage is a proxy, because Triage does not parse the sentences. the Coverage does not measure the quality of the Redirects.
@@ -224,7 +224,7 @@ examples); "a X" after the tag is the category the term belongs to
 **Passive** (noun, category) — a Passive drops the doer of a verb. the sentence "the file is stored" is a Passive. the language bans every Passive.
   Examples: `the file is stored`
 
-**Prepositional Phrase** (noun, category) · a Constituent — a Prepositional Phrase is a Constituent. a preposition opens a Prepositional Phrase and a Noun Phrase follows the preposition. the preposition decides the attachment. the phrase "of the report" attaches to the prior noun, because "of" is the Noun Preposition. the phrase "in the database" attaches to the verb, because "in" is a Verb Preposition.
+**Prepositional Phrase** (noun, category) · a Constituent — a Prepositional Phrase is a Constituent. a preposition opens a Prepositional Phrase, and a Noun Phrase follows the preposition. the preposition decides the attachment. the phrase "of the report" attaches to the prior noun, because "of" is the Noun Preposition. the phrase "in the database" attaches to the verb, because "in" is a Verb Preposition.
   Examples: `in the database` · `of the report` · `the sentence "the agent stores the report in the database" has one Prepositional Phrase.`
 
 **Progressive** (noun, category) — a Progressive marks an ongoing action. the word "is" precedes a Participle in a Progressive. the language bans every Progressive, so the writer uses the present Tense.

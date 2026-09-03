@@ -38,8 +38,11 @@ rejected sentence, keep its meaning; change only what the error requires.
    term can be a verb` (`be` exists only after a modal)
 6. Conditional — comma and then are mandatory, condition first:
    `if the test fails, then the agent retries the request`
-7. Coordination (binary only): `the server stores the message and returns
-   the result` · `the test fails or the agent retries the request`
+7. Coordination (binary only): a shared-subject predicate coordination
+   takes no comma — `the server stores the message and returns the
+   result`; a full second clause (a new subject) requires one — `the test
+   fails, but the agent retries the request` (ADR 0037; "but" is
+   available at clause level only with the comma)
 8. Quantified (first word signals the type):
    - generic (kind-level, tolerates exceptions): `machines find Collisions`
    - universal: `every agent retries the request`

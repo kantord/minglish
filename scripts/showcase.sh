@@ -25,7 +25,7 @@ run "the agent reads the file" \
     "you cannot delete the Lexicon" \
     "if the test fails, then the agent retries the request" \
     "the server stores the message and returns the result" \
-    "the test fails or the agent retries the request" \
+    "the test fails, or the agent retries the request" \
     "machines find Collisions" \
     "every agent retries the request" \
     "no agent can delete the Lexicon" \

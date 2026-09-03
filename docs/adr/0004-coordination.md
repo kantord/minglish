@@ -17,7 +17,7 @@ ambiguity has 2 examples:
 The Grammar decides the scope of a Coordination, so the 2 words are not
 ambiguous. The language needs the 2 words.
 
-Triage counts about 82 tokens of the word "but" but the word "but" marks a
+Triage counts about 82 tokens of the word "but", but the word "but" marks a
 contrast. A contrast is a meaning of the discourse, so the meaning of "but"
 is bigger than a claim. The word "but" is the first word with a meaning of
 the discourse.

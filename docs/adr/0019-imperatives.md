@@ -8,7 +8,7 @@ Status: proposed (tentative)
 One case failed in the 4th run of the tool "agenttest". The case was the
 Imperative "Remove the file" with an unknown verb. The first word of the
 case was capitalized, so the error suggested a Name. The error did not
-mention the command. The Prohibition "do not delete the file" was legal but
+mention the command. The Prohibition "do not delete the file" was legal, but
 the Imperative "delete the file" was not legal. The language cannot justify
 the asymmetry. Agents read instructions, so a command is the core register
 of the domain.

@@ -15,12 +15,12 @@ word "since". The word "since" marks the time in a big share of the tokens.
 The corpus "UD-EWT" has about 60 tokens of the word "so". The tokens of "so"
 have different senses.
 
-English offers 2 orders. The phrase "A, so B" puts the reason at the front
+English offers 2 orders. The phrase "A, so B" puts the reason at the front,
 and the phrase "because A, B" puts the reason at the front. The phrase "B
 because A" puts the effect at the front. The 2 orders differ in the
-structure of the information. One clause is old and one clause is new. The
+structure of the information. One clause is old, and one clause is new. The
 order "old before new" helps the comprehension. The decision "0006" adopts
-the order and the common advice of the style adopts the order. If the effect
+the order, and the common advice of the style adopts the order. If the effect
 sits at the front, then the sentence can have an ambiguous attachment. The
 phrase "B because A and C" is one example.
 
@@ -39,8 +39,8 @@ The language has 2 causal constructions:
 - the phrase "<clause>, because <clause>"
 
 Every construction has one fiat meaning. A causal sentence needs the comma
-at the seam. The word "so" marks a result. The reason is old and the result
-is new. The word "because" marks a reason. The result is old and the reason
+at the seam. The word "so" marks a result. The reason is old, and the result
+is new. The word "because" marks a reason. The result is old, and the reason
 is new. A clause of a causal sentence does not contain a Coordination, so
 the Grammar fixes the scope of the connective. The Conditional has the rule.
 
@@ -51,7 +51,7 @@ sentences. A causal verb is the alternative and puts the topic at the front.
 The sentence "the expense explains the decision" uses the causal verb
 "explain".
 
-The phrase "so big" marks a degree and the phrase "so that" marks a purpose.
+The phrase "so big" marks a degree, and the phrase "so that" marks a purpose.
 The Grammar gives one sense to the word "so", so the language cannot say the
 2 phrases. The language bans 5 words:
 - "since"

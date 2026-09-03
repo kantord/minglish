@@ -22,7 +22,7 @@ The language adds 2 Function Words:
 - "if"
 - "then"
 
-The word "if" has the Form Tag "SCONJ_COND" and the word "then" has the
+The word "if" has the Form Tag "SCONJ_COND", and the word "then" has the
 Form Tag "THEN".
 
 The Conditional has one Sentence Shape. The Sentence Shape "if <clause>,
@@ -34,7 +34,7 @@ The Conditional needs the comma and needs the word "then". The 2 markers
 show the boundary of the consequent, so the reader does not follow a wrong
 Parse at the seam of the 2 clauses.
 
-The consequent cannot start the sentence and the condition cannot contain a
+The consequent cannot start the sentence, and the condition cannot contain a
 nested Conditional.
 
 The language does not allow 4 words:

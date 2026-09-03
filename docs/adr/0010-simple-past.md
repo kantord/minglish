@@ -25,13 +25,13 @@ past Surface Form of the verb. The maintainers add 3 Function Words:
 - "were"
 - "did"
 
-The word "was" has the Form Tag "COPULA_SG_PAST" and the word "were" has
+The word "was" has the Form Tag "COPULA_SG_PAST", and the word "were" has
 the Form Tag "COPULA_PL_PAST". The Auxiliary "did" carries the past
 Negation, so the Form Tag of "did" is "NEG_AUX_PAST". The sentence "the
 agent did not delete the file" shows the past Negation.
 
 The maintainers deferred the word "will", so the language does not have
-the future Tense. The perfect aspect needs a Participle and the
+the future Tense. The perfect aspect needs a Participle, and the
 Progressive needs a Participle. A Participle reopens the Reduced Relative
 and reopens the Passive. The language excludes the 2 aspects, because the
 2 aspects need a Participle. The language excludes 3 modals:
@@ -42,7 +42,7 @@ and reopens the Passive. The language excludes the 2 aspects, because the
 The 3 modals mark a false condition. The language bans every contraction.
 
 The past Function Words follow the rules of the present Function Words.
-The word "was" is a Copula and the word "were" is a Copula. The word
+The word "was" is a Copula, and the word "were" is a Copula. The word
 "did" carries a Negation. The language bans the emphatic Auxiliary and
 bans the Auxiliary in a question.
 

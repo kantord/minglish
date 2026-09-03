@@ -40,8 +40,9 @@
 | 0034-step-block.md | 31/31 |
 | 0035-become.md | 18/18 |
 | 0036-domain-model-schema.md | 32/32 |
+| 0037-full-clause-coordination.md | 27/27 |
 
-**Aggregate: 1245/1245 sentences (100%)**
+**Aggregate: 1272/1272 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

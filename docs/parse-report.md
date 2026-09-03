@@ -29,7 +29,7 @@ right-branching share, and fronted tokens before the main head.
 | the old files are big | 2 | 2 | 1 | 0% | 4 |
 | the parser is a program | 3 | 3 | 1 | 0% | 4 |
 | the server stores the message and returns the result | 3 | 4 | 1 | 38% | 2 |
-| the test fails or the agent retries the request | 3 | 4 | 2 | 25% | 2 |
+| the test fails, or the agent retries the request | 2 | 3 | 1 | 22% | 4 |
 | do not delete my report | 2 | 2 | 1 | 25% | 2 |
 | the agent does not store the file | 3 | 3 | 1 | 17% | 4 |
 | the queue is not empty | 3 | 3 | 1 | 0% | 4 |
@@ -66,8 +66,8 @@ right-branching share, and fronted tokens before the main head.
 | the database WordNet attests the senses of the words | 3 | 3 | 1 | 38% | 3 |
 | check the input of the user | 3 | 3 | 1 | 40% | 0 |
 | store the report in the database | 3 | 5 | 1 | 40% | 0 |
-| the test fails but the agent retries the request | 3 | 4 | 2 | 25% | 2 |
-| the agent opened the file but the file was empty | 4 | 7 | 2 | 22% | 2 |
+| the test fails, but the agent retries the request | 2 | 3 | 1 | 22% | 4 |
+| the agent opened the file, but the file was empty | 3 | 4 | 1 | 20% | 6 |
 | the agent deleted 3 files | 2 | 2 | 1 | 25% | 2 |
 | 3 agents retry the request | 2 | 2 | 1 | 25% | 2 |
 | the user has 2 sessions | 2 | 2 | 1 | 25% | 2 |
@@ -102,6 +102,6 @@ right-branching share, and fronted tokens before the main head.
 | the guard becomes a floor | 3 | 3 | 1 | 0% | 4 |
 | no agent becomes a Name | 3 | 3 | 1 | 0% | 4 |
 
-**Aggregate:** 93 sentences parsed; mean peak-open 2.8, worst 6 (ceiling ≈ 4).
+**Aggregate:** 93 sentences parsed; mean peak-open 2.7, worst 6 (ceiling ≈ 4).
 
 All corpus sentences parse. ✓

@@ -19,7 +19,7 @@ Surface Forms:
 - "became"
 
 The Form Tag of "becomes" is "BECOME_SG". The Form Tag of "become" is
-"BECOME_PL" and the Form Tag of "became" is "BECOME_PAST". The word "become"
+"BECOME_PL", and the Form Tag of "became" is "BECOME_PAST". The word "become"
 takes the Complement of a Copula, so the Complement is not a Participle. The
 Complement is an adjective or is a Noun Phrase. The sentence "the guard
 becomes a floor" is one example. A plural subject takes the Surface Form

@@ -6,9 +6,9 @@ Status: proposed (tentative). Second Block-level structure after ADR 0028.
 ## Context
 
 The rewrite of the decisions turned every list of the steps into the prose.
-The decision "0028" allows an item but an item is a Noun Phrase. A step is a
+The decision "0028" allows an item, but an item is a Noun Phrase. A step is a
 clause, so a step is not an item of an Enumeration. The word "then" opens a
-step in English but the decision "0014" reserves the First Token of a
+step in English, but the decision "0014" reserves the First Token of a
 sentence for the Sentence Shape. The maintainer required an unambiguous
 structure with lines. The Enumeration is one structure with lines. Gherkin
 has a structure with lines, so a file of Gherkin must be a document of
@@ -23,17 +23,17 @@ of a Step Block. The language has 4 keywords:
 - "Then"
 - "And"
 
-The keyword "Given" marks a precondition and the keyword "When" marks an
-event. The keyword "Then" marks a result and the keyword "And" marks a
+The keyword "Given" marks a precondition, and the keyword "When" marks an
+event. The keyword "Then" marks a result, and the keyword "And" marks a
 continuation of the prior keyword. Every line holds one clause. The clause
-does not contain a Coordination and the clauses of a Conditional follow the
+does not contain a Coordination, and the clauses of a Conditional follow the
 identical rule.
 
 A header opens a Step Block. Gherkin has 2 headers:
 - "Feature:"
 - "Scenario:"
 
-A header carries a title and the Linter lints the title. The title is a
+A header carries a title, and the Linter lints the title. The title is a
 sentence of Minglish or is a quoted Name.
 
 The word "Then" opens a line inside a Step Block. The word "then" does not
@@ -57,5 +57,5 @@ A file of Gherkin is a document, so the tool "lint-file" lints the file.
   "feature_files_parse" checks the folder.
 - If the word "then" opens a sentence of the prose, then the Linter names
   the home of the word "then".
-- A reader sees the shape of a Block but a spoken rendering needs a
+- A reader sees the shape of a Block, but a spoken rendering needs a
   different shape. The file "docs/ideas.md" records the idea.

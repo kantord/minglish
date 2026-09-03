@@ -387,29 +387,30 @@ open=3 maxdep=4 depth=1 right=38% fronted=2
   )
 )
 
-### the test fails or the agent retries the request
-open=3 maxdep=4 depth=2 right=25% fronted=2
-(S h=1
-  (NP h=1
-    the
-    test
+### the test fails, or the agent retries the request
+open=2 maxdep=3 depth=1 right=22% fronted=4
+(CoordClause h=2
+  (Clause h=1
+    (NP h=1
+      the
+      test
+    )
+    (VP h=0
+      fails
+    )
   )
-  (VP h=0
-    fails
-  )
-  (CoordClause h=1
-    or
-    (Clause h=1
+  ,
+  or
+  (Clause h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
       (NP h=1
         the
-        agent
-      )
-      (VP h=0
-        retries
-        (NP h=1
-          the
-          request
-        )
+        request
       )
     )
   )
@@ -1082,59 +1083,61 @@ open=3 maxdep=5 depth=1 right=40% fronted=0
   )
 )
 
-### the test fails but the agent retries the request
-open=3 maxdep=4 depth=2 right=25% fronted=2
-(S h=1
-  (NP h=1
-    the
-    test
+### the test fails, but the agent retries the request
+open=2 maxdep=3 depth=1 right=22% fronted=4
+(CoordClause h=2
+  (Clause h=1
+    (NP h=1
+      the
+      test
+    )
+    (VP h=0
+      fails
+    )
   )
-  (VP h=0
-    fails
-  )
-  (CoordClause h=1
-    but
-    (Clause h=1
+  ,
+  but
+  (Clause h=1
+    (NP h=1
+      the
+      agent
+    )
+    (VP h=0
+      retries
       (NP h=1
         the
-        agent
-      )
-      (VP h=0
-        retries
-        (NP h=1
-          the
-          request
-        )
+        request
       )
     )
   )
 )
 
-### the agent opened the file but the file was empty
-open=4 maxdep=7 depth=2 right=22% fronted=2
-(S h=1
-  (NP h=1
-    the
-    agent
-  )
-  (VP h=0
-    opened
+### the agent opened the file, but the file was empty
+open=3 maxdep=4 depth=1 right=20% fronted=6
+(CoordClause h=2
+  (Clause h=1
     (NP h=1
       the
-      file
+      agent
     )
-  )
-  (CoordClause h=1
-    but
-    (Clause h=1
+    (VP h=0
+      opened
       (NP h=1
         the
         file
       )
-      (CopPred h=1
-        was
-        empty
-      )
+    )
+  )
+  ,
+  but
+  (Clause h=1
+    (NP h=1
+      the
+      file
+    )
+    (CopPred h=1
+      was
+      empty
     )
   )
 )

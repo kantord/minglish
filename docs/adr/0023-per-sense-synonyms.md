@@ -13,7 +13,7 @@ the decision "0002" bans the first sense. The phrase "have the same format"
 compares 2 things. The word "identical" is a precise synonym of the second
 sense. The old rule of the decision "0008" compared the 2 frequencies on
 the scale Zipf. If the distance was bigger than one point, then the old
-rule flagged the synonym. The word "same" has 5.80 points on the scale Zipf
+rule flagged the synonym. The word "same" has 5.80 points on the scale Zipf,
 and the word "identical" has 4.21 points. The distance is 1.59 points, so
 the old rule flagged the word "identical".
 
@@ -51,7 +51,7 @@ checked the floor against the 36 Redirects. The floor flags 2 candidates:
 - "outcast"
 - "emit"
 
-The candidate "outcast" has 3.09 points and the candidate "emit" has 3.25
+The candidate "outcast" has 3.09 points, and the candidate "emit" has 3.25
 points. The maintainers reviewed the 2 candidates and kept the 2
 candidates.
 

@@ -5,7 +5,7 @@ Status: proposed (tentative — same review point as ADR 0002–0005, 0007)
 
 ## Context
 
-A policy needs normative sentences and an instruction needs normative
+A policy needs normative sentences, and an instruction needs normative
 sentences. Normative sentences carry 4 forces:
 - the obligation
 - the Prohibition
@@ -16,7 +16,7 @@ The modals of English are ambiguous. The word "may" marks a permission or
 marks a possibility. The word "can" marks an ability or marks a permission.
 The obligation of "must" is stronger than the obligation of "should", so
 the word "should" opens a scale of the obligation. The word "will" marks
-the Tense and the word "would" marks the Tense. The decision "0008" gives
+the Tense, and the word "would" marks the Tense. The decision "0008" gives
 the rule. If the senses of an ambiguous word do not have a synonym, then
 the word is a Ban. The word is not a Redirect. A modal is dense, because
 one token carries the whole force. The density is precise and is

@@ -260,3 +260,34 @@ the domain-model schema (ADR 0036) settles: a `just graph` command that
 walks `docs/adr/*.md` and `domain/model.json` through `grammar::parse_text`
 and prints edges, likely as a first cut before any storage or UI question.
 
+
+## minglish as a code-normal-form target (2026-09-03)
+
+If a compiler/language AST can be mapped to minglish sentences unambiguously
+(one AST shape → one sentence shape, invertibly, the same guarantee ADR
+0014 gives natural-language sentences), the language stops being only a
+prose-writing constraint and becomes a normalization target for code
+itself: "the function `parse` takes the argument `text` and returns the
+tree" rather than a lossy free-text comment about the function.
+
+Two distinct uses follow from that mapping, not one:
+- **Linting code structure through the minglish linter.** Once code is
+  projected into minglish sentences, every diagnose() rule (bare-noun
+  ambiguity, dangling reference, missing quantifier scope) becomes a
+  structural check on the code's own shape, not just its prose comments —
+  a naming/structure smell shows up as a minglish STYLE finding on the
+  generated sentence for a function or a type.
+- **Generating a normalized form of the code.** The reverse direction: use
+  the mapping to produce canonical, minglish-vocabulary names and
+  descriptions for a codebase's declarations — a forced pass through
+  minglish's per-sense-synonym discipline (ADR 0023) as a naming-quality
+  gate, the same discipline this project already applies to its own prose.
+
+Open questions before this is more than a note: which AST shapes actually
+have a natural minglish sentence (a function call maps cleanly to a
+Statement's subject-verb-object; a loop or a closure less obviously so);
+whether the mapping needs to be total (every AST node has a sentence) or
+only covers a useful subset (declarations and signatures, not arbitrary
+expressions); and whether "unambiguous" here means the same thing ADR 0014
+means for parsing prose, or a weaker one-way (AST → sentence) guarantee
+without the reverse. Not sized yet — a research question, not a plan.

@@ -21,7 +21,7 @@ the queue is empty
 the old files are big
 the parser is a program
 the server stores the message and returns the result
-the test fails or the agent retries the request
+the test fails, or the agent retries the request
 do not delete my report
 the agent does not store the file
 the queue is not empty
@@ -58,8 +58,8 @@ the file "seed.json" is the source of the truth
 the database WordNet attests the senses of the words
 check the input of the user
 store the report in the database
-the test fails but the agent retries the request
-the agent opened the file but the file was empty
+the test fails, but the agent retries the request
+the agent opened the file, but the file was empty
 the agent deleted 3 files
 3 agents retry the request
 the user has 2 sessions

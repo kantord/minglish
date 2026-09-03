@@ -448,7 +448,7 @@
   {
     "lemma": "copula",
     "category": "NOUN",
-    "definition": "a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word \"is\" is a Copula and the word \"are\" is a Copula. the past Tense uses the word \"was\" or uses the word \"were\".",
+    "definition": "a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word \"is\" is a Copula, and the word \"are\" is a Copula. the past Tense uses the word \"was\" or uses the word \"were\".",
     "kind": "category",
     "examples": [
       "is",
@@ -525,7 +525,7 @@
     "kind": "category",
     "examples": [
       "the server stores the message and returns the result.",
-      "the test fails or the agent retries the request.",
+      "the test fails, or the agent retries the request.",
       "the language has 2 conjunctions:\n- \"and\"\n- \"or\""
     ]
   },
@@ -553,7 +553,7 @@
   {
     "lemma": "prepositional phrase",
     "category": "NOUN",
-    "definition": "a Prepositional Phrase is a Constituent. a preposition opens a Prepositional Phrase and a Noun Phrase follows the preposition. the preposition decides the attachment. the phrase \"of the report\" attaches to the prior noun, because \"of\" is the Noun Preposition. the phrase \"in the database\" attaches to the verb, because \"in\" is a Verb Preposition.",
+    "definition": "a Prepositional Phrase is a Constituent. a preposition opens a Prepositional Phrase, and a Noun Phrase follows the preposition. the preposition decides the attachment. the phrase \"of the report\" attaches to the prior noun, because \"of\" is the Noun Preposition. the phrase \"in the database\" attaches to the verb, because \"in\" is a Verb Preposition.",
     "kind": "category",
     "examples": [
       "in the database",
@@ -587,7 +587,7 @@
   {
     "lemma": "auxiliary",
     "category": "NOUN",
-    "definition": "an Auxiliary is a Function Word and helps a verb. the word \"do\" is the Auxiliary of the language. a Negation uses the Auxiliary and a Prohibition uses the Auxiliary. a plain statement does not use the Auxiliary. the word \"is\" is a Copula and is not an Auxiliary.",
+    "definition": "an Auxiliary is a Function Word and helps a verb. the word \"do\" is the Auxiliary of the language. a Negation uses the Auxiliary, and a Prohibition uses the Auxiliary. a plain statement does not use the Auxiliary. the word \"is\" is a Copula and is not an Auxiliary.",
     "forms": {
       "plural": "auxiliaries"
     },
@@ -600,7 +600,7 @@
   {
     "lemma": "constituent",
     "category": "NOUN",
-    "definition": "a Constituent is one part of a Parse. the Grammar builds the Parse from Constituents. a Noun Phrase is a Constituent and a Prepositional Phrase is a Constituent. the subject \"the agent\" is a Constituent of the sentence \"the agent reads the file\".",
+    "definition": "a Constituent is one part of a Parse. the Grammar builds the Parse from Constituents. a Noun Phrase is a Constituent, and a Prepositional Phrase is a Constituent. the subject \"the agent\" is a Constituent of the sentence \"the agent reads the file\".",
     "kind": "category",
     "examples": [
       "the subject",

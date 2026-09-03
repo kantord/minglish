@@ -7,7 +7,7 @@ Status: proposed (tentative). First Block-level structure.
 
 The repair of the paragraphs turned the list of the Pronouns into 9
 sentences. The proposal was valid but was unreadable. Technical texts
-enumerate the members of a set with a list but the language had one
+enumerate the members of a set with a list, but the language had one
 structure. The structure was the sentence, so a list became a repetition.
 
 ## Decision
@@ -46,7 +46,7 @@ intro stays with the items. The rule covers 4 tools:
 
 The maintainers deferred 3 questions. The first question is an ordered
 list. The items of an ordered list are clauses. The steps of a procedure
-are one example and the rules are a second example. The second question is
+are one example, and the rules are a second example. The second question is
 a colon inside a sentence. The third question is an intro with the shape
 of a question.
 

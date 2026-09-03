@@ -17,7 +17,7 @@ The comfortable bound is 4 Open Dependencies. The 3 metrics predict the
 difficulty of a sentence and beat every rule of the style.
 
 A categorical Ban of a shape overshoots. One sentence of the research
-carried a heavy branch at the front but the sentence was effortless. The
+carried a heavy branch at the front, but the sentence was effortless. The
 load of the sentence was small, so the correct constraint is a bound on
 the load. A Ban of a shape is the wrong constraint.
 
@@ -38,7 +38,7 @@ rule.
 
 The second criterion is the familiarity. If the ideal structure is not
 available, then the maintainers choose the common construction of
-English. A familiar construction helps the reader but a surprise costs the
+English. A familiar construction helps the reader, but a surprise costs the
 reader.
 
 The third criterion is the Context Need. A sentence must have a small
@@ -51,7 +51,7 @@ carries a precise meaning and is cheap. The maintainers prefer the short
 formulation inside the bounds of the load. A verbose text is not free,
 because the noise of the padding causes an ambiguity. If a rule adds
 words, then the rule must remove an ambiguity. The repetition of the nouns
-earns the words and the mandatory word "then" earns the word. If a rule
+earns the words, and the mandatory word "then" earns the word. If a rule
 adds the padding, then the rule violates the 4th criterion.
 
 The 5th criterion is the expressiveness. A natural text is a real goal. A

@@ -12,8 +12,8 @@ model. A definition was a rule, so the reader of the definition cannot see
 the meaning.
 
 The maintainer gave the reason. The writer of a definition knows the
-meaning but the reader of the definition does not know the meaning. An
-example shows the meaning but a rule does not show the meaning.
+meaning, but the reader of the definition does not know the meaning. An
+example shows the meaning, but a rule does not show the meaning.
 
 ## Decision
 

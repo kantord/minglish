@@ -72,6 +72,15 @@ notes where. Add an entry when a new type is caught; never delete one.
   derivable-from (docs/resources.md policy).
 - **Embedding similarity as a role judge**: pooled embeddings are order-
   blind; a subject/object swap looks identical (ideas, structured repair).
+- **A word reused across constructions assumed to need a second word**:
+  reuse costs nothing when something else in the sentence already
+  disambiguates which construction applies (a comma, a position, a
+  category) — check the judged naturalness/fidelity scores (`just
+  prejudge`, `just judge-docs`) before assuming a construction needs a
+  distinct word, rather than forcing distinctness as a rule (ADR 0037: "of"
+  costs real ambiguity and got a hard bound; "but" reused across
+  predicate- and clause-level coordination costs nothing, since the comma
+  already marks which one applies).
 
 ## E. Tooling made the result look wrong
 

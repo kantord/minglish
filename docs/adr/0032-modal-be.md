@@ -8,8 +8,8 @@ Status: proposed (tentative). Extends ADR 0009; ADR 0003 keeps every other fence
 The rewrite of the decisions found 7 sentences of the archetype "A16". The
 sentence "a hyphenated word must be transparent" is one example. A rewrite
 lost the force of the modal, because the decision "0009" did not allow the
-phrase "must be". A Conditional replaced the obligation and a verb replaced
-the possibility. The obligation is a claim and the possibility is a claim.
+phrase "must be". A Conditional replaced the obligation, and a verb replaced
+the possibility. The obligation is a claim, and the possibility is a claim.
 The decision "0012" bans the loss of a claim.
 
 ## Decision
@@ -28,7 +28,7 @@ decision gives 2 examples:
 - "the intro cannot be a question"
 
 The word "be" is not an Auxiliary and is not an infinitive. The word "be"
-does not open an Imperative. The fences of the decision "0003" stay and
+does not open an Imperative. The fences of the decision "0003" stay, and
 the fences of the decision "0010" stay.
 
 ## Consequences

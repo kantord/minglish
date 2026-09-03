@@ -10,7 +10,7 @@ Compound into the sentence "every word has one tag". The sentence failed on
 the word "has" and failed on the word "one". Triage counts about 335 tokens
 of the word "have" in the general corpus. The Auxiliary "have" is
 dangerous, because the Auxiliary marks the perfect aspect. The Pronoun
-"one" is dangerous. The phrase "a good one" shows the danger and the
+"one" is dangerous. The phrase "a good one" shows the danger, and the
 generic phrase "one must" shows the danger. A writer cannot write the 2
 dangerous usages in the Grammar, so the 2 usages are safe.
 

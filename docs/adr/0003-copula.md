@@ -6,7 +6,7 @@ Status: proposed (tentative — same review point as ADR 0002; rewritten in ming
 ## Context
 
 Triage counts about 850 tokens of the word "be" in the corpus, so the word
-"be" is the main hole in the Coverage. Texts cannot avoid the Copula and
+"be" is the main hole in the Coverage. Texts cannot avoid the Copula, and
 the sentence "the file is old" is one example.
 
 The whole Paradigm of "be" adds 4 Surface Forms:
@@ -15,16 +15,16 @@ The whole Paradigm of "be" adds 4 Surface Forms:
 - "been"
 - "being"
 
-The 2 past Surface Forms mark the Tense and the 2 Participles mark the
+The 2 past Surface Forms mark the Tense, and the 2 Participles mark the
 aspect. If a Participle follows a Copula, then the sentence is not a plain
-statement. The phrase "is stored" is a Passive and the phrase "is running"
+statement. The phrase "is stored" is a Passive, and the phrase "is running"
 is a Progressive. The maintainers deferred 4 questions of the Grammar:
 - the Tense
 - the aspect
 - the Passive
 - the Progressive
 
-The research of the project found the main danger in the Participles and
+The research of the project found the main danger in the Participles, and
 the Reduced Relative is one example.
 
 ## Decision
@@ -33,7 +33,7 @@ The language enables 2 Copulas:
 - "is"
 - "are"
 
-The Copula "is" carries the Form Tag "COPULA_SG" and the Copula "are"
+The Copula "is" carries the Form Tag "COPULA_SG", and the Copula "are"
 carries the Form Tag "COPULA_PL". The 2 Copulas have a fiat Category. A
 Copula takes a Complement but does not take an object. The slot of a Copula
 differs from the slot of a verb, so the Category of a Copula is not the
@@ -56,7 +56,7 @@ allowed the phrase "must be".
 ## Consequences
 
 - The language can describe a property and can name a class. The sentence
-  "the queue is empty" is the first example and the sentence "the parser is
+  "the queue is empty" is the first example, and the sentence "the parser is
   a program" is the second example.
 - The first version of the language cannot say a past state and cannot say
   an ongoing process. The maintainers revisit the question in the decision
