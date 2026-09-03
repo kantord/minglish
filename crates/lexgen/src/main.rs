@@ -87,6 +87,16 @@ fn main() {
         }
     }
 
+    // -- lint: is-a links point at existing categories (ADR 0036) -------------
+    {
+        let categories: BTreeSet<&str> = entries.iter().filter(|e| e.domain && e.kind == "category").map(|e| e.lemma.as_str()).collect();
+        for e in entries.iter().filter(|e| e.domain && !e.member_of.is_empty()) {
+            if !categories.contains(e.member_of.as_str()) {
+                errors.push(format!("\"{}\": member_of \"{}\" is not a category of the domain model", e.lemma, e.member_of));
+            }
+        }
+    }
+
     // -- paradigm expansion ------------------------------------------------
     let mut forms: Vec<Form> = Vec::new();
     for e in &entries {
@@ -330,7 +340,10 @@ fn render_context(entries: &[SeedEntry]) -> String {
          written Capitalized in text (\"the Lexicon\", \"an Anaphoric Pronoun\");\n\
          verbs and adjectives from the model stay lowercase. A capitalized word\n\
          not listed here is a proper name (ADR 0018). Terms not listed are\n\
-         undefined; add an entry before using one in code or docs.\n\n\
+         undefined; add an entry before using one in code or docs. Each noun\n\
+         term is *unique* (one thing) or a *category* (a kind of thing, with\n\
+         examples); \"a X\" after the tag is the category the term belongs to\n\
+         (ADR 0036).\n\n\
          ## Terms\n\n",
     );
     let mut terms: Vec<&SeedEntry> = entries.iter().filter(|e| e.domain).collect();
@@ -341,7 +354,14 @@ fn render_context(entries: &[SeedEntry]) -> String {
             Category::Name => seed::shown_name(e),
             _ => e.lemma.clone(),
         };
-        out.push_str(&format!("**{shown}** ({}) — {}\n\n", e.category.to_lowercase().replace('_', " "), e.definition.trim()));
+        let kind = if e.kind.is_empty() { String::new() } else { format!(", {}", e.kind) };
+        let member = if e.member_of.is_empty() { String::new() } else { format!(" · a {}", seed::capitalize(&e.member_of)) };
+        out.push_str(&format!("**{shown}** ({}{kind}){member} — {}\n", e.category.to_lowercase().replace('_', " "), e.definition.trim()));
+        if !e.examples.is_empty() {
+            let ex: Vec<String> = e.examples.iter().map(|x| if x.contains('\n') { format!("\n  ```\n  {}\n  ```", x.replace('\n', "\n  ")) } else { format!("`{x}`") }).collect();
+            out.push_str(&format!("  Examples: {}\n", ex.join(" · ")));
+        }
+        out.push('\n');
     }
     out
 }

@@ -6,13 +6,13 @@ Status: proposed (tentative — revisit once real corpus experience exists; rewr
 ## Context
 
 Triage counts the unknown tokens of the corpus. About 2200 unknown tokens
-are pronouns. The pronouns make a big hole in the Coverage.
+are Pronouns. The Pronouns make a big hole in the Coverage.
 
 An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must
 find the noun. The sentence "it failed" needs a Discourse Layer. The file
 `docs/research/cnl-design-findings.md` describes the results of the
 research. If a tool splits a sentence into 2 sentences, then the ambiguity
-reappears in the pronouns of the sentences.
+reappears in the Pronouns of the sentences.
 
 An Indexical Pronoun refers to the writer or refers to the reader. An
 Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not

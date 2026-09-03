@@ -1,7 +1,7 @@
 # 0034 — Step Block: ordered steps in the shape of Gherkin
 
 Date: 2026-09-03
-Status: proposed (tentative). Second block-level structure after ADR 0028.
+Status: proposed (tentative). Second Block-level structure after ADR 0028.
 
 ## Context
 
@@ -12,7 +12,7 @@ the structure. A file of Gherkin must be a document of Minglish.
 
 ## Decision
 
-A Step Block is a block. A keyword opens every line of a Step Block.
+A Step Block is a Block. A keyword opens every line of a Step Block.
 The language has 4 keywords:
 - "Given"
 - "When"
@@ -32,10 +32,10 @@ The word "Then" opens a line inside a Step Block. The word "then" does not open 
 keyword "But" of Gherkin is a Ban, because the word "but" joins 2 clauses
 inside one sentence.
 
-Every tool reads a Step Block. The block is one unit. The corpus keeps the
-lines of a block. The tool "lint-file" keeps the lines of a block. The
-extractor keeps the lines of a block. The repair of the paragraphs keeps
-the lines of a block. A file of Gherkin is a document. The
+Every tool reads a Step Block. The Block is one unit. The corpus keeps the
+lines of a Block. The tool "lint-file" keeps the lines of a Block. The
+extractor keeps the lines of a Block. The repair of the paragraphs keeps
+the lines of a Block. A file of Gherkin is a document. The
 tool "lint-file" lints the file.
 
 ## Consequences
@@ -44,4 +44,4 @@ tool "lint-file" lints the file.
 - The Linter parses every file of Gherkin in the folder "features". The test
   "feature_files_parse" checks the folder.
 - The Linter names the position of the word "then".
-- A block has a shape for the text. A spoken rendering needs a different shape. The file "docs/ideas.md" records the idea.
+- A Block has a shape for the text. A spoken rendering needs a different shape. The file "docs/ideas.md" records the idea.

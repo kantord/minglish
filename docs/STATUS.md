@@ -1,6 +1,6 @@
 # Project status and handoff
 
-Last updated: 2026-09-01. Everything a fresh agent needs that is not
+Last updated: 2026-09-03. Everything a fresh agent needs that is not
 derivable from the code, ADRs, or git history.
 
 ## Where everything lives
@@ -8,7 +8,13 @@ derivable from the code, ADRs, or git history.
 - `domain/model.json` — the domain model (ADR 0027): every project term with
   its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
   written Capitalized in minglish text. `just define <Term>` looks one up.
-- `docs/adr/0001–0035` — every language and policy decision, each citing its
+  ADR 0036 schema: every noun term has `kind` ("unique" | "category"), a
+  category needs `examples` (an example ending in "." is a minglish
+  sentence and is self-linted; a multi-line one is a Block), `member_of`
+  names its parent category. These fields live only in the model, never in
+  the seed; a core lemma that becomes a term is dropped from the seed
+  (done for "pronoun" and "block").
+- `docs/adr/0001–0036` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),

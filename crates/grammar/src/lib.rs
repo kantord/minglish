@@ -434,7 +434,16 @@ pub fn units(text: &str) -> Vec<String> {
             continue;
         }
         if l.ends_with(':') {
-            let mut block = vec![l.to_string()];
+            // the intro is the LAST sentence on the line; prose before it is
+            // its own unit (a reply may put both on one line)
+            let (prose, intro) = match l.rfind(". ") {
+                Some(cut) => (&l[..cut + 1], l[cut + 2..].trim()),
+                None => ("", l),
+            };
+            if !prose.trim().is_empty() {
+                out.push(prose.trim().to_string());
+            }
+            let mut block = vec![intro.to_string()];
             let mut j = i + 1;
             while j < lines.len() && lines[j].starts_with("- ") {
                 block.push(lines[j].to_string());

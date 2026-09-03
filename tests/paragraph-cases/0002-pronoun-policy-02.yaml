@@ -1,7 +1,7 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 2
-original: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
-context_before: Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are pronouns. The pronouns make a big hole in the Coverage.
+original: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
+context_before: Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are Pronouns. The Pronouns make a big hole in the Coverage.
 context_after: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
 original_metrics:
   sentences: 5
@@ -10,28 +10,21 @@ original_metrics:
   continuity_ok: 0
   cost: 182.57999999999996
   words: 53
-  terms: 2
+  terms: 3
   connectives: 0
 verdict: unreviewed
-note: intro sentence invented ('every word carries one meaning'); the block should enumerate the 3 enabled words with their Form Tags stated after
+note: source paragraph changed; stored proposals are replay data only
 best: |-
-  The design bans every anaphoric pronoun.
-  The design bans every demonstrative.
-  The anaphoric pronouns are 6 words:
+  The Linter bans every Anaphoric Pronoun. the Anaphoric Pronouns are 8 words:
   - "it"
   - "they"
   - "he"
   - "she"
-  - "them"
-  - "him"
-  The demonstratives are 6 words:
   - "this"
   - "that"
   - "these"
   - "those"
-  - "her"
-  - "their"
-  The writer repeats the noun.
+  the Linter bans every possessive Anaphoric Pronoun. the writer does not use an Anaphoric Pronoun. the writer repeats the noun.
 proposals:
 - text: the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the user repeats the noun instead.
   drops: imperative mood, colon punctuation, parenthetical list, register of a specification rule
@@ -45,7 +38,7 @@ proposals:
     words: 38
     terms: 0
     connectives: 3
-  diagnosis: '"the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms] | "the user repeats the noun instead": WORD: "instead" is not a minglish word'
+  diagnosis: '"the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronoun, pronominal] | "the banned words are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms] | "the user repeats the noun instead": WORD: "instead" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool bans anaphoric pronouns and pronominal demonstratives. the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms. the person who writes repeats the noun.
@@ -60,7 +53,7 @@ proposals:
     words: 34
     terms: 0
     connectives: 3
-  diagnosis: '"the tool bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those, their] | "the person who writes repeats the noun": WORD: "who" is not a minglish word'
+  diagnosis: '"the tool bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the ban includes the forms it, they, he, she, this, that, these, those, and their object and possessive forms": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those, their] | "the person who writes repeats the noun": WORD: "who" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: a linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words. the user repeats the noun instead of every banned word.
@@ -75,7 +68,7 @@ proposals:
     words: 39
     terms: 0
     connectives: 3
-  diagnosis: '"a linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form, these] | "the user repeats the noun instead of every banned word": WORD: "instead" is not a minglish word'
+  diagnosis: '"a linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal] | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and every object form and possessive form of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form, these] | "the user repeats the noun instead of every banned word": WORD: "instead" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter rejects anaphoric pronouns and pronominal demonstratives. the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words. the writer repeats the noun.
@@ -90,7 +83,7 @@ proposals:
     words: 36
     terms: 0
     connectives: 3
-  diagnosis: '"the linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, it, they, he, she, this, that, these, those, forms]'
+  diagnosis: '"the linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal] | "the linter bans the words it, they, he, she, this, that, these, those, and the object forms and possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, it, they, he, she, this, that, these, those, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter rejects anaphoric pronouns. the linter rejects demonstrative pronouns. the words it, they, he, she, this, that, these, and those are not allowed. the object forms and possessive forms of these words are also not allowed. the writer repeats the noun.
@@ -105,7 +98,7 @@ proposals:
     words: 42
     terms: 0
     connectives: 2
-  diagnosis: '"the linter rejects anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter rejects demonstrative pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the words it, they, he, she, this, that, these, and those are not allowed": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the object forms and possessive forms of these words are also not allowed": WORD: "forms" is not a minglish word [all unknown words: forms, these, also]'
+  diagnosis: '"the linter rejects anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the linter rejects demonstrative pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the words it, they, he, she, this, that, these, and those are not allowed": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the object forms and possessive forms of these words are also not allowed": WORD: "forms" is not a minglish word [all unknown words: forms, these, also]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter rejects anaphoric pronouns. the linter rejects the words it, they, he, she, this, that, these, and those. the linter rejects the forms of these words. the writer repeats the noun.
@@ -120,7 +113,7 @@ proposals:
     words: 32
     terms: 0
     connectives: 1
-  diagnosis: '"the linter rejects anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter rejects the words it, they, he, she, this, that, these, and those": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, it, they, he, she, this, that, these, those] | "the linter rejects the forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, these]'
+  diagnosis: '"the linter rejects anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the linter rejects the words it, they, he, she, this, that, these, and those": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, it, they, he, she, this, that, these, those] | "the linter rejects the forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the rule bans anaphoric pronouns. the rule bans pronominal demonstratives. the anaphoric pronouns are it, they, he, she, this, that, these, those. the rule also bans the object forms and possessive forms of these words. the writer repeats the noun.
@@ -128,14 +121,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
-    continuity_pairs: 4
+    parsed: 1
+    continuity_pairs: 3
     continuity_ok: 1
     cost: 150.84999999999997
     words: 40
     terms: 0
     connectives: 1
-  diagnosis: '"the rule bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are it, they, he, she, this, that, these, those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule also bans the object forms and possessive forms of these words": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, these]'
+  diagnosis: '"the rule bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the rule bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are it, they, he, she, this, that, these, those": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, it, they, he, she, this, that, these, those] | "the rule also bans the object forms and possessive forms of these words": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the rule prohibits anaphoric pronouns. the rule prohibits pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule prohibits the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
@@ -150,7 +143,7 @@ proposals:
     words: 43
     terms: 0
     connectives: 2
-  diagnosis: '"the rule prohibits anaphoric pronouns": WORD: "prohibits" is not a minglish word | "the rule prohibits pronominal demonstratives": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, pronominal] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule prohibits the object forms and possessive forms of the anaphoric pronouns": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, forms]'
+  diagnosis: '"the rule prohibits anaphoric pronouns": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, pronouns] | "the rule prohibits pronominal demonstratives": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, pronominal] | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, it, they, he, she, this, that, these, those] | "the rule prohibits the object forms and possessive forms of the anaphoric pronouns": WORD: "prohibits" is not a minglish word [all unknown words: prohibits, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the rule does not allow anaphoric pronouns. the rule does not allow pronominal demonstratives. the anaphoric pronouns are the words it, they, he, she, this, that, these, and those. the rule does not allow the object forms and possessive forms of the anaphoric pronouns. the writer repeats the noun.
@@ -158,14 +151,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
+    parsed: 1
     continuity_pairs: 4
     continuity_ok: 1
     cost: 176.54000000000002
     words: 49
     terms: 0
     connectives: 2
-  diagnosis: '"the rule does not allow pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the rule does not allow the object forms and possessive forms of the anaphoric pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"the rule does not allow anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the rule does not allow pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are the words it, they, he, she, this, that, these, and those": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, it, they, he, she, this, that, these, those] | "the rule does not allow the object forms and possessive forms of the anaphoric pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: every anaphoric pronoun is banned. every pronominal demonstrative is banned. the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
@@ -180,7 +173,7 @@ proposals:
     words: 36
     terms: 0
     connectives: 2
-  diagnosis: '"every anaphoric pronoun is banned": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "banned" is transitive in minglish and needs an object; "is … banned" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; passive ("is <verb>-ed") is not in minglish — name the doer and use active voice (ADR 0003) | "every pronominal demonstrative is banned": WORD: "pronominal" is not a minglish word | "the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
+  diagnosis: '"every anaphoric pronoun is banned": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "every pronominal demonstrative is banned": WORD: "pronominal" is not a minglish word | "the banned words include it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use pronominal demonstratives. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
@@ -188,14 +181,14 @@ proposals:
   valid: false
   metrics:
     sentences: 4
-    parsed: 2
+    parsed: 1
     continuity_pairs: 3
     continuity_ok: 2
     cost: 170.76
     words: 46
     terms: 0
     connectives: 2
-  diagnosis: '"the tool Lexgen does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
+  diagnosis: '"the tool Lexgen does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not use anaphoric pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun.
@@ -203,14 +196,14 @@ proposals:
   valid: false
   metrics:
     sentences: 3
-    parsed: 2
+    parsed: 1
     continuity_pairs: 2
     continuity_ok: 1
     cost: 131.35999999999996
     words: 38
     terms: 0
     connectives: 2
-  diagnosis: '"the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
+  diagnosis: '"the tool Lexgen does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen does not use the words it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
@@ -225,7 +218,7 @@ proposals:
     words: 42
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives. the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words. the writer repeats the noun. the writer does not use these words.
@@ -240,7 +233,7 @@ proposals:
     words: 44
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  diagnosis: '"the tool Lexgen does not use anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the banned forms are it, they, he, she, this, that, these, those, and the object and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, it, they, he, she, this, that, these, those] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not use pronouns. the tool Lexgen does not use the words it, they, he, she, this, that, these, and those. the tool Lexgen does not use the object forms of these words. the tool Lexgen does not use the possessive forms of these words. the writer repeats the noun. the writer does not use the pronouns.
@@ -248,14 +241,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 3
+    parsed: 1
     continuity_pairs: 5
     continuity_ok: 4
     cost: 202.75000000000003
     words: 60
     terms: 0
     connectives: 1
-  diagnosis: '"the tool Lexgen does not use the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the tool Lexgen does not use the object forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these] | "the tool Lexgen does not use the possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen does not use pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen does not use the words it, they, he, she, this, that, these, and those": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: it, they, he, she, this, that, these, those] | "the tool Lexgen does not use the object forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these] | "the tool Lexgen does not use the possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these] | "the writer does not use the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the person writes the noun. the writer does not use an anaphoric pronoun. the writer does not use a pronominal demonstrative. i does not refer to an entity. you does not refer to an entity. my refers to the writer. your refers to the reader. the tool Linter rejects a sentence with an anaphoric pronoun. the tool Linter rejects a sentence with a pronominal demonstrative. the tool Linter rejects a sentence with the word it. the tool Linter rejects a sentence with the word they. the tool Linter rejects a sentence with the word he. the tool Linter rejects a sentence with the word she. the tool Linter rejects a sentence with the word this. the tool Linter rejects a sentence with the word that. the tool Linter rejects a sentence with the word these. the tool Linter rejects a sentence with the word those. the tool Linter rejects a sentence with the word their. the tool Linter rejects a sentence with the word its. the tool Linter rejects a sentence with the word his. the tool Linter rejects a sentence with the word hers.
@@ -263,14 +256,14 @@ proposals:
   valid: false
   metrics:
     sentences: 21
-    parsed: 2
+    parsed: 1
     continuity_pairs: 18
     continuity_ok: 14
     cost: 668.7399999999994
     words: 185
     terms: 14
     connectives: 0
-  diagnosis: '"the writer does not use a pronominal demonstrative": WORD: "pronominal" is not a minglish word | "i does not refer to an entity": WORD: "entity" is not a minglish word | "you does not refer to an entity": WORD: "entity" is not a minglish word | "my refers to the writer": STYLE: "refers" is a verb in minglish and cannot follow a determiner | "your refers to the reader": STYLE: "refers" is a verb in minglish and cannot follow a determiner | "the tool Linter rejects a sentence with an anaphoric pronoun": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "tool Linter" — noun-noun compounds are not minglish; write "the Linter of the tool", or one transparent word (ADR 0015) | "the tool Linter rejects a sentence with a pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the tool Linter rejects a sentence with the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word that": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the tool Linter rejects a sentence with the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word hers": WORD: "hers" is not a minglish word'
+  diagnosis: '"the writer does not use an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use a pronominal demonstrative": WORD: "pronominal" is not a minglish word | "i does not refer to an entity": WORD: "entity" is not a minglish word | "you does not refer to an entity": WORD: "entity" is not a minglish word | "my refers to the writer": STYLE: "refers" is a verb in minglish and cannot follow a determiner | "your refers to the reader": STYLE: "refers" is a verb in minglish and cannot follow a determiner | "the tool Linter rejects a sentence with an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Linter rejects a sentence with a pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the tool Linter rejects a sentence with the word it": WORD: "it" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word they": WORD: "they" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word he": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word she": WORD: "she" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word this": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word that": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the tool Linter rejects a sentence with the word these": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word those": WORD: "those" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word their": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word its": WORD: "its" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word his": WORD: "his" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "the tool Linter rejects a sentence with the word hers": WORD: "hers" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the writer repeats the noun. the writer does not use the word it. the writer does not use the word they. the writer does not use the word he. the writer does not use the word she. the writer does not use the word this. the writer does not use the word that. the writer does not use the word these. the writer does not use the word those. the writer does not use the word their. the writer does not use the word its. the writer does not use the word his. the writer does not use the word hers. the word i is not an anaphoric word. the word you is not an anaphoric word. the word my refers to the writer. the word your refers to the person who reads the text. the tool "linter" rejects a sentence with an anaphoric word. the tool "linter" rejects a sentence with the word it. the tool "linter" rejects a sentence with the word they. the tool "linter" rejects a sentence with the word he. the tool "linter" rejects a sentence with the word she. the tool "linter" rejects a sentence with the word this. the tool "linter" rejects a sentence with the word that. the tool "linter" rejects a sentence with the word these. the tool "linter" rejects a sentence with the word those. the tool "linter" rejects a sentence with the word their. the tool "linter" rejects a sentence with the word its. the tool "linter" rejects a sentence with the word his. the tool "linter" rejects a sentence with the word hers.
@@ -308,14 +301,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
-    continuity_pairs: 4
-    continuity_ok: 2
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
     cost: 147.07999999999996
     words: 38
     terms: 0
     connectives: 3
-  diagnosis: '"the rule bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are i, he, she, they, and their forms": WORD: "he" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: he, she, they, their, forms] | "pronominal demonstratives are this, that, these, and those": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, this, that, these, those]'
+  diagnosis: '"the rule bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "anaphoric pronouns are i, he, she, they, and their forms": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, he, she, they, their, forms] | "pronominal demonstratives are this, that, these, and those": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, this, that, these, those] | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the rule does not allow anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are i and you and the forms of i and you. pronominal demonstratives are the forms of this and that. the writer repeats the noun. the writer does not use a pronoun.
@@ -323,14 +316,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
-    continuity_pairs: 4
-    continuity_ok: 2
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
     cost: 154.18999999999994
     words: 44
     terms: 0
     connectives: 5
-  diagnosis: '"the rule does not allow anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are i and you and the forms of i and you": WORD: "forms" is not a minglish word | "pronominal demonstratives are the forms of this and that": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, forms, this, that]'
+  diagnosis: '"the rule does not allow anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "anaphoric pronouns are i and you and the forms of i and you": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, forms] | "pronominal demonstratives are the forms of this and that": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, forms, this, that] | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the rule rejects anaphoric pronouns and pronominal demonstratives. i and you are anaphoric pronouns. the forms of i and you are anaphoric pronouns. the forms of this and that are pronominal demonstratives. the writer repeats the noun. the writer does not use a pronoun.
@@ -338,14 +331,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 2
-    continuity_pairs: 5
-    continuity_ok: 3
+    parsed: 1
+    continuity_pairs: 3
+    continuity_ok: 1
     cost: 165.20999999999998
     words: 44
     terms: 0
     connectives: 4
-  diagnosis: '"the rule rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "i and you are anaphoric pronouns": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md) | "the forms of i and you are anaphoric pronouns": WORD: "forms" is not a minglish word | "the forms of this and that are pronominal demonstratives": WORD: "forms" is not a minglish word [all unknown words: forms, this, that, pronominal]'
+  diagnosis: '"the rule rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "i and you are anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the forms of i and you are anaphoric pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "the forms of this and that are pronominal demonstratives": WORD: "forms" is not a minglish word [all unknown words: forms, this, that, pronominal] | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and pronominal demonstratives. the writer repeats the noun.
@@ -360,7 +353,7 @@ proposals:
     words: 13
     terms: 0
     connectives: 1
-  diagnosis: '"the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal]'
+  diagnosis: '"the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and demonstratives. the writer repeats the noun.
@@ -375,7 +368,7 @@ proposals:
     words: 12
     terms: 0
     connectives: 1
-  diagnosis: '"the linter bans anaphoric pronouns and demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the linter bans anaphoric pronouns and demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns. the linter bans demonstratives. the writer repeats the noun.
@@ -390,7 +383,7 @@ proposals:
     words: 14
     terms: 0
     connectives: 0
-  diagnosis: '"the linter bans anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the linter bans anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the linter bans demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and their object and possessive forms. the writer repeats the noun.
@@ -405,7 +398,7 @@ proposals:
     words: 34
     terms: 0
     connectives: 3
-  diagnosis: '"the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and their object and possessive forms": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: their, forms]'
+  diagnosis: '"the tool lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronoun, pronominal] | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and their object and possessive forms": WORD: "their" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) [all unknown words: their, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans every anaphoric pronoun and every demonstrative pronoun. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of "it", "they", "he", "she", "this", "that", "these", "those". the writer repeats the noun.
@@ -420,7 +413,7 @@ proposals:
     words: 43
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every demonstrative pronoun": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "demonstrative pronoun" — noun-noun compounds are not minglish; write "the pronoun of the demonstrative", or one transparent word (ADR 0015) | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of "it", "they", "he", "she", "this", "that", "these", "those"": WORD: "forms" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every demonstrative pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of "it", "they", "he", "she", "this", "that", "these", "those"": WORD: "forms" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans every anaphoric pronoun and every pronoun of the demonstrative. every banned word is "it", "they", "he", "she", "this", "that", "these", or "those". the writer repeats the noun.
@@ -435,7 +428,7 @@ proposals:
     words: 31
     terms: 0
     connectives: 2
-  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every pronoun of the demonstrative": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "every banned word is "it", "they", "he", "she", "this", "that", "these", or "those"": STYLE: "banned … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every pronoun of the demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "every banned word is "it", "they", "he", "she", "this", "that", "these", or "those"": STYLE: "banned … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "every banned word" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "word" — a singular noun needs a determiner: "the word" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans every anaphoric pronoun and every pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the tool Lexgen also bans the object forms and the possessive forms of every anaphoric pronoun and every pronominal demonstrative. the writer repeats the noun.
@@ -445,12 +438,12 @@ proposals:
     sentences: 5
     parsed: 1
     continuity_pairs: 4
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 214.7600000000001
     words: 52
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the tool Lexgen also bans the object forms and the possessive forms of every anaphoric pronoun and every pronominal demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, pronominal]'
+  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every pronominal demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, pronominal] | "the anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the tool Lexgen also bans the object forms and the possessive forms of every anaphoric pronoun and every pronominal demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, pronoun, pronominal]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans every anaphoric pronoun and every demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the demonstratives are "this", "that", "these", "those". the tool Lexgen bans the object forms and the possessive forms of every anaphoric pronoun and every demonstrative. the writer repeats the noun.
@@ -460,12 +453,12 @@ proposals:
     sentences: 5
     parsed: 1
     continuity_pairs: 4
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 191.16000000000008
     words: 48
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every demonstrative": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the demonstratives are "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool Lexgen bans the object forms and the possessive forms of every anaphoric pronoun and every demonstrative": WORD: "forms" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans every anaphoric pronoun and every demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the demonstratives are "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool Lexgen bans the object forms and the possessive forms of every anaphoric pronoun and every demonstrative": WORD: "forms" is not a minglish word [all unknown words: forms, pronoun]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans every anaphoric pronoun. the tool Lexgen bans every demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the demonstratives are "this", "that", "these", "those". the tool Lexgen bans the object form of every anaphoric pronoun. the tool Lexgen bans the possessive form of every anaphoric pronoun. the tool Lexgen bans the object form of every demonstrative. the tool Lexgen bans the possessive form of every demonstrative. the writer repeats the noun.
@@ -473,14 +466,14 @@ proposals:
   valid: false
   metrics:
     sentences: 9
-    parsed: 3
+    parsed: 2
     continuity_pairs: 8
     continuity_ok: 4
     cost: 317.91999999999996
     words: 75
     terms: 0
     connectives: 0
-  diagnosis: '"the anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the demonstratives are "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool Lexgen bans the object form of every anaphoric pronoun": WORD: "form" is not a minglish word | "the tool Lexgen bans the possessive form of every anaphoric pronoun": WORD: "form" is not a minglish word | "the tool Lexgen bans the object form of every demonstrative": WORD: "form" is not a minglish word | "the tool Lexgen bans the possessive form of every demonstrative": WORD: "form" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the demonstratives are "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the tool Lexgen bans the object form of every anaphoric pronoun": WORD: "form" is not a minglish word [all unknown words: form, pronoun] | "the tool Lexgen bans the possessive form of every anaphoric pronoun": WORD: "form" is not a minglish word [all unknown words: form, pronoun] | "the tool Lexgen bans the object form of every demonstrative": WORD: "form" is not a minglish word | "the tool Lexgen bans the possessive form of every demonstrative": WORD: "form" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen bans anaphoric pronouns and pronominal demonstratives. the writer repeats a noun. the writer does not use an anaphoric pronoun or a pronominal demonstrative.
@@ -495,7 +488,7 @@ proposals:
     words: 26
     terms: 0
     connectives: 2
-  diagnosis: '"the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "the writer does not use an anaphoric pronoun or a pronominal demonstrative": WORD: "pronominal" is not a minglish word'
+  diagnosis: '"the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronouns, pronominal] | "the writer does not use an anaphoric pronoun or a pronominal demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, pronominal]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen bans pronouns and demonstratives. the writer repeats a noun. the writer does not use a pronoun or a demonstrative.
@@ -510,21 +503,22 @@ proposals:
     words: 22
     terms: 0
     connectives: 2
-  diagnosis: '"the tool lexgen bans pronouns and demonstratives": WORD: "lexgen" is not a minglish word | "the writer does not use a pronoun or a demonstrative": STYLE: "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004)'
+  diagnosis: '"the tool lexgen bans pronouns and demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronouns] | "the writer does not use a pronoun or a demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool "lexgen" bans pronouns. the tool "lexgen" bans demonstratives. the writer repeats a noun. the writer does not use a pronoun. the writer does not use a demonstrative.
   drops: <none>
-  valid: true
+  valid: false
   metrics:
     sentences: 5
-    parsed: 5
+    parsed: 3
     continuity_pairs: 4
     continuity_ok: 3
     cost: 116.84000000000002
     words: 29
     terms: 0
     connectives: 0
+  diagnosis: '"the tool "lexgen" bans pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun and every pronominal demonstrative. the writer repeats the noun.
@@ -539,7 +533,7 @@ proposals:
     words: 15
     terms: 0
     connectives: 1
-  diagnosis: '"the linter bans every anaphoric pronoun and every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal]'
+  diagnosis: '"the linter bans every anaphoric pronoun and every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronoun, pronominal]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and demonstrative pronouns. the writer repeats the noun.
@@ -554,7 +548,7 @@ proposals:
     words: 13
     terms: 0
     connectives: 1
-  diagnosis: '"the linter bans anaphoric pronouns and demonstrative pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the linter bans anaphoric pronouns and demonstrative pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and the pronouns of the demonstrative. the writer repeats the noun.
@@ -569,7 +563,7 @@ proposals:
     words: 16
     terms: 0
     connectives: 1
-  diagnosis: '"the linter bans anaphoric pronouns and the pronouns of the demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the linter bans anaphoric pronouns and the pronouns of the demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns include "it" and "they" and "he" and "she". pronominal demonstratives include "this" and "that" and "these" and "those" and their forms. the writer repeats the noun. the writer does not use these words.
@@ -579,12 +573,12 @@ proposals:
     sentences: 5
     parsed: 1
     continuity_pairs: 4
-    continuity_ok: 2
+    continuity_ok: 1
     cost: 166.85000000000002
     words: 44
     terms: 0
     connectives: 8
-  diagnosis: '"the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronominal] | "anaphoric pronouns include "it" and "they" and "he" and "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "pronominal demonstratives include "this" and "that" and "these" and "those" and their forms": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, their, forms] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  diagnosis: '"the tool lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronouns, pronominal] | "anaphoric pronouns include "it" and "they" and "he" and "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "pronominal demonstratives include "this" and "that" and "these" and "those" and their forms": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, their, forms] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the tool bans "it" and "they" and "he" and "she". the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those". the writer repeats the noun. the writer does not use anaphoric pronouns. the writer does not use pronominal demonstratives.
@@ -592,14 +586,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 2
+    parsed: 1
     continuity_pairs: 5
     continuity_ok: 4
     cost: 204.14000000000001
     words: 59
     terms: 0
     connectives: 11
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those"": WORD: "forms" is not a minglish word | "the writer does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the tool bans "it" and "they" and "he" and "she"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the tool bans "this" and "that" and "these" and "those" and the forms of "this" and "that" and "these" and "those"": WORD: "forms" is not a minglish word | "the writer does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use pronominal demonstratives": WORD: "pronominal" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. the tool bans pronominal demonstratives. the tool bans "it". the tool bans "they". the tool bans "he". the tool bans "she". the tool bans "this". the tool bans "that". the tool bans "these". the tool bans "those". the tool bans the forms of "this". the tool bans the forms of "that". the tool bans the forms of "these". the tool bans the forms of "those". the writer repeats the noun. the writer does not use anaphoric pronouns. the writer does not use demonstratives.
@@ -607,14 +601,14 @@ proposals:
   valid: false
   metrics:
     sentences: 17
-    parsed: 12
+    parsed: 10
     continuity_pairs: 16
     continuity_ok: 15
     cost: 322.36
     words: 89
     terms: 0
     connectives: 0
-  diagnosis: '"the tool bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans the forms of "this"": WORD: "forms" is not a minglish word | "the tool bans the forms of "that"": WORD: "forms" is not a minglish word | "the tool bans the forms of "these"": WORD: "forms" is not a minglish word | "the tool bans the forms of "those"": WORD: "forms" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the tool bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the tool bans the forms of "this"": WORD: "forms" is not a minglish word | "the tool bans the forms of "that"": WORD: "forms" is not a minglish word | "the tool bans the forms of "these"": WORD: "forms" is not a minglish word | "the tool bans the forms of "those"": WORD: "forms" is not a minglish word | "the writer does not use anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. anaphoric pronouns are "it", "they", "he", "she". pronominal demonstratives are "this", "that", "these", "those". the ban covers the object forms and the possessive forms of these words. the writer repeats the noun.
@@ -624,12 +618,12 @@ proposals:
     sentences: 5
     parsed: 1
     continuity_pairs: 4
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 166.13
     words: 41
     terms: 0
     connectives: 2
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the ban covers the object forms and the possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. anaphoric pronouns are "it" and "they" and "he" and "she". the tool Lexgen bans demonstratives. demonstratives are "this" and "that" and "these" and "those". the ban includes object forms and possessive forms of these words. the writer repeats the noun.
@@ -637,14 +631,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 3
+    parsed: 2
     continuity_pairs: 5
-    continuity_ok: 2
+    continuity_ok: 1
     cost: 177.25000000000006
     words: 46
     terms: 0
     connectives: 7
-  diagnosis: '"anaphoric pronouns are "it" and "they" and "he" and "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "anaphoric pronouns are "it" and "they" and "he" and "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "demonstratives are "this" and "that" and "these" and "those"": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the ban includes object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns. "it" is an anaphoric pronoun. "they" is an anaphoric pronoun. "he" is an anaphoric pronoun. "she" is an anaphoric pronoun. the tool Lexgen bans demonstratives. "this" is a demonstrative. "that" is a demonstrative. "these" is a demonstrative. "those" is a demonstrative. the ban contains object forms of these words. the ban contains possessive forms of these words. the writer repeats the noun.
@@ -652,14 +646,14 @@ proposals:
   valid: false
   metrics:
     sentences: 13
-    parsed: 11
+    parsed: 6
     continuity_pairs: 12
     continuity_ok: 1
     cost: 273.33
     words: 68
     terms: 0
     connectives: 0
-  diagnosis: '"the ban contains object forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these] | "the ban contains possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | ""it" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""they" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""he" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""she" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the ban contains object forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these] | "the ban contains possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and pronominal demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words. the writer repeats the noun instead of the banned word.
@@ -674,7 +668,7 @@ proposals:
     words: 38
     terms: 0
     connectives: 3
-  diagnosis: '"the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, these] | "the writer repeats the noun instead of the banned word": WORD: "instead" is not a minglish word'
+  diagnosis: '"the linter bans anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal] | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, these] | "the writer repeats the noun instead of the banned word": WORD: "instead" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and demonstratives. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words. the writer repeats the noun.
@@ -689,7 +683,7 @@ proposals:
     words: 33
     terms: 0
     connectives: 3
-  diagnosis: '"the linter bans anaphoric pronouns and demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms]'
+  diagnosis: '"the linter bans anaphoric pronouns and demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and the object and possessive forms of the banned words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns. the linter bans demonstratives. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the linter bans the object forms of the pronouns. the linter bans the possessive forms of the pronouns. the writer repeats the noun.
@@ -698,13 +692,13 @@ proposals:
   metrics:
     sentences: 13
     parsed: 1
-    continuity_pairs: 12
-    continuity_ok: 1
+    continuity_pairs: 11
+    continuity_ok: 0
     cost: 286.31000000000006
     words: 64
     terms: 0
     connectives: 0
-  diagnosis: '"the linter bans anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans the object forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms] | "the linter bans the possessive forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms]'
+  diagnosis: '"the linter bans anaphoric pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns] | "the linter bans demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans the object forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, pronouns] | "the linter bans the possessive forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and pronominal demonstratives. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words. the writer repeats the noun.
@@ -719,7 +713,7 @@ proposals:
     words: 37
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of these words": WORD: "forms" is not a minglish word [all unknown words: forms, these]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and demonstrative words. the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words. the writer repeats the noun.
@@ -734,7 +728,7 @@ proposals:
     words: 38
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and demonstrative words": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); "demonstrative words" — noun-noun compounds are not minglish; write "the words of the demonstrative", or one transparent word (ADR 0015); "demonstrative" — a singular noun needs a determiner: "the demonstrative" (mass nouns take "the") | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words": WORD: "forms" is not a minglish word'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and demonstrative words": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the banned words are "it", "they", "he", "she", "this", "that", "these", "those", "their", and the object forms and possessive forms of the banned words": WORD: "forms" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen bans anaphoric pronouns and the words of the demonstrative. the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their". the linter also bans the forms of the object and the forms of the possessive of the banned pronouns. the writer repeats the noun.
@@ -749,7 +743,7 @@ proposals:
     words: 49
     terms: 0
     connectives: 3
-  diagnosis: '"the tool Lexgen bans anaphoric pronouns and the words of the demonstrative": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter also bans the forms of the object and the forms of the possessive of the banned pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, forms]'
+  diagnosis: '"the tool Lexgen bans anaphoric pronouns and the words of the demonstrative": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "it", "they", "he", "she", "this", "that", "these", "those", and "their"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter also bans the forms of the object and the forms of the possessive of the banned pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun and bans every pronominal demonstrative. the linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns. the writer repeats the noun.
@@ -764,7 +758,7 @@ proposals:
     words: 45
     terms: 0
     connectives: 3
-  diagnosis: '"the linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms]'
+  diagnosis: '"the linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronoun, pronominal] | "the linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every anaphoric pronoun and bans every pronominal demonstrative. the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns. the writer repeats the noun.
@@ -779,7 +773,7 @@ proposals:
     words: 45
     terms: 2
     connectives: 3
-  diagnosis: '"the Linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"the Linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, pronominal] | "the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every anaphoric pronoun and bans every demonstrative. the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object of the pronouns and bans the possessive of the pronouns. the writer repeats the noun.
@@ -787,14 +781,14 @@ proposals:
   valid: false
   metrics:
     sentences: 3
-    parsed: 2
+    parsed: 1
     continuity_pairs: 2
     continuity_ok: 1
     cost: 183.88000000000005
     words: 47
     terms: 2
     connectives: 3
-  diagnosis: '"the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object of the pronouns and bans the possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the Linter bans every anaphoric pronoun and bans every demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the Linter bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object of the pronouns and bans the possessive of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun. the linter also bans every pronominal demonstrative. the pronominal demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those". the linter also bans the object forms and the possessive forms of these words. the writer does not use these words. the writer repeats the noun.
@@ -809,7 +803,7 @@ proposals:
     words: 52
     terms: 0
     connectives: 2
-  diagnosis: '"the linter bans every anaphoric pronoun": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter also bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, pronominal] | "the pronominal demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronominal" is not a minglish word | "the linter also bans the object forms and the possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, forms, these] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
+  diagnosis: '"the linter bans every anaphoric pronoun": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronoun] | "the linter also bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, pronominal] | "the pronominal demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronominal" is not a minglish word | "the linter also bans the object forms and the possessive forms of these words": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, also, forms, these] | "the writer does not use these words": WORD: "these" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every anaphoric pronoun. the Linter also bans every demonstrative. the demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those". the Linter also bans every object of a demonstrative and every possessive of a demonstrative. the writer does not use a demonstrative. the writer repeats the noun.
@@ -817,14 +811,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 3
+    parsed: 2
     continuity_pairs: 5
     continuity_ok: 3
     cost: 191.46999999999997
     words: 51
     terms: 3
     connectives: 2
-  diagnosis: '"the Linter also bans every demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both | "the demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter also bans every object of a demonstrative and every possessive of a demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both'
+  diagnosis: '"the Linter bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the Linter also bans every demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both | "the demonstratives are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter also bans every object of a demonstrative and every possessive of a demonstrative": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every anaphoric pronoun. the Linter bans every demonstrative. the demonstratives are "it", "they", "he", "she", "this", "that", "these", "those". the Linter bans every object of a demonstrative. the Linter bans every possessive of a demonstrative. the writer does not use a demonstrative. the writer repeats the noun.
@@ -832,14 +826,14 @@ proposals:
   valid: false
   metrics:
     sentences: 7
-    parsed: 5
+    parsed: 4
     continuity_pairs: 6
     continuity_ok: 4
     cost: 198.25
     words: 50
     terms: 4
     connectives: 0
-  diagnosis: '"the demonstratives are "it", "they", "he", "she", "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter bans every possessive of a demonstrative": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the Linter bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the demonstratives are "it", "they", "he", "she", "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter bans every possessive of a demonstrative": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the writer repeats the noun.
@@ -854,7 +848,7 @@ proposals:
     words: 43
     terms: 0
     connectives: 0
-  diagnosis: '"the linter bans every anaphoric pronoun": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the linter bans every anaphoric pronoun": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronoun] | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every Anaphoric Pronoun. the Linter bans "it". the Linter bans "they". the Linter bans "he". the Linter bans "she". the Linter bans "this". the Linter bans "that". the Linter bans "these". the Linter bans "those". the writer repeats the noun.
@@ -876,14 +870,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 2
+    parsed: 1
     continuity_pairs: 5
-    continuity_ok: 3
+    continuity_ok: 1
     cost: 178.06
     words: 53
     terms: 0
     connectives: 8
-  diagnosis: '"the design bans every anaphoric pronoun and every demonstrative": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the anaphoric pronouns are "it" and "they" and "he" and "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the anaphoric pronouns are "this" and "that" and "these" and "those"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the design bans the object forms and the possessive forms": WORD: "forms" is not a minglish word'
+  diagnosis: '"the design bans every anaphoric pronoun and every demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it" and "they" and "he" and "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "this" and "that" and "these" and "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the design bans the object forms and the possessive forms": WORD: "forms" is not a minglish word | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design bans every Anaphoric Pronoun. the design bans every demonstrative. every Anaphoric Pronoun is "it". every Anaphoric Pronoun is "they". every Anaphoric Pronoun is "he". every Anaphoric Pronoun is "she". every Anaphoric Pronoun is "this". every Anaphoric Pronoun is "that". every Anaphoric Pronoun is "these". every Anaphoric Pronoun is "those". the design bans the object of every Anaphoric Pronoun. the design bans the possessive of every Anaphoric Pronoun. the writer repeats the noun. the writer does not use a pronoun.
@@ -891,14 +885,14 @@ proposals:
   valid: false
   metrics:
     sentences: 14
-    parsed: 12
+    parsed: 11
     continuity_pairs: 13
     continuity_ok: 10
     cost: 340.43999999999994
     words: 81
     terms: 11
     connectives: 0
-  diagnosis: '"the design bans the object of every Anaphoric Pronoun": AMBIGUOUS (2 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the design bans the possessive of every Anaphoric Pronoun": STYLE: "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the design bans the object of every Anaphoric Pronoun": AMBIGUOUS (2 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit | "the design bans the possessive of every Anaphoric Pronoun": STYLE: "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the design bans every Anaphoric Pronoun. the design bans every demonstrative. every Anaphoric Pronoun is "it". every Anaphoric Pronoun is "they". every Anaphoric Pronoun is "he". every Anaphoric Pronoun is "she". every Anaphoric Pronoun is "this". every Anaphoric Pronoun is "that". every Anaphoric Pronoun is "these". every Anaphoric Pronoun is "those". every Anaphoric Pronoun has an object form. every Anaphoric Pronoun has a possessive form. the design bans the object form of an Anaphoric Pronoun. the design bans the possessive form of an Anaphoric Pronoun. the writer repeats the noun. the writer does not use a pronoun.
@@ -906,14 +900,14 @@ proposals:
   valid: false
   metrics:
     sentences: 16
-    parsed: 12
+    parsed: 11
     continuity_pairs: 15
     continuity_ok: 12
     cost: 409.4399999999999
     words: 97
     terms: 13
     connectives: 0
-  diagnosis: '"every Anaphoric Pronoun has an object form": WORD: "form" is not a minglish word | "every Anaphoric Pronoun has a possessive form": WORD: "form" is not a minglish word | "the design bans the object form of an Anaphoric Pronoun": WORD: "form" is not a minglish word | "the design bans the possessive form of an Anaphoric Pronoun": WORD: "form" is not a minglish word'
+  diagnosis: '"every Anaphoric Pronoun has an object form": WORD: "form" is not a minglish word | "every Anaphoric Pronoun has a possessive form": WORD: "form" is not a minglish word | "the design bans the object form of an Anaphoric Pronoun": WORD: "form" is not a minglish word | "the design bans the possessive form of an Anaphoric Pronoun": WORD: "form" is not a minglish word | "the writer does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans anaphoric pronouns and bans pronominal demonstratives. the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object forms and possessive forms of the pronouns. the writer repeats the noun.
@@ -923,12 +917,12 @@ proposals:
     sentences: 3
     parsed: 1
     continuity_pairs: 2
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 140.32999999999993
     words: 36
     terms: 0
     connectives: 3
-  diagnosis: '"the linter bans anaphoric pronouns and bans pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object forms and possessive forms of the pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"the linter bans anaphoric pronouns and bans pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal] | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object forms and possessive forms of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, forms]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Linter bans anaphoric pronouns and bans demonstratives. the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object copies and possessive copies of the pronouns. the writer repeats the noun.
@@ -938,12 +932,12 @@ proposals:
     sentences: 3
     parsed: 1
     continuity_pairs: 2
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 138.44
     words: 36
     terms: 1
     connectives: 3
-  diagnosis: '"the tool Linter bans anaphoric pronouns and bans demonstratives": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); "tool Linter" — noun-noun compounds are not minglish; write "the Linter of the tool", or one transparent word (ADR 0015) | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object copies and possessive copies of the pronouns": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); "object copies" — noun-noun compounds are not minglish; write "the copies of the object", or one transparent word (ADR 0015); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Linter bans anaphoric pronouns and bans demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the object copies and possessive copies of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans Anaphoric Pronouns and bans demonstratives. the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the copies of the object and the copies of the possessive of the pronouns. the writer repeats the noun.
@@ -958,7 +952,7 @@ proposals:
     words: 40
     terms: 3
     connectives: 3
-  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the copies of the object and the copies of the possessive of the pronouns": STYLE: "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", "those", and the copies of the object and the copies of the possessive of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter bans every anaphoric pronoun and bans every pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the language bans the object forms and bans the possessive forms of the pronouns. the writer repeats the noun.
@@ -968,12 +962,12 @@ proposals:
     sentences: 5
     parsed: 1
     continuity_pairs: 4
-    continuity_ok: 1
+    continuity_ok: 0
     cost: 179.30000000000007
     words: 46
     terms: 0
     connectives: 2
-  diagnosis: '"the linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the language bans the object forms and bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"the linter bans every anaphoric pronoun and bans every pronominal demonstrative": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronoun, pronominal] | "the anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the language bans the object forms and bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter bans every Anaphoric Pronoun. the Anaphoric Pronouns are "it", "they", "he", "she". the language bans "this", "that", "these", "those". the language bans the object of a pronoun and bans the possessive of a pronoun. the writer repeats the noun.
@@ -988,7 +982,7 @@ proposals:
     words: 41
     terms: 3
     connectives: 1
-  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of a pronoun and bans the possessive of a pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans "this", "that", "these", "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of a pronoun and bans the possessive of a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Linter bans every Anaphoric Pronoun. the Anaphoric Pronoun "it" is a Ban. the Anaphoric Pronoun "they" is a Ban. the Anaphoric Pronoun "he" is a Ban. the Anaphoric Pronoun "she" is a Ban. the word "this" is a Ban. the word "that" is a Ban. the word "these" is a Ban. the word "those" is a Ban. the language bans the object of a pronoun. the language bans the possessive of a pronoun. the writer repeats the noun.
@@ -996,14 +990,14 @@ proposals:
   valid: false
   metrics:
     sentences: 12
-    parsed: 11
+    parsed: 10
     continuity_pairs: 11
     continuity_ok: 8
     cost: 271.65000000000003
     words: 79
     terms: 14
     connectives: 0
-  diagnosis: '"the language bans the possessive of a pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the language bans the object of a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language bans the possessive of a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans every anaphoric pronoun. the language bans every pronominal demonstrative. the writer repeats the noun. the noun replaces the anaphoric pronoun. the noun replaces the pronominal demonstrative. the anaphoric pronouns are "it", "they", "he", "she". the pronominal demonstratives are "this", "that", "these", "those". the language bans the object forms of the pronouns. the language bans the possessive forms of the pronouns.
@@ -1011,14 +1005,14 @@ proposals:
   valid: false
   metrics:
     sentences: 9
-    parsed: 3
+    parsed: 1
     continuity_pairs: 8
     continuity_ok: 4
     cost: 244.5400000000002
     words: 63
     terms: 0
     connectives: 0
-  diagnosis: '"the language bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the noun replaces the pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are "it", "they", "he", "she"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the language bans the object forms of the pronouns": WORD: "forms" is not a minglish word | "the language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"the language bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the noun replaces the anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the noun replaces the pronominal demonstrative": WORD: "pronominal" is not a minglish word | "the anaphoric pronouns are "it", "they", "he", "she"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronominal demonstratives are "this", "that", "these", "those"": WORD: "pronominal" is not a minglish word | "the language bans the object forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "the language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans every Anaphoric Pronoun. the language bans "this". the language bans "that". the language bans "these". the language bans "those". the writer repeats the noun. the noun replaces the Anaphoric Pronoun. the noun replaces the word "this". the noun replaces the word "that". the noun replaces the word "these". the noun replaces the word "those". the language bans the objects of the pronouns. the language bans the possessives of the pronouns. the Anaphoric Pronouns are "it", "they", "he", "she".
@@ -1026,14 +1020,14 @@ proposals:
   valid: false
   metrics:
     sentences: 14
-    parsed: 12
+    parsed: 11
     continuity_pairs: 13
     continuity_ok: 10
     cost: 286.4800000000002
     words: 81
     terms: 3
     connectives: 0
-  diagnosis: '"the language bans the possessives of the pronouns": WORD: "possessives" is not a minglish word | "the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the language bans the objects of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the language bans the possessives of the pronouns": WORD: "possessives" is not a minglish word [all unknown words: possessives, pronouns] | "the Anaphoric Pronouns are "it", "they", "he", "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans every Anaphoric Pronoun. the language bans "this". the language bans "that". the language bans "these". the language bans "those". the writer repeats the noun. the noun replaces the Anaphoric Pronoun. the noun replaces the word "this". the noun replaces the word "that". the noun replaces the word "these". the noun replaces the word "those". the language bans the object forms of the pronouns. the language bans the possessive forms of the pronouns. the Anaphoric Pronouns are the words "it", "they", "he", and "she".
@@ -1048,7 +1042,7 @@ proposals:
     words: 86
     terms: 3
     connectives: 1
-  diagnosis: '"the language bans the object forms of the pronouns": WORD: "forms" is not a minglish word | "the language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word | "the Anaphoric Pronouns are the words "it", "they", "he", and "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the language bans the object forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "the language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "the Anaphoric Pronouns are the words "it", "they", "he", and "she"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the grammar bans every anaphoric pronoun. the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". the writer does not use an anaphoric pronoun. the writer repeats the noun.
@@ -1056,14 +1050,14 @@ proposals:
   valid: false
   metrics:
     sentences: 4
-    parsed: 2
+    parsed: 1
     continuity_pairs: 3
-    continuity_ok: 2
+    continuity_ok: 1
     cost: 118.30999999999999
     words: 32
     terms: 0
     connectives: 1
-  diagnosis: '"the grammar bans every anaphoric pronoun": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the grammar bans every anaphoric pronoun": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: grammar, pronoun] | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the writer does not use an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the Grammar bans every Anaphoric Pronoun. the Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". the writer does not use an Anaphoric Pronoun. the writer repeats the noun.
@@ -1108,7 +1102,7 @@ proposals:
     words: 43
     terms: 0
     connectives: 3
-  diagnosis: '"the language bans anaphoric pronouns and bans pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the language bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the words": WORD: "forms" is not a minglish word'
+  diagnosis: '"the language bans anaphoric pronouns and bans pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the language bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", bans "those", and bans the object forms and possessive forms of the words": WORD: "forms" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans anaphoric pronouns. the language bans demonstratives. the language bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", and bans "those". the language bans the object of every demonstrative and bans the possession of every demonstrative. the writer repeats the noun.
@@ -1116,14 +1110,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 3
+    parsed: 2
     continuity_pairs: 4
     continuity_ok: 3
     cost: 182.64000000000004
     words: 48
     terms: 0
     connectives: 2
-  diagnosis: '"the language bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", and bans "those"": STYLE: a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of every demonstrative and bans the possession of every demonstrative": AMBIGUOUS (4 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit'
+  diagnosis: '"the language bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the language bans "it", bans "they", bans "he", bans "she", bans "this", bans "that", bans "these", and bans "those"": STYLE: a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the language bans the object of every demonstrative and bans the possession of every demonstrative": AMBIGUOUS (4 readings): "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014); split the sentence, or move the prepositional phrase so each attachment is explicit'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language bans anaphoric pronouns. the language bans demonstratives. the language bans every anaphoric pronoun and bans every demonstrative. every anaphoric pronoun is "it", is "they", is "he", or is "she". every demonstrative is "this", is "that", is "these", or is "those". the writer repeats the noun.
@@ -1131,14 +1125,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 4
+    parsed: 2
     continuity_pairs: 5
-    continuity_ok: 3
+    continuity_ok: 2
     cost: 175.04000000000002
     words: 47
     terms: 0
     connectives: 3
-  diagnosis: '"every anaphoric pronoun is "it", is "they", is "he", or is "she"": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "every demonstrative is "this", is "that", is "these", or is "those"": STYLE: a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the language bans anaphoric pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the language bans every anaphoric pronoun and bans every demonstrative": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "every anaphoric pronoun is "it", is "they", is "he", or is "she"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "every demonstrative is "this", is "that", is "these", or is "those"": STYLE: a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The linter rejects anaphoric pronouns and pronominal demonstratives. the linter bans "it". the linter bans "they". the linter bans "he". the linter bans "she". the linter bans "this". the linter bans "that". the linter bans "these". the linter bans "those". the linter bans every object form of the pronouns. the linter bans every possessive form of the pronouns. the writer repeats the noun.
@@ -1147,13 +1141,13 @@ proposals:
   metrics:
     sentences: 12
     parsed: 1
-    continuity_pairs: 11
-    continuity_ok: 1
+    continuity_pairs: 10
+    continuity_ok: 0
     cost: 281.99
     words: 63
     terms: 0
     connectives: 1
-  diagnosis: '"The linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronominal] | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans every object form of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form] | "the linter bans every possessive form of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form]'
+  diagnosis: '"The linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, pronouns, pronominal] | "the linter bans "it"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "they"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "he"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "she"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "this"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "that"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "these"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans "those"": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) | "the linter bans every object form of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form, pronouns] | "the linter bans every possessive form of the pronouns": WORD: "linter" is not a minglish word — "Linter" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: linter, form, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter rejects anaphoric pronouns and pronominal demonstratives. the Linter bans "it". the Linter bans "they". the Linter bans "he". the Linter bans "she". the Linter bans "this". the Linter bans "that". the Linter bans "these". the Linter bans "those". the Linter bans every object form of the pronouns. the Linter bans every possessive form of the pronouns. the writer repeats the noun.
@@ -1168,7 +1162,7 @@ proposals:
     words: 63
     terms: 11
     connectives: 1
-  diagnosis: '"The Linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronominal" is not a minglish word | "the Linter bans every object form of the pronouns": WORD: "form" is not a minglish word | "the Linter bans every possessive form of the pronouns": WORD: "form" is not a minglish word'
+  diagnosis: '"The Linter rejects anaphoric pronouns and pronominal demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal] | "the Linter bans every object form of the pronouns": WORD: "form" is not a minglish word [all unknown words: form, pronouns] | "the Linter bans every possessive form of the pronouns": WORD: "form" is not a minglish word [all unknown words: form, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter rejects anaphoric pronouns and demonstratives. the Linter bans "it". the Linter bans "they". the Linter bans "he". the Linter bans "she". the Linter bans "this". the Linter bans "that". the Linter bans "these". the Linter bans "those". the Linter bans every object of the pronouns. the Linter bans every possessive of the pronouns. the writer repeats the noun.
@@ -1176,14 +1170,14 @@ proposals:
   valid: false
   metrics:
     sentences: 12
-    parsed: 10
+    parsed: 9
     continuity_pairs: 11
     continuity_ok: 10
     cost: 267.6800000000001
     words: 60
     terms: 11
     connectives: 1
-  diagnosis: '"The Linter rejects anaphoric pronouns and demonstratives": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "the Linter bans every possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"The Linter rejects anaphoric pronouns and demonstratives": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the Linter bans every object of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the Linter bans every possessive of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun and every demonstrative. The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". The language also bans the object forms and the possessive forms of the pronouns. The writer repeats the noun.
@@ -1198,7 +1192,7 @@ proposals:
     words: 41
     terms: 2
     connectives: 3
-  diagnosis: '"The language bans every Anaphoric Pronoun and every demonstrative": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language also bans the object forms and the possessive forms of the pronouns": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms]'
+  diagnosis: '"The language bans every Anaphoric Pronoun and every demonstrative": STYLE: noun phrases cannot be coordinated — repeat the verb: "the mechanism stores a word and stores a message", or split the sentence (ADR 0004) | "The Anaphoric Pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language also bans the object forms and the possessive forms of the pronouns": WORD: "also" is banned in minglish — "also" adds a second claim - write the claim as its own sentence; the reader keeps both [all unknown words: also, forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun. The language bans every demonstrative. The language bans 8 pronouns. The pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". The language bans the object forms of the pronouns. The language bans the possessive forms of the pronouns. The writer repeats the noun.
@@ -1206,14 +1200,14 @@ proposals:
   valid: false
   metrics:
     sentences: 7
-    parsed: 4
+    parsed: 3
     continuity_pairs: 6
-    continuity_ok: 4
+    continuity_ok: 3
     cost: 175.59000000000003
     words: 51
     terms: 1
     connectives: 1
-  diagnosis: '"The pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language bans the object forms of the pronouns": WORD: "forms" is not a minglish word | "The language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word'
+  diagnosis: '"The language bans 8 pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "The pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "The language bans the object forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "The language bans the possessive forms of the pronouns": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun. The language bans every demonstrative. The language bans 8 pronouns. The 8 pronouns are "it", "they", "he", "she", "this", "that", "these", and "those". The language bans every object of the pronouns. The language bans every possessive of the pronouns. The writer repeats the noun.
@@ -1221,14 +1215,14 @@ proposals:
   valid: false
   metrics:
     sentences: 7
-    parsed: 5
+    parsed: 3
     continuity_pairs: 6
-    continuity_ok: 4
+    continuity_ok: 3
     cost: 174.45000000000005
     words: 50
     terms: 1
     connectives: 1
-  diagnosis: '"The 8 pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "The language bans every possessive of the pronouns": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"The language bans 8 pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "The 8 pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "The language bans every object of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "The language bans every possessive of the pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The research of the project found an ambiguity. The ambiguity reappears in the reference of a pronoun across sentences. Every anaphoric pronoun causes the ambiguity. The pronoun "it" is an anaphoric pronoun. The pronoun "they" is an anaphoric pronoun. The pronoun "he" is an anaphoric pronoun. The pronoun "she" is an anaphoric pronoun. The pronoun "this" is an anaphoric pronoun. The pronoun "that" is an anaphoric pronoun. The pronoun "these" is an anaphoric pronoun. The pronoun "those" is an anaphoric pronoun. The object forms of the anaphoric pronouns cause the ambiguity. The possessive forms of the anaphoric pronouns cause the ambiguity. The language bans every anaphoric pronoun. The writer repeats the noun of the anaphoric pronoun.
@@ -1236,14 +1230,14 @@ proposals:
   valid: false
   metrics:
     sentences: 15
-    parsed: 12
+    parsed: 1
     continuity_pairs: 14
-    continuity_ok: 11
+    continuity_ok: 3
     cost: 462.12999999999977
     words: 116
     terms: 0
     connectives: 0
-  diagnosis: '"The ambiguity reappears in the reference of a pronoun across sentences": AMBIGUOUS (5 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "The object forms of the anaphoric pronouns cause the ambiguity": WORD: "forms" is not a minglish word | "The possessive forms of the anaphoric pronouns cause the ambiguity": WORD: "forms" is not a minglish word'
+  diagnosis: '"The ambiguity reappears in the reference of a pronoun across sentences": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "Every anaphoric pronoun causes the ambiguity": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "it" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "they" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "he" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "she" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "this" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "that" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "these" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "those" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The object forms of the anaphoric pronouns cause the ambiguity": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "The possessive forms of the anaphoric pronouns cause the ambiguity": WORD: "forms" is not a minglish word [all unknown words: forms, pronouns] | "The language bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The writer repeats the noun of the anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The research of the project found an ambiguity. The ambiguity reappears in the reference of a pronoun. The reference crosses sentences. Every anaphoric pronoun causes the ambiguity. The pronoun "it" is an anaphoric pronoun. The pronoun "they" is an anaphoric pronoun. The pronoun "he" is an anaphoric pronoun. The pronoun "she" is an anaphoric pronoun. The pronoun "this" is an anaphoric pronoun. The pronoun "that" is an anaphoric pronoun. The pronoun "these" is an anaphoric pronoun. The pronoun "those" is an anaphoric pronoun. The object of an anaphoric pronoun causes the ambiguity. The possessive of an anaphoric pronoun causes the ambiguity. The language bans every anaphoric pronoun. The writer repeats the noun of the anaphoric pronoun.
@@ -1251,14 +1245,14 @@ proposals:
   valid: false
   metrics:
     sentences: 16
-    parsed: 14
+    parsed: 1
     continuity_pairs: 15
-    continuity_ok: 11
+    continuity_ok: 3
     cost: 464.84999999999997
     words: 116
     terms: 0
     connectives: 0
-  diagnosis: '"The reference crosses sentences": WORD: "crosses" is not a minglish word | "The possessive of an anaphoric pronoun causes the ambiguity": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"The ambiguity reappears in the reference of a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The reference crosses sentences": WORD: "crosses" is not a minglish word | "Every anaphoric pronoun causes the ambiguity": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "it" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "they" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "he" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "she" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "this" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "that" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "these" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "those" is an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The object of an anaphoric pronoun causes the ambiguity": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The possessive of an anaphoric pronoun causes the ambiguity": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The language bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The writer repeats the noun of the anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The research of the project found an ambiguity. The ambiguity reappears in the reference of a pronoun. The reference goes across sentences. Every Anaphoric Pronoun causes the ambiguity. The pronoun "it" is an Anaphoric Pronoun. The pronoun "they" is an Anaphoric Pronoun. The pronoun "he" is an Anaphoric Pronoun. The pronoun "she" is an Anaphoric Pronoun. The pronoun "this" is an Anaphoric Pronoun. The pronoun "that" is an Anaphoric Pronoun. The pronoun "these" is an Anaphoric Pronoun. The pronoun "those" is an Anaphoric Pronoun. The object of an Anaphoric Pronoun causes the ambiguity. The possessive of an Anaphoric Pronoun causes the ambiguity. The language bans every Anaphoric Pronoun. The writer repeats the noun of the Anaphoric Pronoun.
@@ -1266,14 +1260,14 @@ proposals:
   valid: false
   metrics:
     sentences: 16
-    parsed: 15
+    parsed: 6
     continuity_pairs: 15
-    continuity_ok: 11
+    continuity_ok: 3
     cost: 467.24
     words: 117
     terms: 13
     connectives: 0
-  diagnosis: '"The possessive of an Anaphoric Pronoun causes the ambiguity": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"The ambiguity reappears in the reference of a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "it" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "they" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "he" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "she" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "this" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "that" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "these" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The pronoun "those" is an Anaphoric Pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The possessive of an Anaphoric Pronoun causes the ambiguity": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every anaphoric pronoun. The language bans every pronominal demonstrative. The writer does not use "it". The writer does not use "they". The writer does not use "he". The writer does not use "she". The writer does not use "this". The writer does not use "that". The writer does not use "these". The writer does not use "those". The writer does not use the object forms of an anaphoric pronoun. The writer does not use the possessive forms of an anaphoric pronoun. The writer repeats the noun.
@@ -1281,14 +1275,14 @@ proposals:
   valid: false
   metrics:
     sentences: 13
-    parsed: 10
+    parsed: 9
     continuity_pairs: 12
     continuity_ok: 11
     cost: 295.58000000000004
     words: 89
     terms: 0
     connectives: 0
-  diagnosis: '"The language bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "The writer does not use the object forms of an anaphoric pronoun": WORD: "forms" is not a minglish word | "The writer does not use the possessive forms of an anaphoric pronoun": WORD: "forms" is not a minglish word'
+  diagnosis: '"The language bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The language bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "The writer does not use the object forms of an anaphoric pronoun": WORD: "forms" is not a minglish word [all unknown words: forms, pronoun] | "The writer does not use the possessive forms of an anaphoric pronoun": WORD: "forms" is not a minglish word [all unknown words: forms, pronoun]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every anaphoric pronoun. The language bans every demonstrative. The writer does not use "it". The writer does not use "they". The writer does not use "he". The writer does not use "she". The writer does not use "this". The writer does not use "that". The writer does not use "these". The writer does not use "those". The writer does not use the object of an anaphoric pronoun. The writer does not use the possessive of an anaphoric pronoun. The writer repeats the noun.
@@ -1296,14 +1290,14 @@ proposals:
   valid: false
   metrics:
     sentences: 13
-    parsed: 12
+    parsed: 10
     continuity_pairs: 12
     continuity_ok: 11
     cost: 280.11
     words: 86
     terms: 0
     connectives: 0
-  diagnosis: '"The writer does not use the possessive of an anaphoric pronoun": STYLE: "anaphoric pronoun" is a defined term — write "Anaphoric Pronoun" (see CONTEXT.md); "does … use" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"The language bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The writer does not use the object of an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The writer does not use the possessive of an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The language bans every Anaphoric Pronoun. The language bans every demonstrative. The writer does not use "it". The writer does not use "they". The writer does not use "he". The writer does not use "she". The writer does not use "this". The writer does not use "that". The writer does not use "these". The writer does not use "those". The writer does not use the object of an Anaphoric Pronoun. The writer does not use the possessive of an Anaphoric Pronoun. The writer repeats the noun.
@@ -1326,14 +1320,14 @@ proposals:
   valid: false
   metrics:
     sentences: 6
-    parsed: 3
+    parsed: 1
     continuity_pairs: 5
-    continuity_ok: 3
+    continuity_ok: 2
     cost: 215.51
     words: 52
     terms: 3
     connectives: 1
-  diagnosis: '"the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": STYLE: "anaphoric pronouns" is a defined term — write "Anaphoric Pronouns" (see CONTEXT.md); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the Linter bans every object form of an anaphoric pronoun": WORD: "form" is not a minglish word | "the Linter bans every possessive form of an anaphoric pronoun": WORD: "form" is not a minglish word'
+  diagnosis: '"The Linter bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the anaphoric pronouns are "it", "they", "he", "she", "this", "that", "these", and "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the Linter bans every object form of an anaphoric pronoun": WORD: "form" is not a minglish word [all unknown words: form, pronoun] | "the Linter bans every possessive form of an anaphoric pronoun": WORD: "form" is not a minglish word [all unknown words: form, pronoun] | "the writer does not use an anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -1350,16 +1344,16 @@ proposals:
   drops: none
   valid: false
   metrics:
-    sentences: 5
-    parsed: 3
-    continuity_pairs: 4
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
     continuity_ok: 3
     cost: 215.64
     words: 51
     terms: 8
     connectives: 1
   diagnosis: |-
-    "The Linter bans every Anaphoric Pronoun. the Anaphoric Pronouns are 8 pronouns:
+    "the Anaphoric Pronouns are 8 pronouns:
     - "it"
     - "they"
     - "he"
@@ -1367,7 +1361,7 @@ proposals:
     - "this"
     - "that"
     - "these"
-    - "those"": STYLE: intro: unexpected Det("the") at word 5 — no sanctioned sentence structure continues this way | "the Linter bans every possessive of an Anaphoric Pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"
+    - "those"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, -] | "the Linter bans every possessive of an Anaphoric Pronoun": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -1382,26 +1376,16 @@ proposals:
     - "those"
     the Linter bans every possessive Anaphoric Pronoun. the writer does not use an Anaphoric Pronoun. the writer repeats the noun.
   drops: none
-  valid: false
+  valid: true
   metrics:
-    sentences: 4
-    parsed: 3
-    continuity_pairs: 3
+    sentences: 5
+    parsed: 5
+    continuity_pairs: 4
     continuity_ok: 2
     cost: 167.61
     words: 40
     terms: 6
     connectives: 1
-  diagnosis: |-
-    "The Linter bans every Anaphoric Pronoun. the Anaphoric Pronouns are 8 words:
-    - "it"
-    - "they"
-    - "he"
-    - "she"
-    - "this"
-    - "that"
-    - "these"
-    - "those"": STYLE: intro: unexpected Det("the") at word 5 — no sanctioned sentence structure continues this way
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -1425,15 +1409,15 @@ proposals:
   valid: false
   metrics:
     sentences: 4
-    parsed: 2
+    parsed: 1
     continuity_pairs: 3
-    continuity_ok: 1
+    continuity_ok: 2
     cost: 153.60999999999996
     words: 39
     terms: 0
     connectives: 2
   diagnosis: |-
-    "The design bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "The anaphoric pronouns and the pronominal demonstratives are 12 words:
+    "The design bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The design bans every pronominal demonstrative": WORD: "pronominal" is not a minglish word | "The anaphoric pronouns and the pronominal demonstratives are 12 words:
     - "it"
     - "they"
     - "he"
@@ -1445,7 +1429,7 @@ proposals:
     - "them"
     - "him"
     - "her"
-    - "their"": WORD: "pronominal" is not a minglish word [all unknown words: pronominal, -]
+    - "their"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, pronominal, -]
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -1469,15 +1453,15 @@ proposals:
   valid: false
   metrics:
     sentences: 4
-    parsed: 3
+    parsed: 2
     continuity_pairs: 3
-    continuity_ok: 1
+    continuity_ok: 2
     cost: 139.75
     words: 37
     terms: 0
     connectives: 2
   diagnosis: |-
-    "The anaphoric pronouns and the demonstratives are 12 words:
+    "The design bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The anaphoric pronouns and the demonstratives are 12 words:
     - "it"
     - "they"
     - "he"
@@ -1489,7 +1473,7 @@ proposals:
     - "them"
     - "him"
     - "her"
-    - "their"": STYLE: intro: unexpected Conj("and") at word 3 — no sanctioned sentence structure continues this way
+    - "their"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, -]
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -1511,15 +1495,23 @@ proposals:
     - "their"
     The writer repeats the noun.
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 5
-    parsed: 5
+    parsed: 3
     continuity_pairs: 4
     continuity_ok: 1
     cost: 141.98999999999995
     words: 39
     terms: 0
     connectives: 1
+  diagnosis: |-
+    "The design bans every anaphoric pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "The anaphoric pronouns are 6 words:
+    - "it"
+    - "they"
+    - "he"
+    - "she"
+    - "them"
+    - "him"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, -]
   count: 1
   model: deepseek/deepseek-v4-flash

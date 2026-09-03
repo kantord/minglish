@@ -12,7 +12,7 @@ rejected sentence, keep its meaning; change only what the error requires.
 ## Orthography
 
 - Everything is lowercase, except: sentence-start capitals are allowed;
-  `I` is always the pronoun; a capitalized word mid-sentence is a proper
+  `I` is always the Pronoun; a capitalized word mid-sentence is a proper
   name (e.g. `the tool Lexgen builds the Lexicon`).
 - A name may not start a sentence unquoted — introduce it (`the tool
   Lexgen …`) or quote it (`"lexgen" …`).
@@ -74,7 +74,7 @@ rejected sentence, keep its meaning; change only what the error requires.
   match the item count. An item is one noun phrase: a quoted word, a
   Capitalized term, a name, or `the <noun>`. No clauses as items.
   ```
-  The language allows 4 pronouns:
+  The language allows 4 Pronouns:
   - "I"
   - "you"
   - "my"
@@ -115,7 +115,7 @@ a taste`
 
 ## Hard bans (rewrite instead)
 
-- Third-person pronouns (`it, they, he, she, this, that`): repeat the noun.
+- Third-person Pronouns (`it, they, he, she, this, that`): repeat the noun.
 - Passive (`is stored`): name the doer, use active voice.
 - Progressive (`is running`) and perfect (`has deleted`): use simple
   present or simple past.

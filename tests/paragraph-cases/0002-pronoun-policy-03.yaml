@@ -1,7 +1,7 @@
 source: docs/adr/0002-pronoun-policy.md
 index: 3
 original: An Indexical Pronoun refers to the writer or refers to the reader. An Indexical Pronoun is not an Anaphoric Pronoun. An Indexical Pronoun does not cause a Reference Ambiguity. Instructions use Indexical Pronouns.
-context_before: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
+context_before: An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
 context_after: |-
   The language bans every Anaphoric Pronoun:
   - "it"
@@ -42,13 +42,13 @@ proposals:
   metrics:
     sentences: 6
     parsed: 0
-    continuity_pairs: 3
-    continuity_ok: 2
+    continuity_pairs: 1
+    continuity_ok: 1
     cost: 88.82
     words: 31
     terms: 0
     connectives: 1
-  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence | "the allowed words include i, you, my, and your": STYLE: "allowed … include" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the pronouns", or split the sentence; "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
+  diagnosis: '"a note describes the allowed words": STYLE: "describes … allowed" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence | "the allowed words include i, you, my, and your": STYLE: "allowed … include" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "the allowed words" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence; "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "you is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows the pronoun i. the tool lexgen allows the pronoun you. the tool lexgen allows the word my. the tool lexgen allows the word your.
@@ -63,7 +63,7 @@ proposals:
     words: 28
     terms: 0
     connectives: 0
-  diagnosis: '"the tool lexgen allows the pronoun i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the pronoun you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the word my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the word your": WORD: "lexgen" is not a minglish word'
+  diagnosis: '"the tool lexgen allows the pronoun i": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronoun] | "the tool lexgen allows the pronoun you": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronoun] | "the tool lexgen allows the word my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows the word your": WORD: "lexgen" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows the pronoun i and the pronoun you and the possessive my and the possessive your. the tool lexgen does not allow other pronouns.
@@ -78,7 +78,7 @@ proposals:
     words: 27
     terms: 0
     connectives: 3
-  diagnosis: '"the tool lexgen allows the pronoun i and the pronoun you and the possessive my and the possessive your": WORD: "lexgen" is not a minglish word | "the tool lexgen does not allow other pronouns": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, other]'
+  diagnosis: '"the tool lexgen allows the pronoun i and the pronoun you and the possessive my and the possessive your": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, pronoun] | "the tool lexgen does not allow other pronouns": WORD: "lexgen" is not a minglish word [all unknown words: lexgen, other, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon allows the pronouns i, you, my, and your.
@@ -93,7 +93,7 @@ proposals:
     words: 10
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon allows the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the lexicon allows the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon has the pronouns i, you, my, and your.
@@ -108,7 +108,7 @@ proposals:
     words: 10
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon has the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the lexicon has the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexicon contains the pronouns i, you, my, and your.
@@ -123,7 +123,7 @@ proposals:
     words: 10
     terms: 0
     connectives: 1
-  diagnosis: '"the lexicon contains the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md)'
+  diagnosis: '"the lexicon contains the pronouns i, you, my, and your": WORD: "lexicon" is not a minglish word — "Lexicon" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: lexicon, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows the pronoun i. the tool Lexgen allows the pronoun you. the tool Lexgen allows the adjective my. the tool Lexgen allows the adjective your.
@@ -138,7 +138,7 @@ proposals:
     words: 28
     terms: 0
     connectives: 0
-  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows the adjective my": STYLE: "adjective my" — a word mentioned as a word must be quoted: "adjective \"my\"" (ADR 0018); "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen allows the adjective your": STYLE: "adjective your" — a word mentioned as a word must be quoted: "adjective \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen allows the pronoun i": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen allows the pronoun you": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen allows the adjective my": STYLE: "adjective my" — a word mentioned as a word must be quoted: "adjective \"my\"" (ADR 0018); "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen allows the adjective your": STYLE: "adjective your" — a word mentioned as a word must be quoted: "adjective \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen includes the pronoun i. the tool Lexgen includes the pronoun you. the tool Lexgen includes the word my. the tool Lexgen includes the word your.
@@ -153,7 +153,7 @@ proposals:
     words: 28
     terms: 0
     connectives: 0
-  diagnosis: '"the tool Lexgen includes the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen includes the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen includes the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen includes the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen includes the pronoun i": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen includes the pronoun you": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen includes the word my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the tool Lexgen includes the word your": STYLE: "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: 'GAP: the available verbs (attest, build, check, choose, consider, contain, cost, create, delete, derive, describe, edit, expand, explain, fetch, find, have, match, migrate, need, open, optimize, pin, plan, produce, read, record, reduce, reject, repeat, replace, retry, return, save, say, send, show, start, stop, store, use, waive, write) do not express permission or inclusion for the concepts "allows" or "includes".'
@@ -183,7 +183,7 @@ proposals:
     words: 28
     terms: 0
     connectives: 0
-  diagnosis: '"the tool Lexgen allows the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "the tool Lexgen allows the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen allows the pronoun my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "the tool Lexgen allows the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
+  diagnosis: '"the tool Lexgen allows the pronoun i": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen allows the pronoun you": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen allows the pronoun my": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen allows the pronoun your": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen permits the pronoun i. the tool Lexgen permits the pronoun you. the tool Lexgen permits the pronoun my. the tool Lexgen permits the pronoun your.
@@ -198,7 +198,7 @@ proposals:
     words: 28
     terms: 0
     connectives: 0
-  diagnosis: '"the tool Lexgen permits the pronoun i": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun you": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun my": WORD: "permits" is banned in minglish — write "allows" | "the tool Lexgen permits the pronoun your": WORD: "permits" is banned in minglish — write "allows"'
+  diagnosis: '"the tool Lexgen permits the pronoun i": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, pronoun] | "the tool Lexgen permits the pronoun you": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, pronoun] | "the tool Lexgen permits the pronoun my": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, pronoun] | "the tool Lexgen permits the pronoun your": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, pronoun]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: i is a pronoun. the tool Lexgen has the pronoun i. you is a pronoun. the tool Lexgen has the pronoun you. my is a pronoun. the tool Lexgen has the pronoun my. your is a pronoun. the tool Lexgen has the pronoun your.
@@ -207,13 +207,13 @@ proposals:
   metrics:
     sentences: 8
     parsed: 0
-    continuity_pairs: 7
-    continuity_ok: 3
+    continuity_pairs: 4
+    continuity_ok: 0
     cost: 153.01999999999998
     words: 44
     terms: 0
     connectives: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "the tool Lexgen has the pronoun i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018) | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "the tool Lexgen has the pronoun you": STYLE: "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "my is a pronoun": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018) | "the tool Lexgen has the pronoun my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018); "pronoun my" — a word mentioned as a word must be quoted: "pronoun \"my\"" (ADR 0018) | "your is a pronoun": STYLE: "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen has the pronoun your": STYLE: "pronoun your" — a word mentioned as a word must be quoted: "pronoun \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
+  diagnosis: '"i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen has the pronoun i": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "you is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen has the pronoun you": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "my is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen has the pronoun my": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "your is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the tool Lexgen has the pronoun your": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your.
@@ -228,7 +228,7 @@ proposals:
     words: 17
     terms: 0
     connectives: 1
-  diagnosis: '"the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen allows the pronoun i, the pronoun you, the possessive my, and the possessive your": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your.
@@ -243,7 +243,7 @@ proposals:
     words: 19
     terms: 0
     connectives: 1
-  diagnosis: '"the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your": WORD: "permits" is banned in minglish — write "allows"'
+  diagnosis: '"the tool Lexgen permits the pronoun i, the pronoun you, the possessive word my, and the possessive word your": WORD: "permits" is banned in minglish — write "allows" [all unknown words: permits, pronoun]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your.
@@ -258,7 +258,7 @@ proposals:
     words: 19
     terms: 0
     connectives: 1
-  diagnosis: '"the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018); "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool Lexgen does not ban the pronoun i, the pronoun you, the word my, and the word your": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the sentence allows the word i. the sentence allows the word you. the sentence allows the word my. the sentence allows the word your.
@@ -312,13 +312,13 @@ proposals:
   metrics:
     sentences: 6
     parsed: 0
-    continuity_pairs: 5
+    continuity_pairs: 4
     continuity_ok: 4
     cost: 150.68
     words: 55
     terms: 0
     connectives: 3
-  diagnosis: '"the grammar allows the words i and you and my and your": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "the word i is a pronoun for one person": STYLE: "word i" — a word mentioned as a word must be quoted: "word \"i\"" (ADR 0018) | "the word you is a pronoun for the user": STYLE: "word you" — a word mentioned as a word must be quoted: "word \"you\"" (ADR 0018) | "the word my is a possessive for one person": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a possessive for the user": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the grammar does not allow other pronouns": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: grammar, other]'
+  diagnosis: '"the grammar allows the words i and you and my and your": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) | "the word i is a pronoun for one person": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the word you is a pronoun for the user": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the word my is a possessive for one person": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word my" — a word mentioned as a word must be quoted: "word \"my\"" (ADR 0018) | "the word your is a possessive for the user": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "word your" — a word mentioned as a word must be quoted: "word \"your\"" (ADR 0018) | "the grammar does not allow other pronouns": WORD: "grammar" is not a minglish word — "Grammar" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: grammar, other, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the lexical entries include i and you and my and your. i names the person that the writer describes. you names the person that the reader describes. my describes the person that the writer describes. your describes the person that the reader describes. the lexical entries do not include other pronouns.
@@ -333,7 +333,7 @@ proposals:
     words: 51
     terms: 0
     connectives: 3
-  diagnosis: '"the lexical entries include i and you and my and your": WORD: "lexical" is not a minglish word | "i names the person that the writer describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "you names the person that the reader describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "my describes the person that the writer describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "your describes the person that the reader describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the lexical entries do not include other pronouns": WORD: "lexical" is not a minglish word [all unknown words: lexical, other]'
+  diagnosis: '"the lexical entries include i and you and my and your": WORD: "lexical" is not a minglish word | "i names the person that the writer describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "you names the person that the reader describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "my describes the person that the writer describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "your describes the person that the reader describes": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010) | "the lexical entries do not include other pronouns": WORD: "lexical" is not a minglish word [all unknown words: lexical, other, pronouns]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the declarations list contains the words i and you and my and your. the word i is a word for the writer. the word you is a word for the user. the word my is a word for the writer. the word your is a word for the user. the declarations list does not contain other words.
@@ -496,7 +496,7 @@ proposals:
     words: 20
     terms: 0
     connectives: 1
-  diagnosis: '"the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your": STYLE: "person pronoun" — noun-noun compounds are not minglish; write "the pronoun of the person", or one transparent word (ADR 0015); "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "pronoun i" — a word mentioned as a word must be quoted: "pronoun \"i\"" (ADR 0018); "pronoun you" — a word mentioned as a word must be quoted: "pronoun \"you\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  diagnosis: '"the tool allows the first person pronoun i, the second person pronoun you, the possessive my, and the possessive your": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows i and you and my and your. i is a pronoun. you is a pronoun. my is a possessive. your is a possessive.
@@ -505,13 +505,13 @@ proposals:
   metrics:
     sentences: 5
     parsed: 0
-    continuity_pairs: 2
-    continuity_ok: 1
+    continuity_pairs: 0
+    continuity_ok: 0
     cost: 79.07
     words: 27
     terms: 0
     connectives: 3
-  diagnosis: '"the tool lexgen allows i and you and my and your": WORD: "lexgen" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
+  diagnosis: '"the tool lexgen allows i and you and my and your": WORD: "lexgen" is not a minglish word | "i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "you is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool "lexgen" allows i and you and my and your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
@@ -519,14 +519,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 2
+    parsed: 0
     continuity_pairs: 4
     continuity_ok: 0
     cost: 79.07
     words: 27
     terms: 0
     connectives: 3
-  diagnosis: '"the tool "lexgen" allows i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the tool "lexgen" allows i and you and my and your": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018); "your" used as a word must be quoted: "\"your\"" (ADR 0018) | ""i" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the tool lexgen allows i. the tool lexgen allows you. the tool lexgen allows my. the tool lexgen allows your. "i" is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive.
@@ -534,14 +534,14 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 2
+    parsed: 0
     continuity_pairs: 7
     continuity_ok: 3
     cost: 131.42
     words: 36
     terms: 0
     connectives: 0
-  diagnosis: '"the tool lexgen allows i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows your": WORD: "lexgen" is not a minglish word | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the tool lexgen allows i": WORD: "lexgen" is not a minglish word | "the tool lexgen allows you": WORD: "lexgen" is not a minglish word | "the tool lexgen allows my": WORD: "lexgen" is not a minglish word | "the tool lexgen allows your": WORD: "lexgen" is not a minglish word | ""i" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the system allows i, you, my, and your. the system bans all other pronouns. the system does not have an anaphora mechanism. the system does not plan an anaphora mechanism for version 0.
@@ -556,7 +556,7 @@ proposals:
     words: 33
     terms: 0
     connectives: 1
-  diagnosis: '"the system allows i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans all other pronouns": WORD: "all" is banned in minglish — write "every" with a singular noun (ADR 0014) [all unknown words: all, other] | "the system does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not plan an anaphora mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
+  diagnosis: '"the system allows i, you, my, and your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans all other pronouns": WORD: "all" is banned in minglish — write "every" with a singular noun (ADR 0014) [all unknown words: all, other, pronouns] | "the system does not have an anaphora mechanism": STYLE: "anaphora mechanism" — noun-noun compounds are not minglish; write "the mechanism of the anaphora", or one transparent word (ADR 0015); "does … have" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result" | "the system does not plan an anaphora mechanism for version 0": WORD: "0" is not a minglish word — for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: i is a pronoun. you is a pronoun. my is a possessive. your is a possessive. the system allows i. the system allows you. the system allows my. the system allows your. the system bans every other pronoun. the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
@@ -565,13 +565,13 @@ proposals:
   metrics:
     sentences: 11
     parsed: 2
-    continuity_pairs: 8
-    continuity_ok: 7
+    continuity_pairs: 7
+    continuity_ok: 6
     cost: 176.35999999999996
     words: 58
     terms: 0
     connectives: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the system allows i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the system allows you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the system allows my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the system allows your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018) | "the system bans every other pronoun": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing'
+  diagnosis: '"i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "you is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the system allows i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the system allows you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the system allows my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the system allows your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018) | "the system bans every other pronoun": WORD: "other" is banned in minglish — "other" refers to something already named - repeat the noun, or name the second thing [all unknown words: other, pronoun]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: every pronoun is a word. every pronoun has one form. i is a pronoun. "you" is a pronoun. "my" is a possessive. "your" is a possessive. the system does not ban i, "you", "my", or "your". the system bans every pronoun that is not i, "you", "my", or "your". the system does not have a mechanism of the anaphora. the system does not plan a mechanism of the anaphora.
@@ -579,14 +579,14 @@ proposals:
   valid: false
   metrics:
     sentences: 10
-    parsed: 4
-    continuity_pairs: 9
-    continuity_ok: 5
+    parsed: 2
+    continuity_pairs: 7
+    continuity_ok: 3
     cost: 206.30999999999997
     words: 69
     terms: 0
     connectives: 2
-  diagnosis: '"every pronoun has one form": WORD: "form" is not a minglish word | "i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the system does not ban i, "you", "my", or "your"": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans every pronoun that is not i, "you", "my", or "your"": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)'
+  diagnosis: '"every pronoun is a word": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "every pronoun has one form": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, form] | "i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the system does not ban i, "you", "my", or "your"": STYLE: "does … ban" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028) | "the system bans every pronoun that is not i, "you", "my", or "your"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, that]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the linter allows the word i. the linter allows the word you. the linter allows the word my. the linter allows the word your.
@@ -625,13 +625,13 @@ proposals:
   metrics:
     sentences: 8
     parsed: 0
-    continuity_pairs: 5
-    continuity_ok: 4
+    continuity_pairs: 4
+    continuity_ok: 3
     cost: 134.57999999999996
     words: 36
     terms: 0
     connectives: 0
-  diagnosis: '"i is a pronoun": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "you is a pronoun": STYLE: "you" used as a word must be quoted: "\"you\" is …" (ADR 0018) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen accepts i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the tool Lexgen accepts you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen accepts my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen accepts your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
+  diagnosis: '"i is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "you is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "my is a possessive": STYLE: "my" used as a word must be quoted: "\"my\" is …" (ADR 0018); "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "your is a possessive": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"; "your" used as a word must be quoted: "\"your\" is …" (ADR 0018) | "the tool Lexgen accepts i": STYLE: "i" used as a word must be quoted: "\"i\"" (ADR 0018) | "the tool Lexgen accepts you": STYLE: "you" used as a word must be quoted: "\"you\"" (ADR 0018) | "the tool Lexgen accepts my": STYLE: "my" used as a word must be quoted: "\"my\"" (ADR 0018) | "the tool Lexgen accepts your": STYLE: "your" used as a word must be quoted: "\"your\"" (ADR 0018)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the pronoun "i" is an indexical pronoun. the language allows the pronoun "you". the pronoun "you" is an indexical pronoun. the language allows the word "my". the word "my" is a possessive form. the language allows the word "your". the word "your" is a possessive form.
@@ -639,56 +639,59 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 6
+    parsed: 2
     continuity_pairs: 7
     continuity_ok: 4
     cost: 168.74000000000004
     words: 52
     terms: 0
     connectives: 0
-  diagnosis: '"the word "my" is a possessive form": WORD: "form" is not a minglish word | "the word "your" is a possessive form": WORD: "form" is not a minglish word'
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the word "my" is a possessive form": WORD: "form" is not a minglish word | "the word "your" is a possessive form": WORD: "form" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the pronoun "i" is an indexical pronoun. the language allows the pronoun "you". the pronoun "you" is an indexical pronoun. the language allows the word "my". the word "my" is a possessive word. the language allows the word "your". the word "your" is a possessive word.
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 8
-    parsed: 8
+    parsed: 4
     continuity_pairs: 7
     continuity_ok: 4
     cost: 168.84000000000006
     words: 52
     terms: 0
     connectives: 0
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the pronoun "my". the language allows the pronoun "your".
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 4
-    parsed: 4
+    parsed: 0
     continuity_pairs: 3
     continuity_ok: 3
     cost: 75.22999999999999
     words: 24
     terms: 0
     connectives: 0
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "my"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "your"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 2
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your".
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 4
-    parsed: 4
+    parsed: 2
     continuity_pairs: 3
     continuity_ok: 3
     cost: 71.04999999999998
     words: 24
     terms: 0
     connectives: 0
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 2
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a possessive form of "i". "your" is a possessive form of "you".
@@ -696,14 +699,14 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 6
+    parsed: 2
     continuity_pairs: 7
     continuity_ok: 3
     cost: 151.64999999999998
     words: 48
     terms: 0
     connectives: 0
-  diagnosis: '""my" is a possessive form of "i"": WORD: "form" is not a minglish word | ""your" is a possessive form of "you"": WORD: "form" is not a minglish word'
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive form of "i"": WORD: "form" is not a minglish word | ""your" is a possessive form of "you"": WORD: "form" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a possessive of "i". "your" is a possessive of "you".
@@ -711,28 +714,29 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 6
+    parsed: 2
     continuity_pairs: 7
     continuity_ok: 3
     cost: 144.26999999999998
     words: 46
     terms: 0
     connectives: 0
-  diagnosis: '""my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | ""your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the word "my". the language allows the word "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a pronoun. "your" is a pronoun. "my" refers to the writer. "your" refers to the reader.
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 10
-    parsed: 10
+    parsed: 4
     continuity_pairs: 9
     continuity_ok: 3
     cost: 166.19
     words: 52
     terms: 0
     connectives: 0
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""your" is a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the pronoun "my". the language allows the pronoun "your". the pronoun "i" is an indexical pronoun. the pronoun "you" is an indexical pronoun. the pronoun "my" is a possessive form. the pronoun "your" is a possessive form.
@@ -740,28 +744,29 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 6
+    parsed: 0
     continuity_pairs: 7
-    continuity_ok: 7
+    continuity_ok: 3
     cost: 177.10000000000005
     words: 52
     terms: 0
     connectives: 0
-  diagnosis: '"the pronoun "my" is a possessive form": WORD: "form" is not a minglish word | "the pronoun "your" is a possessive form": WORD: "form" is not a minglish word'
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "my"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "your"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "my" is a possessive form": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, form] | "the pronoun "your" is a possessive form": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronoun, form]'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows the pronoun "i". the language allows the pronoun "you". the language allows the pronoun "my". the language allows the pronoun "your". the pronoun "i" is an indexical pronoun. the pronoun "you" is an indexical pronoun. the pronoun "my" is a possessive pronoun. the pronoun "your" is a possessive pronoun.
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 8
-    parsed: 8
+    parsed: 0
     continuity_pairs: 7
-    continuity_ok: 7
+    continuity_ok: 3
     cost: 181.38000000000008
     words: 52
     terms: 0
     connectives: 0
+  diagnosis: '"the language allows the pronoun "i"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "you"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "my"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the language allows the pronoun "your"": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "my" is a possessive pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "your" is a possessive pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows "i". the language allows "you". the language allows "my". the language allows "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a possessive form. "your" is a possessive form.
@@ -769,28 +774,29 @@ proposals:
   valid: false
   metrics:
     sentences: 8
-    parsed: 6
+    parsed: 4
     continuity_pairs: 7
     continuity_ok: 3
     cost: 120.29999999999998
     words: 36
     terms: 0
     connectives: 0
-  diagnosis: '""my" is a possessive form": WORD: "form" is not a minglish word | ""your" is a possessive form": WORD: "form" is not a minglish word'
+  diagnosis: '""i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive form": WORD: "form" is not a minglish word | ""your" is a possessive form": WORD: "form" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows "i". the language allows "you". the language allows "my". the language allows "your". "i" is an indexical pronoun. "you" is an indexical pronoun. "my" is a possessive word. "your" is a possessive word.
   drops: none
-  valid: true
+  valid: false
   metrics:
     sentences: 8
-    parsed: 8
+    parsed: 6
     continuity_pairs: 7
     continuity_ok: 3
     cost: 120.39999999999996
     words: 36
     terms: 0
     connectives: 0
+  diagnosis: '""i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows 4 indexical pronouns. the pronoun "i" is an indexical pronoun. the pronoun "you" is an indexical pronoun. "my" is an indexical possessive. "your" is an indexical possessive.
@@ -798,14 +804,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 3
+    parsed: 0
     continuity_pairs: 4
-    continuity_ok: 2
+    continuity_ok: 0
     cost: 127.24999999999999
     words: 30
     terms: 0
     connectives: 0
-  diagnosis: '""my" is an indexical possessive": not recognizable as a minglish-like sentence | ""your" is an indexical possessive": not recognizable as a minglish-like sentence'
+  diagnosis: '"the language allows 4 indexical pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is an indexical possessive": not recognizable as a minglish-like sentence | ""your" is an indexical possessive": not recognizable as a minglish-like sentence'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows 4 indexical pronouns. the pronoun "i" is an indexical pronoun. the pronoun "you" is an indexical pronoun. "my" is a possessive form of "i". "your" is a possessive form of "you".
@@ -813,14 +819,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 3
+    parsed: 0
     continuity_pairs: 4
-    continuity_ok: 2
+    continuity_ok: 0
     cost: 122.09999999999998
     words: 34
     terms: 0
     connectives: 0
-  diagnosis: '""my" is a possessive form of "i"": WORD: "form" is not a minglish word | ""your" is a possessive form of "you"": WORD: "form" is not a minglish word'
+  diagnosis: '"the language allows 4 indexical pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | ""my" is a possessive form of "i"": WORD: "form" is not a minglish word | ""your" is a possessive form of "you"": WORD: "form" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the language allows 4 indexical pronouns. the pronoun "i" is an indexical pronoun. the pronoun "you" is an indexical pronoun. the word "my" is a possessive of "i". the word "your" is a possessive of "you".
@@ -828,14 +834,14 @@ proposals:
   valid: false
   metrics:
     sentences: 5
-    parsed: 3
+    parsed: 0
     continuity_pairs: 4
-    continuity_ok: 3
+    continuity_ok: 1
     cost: 124.73999999999997
     words: 36
     terms: 0
     connectives: 0
-  diagnosis: '"the word "my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the word "your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
+  diagnosis: '"the language allows 4 indexical pronouns": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "i" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the pronoun "you" is an indexical pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md) | "the word "my" is a possessive of "i"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>" | "the word "your" is a possessive of "you"": STYLE: "possessive" is an adjective — add the noun it describes: "a possessive <noun>"'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -860,7 +866,7 @@ proposals:
     - "I"
     - "you"
     - "my"
-    - "your": WORD: item 4: """ is not a minglish word — a quote is not closed — quotes come in pairs
+    - "your": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, -]
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: |-
@@ -914,15 +920,21 @@ proposals:
     - "my"
     - "your"
   drops: parenthetical category labels
-  valid: true
+  valid: false
   metrics:
     sentences: 1
-    parsed: 1
+    parsed: 0
     continuity_pairs: 0
     continuity_ok: 0
     cost: 27.129999999999995
     words: 9
     terms: 0
     connectives: 1
+  diagnosis: |-
+    "The language allows 4 pronouns:
+    - "i"
+    - "you"
+    - "my"
+    - "your"": WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: pronouns, -]
   count: 1
   model: deepseek/deepseek-v4-flash

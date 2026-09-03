@@ -116,6 +116,18 @@ fn domain_definitions_parse() {
     let mut bad = Vec::new();
     for e in model.as_array().unwrap() {
         let lemma = e["lemma"].as_str().unwrap_or("?");
+        // examples that are sentences or blocks must parse too (ADR 0036)
+        for x in e["examples"].as_array().into_iter().flatten().filter_map(|x| x.as_str()) {
+            // convention: an example with a final period is a minglish sentence;
+            // one without is a member or a shape (may be a banned construction)
+            let is_block = x.contains('\n');
+            if is_block || x.ends_with('.') {
+                let ok = if is_block { grammar::parse_text(&lexicon, x).is_ok() } else { matches!(diagnose(&lexicon, x.trim_end_matches('.')), Diagnosis::Clean(_)) };
+                if !ok {
+                    bad.push(format!("{lemma} (example): {}", x.replace('\n', " ⏎ ")));
+                }
+            }
+        }
         let def = e["definition"].as_str().unwrap_or("");
         for seg in def.split(". ").map(|s| s.trim().trim_end_matches('.').trim()).filter(|s| !s.is_empty()) {
             match diagnose(&lexicon, seg) {
@@ -170,9 +182,9 @@ fn linter_advice_examples_parse() {
         "because the test fails, the agent retries the request",
         "so the agent retries the request",
         "the project does not plan a discourse mechanism",
-        "the word i is a pronoun",
-        "my is a pronoun",
-        "the pronouns are not in the Lexicon",
+        "the word i is a Pronoun",
+        "my is a Pronoun",
+        "the Pronouns are not in the Lexicon",
         "the design is consistent with the project",
         "the mechanism stores a word and a message",
         "the cost is big",
@@ -184,22 +196,22 @@ fn linter_advice_examples_parse() {
         "the copies are the same",
         "the agent deleted three files",
         "Discard the file",
-        "the Lexicon does not contain the banned pronouns",
-        "pronouns for the speaker are indexical",
-        "the frequencies are of pronouns",
+        "the Lexicon does not contain the banned Pronouns",
+        "Pronouns for the speaker are indexical",
+        "the frequencies are of Pronouns",
         "the speaker or the hearer reads the file",
         "the findings are big",
         "the design prefers clarity",
-        "the report shows pronouns are big",
+        "the report shows Pronouns are big",
         "the report shows that the test fails",
-        "the i pronoun is indexical",
+        "the i Pronoun is indexical",
         "the language does not have a discourse layer",
-        "the pronouns are \"it\", \"they\", and \"those\"",
+        "the Pronouns are \"it\", \"they\", and \"those\"",
         "instructional text uses Indexical Pronouns",
         "the team defers the mechanism to the future",
-        "the pronouns are about 2200 of the unknown tokens",
+        "the Pronouns are about 2200 of the unknown tokens",
         "the document describes the finding",
-        "resolving the pronoun requires a Discourse Layer",
+        "resolving the Pronoun requires a Discourse Layer",
         "the language bans the possessive of every Anaphoric Pronoun",
         "the tool Lexgen allows my",
         "the point of the copy of the report fails",

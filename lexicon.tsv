@@ -8,6 +8,8 @@ Ban	form	NOUN_SG	ban
 Bans	form	NOUN_PL	ban
 Bare Plural	form	NOUN_SG	bare plural
 Bare Plurals	form	NOUN_PL	bare plural
+Block	form	NOUN_SG	block
+Blocks	form	NOUN_PL	block
 Categories	form	NOUN_PL	category
 Category	form	NOUN_SG	category
 Closed Class	form	NOUN_SG	closed class
@@ -109,6 +111,8 @@ Progressive	form	NOUN_SG	progressive
 Progressives	form	NOUN_PL	progressive
 Prohibition	form	NOUN_SG	prohibition
 Prohibitions	form	NOUN_PL	prohibition
+Pronoun	form	NOUN_SG	pronoun
+Pronouns	form	NOUN_PL	pronoun
 Propositional Loss	form	NOUN_SG	propositional loss
 Propositional Losses	form	NOUN_PL	propositional loss
 Redirect	form	NOUN_SG	redirect
@@ -316,10 +320,10 @@ bigger	form	ADJ_CMP	big
 billion	form	SCALE	billion
 binaries	form	NOUN_PL	binary
 binary	form	NOUN_SG	binary
-block	form	NOUN_SG	block
+block	term	-	Block
 blocker	form	NOUN_SG	blocker
 blockers	form	NOUN_PL	blocker
-blocks	form	NOUN_PL	block
+blocks	term	-	Blocks
 blunt	form	ADJ	blunt
 blunter	form	ADJ_CMP	blunt
 bound	form	NOUN_SG	bound
@@ -829,6 +833,7 @@ fetch	form	VERB_TRANS_BASE	fetch
 fetched	form	VERB_TRANS_ED	fetch
 fetches	form	VERB_TRANS_3SG	fetch
 fetching	form	VERB_TRANS_ING	fetch
+fewer	ban	-	comparatives of a quantity are deferred (ADR 0030) - write "a small number of <nouns>", or a Comparative of an adjective with "than"
 fiat	form	ADJ	fiat
 fiater	form	ADJ_CMP	fiat
 field	form	NOUN_SG	field
@@ -1124,6 +1129,7 @@ lemma	term	-	Lemma
 lemmas	term	-	Lemmas
 length	form	NOUN_SG	length
 lengths	form	NOUN_PL	length
+less	ban	-	comparatives of a quantity are deferred (ADR 0030) - write "a small <noun>", or a Comparative of an adjective with "than"
 letter	form	NOUN_SG	letter
 letters	form	NOUN_PL	letter
 lexer	term	-	Lexer
@@ -1517,8 +1523,8 @@ promotion	form	NOUN_SG	promotion
 promotions	form	NOUN_PL	promotion
 prompt	form	NOUN_SG	prompt
 prompts	form	NOUN_PL	prompt
-pronoun	form	NOUN_SG	pronoun
-pronouns	form	NOUN_PL	pronoun
+pronoun	term	-	Pronoun
+pronouns	term	-	Pronouns
 properties	form	NOUN_PL	property
 property	form	NOUN_SG	property
 proposal	form	NOUN_SG	proposal

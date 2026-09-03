@@ -57,12 +57,12 @@
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 20%
 ✓ the load is heavier than the length
   parses uniquely — peak-open 2, max-dep 3, depth 1, right-branching 33%
-✓ the language allows 4 pronouns:
+✗ the language allows 4 pronouns:
 - "I"
 - "you"
 - "my"
 - "your"
-  parses uniquely — peak-open 5, max-dep 3, depth 1, right-branching 22%
+  WORD: "pronouns" is not a minglish word — "Pronouns" is a defined term — write it capitalized (see CONTEXT.md)
 ✓ people write every Surface Form of the file "lexicon.tsv"
   parses uniquely — peak-open 3, max-dep 3, depth 1, right-branching 43%
 ✓ The agent reads the file

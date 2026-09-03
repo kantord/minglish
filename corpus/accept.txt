@@ -77,7 +77,7 @@ the Linter bans every Anaphoric Pronoun:
 - "it"
 - "they"
 - "he"
-the language allows 4 pronouns:
+the language allows 4 Pronouns:
 - "I"
 - "you"
 - "my"

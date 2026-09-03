@@ -52,3 +52,23 @@ Counts are approximate tallies over the 28 rewrites (2026-09-02). Archetypes
 A1, A3, A13, A16, A17 and A18 are language questions; A11 and A19 are
 vocabulary policy; the rest are accepted rewrite costs unless the review
 says otherwise.
+
+Cold run 2 on the original ADR 0006 (2026-09-03), after the natural-prose
+prompt and the fragmentation ranking: 6 of 12 paragraphs valid (4 before);
+the valid proposals now use ", so" and "if …, then". The proposals that
+failed reached for forms the language still lacks: comparatives as
+Modifiers ("fewer Open Dependencies", "a shorter Dependency Length"),
+"less"/"fewer", and a Cognitive-Load term written lowercase. A3's next step
+is the Modifier position of the Comparative.
+
+Naturalness archetypes from the verdicts on cold run 2 (2026-09-03), the
+constructions the maintainer named as unnatural even though they parse:
+
+| # | archetype | example | disposition to discuss |
+|---|---|---|---|
+| A21 | definition as an equation with the subject noun repeated | "The Context Need of a sentence is the prior text of the sentence" | a definition shape for terms: "X: Y. For example, Z" — ties to the domain-model formalization below |
+| A22 | of-phrase standing in for a Compound | "the rules of the scope" for *scope rules* | a term ("Scope Rule") when the compound is a project concept; otherwise the of-phrase is the cost of ADR 0015 |
+| A23 | chained of-phrases plus a verb preposition doing a compound's work | "the Linter uses the metrics on the output of the Parse" | terms and verbs with the right valence ("the Linter measures the Parse"); structured repair |
+
+Not unnatural per the maintainer: "the writer repeats every noun".
+

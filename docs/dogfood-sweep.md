@@ -39,8 +39,9 @@
 | 0033-time-prepositions.md | 22/22 |
 | 0034-step-block.md | 48/48 |
 | 0035-become.md | 23/23 |
+| 0036-domain-model-schema.md | 41/41 |
 
-**Aggregate: 1471/1471 sentences (100%)**
+**Aggregate: 1512/1512 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

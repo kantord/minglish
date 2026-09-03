@@ -13,7 +13,7 @@ original_metrics:
   terms: 0
   connectives: 2
 verdict: unreviewed
-best: The Context Need of a sentence measures the prior text. a good sentence has a small Context Need. the reader does not need the prior text. the Context Need bans every Anaphoric Pronoun. the writer repeats the noun. the Context Need fixes every Scope Ambiguity. the Scope Ambiguities do not depend on the prior text.
+best: The Context Need of a sentence is the prior text of the sentence. A good sentence has a small Context Need. The language bans every Anaphoric Pronoun, so the writer repeats every noun. The language fixes the rules of the scope, so the reader does not depend on the prior context.
 proposals:
 - text: The reader needs a small Context Need to understand a sentence. The sentence must need little prior text. The language bans every Anaphoric Pronoun because of this need. The writer repeats the noun because of this need. The Scope rules are fixed because of this need. The Scope rules do not depend on the context.
   drops: none
@@ -131,5 +131,251 @@ proposals:
     words: 55
     terms: 7
     connectives: 0
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language must minimize the Context Need of every sentence. A reader interprets a sentence with little prior context. The Ban on Anaphoric Pronouns enforces this goal. The repetition of nouns enforces this goal. The fixed Scope rules enforces this goal.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 151.36999999999998
+    words: 41
+    terms: 3
+    connectives: 0
+  diagnosis: '"The language must minimize the Context Need of every sentence": WORD: "minimize" is not a minglish word | "A reader interprets a sentence with little prior context": WORD: "interprets" is not a minglish word [all unknown words: interprets, little] | "The Ban on Anaphoric Pronouns enforces this goal": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "The repetition of nouns enforces this goal": WORD: "this" is banned in minglish — third-person reference is banned - repeat the noun you mean (ADR 0002) | "The fixed Scope rules enforces this goal": WORD: "Scope" is not a minglish word — minglish words are lowercase ("scope"); a name that equals a word needs quotes'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The language must keep the Context Need of every sentence small. A reader needs little prior context for a sentence. The Ban on Anaphoric Pronouns serves the Context Need. The repetition of nouns serves the Context Need. The fixed scope rules serve the Context Need.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 153.12000000000003
+    words: 45
+    terms: 6
+    connectives: 0
+  diagnosis: '"The language must keep the Context Need of every sentence small": STYLE: "keep … Context Need of" — a verb cannot take an object and an adjective; use a verb that carries the result ("limits the loss"), or 2 sentences; "must … keep" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014) | "A reader needs little prior context for a sentence": WORD: "little" is not a minglish word | "The Ban on Anaphoric Pronouns serves the Context Need": WORD: "serves" is not a minglish word | "The repetition of nouns serves the Context Need": WORD: "serves" is not a minglish word | "The fixed scope rules serve the Context Need": WORD: "serve" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: Every sentence has a small Context Need. The reader needs a small amount of prior context for the sentence. The Ban on Anaphoric Pronouns reduces the Context Need. The repetition of nouns reduces the Context Need. The fixed scope rules reduce the Context Need.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 0
+    cost: 150.24
+    words: 44
+    terms: 6
+    connectives: 0
+  diagnosis: '"The reader needs a small amount of prior context for the sentence": WORD: "amount" is not a minglish word | "The Ban on Anaphoric Pronouns reduces the Context Need": STYLE: "Ban on …" — only "of" attaches to a noun; "on" attaches to the verb. Write "the Ban of …", or move the phrase after the verb (ADR 0011) | "The repetition of nouns reduces the Context Need": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "The fixed scope rules reduce the Context Need": STYLE: "fixed … reduce" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "scope rules" — noun-noun compounds are not minglish; write "the rules of the scope", or one transparent word (ADR 0015); "scope" — a singular noun needs a determiner: "the scope" (mass nouns take "the"); "the fixed scope" — a verb form cannot modify a noun; say who does it: "the Linter bans the Pronouns", or split the sentence'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A good sentence has a small Context Need. Every Anaphoric Pronoun refers to a noun of a prior sentence, so the Ban on every Anaphoric Pronoun reduces the Context Need. The rule repeats a noun instead of a pronoun. The rule fixes every Scope Ambiguity with a shape, so the reader does not need the prior text.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 3
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 233.73000000000005
+    words: 70
+    terms: 7
+    connectives: 2
+  diagnosis: '"Every Anaphoric Pronoun refers to a noun of a prior sentence, so the Ban on every Anaphoric Pronoun reduces the Context Need": AMBIGUOUS (2 readings): split the sentence, or move the prepositional phrase so each attachment is explicit | "The rule repeats a noun instead of a pronoun": WORD: "instead" is not a minglish word [all unknown words: instead, pronoun]'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need minimal prior text. The Ban on every Anaphoric Pronoun reduces the Context Need, because every Anaphoric Pronoun refers to a noun of a prior sentence. The rule repeats a noun. The rule does not use a pronoun. The rule fixes every Scope Ambiguity with a shape, so the reader does not need the prior text.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 2
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 209.33
+    words: 59
+    terms: 5
+    connectives: 2
+  diagnosis: '"A sentence must need minimal prior text": WORD: "minimal" is not a minglish word | "The Ban on every Anaphoric Pronoun reduces the Context Need, because every Anaphoric Pronoun refers to a noun of a prior sentence": AMBIGUOUS (2 readings): "Ban on …" — only "of" attaches to a noun; "on" attaches to the verb. Write "the Ban of …", or move the phrase after the verb (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "The rule does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need little prior text. The Ban of every Anaphoric Pronoun reduces the Context Need. Every Anaphoric Pronoun refers to a noun of a prior sentence. The rule repeats a noun. The rule does not use a pronoun. The rule fixes every Scope Ambiguity with a shape, so the reader does not need the prior text.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 3
+    continuity_pairs: 5
+    continuity_ok: 3
+    cost: 204.23000000000002
+    words: 58
+    terms: 5
+    connectives: 1
+  diagnosis: '"A sentence must need little prior text": WORD: "little" is not a minglish word | "The Ban of every Anaphoric Pronoun reduces the Context Need": STYLE: "of every" — "every" cannot follow "of"; write "of a <noun>", or make the every-phrase the subject (ADR 0014) | "The rule does not use a pronoun": WORD: "pronoun" is not a minglish word — "Pronoun" is a defined term — write it capitalized (see CONTEXT.md)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A good sentence has a small Context Need. The language bans every Anaphoric Pronoun, so the writer repeats every noun. The language fixes the scope rules, so the reader does not depend on the prior context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 160.88000000000002
+    words: 49
+    terms: 3
+    connectives: 2
+  diagnosis: '"The language fixes the scope rules, so the reader does not depend on the prior context": STYLE: "scope rules" — noun-noun compounds are not minglish; write "the rules of the scope", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A good sentence has a small Context Need. The language bans every Anaphoric Pronoun, so the writer repeats every noun. The language fixes the rules of the scope, so the reader does not depend on the prior context.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 4
+    parsed: 4
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 163.75000000000003
+    words: 51
+    terms: 3
+    connectives: 2
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A reader needs the prior text to interpret the sentence. The language minimizes the Context Need, so the language bans every Anaphoric Pronoun, repeats every noun, and fixes every scope rule.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 150.77000000000004
+    words: 44
+    terms: 3
+    connectives: 2
+  diagnosis: '"A reader needs the prior text to interpret the sentence": WORD: "interpret" is not a minglish word | "The language minimizes the Context Need, so the language bans every Anaphoric Pronoun, repeats every noun, and fixes every scope rule": WORD: "minimizes" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need little prior context. The Context Need of a sentence is the prior text. The language bans every Anaphoric Pronoun, repeats every noun, and fixes every scope rule, because the Context Need must be small.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 134.09
+    words: 38
+    terms: 3
+    connectives: 2
+  diagnosis: '"A sentence must need little prior context": WORD: "little" is not a minglish word | "The language bans every Anaphoric Pronoun, repeats every noun, and fixes every scope rule, because the Context Need must be small": STYLE: "scope rule" — noun-noun compounds are not minglish; write "the rule of the scope", or one transparent word (ADR 0015); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The Context Need of a sentence is the prior text. A good sentence needs a small prior text. The language uses 3 rules for a small Context Need:
+    - every Ban of an Anaphoric Pronoun
+    - every repetition of a noun
+    - every fixed rule of a scope
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 147.82
+    words: 45
+    terms: 4
+    connectives: 1
+  diagnosis: |-
+    "A good sentence needs a small prior text": STYLE: this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates | "The language uses 3 rules for a small Context Need:
+    - every Ban of an Anaphoric Pronoun
+    - every repetition of a noun
+    - every fixed rule of a scope": STYLE: the intro must end in the noun phrase the items enumerate — no trailing prepositional phrase or adjective (ADR 0028)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A sentence with a small Context Need is better than a sentence with a large Context Need. The language bans every Anaphoric Pronoun, so the writer repeats the noun. The language fixes the scope rules, so the rules do not depend on the context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 179.00000000000009
+    words: 57
+    terms: 4
+    connectives: 3
+  diagnosis: '"A sentence with a small Context Need is better than a sentence with a large Context Need": WORD: "large" is not a minglish word | "The language fixes the scope rules, so the rules do not depend on the context": STYLE: "scope rules" — noun-noun compounds are not minglish; write "the rules of the scope", or one transparent word (ADR 0015)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A sentence with a small Context Need is better than a sentence with a big Context Need. The language bans every Anaphoric Pronoun, so the writer repeats the noun. The language fixes the rules of the scope, so the rules do not depend on the context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 3
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 181.59000000000006
+    words: 59
+    terms: 4
+    connectives: 3
+  diagnosis: '"A sentence with a small Context Need is better than a sentence with a big Context Need": STYLE: "sentence with …" — only "of" attaches to a noun; "with" attaches to the verb. Write "the sentence of …", or move the phrase after the verb (ADR 0011)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Context Need of a sentence is the prior text of the sentence. A sentence has a small Context Need or has a big Context Need. A small Context Need is better than a big Context Need. The language bans every Anaphoric Pronoun, so the writer repeats the noun. The language fixes the rules of the scope, so the rules do not depend on the context.
+  drops: none
+  valid: true
+  metrics:
+    sentences: 5
+    parsed: 5
+    continuity_pairs: 4
+    continuity_ok: 3
+    cost: 203.8500000000001
+    words: 66
+    terms: 6
+    connectives: 4
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need little prior context. The language bans every Anaphoric Pronoun, so the writer repeats every noun, and the scope rules are fixed, not context-dependent.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 104.22
+    words: 27
+    terms: 1
+    connectives: 2
+  diagnosis: '"A sentence must need little prior context": WORD: "little" is not a minglish word | "The language bans every Anaphoric Pronoun, so the writer repeats every noun, and the scope rules are fixed, not context-dependent": WORD: "context-dependent" is not a minglish word'
+  count: 2
+  model: deepseek/deepseek-v4-flash
+- text: A sentence must need a small amount of prior context. The language bans every Anaphoric Pronoun, so the writer repeats every noun, and the scope rules are fixed, not dependent on context.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 113.75
+    words: 32
+    terms: 1
+    connectives: 2
+  diagnosis: '"A sentence must need a small amount of prior context": WORD: "amount" is not a minglish word | "The language bans every Anaphoric Pronoun, so the writer repeats every noun, and the scope rules are fixed, not dependent on context": WORD: "dependent" is not a minglish word'
   count: 1
   model: deepseek/deepseek-v4-flash

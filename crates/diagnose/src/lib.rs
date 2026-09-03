@@ -278,7 +278,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             ));
         }
     }
-    // "the i pronoun": a word used as a name goes after the noun, in quotes
+    // "the i Pronoun": a word used as a name goes after the noun, in quotes
     for w in toks.windows(2) {
         if matches!(w[0], Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_)) && matches!(w[1], Tok::NounSg(_) | Tok::NounPl(_)) {
             out.push(format!(
@@ -333,7 +333,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             }
         }
     }
-    // clause as object: "shows pronouns are …" — two finite verbs and no
+    // clause as object: "shows Pronouns are …" — two finite verbs and no
     // connective between them
     {
         let is_verbish = |t: &Tok| {
@@ -378,9 +378,17 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         let mut j = i + 1;
         if toks.get(j).is_some_and(is_det) { j += 1; }
         while matches!(toks.get(j), Some(Tok::Adj(_) | Tok::AdjLong(_))) { j += 1; }
+        let mut k = j;
+        if matches!(toks.get(k + 1), Some(Tok::PrepN(_))) {
+            // skip "of <det> [adj] <noun>"
+            k += 2;
+            if toks.get(k).is_some_and(is_det) { k += 1; }
+            while matches!(toks.get(k), Some(Tok::Adj(_) | Tok::AdjLong(_))) { k += 1; }
+        }
         if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
-            && matches!(toks.get(j + 1), Some(Tok::Adj(_) | Tok::AdjLong(_)))
-            && toks.get(j + 2).is_none()
+            && matches!(toks.get(k), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
+            && matches!(toks.get(k + 1), Some(Tok::Adj(_) | Tok::AdjLong(_)))
+            && toks.get(k + 2).is_none()
         {
             out.push(format!(
                 "\"{} … {} {}\" — a verb cannot take an object and an adjective; use a verb that carries the result (\"limits the loss\"), or 2 sentences",
@@ -390,8 +398,86 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     }
     // a bare number as a complement: "the bound is 4" (measurements are deferred, ADR 0022)
     for (i, t) in toks.iter().enumerate() {
-        if matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) && matches!(toks.get(i + 1), Some(Tok::NumPl(_))) && toks.get(i + 2).is_none() {
-            out.push("a number needs its noun: \"the bound is 4 Open Dependencies\"; a bare value is deferred (ADR 0022)".to_string());
+        if matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
+            let mut j = i + 1;
+            if matches!(toks.get(j), Some(Tok::Approx(_))) { j += 1; }
+            if matches!(toks.get(j), Some(Tok::NumPl(_))) && toks.get(j + 1).is_none() {
+                out.push("a number needs its noun: \"the bound is 4 Open Dependencies\"; a bare value is deferred (ADR 0022)".to_string());
+            }
+        }
+    }
+    // a quantifier + noun + Name: "every Grammar ADR" — the appositive needs the/a
+    for w in toks.windows(3) {
+        if matches!(w[0], Tok::Every(_) | Tok::No(_) | Tok::Some_(_) | Tok::NumPl(_)) && matches!(w[1], Tok::NounSg(_) | Tok::NounPl(_)) && matches!(w[2], Tok::Name(_)) {
+            out.push(format!(
+                "\"{} {} {}\" — a Name follows a noun only after \"the\" or \"a\"; write \"every {} of {}\" or restructure (ADR 0018)",
+                word(&w[0]), word(&w[1]), word(&w[2]), word(&w[1]), word(&w[2])
+            ));
+        }
+    }
+    // a noun + Name inside an of-phrase or as a modifier: "standard English"
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::PrepN(_) | Tok::PrepV(_)) && matches!(w[1], Tok::Adj(_) | Tok::AdjLong(_) | Tok::NounSg(_)) {
+            // handled by the bare-singular / adjective rules
+        }
+        if matches!(w[0], Tok::Adj(_) | Tok::AdjLong(_)) && matches!(w[1], Tok::Name(_)) {
+            out.push(format!(
+                "\"{} {}\" — an adjective cannot modify a Name; write \"{}\" alone, or \"the {} <noun> {}\" (ADR 0018)",
+                word(&w[0]), word(&w[1]), word(&w[1]), word(&w[0]), word(&w[1])
+            ));
+        }
+    }
+    // "one" as a pronoun: "the more expressive one", "a good one"
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Num(_)) && i > 0 && matches!(toks[i - 1], Tok::Adj(_) | Tok::AdjLong(_) | Tok::AdjCmp(_))
+            && !matches!(toks.get(i + 1), Some(Tok::NounSg(_)))
+        {
+            out.push("\"one\" is not a Pronoun — repeat the noun: \"the expressive formulation\" (ADR 0016)".to_string());
+        }
+    }
+    // an ordinal alone: "the criterion is first"
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Ord(_)) && !matches!(toks.get(i + 1), Some(Tok::NounSg(_) | Tok::Adj(_) | Tok::AdjLong(_))) {
+            out.push(format!("\"{}\" needs its noun: \"the {} criterion\" (ADR 0029)", word(t), word(t)));
+        }
+    }
+    // adjective + PP after "be": "must be cheap to the process"
+    for (i, t) in toks.iter().enumerate() {
+        if matches!(t, Tok::Be(_)) && matches!(toks.get(i + 1), Some(Tok::Adj(_) | Tok::AdjLong(_))) && matches!(toks.get(i + 2), Some(Tok::PrepV(_))) {
+            out.push("an adjective cannot take a prepositional phrase yet (\"cheap to …\"); restructure with a verb, or split the sentence (deferred, ADR 0023)".to_string());
+        }
+    }
+    // coordination inside a conditional clause (ADR 0007)
+    if matches!(toks.first(), Some(Tok::If(_))) && toks.iter().any(|t| matches!(t, Tok::Conj(_))) {
+        out.push("a Conditional's clauses carry no \"and\"/\"or\" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007)".to_string());
+    }
+    // "more" before a noun: a comparative of quantity
+    for w in toks.windows(2) {
+        if matches!(w[0], Tok::More(_)) && matches!(w[1], Tok::NounSg(_) | Tok::NounPl(_)) {
+            out.push("\"more <noun>\" — comparatives of a quantity are deferred (ADR 0030); write \"a bigger number of <nouns>\", or restructure".to_string());
+        }
+    }
+    // ditransitive: verb + NP + NP ("gives every sentence one Parse")
+    for (i, t) in toks.iter().enumerate() {
+        if !is_finite_verb(t) { continue; }
+        let mut j = i + 1;
+        if toks.get(j).is_some_and(is_det) { j += 1; }
+        while matches!(toks.get(j), Some(Tok::Adj(_) | Tok::AdjLong(_))) { j += 1; }
+        if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_))) && toks.get(j + 1).is_some_and(is_det) {
+            let mut k = j + 2;
+            while matches!(toks.get(k), Some(Tok::Adj(_) | Tok::AdjLong(_))) { k += 1; }
+            if matches!(toks.get(k), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_))) {
+                out.push(format!(
+                    "\"{} {} … {}\" — a verb takes one object; write \"{} <thing> to <receiver>\" (no ditransitives)",
+                    word(t), word(&toks[j]), word(&toks[k]), word(t)
+                ));
+            }
+        }
+    }
+    // an adjective as an adverb at the end: "arrives later"
+    if let [.., v, Tok::Adj(a) | Tok::AdjLong(a)] = toks {
+        if matches!(v, Tok::Vi3(_) | Tok::ViEd(_) | Tok::ViBase(_)) {
+            out.push(format!("\"{}\" — no adverbs; name the time or the way with a phrase: \"after the decision\", \"in a {} way\"", a, a));
         }
     }
     // a determiner before a Name: "the Triage" (a Name takes no determiner)
@@ -435,7 +521,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     for w in toks.windows(2) {
         if matches!(w[0], Tok::NumPl(_)) && matches!(w[1], Tok::PrepN(_)) {
             out.push(format!(
-                "\"{} of …\" — a count needs its noun: \"{} pronouns\"; for a share write \"<digits> percent of …\" (ADR 0022, 0024)",
+                "\"{} of …\" — a count needs its noun: \"{} Pronouns\"; for a share write \"<digits> percent of …\" (ADR 0022, 0024)",
                 word(&w[0]), word(&w[0])
             ));
         }
@@ -449,10 +535,10 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             ));
         }
     }
-    // (e) a verb form as the subject: "Resolving the pronoun requires …"
+    // (e) a verb form as the subject: "Resolving the Pronoun requires …"
     if let Some(Tok::VtIng(v) | Tok::ViIng(v)) = toks.first() {
         out.push(format!(
-            "\"{v} …\" — a verb form cannot be the subject; name the doer: \"the Discourse Layer resolves the pronoun\""
+            "\"{v} …\" — a verb form cannot be the subject; name the doer: \"the Discourse Layer resolves the Pronoun\""
         ));
     }
     // (f) "of every": every is subject/object only (ADR 0014)
@@ -483,7 +569,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             out.push("phrases cannot be coordinated — split the sentence, one phrase each (ADR 0004)".to_string());
         }
     }
-    // participle as a noun modifier: "the banned pronouns" (no participial
+    // participle as a noun modifier: "the banned Pronouns" (no participial
     // adjectives; the verb keeps the form)
     for w in toks.windows(3) {
         if is_det(&w[0]) && matches!(w[1], Tok::VtEd(_) | Tok::VtIng(_) | Tok::ViEd(_) | Tok::ViIng(_))
@@ -491,13 +577,13 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         {
             out.push(format!(
                 "\"{} {} {}\" — a verb form cannot modify a noun; say who does it: \
-                 \"the Linter bans the pronouns\", or split the sentence",
+                 \"the Linter bans the Pronouns\", or split the sentence",
                 word(&w[0]), word(&w[1]), word(&w[2])
             ));
         }
     }
     // a preposition other than "of" right after a subject noun attaches to
-    // the verb, not the noun (ADR 0011): "pronouns for the speaker are …"
+    // the verb, not the noun (ADR 0011): "Pronouns for the speaker are …"
     {
         let first_verb = toks.iter().position(|t| {
             is_finite_verb(t)
@@ -530,7 +616,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         match (toks.get(j), toks.get(j + 1)) {
             (Some(Tok::PrepV(p) | Tok::PrepN(p)), _) => out.push(format!(
                 "\"{} {p} …\" — the copula takes an adjective or a noun phrase, not a \
-                 prepositional phrase; use a verb: \"the Lexicon contains the pronouns\" (ADR 0003)",
+                 prepositional phrase; use a verb: \"the Lexicon contains the Pronouns\" (ADR 0003)",
                 word(t)
             )),
             (Some(Tok::Adj(a) | Tok::AdjLong(a)), Some(Tok::PrepV(p))) => out.push(format!(

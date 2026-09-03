@@ -1,11 +1,11 @@
-# 0028 — Enumeration: a block that lists things
+# 0028 — Enumeration: a Block that lists things
 
 Date: 2026-09-02
-Status: proposed (tentative). First block-level structure.
+Status: proposed (tentative). First Block-level structure.
 
 ## Context
 
-The repair of the paragraphs turned the list of the pronouns into 9
+The repair of the paragraphs turned the list of the Pronouns into 9
 sentences. The proposal was valid. The proposal was unreadable. Technical
 texts enumerate the members of a set with a list. The language had one
 kind of the structures. The structure was the sentence. The language
@@ -13,8 +13,8 @@ turned a list into a repetition.
 
 ## Decision
 
-An Enumeration is a block. An Enumeration is not a sentence. The block has
-one plain statement. The statement ends with a colon. The block has one
+An Enumeration is a Block. An Enumeration is not a sentence. The Block has
+one plain statement. The statement ends with a colon. The Block has one
 line for every item. The string "- " opens every item.
 
 The items enumerate the last Noun Phrase of the statement. The Noun Phrase
@@ -32,7 +32,7 @@ An item is one Noun Phrase. The language allows 4 kinds of the items:
 
 A clause is not an item. A nested list does not exist.
 
-Every tool reads a block. The block is one unit. The command "just lint" takes a block
+Every tool reads a Block. The Block is one unit. The command "just lint" takes a Block
 in one argument. The corpus keeps the intro with the items. The tool "lint-file" keeps the intro with the items. The extractor of the decisions
 keeps the intro with the items. The repair of the paragraphs keeps the
 intro with the items. Markdown turns a dash into a bullet.
@@ -44,10 +44,10 @@ intro. The intro can be a question in a future design.
 
 ## Consequences
 
-- One block replaces 4 sentences. The Linter checks the number of the
+- One Block replaces 4 sentences. The Linter checks the number of the
   items.
 - The role of the intro is small. The items enumerate the object or
   enumerate the Complement. The reader does not guess the phrase of the
   list.
-- A block has lines. A sentence has one line. The extractor marks the
+- A Block has lines. A sentence has one line. The extractor marks the
   boundary of a line with the symbol "⏎".

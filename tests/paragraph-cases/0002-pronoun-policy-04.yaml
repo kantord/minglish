@@ -534,7 +534,7 @@ proposals:
     words: 20
     terms: 0
     connectives: 0
-  diagnosis: '"the version is recent": WORD: "recent" is not a minglish word | "i have no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the mechanism is for anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "is for …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003)'
+  diagnosis: '"the version is recent": WORD: "recent" is not a minglish word | "i have no anaphora": STYLE: "no" is subject-only — write "… does not <verb> <nouns>" instead (ADR 0014) | "the mechanism is for anaphora": STYLE: "anaphora" — a singular noun needs a determiner: "the anaphora" (mass nouns take "the"); "is for …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the Pronouns" (ADR 0003)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: the project has no anaphora machinery. the project has no discourse machinery. the project does not plan the machinery for version 0.

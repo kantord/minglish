@@ -135,3 +135,285 @@ proposals:
   diagnosis: '"The Grammar states every constraint as a bound": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "The bound limits the weight of a fronted phrase": WORD: "weight" is banned in minglish — write "load" (Cognitive Load) or "size" [all unknown words: weight, fronted] | "If a rule forces a long text, then the rule must earn the length": STYLE: "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015) | "The length is cheaper than the load, but the length is not free": STYLE: this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
   count: 1
   model: deepseek/deepseek-v4-flash
+- text: 'The constraints are bounds, not shape bans. If a rule forces a longer text, then the length must earn the trade: length is cheaper than load, but length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 101.53000000000003
+    words: 31
+    terms: 0
+    connectives: 2
+  diagnosis: '"The constraints are bounds, not shape bans": STYLE: "bans" is transitive in minglish and needs an object; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); "shape" — a singular noun needs a determiner: "the shape" (mass nouns take "the"); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026) | "If a rule forces a longer text, then the length must earn the trade: length is cheaper than load, but length is not free": STYLE: "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); "trade" is a verb in minglish and cannot follow a determiner; a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The constraints are bounds. The constraints do not ban shapes. If a rule forces a longer text, then the length of the text must earn the cost: the length is cheaper than the load, but the length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 2
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 121.07
+    words: 40
+    terms: 0
+    connectives: 2
+  diagnosis: '"If a rule forces a longer text, then the length of the text must earn the cost: the length is cheaper than the load, but the length is not free": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The constraints are bounds. The constraints do not ban shapes. A rule can force a longer text. The expense of the length must earn the trade: the length is cheaper than the load, but the length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 2
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 118.80000000000001
+    words: 39
+    terms: 0
+    connectives: 2
+  diagnosis: '"A rule can force a longer text": STYLE: "force a" — a word mentioned as a word must be quoted: "force \"a\"" (ADR 0018); "force" — a singular noun needs a determiner: "the force" (mass nouns take "the"); "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "The expense of the length must earn the trade: the length is cheaper than the load, but the length is not free": STYLE: "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape. For example, the weight of a fronted Constituent limits the fronting. If a rule forces a longer text, then the rule must earn the trade. A longer text is cheaper than a higher Cognitive Load, but the length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 186.67
+    words: 58
+    terms: 4
+    connectives: 3
+  diagnosis: '"The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "For example, the weight of a fronted Constituent limits the fronting": WORD: "weight" is banned in minglish — write "load" (Cognitive Load) or "size" [all unknown words: weight, fronted, fronting] | "If a rule forces a longer text, then the rule must earn the trade": STYLE: "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); "trade" is a verb in minglish and cannot follow a determiner; "trade" is transitive in minglish and needs an object | "A longer text is cheaper than a higher Cognitive Load, but the length is not free": WORD: "higher" is not a minglish word'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape. The bound is a limit of the Cognitive Load. For example, the size of a fronted Constituent limits the fronting. If a rule forces a longer text than the text of the prior rule, then the rule must earn the cost. A longer text is cheaper than a bigger Cognitive Load, but the length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 0
+    continuity_pairs: 4
+    continuity_ok: 2
+    cost: 231.95000000000002
+    words: 74
+    terms: 5
+    connectives: 4
+  diagnosis: '"The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "The bound is a limit of the Cognitive Load": STYLE: "is … limit" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "limit" is a verb in minglish and cannot follow a determiner | "For example, the size of a fronted Constituent limits the fronting": WORD: "fronted" is banned in minglish — write "at the front": "the text at the front of the sentence" [all unknown words: fronted, fronting] | "If a rule forces a longer text than the text of the prior rule, then the rule must earn the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "A longer text is cheaper than a bigger Cognitive Load, but the length is not free": STYLE: "Cognitive Load" — a singular noun needs a determiner: "the Cognitive Load" (mass nouns take "the"); "bigger" needs the standard: "bigger than <noun phrase>" (ADR 0030); "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape. A bound is a limit. The limit is a size of the Cognitive Load. For example, the size of a Constituent at the front of a sentence limits the fronting. If a rule forces a longer text than the text of the prior rule, then the rule must earn the expense. A longer text is cheaper than a bigger Cognitive Load, but the length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 0
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 255.41000000000003
+    words: 84
+    terms: 5
+    connectives: 4
+  diagnosis: '"The Grammar states every constraint as a bound, so a constraint does not ban a Sentence Shape": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "A bound is a limit": STYLE: "is … limit" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "limit" is a verb in minglish and cannot follow a determiner; "limit" is transitive in minglish and needs an object | "The limit is a size of the Cognitive Load": STYLE: "limit … is" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "limit" is a verb in minglish and cannot follow a determiner | "For example, the size of a Constituent at the front of a sentence limits the fronting": WORD: "fronting" is not a minglish word | "If a rule forces a longer text than the text of the prior rule, then the rule must earn the expense": STYLE: "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "A longer text is cheaper than a bigger Cognitive Load, but the length is not free": STYLE: "Cognitive Load" — a singular noun needs a determiner: "the Cognitive Load" (mass nouns take "the"); "bigger" needs the standard: "bigger than <noun phrase>" (ADR 0030); "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'Every constraint is a bound, not a Ban on a shape: a fronted phrase must be short. When a rule forces longer text, the trade must be earned: length is cheaper than the Cognitive Load, but length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 128.78000000000003
+    words: 40
+    terms: 2
+    connectives: 2
+  diagnosis: '"Every constraint is a bound, not a Ban on a shape: a fronted phrase must be short": WORD: "fronted" is banned in minglish — write "at the front": "the text at the front of the sentence" | "When a rule forces longer text, the trade must be earned: length is cheaper than the Cognitive Load, but length is not free": STYLE: line 1 ("When a rule forces longer text, the trade must be earned: length is cheaper than the Cognitive Load, but length is not free"): a step is one clause with no coordination — unexpected NounPl("forces") at word 2 — no sanctioned sentence structure continues this way'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'Every constraint is a bound, not a Ban on a shape: the text at the front of the sentence must be short. A rule that forces longer text must earn the trade: length is cheaper than the Cognitive Load, but length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 2
+    parsed: 0
+    continuity_pairs: 1
+    continuity_ok: 0
+    cost: 133.62
+    words: 44
+    terms: 2
+    connectives: 2
+  diagnosis: '"Every constraint is a bound, not a Ban on a shape: the text at the front of the sentence must be short": STYLE: "every … not" is scope-ambiguous — for none write "no <noun> …"; for not-all write "some <nouns> do not …" (ADR 0014); "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005) | "A rule that forces longer text must earn the trade: length is cheaper than the Cognitive Load, but length is not free": WORD: "that" is banned in minglish — "that" has 3 senses - as a pointer, repeat the noun you mean (ADR 0002); as a complementizer (shows that <fact>), state the fact in its own sentence: "the report shows the result"; as a relative (the file that fails), split: "the file fails. the file …" (ADR 0010)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'No constraint is a Ban on a shape: the text at the front of the sentence must be short. A rule forces longer text. The rule must earn the trade: length is cheaper than the Cognitive Load, but length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 0
+    continuity_pairs: 2
+    continuity_ok: 1
+    cost: 127.91000000000003
+    words: 42
+    terms: 2
+    connectives: 2
+  diagnosis: '"No constraint is a Ban on a shape: the text at the front of the sentence must be short": STYLE: "is … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "no … must" is ambiguous — for prohibition write, for example, "agents must not check the input" (bare plural + must not, ADR 0014) | "A rule forces longer text": STYLE: "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "The rule must earn the trade: length is cheaper than the Cognitive Load, but length is not free": STYLE: "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "must … earn" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner; this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The constraints are bounds, not bans. A bound limits fronted material by the weight of the material. When a rule forces a longer text, the trade must earn the cost. Length is cheaper than load, but length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 1
+    cost: 129.10000000000002
+    words: 40
+    terms: 0
+    connectives: 2
+  diagnosis: '"The constraints are bounds, not bans": STYLE: "bans" is transitive in minglish and needs an object; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026) | "A bound limits fronted material by the weight of the material": WORD: "fronted" is banned in minglish — write "at the front": "the text at the front of the sentence" [all unknown words: fronted, material, weight] | "When a rule forces a longer text, the trade must earn the cost": STYLE: line 1 ("When a rule forces a longer text, the trade must earn the cost"): a step is one clause with no coordination — unexpected NounPl("forces") at word 2 — no sanctioned sentence structure continues this way | "Length is cheaper than load, but length is not free": STYLE: "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The constraints are bounds. The constraints do not ban shapes. A bound limits the text at the front of the sentence by the weight of the text. When a rule forces a longer text, the trade must earn the cost. The length is cheaper than the load. The length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 153.66
+    words: 52
+    terms: 0
+    connectives: 1
+  diagnosis: '"A bound limits the text at the front of the sentence by the weight of the text": WORD: "weight" is banned in minglish — write "load" (Cognitive Load) or "size" | "When a rule forces a longer text, the trade must earn the cost": STYLE: line 1 ("When a rule forces a longer text, the trade must earn the cost"): a step is one clause with no coordination — unexpected NounPl("forces") at word 2 — no sanctioned sentence structure continues this way'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The constraints are bounds. The constraints do not ban shapes. A bound limits the text at the front of the sentence by the load of the text. If a rule forces a longer text, then the trade must earn the cost. The length is cheaper than the load. The length is not free.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
+    continuity_ok: 2
+    cost: 156.93
+    words: 53
+    terms: 0
+    connectives: 1
+  diagnosis: '"A bound limits the text at the front of the sentence by the load of the text": AMBIGUOUS (42 readings): "of … of" — "of" does not chain; name the inner thing in its own sentence, or drop one level (ADR 0011); split the sentence, or move the prepositional phrase so each attachment is explicit | "If a rule forces a longer text, then the trade must earn the cost": STYLE: "cost" is a verb in minglish — as a noun use "expense"; "cost" is transitive in minglish and needs an object; "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); "trade … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar states every constraint as a bound, not as a ban on a shape. A bound limits the weight of fronted material. When a rule forces longer text, the length is cheaper than the load, but the length is not free. The trade must earn the length.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 4
+    parsed: 0
+    continuity_pairs: 3
+    continuity_ok: 2
+    cost: 147.97000000000003
+    words: 48
+    terms: 1
+    connectives: 2
+  diagnosis: '"The Grammar states every constraint as a bound, not as a ban on a shape": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "A bound limits the weight of fronted material": WORD: "weight" is banned in minglish — write "load" (Cognitive Load) or "size" [all unknown words: weight, fronted, material] | "When a rule forces longer text, the length is cheaper than the load, but the length is not free": STYLE: line 1 ("When a rule forces longer text, the length is cheaper than the load, but the length is not free"): a step is one clause with no coordination — unexpected NounPl("forces") at word 2 — no sanctioned sentence structure continues this way | "The trade must earn the length": STYLE: "trade … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar gives every constraint as a bound, not as a ban on a shape. A bound limits the load of fronted material. When a rule forces longer text, the length is cheaper than the load. The length is not free. The trade must earn the length.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 5
+    parsed: 1
+    continuity_pairs: 4
+    continuity_ok: 3
+    cost: 146.53
+    words: 47
+    terms: 1
+    connectives: 1
+  diagnosis: '"The Grammar gives every constraint as a bound, not as a ban on a shape": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "A bound limits the load of fronted material": WORD: "fronted" is banned in minglish — write "at the front": "the text at the front of the sentence" [all unknown words: fronted, material] | "When a rule forces longer text, the length is cheaper than the load": STYLE: line 1 ("When a rule forces longer text, the length is cheaper than the load"): a step is one clause with no coordination — unexpected NounPl("forces") at word 2 — no sanctioned sentence structure continues this way | "The trade must earn the length": STYLE: "trade … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: The Grammar gives every constraint as a bound. The bound does not ban a shape. The bound limits the load of the text at the front of the sentence. If a rule forces longer text, then the length is cheaper than the load. The length is not free. The trade must earn the length.
+  drops: none
+  valid: false
+  metrics:
+    sentences: 6
+    parsed: 3
+    continuity_pairs: 5
+    continuity_ok: 4
+    cost: 162.01000000000002
+    words: 54
+    terms: 1
+    connectives: 1
+  diagnosis: '"The Grammar gives every constraint as a bound": WORD: "as" is banned in minglish — "as" has too many senses - for a reason write "<result>, because <reason>" (ADR 0026); for a comparison write "is <adjective>er than <noun phrase>" (ADR 0030) | "If a rule forces longer text, then the length is cheaper than the load": STYLE: "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the") | "The trade must earn the length": STYLE: "trade … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: 'The corollaries of the criteria are 2 rules. a constraint is a bound, not a ban on a shape. if a rule forces longer text, then the trade must be earned: length is cheaper than load, but length is not free.'
+  drops: none
+  valid: false
+  metrics:
+    sentences: 3
+    parsed: 1
+    continuity_pairs: 2
+    continuity_ok: 0
+    cost: 129.59000000000003
+    words: 41
+    terms: 0
+    connectives: 3
+  diagnosis: '"a constraint is a bound, not a ban on a shape": STYLE: "ban" is a verb in minglish and cannot follow a determiner; "ban" is transitive in minglish and needs an object; "not" negates the verb only — write "does not <verb>" or "is not <adjective>"; a noun phrase cannot carry "not" (ADR 0005); a comma cannot join 2 clauses — write 2 sentences, or "<clause>, so <clause>" / "<clause>, because <clause>" (ADR 0026) | "if a rule forces longer text, then the trade must be earned: length is cheaper than load, but length is not free": STYLE: "length" — a singular noun needs a determiner: "the length" (mass nouns take "the"); "load" — a singular noun needs a determiner: "the load" (mass nouns take "the"); "longer" needs the standard: "longer than <noun phrase>" (ADR 0030); "rule forces" — noun-noun compounds are not minglish; write "the forces of the rule", or one transparent word (ADR 0015); "text" — a singular noun needs a determiner: "the text" (mass nouns take "the"); "trade … must" — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: "the report shows the result"; "trade" is a verb in minglish and cannot follow a determiner; a Conditional''s clauses carry no "and"/"or" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007); this is an inline list — write an Enumeration block: a statement ending in ":" whose last noun phrase is plural or counted, then one "- item" per line (ADR 0028)'
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The criteria have 2 corollaries:
+    - a constraint is a bound, not a ban on a shape
+    - if a rule forces the text to be longer, then the writer must earn the trade: the length is cheaper than the load, but the length is not free
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 135.11
+    words: 45
+    terms: 0
+    connectives: 4
+  diagnosis: |-
+    "The criteria have 2 corollaries:
+    - a constraint is a bound, not a ban on a shape
+    - if a rule forces the text to be longer, then the writer must earn the trade: the length is cheaper than the load, but the length is not free": STYLE: item 1 ("a constraint is a bound, not a ban on a shape") is not a noun phrase — an item names one thing (ADR 0028)
+  count: 1
+  model: deepseek/deepseek-v4-flash
+- text: |-
+    The criteria have 2 corollaries:
+    - a bound
+    - a trade
+  drops: none
+  valid: false
+  metrics:
+    sentences: 1
+    parsed: 0
+    continuity_pairs: 0
+    continuity_ok: 0
+    cost: 32.050000000000004
+    words: 9
+    terms: 0
+    connectives: 1
+  diagnosis: |-
+    "The criteria have 2 corollaries:
+    - a bound
+    - a trade": STYLE: item 2 ("a trade") is not a noun phrase — an item names one thing (ADR 0028)
+  count: 1
+  model: deepseek/deepseek-v4-flash

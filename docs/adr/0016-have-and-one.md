@@ -22,7 +22,7 @@ pattern matches the decision "0010".
 
 The word "one" has the Form Tag "NUM_SG". The word "one" takes the position
 of a determiner. The word "one" takes a singular noun. The word "one" marks
-one thing. The word "a" does not mark the number. The pronoun "one" is a
+one thing. The word "a" does not mark the number. The Pronoun "one" is a
 Ban. The decision opens the pattern of the numerals. The decision "0022"
 enabled the digits.
 

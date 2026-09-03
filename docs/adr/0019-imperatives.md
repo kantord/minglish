@@ -24,7 +24,7 @@ is the verb. The rule matches the convention of English. The rule does not
 add a token.
 
 The reader is the addressee of an Imperative. The addressee has the status
-of the pronoun "you". The decision "0002" gives the status. A directed command names the agent. A directed command is a future design. The design is the vocative.
+of the Pronoun "you". The decision "0002" gives the status. A directed command names the agent. A directed command is a future design. The design is the vocative.
 
 If a capital opens a sentence, then the error offers 2 Parses. The
 error suggests a Name. The error suggests an Imperative.

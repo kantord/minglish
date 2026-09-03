@@ -196,3 +196,31 @@ written form is the canonical one and spoken forms are derived (yes, by
 default); whether a "medium" is a property of a document or of a renderer.
 Not a language change — a rendering layer over the parse tree.
 
+## Domain model as a knowledge graph (maintainer's direction, 2026-09-03)
+
+Recorded verbatim in substance, to be designed through interviews:
+
+1. **Kind of item.** Every domain-model entry must say whether it is a
+   *unique item* (Lexgen, the Seed) or a *category of things* (Anaphoric
+   Pronoun, Scale Word). A category **must carry a set of examples**.
+2. **Membership.** An item can be a member of a category, and a category can
+   be a member of a category: "Login Page is an Administration Website
+   Feature"; "Administration Website Feature is a Company Asset". The model
+   becomes a graph of is-a links, not a flat glossary.
+3. **Imaginability.** Experts explain how things work (the curse of
+   knowledge); beginners understand how things look. A text is readable and
+   engaging when the reader can imagine the things. The lexicon and the
+   structures should steer toward descriptions that are easy to imagine —
+   concrete nouns, examples, appearance before mechanism. Candidate levers:
+   a required example per category (1); a definition shape that leads with
+   what a thing looks like; a linter signal for abstract-noun density.
+4. **Articles.** Each domain-model item should be a knowledge-base article
+   in its own right, interlinkable with other articles — including articles
+   that do not participate in the language system at all. The generated
+   CONTEXT.md is the seed of that: one entry per term, links by name.
+
+Archetype A21 (definition as an equation) is the first place this bites:
+today's definitions are equations ("the Context Need of a sentence is the
+prior text of the sentence") because the model has no slot for kind,
+examples, or membership.
+

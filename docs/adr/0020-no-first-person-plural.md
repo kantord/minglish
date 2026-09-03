@@ -6,7 +6,7 @@ Status: proposed (tentative)
 ## Context
 
 The word "we" is a big blocker of the Dogfood. The word "our" is a big blocker of the Dogfood. The word "we" is not an Indexical Pronoun. The
-situation resolves the pronoun "I". The situation resolves the pronoun
+situation resolves the Pronoun "I". The situation resolves the Pronoun
 "you". The word "we" carries 2 ambiguities. The word "we" includes the
 reader or excludes the reader. The extent of the group is unknown. A Passive covers the doer. The sentence "We commit the
 generated files" covers the doer. A fiat meaning changes the usage of the word "we" in technical texts.

@@ -82,7 +82,7 @@ right-branching share, and fronted tokens before the main head.
 | the expense of a reversal grows with the Seed, so the maintainers record the decision | 4 | 5 | 2 | 27% | 10 |
 | the agent retries the request, because the test failed | 3 | 4 | 2 | 22% | 6 |
 | the Linter bans every Anaphoric Pronoun: ⏎ - "it" ⏎ - "they" ⏎ - "he" | 4 | 3 | 1 | 25% | 2 |
-| the language allows 4 pronouns: ⏎ - "I" ⏎ - "you" ⏎ - "my" ⏎ - "your" | 5 | 3 | 1 | 22% | 2 |
+| the language allows 4 Pronouns: ⏎ - "I" ⏎ - "you" ⏎ - "my" ⏎ - "your" | 5 | 3 | 1 | 22% | 2 |
 | the first word of the sentence is a verb | 4 | 6 | 1 | 12% | 8 |
 | the 4th file fails | 2 | 2 | 1 | 0% | 3 |
 | the agent deleted 20 million files | 3 | 3 | 1 | 20% | 2 |

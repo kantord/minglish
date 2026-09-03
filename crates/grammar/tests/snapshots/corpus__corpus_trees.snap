@@ -1,5 +1,6 @@
 ---
 source: crates/grammar/tests/corpus.rs
+assertion_line: 31
 expression: snap
 ---
 ### the agent reads the file
@@ -1467,7 +1468,7 @@ open=4 maxdep=3 depth=1 right=25% fronted=2
   he
 )
 
-### the language allows 4 pronouns:
+### the language allows 4 Pronouns:
 - "I"
 - "you"
 - "my"
@@ -1484,7 +1485,7 @@ open=5 maxdep=3 depth=1 right=22% fronted=2
         allows
         (NP h=1
           4
-          pronouns
+          Pronouns
         )
       )
     )

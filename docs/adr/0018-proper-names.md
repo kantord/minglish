@@ -22,7 +22,7 @@ then the Linter merges the 2 words into one Name. If a capitalized word opens a
 sentence, then the Linter folds the word into the Lexicon. If the Lexicon
 does not have the word, then the Linter shows an error. The error suggests an appositive or suggests a quoted span. The Linter does not turn a typo into a
 Name. If a capitalized word has a twin in the Lexicon, then the Linter shows an error. The error names a typo or names a
-Name with a Collision. The word "I" is the pronoun. The word "I" is not a
+Name with a Collision. The word "I" is the Pronoun. The word "I" is not a
 Name.
 
 A quoted span is a Name. A quoted span keeps the case of the identifier. A

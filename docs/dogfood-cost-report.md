@@ -174,7 +174,7 @@ Declared loss: example
 > Triage against UD-EWT shows pronouns are ~2,200 of the OOV tokens — the second-largest closed-class gap.
 
 AFTER (23 words, cost 86.1, **97%** of original) — 3 sentence(s), each parses uniquely ✓, peak-open 4, right-branching 18%
-> Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are pronouns. The pronouns make a big hole in the Coverage.
+> Triage counts the unknown tokens of the corpus. About 2200 unknown tokens are Pronouns. The Pronouns make a big hole in the Coverage.
 
 Declared loss: ranking,citation
 
@@ -182,7 +182,7 @@ Declared loss: ranking,citation
 > But third-person pronouns are anaphoric: resolving "it failed" requires a discourse layer, and our research findings identify cross-sentence reference as exactly where ambiguity reappears after sentences are split.
 
 AFTER (53 words, cost 182.6, **150%** of original) — 5 sentence(s), each parses uniquely ✓, peak-open 5, right-branching 28%
-> An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the pronouns of the sentences.
+> An Anaphoric Pronoun refers to a noun of a prior sentence. The reader must find the noun. The sentence "it failed" needs a Discourse Layer. The file "docs/research/cnl-design-findings.md" describes the results of the research. If a tool splits a sentence into 2 sentences, then the ambiguity reappears in the Pronouns of the sentences.
 
 Declared loss: emphasis,discourse-link
 

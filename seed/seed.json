@@ -1476,14 +1476,6 @@
     "advice": "\"as\" has too many senses - for a reason write \"<result>, because <reason>\" (ADR 0026); for a comparison write \"is <adjective>er than <noun phrase>\" (ADR 0030)"
   },
   {
-    "lemma": "pronoun",
-    "category": "NOUN",
-    "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
-    "forms": {
-      "plural": "pronouns"
-    }
-  },
-  {
     "lemma": "discourse",
     "category": "NOUN",
     "note": "project jargon surfaced by the ADR 0002 paragraph run (2026-09-02)",
@@ -2379,17 +2371,6 @@
     "note": "needed by domain-model definitions (ADR 0027)",
     "forms": {
       "plural": "declarations"
-    }
-  },
-  {
-    "lemma": "block",
-    "category": "NOUN",
-    "waive": [
-      "VERB"
-    ],
-    "note": "ADR 0028",
-    "forms": {
-      "plural": "blocks"
     }
   },
   {
@@ -7074,5 +7055,15 @@
     "forms": {
       "plural": "sciences"
     }
+  },
+  {
+    "lemma": "fewer",
+    "category": "BANNED",
+    "advice": "comparatives of a quantity are deferred (ADR 0030) - write \"a small number of <nouns>\", or a Comparative of an adjective with \"than\""
+  },
+  {
+    "lemma": "less",
+    "category": "BANNED",
+    "advice": "comparatives of a quantity are deferred (ADR 0030) - write \"a small <noun>\", or a Comparative of an adjective with \"than\""
   }
 ]

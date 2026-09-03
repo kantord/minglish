@@ -24,6 +24,17 @@ pub struct SeedEntry {
     /// minglish — self-linted, shown to writers and to the repair model.
     #[serde(default)]
     pub definition: String,
+    /// Domain-model entries (ADR 0036): "unique" (one thing: Lexgen, the Seed)
+    /// or "category" (a kind of thing: Anaphoric Pronoun). Nouns and names.
+    #[serde(default)]
+    pub kind: String,
+    /// Members or minglish sentences that show the thing; required for a
+    /// category (imaginability: a beginner sees an example before a rule).
+    #[serde(default)]
+    pub examples: Vec<String>,
+    /// The category this term is a member of (is-a), by lemma.
+    #[serde(default)]
+    pub member_of: String,
     /// True for entries loaded from domain/model.json (never serialized).
     #[serde(skip)]
     pub domain: bool,
@@ -117,6 +128,19 @@ pub fn load_with(path: &str, domain: bool) -> Result<Vec<SeedEntry>, String> {
         }
         if domain && e.definition.trim().is_empty() {
             return Err(format!("domain term \"{}\" needs a `definition`", e.lemma));
+        }
+        if domain && matches!(e.category.as_str(), "NOUN" | "NAME") {
+            match e.kind.as_str() {
+                "unique" | "category" => {}
+                "" => return Err(format!("domain term \"{}\" needs `kind`: \"unique\" or \"category\" (ADR 0036)", e.lemma)),
+                other => return Err(format!("domain term \"{}\": unknown kind \"{other}\"", e.lemma)),
+            }
+            if e.kind == "category" && e.examples.is_empty() {
+                return Err(format!("category \"{}\" needs at least one example (ADR 0036)", e.lemma));
+            }
+        }
+        if !domain && (!e.kind.is_empty() || !e.examples.is_empty() || !e.member_of.is_empty()) {
+            return Err(format!("\"{}\": `kind`/`examples`/`member_of` belong in domain/model.json", e.lemma));
         }
         if !domain && !e.definition.is_empty() {
             return Err(format!("\"{}\": `definition` belongs in domain/model.json", e.lemma));

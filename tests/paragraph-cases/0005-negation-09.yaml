@@ -58,19 +58,15 @@ proposals:
   drops: none
   valid: false
   metrics:
-    sentences: 2
-    parsed: 1
-    continuity_pairs: 1
+    sentences: 6
+    parsed: 4
+    continuity_pairs: 5
     continuity_ok: 1
     cost: 141.86
     words: 43
     terms: 2
     connectives: 1
-  diagnosis: |-
-    "The Grammar defines a category. The category is the fence. The Grammar defines the rule of the scope. The tool Triage does not count the rule of the scope. Triage counts 3 words:
-    - "do"
-    - "does"
-    - "not"": WORD: "category" is not a minglish word — "Category" is a defined term — write it capitalized (see CONTEXT.md) [all unknown words: category, -]
+  diagnosis: '"The Grammar defines a category": WORD: "category" is not a minglish word — "Category" is a defined term — write it capitalized (see CONTEXT.md) | "The category is the fence": WORD: "category" is not a minglish word — "Category" is a defined term — write it capitalized (see CONTEXT.md)'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Linter checks the Grammar. the Grammar defines the fence. the Grammar defines the scope rule. the Grammar defines every Sentence Shape. the triage checks the tokens. the triage accepts "do". the triage accepts "does". the triage accepts "not". the triage accepts any word of the Lexicon. the triage counts the tokens. the coverage of the Lexicon is a proxy.

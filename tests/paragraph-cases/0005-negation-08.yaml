@@ -102,7 +102,7 @@ proposals:
     words: 33
     terms: 7
     connectives: 0
-  diagnosis: '"the Function Word is not in the Copula": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Negation": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the pronouns" (ADR 0003) | "the Function Word is not in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
+  diagnosis: '"the Function Word is not in the Copula": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the Pronouns" (ADR 0003) | "the Function Word is not in the Negation": STYLE: "is in …" — the copula takes an adjective or a noun phrase, not a prepositional phrase; use a verb: "the Lexicon contains the Pronouns" (ADR 0003) | "the Function Word is not in the Modal": WORD: "Modal" is not a minglish word — minglish words are lowercase ("modal"); a name that equals a word needs quotes'
   count: 1
   model: deepseek/deepseek-v4-flash
 - text: The Grammar adds the word "does" and the word "not". The Grammar adds the word "does" and the word "not" to one Sentence Shape.

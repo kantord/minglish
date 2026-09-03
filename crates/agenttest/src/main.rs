@@ -433,7 +433,9 @@ fn build_system_prompt() -> String {
                 } else {
                     lemma.to_string()
                 };
-                out.push_str(&format!("- {shown} ({}): {def}\n", cat.to_lowercase()));
+                let ex: Vec<&str> = e["examples"].as_array().into_iter().flatten().filter_map(|x| x.as_str()).filter(|x| !x.contains('\n')).collect();
+                let ex = if ex.is_empty() { String::new() } else { format!(" Examples: {}.", ex.join("; ")) };
+                out.push_str(&format!("- {shown} ({}): {def}{ex}\n", cat.to_lowercase()));
             }
         }
     }

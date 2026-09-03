@@ -32,8 +32,8 @@ original_metrics:
   words: 5
   terms: 0
   connectives: 0
-verdict: unreviewed
-note: does not sound like human language
+verdict: needs-fix
+note: better than before; some parts still unnatural and hard to read
 best: the system does not produce ambiguities of the reference. the system does not have a layer of the discourse, so the system does not build a layer of the discourse.
 proposals:
 - text: the system has zero reference ambiguity by construction. the system has no discourse layer to build.
