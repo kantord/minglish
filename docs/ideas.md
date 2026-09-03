@@ -224,3 +224,39 @@ today's definitions are equations ("the Context Need of a sentence is the
 prior text of the sentence") because the model has no slot for kind,
 examples, or membership.
 
+## Parseability derives an inter-document semantic graph (2026-09-03)
+
+Every minglish sentence has exactly one parse (ADR 0014's guarantee), and
+every domain-model term is a named node with a `kind`, `examples`, and a
+`member_of` link (ADR 0036). That combination is more than a linter: a
+document's parse trees are structured data, so a tool could walk every ADR
+and every definition and extract a graph automatically, rather than one
+maintained by hand.
+
+Candidate edges, all derivable from the parse tree plus the lexicon, no
+new annotation required:
+- **is-a / member-of**: already explicit via `member_of`, but also
+  recoverable from copula sentences ("X is a Y") anywhere in the corpus,
+  not only in domain/model.json.
+- **mentions**: a document's parse trees name a Capitalized term → an edge
+  from the document to that term's domain-model node (what CONTEXT.md's
+  "links by name" gestures at today, but not extracted as data).
+- **decides / extends / supersedes**: ADRs already say this about each
+  other in prose ("Extends ADR 0003", "supersedes …") — a fixed sentence
+  shape for cross-ADR relations would make this a queryable edge instead
+  of free text.
+- **argument structure**: minglish's fixed slot grammar (subject, verb,
+  object, PP) means a sentence like "the Linter rejects the Rejected
+  Sense" is already a (subject, predicate, object) triple with no
+  extraction ambiguity — closer to RDF than free English ever gets.
+
+This would turn the knowledge base into something closer to a queryable
+graph than a set of cross-linked pages: "what depends on ADR 0014", "which
+terms have no example", "which ADRs mention Copula" become graph queries
+over parse output, not `grep`. Not a language change — a tool that reads
+the existing parse trees and the domain model and emits a graph (nodes:
+documents + terms; edges: the four kinds above). Natural next step after
+the domain-model schema (ADR 0036) settles: a `just graph` command that
+walks `docs/adr/*.md` and `domain/model.json` through `grammar::parse_text`
+and prints edges, likely as a first cut before any storage or UI question.
+
