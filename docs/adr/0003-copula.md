@@ -6,8 +6,8 @@ Status: proposed (tentative — same review point as ADR 0002; rewritten in ming
 ## Context
 
 Triage counts about 850 tokens of the word "be" in the corpus, so the word
-"be" is the main hole in the Coverage. A general text cannot avoid the
-Copula and the sentence "the file is old" is one example.
+"be" is the main hole in the Coverage. Texts cannot avoid the Copula and
+the sentence "the file is old" is one example.
 
 The whole Paradigm of "be" adds 4 Surface Forms:
 - "was"
