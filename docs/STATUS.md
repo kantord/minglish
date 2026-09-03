@@ -1,7 +1,8 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0039: "without" as a Verb Preposition).
-Everything a fresh agent needs that is not
+Last updated: 2026-09-04 (ADR 0040: coordinated noun phrases stay
+banned — a documented LALR finding, not an oversight). Everything a
+fresh agent needs that is not
 derivable from the code, ADRs, or git history.
 
 ## Where everything lives
@@ -15,7 +16,7 @@ derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0039` — every language and policy decision, each citing its
+- `docs/adr/0001–0040` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -31,8 +32,9 @@ derivable from the code, ADRs, or git history.
   evaluation. `docs/language-gaps.md` — ranked tally of missing words and
   constructions from the 2026-09-03 full-corpus naturalness rewrite;
   clause-level "but" (ADR 0037), coordination inside a causal/conditional
-  clause (ADR 0038), and "without" (ADR 0039) are closed — coordinated
-  noun phrases as subject/object is the top open item now.
+  clause (ADR 0038), "without" (ADR 0039), and coordinated noun phrases
+  (ADR 0040, closed as a deliberate non-build) are resolved. What is left
+  is single missing words ("only", "other"), not constructions.
 - `docs/prejudge.md` / `just prejudge` — blind sub-agent pre-judgement of
   paragraph repairs (naturalness score; telephone game: explain-then-rate
   fidelity) recorded under `prejudge:` in each case, docs/prejudge-report.md.

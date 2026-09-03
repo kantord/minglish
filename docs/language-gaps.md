@@ -25,9 +25,24 @@ hitting a wall while trying to say a true thing, not from reading examples.
 - ~~**"without"**~~ (7). **Closed 2026-09-04, ADR 0039.** A plain
   `PREP_V` add, the exact slot "with" already had (ADR 0011) — no grammar
   change. All 7 original wanted sentences now parse verbatim.
-- **Coordinated noun phrases as subject/object** (ADR 0004 already fences
-  this; the top open construction gap now that "but", the causal/
-  conditional gap, and "without" are closed).
+- ~~**Coordinated noun phrases as subject/object**~~. **Closed
+  2026-09-04, ADR 0040 — the Ban stays, deliberately.** Investigated
+  building the exact unambiguous design ADR 0004 already specified (every
+  conjunct keeps its own determiner and Modifier — "the old file and the
+  old report", never the elliptical "the old file and report" where the
+  Scope Ambiguity actually lives). That design is linguistically sound;
+  it isn't the problem. The problem is the parser: the noun-phrase
+  sub-grammar is reused across roughly a dozen positions (subject,
+  object, PP objects, appositives, copula complements…), far more than
+  `Clause` was for ADR 0037/0038, and every one of 3 different grammar
+  designs — reusing the shared NP nonterminal directly, reusing the
+  already-private of-PP-free variant, and a fully private conjunct
+  nonterminal built from scratch — produced genuine reduce/reduce LALR
+  conflicts, not the shift/reduce kind the earlier two ADRs resolved by
+  restructuring. Verified empirically each time, not assumed. The
+  existing alternative (repeat the verb: "the mechanism stores a word
+  and stores a message") stays the recommended, already-safe way to say
+  this.
 
 ## High-frequency missing words
 
