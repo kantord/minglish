@@ -5,35 +5,44 @@ Status: proposed (tentative — same review point as ADR 0002–0005, 0007)
 
 ## Context
 
-A policy needs normative sentences. An instruction needs normative
-sentences. A normative sentence has one force. The language has 4 forces:
+A policy needs normative sentences and an instruction needs normative
+sentences. Normative sentences carry 4 forces:
 - the obligation
 - the Prohibition
 - the permission
 - the ability
 
-A modal of English is ambiguous. The word "may" marks a permission or marks
-a possibility. The word "can" marks an ability or marks a permission. The
-word "should" opens a scale of the obligation. The word "will" marks the
-Tense. The word "would" marks the Tense. If an ambiguous word does not have
-a synonym, then the decision "0008" bans the word. A modal is dense. One
-token carries the whole force. The decision "0006" prefers a dense text.
+The modals of English are ambiguous. The word "may" marks a permission or
+marks a possibility. The word "can" marks an ability or marks a permission.
+The obligation of "must" is stronger than the obligation of "should", so
+the word "should" opens a scale of the obligation. The word "will" marks
+the Tense and the word "would" marks the Tense. The decision "0008" gives
+the rule. If the senses of an ambiguous word do not have a synonym, then
+the word is a Ban. The word is not a Redirect. A modal is dense, because
+one token carries the whole force. The density is precise and is
+cheap. The decision "0006" prefers a dense text, so a modal follows the
+decision.
 
 ## Decision
 
-The language enables 3 modals:
+The language allows 3 modals:
 - "must"
 - "can"
 - "cannot"
 
-The Form Tag of "must" is "MODAL_MUST". The word "must" marks an
-obligation. The phrase "must not" marks a Prohibition. The Form Tag of
-"can" is "MODAL_CAN". The word "can" marks an ability or marks a
-permission. The language merges the 2 senses. The Form Tag of "cannot" is
-"MODAL_CAN_NEG". The word "cannot" is one token.
+The word "must" carries the Form Tag "MODAL_MUST" and marks an obligation.
+The phrase "must not" marks a Prohibition, because the word "not" follows
+the modal. The word "can" carries the Form Tag "MODAL_CAN". The word marks an
+ability or marks a permission. The maintainers merged the 2 senses with a
+fiat decision, so the word "can" has one meaning. The meaning covers the
+phrase "is able to" and covers the phrase "is allowed to". The word
+"cannot" carries the Form Tag "MODAL_CAN_NEG". The common orthography does
+not separate the word "can" from the word "not", so the word "cannot" is
+one token.
 
-The language bans the word "may". A writer replaces a permission with the
-word "can". A writer restructures a possibility into a Conditional.
+The language bans the word "may". The word "can" replaces a permission. A
+writer restructures a possibility into a Conditional or adds the word
+"sometimes".
 
 The maintainers deferred 6 words:
 - "should"
@@ -43,15 +52,21 @@ The maintainers deferred 6 words:
 - "might"
 - "could"
 
-A modal takes a verb. A modal does not take a modal. The decision "0032" allows the phrase "must be" and allows the phrase "can be". The phrase "must be old" is legal.
+The scale of the obligation defers the word "should". The Tense defers the
+word "will" and defers the word "would".
+
+A modal takes a base verb and does not take a modal. The first version of
+the language did not allow the phrase "must be old", because a modal did
+not take a Copula. The decision "0032" allows a Copula after a modal, so
+the phrase "must be old" became legal.
 
 ## Consequences
 
-- The language says an obligation with one token. The language says a
-  Prohibition with one token. The language says a permission with one
-  token. The language says an ability with one token. Every token has one
+- The language says every force with one token. Every token has one
   meaning.
-- The language cannot say a possibility. The Gap is acceptable. If the
-  corpus needs a possibility, then the maintainers revisit the Gap.
-- The corpus gives the Form Tag "AUX" to a modal. Triage accepts the Form
-  Tag "AUX" for a modal.
+- The language does not mark a possibility with one token, so a
+  possibility is a Gap. The maintainers accept the Gap. If the corpus
+  needs a possibility, then the maintainers revisit the Gap with the
+  evidence.
+- The standard UD gives the Form Tag "AUX" to every modal of the corpus.
+  Triage maps the Form Tag "AUX" to a modal, so Triage accepts the token.

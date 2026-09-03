@@ -5,20 +5,29 @@ Status: proposed (tentative)
 
 ## Context
 
-The file "docs/rewrite-archetypes.md" has the archetype "A3". The archetype "A3" is the Comparative. The rewrites dropped 5 Comparatives. The rewrite turned the sentence "length is cheaper than load" into 2 absolute sentences. The maintainer said one thing. The language allows the Comparative. Every adjective needs a definition of the shape.
+The archetype "A3" of the file "docs/rewrite-archetypes.md" is the
+Comparative. The rewrites dropped 5 Comparatives and turned the sentence
+"length is cheaper than load" into 2 absolute sentences. The maintainer
+allowed the Comparative with one condition. Every adjective must declare
+the shape of the Comparative in the Seed.
 
 ## Decision
 
-A Comparative is a Complement. A Comparative has a mandatory standard.
-The Sentence Shape is the phrase "<subject> is <comparative> than <noun phrase>". The sentence "the load is heavier than the length" is one
-example. If a Comparative does not have the standard, then the Linter rejects the Comparative. The standard is explicit, so a reader can check the claim.
+A Comparative is a Complement with a mandatory standard. The Sentence Shape
+is the phrase "<subject> is <comparative> than <noun phrase>". The sentence
+"the load is heavier than the length" is one example. If a writer drops the
+standard, then the Linter rejects the sentence. The standard is explicit, so
+a reader can check the claim.
 
-Lexgen decides the shape of an adjective. A short adjective has one
-syllable. A short adjective inflects. The word "bigger" is one example. The
-word "easier" is one example. The Form Tag of the shape is "ADJ_CMP". The slot "comparative" overrides the shape. The value "none" removes the shape. A long
-adjective uses the word "more". The phrase "more transparent than the
-Compound" is one example. If a writer writes "more big", then the Linter
-maps the phrase to the word "bigger".
+Lexgen decides the shape of an adjective. If an adjective has one syllable,
+then the adjective is short. If an adjective of 2 syllables ends with "y",
+then the adjective is short. A short adjective inflects. The word "big"
+becomes "bigger" and the word "easy" becomes "easier". The Form Tag of
+"bigger" is "ADJ_CMP". An entry of the Seed can override the shape with the
+slot "comparative". The value "none" removes the shape. A long adjective
+uses the word "more". The phrase "more transparent than the Compound" is
+one example. If a writer writes "more big", then the Linter maps the phrase
+to the word "bigger".
 
 The maintainers deferred 5 questions:
 - the Modifier
@@ -27,12 +36,16 @@ The maintainers deferred 5 questions:
 - the superlatives
 - the verb
 
-The phrase "a bigger file" puts a Comparative into a Modifier. The phrase "costs more than" puts a Comparative on a verb.
+The Modifier holds a Comparative in the phrase "a bigger file". The verb
+holds a Comparative in the phrase "costs more than".
 
 ## Consequences
 
-- If a comparison was the claim, then the maintainers can revert the
+- If the comparison carried the claim, then the maintainers can revert the
   rewrite of the archetype "A3".
-- Every adjective gains one Surface Form at the maximum. The attestation covers the shape. The script "seedcheck.py" acknowledges a rare shape.
-- A Comparative is a distinct shape of the Copula. The rule of the decision
-  "0003" gains one addition.
+- A short adjective gains one Surface Form and a long adjective does not
+  gain a Surface Form. The data must attest the new Surface Form. If the
+  data does not attest a rare Surface Form, then the script "seedcheck.py"
+  writes the Surface Form into the Seed.
+- A Comparative is a distinct shape of the Copula, so the rule of the
+  decision "0003" gains one clause.

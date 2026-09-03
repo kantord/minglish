@@ -5,73 +5,86 @@ Status: accepted (governing principle for all grammar-tier decisions; rewritten 
 
 ## Context
 
-The Grammar needs a rule for a decision. The research grounds the
-difficulty of a sentence in the Cognitive Load. The file
-`docs/research/cnl-design-findings.md` describes the research. The 3
-metrics predict the difficulty. A rule of the style does not predict the
-difficulty.
+The decisions of the Grammar need a rule, because 2 structures can tie.
+The file `docs/research/cnl-design-findings.md` records the research. The
+research grounds the difficulty of a sentence in the Cognitive Load. The
+Cognitive Load has 3 metrics:
+- the Open Dependencies
+- the Dependency Length
+- the Embedding Depth
 
-A Ban of a shape overshoots. One sentence had a heavy branch. The sentence
-carried a small load, so the sentence was easy. A good constraint puts a
-bound on the load. A good constraint does not ban a shape.
+The comfortable bound is 4 Open Dependencies. The 3 metrics predict the
+difficulty of a sentence and beat every rule of the style.
 
-A reader has the profile of a Language Model. A reader reads a
-sentence in the order of the words. A Language Model reads a sentence in
-the order of the words. The reader has a small memory. The Language Model
-has a small memory.
+A categorical Ban of a shape overshoots. One sentence of the research
+carried a heavy branch at the front but the sentence was effortless. The
+load of the sentence was small, so the correct constraint is a bound on
+the load. A Ban of a shape is the wrong constraint.
+
+The profile of a person matches the profile of a Language Model. The 2
+readers integrate a sentence in the order of the words and have a small
+memory.
 
 ## Decision
 
-The maintainers weigh 5 criteria:
+The maintainers weigh 5 criteria for every decision of the syntax. A
+criterion outranks every later criterion.
+
+The first criterion is the Cognitive Load. The maintainers prefer the
+structure with a small Cognitive Load. The rules of the branching help a
+person and help a Language Model. The results of the science ground the
+rules, so the rules do not follow a taste. A tradition does not ground a
+rule.
+
+The second criterion is the familiarity. If the ideal structure is not
+available, then the maintainers choose the common construction of
+English. A familiar construction helps the reader but a surprise costs the
+reader.
+
+The third criterion is the Context Need. A sentence must have a small
+Context Need, so the language bans the Anaphoric Pronouns. The criterion
+explains the repetition of the nouns. The Grammar pins the scope of a
+word, because the scope must not depend on the context.
+
+The 4th criterion is the density. The target is a dense text. A dense text
+carries a precise meaning and is cheap. The maintainers prefer the short
+formulation inside the bounds of the load. A verbose text is not free,
+because the noise of the padding causes an ambiguity. If a rule adds
+words, then the rule must remove an ambiguity. The repetition of the nouns
+earns the words and the mandatory word "then" earns the word. If a rule
+adds the padding, then the rule violates the 4th criterion.
+
+The 5th criterion is the expressiveness. A natural text is a real goal. A
+text of Minglish must be pleasant and must not be robotic. The 4 prior
+criteria outrank the expressiveness. The comparison of 2 valid
+formulations uses 3 criteria:
 - the Cognitive Load
-- the familiarity
-- the Context Need
 - the density
-- the expressiveness
+- the Context Need
 
-The Cognitive Load outranks the familiarity. The familiarity outranks the
-Context Need. The Context Need outranks the density. The density outranks
-the expressiveness.
+If the 2 formulations tie, then the maintainers choose the expressive
+formulation. The maintainers do not trade the precision for the charisma.
+The clarity outranks the charisma.
 
-If a structure has a small Cognitive Load, then the structure wins. The
-rules of the branching help a reader and help a Language Model. The rules do not follow a taste.
-The rules do not follow a tradition.
+A constraint is a bound on the load and is not a Ban of a shape. The
+Grammar limits the load at the front of a sentence and does not ban a
+shape. If a rule requires a long text, then the rule must earn the words.
+The length is cheaper than the load but is not free.
 
-If the ideal branching is not available, then the maintainers choose the
-common construction of English. A familiar construction helps the reader.
-A surprise costs the reader.
-
-A sentence needs a small context. The rule explains the Ban of the
-Anaphoric Pronouns. The rule explains the repetition of the nouns. The rule
-explains the rule of the scope.
-
-The target is a dense text. A dense text carries a precise meaning. The
-maintainers prefer the short formulation inside the bounds. A long text is
-not free. A verbose text is noisy. The noise causes ambiguities. If a
-rule adds words, then the rule must remove an ambiguity. The repetition of
-the nouns removes an ambiguity. The word "then" removes an ambiguity.
-
-The expressiveness is a real goal. A text of Minglish is pleasant. A text of
-Minglish is not robotic. The 4 criteria outrank the
-expressiveness. If 2 formulations tie on the 4 criteria, then the
-maintainers choose the expressive formulation. The maintainers do not
-trade the precision for the charisma.
-
-A constraint is a bound. A constraint is not a Ban of a shape. If a rule
-adds words, then the rule must earn the words. The maintainers accept a
-long text for a small load.
-
-The primary tool is the set of the Sentence Shapes. The Grammar builds the
-comprehension into the Sentence Shapes. Every Sentence Shape puts the head at the front of the sentence. The language cannot say a bad shape. The score of a sentence is the
-secondary tool. The score verifies the claim. The score
-monitors the load. The score gathers the evidence for a future bound. The score
-does not protect the readability of the text.
+The Sentence Shapes are the primary tool. The Sentence Shapes put the head
+at the front of a sentence, so a bad shape does not exist in the language.
+The Grammar excludes a bad shape and does not weigh the bad shape. The
+score of a sentence is the secondary tool. The score verifies the claim of
+the Sentence Shapes and monitors the load of a text. The score gathers the
+evidence for a future bound but does not protect the readability of a
+text.
 
 ## Consequences
 
-- Every future decision of the Grammar must justify the choice against the
-  5 criteria.
-- The research defines the metrics of the Cognitive Load. The tool
-  "parse-report" measures the metrics on the Parse of a sentence.
-- If a natural formulation conflicts with an easy formulation, then the easy
-  formulation wins. The familiarity limits the loss.
+- The maintainers must justify every future decision of the Grammar
+  against the 5 criteria. The order of the criteria is strict.
+- The research defines the 3 metrics of the Cognitive Load. A future tool
+  can measure the 3 metrics on the Parse of a sentence.
+- If a natural formulation conflicts with an easy formulation, then the
+  easy formulation wins. The second criterion limits the loss of the
+  naturalness.

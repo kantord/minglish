@@ -4,44 +4,44 @@
 
 | ADR | parse rate |
 |---|---|
-| 0001-generated-lexicon-from-curated-seed.md | 69/69 |
-| 0002-pronoun-policy.md | 29/29 |
-| 0003-copula.md | 36/36 |
-| 0004-coordination.md | 33/33 |
-| 0005-negation.md | 43/43 |
-| 0006-comprehension-first-syntax.md | 64/64 |
-| 0007-conditionals.md | 32/32 |
-| 0008-redirect-vs-ban.md | 41/41 |
-| 0009-modals.md | 41/41 |
-| 0010-simple-past.md | 40/40 |
-| 0011-pp-attachment.md | 32/32 |
-| 0012-pair-validity.md | 33/33 |
-| 0013-generic-bare-plurals.md | 38/38 |
-| 0014-universal-and-no.md | 65/65 |
-| 0015-compounds-transparency.md | 52/52 |
-| 0016-have-and-one.md | 30/30 |
-| 0017-existential-some.md | 24/24 |
-| 0018-proper-names.md | 56/56 |
-| 0019-imperatives.md | 38/38 |
-| 0020-no-first-person-plural.md | 31/31 |
-| 0021-but.md | 33/33 |
-| 0022-digits.md | 63/63 |
-| 0023-per-sense-synonyms.md | 57/57 |
-| 0024-percent.md | 41/41 |
-| 0025-approximation.md | 30/30 |
-| 0026-causal-connectives.md | 61/61 |
-| 0027-domain-model.md | 81/81 |
-| 0028-enumeration.md | 49/49 |
-| 0029-ordinals-and-scales.md | 49/49 |
-| 0030-comparatives.md | 33/33 |
-| 0031-complement-phrases.md | 24/24 |
-| 0032-modal-be.md | 30/30 |
-| 0033-time-prepositions.md | 22/22 |
-| 0034-step-block.md | 48/48 |
-| 0035-become.md | 23/23 |
-| 0036-domain-model-schema.md | 41/41 |
+| 0001-generated-lexicon-from-curated-seed.md | 54/54 |
+| 0002-pronoun-policy.md | 25/25 |
+| 0003-copula.md | 28/28 |
+| 0004-coordination.md | 24/24 |
+| 0005-negation.md | 24/24 |
+| 0006-comprehension-first-syntax.md | 58/58 |
+| 0007-conditionals.md | 21/21 |
+| 0008-redirect-vs-ban.md | 37/37 |
+| 0009-modals.md | 38/38 |
+| 0010-simple-past.md | 31/31 |
+| 0011-pp-attachment.md | 33/33 |
+| 0012-pair-validity.md | 41/41 |
+| 0013-generic-bare-plurals.md | 39/39 |
+| 0014-universal-and-no.md | 45/45 |
+| 0015-compounds-transparency.md | 61/61 |
+| 0016-have-and-one.md | 35/35 |
+| 0017-existential-some.md | 21/21 |
+| 0018-proper-names.md | 43/43 |
+| 0019-imperatives.md | 31/31 |
+| 0020-no-first-person-plural.md | 27/27 |
+| 0021-but.md | 25/25 |
+| 0022-digits.md | 52/52 |
+| 0023-per-sense-synonyms.md | 61/61 |
+| 0024-percent.md | 31/31 |
+| 0025-approximation.md | 20/20 |
+| 0026-causal-connectives.md | 52/52 |
+| 0027-domain-model.md | 57/57 |
+| 0028-enumeration.md | 37/37 |
+| 0029-ordinals-and-scales.md | 29/29 |
+| 0030-comparatives.md | 28/28 |
+| 0031-complement-phrases.md | 20/20 |
+| 0032-modal-be.md | 21/21 |
+| 0033-time-prepositions.md | 15/15 |
+| 0034-step-block.md | 31/31 |
+| 0035-become.md | 18/18 |
+| 0036-domain-model-schema.md | 32/32 |
 
-**Aggregate: 1512/1512 sentences (100%)**
+**Aggregate: 1245/1245 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

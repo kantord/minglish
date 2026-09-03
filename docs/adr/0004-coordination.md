@@ -5,17 +5,22 @@ Status: proposed (tentative — same review point as ADR 0002/0003; rewritten in
 
 ## Context
 
-Triage counts about 550 tokens of the word "and" in the corpus. Triage
-counts about 77 tokens of the word "or" in the corpus. The 2 words make a
-big hole in the Coverage.
+Triage counts about 550 tokens of the word "and" and counts about 77
+tokens of the word "or" in the corpus. The Lexicon does not contain the 2
+Function Words, so the 2 words hurt the Coverage.
 
-The scope of a Coordination causes big ambiguities in English. The phrase
-"old men and women" is ambiguous. The phrase "the sensor and the valve in
-the cabinet" is ambiguous. The Grammar decides the scope. The token "and"
-is not ambiguous. The token "or" is not ambiguous.
+The scope of a Coordination causes a bad Scope Ambiguity in English. The
+ambiguity has 2 examples:
+- "old men and women"
+- "the sensor and the valve in the cabinet"
 
-Triage counts about 82 tokens of the word "but". The word "but" is
-different, because "but" marks a contrast. A contrast is not a claim.
+The Grammar decides the scope of a Coordination, so the 2 words are not
+ambiguous. The language needs the 2 words.
+
+Triage counts about 82 tokens of the word "but" but the word "but" marks a
+contrast. A contrast is a meaning of the discourse, so the meaning of "but"
+is bigger than a claim. The word "but" is the first word with a meaning of
+the discourse.
 
 ## Decision
 
@@ -23,22 +28,24 @@ The language enables 2 conjunctions:
 - "and"
 - "or"
 
-The Form Tag of "and" is "CONJ". The Form Tag of "or" is "CONJ". The
-language has 2 conjunctions. The maintainers deferred the word "but". The
-decision "0021" enabled the word "but".
+The Category of the 2 conjunctions is "CONJ". The maintainers deferred the
+word "but" and deferred every different conjunction. The later decision
+"0021" enabled the word "but".
 
-The Grammar enforces 3 rules. A Coordination joins 2 phrases of one
-Category. A Modifier does not cover a Coordination. Every Conjunct carries
-the Modifiers of the Conjunct. The phrase "the old files and the old
-reports" is correct. The phrase "the old files and reports" is not correct.
-A Prepositional Phrase does not cover a Coordination. A Prepositional Phrase
-attaches to one Conjunct.
+The decision records 3 rules for a future Grammar, so the Linter cannot
+enforce the rules before the Grammar. The first rule limits a Coordination
+to phrases of one Category. The second rule keeps a Modifier inside one
+Conjunct, so the writer repeats the Modifiers for every Conjunct. The
+language allows the phrase "the old files and the old reports" and bans the
+phrase "the old files and reports". The third rule keeps a Prepositional
+Phrase inside one Conjunct, so the writer repeats the Prepositional Phrase.
 
 ## Consequences
 
-- The language can say a compound statement. The language can say an
-  alternative.
-- The rules add words to a text. The words are the expense of a clear
-  scope. The rules match the Ban of the Anaphoric Pronouns.
-- The Grammar enforces the rules. Triage does not see the scope, because
-  Triage checks the tokens.
+- The language can say a compound statement and can say an alternative.
+- The second rule adds words to a text, because the writer repeats the
+  Modifiers. The writer pays the words for a clear scope. The second rule
+  matches the Ban of the Anaphoric Pronouns, because the writer repeats the
+  noun for the Ban.
+- Triage accepts every token of the 2 words, because Triage does not see the
+  scope. No tool can measure the 3 rules before the Grammar.

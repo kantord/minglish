@@ -27,7 +27,15 @@ derivable from the code, ADRs, or git history.
 - `justfile` — check / showcase / lint / agenttest / autofix /
   autofix-paragraphs (paragraph repair flow, `tests/paragraph-cases/`) targets.
 - `docs/review-checklist.md` — known failure types to check in every
-  evaluation.
+  evaluation. `docs/language-gaps.md` — ranked tally of missing words and
+  constructions from the 2026-09-03 full-corpus naturalness rewrite;
+  clause-level "but" and coordination inside a causal/conditional clause
+  are the top two blockers.
+- `docs/prejudge.md` / `just prejudge` — blind sub-agent pre-judgement of
+  paragraph repairs (naturalness score; telephone game: explain-then-rate
+  fidelity) recorded under `prejudge:` in each case, docs/prejudge-report.md.
+  Runs on Claude Code sub-agents, so it costs no API key; it filters and
+  flags, the human verdict stays `just verdict`.
 - `scripts/lint-file.py` / `just lint-file <md>` — document-level lint:
   per-sentence verdicts, topic continuity, relation inventory. `just
   coherence` regenerates `docs/coherence-report.md` over all ADRs.
@@ -92,6 +100,14 @@ derivable from the code, ADRs, or git history.
   should stop dropping the deontic (advice got a concrete example);
   autofix rerun on ADR 0001 should yield real proposals + GAP declarations
   (extractor fixed, refusal-routing strengthened).
+- Naturalness pass (2026-09-03): every ADR (0001–0036) and the domain
+  model were rewritten by blind sub-agents for naturalness, judged by
+  independent naturalness/telephone-fidelity/imaginability judges before
+  and after (docs/judge-report.md, docs/judgements.yaml,
+  scripts/docjudge.py, `just judge-docs`). Naturalness mean rose from
+  3.2 to 3.7 corpus-wide; every document still fully parses (100%,
+  docs/dogfood-sweep.md) and lints clean. docs/language-gaps.md records
+  what blocked further improvement.
 - ADR sweep: every ADR (0001–0028) is fully minglish since 2026-09-02
   (docs/dogfood-sweep.md; docs/dogfood-adr-00NN.md per ADR). 0002 was rewritten
   by hand after nine paragraph-repair runs; 0005 after one cold run; the other

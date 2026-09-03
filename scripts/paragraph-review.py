@@ -40,6 +40,14 @@ def show(d, full=False):
         print(f"    drops: {b['drops']}")
     if d.get("note"):
         print(f"    note: {d['note']}")
+    pj = d.get("prejudge")
+    if pj:
+        stale = " (stale)" if pj.get("proposal") != d.get("best") else ""
+        ns = pj.get("naturalness", {}).get("score", "–")
+        fs = pj.get("telephone", {}).get("fidelity", {}).get("score", "–")
+        print(f"    prejudge{stale}: natural {ns}/5 · fidelity {fs}/5")
+        for i in pj.get("naturalness", {}).get("issues", [])[:3]:
+            print(f"      - {i['span']} — {i['why']}" if isinstance(i, dict) else f"      - {i}")
     if full:
         others = [p for p in d["proposals"] if p["valid"] and p["text"] != d["best"]]
         for k, p in enumerate(others, 1):

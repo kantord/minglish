@@ -49,6 +49,16 @@ replay:
 review-paragraphs *ARGS:
     python3 scripts/paragraph-review.py {{ARGS}}
 
+# pre-judge cases with blind sub-agents (docs/prejudge.md): bundle the cases
+# with a current best proposal, record the judgements, or rebuild the report
+prejudge *ARGS:
+    python3 scripts/prejudge.py {{ARGS}}
+
+# judge every ADR and the domain model with blind sub-agents (docs/prejudge.md,
+# "Whole documents"): bundle, record, report, or write rewrite briefs
+judge-docs *ARGS:
+    python3 scripts/docjudge.py {{ARGS}}
+
 # set a verdict on paragraph case N: just verdict 3 needs-fix "why"
 verdict N VERDICT *NOTE:
     python3 scripts/paragraph-review.py {{N}} {{VERDICT}} {{NOTE}}

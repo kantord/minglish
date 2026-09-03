@@ -6,46 +6,56 @@ trigger superseded by ADR 0023
 
 ## Context
 
-A Rejected Sense carries a Redirect or is a Ban. A Redirect names a
-replacement. If a sense is a Ban, then the writer restructures the
-sentence.
+A Rejected Sense has a Redirect or is a Ban. A Redirect names a replacement
+for the sense. A Ban does not offer a replacement, so the writer
+restructures the sentence.
 
-The research showed one result. A mechanical replacement optimizes the
-rarity of the words. A mechanical replacement does not optimize the clarity
-of the words. One example is the Redirect of the word "need". The
-Redirect names the word "necessitate". The word "necessitate" is rare. A writer does not produce the word
-"necessitate". A Language Model does not produce the word "necessitate".
+The research showed the problem of a mechanical replacement. The replacement
+optimizes the rarity of a word but ignores the clarity of the word. The
+Redirect of the word "need" was one example. The Redirect named the word
+"necessitate". One usage of the word "necessitate" matches 1349 usages of
+the word "need", so a writer does not produce the rare word. A Language
+Model does not produce the rare word.
 
-A useless message is bad. A blunt message is acceptable. If the message is
-useless, then the writer stalls. If the message is useless, then the
-Language Model produces rare words. The rare words hurt the quality of the
-text.
+A blunt message is better than a useless message. If the message is useless,
+then the writer stalls. A Language Model does not stall but produces rare
+words. The whole system exists for the quality of the text, so the rare
+words hurt the whole system.
 
 ## Decision
 
-The maintainers use 2 tools:
-- a Redirect
-- a Ban
+The policy has 3 points:
+- the Redirect
+- the Ban
+- the guard
 
-A Redirect names a common word. A Redirect names a synonym of the Rejected
-Sense. A writer chooses the word. If a word is rare, then the word is not a
-Redirect.
+The word of a Redirect must be common and must be a real synonym of the
+Rejected Sense. The word must be common, because a writer chooses a common
+word. The word of the Redirect has a small distance from the word of the
+Rejected Sense.
 
-If a Rejected Sense does not have a synonym, then the sense is a Ban. A Ban
-gives one instruction to the writer. The writer restructures the sentence. A new
-sentence beats a rare word.
+If a Rejected Sense does not have a common synonym, then the sense becomes
+a Ban. A Ban does not offer a replacement, so the message says "restructure
+the sentence". The maintainers prefer a Ban to a rare Redirect, because a
+new sentence beats a rare word.
 
-The report of the Lexicon shows a rare Redirect. The maintainers review a
-rare Redirect. The decision "0023" changed the rule of the guard.
+The guard of the report measures the distance of the 2 words on the scale
+of Zipf. The bound of the guard is 1.0 points. If the distance is bigger
+than the bound, then the guard flags the Redirect. The maintainers review
+the Redirect. Maintainers turn the Redirect into a Ban or replace the word
+of the Redirect. Maintainers do not keep a rare Redirect.
 
-The rule covers a whole word. If a sense does not have a common
-replacement, then the sense is a Ban. If the Bans cover every sense of the
-word, then the word is a Ban.
+The maintainers apply the rule to a whole word. If the Bans cover every
+sense of a word, then the maintainers ban the whole word. The maintainers do
+not offer a Redirect for the word.
 
 ## Consequences
 
-- The Redirects are rare. The Redirects are good.
-  The writer trusts the messages of the Linter.
-- A Ban has a message. A Redirect has a message. The 2 messages differ.
-- An ambiguous modal is a Ban. The word "may" is one example. The word
-  "may" has 2 senses. The senses do not have a common replacement.
+- The number of the Redirects is small. The Redirects are good, so the
+  writer can trust every message of the Linter.
+- The future Linter needs a distinct message for a Ban, because the message
+  of a Redirect says "use the word X". The message of a Ban says
+  "restructure the sentence". The current Linter marks a Ban with a Waiver.
+- An ambiguous modal is a candidate for a Ban. The modal "may" marks a
+  permission or marks a possibility. The 2 senses do not have a common
+  replacement, so the modal becomes a candidate for a Ban.

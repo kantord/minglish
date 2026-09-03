@@ -15,79 +15,96 @@ examples); "a X" after the tag is the category the term belongs to
 
 **anaphoric** (adj) — an anaphoric word refers to a noun of a prior sentence.
 
-**Anaphoric Pronoun** (noun, category) · a Pronoun — an Anaphoric Pronoun refers to a noun of a prior sentence. the reader must find the noun. the language bans every Anaphoric Pronoun. the writer repeats the noun.
+**Anaphoric Pronoun** (noun, category) · a Pronoun — an Anaphoric Pronoun is a Pronoun for a noun of a prior sentence. the reader must find the noun, so the language bans every Anaphoric Pronoun. the writer repeats the noun.
   Examples: `it` · `they` · `this`
 
-**attest** (verb trans) — the data attests the words. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form.
+**attest** (verb trans) — if a database attests a word, then the database contains the word. the database WordNet attests the senses of a word. the file "mobypos" attests the Categories of a word. the rules of Lexgen can produce a wrong spelling, so Lexgen checks every Surface Form against the data. if the data does not attest a Surface Form, then Lexgen rejects the Surface Form.
+  Examples: `the file "mobypos" attests the noun "file".`
 
-**Auxiliary** (noun, category) · a Function Word — an Auxiliary is a Function Word. an Auxiliary helps a verb. the word "do" is an Auxiliary. the language uses an Auxiliary in a Negation. the language uses an Auxiliary in a Prohibition. the language does not use an Auxiliary in a plain statement.
+**Auxiliary** (noun, category) · a Function Word — an Auxiliary is a Function Word and helps a verb. the word "do" is the Auxiliary of the language. a Negation uses the Auxiliary and a Prohibition uses the Auxiliary. a plain statement does not use the Auxiliary. the word "is" is a Copula and is not an Auxiliary.
   Examples: `do`
 
-**Ban** (noun, category) · a Rejection — a Ban is a Rejection of an ambiguous structure. the Ban is permanent. the writer changes the sentence. the Linter explains the Ban.
+**Ban** (noun, category) · a Rejection — a Ban is a Rejection of an ambiguous structure. a Ban is permanent, so the writer restructures the sentence. the Linter explains the Ban and names the structure. if a Ban covers every sense of a word, then the word is a Ban.
   Examples: `the word "it" is a Ban.` · `the phrase "retries no request" is a Ban.`
 
-**Bare Plural** (noun, category) — a Bare Plural is a plural noun. a Bare Plural does not have a determiner. a Bare Plural names a kind. the sentence "machines find collisions" has a Bare Plural.
+**Bare Plural** (noun, category) · a Noun Phrase — a Bare Plural is a Noun Phrase. the Noun Phrase is a plural noun and does not have a determiner. a Bare Plural names a kind, so the claim tolerates an exception. the sentence "machines find collisions" has a Bare Plural.
   Examples: `machines find collisions`
 
-**Block** (noun, category) — a Block is a structure with lines. every tool reads a Block. the Block is one unit. the Enumeration is a Block. the Step Block is a Block.
+**Block** (noun, category) — a Block is a unit of a text. a Block has lines, so a Block is not a sentence. the first line announces the Block. the first line of an Enumeration ends with a colon. a keyword opens every line of a Step Block. a tool keeps the lines of a Block. no tool splits a Block. the language has 2 kinds of the Blocks.
   Examples: `the Enumeration` · `the Step Block`
 
-**Category** (noun, category) — a Category is the class of a Lemma. people choose one Category for every Lemma. the Category decides the Surface Forms of the Lemma.
-  Examples: `NOUN` · `VERB_TRANS` · `ADJ`
+**Category** (noun, category) — the Category of a Lemma is the class of the word, so the Category "VERB_TRANS" marks a transitive verb. people choose one Category for every Lemma. the Category decides the Surface Forms of the Lemma. the Category of the Lemma "file" is "NOUN", so Lexgen builds the Surface Form "files".
+  Examples: `NOUN` · `VERB_TRANS` · `ADJ` · `the Category of the Lemma "file" is "NOUN".`
 
-**Closed Class** (noun, category) — a Closed Class contains Function Words. a Closed Class does not grow. people cannot add a word to a Closed Class.
+**Closed Class** (noun, category) — a Closed Class contains Function Words. people cannot add a word to a Closed Class, so the class does not grow.
   Examples: `the Pronouns are a Closed Class.` · `the modals are a Closed Class.`
 
-**Cognitive Load** (noun, unique) — the Cognitive Load of a sentence is the work of the reader. the Open Dependencies predict the Cognitive Load. the Dependency Length predicts the Cognitive Load. the Embedding Depth predicts the Cognitive Load.
+**Cognitive Load** (noun, unique) — the Cognitive Load of a sentence measures the work of the reader. 3 metrics of the Parse predict the Cognitive Load. the Cognitive Load outranks the familiarity, so the Grammar prefers a small Cognitive Load. the sentence "the agent reads the file" has a small Cognitive Load.
+  Examples: 
+  ```
+  the Cognitive Load has 3 metrics:
+  - the Open Dependencies
+  - the Dependency Length
+  - the Embedding Depth
+  ```
 
-**Collision** (noun, category) — if 2 Lemmas produce one Surface Form, then the Surface Form is a Collision. if one Surface Form has 2 Form Tags, then the Surface Form is a Collision. Lexgen rejects every Collision.
-  Examples: `the Surface Form "leaves" is a Collision.`
+**Collision** (noun, category) — a Collision is one spelling with 2 Form Tags. if one spelling belongs to 2 Lemmas, then the spelling is a Collision. the noun "leaves" collides with the verb "leaves". Lexgen rejects every Collision, so the Lexicon has one Form Tag for every Surface Form.
+  Examples: `the Surface Form "leaves" is a Collision.` · `the noun "leaves" collides with the verb "leaves".`
 
-**Comparative** (noun, category) · a Complement — a Comparative is a Complement. a Comparative compares the subject with a standard. the phrase "heavier than the length" is a Comparative.
-  Examples: `heavier than the length`
+**Comparative** (noun, category) · a Complement — a Comparative is a Complement. a Comparative compares the subject with a standard. the word "than" opens the standard. the phrase "longer than a Compound" is a Comparative.
+  Examples: `longer than a Compound` · `a paraphrase is longer than a Compound.`
 
-**Complement** (noun, category) — a Complement follows a Copula. a Complement is an adjective or is a Noun Phrase. a Complement is not a Participle.
-  Examples: `the queue is empty.` · `the parser is a program.`
+**Complement** (noun, category) — a Complement follows a Copula and names a property of the subject. a Complement is an adjective or is a Noun Phrase. a Participle cannot be a Complement, because the language bans every Passive.
+  Examples: `the queue is empty.` · `the parser is a program.` · `the Complement of "the queue is empty" is the adjective "empty".`
 
-**Compound** (noun, category) — a Compound has 2 nouns. a determiner does not separate the 2 nouns. the phrase "discourse layer" is a Compound. the language bans every Compound. a writer uses a term or uses a paraphrase.
-  Examples: `discourse layer`
+**Compound** (noun, category) — a Compound joins 2 nouns. a determiner does not separate the 2 nouns. the phrase "seed list" is a Compound. the language bans every Compound, because the relation of the 2 nouns is unknown. if the model has a term for the thing, then the writer writes the term with a capital. if the model does not have a term, then the writer unfolds the Compound into a paraphrase. the paraphrase "the initial words" replaces the Compound "seed list".
+  Examples: `seed list` · `build output` · `the paraphrase "the initial words" replaces the Compound "seed list".`
 
 **Conditional** (noun, category) · a Sentence Shape — a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word "if" opens the condition. the word "then" opens the consequent.
   Examples: `if the test fails, then the agent retries the request.`
 
-**Conjunct** (noun, category) — a Conjunct is one phrase of a Coordination. every Conjunct carries the Modifiers of the Conjunct.
-  Examples: `the phrase "the old files" is a Conjunct of "the old files and the old reports".`
+**Conjunct** (noun, category) — a Conjunct is one part of a Coordination. a Modifier describes one Conjunct, so the writer repeats the Modifier in the second Conjunct. a Prepositional Phrase attaches to one Conjunct.
+  Examples: `the predicate "stores the message" is a Conjunct of "stores the message and returns the result".`
 
-**Constituent** (noun, category) — a Constituent is one part of a sentence. a Noun Phrase is a Constituent. a Prepositional Phrase is a Constituent.
-  Examples: `the subject` · `the object` · `a Prepositional Phrase`
+**Constituent** (noun, category) — a Constituent is one part of a Parse. the Grammar builds the Parse from Constituents. a Noun Phrase is a Constituent and a Prepositional Phrase is a Constituent. the subject "the agent" is a Constituent of the sentence "the agent reads the file".
+  Examples: `the subject` · `the object` · `a Prepositional Phrase` · `the subject "the agent" is a Constituent of the sentence "the agent reads the file".`
 
-**Context Need** (noun, unique) — the Context Need of a sentence is the prior text of the sentence. a reader needs the prior text. a good sentence has a small Context Need.
+**Context Need** (noun, unique) — the Context Need is a quantity. the Context Need of a sentence measures the prior text, because the reader needs the prior text for the meaning of the sentence. the sentence "it failed" has a big Context Need, because the reader must find the referent of "it" in the prior text. a good sentence has a small Context Need.
+  Examples: `the sentence "it failed" has a big Context Need.`
 
-**Coordination** (noun, category) — a Coordination joins 2 phrases with a conjunction. the 2 phrases have one Category. the language has 2 conjunctions.
-  Examples: `the server stores the message and returns the result.`
+**Coordination** (noun, category) — a Coordination joins 2 clauses or joins 2 predicates with a conjunction. the 2 Conjuncts have one kind, so a Noun Phrase cannot join a Noun Phrase. a Coordination has 2 Conjuncts.
+  Examples: `the server stores the message and returns the result.` · `the test fails or the agent retries the request.` · 
+  ```
+  the language has 2 conjunctions:
+  - "and"
+  - "or"
+  ```
 
-**Copula** (noun, category) · a Function Word — a Copula is the word "is" or is the word "are". a Copula links the subject of a sentence to a Complement. a Copula does not take an object.
-  Examples: `is` · `are` · `was`
+**Copula** (noun, category) · a Function Word — a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word "is" is a Copula and the word "are" is a Copula. the past Tense uses the word "was" or uses the word "were".
+  Examples: `is` · `are` · `was` · `were`
 
-**Coverage** (noun, unique) — if the Lexicon contains every word of a sentence, then the Coverage counts the sentence. the Coverage is a share of the corpus. the Coverage is a proxy. the Coverage does not measure the quality of the Redirects.
+**Coverage** (noun, unique) — the Coverage is a share of a corpus. the corpus is the file "data/ud/en_ewt-ud-test.conllu". the file holds sentences of English. if the Lexicon contains every word of a sentence, then the Lexicon covers the sentence. Triage counts the sentences of the corpus and measures the Coverage. the Coverage is a proxy, because Triage does not parse the sentences. the Coverage does not measure the quality of the Redirects.
 
-**curate** (verb trans) — people curate the Seed. people choose every Lemma.
+**curate** (verb trans) — people curate the Seed. people add every Lemma to the Seed and choose the Category of the Lemma. a machine does not curate the Seed, because a machine optimizes the rarity of the words.
+  Examples: `the maintainers curated the word "identical".`
 
-**Declared Loss** (noun, category) — a translation can drop the politeness of the original sentence. a translation can drop the emphasis of the original sentence. the Translation Pair must declare every loss. a Declared Loss is a declaration of a loss. a translation cannot drop a claim.
-  Examples: `politeness` · `emphasis`
+**Declared Loss** (noun, category) — a Declared Loss is a loss of a translation. the Translation Pair names the loss in the column "drops". a translation can drop the politeness of the original sentence or can drop the emphasis. if a translation drops a claim, then the pair has a Propositional Loss. if a loss does not have a declaration, then the corpus has a bug.
+  Examples: `politeness` · `emphasis` · `the pair declares the loss "politeness" in the column "drops".`
 
-**Dependency Length** (noun, unique) — the Dependency Length is a distance. the distance separates the 2 words of one relation. a long Dependency Length costs the reader.
+**Dependency Length** (noun, unique) — the Dependency Length of a relation counts the words between the 2 words of the relation. a long Dependency Length hurts the reader, because the reader holds the first word until the second word.
+  Examples: `the Dependency Length of the sentence "the agent reads the file" is 2 words.`
 
-**Discourse Layer** (noun, category) — a Discourse Layer resolves the referent of an Anaphoric Pronoun. the language does not have a Discourse Layer.
+**Discourse Layer** (noun, category) — a Discourse Layer is a mechanism. the mechanism finds the noun of an Anaphoric Pronoun in the prior text. Minglish does not have a Discourse Layer, so the writer repeats the noun.
   Examples: `a Discourse Layer resolves the Pronoun "it" in the sentence "it failed".`
 
-**Dogfood** (noun, unique) — the Dogfood is a test of the language. the maintainers lint the documents of the project. the Dogfood finds the Gaps of the language.
+**Dogfood** (noun, unique) — the Dogfood is a test of the language. the maintainers lint the documents of the project, so the Rejections show the Gaps of the language. the decisions of the project are the main Dogfood, so the Linter parses every decision.
+  Examples: `the file "docs/dogfood-adr-0001.md" records the Dogfood of the decision "0001".`
 
-**Embedding Depth** (noun, unique) — the Embedding Depth counts the clauses inside a clause. a deep embedding costs the reader.
+**Embedding Depth** (noun, unique) — the Embedding Depth counts the clauses inside a clause. a Conditional has a clause inside a clause, so the Embedding Depth of a Conditional is 2 clauses. a deep embedding hurts the reader.
 
-**English** (name, unique) — English is the language of the original texts. Minglish is a subset of English.
+**English** (name, unique) — English is the language of the corpus. Minglish is a subset of English. a Translation Pair maps a sentence of English to a sentence of Minglish.
 
-**Enumeration** (noun, category) · a Block — an Enumeration is a Block. the Block has a statement. the Block has a list of the items. the statement ends with a colon. every item names one thing. the items enumerate the last Noun Phrase of the statement.
+**Enumeration** (noun, category) · a Block — an Enumeration is a Block. a statement opens the Block and ends with a colon. every item takes one line. the string "- " opens the line. an item is one Noun Phrase. the last Noun Phrase of the statement names a set. the items name the members of the set.
   Examples: 
   ```
   the language allows 4 Pronouns:
@@ -97,21 +114,30 @@ examples); "a X" after the tag is the category the term belongs to
   - "your"
   ```
 
-**First Token** (noun, category) — the First Token of a sentence announces the Sentence Shape. the word "if" is the First Token of a Conditional. every Sentence Shape has a distinct First Token.
-  Examples: `if` · `do` · `no` · `every`
+**First Token** (noun, category) — the First Token of a sentence announces the Sentence Shape, so the reader knows the shape from the first word. the word "if" opens a Conditional. the phrase "do not" opens a Prohibition. a verb opens an Imperative, so the First Token of an Imperative is a verb.
+  Examples: `if` · `do` · `no` · `every` · `a verb`
 
-**Form Tag** (noun, category) — a Form Tag names the class of one Surface Form. every Surface Form has one Form Tag. the Form Tag comes from the Category of the Lemma.
-  Examples: `NOUN_SG` · `VERB_TRANS_ED` · `COPULA_SG`
+**Form Tag** (noun, category) — a Form Tag names the class of one Surface Form. every Surface Form has one Form Tag. the Category of the Lemma decides the Form Tag. the Surface Form "deleted" has the Form Tag "VERB_TRANS_ED", because the Lemma "delete" is a transitive verb.
+  Examples: `NOUN_SG` · `VERB_TRANS_ED` · `COPULA_SG` · `the Surface Form "deleted" has the Form Tag "VERB_TRANS_ED".`
 
-**Function Word** (noun, category) — a Function Word is a word of a Closed Class. a Function Word has one meaning. the Grammar gives one meaning to every Function Word.
+**Function Word** (noun, category) — a Function Word is a word of a Closed Class. a Function Word marks the structure of a sentence. the Grammar gives one meaning to every Function Word, so a writer cannot add a sense.
   Examples: `the` · `not` · `if`
 
-**Gap** (noun, category) · a Rejection — a Gap is a Rejection of a good sentence. the language cannot say the sentence. the maintainers fix a Gap with a decision.
-  Examples: `the word "only" is a Gap.`
+**Gap** (noun, category) · a Rejection — a Gap is a Rejection of a good sentence. the language cannot say the sentence, so the maintainers fix the Gap with a decision. the folder "docs/adr" holds every decision.
+  Examples: `the word "only" is a Gap.` · `the decision "0028" fixed the Gap of the lists.`
 
-**Gherkin** (name, unique) — Gherkin is the format of a feature. a file of Gherkin is a document of Minglish.
+**Gherkin** (name, unique) — Gherkin is a format for a test. a file of Gherkin describes a feature of a program. every scenario of the file is a Step Block. a file of Gherkin is a document of Minglish, so the Linter lints every file in the folder "features".
+  Examples: 
+  ```
+  Feature: the agent retries a request
+  Scenario: the test fails
+  Given the test fails
+  When the agent retries the request
+  Then the queue is empty
+  ```
 
-**Grammar** (noun, unique) — the Grammar defines every Sentence Shape of the language. the Grammar gives one Parse to every sentence.
+**Grammar** (noun, unique) — the Grammar defines every Sentence Shape of the language and admits one Parse for every sentence. the folder "crates/grammar" holds the Grammar. if a sentence has 2 Parses in English, then the Grammar picks one Parse with a rule.
+  Examples: `the Grammar rejects the sentence "it fails".`
 
 **Head Noun** (noun, category) — the Head Noun of a Compound is the last noun of the Compound. the Head Noun names the kind of the thing.
   Examples: `the Head Noun of "discourse layer" is "layer".`
@@ -121,143 +147,163 @@ examples); "a X" after the tag is the category the term belongs to
 
 **indexical** (adj) — an indexical word refers to the writer or refers to the reader.
 
-**Indexical Pronoun** (noun, category) · a Pronoun — an Indexical Pronoun refers to the writer or refers to the reader. the Pronoun "i" is an Indexical Pronoun. the Pronoun "you" is an Indexical Pronoun. the language allows Indexical Pronouns.
-  Examples: `i` · `you`
+**Indexical Pronoun** (noun, category) · a Pronoun — an Indexical Pronoun is a Pronoun. the Pronoun "I" names the writer. the Pronoun "you" names the reader. the language allows every Indexical Pronoun, because the reader knows the referent.
+  Examples: `I` · `you`
 
 **intransitive** (adj) — an intransitive verb does not need an object.
+  Examples: `the verb "fail" is intransitive.`
 
-**Language Model** (noun, category) — a Language Model is a program. a Language Model reads a text and writes a text. a Language Model has a small memory.
-  Examples: `a Language Model writes the text.`
+**Language Model** (noun, category) — a Language Model is a program. a Language Model reads a text and writes a text. a Language Model reads a sentence in the order of the words. a Language Model holds a small memory, so a long Open Dependency hurts a Language Model.
+  Examples: `a Language Model wrote the decision "0006" in Minglish.`
 
-**Lemma** (noun, category) — a Lemma is one entry of the Seed. a Lemma is the base spelling of a word. Lexgen expands every Lemma into the Surface Forms of the Lemma.
+**Lemma** (noun, category) — a Lemma is the base spelling of a word and is one entry of the Seed. Lexgen expands every Lemma into the Surface Forms of the word, so the Lemma "delete" produces the Surface Form "deleted".
   Examples: `review` · `delete` · `the Lemma "file" has 2 Surface Forms.`
 
-**Lexer** (noun, unique) — the Lexer splits a sentence into tokens. the Lexer gives a Form Tag to every token. the Lexer recognizes a Name and recognizes a quantity by the shape.
+**Lexer** (noun, unique) — the Lexer splits a sentence into tokens and gives a Form Tag to every token. the Lexer recognizes a Name by the capital and recognizes a quantity by the digits.
+  Examples: `the Lexer splits "the agent reads the file" into 5 tokens.`
 
-**Lexgen** (name, unique) — Lexgen is a tool. Lexgen builds the Lexicon from the Seed. Lexgen rejects every Collision.
+**Lexgen** (name, unique) — Lexgen is a tool of the project. Lexgen reads the Seed and builds the Lexicon. if 2 Lemmas collide, then Lexgen does not write the Lexicon. Lexgen shows the Collision in an error. the command "cargo run -p lexgen" starts Lexgen.
 
-**Lexicon** (noun, unique) — the Lexicon is the file "lexicon.tsv". Lexgen writes the Lexicon from the Seed. the Lexicon contains every Surface Form and contains every Redirect. people do not edit the Lexicon.
+**Lexicon** (noun, unique) — the Lexicon is the file "lexicon.tsv". Lexgen builds the Lexicon from the Seed, so people do not edit the Lexicon. the Lexicon holds every Surface Form with the Form Tag of the Surface Form. the Lexicon holds every Redirect of the Seed.
+  Examples: `the row "deleted" of the Lexicon carries the Form Tag "VERB_TRANS_ED".`
 
-**lint** (verb trans) — the Linter lints a sentence. the Linter checks the words and checks the structure.
+**lint** (verb trans) — the Linter lints a sentence. the Linter checks every word against the Lexicon and checks the structure against the Grammar. if the sentence fails, then the Linter shows an error with a remedy.
+  Examples: `the Linter lints the sentence "the agent reads the file".`
 
-**Linter** (noun, unique) — the Linter checks a sentence. the Linter parses the sentence or explains the Rejection. the Linter names the kind of a Rejection.
+**Linter** (noun, unique) — the Linter is a tool of the project. the Linter lints a sentence. the Linter parses the sentence or explains the Rejection. the Linter names the kind of a Rejection and shows a remedy. the command "just lint" starts the Linter.
+  Examples: `the Linter parses the sentence "the agent reads the file".` · `the Linter rejects the sentence "it fails".`
 
-**Markdown** (name, unique) — Markdown is the format of the documents. Markdown turns a dash into a bullet.
+**Markdown** (name, unique) — Markdown is a format for a text. the documents of the project use Markdown. Markdown turns the string "- " into a bullet, so an Enumeration is a list in Markdown.
 
-**Minglish** (name, unique) — Minglish is the language of the project. every sentence of Minglish has one Parse.
+**Minglish** (name, unique) — Minglish is the language of the project and is a subset of English. every sentence of Minglish has one Parse. the sentence "if the test fails, then the agent retries the request" is a sentence of Minglish.
+  Examples: `if the test fails, then the agent retries the request.`
 
-**Modifier** (noun, category) — a Modifier is an adjective or is a Prepositional Phrase. a Modifier describes one Noun Phrase. a Modifier does not cover a Coordination.
-  Examples: `old` · `empty` · `of the report`
+**Modifier** (noun, category) — a Modifier is an adjective or is a Prepositional Phrase. a Modifier describes one Noun Phrase, so the writer repeats the Modifier in every Conjunct.
+  Examples: `old` · `empty` · `of the report` · `the phrase "the old files" has the Modifier "old".`
 
-**Name** (noun, category) — a Name is one token. a Name is a capitalized word or is a quoted span. a Name does not inflect. the writer repeats a Name.
+**Name** (noun, category) · a Noun Phrase — a Name is a Noun Phrase. a Name is a capitalized word or is a quoted span. if a capitalized word follows a capitalized word, then the Linter merges the 2 words into one Name. a Name does not inflect. the language bans every Anaphoric Pronoun, so the writer repeats the Name.
   Examples: `Lexgen` · `"seed.json"` · `Visual Studio Code (a name with 3 words)`
 
-**Negation** (noun, category) · a Sentence Shape — a Negation is a statement. a Negation has the word "not". the word "not" changes the truth of the verb. the language uses "does not" for a verb and uses "is not" for a Copula.
+**Negation** (noun, category) · a Sentence Shape — a Negation is a Sentence Shape. a Negation is a statement with the word "not". the language puts "does not" before a verb and puts "is not" before a Complement.
   Examples: `the agent does not store the file.` · `the queue is not empty.`
 
-**Noun Phrase** (noun, category) · a Constituent — a Noun Phrase names one thing. a Noun Phrase has a noun or is a quoted word.
+**Noun Phrase** (noun, category) · a Constituent — a Noun Phrase is a Constituent and names one thing. a determiner opens the Noun Phrase. a noun follows the determiner. a Name is one Noun Phrase.
   Examples: `the file` · `a copy of the report` · `every agent`
 
-**Noun Preposition** (noun, unique) · a Function Word — a Noun Preposition attaches to the prior noun. the word "of" is the Noun Preposition. the language has one Noun Preposition.
+**Noun Preposition** (noun, unique) · a Function Word — the Noun Preposition is a Function Word. a Noun Preposition attaches to the prior noun. the word "of" is the Noun Preposition of the language. the phrase "a copy of the report" is one example. the word "of" attaches to the noun "copy".
+  Examples: `of` · `a copy of the report`
 
-**Number Word** (noun, category) — a Number Word writes a number with letters. the word "three" is a Number Word. the language bans every Number Word.
+**Number Word** (noun, category) — a Number Word names a number with letters. the word "three" is a Number Word. the language bans every Number Word, so a writer writes the digit "3".
   Examples: `three`
 
-**Open Dependency** (noun, category) — an Open Dependency is a relation. the relation links 2 words of a sentence. the reader holds an Open Dependency in the memory. the comfortable bound is 4 Open Dependencies.
-  Examples: `the sentence "the agent stores the report in the database" has 3 Open Dependencies.`
+**Open Dependency** (noun, category) — an Open Dependency is a relation between 2 words of a sentence. the reader sees the first word and waits for the second word. the reader holds the first word in the memory of the reader, so the comfortable bound is 4 Open Dependencies.
+  Examples: `the sentence "the agent stores the report in the database" has 3 Open Dependencies.` · `the subject "the agent" waits for the verb "stores", so the relation is one Open Dependency.`
 
 **Ordinal** (noun, category) — an Ordinal marks a position in an order. the word "first" is an Ordinal. the string "4th" is an Ordinal.
   Examples: `first` · `4th`
 
-**Paradigm** (noun, category) — a Paradigm contains every Surface Form of one Lemma. Lexgen builds the Paradigm of a Lemma from the Category of the Lemma.
-  Examples: `the Paradigm of "delete" has 4 Surface Forms.`
+**Paradigm** (noun, category) — a Paradigm holds every Surface Form of one Lemma. the Category of the Lemma decides the Paradigm. Lexgen builds the Paradigm with about 10 rules.
+  Examples: 
+  ```
+  the Paradigm of "delete" has 4 Surface Forms:
+  - "delete"
+  - "deletes"
+  - "deleted"
+  - "deleting"
+  ```
 
-**Parse** (noun, category) — a Parse is one structure of a sentence. every sentence of the language has one Parse.
-  Examples: `the sentence "the agent reads the file" has one Parse.`
+**Parse** (noun, category) — a Parse is the tree of a sentence. the Grammar builds the tree from the tokens of the sentence. the Grammar gives one Parse to a sentence, so a reader does not guess the structure. the Parse of the sentence "the agent reads the file" links the verb "reads" to the object "the file".
+  Examples: `the sentence "the agent reads the file" has one Parse.` · `the Parse of the sentence "the agent reads the file" links the verb "reads" to the object "the file".`
 
-**parse** (verb trans) — the Linter parses a sentence. the Linter finds the Parse of the sentence.
-  Examples: `the sentence "the agent reads the file" has one Parse.`
+**parse** (verb trans) — the Linter parses a sentence, so the Linter builds the tree of the sentence from the tokens. if the Linter cannot parse a sentence, then the sentence is a Rejection.
+  Examples: `the Linter parses the sentence "the agent reads the file".`
 
-**Participle** (noun, category) — a Participle is a Surface Form of a verb. a Complement is not a Participle. if a Participle follows a noun, then the sentence has a Reduced Relative.
+**Participle** (noun, category) — a Participle is a Surface Form of a verb. the Participle ends with the suffix "ed" or ends with the suffix "ing". if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. the language bans every Reduced Relative, so a Participle cannot follow a noun.
   Examples: `stored` · `running`
 
 **Passive** (noun, category) — a Passive drops the doer of a verb. the sentence "the file is stored" is a Passive. the language bans every Passive.
   Examples: `the file is stored`
 
-**Prepositional Phrase** (noun, category) · a Constituent — a Prepositional Phrase has a preposition. a Prepositional Phrase has a Noun Phrase. a Prepositional Phrase attaches to a verb or attaches to a noun.
-  Examples: `in the database` · `of the report`
+**Prepositional Phrase** (noun, category) · a Constituent — a Prepositional Phrase is a Constituent. a preposition opens a Prepositional Phrase and a Noun Phrase follows the preposition. the preposition decides the attachment. the phrase "of the report" attaches to the prior noun, because "of" is the Noun Preposition. the phrase "in the database" attaches to the verb, because "in" is a Verb Preposition.
+  Examples: `in the database` · `of the report` · `the sentence "the agent stores the report in the database" has one Prepositional Phrase.`
 
-**Progressive** (noun, category) — a Progressive has a Copula. a Progressive has a Participle. the sentence "the agent is running" is a Progressive. the language bans every Progressive.
-  Examples: `the agent is running`
+**Progressive** (noun, category) — a Progressive marks an ongoing action. the word "is" precedes a Participle in a Progressive. the language bans every Progressive, so the writer uses the present Tense.
+  Examples: `the agent is running` · `the sentence "the agent is running" is a Progressive.`
 
-**Prohibition** (noun, category) · a Sentence Shape — a Prohibition is a command. a Prohibition has the phrase "do not". the sentence "do not delete the file" is a Prohibition. a Prohibition is a Sentence Shape of the language.
-  Examples: `do not delete the file`
+**Prohibition** (noun, category) · a Sentence Shape — a Prohibition is a Sentence Shape for a command. the phrase "do not" opens a Prohibition and bans an action. the reader is the addressee of a Prohibition.
+  Examples: `do not delete the file` · `do not delete my report.`
 
-**Pronoun** (noun, category) — a Pronoun is a word. a Pronoun replaces a noun. the language allows the Indexical Pronouns and bans the Anaphoric Pronouns.
+**Pronoun** (noun, category) · a Function Word — a Pronoun is a Function Word. a Pronoun replaces a noun. the language allows the Indexical Pronouns and bans the Anaphoric Pronouns. the reader must find the noun of an Anaphoric Pronoun in the prior text.
   Examples: `I` · `you` · `it`
 
-**Propositional Loss** (noun, category) — a Propositional Loss changes a claim of the original sentence. a Propositional Loss drops a quantifier or drops a doer. a Translation Pair cannot have a Propositional Loss.
-  Examples: `a dropped quantifier` · `an invented doer`
+**Propositional Loss** (noun, category) — a Propositional Loss changes a claim of the original sentence. if a translation drops a quantifier, then the translation has a Propositional Loss. if a translation invents a doer, then the translation has a Propositional Loss. a Translation Pair must not have a Propositional Loss, so the maintainers fix the pair. if the maintainers cannot fix the pair, then the maintainers move the pair into the file "corpus/untranslatable.tsv".
+  Examples: `a dropped quantifier` · `an invented doer` · `the translation dropped the word "all", so the pair has a Propositional Loss.`
 
-**Redirect** (noun, category) — a Redirect names a replacement for a Rejected Sense of a word. the Linter shows the Redirect to the writer.
-  Examples: `the Redirect of "present" names the word "gift".` · `the Redirect of "report" names the word "describe".`
+**Redirect** (noun, category) — a Redirect names a replacement for a Rejected Sense of a word. the entry of the word names the Redirect in the Seed. the Lexicon stores the Redirect. if a writer uses the Rejected Sense, then the Linter shows the Redirect.
+  Examples: `the Redirect of "file" names the word "submit".` · `the Redirect of "report" names the word "describe".`
 
-**Reduced Relative** (noun, category) — if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. the sentence "the file stored in the database fails" has a Reduced Relative. the language bans every Reduced Relative.
+**Reduced Relative** (noun, category) — if a Participle follows a noun, then the Noun Phrase is a Reduced Relative. no word separates the noun from the Participle. the sentence "the file stored in the database fails" has a Reduced Relative. the language bans every Reduced Relative, so the writer splits the sentence into 2 sentences.
   Examples: `the file stored in the database fails`
 
 **Reference Ambiguity** (noun, category) — if a reader cannot find the referent of a Pronoun, then the sentence has a Reference Ambiguity. the design of the language removes every Reference Ambiguity.
   Examples: `the sentence "it failed" has a Reference Ambiguity.`
 
-**Register Loss** (noun, category) · a Declared Loss — a Register Loss drops the politeness of the original sentence or drops the emphasis of the original sentence. a Translation Pair declares every Register Loss.
+**Register Loss** (noun, category) · a Declared Loss — a Register Loss is a Declared Loss. a Register Loss drops the affect of the original sentence but keeps every claim. the politeness of a request is one example. a Translation Pair declares every Register Loss.
   Examples: `politeness` · `emphasis` · `an emoji`
 
-**Rejected Sense** (noun, category) — a Rejected Sense is a sense of a word. the Seed does not enable the Rejected Sense. the Linter rejects the Rejected Sense. a Rejected Sense has a Redirect or has a Waiver.
-  Examples: `the noun "present" is a Rejected Sense.`
+**Rejected Sense** (noun, category) — a Rejected Sense is a sense of a word. the Seed does not enable the sense, so the Linter rejects the sense. the Seed names a Redirect for the sense or records a Waiver. the verb "file" is a Rejected Sense, so the Linter shows the Redirect "submit".
+  Examples: `the noun "present" is a Rejected Sense.` · `the verb "file" is a Rejected Sense.`
 
-**Rejection** (noun, category) — if the Linter does not parse a sentence, then the sentence is a Rejection. a Rejection is a Ban or is a Gap. the Linter must explain every Rejection.
+**Rejection** (noun, category) — if the Linter does not parse a sentence, then the sentence is a Rejection. a Rejection is a Ban or is a Gap. the Linter must explain every Rejection and must name the kind of the Rejection.
   Examples: `the sentence "it fails" is a Rejection.` · `the sentence "the file stored in the database fails" is a Rejection.`
 
-**Scale Word** (noun, category) · a Function Word — a Scale Word follows the digits. the word "million" is a Scale Word. the phrase "20 million files" has a Scale Word.
-  Examples: `million` · `20 million files`
+**Scale Word** (noun, category) · a Function Word — a Scale Word is a Function Word. a Scale Word follows a number, so a writer can say a big number with 2 digits. the word "million" is a Scale Word. the phrase "20 million files" has a Scale Word.
+  Examples: `million` · `thousand` · `20 million files`
 
-**Scope Ambiguity** (noun, category) — if a reader cannot tell the Constituent of a word, then the sentence has a Scope Ambiguity. the word "not" causes a Scope Ambiguity in English.
+**Scope Ambiguity** (noun, category) — if a word can attach to 2 Constituents, then the sentence has a Scope Ambiguity. the reader cannot tell the attachment, so the reader guesses the meaning. the word "not" causes a Scope Ambiguity in English. the sentence "every agent does not retry the request" has 2 Parses in English. one Parse is "no agent retries the request". the second Parse is "some agents do not retry the request".
   Examples: `the sentence "every agent does not retry the request" has a Scope Ambiguity.`
 
-**Seed** (noun, unique) — the Seed is the file "seed/seed.json". people edit the Seed. every entry of the Seed names one Lemma. the entry names the Category of the Lemma. Lexgen builds the Lexicon from the Seed.
+**Seed** (noun, unique) — the Seed is the file "seed/seed.json". people edit the Seed. Lexgen builds the Lexicon from the Seed. every entry of the Seed holds one Lemma with the Category of the Lemma. the entry of the Lemma "file" holds the Category "NOUN".
+  Examples: `{"lemma": "file", "category": "NOUN"}`
 
-**Sentence Shape** (noun, category) — a Sentence Shape is a structure of a sentence. the Grammar defines every Sentence Shape. every sentence of the language uses one Sentence Shape.
-  Examples: `the Conditional` · `the Imperative` · `the Prohibition`
+**Sentence Shape** (noun, category) — a Sentence Shape is a pattern for a whole sentence. the Grammar defines every Sentence Shape. the First Token of a sentence announces the Sentence Shape. every sentence of the language follows one Sentence Shape. the sentence "if the test fails, then the agent retries the request" follows the Conditional.
+  Examples: `the Conditional` · `the Imperative` · `the Prohibition` · `the sentence "delete the file" follows the Imperative.`
 
-**Step Block** (noun, category) · a Block — a Step Block is a Block. a keyword opens every line of a Step Block. the language has 4 keywords. every line holds one clause. a Step Block is a scenario of Gherkin.
-  Examples: 
+**Step Block** (noun, category) · a Block — a Step Block is a Block. a keyword opens every line of a Step Block. every line holds one clause. the keyword "Given" marks a precondition. the keyword "When" marks an event. the keyword "Then" marks a result. the keyword "And" marks a continuation of the prior line. a Step Block is a scenario of Gherkin, so the line "Scenario:" opens the Block with a title.
+  Examples: `Given` · `When` · `Then` · `And` · 
   ```
+  Scenario: the agent retries a request
   Given the test fails
   When the agent retries the request
   Then the queue is empty
+  And the Linter shows an error
   ```
 
-**Structure Loss** (noun, category) · a Declared Loss — a Structure Loss changes the order of the information. a Passive of the original sentence causes a Structure Loss. a Translation Pair declares every Structure Loss.
-  Examples: `the rewrite of a Passive is a Structure Loss.`
+**Structure Loss** (noun, category) · a Declared Loss — a Structure Loss is a Declared Loss. a Structure Loss changes the order of the words but keeps every claim. the rewrite of a Passive moves the doer to the front, so the rewrite is a Structure Loss. a Translation Pair declares every Structure Loss.
+  Examples: `the rewrite of a Passive is a Structure Loss.` · `"the file is stored" → "the agent stores the file"`
 
 **Surface Form** (noun, category) — a Surface Form is one spelling of a word. the Lexicon contains every Surface Form of the language. the Lexicon gives one Form Tag to every Surface Form.
   Examples: `reviews` · `reviewed` · `the file "lexicon.tsv" contains the Surface Form "deleted".`
 
-**Tense** (noun, unique) — the Tense of a verb marks the time of the action. the language has the present Tense. the language has the past Tense.
+**Tense** (noun, category) — the Tense of a verb marks the time of the action. the language has 2 Tenses. the verb "deletes" has the present Tense. the verb "deleted" has the past Tense.
+  Examples: `present` · `past` · `the verb "deleted" has the past Tense.`
 
 **transitive** (adj) — a transitive verb needs an object.
+  Examples: `the verb "delete" is transitive.`
 
-**Translation Pair** (noun, category) — a Translation Pair has an original sentence and has a translation. the Linter must parse the translation. the translation must keep every claim of the original sentence.
-  Examples: `"please delete my report" → "do not delete my report"`
+**Translation Pair** (noun, category) — a Translation Pair maps an original sentence of English to a sentence of Minglish. the Linter must parse the translation. the translation must keep every claim of the original sentence. the file "corpus/pairs.tsv" holds every Translation Pair with the Declared Losses of the pair.
+  Examples: `"please delete my report" → "delete my report"` · `the pair maps "please delete my report" to "delete my report".`
 
-**Triage** (name, unique) — Triage is a tool. Triage measures the Coverage of the Lexicon.
+**Triage** (name, unique) — Triage is a tool of the project. Triage reads a corpus of English and measures the Coverage of the Lexicon. Triage counts every word of the corpus, so the report of Triage shows the unknown words with the frequency of the words.
 
-**Verb Preposition** (noun, category) · a Function Word — a Verb Preposition attaches to the verb of the clause. the word "in" is a Verb Preposition. a clause has one Verb Preposition.
-  Examples: `in`
+**Verb Preposition** (noun, category) · a Function Word — a Verb Preposition is a Function Word. a Verb Preposition attaches to the verb of the clause. the word "in" is a Verb Preposition. a clause cannot have 2 Verb Prepositions, because the order of 2 Verb Prepositions is ambiguous.
+  Examples: `in` · `from` · `to` · `with` · `on` · `at` · `for`
 
-**waive** (verb trans) — the maintainers waive the Redirect of a Rejected Sense. the Waiver records the choice.
+**waive** (verb trans) — the maintainers waive the Redirect of a Rejected Sense, because a writer does not need the sense. the Linter rejects the sense and does not show a replacement. the Waiver records the choice.
+  Examples: `the maintainers waived the Redirect of the noun "curate".`
 
-**Waiver** (noun, category) — the maintainers can waive the Redirect of a Rejected Sense. the Waiver records the choice.
-  Examples: `the maintainers waived the Redirect of "send".`
+**Waiver** (noun, category) — a Waiver is a choice of the maintainers. the maintainers waive the Redirect of a Rejected Sense, because a writer does not need the sense. the Linter rejects the sense and does not show a replacement. the entry of the Seed records the Waiver in the field "waive".
+  Examples: `the noun "send" has a Waiver.` · `the maintainers waived the Redirect of the noun "curate".`
 
-**WordNet** (name, unique) — WordNet is a database. WordNet attests the senses of the words.
+**WordNet** (name, unique) — WordNet is a database of English. WordNet holds every sense of a word. the repository stores WordNet, so Lexgen checks every Lemma of the Seed against WordNet.
 

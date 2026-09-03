@@ -5,30 +5,33 @@ Status: proposed (tentative). Extends ADR 0011; clause-level sequence deferred.
 
 ## Context
 
-The rewrite of the decisions met 7 sentences of the archetype "A13". The
-report of the coherence counted 39 connectives of the sequence in the
-decisions. The language did not have a shape for the sequence. The sentence
-"the ambiguity reappears after the split" is one example. A writer turned every sequence into 2 sentences. The relation was implicit.
+The rewrite of the decisions found 7 sentences of the archetype "A13". The
+file "coherence-report.md" counted the connectives of the decisions and 39
+connectives marked a sequence. The language did not have a shape for a
+sequence, so a writer turned every sequence into 2 sentences. The relation
+of the 2 sentences was implicit. One example is the sentence "the ambiguity
+reappears after the split".
 
 ## Decision
 
-The language enables 3 Verb Prepositions:
+The language adds 3 Verb Prepositions:
 - "after"
 - "before"
 - "until"
 
-The 3 words take a Noun Phrase. The Noun Phrase names an event. The
-sentence "the ambiguity reappears after the split" is one example. The
-sentence "the reader holds the consequent until the condition" is one
-example. The rules of the decision "0011" cover the 3 words. The phrase
-attaches to the verb. A clause has one Verb Preposition.
+A Noun Phrase follows every new word and names an event. The sentence "the
+ambiguity reappears after the split" is one example and the sentence "the
+reader holds the consequent until the condition" is a second example. The
+rules of the decision "0011" cover the 3 words, so the phrase attaches to
+the verb. A clause has one Verb Preposition.
 
-The maintainers deferred the sequence of 2 clauses. The sentence "after
-the test fails, the agent retries the request" is a Ban. The maintainers
-deferred the ordered steps. The maintainers deferred the word "then" at the front of a sentence.
+The sentence "after the test fails, the agent retries the request" is a
+Ban, because the maintainers deferred the sequence of 2 clauses. The
+maintainers deferred the ordered steps and deferred the word "then" at the
+front of a sentence.
 
 ## Consequences
 
-- A writer names the event with a noun, so the sequence has a shape.
-- The Lexicon gains 3 Function Words. The Grammar keeps the shapes.
-- The report of the coherence marks the sequence with a shape.
+- A writer names the event with a noun, so the language says the sequence.
+- The Lexicon gains 3 Function Words but the Grammar does not gain a shape.
+- The file "coherence-report.md" names a shape for the sequence.

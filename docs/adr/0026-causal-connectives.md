@@ -5,25 +5,32 @@ Status: proposed (tentative)
 
 ## Context
 
-The rewrite of the decision "0001" dropped the phrase "hence this ADR".
-The language did not have a causal connective. The decision "0012" says
-one thing. A causal relation is a claim. The sweep counted about 11 tokens of
-the word "so" in the decisions. The sweep counted about 7 tokens of the
-word "because". The corpus has about 17 tokens of the word "because". The
-corpus has about 15 tokens of the word "since". The word "since" marks the
-time in the corpus. The corpus has about 60 tokens of the word "so". The
-word "so" has 3 senses in the corpus.
+The rewrite of the decision "0001" dropped the phrase "hence this ADR",
+because the language did not have a causal connective. The decision "0012"
+does not allow a Propositional Loss. A causal relation is a claim, so the
+rewrite had a Propositional Loss. The decisions have about 11 tokens of the
+word "so" and have about 7 tokens of the word "because". The corpus "UD-EWT"
+has about 17 tokens of the word "because" and has about 15 tokens of the
+word "since". The word "since" marks the time in a big share of the tokens.
+The corpus "UD-EWT" has about 60 tokens of the word "so". The tokens of "so"
+have different senses.
 
-English offers 2 orders. The phrase "A, so B" puts the reason at the front.
-The phrase "B because A" puts the effect at the front. The 2 orders differ
-in the information. One clause is old. One clause is new. The reader
-prefers the old clause at the front. The decision "0006" puts the old
-clause at the front. If the effect sits at the front, then the sentence has an ambiguity of the attachment. The phrase "B because A and C" is one example.
+English offers 2 orders. The phrase "A, so B" puts the reason at the front
+and the phrase "because A, B" puts the reason at the front. The phrase "B
+because A" puts the effect at the front. The 2 orders differ in the
+structure of the information. One clause is old and one clause is new. The
+order "old before new" helps the comprehension. The decision "0006" adopts
+the order and the common advice of the style adopts the order. If the effect
+sits at the front, then the sentence can have an ambiguous attachment. The
+phrase "B because A and C" is one example.
 
-The decision "0007" fixed one order for the Conditional. The decision
-"0007" is not a precedent. If the consequent sits at the front, then the consequent is a hypothesis. The
-reader holds the hypothesis in the memory. A causal sentence asserts the 2
-clauses, so the order does not cost the reader.
+The decision "0007" fixed one order for the Conditional. The decision "0007"
+is not a precedent for a causal sentence, because the 2 Sentence Shapes
+differ. If the consequent of a Conditional sits at the front, then the
+reader holds the consequent in the memory. The consequent is a hypothesis,
+so the reader cannot judge the consequent before the condition. A causal
+sentence asserts the 2 clauses, so the reader does not hold a hypothesis in
+the memory.
 
 ## Decision
 
@@ -31,41 +38,44 @@ The language has 2 causal constructions:
 - the phrase "<clause>, so <clause>"
 - the phrase "<clause>, because <clause>"
 
-The word "so" marks a result. The reason is old. The result is new. The
-word "because" marks a reason. The result is old. The reason is new. The seam has a mandatory comma. A causal sentence does not allow a Coordination inside a clause, so the Grammar fixes the scope of the connective.
+Every construction has one fiat meaning. A causal sentence needs the comma
+at the seam. The word "so" marks a result. The reason is old and the result
+is new. The word "because" marks a reason. The result is old and the reason
+is new. A clause of a causal sentence does not contain a Coordination, so
+the Grammar fixes the scope of the connective. The Conditional has the rule.
 
-The word "so" does not open a sentence. The word "because" does not open a
-sentence. The rule keeps the First Token. If a reason sits in a prior
-sentence, then the writer merges the 2 sentences. A causal verb is the
-alternative. The sentence "the expense explains the decision" is one
-example.
+The 2 connectives cannot open a sentence, because the First Token of a
+sentence announces the Sentence Shape. The decision "0014" names the rule.
+If the reason sits in a prior sentence, then the writer merges the 2
+sentences. A causal verb is the alternative and puts the topic at the front.
+The sentence "the expense explains the decision" uses the causal verb
+"explain".
 
-The word "so" has one sense. The sense of the degree is a Ban. The phrase "so
-big" is one example. The sense of the purpose is a Ban. The phrase "so that" is
-one example. The language bans 5 words:
+The phrase "so big" marks a degree and the phrase "so that" marks a purpose.
+The Grammar gives one sense to the word "so", so the language cannot say the
+2 phrases. The language bans 5 words:
 - "since"
 - "hence"
 - "therefore"
 - "thus"
 - "as"
 
-The advice names the 2 shapes.
+The Linter explains the Ban and names the 2 constructions.
 
-The maintainers deferred 3 questions:
-- the causal Imperative
-- the causal Conditional
-- the causal chain
-
-The phrase "A, so B, so C" is a causal chain. The maintainers deferred the
-purpose. The phrase "in order to" marks a purpose.
+The maintainers deferred 4 questions. The first question is an Imperative
+inside a causal sentence. The second question is a Conditional inside a
+causal sentence. The third question is the causal chain "A, so B, so C". The
+4th question is the purpose "in order to".
 
 ## Consequences
 
-- The decision "0001" paid the debt. The sentence "the expense of a
-  reversal grows with the seed, so the maintainers record the decision" is
-  the result.
-- The Linter names 3 repairs. The Linter finds a comma. The Linter finds
-  the word "because" at the front. The Linter finds the word "so" at the
-  front.
-- The correct connective depends on the prior sentence. The tool "lint-file" checks the prior sentence. The tool "lint-file" measures the
-  continuity of the topic.
+- The decision "0001" says the causal claim with the sentence "the expense
+  of a reversal grows with the seed, so the maintainers record the
+  decision".
+- The Linter names 3 repairs. The first repair adds the comma at the seam.
+  The second repair moves the word "because" from the front. The third
+  repair moves the word "so" from the front.
+- The correct connective depends on the prior sentence, so the Linter cannot
+  check the choice in one sentence. The tool "lint-file" measures the
+  continuity of the topic in the whole document, so the tool "lint-file" can
+  check the choice.

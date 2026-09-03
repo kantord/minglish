@@ -6,12 +6,12 @@ Status: proposed (tentative — same review point as ADR 0002–0004; rewritten 
 ## Context
 
 Triage counts about 204 tokens of the word "not" in the corpus. Instructions
-need Prohibitions. The sentence "do not delete the file" is a Prohibition.
+need Prohibitions and the sentence "do not delete the file" is a Prohibition.
 
-A Negation of a verb needs the word "do" in English. The word "do" is an
-Auxiliary. The language avoids Auxiliaries. The word "not" can change one
-Constituent. The phrase "not all users" is one example. The phrase "not old"
-is one example. A Negation of a Constituent causes a Scope Ambiguity.
+A Negation of a verb needs the Auxiliary "do" in English but the language
+avoids Auxiliaries. English allows a Negation of a Constituent, so the phrase
+"not all users" has a Scope Ambiguity. The phrase "not old" has a Scope
+Ambiguity.
 
 ## Decision
 
@@ -20,33 +20,34 @@ The language enables 3 Function Words:
 - "do"
 - "does"
 
-The Form Tag of "not" is "NEG". The Form Tag of "do" is "NEG_AUX_BASE". The
-Form Tag of "does" is "NEG_AUX_3SG".
+The word "not" has the Form Tag "NEG". The word "do" has the Form Tag
+"NEG_AUX_BASE" and the word "does" has the Form Tag "NEG_AUX_3SG".
 
-The word "do" carries a Negation. The word "does" carries a Negation. The
-Grammar allows the Auxiliary in one Sentence Shape. The Sentence Shape is
-the phrase "does not delete". A Prohibition uses the phrase "do not". The
-language bans the emphatic Auxiliary. The sentence "the parser does accept
-the file" is one example. The language bans the Auxiliary in a question.
+The 2 Surface Forms of the Lemma "do" carry a Negation, so the Grammar must
+allow the Auxiliary in one pattern. The word "not" follows the Auxiliary and
+comes before a base verb. A Negation uses the pattern and a Prohibition uses
+the bare pattern. The emphatic Auxiliary is a Ban, so the sentence "the
+parser does accept the file" is a Rejection. A question cannot use the
+Auxiliary.
 
-A Negation of a Copula uses "is not" or uses "are not". A Negation of a
-Copula does not need an Auxiliary.
+A Negation of a Copula does not need an Auxiliary, so the word "not" follows
+the Copula.
 
-The Grammar fixes the scope of "not". The word "not" changes the truth of
-the main verb. The word "not" does not change a Constituent. The language
-bans a Negation of a Constituent. The phrase "not all users" is one example.
-The phrase "a not old file" is one example.
+The Grammar limits the scope of "not" to the main predicate of the clause,
+so a Negation of a Constituent is a Ban. The Linter rejects the phrase "not
+all users" and rejects the phrase "a not old file".
 
-The decision did not enable "did". The decision "0010" added "did". The
-language bans every contraction. The word "doesn't" is a contraction. The
-word "don't" is a contraction.
+The decision does not enable "did" but the later decision "0010" added
+"did". The orthography of the language bans every contraction. The decision
+does not enable 2 contractions:
+- "doesn't"
+- "don't"
 
 ## Consequences
 
-- The language can say a Negation. The language can say a Prohibition. The
-  2 Sentence Shapes are natural sentences of English.
-- One Auxiliary enters the language. The Grammar limits the Auxiliary to one
-  Sentence Shape.
-- The Grammar enforces the rule of the scope. The Grammar enforces the rule
-  of the Auxiliary. Triage does not see the rules, because Triage checks the
-  tokens.
+- The language can say a Negation and can say a Prohibition in natural
+  sentences of English.
+- The language gains one Auxiliary but the Auxiliary appears in one pattern.
+- The Grammar limits the Auxiliary to one pattern and fixes the scope of
+  "not". Triage does not see the 2 rules, because Triage counts the tokens
+  of a sentence. Triage accepts every token of the 3 Function Words.

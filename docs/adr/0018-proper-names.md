@@ -5,9 +5,16 @@ Status: proposed (tentative)
 
 ## Context
 
-The Dogfood needs Names. The sentence "Minglish needs a lexicon" has a
-Name. The file "seed.json" is a Name. The tool Lexgen is a Name. The
-database WordNet is a Name. The Names are not a Closed Class. The Lexicon is the wrong tool. A Name does not belong in the Lexicon. A quoted span can hold every Name. The quoted spans are heavy.
+The Dogfood needs Names, because the documents of the project name things.
+The documents name 4 things:
+- the language Minglish
+- the file "seed.json"
+- the tool Lexgen
+- the database WordNet
+
+The Names are not a Closed Class, so the Lexicon is the wrong tool for
+the Names. A quoted span can hold every Name but is heavier than the
+convention of English.
 
 ## Decision
 
@@ -15,37 +22,50 @@ A Name has 2 shapes:
 - a capitalized word
 - a quoted span
 
-A capitalized word is a Name. The rule is the convention of English. The
-rule is strict. An unquoted Name must have a capital. An unquoted Name
-must sit inside the sentence. An unquoted Name does not match a word of the Lexicon. If a capitalized word follows a capitalized word,
-then the Linter merges the 2 words into one Name. If a capitalized word opens a
-sentence, then the Linter folds the word into the Lexicon. If the Lexicon
-does not have the word, then the Linter shows an error. The error suggests an appositive or suggests a quoted span. The Linter does not turn a typo into a
-Name. If a capitalized word has a twin in the Lexicon, then the Linter shows an error. The error names a typo or names a
-Name with a Collision. The word "I" is the Pronoun. The word "I" is not a
-Name.
+A capitalized word is a Name. The rule follows the convention of English
+but is strict. An unquoted Name must have a capital and must not open the
+sentence. The lowercase of an unquoted Name must not be a word of the
+Lexicon. If a capitalized word follows a capitalized word, then the Linter
+merges the 2 words into one Name. If a capitalized word opens a sentence,
+then the Linter checks the lowercase of the word. If the Lexicon has the
+lowercase, then the Linter reads the lowercase. If the Lexicon does not
+have the lowercase, then the Linter shows an error. The error suggests an
+appositive or suggests a quoted span. The Linter does not turn a typo into
+a Name and does not turn an unknown word into a Name. If a capitalized word
+does not open the sentence, then the Linter checks the lowercase of the
+word. If the Lexicon has the lowercase, then the Linter shows an error. The
+error names a wrong capital or names a Collision. If a Name collides with a
+word of the Lexicon, then the Name needs a quoted span. The word "I" is the
+Pronoun and is not a Name.
 
-A quoted span is a Name. A quoted span keeps the case of the identifier. A
-quoted span keeps the spelling of the identifier. The file "seed.json" is
-one example. A quoted span allows every character. A quoted span is one
-thing. A quoted span is one opaque Noun Phrase. A quotation is a different
-construction. The decision does not cover a quotation. A quotation needs a
-future design. The file "docs/ideas.md" describes the design. The design
-parses the quoted span.
+A quoted span holds an identifier. The identifier keeps the case and keeps
+the spelling inside a quoted span. The file "seed.json" is one example. A
+string of a program is a second example. A quoted span allows every
+character. A quoted span is one opaque Noun Phrase. A quotation mentions a
+phrase or mentions a sentence. A quotation is a different construction, so
+the decision does not cover a quotation. A quotation needs a future design.
+The file "docs/ideas.md" describes the future design. The future design
+can parse a sentence inside the quoted span.
 
-A Name is a singular Noun Phrase. A Name can follow a noun. The phrase
-"the tool Lexgen" is one example. A Name does not inflect. A Name is
-opaque. The writer repeats the Name. The rule matches the decision "0002".
-A Name has a flat expense in the metric. The frequency of a Name is
-meaningless.
+A Name is a singular Noun Phrase and can follow a noun in an appositive.
+The phrase "the tool Lexgen" is one example. A Name does not inflect. A Name is
+opaque, so the writer repeats the Name. The rule matches the decision
+"0002", because the decision "0002" bans every Anaphoric Pronoun. The
+metric gives a flat expense to every Name, because the frequency of a Name
+is meaningless.
 
 ## Consequences
 
-- The decision "0027" allowed the appositive inside the phrase of a Noun
-  Preposition.
-- The language can describe the language. The language can describe the
-  files. The language can describe the tools. The Names unblocked rows of
-  the Dogfood.
-- A Name is not a miss of the Lexicon. A Name has a flat expense.
-- If a brand does not have a capital, then the brand needs a capital at the front of a sentence. A writer
-  can introduce the brand with a noun.
+The language can describe 3 things:
+- the language
+- the files
+- the tools
+
+The Names unblock rows of the Dogfood.
+
+A Name is not a miss of the Lexicon, so Triage must not count a Name
+against the Coverage. The metric must give a flat expense to every Name.
+
+If a future brand does not have a capital, then the brand cannot open a
+sentence. The writer must give a capital to the brand or must introduce
+the brand with a noun.

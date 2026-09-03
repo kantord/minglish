@@ -6,48 +6,58 @@ Status: proposed (tentative). First Block-level structure.
 ## Context
 
 The repair of the paragraphs turned the list of the Pronouns into 9
-sentences. The proposal was valid. The proposal was unreadable. Technical
-texts enumerate the members of a set with a list. The language had one
-kind of the structures. The structure was the sentence. The language
-turned a list into a repetition.
+sentences. The proposal was valid but was unreadable. Technical texts
+enumerate the members of a set with a list but the language had one
+structure. The structure was the sentence, so a list became a repetition.
 
 ## Decision
 
-An Enumeration is a Block. An Enumeration is not a sentence. The Block has
-one plain statement. The statement ends with a colon. The Block has one
-line for every item. The string "- " opens every item.
+An Enumeration is a Block and is not a sentence. The Block has one plain
+statement and has one line for every item. The statement ends with a
+colon. The string "- " opens every item. Markdown turns the dash into a
+bullet.
 
-The items enumerate the last Noun Phrase of the statement. The Noun Phrase
-is plural. A quantity has a plural noun. The phrase "every <noun>" is
-legal. The Noun Phrase is the last phrase of the statement. A Prepositional Phrase does not
-follow the Noun Phrase. An adjective does not follow the Noun Phrase. A
-Coordination does not follow the Noun Phrase. If the statement has a
-quantity, then the number of the items matches the quantity.
+The items enumerate the last Noun Phrase of the statement. The rule is a
+fiat decision. The Noun Phrase has 3 legal shapes:
+- a plural noun
+- a quantity
+- the phrase "every <noun>"
 
-An item is one Noun Phrase. The language allows 4 kinds of the items:
+The statement must end with the Noun Phrase. A Modifier cannot follow the
+Noun Phrase. A Coordination cannot follow the Noun Phrase. If the
+statement has a quantity, then the number of the items must match the
+quantity.
+
+An item is one Noun Phrase. An item has 4 legal shapes:
 - a quoted word
 - a capitalized term
 - a Name
 - the phrase "the <noun>"
 
-A clause is not an item. A nested list does not exist.
+A clause cannot be an item. The language does not allow a nested list.
 
-Every tool reads a Block. The Block is one unit. The command "just lint" takes a Block
-in one argument. The corpus keeps the intro with the items. The tool "lint-file" keeps the intro with the items. The extractor of the decisions
-keeps the intro with the items. The repair of the paragraphs keeps the
-intro with the items. Markdown turns a dash into a bullet.
+A Block is one unit for every tool. The command "just lint" takes the whole
+Block in one argument, so the argument holds the lines of the Block. The
+intro stays with the items. The rule covers 4 tools:
+- the corpus of the tests
+- the tool "lint-file"
+- the extractor of the decisions
+- the repair of the paragraphs
 
-The maintainers deferred 3 questions. One question is an ordered list. The
-items of an ordered list are clauses. The steps of a procedure are one
-example. One question is an inner colon. One question is the
-intro. The intro can be a question in a future design.
+The maintainers deferred 3 questions. The first question is an ordered
+list. The items of an ordered list are clauses. The steps of a procedure
+are one example and the rules are a second example. The second question is
+a colon inside a sentence. The third question is an intro with the shape
+of a question.
 
 ## Consequences
 
-- One Block replaces 4 sentences. The Linter checks the number of the
-  items.
-- The role of the intro is small. The items enumerate the object or
-  enumerate the Complement. The reader does not guess the phrase of the
-  list.
-- A Block has lines. A sentence has one line. The extractor marks the
-  boundary of a line with the symbol "⏎".
+- The Block of the 4 Pronouns replaces 4 sentences. The Linter checks the
+  number of the items.
+- The last Noun Phrase is the object or is the Complement. The maintainers
+  limited the role of the intro with a deliberate choice, so the reader
+  does not guess the phrase of the list.
+- The extractor reads one line for every sentence. An Enumeration is the
+  first structure with lines, so the extractor gains one exception. The
+  output of the extractor shows the symbol "⏎" at the boundaries of the
+  lines.
