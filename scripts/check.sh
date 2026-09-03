@@ -25,6 +25,9 @@ cargo run -q -p textcost -- corpus/dogfood-pairs.tsv docs/dogfood-cost-report.md
 cargo run -q -p triage
 ./scripts/showcase.sh > /dev/null
 
+echo "== markdown block parser (docs/markdown-linting.md) =="
+python3 scripts/test-mdblocks.py
+
 echo "== committed artifacts must match their sources =="
 if ! git diff --exit-code -- lexicon.tsv docs/lexicon-report.md CONTEXT.md \
     docs/parse-report.md docs/cost-report.md docs/dogfood-cost-report.md \

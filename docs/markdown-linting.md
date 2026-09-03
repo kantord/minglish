@@ -116,6 +116,23 @@ read arbitrary markdown fine and don't need it de-markdowned first. Only
 the strict-grammar path (lint-file.py, extract-sentences.py) needed the
 shared classifier.
 
+## The permanent example and its test
+
+`tests/markdown-cases/kitchen-sink.md` is one file exercising every
+construct above — frontmatter, a blockquote, code, a table, an
+Enumeration, a Step Block, plain/task/nested lists (both the colon and
+non-colon nested case), links, a standalone and an inline image, raw
+HTML, footnotes, bold/italic/strikethrough/inline code, and a horizontal
+rule. `scripts/test-mdblocks.py` (`./scripts/check.sh` runs it, so it's a
+real CI gate, not a script someone has to remember to run by hand) checks
+three things against it: every construct lands in the block kind it
+should and none leaks into another block's text; the real minglish
+sentences the file deliberately includes still parse clean through the
+actual grammar; the deliberately-not-minglish content (an unknown word, a
+missing Enumeration colon, a bare capitalized word opening a sentence) is
+still correctly rejected with a real reason, proving the linter runs on
+this content rather than everything just being silently excluded.
+
 ## Regression baseline
 
 Every existing ADR (0001–0037) still lints at 100% sentence-parse — after
