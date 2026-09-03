@@ -86,7 +86,7 @@ fn rejections_get_named_diagnoses() {
         ("the writer prefers the more expressive one", "not a Pronoun"),
         ("the criterion of the Cognitive Load is first", "needs its noun"),
         ("the text must be cheap to the process", "cannot take a prepositional phrase"),
-        ("if a rule adds words and does not remove an ambiguity, then the rule fails", "carry no"),
+        ("if the test fails and the agent retries the request, then the queue is empty", "comma before"),
         ("the Grammar gives every sentence one Parse", "one object"),
         ("the rule keeps the Cognitive Load of the sentence small", "carries the result"),
         ("the Pronouns of a person not the speaker are anaphoric", "negates the verb only"),

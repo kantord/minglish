@@ -214,26 +214,56 @@ Statement: Tree = {
     <s:Subj1> <p:Pred1> <t:Tailn<Pred1>?> => nd("S", 1, vec![Some(s), Some(p), t]),
 };
 
+// A shared-subject predicate Coordination stays comma-free inside a Clause
+// too (ADR 0038), same as Statement's Tailn (ADR 0004/0021): "but"/"and"/
+// "or" here only ever joins CONJ, never a comma, so this cannot collide
+// with the comma-driven decisions Conditional/Causal/CoordClause make
+// after a Clause reduces.
 Clause: Tree = {
-    <s:SubjSG> <p:PredSG> => nd("Clause", 1, vec![Some(s), Some(p)]),
-    <s:SubjPL> <p:PredPL> => nd("Clause", 1, vec![Some(s), Some(p)]),
-    <s:Subj1> <p:Pred1> => nd("Clause", 1, vec![Some(s), Some(p)]),
+    <s:SubjSG> <p:PredSG> <t:CoordPredTail<PredSG>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
+    <s:SubjPL> <p:PredPL> <t:CoordPredTail<PredPL>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
+    <s:Subj1> <p:Pred1> <t:CoordPredTail<Pred1>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
 };
 
-// if <clause> , then <clause> — mandatory comma and then (ADR 0007).
+CoordPredTail<P>: Tree = {
+    <c:LConj> <p:P> => nd("CoordPred", 1, vec![Some(c), Some(p)]),
+};
+
+// if <clause> , then <clause> — mandatory comma and then (ADR 0007). Either
+// clause may itself be a full-clause coordination (ADR 0038): the shared
+// comma is always shifted first, and only the token after it (then/so/
+// because vs. and/or/but) decides which continuation — the same
+// reduce-then-branch shape ADR 0037 used to keep Causal and CoordClause
+// conflict-free, applied one level deeper. Not factored through a shared
+// "optionally-coordinated clause" nonterminal: that would recreate the
+// exact ambiguity ADR 0037 fixed (a shift/reduce choice on the comma
+// itself, before either continuation's marker is visible).
 Conditional: Tree = {
     <i:LIf> <c:Clause> <cm:LComma> <t:LThen> <m:Clause> =>
         nd("Cond", 4, vec![Some(i), Some(c), Some(cm), Some(t), Some(m)]),
+    <i:LIf> <c:Clause> <cm1:LComma> <cj:LConj> <c2:Clause> <cm2:LComma> <t:LThen> <m:Clause> =>
+        nd("Cond", 4, vec![Some(i), Some(nd("CoordClause", 2, vec![Some(c), Some(cm1), Some(cj), Some(c2)])), Some(cm2), Some(t), Some(m)]),
+    <i:LIf> <c:Clause> <cm:LComma> <t:LThen> <m:Clause> <cm2:LComma> <cj:LConj> <m2:Clause> =>
+        nd("Cond", 4, vec![Some(i), Some(c), Some(cm), Some(t), Some(nd("CoordClause", 2, vec![Some(m), Some(cm2), Some(cj), Some(m2)]))]),
 };
 
 // <clause> , so <clause> — cause given, result new;
 // <clause> , because <clause> — result given, reason new (ADR 0026).
-// Comma mandatory; clauses carry no coordination, so scope is fixed.
+// Comma mandatory. Either clause may itself be a full-clause coordination
+// (ADR 0038) by the same reduce-then-branch shape as Conditional above.
 Causal: Tree = {
     <c:Clause> <cm:LComma> <s:LSo> <r:Clause> =>
         nd("Causal", 2, vec![Some(c), Some(cm), Some(s), Some(r)]),
     <r:Clause> <cm:LComma> <b:LBecause> <c:Clause> =>
         nd("Causal", 2, vec![Some(r), Some(cm), Some(b), Some(c)]),
+    <c:Clause> <cm1:LComma> <cj:LConj> <c2:Clause> <cm2:LComma> <s:LSo> <r:Clause> =>
+        nd("Causal", 2, vec![Some(nd("CoordClause", 2, vec![Some(c), Some(cm1), Some(cj), Some(c2)])), Some(cm2), Some(s), Some(r)]),
+    <r:Clause> <cm1:LComma> <cj:LConj> <r2:Clause> <cm2:LComma> <b:LBecause> <c:Clause> =>
+        nd("Causal", 2, vec![Some(nd("CoordClause", 2, vec![Some(r), Some(cm1), Some(cj), Some(r2)])), Some(cm2), Some(b), Some(c)]),
+    <c:Clause> <cm:LComma> <s:LSo> <r:Clause> <cm2:LComma> <cj:LConj> <r2:Clause> =>
+        nd("Causal", 2, vec![Some(c), Some(cm), Some(s), Some(nd("CoordClause", 2, vec![Some(r), Some(cm2), Some(cj), Some(r2)]))]),
+    <r:Clause> <cm:LComma> <b:LBecause> <c:Clause> <cm2:LComma> <cj:LConj> <c2:Clause> =>
+        nd("Causal", 2, vec![Some(r), Some(cm), Some(b), Some(nd("CoordClause", 2, vec![Some(c), Some(cm2), Some(cj), Some(c2)]))]),
 };
 
 // <clause> , but/and/or <clause> — full-clause coordination, a new

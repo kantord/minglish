@@ -14,10 +14,14 @@ hitting a wall while trying to say a true thing, not from reading examples.
   inside a VP (ADR 0021); a full contrastive clause ("X, but Y") has no
   shape and gets forced into 2 sentences or an inline-list misreading.
   The single most requested fix.
-- **Coordination inside a causal or conditional clause** (8+ rewrites).
-  "the test fails and the agent retries, so …" does not parse; the clause
-  after "so"/"because"/"if" cannot itself coordinate. Forces artificial
-  sentence splits inside what is naturally one reason or one consequent.
+- ~~**Coordination inside a causal or conditional clause**~~ (8+
+  rewrites). **Closed 2026-09-04, ADR 0038.** "the test fails and the
+  agent retries, so …" used to reject; a Conditional and a causal
+  sentence now allow a Coordination in every clause, both shapes: comma-
+  free for a shared subject, comma-mandatory for a new one, same rule as
+  ADR 0037's top-level Coordination. Zero new LALR conflicts — the
+  decision point sits behind the unique "if"/"so"/"because" markers, not
+  the shared `Clause` reduction that caused ADR 0037's conflict.
 - **"without"** (7). No way to state an absence attached to a clause
   ("split the sentence without an ambiguity"); always rerouted through a
   negated clause or a Conditional, at a naturalness cost.

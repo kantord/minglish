@@ -461,10 +461,6 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             out.push("an adjective cannot take a prepositional phrase yet (\"cheap to …\"); restructure with a verb, or split the sentence (deferred, ADR 0023)".to_string());
         }
     }
-    // coordination inside a conditional clause (ADR 0007)
-    if matches!(toks.first(), Some(Tok::If(_))) && toks.iter().any(|t| matches!(t, Tok::Conj(_))) {
-        out.push("a Conditional's clauses carry no \"and\"/\"or\" — split into 2 conditionals, or move the second claim to its own sentence (ADR 0007)".to_string());
-    }
     // "more" before a noun: a comparative of quantity
     for w in toks.windows(2) {
         if matches!(w[0], Tok::More(_)) && matches!(w[1], Tok::NounSg(_) | Tok::NounPl(_)) {

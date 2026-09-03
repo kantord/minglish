@@ -41,8 +41,9 @@
 | 0035-become.md | 18/18 |
 | 0036-domain-model-schema.md | 32/32 |
 | 0037-full-clause-coordination.md | 27/27 |
+| 0038-coordination-inside-clauses.md | 24/24 |
 
-**Aggregate: 1272/1272 sentences (100%)**
+**Aggregate: 1296/1296 sentences (100%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
