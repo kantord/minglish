@@ -1,10 +1,13 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0044: "still"/"already" as a medial
-adverb — one optional slot right before the predicate, transparent
-when absent — resolving 2 of ADR 0043's 4 deferred words; "yet" and
-"later" stay a Gap, a different position). Everything a fresh agent
-needs that is not derivable from the code, ADRs, or git history.
+Last updated: 2026-09-04 (ADR 0046: "yet" is a negative-polarity
+Idiomatic Structure — spliced only into productions where a NEG is
+already mandatory, so the Grammar makes an unnegated "yet"
+underivable by construction, not by a linter rule. Closes the last
+of ADR 0043's 4 deferred words; all 5 temporal/hedge adverbs from
+the 2026-09-03 rewrite tally are now resolved). Everything a fresh
+agent needs that is not derivable from the code, ADRs, or git
+history.
 
 ## Where everything lives
 
@@ -17,7 +20,7 @@ needs that is not derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0044` — every language and policy decision, each citing its
+- `docs/adr/0001–0046` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),

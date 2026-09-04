@@ -438,6 +438,11 @@
     "note": "ADR 0043: an Idiomatic Structure of the NEG slot — marks a spanning negation over a history of occasions, not the episodic negation \"not\" marks"
   },
   {
+    "lemma": "yet",
+    "category": "YET",
+    "note": "ADR 0046: an Idiomatic Structure — a negative-polarity item, grammatically confined to appear only in a production where a NEG is mandatory in the same production, so the parser cannot derive an unnegated \"yet\""
+  },
+  {
     "lemma": "still",
     "category": "TEMP_ADV",
     "note": "ADR 0044: an Idiomatic Structure — one optional slot right before the predicate, wrapping transparently (no tree-shape change when absent)"
@@ -446,6 +451,11 @@
     "lemma": "already",
     "category": "TEMP_ADV",
     "note": "ADR 0044: an Idiomatic Structure — one optional slot right before the predicate, wrapping transparently (no tree-shape change when absent)"
+  },
+  {
+    "lemma": "afterward",
+    "category": "TIME_ADV",
+    "note": "ADR 0045: an Idiomatic Structure of the PPv slot — the bare, no-anchor twin of \"after\" (PREP_V, ADR 0033); \"later\" stays the ADJ it already is (ADR 0029), not reused, to avoid a collision with its live attributive use"
   },
   {
     "lemma": "do",

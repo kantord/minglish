@@ -195,6 +195,7 @@ advices	form	NOUN_PL	advice
 affect	form	NOUN_SG	affect
 affects	form	NOUN_PL	affect
 after	form	PREP_V	after
+afterward	form	TIME_ADV	afterward
 against	form	PREP_V	against
 agent	form	NOUN_SG	agent
 agents	form	NOUN_PL	agent
@@ -2197,6 +2198,7 @@ written	form	VERB_TRANS_ED	write
 wrong	form	ADJ	wrong
 wronger	form	ADJ_CMP	wrong
 wrote	form	VERB_TRANS_ED	write
+yet	form	YET	yet
 you	form	PRON_2	you
 your	form	POSS_2	your
 zero	ban	-	for none write "no <noun> …" as the subject, or "… does not <verb> <nouns>" (ADR 0022)

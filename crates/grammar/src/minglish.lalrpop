@@ -40,6 +40,8 @@ extern {
         "CONJ" => Tok::Conj(<String>),
         "NEG" => Tok::Neg(<String>),
         "TEMP_ADV" => Tok::TempAdv(<String>),
+        "TIME_ADV" => Tok::TimeAdv(<String>),
+        "YET" => Tok::Yet(<String>),
         "DO_BASE" => Tok::DoBase(<String>),
         "DO_3SG" => Tok::Do3(<String>),
         "DO_PAST" => Tok::DoPast(<String>),
@@ -105,6 +107,11 @@ LCopPlPast: Tree = <l:@L> <w:"COP_PL_PAST"> => leaf(l, w);
 LConj: Tree = <l:@L> <w:"CONJ"> => leaf(l, w);
 LNeg: Tree = <l:@L> <w:"NEG"> => leaf(l, w);
 LTempAdv: Tree = <l:@L> <w:"TEMP_ADV"> => leaf(l, w);
+LTimeAdv: Tree = <l:@L> <w:"TIME_ADV"> => leaf(l, w);
+// "yet" (ADR 0046): a negative-polarity item, spliced only into
+// productions where LNeg is mandatory in the same alternative, so it is
+// never derivable without a negation already present.
+LYet: Tree = <l:@L> <w:"YET"> => leaf(l, w);
 LDoBase: Tree = <l:@L> <w:"DO_BASE"> => leaf(l, w);
 LDo3: Tree = <l:@L> <w:"DO_3SG"> => leaf(l, w);
 LDoPast: Tree = <l:@L> <w:"DO_PAST"> => leaf(l, w);
@@ -145,11 +152,13 @@ VPn<Vt, Vi>: Tree = {
 // Do-support negation with the given auxiliary form.
 NegVPn<D>: Tree = {
     <d:D> <n:LNeg> <v:VBaseP> => nd("NegVP", 2, vec![Some(d), Some(n), Some(v)]),
+    <d:D> <n:LNeg> <y:LYet> <v:VBaseP> => nd("NegVP", 3, vec![Some(d), Some(n), Some(y), Some(v)]),
 };
 
 // Copular predicate (optionally negated) with the given copula form.
 CopPredn<C>: Tree = {
     <c:C> <n:LNeg?> <cm:Compl> => nd("CopPred", 2, vec![Some(c), n, Some(cm)]),
+    <c:C> <n:LNeg> <y:LYet> <cm:Compl> => nd("CopPred", 3, vec![Some(c), Some(n), Some(y), Some(cm)]),
 };
 
 // Positive-only copular predicate (for quantified subjects, ADR 0014).
@@ -285,6 +294,7 @@ CoordClause: Tree = {
 // do not <verb …> — prohibition (ADR 0005).
 Prohibition: Tree = {
     <d:LDoBase> <n:LNeg> <v:VBaseP> => nd("Prohib", 2, vec![Some(d), Some(n), Some(v)]),
+    <d:LDoBase> <n:LNeg> <y:LYet> <v:VBaseP> => nd("Prohib", 3, vec![Some(d), Some(n), Some(y), Some(v)]),
 };
 
 // <verb …> — bare imperative; the verb is the signature (ADR 0019).
@@ -376,10 +386,12 @@ PredNoCore: Tree = {
 
 ModalVP: Tree = {
     <m:LModalMust> <n:LNeg?> <v:VBaseP> => nd("ModalVP", 2, vec![Some(m), n, Some(v)]),
+    <m:LModalMust> <n:LNeg> <y:LYet> <v:VBaseP> => nd("ModalVP", 3, vec![Some(m), Some(n), Some(y), Some(v)]),
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     <m:LModalCannot> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     // ADR 0032: "be" exists only after a modal, with the copula's complements
     <m:LModalMust> <n:LNeg?> <b:LBe> <cm:Compl> => nd("ModalCop", 2, vec![Some(m), n, Some(b), Some(cm)]),
+    <m:LModalMust> <n:LNeg> <y:LYet> <b:LBe> <cm:Compl> => nd("ModalCop", 3, vec![Some(m), Some(n), Some(y), Some(b), Some(cm)]),
     <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
     <m:LModalCannot> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),
 };
@@ -459,6 +471,9 @@ NPInner: Tree = {
 // Verb-attaching PP; at most one per clause (ADR 0011).
 PPv: Tree = {
     <p:LPrepV> <np:NPAny> => nd("PP", 1, vec![Some(p), Some(np)]),
+    // ADR 0045: "afterward" — the bare, no-anchor twin of "after <NP>";
+    // same slot, no object (an Idiomatic Structure of PPv itself).
+    <l:LTimeAdv> => nd("PP", 0, vec![Some(l)]),
 };
 
 // Copular complement: adjective or noun phrase (ADR 0003); or a comparative

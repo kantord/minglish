@@ -46,15 +46,26 @@ hitting a wall while trying to say a true thing, not from reading examples.
   both the finite and the bare verb form (so an Imperative/Prohibition
   gets it too). Repeating the verb stays available and unaffected; this
   is a second option, not a replacement.
+- ~~**Temporal/hedge adverbs**: "yet", "still", "already", "later",
+  "never"~~ (3 each). **Closed 2026-09-04, ADR 0043–0046.** Each got its
+  own Idiomatic Structure (a word confined to one grammar position,
+  chosen because that position is where its meaning is unambiguous) —
+  "never" reuses the NEG slot (ADR 0043); "still"/"already" share one new
+  medial slot right before the predicate, transparent when unused (ADR
+  0044); "later" collided with its own live adjective sense (ADR 0029,
+  11 uses), so the gap is closed by "afterward" instead, reusing the PPv
+  slot "after" already has (ADR 0045); "yet" is a negative-polarity item
+  — spliced only into productions where a NEG is already mandatory, so
+  the Grammar itself makes an unnegated "yet" underivable, not a linter
+  rule (ADR 0046). Zero LALR conflicts and zero corpus regressions
+  across all 4 ADRs, verified against the full corpus each time, not
+  assumed.
 
 ## High-frequency missing words
 
 - **"only"** (5) — deferred by design (ADR queue item); this data adds
   weight to prioritizing it.
 - **"other"** (4), **"or"** as a full alternative in more positions (3).
-- **Temporal/hedge adverbs**: "yet", "still", "already", "later", "never"
-  (3 each) — writers reach for these constantly when describing an ADR's
-  history ("not yet allowed", "still applies", "already deferred").
 - **"at most"** (2) — "most" is banned (ADR 0029 superlative deferral);
   "at most N" has no phrasing and gets rewritten around the count instead.
 - **Superlatives** ("largest", "shortest", "biggest") — known deferral

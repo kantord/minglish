@@ -93,7 +93,7 @@ fn word(t: &Tok) -> &str {
         | Tok::VtBase(w) | Tok::Vt3(w) | Tok::VtEd(w) | Tok::VtIng(w) | Tok::ViBase(w)
         | Tok::Vi3(w) | Tok::ViEd(w) | Tok::ViIng(w) | Tok::PrepN(w) | Tok::PrepV(w)
         | Tok::Pron1(w) | Tok::Pron2(w) | Tok::Poss(w) | Tok::CopSg(w) | Tok::CopPl(w)
-        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w)
+        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w) | Tok::TimeAdv(w) | Tok::Yet(w)
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
@@ -835,6 +835,8 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Conj(_) => vec![Term::Conj],
         Tok::Neg(_) => vec![Term::Neg],
         Tok::TempAdv(_) => vec![Term::TempAdv],
+        Tok::TimeAdv(_) => vec![Term::PrepV],
+        Tok::Yet(_) => vec![Term::Neg],
         Tok::DoBase(_) | Tok::Do3(_) | Tok::DoPast(_) => vec![Term::DoAny],
         Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) => vec![Term::ModAny],
         Tok::If(_) => vec![Term::If],
