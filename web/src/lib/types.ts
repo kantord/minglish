@@ -24,6 +24,7 @@ export interface TreeNode {
   tag?: string
   gloss?: string
   full?: string | null
+  case?: string | null
 }
 
 export interface DiagnosisResult {

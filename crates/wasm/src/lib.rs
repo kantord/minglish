@@ -3,7 +3,7 @@
 //! filesystem access is needed at runtime.
 
 use diagnose::{diagnose, Diagnosis};
-use grammar::{parse_text, Lexicon, Metrics, Tok, Tree};
+use grammar::{cases, parse_text, Case, Lexicon, Metrics, Tok, Tree};
 use serde_json::{json, Value};
 use std::collections::BTreeMap;
 use std::sync::LazyLock;
@@ -173,17 +173,33 @@ fn metrics_json(m: Metrics) -> Value {
 /// gloss (the definition of its meaning, when the domain model has one),
 /// and the full definition for tooltips.
 
+/// Grammatical case (ADR: `cases()` is a pure derived view of the tree —
+/// position already determines role, so this is display only, not new
+/// grammar) — Nominative/Accusative/Genitive/Oblique/Complement.
+fn case_name(c: Case) -> &'static str {
+    match c {
+        Case::Nominative => "Nominative",
+        Case::Accusative => "Accusative",
+        Case::Genitive => "Genitive",
+        Case::Oblique => "Oblique",
+        Case::Complement => "Complement",
+    }
+}
+
 fn tree_json(tree: &Tree) -> Value {
+    let case_map: BTreeMap<usize, Case> = cases(tree).into_iter().collect();
     let mut nodes: Vec<Value> = Vec::new();
-    fn walk(tree: &Tree, parent: Option<&str>, head: bool, nodes: &mut Vec<Value>) -> String {
+    fn walk(tree: &Tree, parent: Option<&str>, head: bool, case_map: &BTreeMap<usize, Case>, nodes: &mut Vec<Value>) -> String {
         let id = format!("n{}", nodes.len());
         match tree {
-            Tree::Leaf { word, .. } => {
+            Tree::Leaf { pos, word } => {
                 let (gloss, full) = gloss_for(word);
                 let lemma = LEXICON.lemma_of(word).unwrap_or(word).to_lowercase();
+                let case = case_map.get(pos).map(|c| case_name(*c));
                 nodes.push(json!({
                     "id": id, "parentId": parent, "name": word, "kind": "word", "head": head,
                     "lemma": lemma, "tag": tag_of_lex(word), "gloss": gloss, "full": full,
+                    "case": case,
                 }));
             }
             Tree::Node { label, head: h, children } => {
@@ -191,13 +207,13 @@ fn tree_json(tree: &Tree) -> Value {
                     "id": id, "parentId": parent, "name": label_name(label), "kind": "node", "head": head,
                 }));
                 for (i, c)in children.iter().enumerate() {
-                    walk(c, Some(&id), i == *h, nodes);
+                    walk(c, Some(&id), i == *h, case_map, nodes);
                 }
             }
         }
         id
     }
-    walk(tree, None, false, &mut nodes);
+    walk(tree, None, false, &case_map, &mut nodes);
     json!({ "nodes": nodes })
 }
 

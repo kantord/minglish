@@ -32,7 +32,7 @@ const colorOf = (n: { data: TreeNode | null }) =>
     const glosses = words.map((n) => ({
       ...n,
       key: `${n.id}:gloss`,
-      text: n.data?.gloss ?? '',
+      text: [n.data?.gloss, n.data?.case].filter(Boolean).join(' · '),
       dy: GLOSS_DY,
       fill: 'var(--muted-foreground)',
     }))
