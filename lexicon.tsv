@@ -226,6 +226,7 @@ answered	form	VERB_TRANS_ED	answer
 answering	form	VERB_TRANS_ING	answer
 answers	form	VERB_TRANS_3SG	answer
 apparent	form	ADJ_LONG	apparent
+apparently	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 appear	form	VERB_INTRANS_BASE	appear
 appeared	form	VERB_INTRANS_ED	appear
 appearing	form	VERB_INTRANS_ING	appear
@@ -242,6 +243,7 @@ approximations	form	NOUN_PL	approximation
 archetype	form	NOUN_SG	archetype
 archetypes	form	NOUN_PL	archetype
 are	form	COPULA_PL	are
+arguably	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 argument	form	NOUN_SG	argument
 arguments	form	NOUN_PL	argument
 arrive	form	VERB_INTRANS_BASE	arrive
@@ -556,6 +558,7 @@ cost	reject	NOUN	expense
 costed	form	VERB_TRANS_ED	cost
 costing	form	VERB_TRANS_ING	cost
 costs	form	VERB_TRANS_3SG	cost
+could	ban	-	for possibility rephrase the sentence, or state the fact plainly (ADR 0009, ADR 0042)
 count	form	VERB_TRANS_BASE	count
 counted	form	VERB_TRANS_ED	count
 counting	form	VERB_TRANS_ING	count
@@ -1136,6 +1139,7 @@ lexer	term	-	Lexer
 lexers	term	-	Lexers
 lexicon	term	-	Lexicon
 lexicons	term	-	Lexicons
+likely	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 limit	form	VERB_TRANS_BASE	limit
 limited	form	VERB_TRANS_ED	limit
 limiting	form	VERB_TRANS_ING	limit
@@ -1203,6 +1207,7 @@ matching	form	VERB_TRANS_ING	match
 maximum	form	NOUN_SG	maximum
 maximums	form	NOUN_PL	maximum
 may	ban	-	for permission write "can"; for possibility rephrase the sentence (ADR 0009)
+maybe	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 meaning	form	NOUN_SG	meaning
 meaningless	form	ADJ_LONG	meaningless
 meanings	form	NOUN_PL	meaning
@@ -1236,6 +1241,7 @@ messages	form	NOUN_PL	message
 met	form	VERB_TRANS_ED	meet
 metric	form	NOUN_SG	metric
 metrics	form	NOUN_PL	metric
+might	ban	-	for possibility rephrase the sentence, or state the fact plainly (ADR 0009, ADR 0042)
 migrate	form	VERB_TRANS_BASE	migrate
 migrated	form	VERB_TRANS_ED	migrate
 migrates	form	VERB_TRANS_3SG	migrate
@@ -1417,6 +1423,7 @@ pays	form	VERB_TRANS_3SG	pay
 people	form	NOUN_PL	person
 percent	form	PERCENT	percent
 perfect	form	ADJ_LONG	perfect
+perhaps	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 permanent	form	ADJ_LONG	permanent
 permission	form	NOUN_SG	permission
 permissions	form	NOUN_PL	permission
@@ -1458,6 +1465,7 @@ possessions	form	NOUN_PL	possession
 possessive	form	ADJ_LONG	possessive
 possibilities	form	NOUN_PL	possibility
 possibility	form	NOUN_SG	possibility
+possibly	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 precede	form	VERB_TRANS_BASE	precede
 preceded	form	VERB_TRANS_ED	precede
 precedent	form	NOUN_SG	precedent
@@ -1488,6 +1496,7 @@ prepositions	form	NOUN_PL	preposition
 present	form	ADJ_LONG	present
 pressure	form	NOUN_SG	pressure
 pressures	form	NOUN_PL	pressure
+presumably	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 prevent	form	VERB_TRANS_BASE	prevent
 prevented	form	VERB_TRANS_ED	prevent
 preventing	form	VERB_TRANS_ING	prevent
@@ -1495,6 +1504,7 @@ prevents	form	VERB_TRANS_3SG	prevent
 primary	form	ADJ_LONG	primary
 prior	form	ADJ	prior
 priorer	form	ADJ_CMP	prior
+probably	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 problem	form	NOUN_SG	problem
 problems	form	NOUN_PL	problem
 procedure	form	NOUN_SG	procedure
@@ -1792,6 +1802,9 @@ see	form	VERB_TRANS_BASE	see
 seed	term	-	Seed
 seeds	term	-	Seeds
 seeing	form	VERB_TRANS_ING	see
+seem	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
+seemed	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
+seems	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 seen	form	VERB_TRANS_ED	see
 sees	form	VERB_TRANS_3SG	see
 send	form	VERB_TRANS_BASE	send
@@ -1865,6 +1878,7 @@ small	form	ADJ	small
 smaller	form	ADJ_CMP	small
 so	form	RESULT	so
 some	form	QUANT_EXIST	some
+somewhat	ban	-	epistemic hedges are banned - state the claim directly, or drop the qualifier (ADR 0042)
 source	form	NOUN_SG	source
 source	reject	VERB	find
 sources	form	NOUN_PL	source
@@ -2085,6 +2099,7 @@ unit	form	NOUN_SG	unit
 units	form	NOUN_PL	unit
 universal	form	ADJ_LONG	universal
 unknown	form	ADJ_LONG	unknown
+unlikely	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 unnatural	form	ADJ_LONG	unnatural
 unquoted	form	ADJ_LONG	unquoted
 unreadable	form	ADJ_LONG	unreadable

@@ -785,6 +785,81 @@
     "advice": "for permission write \"can\"; for possibility rephrase the sentence (ADR 0009)"
   },
   {
+    "lemma": "might",
+    "category": "BANNED",
+    "advice": "for possibility rephrase the sentence, or state the fact plainly (ADR 0009, ADR 0042)"
+  },
+  {
+    "lemma": "could",
+    "category": "BANNED",
+    "advice": "for possibility rephrase the sentence, or state the fact plainly (ADR 0009, ADR 0042)"
+  },
+  {
+    "lemma": "maybe",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "perhaps",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "probably",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "possibly",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "likely",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "unlikely",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "presumably",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "apparently",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "arguably",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "somewhat",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or drop the qualifier (ADR 0042)"
+  },
+  {
+    "lemma": "seem",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "seems",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
+    "lemma": "seemed",
+    "category": "BANNED",
+    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+  },
+  {
     "lemma": "all",
     "category": "BANNED",
     "advice": "write \"every\" with a singular noun (ADR 0014)"

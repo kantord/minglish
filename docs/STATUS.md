@@ -1,9 +1,10 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0041: a colon opens an inline 2-item list
-— "the mechanism stores: a word and a message" — revising ADR 0040's
-ban on the bare form). Everything a fresh agent needs that is not
-derivable from the code, ADRs, or git history.
+Last updated: 2026-09-04 (ADR 0042: epistemic hedges — "maybe",
+"probably", "likely", "seem", and 8 more, plus "might"/"could" pulled
+in from ADR 0009's deferred Gap — are permanently banned, not an
+oversight). Everything a fresh agent needs that is not derivable from
+the code, ADRs, or git history.
 
 ## Where everything lives
 
@@ -16,7 +17,7 @@ derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0041` — every language and policy decision, each citing its
+- `docs/adr/0001–0042` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -143,6 +144,10 @@ derivable from the code, ADRs, or git history.
 
 ## Standing policies easy to violate accidentally
 
+- Epistemic hedges ("maybe", "probably", "likely", "seem", "might",
+  "could", 13 words total, ADR 0042) are a permanent Ban, not a
+  coverage gap — do not add one to close a vocabulary gap; the fix is
+  always to state the claim directly or name the source.
 - No references to (or derivation from) non-open controlled-language
   specifications anywhere in the repo — the anonymous policy note in
   docs/resources.md is deliberate; do not name them even to warn.
