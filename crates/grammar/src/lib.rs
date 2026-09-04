@@ -710,6 +710,99 @@ fn clause_depth(tree: &Tree) -> usize {
     }
 }
 
+// ------------------------------------------------------------------ case --
+
+/// Grammatical case, assigned positionally (like English): the grammar
+/// already uses a distinct nonterminal per role (subject, VP object,
+/// PP object, of-PP possessor, copula complement), so every argument's
+/// role is fully determined by *where* it sits in the tree — this is a
+/// pure derived view, not new grammar. Keyed by the argument's head word
+/// position (`head_word_pos`), one entry per argument NP.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Case {
+    /// The subject of a clause.
+    Nominative,
+    /// The direct object of a verb phrase.
+    Accusative,
+    /// The object of an of-PP (possessor/whole, ADR 0011).
+    Genitive,
+    /// The object of any other PP (a PREP_N or PREP_V attachment).
+    Oblique,
+    /// A copula's complement — not a case-bearing argument in English,
+    /// but a distinct role worth keeping separate from Nominative/Accusative.
+    Complement,
+}
+
+const NP_LABELS: [&str; 6] = ["NP", "NPAppos", "NPGen", "NPPct", "Cmp", "ComplPP"];
+
+/// Tag `t` with `case` if it stands directly as an argument (an NP-family
+/// node, or a bare name leaf) — everything else (a PP, an of-PP) is not
+/// itself case-bearing; its own case comes from recursing into it.
+fn tag_arg(t: &Tree, case: Case, out: &mut Vec<(usize, Case)>) {
+    match t {
+        Tree::Leaf { pos, .. } => out.push((*pos, case)),
+        Tree::Node { label, .. } if NP_LABELS.contains(label) => {
+            out.push((t.head_word_pos(), case));
+        }
+        _ => {}
+    }
+}
+
+/// Every argument's grammatical case, derived from the parse tree alone.
+pub fn cases(tree: &Tree) -> Vec<(usize, Case)> {
+    let mut out = Vec::new();
+    walk_cases(tree, &mut out);
+    out.sort_by_key(|&(pos, _)| pos);
+    out
+}
+
+fn walk_cases(t: &Tree, out: &mut Vec<(usize, Case)>) {
+    let Tree::Node { label, children, .. } = t else { return };
+    match *label {
+        "S" | "Clause" => {
+            if let Some(subj) = children.first() {
+                tag_arg(subj, Case::Nominative, out);
+                walk_cases(subj, out);
+            }
+            for c in &children[1..] {
+                walk_cases(c, out);
+            }
+        }
+        "VP" => {
+            for c in children.iter().skip(1) {
+                tag_arg(c, Case::Accusative, out);
+                walk_cases(c, out);
+            }
+        }
+        "PP" => {
+            if let Some(np) = children.get(1) {
+                tag_arg(np, Case::Oblique, out);
+                walk_cases(np, out);
+            }
+        }
+        "OfPP" => {
+            if let Some(np) = children.get(1) {
+                tag_arg(np, Case::Genitive, out);
+                walk_cases(np, out);
+            }
+        }
+        "CopPred" => {
+            if let Some(cm) = children.last() {
+                tag_arg(cm, Case::Complement, out);
+                walk_cases(cm, out);
+            }
+            for c in &children[..children.len().saturating_sub(1)] {
+                walk_cases(c, out);
+            }
+        }
+        _ => {
+            for c in children {
+                walk_cases(c, out);
+            }
+        }
+    }
+}
+
 // ----------------------------------------------------------------- parse --
 
 pub type ParseError =
