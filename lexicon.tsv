@@ -206,6 +206,7 @@ allow	form	VERB_TRANS_BASE	allow
 allowed	form	VERB_TRANS_ED	allow
 allowing	form	VERB_TRANS_ING	allow
 allows	form	VERB_TRANS_3SG	allow
+already	form	TEMP_ADV	already
 also	ban	-	"also" adds a second claim - write the claim as its own sentence; the reader keeps both
 alternative	form	NOUN_SG	alternative
 alternatives	form	NOUN_PL	alternative
@@ -1924,6 +1925,7 @@ step	form	NOUN_SG	step
 step block	term	-	Step Block
 step blocks	term	-	Step Blocks
 steps	form	NOUN_PL	step
+still	form	TEMP_ADV	still
 stop	form	VERB_TRANS_BASE	stop
 stop	reject	NOUN	halt
 stopped	form	VERB_TRANS_ED	stop

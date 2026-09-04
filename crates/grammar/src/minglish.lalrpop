@@ -39,6 +39,7 @@ extern {
         "COP_PL_PAST" => Tok::CopPlPast(<String>),
         "CONJ" => Tok::Conj(<String>),
         "NEG" => Tok::Neg(<String>),
+        "TEMP_ADV" => Tok::TempAdv(<String>),
         "DO_BASE" => Tok::DoBase(<String>),
         "DO_3SG" => Tok::Do3(<String>),
         "DO_PAST" => Tok::DoPast(<String>),
@@ -103,6 +104,7 @@ LCopSgPast: Tree = <l:@L> <w:"COP_SG_PAST"> => leaf(l, w);
 LCopPlPast: Tree = <l:@L> <w:"COP_PL_PAST"> => leaf(l, w);
 LConj: Tree = <l:@L> <w:"CONJ"> => leaf(l, w);
 LNeg: Tree = <l:@L> <w:"NEG"> => leaf(l, w);
+LTempAdv: Tree = <l:@L> <w:"TEMP_ADV"> => leaf(l, w);
 LDoBase: Tree = <l:@L> <w:"DO_BASE"> => leaf(l, w);
 LDo3: Tree = <l:@L> <w:"DO_3SG"> => leaf(l, w);
 LDoPast: Tree = <l:@L> <w:"DO_PAST"> => leaf(l, w);
@@ -298,7 +300,20 @@ Subj1: Tree = { LPron1 };
 
 // ------------------------------------------------------------- predicates
 
-PredSG: Tree = {
+// ADR 0044: an optional medial adverb ("still", "already") right before
+// the predicate — the exact position real English uses for this class.
+// Transparent when absent: the tree is byte-identical to the pre-0044
+// shape, so nothing downstream needs to know about the wrapper unless a
+// sentence actually uses one.
+PredAdv<P>: Tree = {
+    <a:LTempAdv?> <p:P> => match a {
+        None => p,
+        Some(av) => nd("PredAdv", 1, vec![Some(av), Some(p)]),
+    },
+};
+
+PredSG: Tree = PredAdv<PredSGCore>;
+PredSGCore: Tree = {
     VPn<LVt3, LVi3>,
     VPn<LVtEd, LViEd>,
     NegVPn<LDo3>,
@@ -311,7 +326,8 @@ PredSG: Tree = {
     CopPredn<LBecomePast>,
 };
 
-PredPL: Tree = {
+PredPL: Tree = PredAdv<PredPLCore>;
+PredPLCore: Tree = {
     VPn<LVtBase, LViBase>,
     VPn<LVtEd, LViEd>,
     NegVPn<LDoBase>,
@@ -324,7 +340,8 @@ PredPL: Tree = {
 };
 
 // First person: base agreement, but no copula — *am* is not in the language.
-Pred1: Tree = {
+Pred1: Tree = PredAdv<Pred1Core>;
+Pred1Core: Tree = {
     VPn<LVtBase, LViBase>,
     VPn<LVtEd, LViEd>,
     NegVPn<LDoBase>,
@@ -334,7 +351,8 @@ Pred1: Tree = {
 
 // Positive-only predicate sets for quantified subjects (ADR 0014);
 // no + must is additionally banned.
-PredEvery: Tree = {
+PredEvery: Tree = PredAdv<PredEveryCore>;
+PredEveryCore: Tree = {
     VPn<LVt3, LVi3>,
     <m:LModalMust> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
@@ -345,7 +363,8 @@ PredEvery: Tree = {
     CopPosn<LBecomeSg>,
     CopPosn<LBecomePast>,
 };
-PredNo: Tree = {
+PredNo: Tree = PredAdv<PredNoCore>;
+PredNoCore: Tree = {
     VPn<LVt3, LVi3>,
     <m:LModalCan> <v:VBaseP> => nd("ModalVP", 1, vec![Some(m), Some(v)]),
     <m:LModalCan> <b:LBe> <cm:Compl> => nd("ModalCop", 1, vec![Some(m), Some(b), Some(cm)]),

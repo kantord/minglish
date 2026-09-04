@@ -18,9 +18,9 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 |---|---|---|
 | OK | 8090 | 37.0% |
 | REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 2032 | 9.3% |
+| MISMATCH (enabled word, uncovered POS) | 2058 | 9.4% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 9603 | 44.0% |
+| OOV | 9577 | 43.8% |
 
 ## OOV by gold UPOS
 
@@ -28,7 +28,7 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 - ADJ: 1315
 - VERB: 1176
 - PRON: 1147
-- ADV: 999
+- ADV: 973
 - NUM: 495
 - AUX: 319
 - DET: 269

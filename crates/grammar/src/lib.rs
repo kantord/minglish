@@ -40,6 +40,7 @@ pub enum Tok {
     CopPlPast(String),
     Conj(String),
     Neg(String),
+    TempAdv(String),
     DoBase(String),
     Do3(String),
     DoPast(String),
@@ -560,6 +561,7 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "COPULA_PL_PAST" => Tok::CopPlPast(w),
         "CONJ" => Tok::Conj(w),
         "NEG" => Tok::Neg(w),
+        "TEMP_ADV" => Tok::TempAdv(w),
         "NEG_AUX_BASE" => Tok::DoBase(w),
         "NEG_AUX_3SG" => Tok::Do3(w),
         "NEG_AUX_PAST" => Tok::DoPast(w),
@@ -902,8 +904,9 @@ fn enumerated_count(intro: &Tree) -> Result<Option<usize>, String> {
         return Err("the intro of an Enumeration cannot carry a coordination tail (ADR 0028)".into());
     }
     let mut pred_node = &s[1];
-    // negation and modals wrap the verb phrase: descend to it
-    while let Tree::Node { label: "NegVP" | "ModalVP", children, .. } = pred_node {
+    // negation, modals, and a medial adverb (ADR 0044) wrap the verb phrase:
+    // descend to it
+    while let Tree::Node { label: "NegVP" | "ModalVP" | "PredAdv", children, .. } = pred_node {
         pred_node = children.last().expect("wrapped VP");
     }
     let Tree::Node { label: pred, children: pc, .. } = pred_node else {

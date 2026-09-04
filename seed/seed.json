@@ -438,6 +438,16 @@
     "note": "ADR 0043: an Idiomatic Structure of the NEG slot — marks a spanning negation over a history of occasions, not the episodic negation \"not\" marks"
   },
   {
+    "lemma": "still",
+    "category": "TEMP_ADV",
+    "note": "ADR 0044: an Idiomatic Structure — one optional slot right before the predicate, wrapping transparently (no tree-shape change when absent)"
+  },
+  {
+    "lemma": "already",
+    "category": "TEMP_ADV",
+    "note": "ADR 0044: an Idiomatic Structure — one optional slot right before the predicate, wrapping transparently (no tree-shape change when absent)"
+  },
+  {
     "lemma": "do",
     "category": "NEG_AUX_BASE",
     "note": "negation carrier only (ADR 0005)"
