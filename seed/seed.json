@@ -433,6 +433,11 @@
     "note": "predicate negation only; see ADR 0005"
   },
   {
+    "lemma": "never",
+    "category": "NEG",
+    "note": "ADR 0043: an Idiomatic Structure of the NEG slot — marks a spanning negation over a history of occasions, not the episodic negation \"not\" marks"
+  },
+  {
     "lemma": "do",
     "category": "NEG_AUX_BASE",
     "note": "negation carrier only (ADR 0005)"

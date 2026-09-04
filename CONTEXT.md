@@ -142,6 +142,9 @@ examples); "a X" after the tag is the category the term belongs to
 **Head Noun** (noun, category) — the Head Noun of a Compound is the last noun of the Compound. the Head Noun names the kind of the thing.
   Examples: `the Head Noun of "discourse layer" is "layer".`
 
+**Idiomatic Structure** (noun, category) — an Idiomatic Structure names one pattern for a word. the pattern names the meaning of the word. the word does not carry the meaning without the pattern. the word does not appear without the pattern.
+  Examples: `the colon of the decision "0041" is an Idiomatic Structure.` · `the word "never" of the decision "0043" is an Idiomatic Structure.`
+
 **Imperative** (noun, category) · a Sentence Shape — an Imperative is a Sentence Shape. a verb opens an Imperative. the sentence "delete the file" is an Imperative. the reader is the addressee of an Imperative.
   Examples: `delete the file`
 

@@ -64,6 +64,8 @@ Grammar	form	NOUN_SG	grammar
 Grammars	form	NOUN_PL	grammar
 Head Noun	form	NOUN_SG	head noun
 Head Nouns	form	NOUN_PL	head noun
+Idiomatic Structure	form	NOUN_SG	idiomatic structure
+Idiomatic Structures	form	NOUN_PL	idiomatic structure
 Imperative	form	NOUN_SG	imperative
 Imperatives	form	NOUN_PL	imperative
 Indexical Pronoun	form	NOUN_SG	indexical pronoun
@@ -1017,6 +1019,8 @@ identifier	form	NOUN_SG	identifier
 identifiers	form	NOUN_PL	identifier
 identities	form	NOUN_PL	identity
 identity	form	NOUN_SG	identity
+idiomatic structure	term	-	Idiomatic Structure
+idiomatic structures	term	-	Idiomatic Structures
 if	form	SCONJ_COND	if
 ignore	form	VERB_TRANS_BASE	ignore
 ignored	form	VERB_TRANS_ED	ignore
@@ -1296,6 +1300,7 @@ negation	term	-	Negation
 negations	term	-	Negations
 negative	form	ADJ_LONG	negative
 nested	form	ADJ_LONG	nested
+never	form	NEG	never
 new	form	ADJ	new
 newer	form	ADJ_CMP	new
 nine	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)

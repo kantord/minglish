@@ -4,13 +4,13 @@
 
 ## Summary
 
-- 928 lemmas, 1929 surface forms, 40 redirects, 454 waivers
-- Domain model: 88 terms with definitions (ADR 0027)
-- Lemmas per category: ADJ 148, APPROX 1, BANNED 73, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 1, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 436, NUM_SG 1, ORD 3, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 18, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, THAN 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 173
+- 930 lemmas, 1932 surface forms, 40 redirects, 454 waivers
+- Domain model: 89 terms with definitions (ADR 0027)
+- Lemmas per category: ADJ 148, APPROX 1, BANNED 73, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 2, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 437, NUM_SG 1, ORD 3, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 18, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, THAN 1, THEN 1, VERB_INTRANS 29, VERB_TRANS 173
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.09 (higher = more common; everyday words sit at 4.5+)
+- Mean zipf: 4.08 (higher = more common; everyday words sit at 4.5+)
 - Rarest 5: adversative (0.00), anaphora (0.00), anaphoric (0.00), anaphoric pronoun (0.00), appositive (0.00)
 
 ## Residual polysemy (WordNet senses within the enabled POS)

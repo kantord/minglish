@@ -137,6 +137,19 @@
     "member_of": "rejection"
   },
   {
+    "lemma": "idiomatic structure",
+    "category": "NOUN",
+    "kind": "category",
+    "definition": "an Idiomatic Structure names one pattern for a word. the pattern names the meaning of the word. the word does not carry the meaning without the pattern. the word does not appear without the pattern.",
+    "examples": [
+      "the colon of the decision \"0041\" is an Idiomatic Structure.",
+      "the word \"never\" of the decision \"0043\" is an Idiomatic Structure."
+    ],
+    "forms": {
+      "plural": "idiomatic structures"
+    }
+  },
+  {
     "lemma": "translation pair",
     "category": "NOUN",
     "definition": "a Translation Pair maps an original sentence of English to a sentence of Minglish. the Linter must parse the translation. the translation must keep every claim of the original sentence. the file \"corpus/pairs.tsv\" holds every Translation Pair with the Declared Losses of the pair.",
