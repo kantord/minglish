@@ -43,6 +43,7 @@ pub enum Tok {
     TempAdv(String),
     TimeAdv(String),
     Yet(String),
+    Focus(String),
     DoBase(String),
     Do3(String),
     DoPast(String),
@@ -566,6 +567,7 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "TEMP_ADV" => Tok::TempAdv(w),
         "TIME_ADV" => Tok::TimeAdv(w),
         "YET" => Tok::Yet(w),
+        "FOCUS" => Tok::Focus(w),
         "NEG_AUX_BASE" => Tok::DoBase(w),
         "NEG_AUX_3SG" => Tok::Do3(w),
         "NEG_AUX_PAST" => Tok::DoPast(w),
@@ -739,7 +741,7 @@ pub enum Case {
     Complement,
 }
 
-const NP_LABELS: [&str; 6] = ["NP", "NPAppos", "NPGen", "NPPct", "Cmp", "ComplPP"];
+const NP_LABELS: [&str; 7] = ["NP", "NPAppos", "NPGen", "NPPct", "Cmp", "ComplPP", "NPOnly"];
 
 /// Tag `t` with `case` if it stands directly as an argument (an NP-family
 /// node, or a bare name leaf) — everything else (a PP, an of-PP) is not
@@ -920,6 +922,13 @@ fn enumerated_count(intro: &Tree) -> Result<Option<usize>, String> {
         ("VP", Some(t @ Tree::Node { label, .. })) if label.starts_with("NP") => t,
         ("CopPred", Some(t @ Tree::Node { label, .. })) if label.starts_with("NP") => t,
         _ => return Err("the intro must end in the noun phrase the items enumerate — no trailing prepositional phrase or adjective (ADR 0028)".into()),
+    };
+    // "only" (ADR 0047) wraps the NP without changing its count/shape:
+    // descend past it before reading the noun phrase's own shape.
+    let np = if let Tree::Node { label: "NPOnly", children, .. } = np {
+        children.last().expect("wrapped NP")
+    } else {
+        np
     };
     let Tree::Node { label, children: nc, .. } = np else { unreachable!() };
     let leaves: Vec<&str> = nc.iter().filter_map(|c| if let Tree::Leaf { word, .. } = c { Some(word.as_str()) } else { None }).collect();

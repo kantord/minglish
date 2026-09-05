@@ -2959,8 +2959,8 @@
   },
   {
     "lemma": "only",
-    "category": "BANNED",
-    "advice": "\"only\" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence"
+    "category": "FOCUS",
+    "note": "ADR 0047: an Idiomatic Structure — confined inside a Noun Phrase (NPSG/NPPL), never a free pre-predicate adverb, so its scope is exactly the Noun Phrase it wraps, never ambiguous with the verb or the whole clause"
   },
   {
     "lemma": "help",

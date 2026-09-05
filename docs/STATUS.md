@@ -1,13 +1,12 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0046: "yet" is a negative-polarity
-Idiomatic Structure — spliced only into productions where a NEG is
-already mandatory, so the Grammar makes an unnegated "yet"
-underivable by construction, not by a linter rule. Closes the last
-of ADR 0043's 4 deferred words; all 5 temporal/hedge adverbs from
-the 2026-09-03 rewrite tally are now resolved). Everything a fresh
-agent needs that is not derivable from the code, ADRs, or git
-history.
+Last updated: 2026-09-04 (ADR 0047: "only" is confined inside the
+Noun Phrase — never a free pre-predicate adverb, so its scope is
+exactly the Noun Phrase it wraps, never the classic English
+focus/scope ambiguity ("I only introduced Sue to John"). Closes the
+last item of the decision queue's word list — "only" was previously
+a Ban, queue item 2). Everything a fresh agent needs that is not
+derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 
@@ -20,7 +19,7 @@ history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0046` — every language and policy decision, each citing its
+- `docs/adr/0001–0047` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -62,24 +61,22 @@ history.
    from `docs/coherence-report.md` (relation inventory + topic continuity,
    `just coherence`), not from word counts. Next: the paragraph repair flow
    (agreed design in docs/ideas.md, "Paragraph repair").
-2. **only** (gap case adr0001-04) — real but rare (absent from sweep top-30);
-   deprioritized by data.
-3. Parked with design notes in `docs/ideas.md`: vocative (directed
+2. Parked with design notes in `docs/ideas.md`: vocative (directed
    imperatives), quotation-as-mention, pseudocode/analysis-code compiler,
    embeddings-as-measurement, core+jargon-packs split, LM-based cost model,
    linter advice gap #2 (rejected-verb redirects dormant on inflected forms:
    "the agent files the report" gives no submit-suggestion).
-4. Structured repair (docs/ideas.md, "Structured repair"): structure
+3. Structured repair (docs/ideas.md, "Structured repair"): structure
    enumerator → role assignment → table-driven rewrite with explanations;
    NLI as the future faithfulness gate. Steps 1–3 need no model and no API
    spend; the first candidate for build work after the vocabulary queue.
-5. Deferred by ADR 0022 (numbers, decided 2026-09-01): measurement values
+4. Deferred by ADR 0022 (numbers, decided 2026-09-01): measurement values
    ("the exit code is 0" — the natural home for a future 0), ordinals,
    units, thousands separators, decimals. Needs a value slot distinct from
    the NUM_PL count slot.
-6. Deferred by ADR 0023 (same): the named-standard form "identical to the
+5. Deferred by ADR 0023 (same): the named-standard form "identical to the
    report" needs an adjective + PP complement the copula lacks.
-7. Deferred by ADR 0024 (percent): percent of a singular mass, percentages as
+6. Deferred by ADR 0024 (percent): percent of a singular mass, percentages as
    predicates, decimals. Ambitransitives ("the process stops") remain a
    findings-level gap with no case attached; commit-as-verb (adr0001-05) was
    resolved by the linter's own redirect (*save*).

@@ -1348,7 +1348,7 @@ older	form	ADJ_CMP	old
 on	form	PREP_V	on
 one	form	NUM_SG	one
 ongoing	form	ADJ_LONG	ongoing
-only	ban	-	"only" is not in the language yet (queue item) - state the allowed case as a plain statement, and name each excluded case in its own sentence
+only	form	FOCUS	only
 opaque	form	ADJ_LONG	opaque
 open	form	VERB_TRANS_BASE	open
 open	reject	ADJ	unlocked

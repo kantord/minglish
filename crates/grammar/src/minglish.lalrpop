@@ -42,6 +42,7 @@ extern {
         "TEMP_ADV" => Tok::TempAdv(<String>),
         "TIME_ADV" => Tok::TimeAdv(<String>),
         "YET" => Tok::Yet(<String>),
+        "FOCUS" => Tok::Focus(<String>),
         "DO_BASE" => Tok::DoBase(<String>),
         "DO_3SG" => Tok::Do3(<String>),
         "DO_PAST" => Tok::DoPast(<String>),
@@ -112,6 +113,10 @@ LTimeAdv: Tree = <l:@L> <w:"TIME_ADV"> => leaf(l, w);
 // productions where LNeg is mandatory in the same alternative, so it is
 // never derivable without a negation already present.
 LYet: Tree = <l:@L> <w:"YET"> => leaf(l, w);
+// "only" (ADR 0047): confined inside an NP (never a free pre-predicate
+// adverb), so its scope is exactly the NP it wraps — structural, not
+// inferred from focus/stress the way plain written English needs.
+LFocus: Tree = <l:@L> <w:"FOCUS"> => leaf(l, w);
 LDoBase: Tree = <l:@L> <w:"DO_BASE"> => leaf(l, w);
 LDo3: Tree = <l:@L> <w:"DO_3SG"> => leaf(l, w);
 LDoPast: Tree = <l:@L> <w:"DO_PAST"> => leaf(l, w);
@@ -404,7 +409,16 @@ VBaseP: Tree = {
 
 // ------------------------------------------------------------ noun phrases
 
+// ADR 0047: an optional leading "only" — transparent when absent (same
+// tree as before 0047), wrapping in "NPOnly" only when used. Confined to
+// the NP itself, so "only" can never scope over the verb or the clause.
 NPSG: Tree = {
+    <o:LFocus?> <n:NPSGCore> => match o {
+        None => n,
+        Some(ow) => nd("NPOnly", 1, vec![Some(ow), Some(n)]),
+    },
+};
+NPSGCore: Tree = {
     NPx<LDet, LNounSg>, NPx<LDetSg, LNounSg>, NPx<LPoss, LNounSg>, NPx<LNum, LNounSg>,
     // ordinal (ADR 0029): "the first word", "the 4th file", "a first draft"
     <d:LDetAny> <o:LOrd> <a:LAdj?> <n:LNounSg> <of:OfPP?> =>
@@ -415,7 +429,13 @@ NPSG: Tree = {
         nd("NPAppos", 2, vec![Some(d), a, Some(n), Some(nm), o]),
 };
 // digits count plural nouns (ADR 0022); *one* + singular is NPSG (ADR 0016)
-NPPL: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl>, NPNum, NPPct };
+NPPL: Tree = {
+    <o:LFocus?> <n:NPPLCore> => match o {
+        None => n,
+        Some(ow) => nd("NPOnly", 1, vec![Some(ow), Some(n)]),
+    },
+};
+NPPLCore: Tree = { NPx<LDet, LNounPl>, NPx<LPoss, LNounPl>, NPNum, NPPct };
 
 // [about] <digits> [adj] <plural noun> [of-PP] — a count, optionally
 // approximate (ADR 0022, 0025).

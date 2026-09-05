@@ -80,7 +80,7 @@ fn word_of(t: &Tok) -> &str {
         Det(w) | DetSg(w) | Adj(w) | NounSg(w) | NounPl(w) | VtBase(w) | Vt3(w) | VtEd(w)
         | VtIng(w) | ViBase(w) | Vi3(w) | ViEd(w) | ViIng(w) | PrepN(w) | PrepV(w)
         | Pron1(w) | Pron2(w) | Poss(w) | CopSg(w) | CopPl(w) | CopSgPast(w)
-        | CopPlPast(w) | Conj(w) | Neg(w) | TempAdv(w) | TimeAdv(w) | Yet(w) | DoBase(w) | Do3(w) | DoPast(w)
+        | CopPlPast(w) | Conj(w) | Neg(w) | TempAdv(w) | TimeAdv(w) | Yet(w) | Focus(w) | DoBase(w) | Do3(w) | DoPast(w)
         | ModalMust(w) | ModalCan(w) | ModalCannot(w) | If(w) | Then(w) | Every(w)
         | No(w) | Num(w) | NumPl(w) | Percent(w) | Approx(w) | So(w) | Because(w)
         | Ord(w) | Than(w) | More(w) | Scale(w) | AdjCmp(w) | AdjLong(w) | Be(w)
@@ -121,6 +121,7 @@ fn tag_of(t: &Tok) -> &'static str {
         TempAdv(_) => "TEMP_ADV",
         TimeAdv(_) => "TIME_ADV",
         Yet(_) => "YET",
+        Focus(_) => "FOCUS",
         DoBase(_) => "NEG_AUX_BASE",
         Do3(_) => "NEG_AUX_3SG",
         DoPast(_) => "NEG_AUX_PAST",
@@ -231,6 +232,7 @@ fn label_name(label: &str) -> &str {
         "Imp" => "Imperative",
         "NP" => "Noun Phrase",
         "NPGen" => "Bare Plural",
+        "NPOnly" => "Noun Phrase with \"only\"",
         "NPAppos" => "Noun Phrase with Name",
         "NPPct" => "Percent Share",
         "OfPP" => "of Phrase",

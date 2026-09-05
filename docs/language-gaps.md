@@ -60,11 +60,20 @@ hitting a wall while trying to say a true thing, not from reading examples.
   rule (ADR 0046). Zero LALR conflicts and zero corpus regressions
   across all 4 ADRs, verified against the full corpus each time, not
   assumed.
+- ~~**"only"**~~ (5). **Closed 2026-09-04, ADR 0047.** Real English
+  "only" is famously scope-ambiguous in writing (Rooth 1992) — "I only
+  introduced Sue to John" reads 3 different ways depending on unmarked
+  focus stress. A free pre-predicate "only" would reintroduce exactly
+  that. Instead "only" is confined inside the Noun Phrase itself
+  (wraps `NPSG`/`NPPL`, transparent when unused, same technique as ADR
+  0044's medial adverb) — "only the mechanism stores the report" and
+  "the mechanism stores only the report" each read one way because the
+  grammar pins the word to the NP it touches; "the mechanism only
+  stores the report" (the ambiguous shape) is banned outright. Zero
+  LALR conflicts, zero corpus regressions.
 
 ## High-frequency missing words
 
-- **"only"** (5) — deferred by design (ADR queue item); this data adds
-  weight to prioritizing it.
 - **"other"** (4), **"or"** as a full alternative in more positions (3).
 - **"at most"** (2) — "most" is banned (ADR 0029 superlative deferral);
   "at most N" has no phrasing and gets rewritten around the count instead.
