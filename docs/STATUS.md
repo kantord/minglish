@@ -50,6 +50,13 @@ that is not derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 
+- `docs/readiness.md` (2026-09-05) — "how close is minglish to usable":
+  5 measured readiness conditions (vocabulary coverage: met; naturalness:
+  NOT met, 3/37 docs pass the naturalness bar — the real blocker;
+  paragraph coherence: partial; tooling/onboarding: partial, README.md
+  was badly stale; independent validation: LLM-only signal, no human
+  data) and an efficient ordered plan. Read this before answering "is
+  it ready" or picking the next priority.
 - `domain/model.json` — the domain model (ADR 0027): every project term with
   its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
   written Capitalized in minglish text. `just define <Term>` looks one up.
