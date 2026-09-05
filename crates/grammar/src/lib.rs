@@ -973,6 +973,29 @@ pub fn parse(lexicon: &Lexicon, sentence: &str) -> Result<Tree, String> {
         .map_err(|e| format_parse_error(&e))
 }
 
+/// Parse an already-tokenized stream, keeping the raw `ParseError` (with
+/// its failure position) rather than formatting it to a string — used by
+/// `diagnose` to rank antiparser matches by proximity to where Tier-1
+/// actually choked, once the caller already has the token stream (e.g.
+/// after `Lexicon::tokenize`, for the Tier-2 fallback path).
+pub fn parse_tokens(toks: &[Tok]) -> Result<Tree, ParseError> {
+    let iter = toks
+        .iter()
+        .cloned()
+        .enumerate()
+        .map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+    minglish::SentenceParser::new().parse(iter)
+}
+
+/// The token position where Tier-1 failed, when the error carries one.
+pub fn failure_position(e: &ParseError) -> Option<usize> {
+    match e {
+        lalrpop_util::ParseError::UnrecognizedToken { token: (pos, ..), .. } => Some(*pos),
+        lalrpop_util::ParseError::UnrecognizedEof { location, .. } => Some(*location),
+        _ => None,
+    }
+}
+
 fn format_parse_error(e: &ParseError) -> String {
     match e {
         lalrpop_util::ParseError::UnrecognizedToken { token: (pos, tok, _), .. } => {

@@ -6,6 +6,7 @@ license = "MIT OR Apache-2.0"
 
 [dependencies]
 grammar = { path = "../grammar" }
+antiparse = { path = "../antiparse" }
 
 [dev-dependencies]
 proptest = "1.11.0"

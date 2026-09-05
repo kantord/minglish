@@ -1,22 +1,18 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0049, revised after asking for
-exhaustive examples: bare "other" is genuinely ambiguous once a
-category has 3+ members ("sentence shape" has 4, "function word" has
-6, checked against the real domain model) — does it mean *all* the
-rest or *some*? Banned outright now; "every other X" (singular) /
-"some other X" (plural) force the choice, reusing ADR 0014's
-existing quantifiers. Two independent verification paths: the
-domain model's `member_of` graph ("the Ban and every other
-Rejection" — Ban really is a Rejection), or same-noun lemma equality
-for ordinary vocabulary with no domain term at all ("the report and
-some other reports" — same technique ADR 0048 uses for the
-same-verb check). `Lexicon::member_of()` is new — that data was
-already in `domain/model.json` but never exposed to the runtime.
-Closes "other" from the 2026-09-03 language-gaps tally — "or" as a
-fuller alternative, "at most", and superlatives remain open).
-Everything a fresh agent needs that is not derivable from the code,
-ADRs, or git history.
+Last updated: 2026-09-04 (`crates/antiparse` wired into `diagnose()`
+as a fourth channel, ahead of the generic "restructure into one of
+the minglish templates" fallback — when the hand-written
+`pattern_findings`/`slot_findings` checks find nothing, an
+antiparser match is tried, ranked by proximity to Tier-1's real
+failure position (new: `grammar::parse_tokens` /
+`failure_position`). Confirmed genuine, not just infrastructure:
+"the mechanism only stores the report" (ADR 0047's free-`only`
+ban, no prior dedicated check) now gets a specific `[AntiFreeOnly]`
+explanation with both candidate fixes named, instead of the generic
+message. See docs/ideas.md, "Antiparsers", for the full writeup and
+what's still not done). Everything a fresh agent needs that is not
+derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 

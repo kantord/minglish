@@ -64,6 +64,16 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     suppress_superseded(&mut findings);
     findings.sort();
     findings.dedup();
+    // crates/antiparse: when the hand-written checks above found nothing,
+    // try the antiparser prototype before falling back to a fully generic
+    // message — a structural match carries real certainty (it's a real
+    // parse of the bad shape, not a token-window guess), ranked by
+    // proximity to where Tier-1 actually failed.
+    if findings.is_empty() {
+        if let Some(msg) = antiparser_fallback(lexicon, &toks) {
+            findings.push(msg);
+        }
+    }
     let readings = Tier2::new(&toks).count();
     match readings {
         0 => {
@@ -92,6 +102,24 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
             Diagnosis::Ambiguous { readings: n, findings }
         }
     }
+}
+
+/// The top antiparser match, formatted, or None if none fired. Re-parses
+/// the (already known to fail) token stream to recover the raw
+/// `ParseError` and its failure position for ranking — cheap, and keeps
+/// `parse()`'s public signature (a formatted string) unchanged for every
+/// other caller.
+fn antiparser_fallback(lexicon: &Lexicon, toks: &[Tok]) -> Option<String> {
+    let mut findings = antiparse::scan(lexicon, toks);
+    if findings.is_empty() {
+        return None;
+    }
+    if let Err(e) = grammar::parse_tokens(toks) {
+        if let Some(pos) = grammar::failure_position(&e) {
+            antiparse::rank_by_failure_position(&mut findings, pos);
+        }
+    }
+    Some(antiparse::format_finding(&findings[0]))
 }
 
 // ---------------------------------------------------- success-time checks --

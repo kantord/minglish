@@ -240,15 +240,27 @@ hoc "notice and patch" workflow into an enumerable backlog, which is a
 real improvement for problem 2 (coverage lag) without claiming to solve
 coverage completely.
 
-**Not yet done, real next steps if this proceeds**: wire `scan()` into
-`diagnose()` as a fourth channel (ahead of the generic fallback); build
-antiparsers for the corpus's actual highest-frequency STYLE findings
-(would need instrumenting how often each `pattern_findings` check fires,
-to prioritize by real impact rather than guessing); decide whether
-`Repair::Single` results get surfaced as "try: X" suggestions only, or
-auto-applied in a repair-proposal flow (matching `autofix-paragraphs`'s
-existing human-verdict gate, `just verdict`, rather than silently
-rewriting anything).
+**Wired in 2026-09-04**: `antiparse::scan()` is now a fourth channel in
+`diagnose()` — when `pattern_findings`/`slot_findings` find nothing, the
+antiparsers run before the generic fallback, ranked by proximity to
+Tier-1's actual failure position (`grammar::parse_tokens` +
+`failure_position`, added for this). Confirmed a genuine, previously-
+uncovered improvement, not just infrastructure: "the mechanism only
+stores the report" (ADR 0047, the free-`only`-position ban) had no
+dedicated pattern check and used to fall through to "restructure into
+one of the minglish templates" — it now gets `[AntiFreeOnly] ambiguous —
+pick one: move "only" before the subject …; move "only" before the
+object of "stores" …`. `AntiBareCoordObject`/`AntiNounVerbSlot` mostly
+overlap with checks already fixed earlier the same session, so they
+don't visibly change those specific cases — expected, not a problem.
+
+**Still not done**: build antiparsers for the corpus's actual highest-
+frequency STYLE findings (needs instrumenting how often each
+`pattern_findings` check fires, to prioritize by real impact rather than
+guessing); decide whether `Repair::Single` results get surfaced as
+"try: X" suggestions only, or auto-applied in a repair-proposal flow
+(matching `autofix-paragraphs`'s existing human-verdict gate, `just
+verdict`, rather than silently rewriting anything).
 5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
    not ranking). A candidate is a faithful rewrite only if input ⊨ candidate
    and candidate ⊨ input; a role swap fails one direction. This mechanizes

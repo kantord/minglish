@@ -216,6 +216,29 @@ fn same_verb_coordination_is_banned_but_only_the_plain_shape() {
     }
 }
 
+/// crates/antiparse wired in as a fourth channel (docs/ideas.md's
+/// planned next step, after the prototype was evaluated positively):
+/// when the hand-written pattern checks find nothing, a structural
+/// antiparser match now replaces the fully generic "restructure into
+/// one of the minglish templates" fallback. "only" in the free
+/// pre-predicate position (ADR 0047) had no dedicated pattern check —
+/// this is a genuine, previously-uncovered improvement, not a
+/// duplicate of an existing one.
+#[test]
+fn antiparse_replaces_the_generic_fallback_when_nothing_else_fired() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    match diagnose(&lexicon, "the mechanism only stores the report") {
+        Diagnosis::Style(findings) => {
+            assert!(findings.iter().any(|f| f.contains("[AntiFreeOnly]")), "{findings:?}");
+            assert!(
+                !findings.iter().any(|f| f.contains("restructure into one of the minglish templates")),
+                "the generic fallback should have been replaced: {findings:?}"
+            );
+        }
+        other => panic!("expected STYLE, got {other:?}"),
+    }
+}
+
 /// ADR 0049, revised after asking for exhaustive examples: bare "other"
 /// ("other Rejections") is genuinely ambiguous once a category has 3+
 /// members ("sentence shape" has 4, "function word" has 6, checked
