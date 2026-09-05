@@ -43,6 +43,7 @@ extern {
         "TIME_ADV" => Tok::TimeAdv(<String>),
         "YET" => Tok::Yet(<String>),
         "FOCUS" => Tok::Focus(<String>),
+        "OTHER" => Tok::Other(<String>),
         "DO_BASE" => Tok::DoBase(<String>),
         "DO_3SG" => Tok::Do3(<String>),
         "DO_PAST" => Tok::DoPast(<String>),
@@ -117,6 +118,27 @@ LYet: Tree = <l:@L> <w:"YET"> => leaf(l, w);
 // adverb), so its scope is exactly the NP it wraps — structural, not
 // inferred from focus/stress the way plain written English needs.
 LFocus: Tree = <l:@L> <w:"FOCUS"> => leaf(l, w);
+// "other" (ADR 0049): confined to the second conjunct of a colon-list —
+// never a free determiner, never the first conjunct. The Grammar accepts
+// it here structurally; the Linter still verifies the domain-model
+// relationship before calling the sentence Clean (mirrors ADR 0048's
+// split — a CFG can't check that either).
+LOther: Tree = <l:@L> <w:"OTHER"> => leaf(l, w);
+// ADR 0049 (revised): bare "other" is banned outright — it's genuinely
+// ambiguous between "all the rest" and "some unspecified rest" once the
+// category has 3+ members (verified against the domain model: "sentence
+// shape" has 4, "function word" has 6). "every other X" / "some other
+// X" force the writer to say which, reusing the quantifiers ADR 0014
+// already established rather than inventing new ones.
+// agreement matches each quantifier's existing rule (ADR 0014): "every"
+// takes a singular noun ("every other file"), "some" takes plural
+// ("some other files") — not a free choice, "every other files" is not
+// English.
+OtherNp: Tree = {
+    <q:LEvery> <o:LOther> <n:LNounSg> => nd("NPOther", 2, vec![Some(q), Some(o), Some(n)]),
+    <q:LSome> <o:LOther> <n:LNounPl> => nd("NPOther", 2, vec![Some(q), Some(o), Some(n)]),
+};
+NPAnyOrOther: Tree = { NPAny, OtherNp };
 LDoBase: Tree = <l:@L> <w:"DO_BASE"> => leaf(l, w);
 LDo3: Tree = <l:@L> <w:"DO_3SG"> => leaf(l, w);
 LDoPast: Tree = <l:@L> <w:"DO_PAST"> => leaf(l, w);
@@ -150,7 +172,7 @@ LName: Tree = <l:@L> <w:"NAME"> => leaf(l, w);
 // (EXPERIMENT: "the mechanism stores: a word and a message").
 VPn<Vt, Vi>: Tree = {
     <v:Vt> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
-    <v:Vt> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAny> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
+    <v:Vt> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAnyOrOther> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
     <v:Vi> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
 };
 
@@ -403,7 +425,7 @@ ModalVP: Tree = {
 
 VBaseP: Tree = {
     <v:LVtBase> <o:NPAny> <p:PPv?> => nd("VP", 0, vec![Some(v), Some(o), p]),
-    <v:LVtBase> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAny> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
+    <v:LVtBase> <c:LColon> <n1:NPAny> <cj:LConj> <n2:NPAnyOrOther> => nd("VP", 0, vec![Some(v), Some(c), Some(n1), Some(cj), Some(n2)]),
     <v:LViBase> <p:PPv?> => nd("VP", 0, vec![Some(v), p]),
 };
 

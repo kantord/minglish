@@ -1,19 +1,22 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0048: minglish converges to one
-construction per meaning by default now — coexistence needs
-empirical evidence. First application: same-verb-lemma Coordination
-("stores a word and stores a message") is banned in favor of the
-colon-list (ADR 0041), the sole canonical shape now. Can't be a
-grammar rule — a CFG can't compare two terminals' string payloads —
-so it's the first check in `diagnose()` that can turn a `Clean`
-parse into a `Style` rejection, narrowly scoped (not a general
-post-success pipeline stage). Also: `crates/antiparse` — a prototype
-of "antiparsers" (error productions: small, independent grammars
-that structurally recognize a known-invalid construction instead of
-guessing from token windows) — evaluated but not wired into
-`diagnose()` yet, see docs/ideas.md). Everything a fresh agent needs
-that is not derivable from the code, ADRs, or git history.
+Last updated: 2026-09-04 (ADR 0049, revised after asking for
+exhaustive examples: bare "other" is genuinely ambiguous once a
+category has 3+ members ("sentence shape" has 4, "function word" has
+6, checked against the real domain model) — does it mean *all* the
+rest or *some*? Banned outright now; "every other X" (singular) /
+"some other X" (plural) force the choice, reusing ADR 0014's
+existing quantifiers. Two independent verification paths: the
+domain model's `member_of` graph ("the Ban and every other
+Rejection" — Ban really is a Rejection), or same-noun lemma equality
+for ordinary vocabulary with no domain term at all ("the report and
+some other reports" — same technique ADR 0048 uses for the
+same-verb check). `Lexicon::member_of()` is new — that data was
+already in `domain/model.json` but never exposed to the runtime.
+Closes "other" from the 2026-09-03 language-gaps tally — "or" as a
+fuller alternative, "at most", and superlatives remain open).
+Everything a fresh agent needs that is not derivable from the code,
+ADRs, or git history.
 
 ## Where everything lives
 
@@ -26,7 +29,7 @@ that is not derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0048` — every language and policy decision, each citing its
+- `docs/adr/0001–0049` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),

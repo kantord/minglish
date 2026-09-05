@@ -215,3 +215,83 @@ fn same_verb_coordination_is_banned_but_only_the_plain_shape() {
         );
     }
 }
+
+/// ADR 0049, revised after asking for exhaustive examples: bare "other"
+/// ("other Rejections") is genuinely ambiguous once a category has 3+
+/// members ("sentence shape" has 4, "function word" has 6, checked
+/// against the real domain model) — does it mean *all* the rest, or
+/// *some*? Banned outright now; "every other X" (singular, matching
+/// ADR 0014's existing rule) and "some other X" (plural, same rule)
+/// force the writer to say which. The domain model's own `member_of`
+/// graph (ADR 0027) verifies the relationship either way — "the Ban and
+/// every other Rejection" is checkable against real data; a fabricated
+/// one is rejected with the exact missing fact named, not guessed.
+#[test]
+fn other_is_verified_against_the_domain_model() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    match diagnose(&lexicon, "the mechanism names: the Ban and other Rejections") {
+        Diagnosis::Style(_) | Diagnosis::Unknown => {}
+        other => panic!("bare \"other\" should be rejected (ambiguous), got {other:?}"),
+    }
+    assert!(
+        matches!(diagnose(&lexicon, "the mechanism names: the Ban and every other Rejection"), Diagnosis::Clean(_)),
+        "a real member_of relationship should verify with \"every\" + singular"
+    );
+    assert!(
+        matches!(diagnose(&lexicon, "the mechanism names: the Ban and some other Rejections"), Diagnosis::Clean(_)),
+        "a real member_of relationship should verify with \"some\" + plural"
+    );
+    match diagnose(&lexicon, "the mechanism names: the Ban and every other Pronoun") {
+        Diagnosis::Style(findings) => {
+            assert!(findings.iter().any(|f| f.contains("neither holds")), "{findings:?}");
+        }
+        other => panic!("expected STYLE, got {other:?}"),
+    }
+}
+
+/// ADR 0049's second verification path, added for the same reason: the
+/// "table ... every other table" case doesn't involve a domain term at
+/// all — it's a set-complement over an ordinary common noun, verified by
+/// lemma equality (same technique ADR 0048 uses for the same-verb
+/// check), not the domain model.
+#[test]
+fn other_also_verifies_same_noun_complements() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    assert!(
+        matches!(diagnose(&lexicon, "the mechanism names: the report and every other report"), Diagnosis::Clean(_)),
+        "same head noun, singular, should verify without any domain relationship"
+    );
+    assert!(
+        matches!(diagnose(&lexicon, "the mechanism names: the report and some other reports"), Diagnosis::Clean(_)),
+        "same head noun, plural, should verify without any domain relationship"
+    );
+    match diagnose(&lexicon, "the mechanism names: the writer and every other agent") {
+        Diagnosis::Style(findings) => {
+            assert!(findings.iter().any(|f| f.contains("neither holds")), "{findings:?}");
+        }
+        other => panic!("different nouns, no domain relationship: expected STYLE, got {other:?}"),
+    }
+}
+
+/// Bug found empirically (asked for exhaustive examples): a naive
+/// single-word capitalize() rejected every real member_of relationship
+/// whose category is a multi-word term ("Copula" -> "Function Word"),
+/// because the computed category came out "Function word" and never
+/// matched what the lexicon actually stores. Fixed by capitalizing every
+/// word, not just the first (matching lexgen's own `seed::capitalize`).
+#[test]
+fn other_verifies_multi_word_categories_too() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    let real_pairs = [
+        "the mechanism names: the Copula and some other Function Words",
+        "the mechanism names: the Conditional and some other Sentence Shapes",
+        "the mechanism names: the Prohibition and every other Sentence Shape",
+    ];
+    for sentence in real_pairs {
+        assert!(
+            matches!(diagnose(&lexicon, sentence), Diagnosis::Clean(_)),
+            "{sentence}: expected Clean, got {:?}",
+            diagnose(&lexicon, sentence)
+        );
+    }
+}

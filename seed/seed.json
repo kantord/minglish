@@ -1955,8 +1955,8 @@
   },
   {
     "lemma": "other",
-    "category": "BANNED",
-    "advice": "\"other\" refers to something already named - repeat the noun, or name the second thing"
+    "category": "OTHER",
+    "note": "ADR 0049: an Idiomatic Structure — confined to the second conjunct of a colon-list, verified against the domain model's own member_of graph (is the first conjunct actually a member of the category the plural noun names?); the position is the *only* place \"other\" can occur, and even there the Grammar accepts, the Linter still verifies the domain relationship before calling it Clean (same split as ADR 0048)"
   },
   {
     "lemma": "corpus",

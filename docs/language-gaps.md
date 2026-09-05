@@ -71,10 +71,33 @@ hitting a wall while trying to say a true thing, not from reading examples.
   grammar pins the word to the NP it touches; "the mechanism only
   stores the report" (the ambiguous shape) is banned outright. Zero
   LALR conflicts, zero corpus regressions.
+- ~~**"other"**~~ (4). **Closed 2026-09-04, ADR 0049.** The risky senses
+  ("the other report" — definite, presupposes a known pair; "other than
+  X" — its own scope ambiguity) already had better existing fixes (repeat
+  the noun/ordinals; restructure with negation) and needed no new word.
+  The one real gap — the same-clause contrastive sense ("the report and
+  other files") — had a problem the other 7 words didn't: it needs the
+  named item to actually *be a member* of the plural category, a
+  semantic fact no grammar can check from the sentence alone. Resolved
+  by discovering the domain model (ADR 0027) already declares exactly
+  that graph (`member_of`) — never exposed to the runtime `Lexicon`
+  before. Revised again once asked for exhaustive examples: bare
+  "other" turned out to be its own scope ambiguity (all the rest, or
+  some unspecified rest? — live once a category has 3+ members, e.g.
+  "sentence shape" has 4), so it's banned outright now — "every other
+  X" (singular) / "some other X" (plural) force the choice, reusing
+  ADR 0014's quantifiers. Also added a second, domain-model-free
+  verification path for ordinary nouns via same-lemma matching (ADR
+  0048's technique) — "the report and some other reports" needs no
+  domain term at all. "other" is confined to a colon-list's second
+  conjunct (ADR 0043's Idiomatic Structure) *and* verified either way
+  ("the Ban and every other Rejection" checks out; "the Ban and every
+  other Pronoun" is rejected, naming the exact missing fact). Zero
+  LALR conflicts, zero corpus regressions.
 
 ## High-frequency missing words
 
-- **"other"** (4), **"or"** as a full alternative in more positions (3).
+- **"or"** as a full alternative in more positions (3).
 - **"at most"** (2) — "most" is banned (ADR 0029 superlative deferral);
   "at most N" has no phrasing and gets rewritten around the count instead.
 - **Superlatives** ("largest", "shortest", "biggest") — known deferral

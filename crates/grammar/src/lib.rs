@@ -44,6 +44,7 @@ pub enum Tok {
     TimeAdv(String),
     Yet(String),
     Focus(String),
+    Other(String),
     DoBase(String),
     Do3(String),
     DoPast(String),
@@ -114,6 +115,10 @@ pub struct Lexicon {
     comparatives: BTreeMap<String, String>,
     rejects: BTreeMap<String, Vec<(String, String)>>,
     bans: BTreeMap<String, String>,
+    /// Capitalized term → its Capitalized parent category (ADR 0027's
+    /// `member_of`, ADR 0049): the domain model's own is-a graph, made
+    /// available at runtime.
+    member_of: BTreeMap<String, String>,
 }
 
 impl Lexicon {
@@ -127,6 +132,7 @@ impl Lexicon {
         let mut terms: BTreeMap<String, String> = BTreeMap::new();
         let mut names = std::collections::BTreeSet::new();
         let mut comparatives: BTreeMap<String, String> = BTreeMap::new();
+        let mut member_of: BTreeMap<String, String> = BTreeMap::new();
         for line in text.lines().filter(|l| !l.starts_with('#')) {
             let f: Vec<&str> = line.split('\t').collect();
             let [surface, kind, tag, value] = f[..] else { continue };
@@ -151,10 +157,13 @@ impl Lexicon {
                 "name" => {
                     names.insert(surface.to_string());
                 }
+                "member_of" => {
+                    member_of.insert(surface.to_string(), value.to_string());
+                }
                 _ => {}
             }
         }
-        Ok(Lexicon { forms, lemmas, terms, names, comparatives, rejects, bans })
+        Ok(Lexicon { forms, lemmas, terms, names, comparatives, rejects, bans, member_of })
     }
 
     pub fn load(path: &str) -> Result<Lexicon, String> {
@@ -176,6 +185,12 @@ impl Lexicon {
     /// The inflected comparative of an adjective, if it has one (ADR 0030).
     pub fn comparative(&self, adj: &str) -> Option<&str> {
         self.comparatives.get(adj).map(String::as_str)
+    }
+
+    /// The Capitalized parent category of a Capitalized domain term, if
+    /// the domain model declares one (ADR 0027's `member_of`, ADR 0049).
+    pub fn member_of(&self, capitalized_term: &str) -> Option<&str> {
+        self.member_of.get(capitalized_term).map(String::as_str)
     }
 
     /// The lemma of an enabled surface form.
@@ -568,6 +583,7 @@ fn tag_to_tok(tag: &str, word: &str) -> Option<Tok> {
         "TIME_ADV" => Tok::TimeAdv(w),
         "YET" => Tok::Yet(w),
         "FOCUS" => Tok::Focus(w),
+        "OTHER" => Tok::Other(w),
         "NEG_AUX_BASE" => Tok::DoBase(w),
         "NEG_AUX_3SG" => Tok::Do3(w),
         "NEG_AUX_PAST" => Tok::DoPast(w),
@@ -741,7 +757,7 @@ pub enum Case {
     Complement,
 }
 
-const NP_LABELS: [&str; 7] = ["NP", "NPAppos", "NPGen", "NPPct", "Cmp", "ComplPP", "NPOnly"];
+const NP_LABELS: [&str; 8] = ["NP", "NPAppos", "NPGen", "NPPct", "Cmp", "ComplPP", "NPOnly", "NPOther"];
 
 /// Tag `t` with `case` if it stands directly as an argument (an NP-family
 /// node, or a bare name leaf) — everything else (a PP, an of-PP) is not

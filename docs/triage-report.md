@@ -18,14 +18,14 @@ Corpus: `data/ud/en_ewt-ud-test.conllu` — 2037 sentences, 21847 countable toke
 |---|---|---|
 | OK | 8090 | 37.0% |
 | REDIRECT (designed rejection with suggestion) | 47 | 0.2% |
-| MISMATCH (enabled word, uncovered POS) | 2088 | 9.6% |
+| MISMATCH (enabled word, uncovered POS) | 2112 | 9.7% |
 | PROPN (out of scope) | 2075 | 9.5% |
-| OOV | 9547 | 43.7% |
+| OOV | 9523 | 43.6% |
 
 ## OOV by gold UPOS
 
-- NOUN: 3252
-- ADJ: 1310
+- NOUN: 3250
+- ADJ: 1288
 - VERB: 1176
 - PRON: 1147
 - ADV: 948
@@ -72,8 +72,8 @@ it/PRON (×207), they/PRON (×139), we/PRON (×127), will/AUX (×116), this/DET 
 - about used as ADP ×26
 - work used as VERB ×26
 - for used as SCONJ ×24
+- other used as ADJ ×22
 - only used as ADV ×20
-- one used as NOUN ×18
 
 ## Samples for manual review
 

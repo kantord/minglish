@@ -43,6 +43,9 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
             if let Some(msg) = same_verb_coordination(lexicon, &tree) {
                 return Diagnosis::Style(vec![msg]);
             }
+            if let Some(msg) = other_domain_membership(lexicon, &tree) {
+                return Diagnosis::Style(vec![msg]);
+            }
             return Diagnosis::Clean(metrics(&tree));
         }
         Err(e) if e.contains("not a minglish word")
@@ -161,6 +164,87 @@ fn is_np_like(t: &Tree) -> bool {
     }
 }
 
+/// ADR 0049: "other" is grammatically confined to a colon-list's second
+/// conjunct, but that alone doesn't make "the Ban and other Rejections"
+/// well-formed — it also needs the first conjunct to actually *be* a
+/// member of the category the plural noun names. That's a fact no CFG
+/// can check (it's not even in the sentence — it's in the domain
+/// model's own `member_of` graph, loaded into the Lexicon at lexgen
+/// time, ADR 0027). Unverifiable relationships (either side isn't a
+/// known domain term, or no membership is declared) are rejected, not
+/// guessed — same discipline as ADR 0048's semantic check.
+fn other_domain_membership(lexicon: &Lexicon, tree: &Tree) -> Option<String> {
+    if let Tree::Node { label: "VP", children, .. } = tree {
+        if let [_, _, n1, _, n2] = children.as_slice() {
+            // NPOther children: [every|some, other, plural-noun] (head 2)
+            if let Tree::Node { label: "NPOther", children: on, .. } = n2 {
+                if let (Some(Tree::Leaf { word: quant, .. }), Some(Tree::Leaf { word: plural, .. })) =
+                    (on.first(), on.get(2))
+                {
+                    let anchor = head_word(n1);
+                    // path A (ADR 0049): the anchor is a Capitalized domain
+                    // term that is a real member of the category the
+                    // plural noun names.
+                    let category = lexicon.lemma_of(plural).map(capitalize).unwrap_or_else(|| plural.clone());
+                    let domain_ok = anchor.and_then(|a| lexicon.member_of(a)).is_some_and(|m| m == category);
+                    // path B (ADR 0049 revision): a set-complement — the
+                    // anchor's own head noun is the *same* lemma as the
+                    // "other"-marked plural (no domain model needed, any
+                    // common noun qualifies: "the table and every other
+                    // table"). Verified by lemma equality, same technique
+                    // ADR 0048 uses for the same-verb check.
+                    let same_noun_ok = anchor
+                        .and_then(|a| lexicon.lemma_of(a))
+                        .zip(lexicon.lemma_of(plural))
+                        .is_some_and(|(a, p)| a == p);
+                    if !domain_ok && !same_noun_ok {
+                        return Some(format!(
+                            "\"{quant} other {plural}\" needs either \"{a}\" to be a member of \
+                             \"{category}\" in the domain model, or \"{a}\" to name the same kind of \
+                             thing as \"{plural}\" — neither holds, so this cannot be verified (ADR 0049)",
+                            a = anchor.unwrap_or("?")
+                        ));
+                    }
+                }
+            }
+        }
+    }
+    if let Tree::Node { children, .. } = tree {
+        for c in children {
+            if let Some(m) = other_domain_membership(lexicon, c) {
+                return Some(m);
+            }
+        }
+    }
+    None
+}
+
+fn head_word(t: &Tree) -> Option<&str> {
+    match t {
+        Tree::Leaf { word, .. } => Some(word),
+        Tree::Node { head, children, .. } => head_word(children.get(*head)?),
+    }
+}
+
+/// Capitalizes every word, not just the first — a multi-word domain term
+/// ("function word") capitalizes as "Function Word" (ADR 0027), not
+/// "Function word". Bug found empirically: without this, real member_of
+/// relationships on multi-word categories ("Copula" -> "Function Word")
+/// were rejected as unverifiable, because the computed category name
+/// didn't match what the lexicon actually stores.
+fn capitalize(s: &str) -> String {
+    s.split(' ')
+        .map(|w| {
+            let mut c = w.chars();
+            match c.next() {
+                Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+                None => String::new(),
+            }
+        })
+        .collect::<Vec<_>>()
+        .join(" ")
+}
+
 // ------------------------------------------------------ pattern findings --
 
 /// When a word has a specific "X is a noun in minglish — as a verb use Y"
@@ -195,7 +279,7 @@ fn word(t: &Tok) -> &str {
         | Tok::VtBase(w) | Tok::Vt3(w) | Tok::VtEd(w) | Tok::VtIng(w) | Tok::ViBase(w)
         | Tok::Vi3(w) | Tok::ViEd(w) | Tok::ViIng(w) | Tok::PrepN(w) | Tok::PrepV(w)
         | Tok::Pron1(w) | Tok::Pron2(w) | Tok::Poss(w) | Tok::CopSg(w) | Tok::CopPl(w)
-        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w) | Tok::TimeAdv(w) | Tok::Yet(w) | Tok::Focus(w)
+        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w) | Tok::TimeAdv(w) | Tok::Yet(w) | Tok::Focus(w) | Tok::Other(w)
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
@@ -955,6 +1039,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::TimeAdv(_) => vec![Term::PrepV],
         Tok::Yet(_) => vec![Term::Neg],
         Tok::Focus(_) => vec![Term::Det],
+        Tok::Other(_) => vec![Term::Det],
         Tok::DoBase(_) | Tok::Do3(_) | Tok::DoPast(_) => vec![Term::DoAny],
         Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) => vec![Term::ModAny],
         Tok::If(_) => vec![Term::If],
