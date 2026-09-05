@@ -171,5 +171,27 @@
     "category": "NOUN",
     "waive": ["ADJ"],
     "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "sister",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 round 2: paragraph 1 translation gap"
+  },
+  {
+    "lemma": "task",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 round 2: paragraph 1 translation gap"
+  },
+  {
+    "lemma": "hear",
+    "category": "VERB_TRANS",
+    "forms": { "past": "heard", "ppart": "heard", "third": "hears" },
+    "note": "Frankenstein Letter 1 round 2; irregular past/ppart"
+  },
+  {
+    "lemma": "assure",
+    "category": "VERB_TRANS",
+    "note": "Frankenstein Letter 1 round 2: 'assure X of Y' pattern"
   }
 ]

@@ -4,13 +4,13 @@
 
 ## Summary
 
-- 965 lemmas, 1994 surface forms, 40 redirects, 473 waivers
+- 969 lemmas, 2006 surface forms, 40 redirects, 474 waivers
 - Domain model: 89 terms with definitions (ADR 0027)
-- Lemmas per category: ADJ 150, APPROX 1, BANNED 71, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_1SG 1, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, FOCUS 1, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 2, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 465, NUM_SG 1, ORD 3, OTHER 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 18, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, TEMP_ADV 2, THAN 1, THEN 1, TIME_ADV 1, VERB_INTRANS 29, VERB_TRANS 173, YET 1
+- Lemmas per category: ADJ 150, APPROX 1, BANNED 71, BE 1, BECOME_PAST 1, BECOME_PL 1, BECOME_SG 1, CONJ 3, COPULA_1SG 1, COPULA_PL 1, COPULA_PL_PAST 1, COPULA_SG 1, COPULA_SG_PAST 1, DET 1, DET_SG 2, FOCUS 1, MODAL_CAN 1, MODAL_CAN_NEG 1, MODAL_MUST 1, MORE 1, NAME 7, NEG 2, NEG_AUX_3SG 1, NEG_AUX_BASE 1, NEG_AUX_PAST 1, NOUN 467, NUM_SG 1, ORD 3, OTHER 1, PERCENT 1, POSS_1SG 1, POSS_2 1, PREP_N 1, PREP_V 18, PRON_1SG 1, PRON_2 1, QUANT_EXIST 1, QUANT_NEG 1, QUANT_UNIV 1, REASON 1, RESULT 1, SCALE 3, SCONJ_COND 1, TEMP_ADV 2, THAN 1, THEN 1, TIME_ADV 1, VERB_INTRANS 29, VERB_TRANS 175, YET 1
 
 ## Frequency (open-class lemmas)
 
-- Mean zipf: 4.11 (higher = more common; everyday words sit at 4.5+)
+- Mean zipf: 4.12 (higher = more common; everyday words sit at 4.5+)
 - Rarest 5: adversative (0.00), anaphora (0.00), anaphoric (0.00), anaphoric pronoun (0.00), appositive (0.00)
 
 ## Residual polysemy (WordNet senses within the enabled POS)
@@ -523,6 +523,7 @@ The advice names a word that is not itself enabled (ADR 0023 hole):
 - sun (VERB)
 - ice (VERB)
 - world (ADJ)
+- task (VERB)
 
 ## Corpus coverage
 

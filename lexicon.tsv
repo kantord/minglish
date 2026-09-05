@@ -292,6 +292,10 @@ assume	form	VERB_TRANS_BASE	assume
 assumed	form	VERB_TRANS_ED	assume
 assumes	form	VERB_TRANS_3SG	assume
 assuming	form	VERB_TRANS_ING	assume
+assure	form	VERB_TRANS_BASE	assure
+assured	form	VERB_TRANS_ED	assure
+assures	form	VERB_TRANS_3SG	assure
+assuring	form	VERB_TRANS_ING	assure
 asymmetries	form	NOUN_PL	asymmetry
 asymmetry	form	NOUN_SG	asymmetry
 at	form	PREP_V	at
@@ -1031,8 +1035,12 @@ head nouns	term	-	Head Nouns
 header	form	NOUN_SG	header
 headers	form	NOUN_PL	header
 heads	form	NOUN_PL	head
+hear	form	VERB_TRANS_BASE	hear
+heard	form	VERB_TRANS_ED	hear
 hearer	form	NOUN_SG	hearer
 hearers	form	NOUN_PL	hearer
+hearing	form	VERB_TRANS_ING	hear
+hears	form	VERB_TRANS_3SG	hear
 heart	form	NOUN_SG	heart
 hearts	form	NOUN_PL	heart
 heavier	form	ADJ_CMP	heavy
@@ -1937,6 +1945,8 @@ silent	form	ADJ_LONG	silent
 since	ban	-	"since" is causal or temporal - for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
 single	form	ADJ_LONG	single
 singular	form	ADJ_LONG	singular
+sister	form	NOUN_SG	sister
+sisters	form	NOUN_PL	sister
 sit	form	VERB_INTRANS_BASE	sit
 sits	form	VERB_INTRANS_3SG	sit
 sitting	form	VERB_INTRANS_ING	sit
@@ -2068,6 +2078,8 @@ takes	form	VERB_TRANS_3SG	take
 taking	form	VERB_TRANS_ING	take
 target	form	NOUN_SG	target
 targets	form	NOUN_PL	target
+task	form	NOUN_SG	task
+tasks	form	NOUN_PL	task
 taste	form	NOUN_SG	taste
 tastes	form	NOUN_PL	taste
 team	form	NOUN_SG	team
