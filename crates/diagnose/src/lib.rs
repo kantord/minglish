@@ -561,27 +561,16 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             }
         }
     }
-    // clause as object: "shows Pronouns are …" — two finite verbs and no
-    // connective between them
-    {
-        let is_verbish = |t: &Tok| {
-            is_finite_verb(t)
-                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
-                    | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoPast(_))
-        };
-        let verbs: Vec<usize> = toks.iter().enumerate().filter(|(_, t)| is_verbish(t)).map(|(i, _)| i).collect();
-        if let [a, b, ..] = verbs[..] {
-            let connective = toks[a..b].iter().any(|t| matches!(t, Tok::Conj(_) | Tok::If(_) | Tok::Then(_) | Tok::So(_) | Tok::Because(_) | Tok::Comma));
-            let reduced_relative = matches!(toks[a], Tok::VtEd(_) | Tok::ViEd(_)) && a >= 1 && matches!(toks[a - 1], Tok::NounSg(_) | Tok::NounPl(_));
-            if !connective && !reduced_relative {
-                out.push(format!(
-                    "\"{} … {}\" — a clause cannot be the object of a verb; state the fact in its own \
-                     sentence, or name it: \"the report shows the result\"",
-                    word(&toks[a]), word(&toks[b])
-                ));
-            }
-        }
-    }
+    // clause as object ("the report shows the Pronouns are banned") used to
+    // be a token-window heuristic here ("two verb-ish tokens, no
+    // connective") — it misfired on ordinary predicates (do-support
+    // negation, modal + verb, copula + passive participle: each is
+    // exactly two verb-ish tokens with nothing between them). Replaced by
+    // `antiparse`'s `AntiClauseObject`, which requires a real subject-like
+    // NP wedged between the two verbs — the actual structural signal that
+    // a second clause has started (see crates/antiparse/src/
+    // anti_clause_object.lalrpop). It runs as an antiparser fallback, not
+    // here, so it no longer fires alongside an unrelated correct finding.
     // "be" outside "must be / can be / cannot be" (ADR 0032)
     for (i, t) in toks.iter().enumerate() {
         if matches!(t, Tok::Be(_)) {

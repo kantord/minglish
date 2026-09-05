@@ -22,6 +22,7 @@ use anti::{Repair};
 lalrpop_mod!(pub anti_bare_coord);
 lalrpop_mod!(pub anti_noun_verb);
 lalrpop_mod!(pub anti_free_only);
+lalrpop_mod!(pub anti_clause_object);
 
 /// One antiparser's match against a span of the token stream.
 pub struct AntiFinding {
@@ -51,6 +52,9 @@ pub fn scan(lexicon: &Lexicon, toks: &[Tok]) -> Vec<AntiFinding> {
             }
             if let Some(m) = try_free_only(&toks[start..end]) {
                 out.push(AntiFinding { name: "AntiFreeOnly", span: (start, end), repair: m.repair() });
+            }
+            if let Some(m) = try_clause_object(&toks[start..end]) {
+                out.push(AntiFinding { name: "AntiClauseObject", span: (start, end), repair: m.repair() });
             }
         }
     }
@@ -90,6 +94,11 @@ fn try_noun_verb(slice: &[Tok]) -> Option<anti::noun_verb::NounVerbMatch> {
 fn try_free_only(slice: &[Tok]) -> Option<anti::free_only::FreeOnlyMatch> {
     let iter = to_iter(slice);
     anti_free_only::StartParser::new().parse(iter).ok()
+}
+
+fn try_clause_object(slice: &[Tok]) -> Option<anti::clause_object::ClauseObjectMatch> {
+    let iter = to_iter(slice);
+    anti_clause_object::StartParser::new().parse(iter).ok()
 }
 
 type TokTriple = Result<(usize, Tok, usize), grammar::LexError>;

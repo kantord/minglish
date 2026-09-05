@@ -263,13 +263,44 @@ sentences, kept only for comparison — 97.6% fail at the WORD level
 before reaching structural analysis at all, confirming EWT is the wrong
 source for this question) through `diagnose()`, buckets STYLE findings
 by template (quoted spans normalized to `X`), and writes
-`docs/finding-frequency-report.md`. Real ranking, near-miss data: 480×
-"singular noun needs a determiner", 473× "a clause cannot be the object
-of a verb", 273× noun-noun compounds, 121× "is a defined term", 114×
-inline-list-should-be-Enumeration. The generic fallback itself only
-fires 23/6643 times (0.35%) — most rejections already get a specific
-explanation; the antiparser backlog above should be prioritized off this
-ranking, not off the fallback's own (rare) firing.
+`docs/finding-frequency-report.md`. The generic fallback itself only
+fires 28/6643 times (0.4%) — most rejections already get a specific
+explanation; the antiparser backlog should be prioritized off the
+ranking in the report, not off the fallback's own (rare) firing.
+
+**`AntiClauseObject` built, 2026-09-05 — the ranking caught a real bug,
+not just a coverage gap.** The #2-ranked finding, "a clause cannot be
+the object of a verb" (473× — 7% of all near-miss sentences), turned
+out to be ~98.5% false positives. The old `pattern_findings` heuristic
+("two verb-ish tokens, no connective between them") misfired on
+ordinary predicates: do-support negation ("the system **does** not
+**have** an anaphora mechanism"), modal + main verb ("agents **must**
+not **check** the input"), copula + passive participle ("the file **is**
+**stored** in the database") — each is exactly two verb-ish tokens with
+nothing between them, and the heuristic had no way to tell that apart
+from a genuine embedded clause. Manually checked ~40 real trigger
+sentences from the corpus; found one true positive shape ("the report
+**shows** the Pronouns **are** banned") in the whole sample. Replaced
+with `crates/antiparse/src/anti_clause_object.lalrpop`
+(`AntiClauseObject`, a 4th antiparser): the real structural signal is a
+subject-like NP *wedged between* the two verbs — that NP is what starts
+the second clause, and an aux/modal/copula never has an NP between it
+and its own main verb, so the grammar structurally cannot match a single
+predicate. Rerunning the frequency tool: the bucket dropped from 473 to
+7 genuine matches, and total STYLE findings dropped 1336 → 1284 (the 52
+difference: sentences that used to get this spurious "explanation" but
+had no other real problem now correctly fall through, mostly to the
+generic fallback, which rose 23 → 28 — an honest result, not a
+regression: those sentences never had a specific cause to name).
+`Repair` category: `None` (never a mechanical fix — which sentence to
+split into is a decision only the writer can make, same as
+`bare_coord`'s elliptical-conjunct case). This is the concrete case that
+validates the whole antiparser thesis from the original design
+discussion: a token-window heuristic can't just be "usually right, rare
+misfire" — "two verb-ish tokens" is the *normal* shape of most English
+predicates, so any heuristic built on adjacency alone was doomed to
+misfire on the common case, not the edge case. Only a real structural
+match (an actual second subject) tells the difference.
 
 Building this surfaced an unrelated bug: `crates/diagnose` gained a
 second `[[bin]]` target (`src/bin/finding-frequency.rs`, next to the
@@ -281,11 +312,18 @@ lint-file.py`, `scripts/dogfood-sweep.py`, `justfile`'s `lint` recipe) to
 `--bin diagnose` explicitly — a standing gotcha for any future second
 binary added to a crate that already has a `main.rs`.
 
-**Still not done**: build antiparsers for the ranked findings above,
-starting with the top 2-3 (determiner-omission, clause-as-object);
-decide whether `Repair::Single` results get surfaced as "try: X"
-suggestions only, or auto-applied in a repair-proposal flow (matching
-`autofix-paragraphs`'s existing human-verdict gate, `just verdict`,
+**Still not done**: clause-as-object is now built (above). Determiner-
+omission (480×, top of the current ranking) is next — but audit it the
+same way first, not just port it: it has its own suspicious dead
+condition (`crates/diagnose/src/lib.rs`, the `j == 0 && i > 0 && false`
+branch in the bare-singular-noun check — always false, looks like an
+unfinished edge case) worth understanding before deciding whether it's
+actually fragile enough to justify a grammar, or mostly correct as-is.
+Noun-noun compounds (273×) is the next-ranked candidate after that.
+Separately: decide whether `Repair::Single` results get surfaced as
+"try: X" suggestions only, or auto-applied in a repair-proposal flow
+(matching `autofix-paragraphs`'s existing human-verdict gate, `just
+verdict`,
 rather than silently rewriting anything).
 5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
    not ranking). A candidate is a faithful rewrite only if input ⊨ candidate

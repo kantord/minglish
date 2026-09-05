@@ -1,4 +1,5 @@
 pub mod bare_coord;
+pub mod clause_object;
 pub mod free_only;
 pub mod noun_verb;
 

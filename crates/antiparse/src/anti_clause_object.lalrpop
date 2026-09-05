@@ -1,0 +1,69 @@
+// Antiparser: an embedded finite clause sitting in a verb's object slot
+// ("the report shows the Pronouns are banned") — replaces a token-window
+// heuristic ("two verb-ish tokens, no connective") that turned out to
+// misfire on ordinary predicates: do-support negation ("does not have"),
+// modal + main verb ("must not check"), and copula + passive participle
+// ("is stored") are each exactly two verb-ish tokens with nothing between
+// them, and the old heuristic flagged all of them. The real structural
+// signal is a *subject-like NP wedged between the two verbs* — that NP is
+// what starts the second clause; an aux/modal/copula sits directly next
+// to its own main verb with no NP in between, so this grammar never
+// matches a single predicate, only a genuine second subject.
+
+use crate::anti::clause_object::{join_np, ClauseObjectMatch};
+use grammar::{Tok, LexError};
+
+grammar;
+
+extern {
+    type Location = usize;
+    type Error = LexError;
+
+    enum Tok {
+        "DET" => Tok::Det(<String>),
+        "DET_SG" => Tok::DetSg(<String>),
+        "ADJ" => Tok::Adj(<String>),
+        "NOUN_SG" => Tok::NounSg(<String>),
+        "NOUN_PL" => Tok::NounPl(<String>),
+        "VT_3SG" => Tok::Vt3(<String>),
+        "VT_BASE" => Tok::VtBase(<String>),
+        "VT_ED" => Tok::VtEd(<String>),
+        "VI_3SG" => Tok::Vi3(<String>),
+        "VI_BASE" => Tok::ViBase(<String>),
+        "VI_ED" => Tok::ViEd(<String>),
+        "COP_SG" => Tok::CopSg(<String>),
+        "COP_PL" => Tok::CopPl(<String>),
+        "COP_SG_PAST" => Tok::CopSgPast(<String>),
+        "COP_PL_PAST" => Tok::CopPlPast(<String>),
+    }
+}
+
+Verb: String = {
+    "VT_3SG" => <>,
+    "VT_BASE" => <>,
+    "VT_ED" => <>,
+    "VI_3SG" => <>,
+    "VI_BASE" => <>,
+    "VI_ED" => <>,
+    "COP_SG" => <>,
+    "COP_PL" => <>,
+    "COP_SG_PAST" => <>,
+    "COP_PL_PAST" => <>,
+};
+
+// A minimal subject-like NP — deliberately no verb-bearing content, so
+// this can never itself absorb a Verb token and widen the match.
+Subj: String = {
+    <d:"DET"> <a:"ADJ"?> <n:"NOUN_SG"> => join_np(&Some(d), &a, &n),
+    <d:"DET_SG"> <a:"ADJ"?> <n:"NOUN_SG"> => join_np(&Some(d), &a, &n),
+    <d:"DET"> <a:"ADJ"?> <n:"NOUN_PL"> => join_np(&Some(d), &a, &n),
+    // a bare plural subject is itself a valid minglish NP (ADR 0014,
+    // "Pronouns are indexical") — not just an ellipsis to exclude.
+    <a:"ADJ"?> <n:"NOUN_PL"> => join_np(&None, &a, &n),
+};
+
+pub Start: ClauseObjectMatch = {
+    <v1:Verb> <s:Subj> <v2:Verb> => ClauseObjectMatch {
+        outer_verb: v1, inner_subject: s, inner_verb: v2,
+    },
+};

@@ -4,15 +4,27 @@ Last updated: 2026-09-05 (`just finding-frequency` — real-usage
 instrumentation of `diagnose()` outcomes over 6643 near-miss minglish
 sentences from `tests/paragraph-cases/` + `tests/agent-cases/`. Ranks
 STYLE finding kinds so the antiparser backlog (docs/ideas.md,
-"Antiparsers") gets built off real frequency, not guesses: top gaps
-are "singular noun needs a determiner" (480×), "clause cannot be the
-object of a verb" (473×), noun-noun compounds (273×). The generic
-fallback fires only 0.35% of the time. Report: docs/finding-frequency-
-report.md. Fixed along the way: adding a crate's second `[[bin]]`
-target silently broke every `cargo run -p diagnose` call site that
-didn't pin `--bin diagnose` (showcase.sh, lint-file.py, dogfood-
-sweep.py, justfile's `lint`) — `|| true` swallowed the ambiguous-
-target error and truncated docs/showcase.md to nothing. On 2026-09-04,
+"Antiparsers") gets built off real frequency, not guesses. The ranking
+immediately caught a real bug, not just a coverage gap: the #2 finding,
+"a clause cannot be the object of a verb" (473×, 7% of all near-miss
+sentences), was ~98.5% false positives — the old token-window heuristic
+("two verb-ish tokens, no connective") misfired on ordinary predicates
+(do-support negation, modal + verb, copula + passive participle — each
+is exactly two verb-ish tokens with nothing between them). Replaced
+with a 4th antiparser, `AntiClauseObject`
+(crates/antiparse/src/anti_clause_object.lalrpop): requires a real
+subject-like NP wedged between the two verbs, the actual structural
+signal a second clause has started — a token-window guess can never
+tell that from an aux/modal/copula next to its own main verb. Bucket
+dropped 473 → 7 genuine matches on rerun. Report: docs/finding-
+frequency-report.md; full writeup in docs/ideas.md, "Antiparsers".
+Determiner-omission (480×, now top of the ranking) is next, but needs
+its own audit first — see docs/ideas.md's "Still not done". Fixed along
+the way: adding a crate's second `[[bin]]` target silently broke every
+`cargo run -p diagnose` call site that didn't pin `--bin diagnose`
+(showcase.sh, lint-file.py, dogfood-sweep.py, justfile's `lint`) —
+`|| true` swallowed the ambiguous-target error and truncated
+docs/showcase.md to nothing. On 2026-09-04,
 `crates/antiparse` was wired into `diagnose()` as a fourth channel,
 ahead of the generic fallback — when the hand-written
 `pattern_findings`/`slot_findings` checks find nothing, an antiparser

@@ -10,13 +10,13 @@ Real repair-attempt proposals/outputs — the higher-relevance source — 6643 s
 
 - Ambiguous: 91 (1.4%)
 - Clean: 2528 (38.1%)
-- Style: 1336 (20.1%)
-- Unknown: 18 (0.3%)
+- Style: 1284 (19.3%)
+- Unknown: 70 (1.1%)
 - Word: 2670 (40.2%)
 
 ### The generic fallback ("restructure into one of the minglish templates")
 
-Fired 23 times.
+Fired 28 times.
 
 - i refers to the speaker
 - you refers to the hearer
@@ -24,10 +24,13 @@ Fired 23 times.
 - A categorical Ban overshoots the target
 - The bounds of the load are the constraint, because a categorical rule against a Sentence Shape overshoots
 - The primary tool is the set of valid Sentence Shapes
+- A sentence must need a small prior context
 - The first tool is the set of valid Sentence Shapes
+- A sentence must need a small prior context
 - The primary tool is the set of valid Sentence Shapes
 - The repetition of nouns reduces the Context Need
 - A sentence needs a small prior text
+- A sentence must need a small prior context
 - the rule fails the criterion
 - the rule fails every criterion
 - the rule fails the criterion
@@ -38,7 +41,9 @@ Fired 23 times.
 - the rule fails the criterion
 - the rule fails the criterion
 - the rule fails the criterion
+- a rule does not remove an ambiguity, so the rule fails the criterion
 - the rule fails the criterion
+- Every future Grammar ADR must justify the choice
 - Every future Grammar ADR justifies the choice
 - A Grammar ADR is a document
 
@@ -46,8 +51,6 @@ Fired 23 times.
 
 - 480 — X — a singular noun needs a determiner: X (mass nouns take X)
   example: the declarations list contains the words i and you and my and your
-- 473 — X — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: X
-  example: a note describes the allowed words
 - 273 — X — noun-noun compounds are not minglish; write X, or one transparent word (ADR 0015)
   example: the system does not have an anaphora mechanism
 - 121 — X is a defined term — write X (see CONTEXT.md)
@@ -78,6 +81,8 @@ Fired 23 times.
   example: A rule forces longer text
 - 32 — X — an adjective cannot take a prepositional phrase yet; restructure with a verb, or split the sentence (deferred, ADR 0023)
   example: the cost is consistent with the clarity of the project
+- 28 — this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
+  example: i refers to the speaker
 - 26 — X — only X attaches to a noun; X attaches to the verb. Write X, or move the phrase after the verb (ADR 0011)
   example: a mechanism for the anaphora does not appear
 - 25 — X — comparatives of a quantity are deferred (ADR 0030); write X, or restructure
@@ -88,8 +93,6 @@ Fired 23 times.
   example: the agent needs a discourse layer for the finding of the referent of the anaphora
 - 23 — a comma cannot join 2 clauses — write 2 sentences, or X / X (ADR 0026)
   example: the prose is repetitive, the agent mentions the agent
-- 23 — this structure is outside the sanctioned sentence shapes — restructure into one of the minglish templates
-  example: i refers to the speaker
 - 22 — X negates the verb only — write X or X; a noun phrase cannot carry X (ADR 0005)
   example: the design of the project chooses clarity and not naturalness
 - 21 — X used as a word must be quoted: Xyour\X (ADR 0018)
@@ -132,6 +135,8 @@ Fired 23 times.
   example: the sentence allows the word i
 - 7 — X — a word mentioned as a word must be quoted: Xyou\X (ADR 0018)
   example: the sentence allows the word you
+- 7 — [AntiClauseObject] X — X starts a second clause after X; a clause cannot be the object of a verb. State the fact in its own sentence, or give it a Name and use the Name here
+  example: the result says the ambiguity reappears
 - 7 — condition must come first — write: if <clause>, then <clause> (ADR 0007)
   example: the structure is: if a sentence splits, then the reference ambiguity reappears
 - 6 — X repeats across the coordination — write the colon-list instead: X (ADR 0041, ADR 0048)
@@ -193,8 +198,6 @@ Fired 1 times.
 - 8 — X is transitive in minglish and needs an object
   example: Compare the flags to the Fallujah one.
 - 7 — X — a Name takes no determiner: write X, or introduce it with a noun: X (ADR 0018)
-  example: Compare the flags to the Fallujah one.
-- 3 — X — a clause cannot be the object of a verb; state the fact in its own sentence, or name it: X
   example: Compare the flags to the Fallujah one.
 - 3 — X — an adjective cannot modify a Name; write X alone, or X (ADR 0018)
   example: Original Margin Call Margin Due Today
