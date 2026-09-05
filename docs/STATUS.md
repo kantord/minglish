@@ -57,6 +57,16 @@ that is not derivable from the code, ADRs, or git history.
   was badly stale; independent validation: LLM-only signal, no human
   data) and an efficient ordered plan. Read this before answering "is
   it ready" or picking the next priority.
+- `docs/prompt-ab.md` (2026-09-05) — A/B test of the `agenttest` system
+  prompt: a new, 100%-dogfooded, ≤300-word prompt
+  (`skills/minglish/repair-prompt.md`) matches or beats the production
+  1109-word `SKILL.md` on repair fix-rate (50%→100% on the test set)
+  and ties it exactly on naturalness (blind judge, two authoring
+  tasks). Finding: naturalness is capped by the language's own
+  conventions, not by prompt wording — further gains need a language
+  construction (Condition 2/3), not more prompt tuning.
+  `crates/agenttest`'s `SKILL_PATH` now points at the new file;
+  `SKILL.md` itself is untouched (still the general onboarding doc).
 - `domain/model.json` — the domain model (ADR 0027): every project term with
   its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
   written Capitalized in minglish text. `just define <Term>` looks one up.

@@ -4,7 +4,8 @@
 //! outputs need human review. Re-running is a **milestone action**. The
 //! flow per case (one YAML per case in tests/agent-cases/):
 //!
-//!   system prompt = skills/minglish/SKILL.md + word list from lexicon.tsv
+//!   system prompt = skills/minglish/repair-prompt.md + word list from
+//!   lexicon.tsv (chosen by A/B test, 2026-09-05: see docs/prompt-ab.md)
 //!   round 1: "this sentence was rejected: … linter says: … reply with only
 //!            the corrected minglish sentence"
 //!   invalid reply → feed the new diagnosis back, up to 3 rounds
@@ -29,7 +30,7 @@ use std::collections::BTreeMap;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 const CASES_DIR: &str = "tests/agent-cases";
-const SKILL_PATH: &str = "skills/minglish/SKILL.md";
+const SKILL_PATH: &str = "skills/minglish/repair-prompt.md";
 pub(crate) const LEXICON_PATH: &str = "lexicon.tsv";
 pub(crate) const MAX_ROUNDS: usize = 3;
 
