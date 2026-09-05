@@ -24,7 +24,7 @@ fiat decision. The Noun Phrase has 3 legal shapes:
 - the phrase "every <noun>"
 
 The statement must end with the Noun Phrase. A Modifier cannot follow the
-Noun Phrase. A Coordination cannot follow the Noun Phrase. If the
+Noun Phrase, and a Coordination cannot follow the Noun Phrase. If the
 statement has a quantity, then the number of the items must match the
 quantity.
 
@@ -46,17 +46,18 @@ intro stays with the items. The rule covers 4 tools:
 
 The maintainers deferred 3 questions. The first question is an ordered
 list. The items of an ordered list are clauses. The steps of a procedure
-are one example, and the rules are a second example. The second question is
-a colon inside a sentence. The third question is an intro with the shape
-of a question.
+are one example, and the rules are a second example. The second question names the colon inside a sentence, so the
+maintainers did not decide the rule of the colon. The third question
+names an intro with the shape of a question, so the maintainers did not
+decide the rule of the intro.
 
 ## Consequences
 
 - The Block of the 4 Pronouns replaces 4 sentences. The Linter checks the
   number of the items.
-- The last Noun Phrase is the object or is the Complement. The maintainers
-  limited the role of the intro with a deliberate choice, so the reader
-  does not guess the phrase of the list.
+- The last Noun Phrase is the object or is the Complement. The role
+  decides the attachment of the list, so the reader does not guess the
+  phrase of the list.
 - The extractor reads one line for every sentence. An Enumeration is the
   first structure with lines, so the extractor gains one exception. The
   output of the extractor shows the symbol "⏎" at the boundaries of the

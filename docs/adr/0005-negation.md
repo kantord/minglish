@@ -20,22 +20,28 @@ The language enables 3 Function Words:
 - "do"
 - "does"
 
-The word "not" has the Form Tag "NEG". The word "do" has the Form Tag
-"NEG_AUX_BASE", and the word "does" has the Form Tag "NEG_AUX_3SG".
+Every word has one Form Tag:
+
+| word | Form Tag |
+|---|---|
+| "not" | "NEG" |
+| "do" | "NEG_AUX_BASE" |
+| "does" | "NEG_AUX_3SG" |
 
 The 2 Surface Forms of the Lemma "do" carry a Negation, so the Grammar must
 allow the Auxiliary in one pattern. The word "not" follows the Auxiliary and
-comes before a base verb. A Negation uses the pattern, and a Prohibition uses
-the bare pattern. The emphatic Auxiliary is a Ban, so the sentence "the
-parser does accept the file" is a Rejection. A question cannot use the
-Auxiliary.
+comes before a base verb. A Negation keeps the subject, and the word "does" matches the subject.
+A Prohibition drops the subject, and the Auxiliary is the word "do".
+The emphatic Auxiliary is a Ban, so the sentence "the
+parser does accept the file" is a Rejection. The Auxiliary does not
+open a question.
 
 A Negation of a Copula does not need an Auxiliary, so the word "not" follows
 the Copula.
 
 The Grammar limits the scope of "not" to the main predicate of the clause,
 so a Negation of a Constituent is a Ban. The Linter rejects the phrase "not
-all users" and rejects the phrase "a not old file".
+all users", and the Linter rejects the phrase "a not old file".
 
 The decision does not enable "did", but the later decision "0010" added
 "did". The orthography of the language bans every contraction. The decision

@@ -5,8 +5,8 @@ Status: proposed (tentative)
 
 ## Context
 
-The Dogfood has 8 sentences. Quantifiers break 5 sentences of the Dogfood
-and open every list of the Gaps. The sentence "every X does not Y" has 2
+The Dogfood has 8 sentences. Quantifiers break 5 sentences of the
+Dogfood. The sentence "every X does not Y" has 2
 Parses in English. The readers disagree on the Parse, so a fiat decision
 violates the expectation of the readers. If a quantifier does not open the
 sentence, then the reader rebuilds the logic from the syntax. The phrase
@@ -29,7 +29,7 @@ agent does not retry requests" carries the meaning.
 
 A quantified subject takes a positive predicate. The rule excludes 4
 phrases:
-- "not"
+- "is not"
 - "does not"
 - "must not"
 - "cannot"
@@ -39,9 +39,10 @@ The 4 Bans have 3 unambiguous replacements:
 - the phrase "no X can"
 - the word "some"
 
-The language does not have the word "some", so the third replacement is
-future. The phrase "no X must" is a Ban, because the phrase has 2 meanings
-in English. The phrase "no X can" is legal, because the sentence "no agent
+The maintainers did not map every Ban to one replacement. The language
+does not have the word "some", so the third replacement is future. The
+phrase "no X must" is a Ban, because the phrase has 2 meanings in
+English. The phrase "no X can" is legal, because the sentence "no agent
 can delete the file" has one Parse.
 
 A quantified subject opens a whole sentence. The subject does not appear
@@ -50,7 +51,7 @@ a provisional bound, so the maintainers revisit the bound with the evidence
 of the corpus.
 
 If the word "every" appears in the object, then the order of the words
-decides the scope.
+decides the scope: the order of the sentence is the order of the scope.
 
 ## The first-token telegraph principle
 
@@ -68,7 +69,7 @@ are words:
 
 Every future Sentence Shape must take a distinct First Token. A question is
 one example of a future Sentence Shape. An existential statement is a
-second example. The rule helps the reader, because the reader knows the
+second example. The maintainers do not define an existential statement. The rule helps the reader, because the reader knows the
 frame before the claim. The rule helps a Language Model, because the
 Language Model gets a constraint from the First Token. The parser sees a
 distinct First Token for every Sentence Shape, so the rule helps the

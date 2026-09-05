@@ -93,7 +93,7 @@
       score: 4
     unclear: []
 '0002':
-  hash: 39f43cb49a32
+  hash: 0d826bd25eb5
   naturalness:
     paragraphs:
     - i: 1
@@ -101,77 +101,38 @@
       score: 4
     - i: 2
       issues: []
-      score: 4
+      score: 3
     - i: 3
-      issues:
-      - span: refers to the speaker or refers to the hearer
-        why: repeated verb across the two alternatives reads mechanical
-      score: 4
+      issues: []
+      score: 5
     - i: 4
       issues: []
       score: 5
     - i: 5
       issues: []
-      score: 4
+      score: 5
     - i: 6
       issues: []
       score: 5
     - i: 7
       issues: []
-      score: 4
+      score: 5
     - i: 8
-      issues:
-      - span: did not build a Discourse Layer and do not plan a Discourse Layer
-        why: repeats the full noun phrase instead of a natural ellipsis; reads mechanical
-      score: 3
+      issues: []
+      score: 5
     - i: 9
       issues: []
-      score: 4
+      score: 3
   telephone:
-    explanation: A coverage-measurement tool tallied unrecognized words in a reference corpus
-      and found about 2,200 of them are pronouns, making pronouns a large gap in the language's
-      word coverage — though one other single word-class has an even bigger gap. Every third-person
-      pronoun is "anaphoric," meaning it refers back to a noun mentioned earlier, which forces
-      the reader to hunt back through the text to find what it means; resolving a word like
-      "it" would require a dedicated reference-resolution mechanism that the language doesn't
-      have. The document notes that even splitting a long sentence into two doesn't dodge
-      this problem, since the second sentence would then need to refer back to the first,
-      reintroducing the original ambiguity in a new form. By contrast, first- and second-person
-      pronouns refer directly to the writer or reader, not to something said earlier, so they
-      don't create this kind of referential ambiguity, and instructions rely on them. The
-      decision bans every anaphoric pronoun outright — a list of fourteen words including
-      "it," "they," "this," "that," and their variants — so a writer who needs to refer to
-      something already mentioned must repeat the noun instead of using a pronoun. The language
-      does allow four indexical pronouns — "I," "you," "my," "your" — each assigned its own
-      grammatical tag. The maintainers explicitly decided not to build a mechanism for resolving
-      anaphoric references, either now or for the initial version of the language. As a consequence,
-      because the language's design eliminates referential ambiguity structurally, no such
-      resolution mechanism is needed at all. This does mean the resulting prose is repetitive,
-      since nouns get repeated rather than replaced by pronouns, but the project accepts that
-      trade-off, valuing clarity over sounding natural. Finally, because the current word
-      list doesn't contain the banned pronouns at all, the checking tool currently just reports
-      them as unrecognized words rather than explaining that they are specifically forbidden;
-      producing a proper message telling the writer to repeat the intended noun would require
-      new functionality in a future validator, which the maintainers have deferred.
+    explanation: see session
     fidelity:
       distorted: []
-      invented:
-      - States the banned pronoun list totals 'fourteen words' -- the original lists eight
-        base forms (it, they, he, she, this, that, these, those) plus their unspecified object/possessive
-        forms, and gives no total count.
+      invented: []
       lost: []
       score: 4
     unclear:
-    - readings: Doesn't name which word-class has the bigger coverage gap — the document gives
-        no way to identify it, so this just registers that pronouns aren't even the single
-        largest such gap.
-      span: The Gap of one Closed Class is bigger than the Gap of the Pronouns.
-    - readings: No ambiguity was named for 'the long sentence' itself, so it's unclear exactly
-        which ambiguity is meant; most plausible reading is that splitting a long sentence
-        and having the second sentence refer back with a pronoun reintroduces some referential/scope
-        ambiguity similar to whatever made the original sentence hard, but the text doesn't
-        specify which.
-      span: The ambiguity of the long sentence reappears in the reference.
+    - readings: general point vs specific residual problem
+      span: splits a long sentence
 '0003':
   hash: 5e68c82276c5
   naturalness:
@@ -1169,129 +1130,49 @@
       score: 4
     unclear: []
 '0014':
-  hash: 01a6b5ad1ce4
+  hash: eb44fdb5d5bf
   naturalness:
     paragraphs:
     - i: 1
-      issues: []
       score: 4
     - i: 2
-      issues:
-      - span: 'The word "every" appears in the
-
-          subject and appears in the object. The language bans the word "all" and
-
-          bans the word "each".'
-        why: repeated 'appears in'/'bans the word' template back-to-back
       score: 4
     - i: 3
-      issues:
-      - span: 'The word "no" has the Form Tag "QUANT_NEG" and takes a singular noun. The
-
-          word "no" marks a universal Negation and appears in the subject. The object
-
-          cannot carry the word "no", so the word "no" opens every universal
-
-          Negation.'
-        why: '''the word "no"'' repeated four times across three sentences'
-      score: 4
+      score: 5
     - i: 4
-      issues: []
-      score: 5
-    - i: 5
-      issues: []
-      score: 5
-    - i: 6
-      issues: []
       score: 4
+    - i: 5
+      score: 4
+    - i: 6
+      score: 3
     - i: 7
-      issues: []
       score: 4
     - i: 8
-      issues: []
-      score: 5
+      score: 3
     - i: 9
-      issues:
-      - span: 'The word "if" opens a Conditional. The word "do" opens a Prohibition. The
-
-          word "no" opens a universal Negation. The word "every" opens a universal
-
-          statement. A Bare Plural opens a generic statement. A determiner opens a
-
-          plain statement.'
-        why: a run of six sentences following the identical 'X opens a Y' template, reads
-          like a generated table rather than prose
-      score: 3
-    - i: 10
-      issues:
-      - span: 'The rule helps the reader, because the reader knows the frame before the
-
-          claim. The rule helps a Language Model, because the
-
-          Language Model gets a constraint from the First Token.'
-        why: '''the rule helps X, because...'' template repeated (a third time for ''the parser''),
-          mechanical'
-      score: 3
-    - i: 11
-      issues: []
       score: 4
+    - i: 10
+      score: 5
+    - i: 11
+      score: 3
+    - i: 12
+      score: 3
   telephone:
-    explanation: 'This document handles quantifiers, which caused problems in 5 of the 8 dogfooded
-      sentences. The core problem is that English sentences like ''every X does not Y'' are
-      genuinely ambiguous — they support two different logical readings, native readers disagree
-      on which is meant, and picking one by arbitrary decision would violate reader expectations;
-      the fix is to require that whenever a quantifier is used, it must open the sentence,
-      so the reader doesn''t have to infer scope from word order (an example of the banned,
-      ambiguous style is ''retries no request''). The word ''every'' marks universal statements
-      with no tolerated exceptions (unlike a Bare Plural, which is generic and does tolerate
-      exceptions); ''every'' can appear in either subject or object position, and the synonyms
-      ''all'' and ''each'' are banned so there is exactly one word per meaning. The word ''no''
-      marks a universal negation, but only in subject position — the object can never carry
-      ''no,'' so whenever ''no'' appears it necessarily opens a universal negation; the bad
-      phrase ''retries no request'' should instead be written as ''the agent does not retry
-      requests.'' When a quantifier opens the subject, the predicate that follows must be
-      phrased positively — four negative-style phrasings are excluded: ''not,'' ''does not,''
-      ''must not,'' and ''cannot.'' These four banned patterns have three unambiguous replacements:
-      negating a Bare Plural instead, using the phrase ''no X can,'' or (in future) using
-      the word ''some''; the ''some'' option isn''t available yet since that word doesn''t
-      exist in the language yet. Within this, ''no X must'' is banned because it is genuinely
-      ambiguous in English (two possible meanings), while ''no X can'' is kept because it
-      has only one reading. A quantified subject must open the entire sentence and cannot
-      appear nested inside a Conditional or a Coordination; this restriction is also called
-      provisional, to be revisited as corpus evidence accumulates. If ''every'' does appear
-      in the object rather than the subject, word order determines its scope. More broadly,
-      the decision reaffirms that the first word of a sentence announces its overall shape:
-      ''if'' signals a Conditional, ''do'' (as in ''do not'') signals a Prohibition, ''no''
-      signals a universal negation, ''every'' signals a universal statement, a Bare Plural
-      signals a generic statement, and a determiner or an Indexical Pronoun signals an ordinary
-      plain statement. Every future sentence shape (questions and existential statements are
-      named as future candidates) must likewise get its own distinct opening word, because
-      this benefits readers (who know the frame before the claim arrives), language models
-      (which get an early constraint), and the parser (which can distinguish shapes immediately).
-      Consequence notes: the two new patterns — ''every'' for universal claims and ''no X
-      can'' for a universal denial of ability — are described as natural and compact in English;
-      the bans force rewrites that end up either shorter or clearer than the originals; and
-      the required grammar changes force the maintainers to clean up duplicated positive-predicate
-      code in the parser (LALRPOP) implementation.'
+    explanation: see session
     fidelity:
-      distorted:
-      - The summary frames the primary 'fix' for the 'every X does not Y' scope ambiguity
-        as a general requirement that a quantifier must open the sentence, and attaches the
-        example 'retries no request' to that framing. In the original, 'retries no request'
-        actually illustrates the separate rule that object-position negation with 'no' is
-        unwritable (its meaning lives at 'does not retry requests'); the real resolution of
-        the 'every X does not Y' ambiguity is the positive-predicates-only restriction on
-        quantified subjects, which the summary does state correctly later but not as the causal
-        'fix'.
+      distorted: []
       invented: []
       lost: []
       score: 4
     unclear:
-    - readings: unclear whether this means the 5 broken sentences each head/introduce a separate
-        list of Gaps in some report, or that quantifier problems as a category account for
-        every entry in the Gaps list; the exact relationship between 'break 5 sentences' and
-        'open every list of the Gaps' is not spelled out.
-      span: quantifiers break 5 sentences of the Dogfood and open every list of the Gaps
+    - readings: two readings
+      span: quantifier does not open the sentence
+    - readings: incomplete mapping per document
+      span: 4 bans to 3 replacements mapping
+    - readings: meanings not spelled out
+      span: no X must has 2 meanings
+    - readings: mechanism not illustrated
+      span: order of sentence is order of scope
 '0015':
   hash: 7a4d7f253924
   naturalness:
@@ -2261,64 +2142,33 @@
         is a rare thing to need to state in this project's texts
       span: The phrase "one percent" is a Ban, because the phrase is rare.
 '0025':
-  hash: 21352f05cd6d
+  hash: 9eb7642c9805
   naturalness:
     paragraphs:
     - i: 1
-      issues: []
       score: 4
     - i: 2
-      issues:
-      - span: Technical texts use approximate quantities.
-        why: reads as a disconnected generic aside tacked onto the end, not tied to the preceding
-          argument
       score: 3
     - i: 3
-      issues: []
       score: 4
     - i: 4
-      issues: []
-      score: 4
-    - i: 5
-      issues:
-      - span: A second spelling of "percent" duplicates the word.
-        why: abrupt fragment-like justification that doesn't connect smoothly to the prior
-          sentence
       score: 3
+    - i: 5
+      score: 2
     - i: 6
-      issues: []
       score: 4
     - i: 7
-      issues: []
-      score: 4
+      score: 3
   telephone:
-    explanation: The document is an ADR about restoring approximate quantities to the language,
-      since an earlier rewrite of ADR 0001 replaced two approximate phrases ("~5 forms per
-      verb" and "~10 rules") with exact numbers. It explains that an approximation is itself
-      a claim, so silently sharpening it into an exact number counts as a Propositional Loss
-      under ADR 0012's rule against changing claims, since asserting "10 rules" instead of
-      "about 10 rules" is more precise than the original meant and is therefore a false claim.
-      It notes that technical writing commonly uses approximate quantities, which is the reason
-      support for them is needed. The decision introduces "about" as a Function Word with
-      the Form Tag "APPROX." The Grammar only allows "about" directly before digits, not in
-      any other position — so it cannot be used as the ordinary preposition "about," as in
-      "about the file." The symbol "~" is added as a second spelling of "about"; the Lexer
-      treats "~10 rules" as producing the same tokens as "about 10 rules," so the two spellings
-      mean exactly the same thing, and "~" is allowed because it is the notation already common
-      in the project's prose. "%" is deliberately not made into a second spelling of "percent,"
-      since that would just duplicate an existing word. "About" cannot precede "one," because
-      "one" signals an exact quantity, and "~" must sit directly against the digits with no
-      space, so "~ 5" is rejected. The stated consequences are that the language can now state
-      approximate quantities without asserting false precision, and that "APPROX" becomes
-      the first Function Word to have two accepted spellings; the maintainers accepted this
-      because the "about"/"~" equivalence is purely a spelling (orthographic) rule handled
-      inside the Lexer, so it does not need to touch the Lexicon.
+    explanation: see session
     fidelity:
       distorted: []
       invented: []
       lost: []
-      score: 5
-    unclear: []
+      score: 4
+    unclear:
+    - readings: distinguishing principle not spelled out
+      span: about vs percent duplication reasoning
 '0026':
   hash: acb9c672dad5
   naturalness:
@@ -2573,82 +2423,41 @@
         0012 addresses.
       span: The decision "0012" covers a Translation Pair and covers a definition.
 0028:
-  hash: 391f8269edac
+  hash: ee6233399e81
   naturalness:
     paragraphs:
     - i: 1
-      issues: []
-      score: 4
+      score: 3
     - i: 2
-      issues: []
       score: 4
     - i: 3
-      issues: []
-      score: 4
-    - i: 4
-      issues:
-      - span: A Modifier cannot follow the Noun Phrase. A Coordination cannot follow the Noun
-          Phrase.
-        why: repeats the identical predicate 'cannot follow the Noun Phrase' back to back,
-          mechanical parallelism
       score: 3
+    - i: 4
+      score: 5
     - i: 5
-      issues: []
-      score: 4
+      score: 5
     - i: 6
-      issues: []
-      score: 4
+      score: 5
     - i: 7
-      issues: []
-      score: 4
+      score: 3
     - i: 8
-      issues: []
-      score: 4
+      score: 2
     - i: 9
-      issues: []
-      score: 4
+      score: 3
   telephone:
-    explanation: 'This ADR defines the Enumeration as a distinct block-level list structure,
-      because without it a project glossary list of four Pronouns had to be rewritten into
-      nine separate, repetitive sentences — technically valid under the Grammar but unreadable,
-      since the language previously had only the sentence as a structuring device and technical
-      writing needs lists to enumerate set members. An Enumeration is a Block, not a sentence:
-      it consists of one plain introductory statement ending in a colon, followed by one line
-      per item, where each item''s line is opened by the string "- " (which Markdown renders
-      as a bullet). The items are read as instances of the last Noun Phrase in the introductory
-      statement — a fiat, deliberately arbitrary rule — and that Noun Phrase must have one
-      of three legal shapes: a plural noun, a quantity, or the phrase "every <noun>." The
-      statement must end with that Noun Phrase (nothing, such as a Modifier or a Coordination,
-      may follow it), and if the statement names a specific quantity, the number of listed
-      items must match it exactly. Each item must itself be one Noun Phrase, restricted to
-      one of four shapes: a quoted word, a capitalized term, a Name, or the phrase "the <noun>";
-      a full clause cannot serve as an item, and nested lists are not allowed. Every tool
-      in the project treats a whole Enumeration Block as a single unit — for example, the
-      "just lint" command takes the entire Block as one argument containing all its lines
-      together, and the introductory line always stays bundled with its items rather than
-      being split off. This rule affects four tools specifically: the test corpus, the "lint-file"
-      tool, the decision extractor, and the paragraph-repair tool. Three questions were deferred:
-      an ordered list whose items are full clauses (such as the steps of a procedure or a
-      set of rules), a colon appearing inside an ordinary sentence, and an introductory line
-      phrased as a question. As a consequence, the four-Pronoun example collapses from four
-      sentences into one Enumeration Block, and the Linter now checks that the item count
-      is correct; the maintainers deliberately restricted what role the intro''s trailing
-      Noun Phrase can play (object or Complement) so readers do not have to guess how the
-      list items relate to the intro; and because the decision-extractor tool normally processes
-      text one line per sentence, the Enumeration is the first multi-line structure it must
-      special-case, marking line boundaries in its output with the symbol "⏎."'
+    explanation: see session
     fidelity:
-      distorted:
-      - 'Summary conflates two separate examples from the original into one incorrect claim:
-        the Context example (the ''Banned'' list of pronouns, turned into nine sentences)
-        is merged with the Consequences example (four allowed pronouns collapsing four sentences
-        into one block) to produce ''a project glossary list of four Pronouns had to be rewritten
-        into nine separate, repetitive sentences'' — a four-pronouns-to-nine-sentences pairing
-        that appears nowhere in the original'
+      distorted: []
       invented: []
       lost: []
-      score: 4
-    unclear: []
+      score: 3
+    unclear:
+    - readings: membership vs looser relation
+      span: items enumerate the last Noun Phrase
+    - readings: scope of the open question unclear
+      span: second deferred question, colon inside a sentence
+    - readings: scenario not spelled out
+      span: third deferred question, intro shaped as a question
 0029:
   hash: cc6c7d448e50
   naturalness:
@@ -2771,55 +2580,24 @@
       ADR 0003 gains one additional clause to cover it.'
     unclear: []
 '0031':
-  hash: 3eaee305c1cc
+  hash: bc1dd6df7821
   naturalness:
     paragraphs:
     - i: 1
-      issues:
-      - span: replaced the phrase with the Noun Preposition or wrote 2 sentences
-        why: joins two unlike repair strategies without parallel structure, reads clunky
-      score: 4
+      score: 3
     - i: 2
-      issues: []
-      score: 4
+      score: 2
     - i: 3
-      issues: []
-      score: 4
+      score: 3
   telephone:
-    explanation: 'This document reports on a rewrite pass over 30 prior decisions that found
-      12 sentences matching a pattern called archetype "A17," exemplified by "the Lexicon
-      is a bad tool for a Name." To fix these sentences, the rewrite either replaced the problematic
-      phrase with a Noun Preposition phrase or split the sentence into two separate sentences.
-      Using the Noun Preposition instead changed the meaning in 3 of the cases. The underlying
-      grammar rule, from decision "0011," says a Verb Preposition attaches to the verb of
-      a clause, but a Copula is not a verb and cannot take an object. Because of this, when
-      a Copula comes before a phrase, that phrase''s attachment is unambiguous. Specifically,
-      a Copula takes a Noun Phrase as its complement, and one Prepositional Phrase can follow
-      that Noun Phrase; even though the preposition in that phrase is normally a Verb Preposition,
-      it actually attaches to the noun rather than to any verb, since the Copula never behaves
-      like a verb that takes an object. This new rule covers the Complement of a sentence
-      but does not cover the subject: the sentence "the metrics for the load exist in the
-      research" remains banned, because there the verb "exist" really can take the prepositional
-      phrase, creating a genuine attachment ambiguity; that sentence belongs to a different
-      archetype, "A5," whose earlier rewrite the maintainers are keeping as is. The new rule
-      also does not cover a preposition phrase that could attach to the object of a verb;
-      for that case, decision "0011" still keeps the phrase attached to the verb. As a consequence,
-      any A17-style sentence that reads fine as-is can have its earlier rewrite reverted by
-      the maintainers. The Grammar itself gains a new kind of Complement, which has a single
-      unambiguous parse, precisely because a Copula never takes an object. Finally, the maintainer
-      adds a caution: the phrase "the wrong tool for a Name" is grammatically legal but reads
-      as a bad, confusing sentence in context, illustrating that a legal sentence shape does
-      not guarantee that the sentence is actually good.'
+    explanation: see session
     unclear:
-    - readings: '"the phrase" could mean the prepositional phrase "for the load" (inside the
-        subject, genuinely ambiguous between modifying "metrics" or the verb "exist") or could
-        mean "in the research"; the document doesn''t specify which.'
-      span: the verb can take the phrase
-    - readings: Could mean the rewrite unintentionally shifted meaning away from the original
-        claim in those 3 cases (a limitation/problem), or simply that the resulting sentence
-        naturally read with a somewhat different but acceptable sense; the document doesn't
-        say which.
-      span: The Noun Preposition changed the sense in 3 cases.
+    - readings: which phrase is ambiguous unclear
+      span: metrics/load Ban mechanics
+    - readings: no explanation of what was lost
+      span: Propositional Loss in 3 cases
+    - readings: referent of the phrase unclear
+      span: If a Copula precedes the phrase
 '0032':
   hash: 41d8124ef0c4
   naturalness:

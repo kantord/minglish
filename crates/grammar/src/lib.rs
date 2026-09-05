@@ -510,6 +510,18 @@ pub fn is_enumeration(text: &str) -> bool {
     lines.len() > 1 && lines[0].ends_with(':') && lines[1..].iter().all(|l| l.starts_with("- "))
 }
 
+/// True when a text has the Mapping block shape (ADR 0051): an intro
+/// ending in ":", then 2-column markdown table rows (`scripts/mdblocks.py`
+/// has already dropped the header row and the `|---|---|` divider).
+pub fn is_mapping(text: &str) -> bool {
+    let lines: Vec<&str> = text.lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+    lines.len() > 1
+        && lines[0].ends_with(':')
+        && lines[1..]
+            .iter()
+            .all(|l| l.starts_with('|') && l.ends_with('|') && l.matches('|').count() == 3)
+}
+
 /// Digit strings (ADR 0022): `2` and up are NUM_PL; `0` and `1` are
 /// redirected (*no* / *one*), leading zeros are rejected. Non-digit words
 /// return None.
@@ -832,9 +844,12 @@ fn walk_cases(t: &Tree, out: &mut Vec<(usize, Case)>) {
 pub type ParseError =
     lalrpop_util::ParseError<usize, Tok, LexError>;
 
-/// Parse one unit: a sentence, or an Enumeration block (ADR 0028).
+/// Parse one unit: a sentence, an Enumeration block (ADR 0028), a Step
+/// Block (ADR 0034), or a Mapping block (ADR 0051).
 pub fn parse_text(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
-    if is_enumeration(text) {
+    if is_mapping(text) {
+        parse_mapping(lexicon, text)
+    } else if is_enumeration(text) {
         parse_enumeration(lexicon, text)
     } else if is_step_block(text) {
         parse_step_block(lexicon, text)
@@ -912,6 +927,42 @@ fn parse_enumeration(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
         }
     }
     Ok(Tree::Node { label: "Enum", head: 0, children })
+}
+
+/// intro statement ending in ":" + 2-column table rows (ADR 0051). Each
+/// cell is validated independently as one noun phrase (same `Item` rule
+/// an Enumeration item uses) — a Mapping states a key -> value fact per
+/// row, not a sentence, so there is no cross-cell grammar to check beyond
+/// "each cell is a real noun phrase."
+fn parse_mapping(lexicon: &Lexicon, text: &str) -> Result<Tree, String> {
+    let lines: Vec<&str> = text.lines().map(str::trim).filter(|l| !l.is_empty()).collect();
+    let intro_tokens = lexicon.tokenize(lines[0]).map_err(|e| e.to_string())?;
+    let iter = intro_tokens
+        .into_iter()
+        .map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+    let intro = minglish::IntroParser::new()
+        .parse(iter)
+        .map_err(|e| format!("intro: {}", format_parse_error(&e)))?;
+    let mut children = vec![intro];
+    for (k, line) in lines[1..].iter().enumerate() {
+        let cells: Vec<&str> = line.trim_matches('|').split('|').map(str::trim).collect();
+        if cells.len() != 2 {
+            return Err(format!("row {}: a Mapping row has 2 cells (ADR 0051)", k + 1));
+        }
+        for (col, cell) in cells.iter().enumerate() {
+            let toks = lexicon
+                .tokenize(cell)
+                .map_err(|e| format!("row {} cell {}: {e}", k + 1, col + 1))?;
+            let iter = toks
+                .into_iter()
+                .map(|(i, t)| Ok::<(usize, Tok, usize), LexError>((i, t, i + 1)));
+            let tree = minglish::ItemParser::new()
+                .parse(iter)
+                .map_err(|_| format!("row {} cell {} (\"{cell}\") is not a noun phrase — a Mapping cell names one thing (ADR 0051)", k + 1, col + 1))?;
+            children.push(tree);
+        }
+    }
+    Ok(Tree::Node { label: "Mapping", head: 0, children })
 }
 
 /// The intro's enumerated noun phrase: the last child of the predicate must

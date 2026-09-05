@@ -26,8 +26,8 @@ becomes "bigger", and the word "easy" becomes "easier". The Form Tag of
 "bigger" is "ADJ_CMP". An entry of the Seed can override the shape with the
 slot "comparative". The value "none" removes the shape. A long adjective
 uses the word "more". The phrase "more transparent than the Compound" is
-one example. If a writer writes "more big", then the Linter maps the phrase
-to the word "bigger".
+one example. If a writer writes "more big", then the Linter rejects the phrase and
+shows the word "bigger".
 
 The maintainers deferred 5 questions:
 - the Modifier
@@ -41,11 +41,11 @@ holds a Comparative in the phrase "costs more than".
 
 ## Consequences
 
-- If the comparison carried the claim, then the maintainers can revert the
-  rewrite of the archetype "A3".
+- If the Comparative keeps the claim of the 2 sentences, then the
+  maintainers can revert the rewrite of the archetype "A3".
 - A short adjective gains one Surface Form, and a long adjective does not
   gain a Surface Form. The data must attest the new Surface Form. If the
   data does not attest a rare Surface Form, then the script "seedcheck.py"
   writes the Surface Form into the Seed.
 - A Comparative is a distinct shape of the Copula, so the rule of the
-  decision "0003" gains one clause.
+  decision "0003" gains one clause for the Comparative.

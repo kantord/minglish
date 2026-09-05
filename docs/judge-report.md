@@ -6,47 +6,47 @@ minimum paragraph score (1–5); fidelity is the telephone score against the
 earliest English version when one exists; unclear counts the explainer's
 ambiguous spans. Pass: mean ≥ 4.0, no paragraph ≤ 2, fidelity ≥ 4, 0 unclear.
 
-3 of 37 documents pass.
+1 of 37 documents pass.
 
 | doc | paragraphs | natural mean | natural min | fidelity | unclear | pass |
 |---|---|---|---|---|---|---|
 | 0001 | 10 | 3.8 | 3 | 4 | 0 | no |
-| 0002 | 9 | 4.1 | 3 | 4 | 2 | no |
-| 0003 | 10 | 4.0 | 2 | 3 | 0 | no |
-| 0004 | 8 | 3.5 | 2 | 4 | 0 | no |
-| 0005 | 9 | 3.9 | 3 | 3 | 1 | no |
-| 0006 | 14 | 3.6 | 3 | 4 | 1 | no |
-| 0007 | 9 | 3.9 | 3 | 5 | 1 | no |
+| 0002 | 9 | 4.4 | 3 | 4 | 1 | no |
+| 0003 *stale* | 10 | 4.0 | 2 | 3 | 0 | no |
+| 0004 *stale* | 8 | 3.5 | 2 | 4 | 0 | no |
+| 0005 *stale* | 9 | 3.9 | 3 | 3 | 1 | no |
+| 0006 *stale* | 14 | 3.6 | 3 | 4 | 1 | no |
+| 0007 *stale* | 9 | 3.9 | 3 | 5 | 1 | no |
 | 0008 | 9 | 2.9 | 1 | 3 | 2 | no |
-| 0009 | 9 | 3.4 | 2 | 3 | 0 | no |
-| 0010 | 9 | 3.0 | 1 | 4 | 1 | no |
+| 0009 *stale* | 9 | 3.4 | 2 | 3 | 0 | no |
+| 0010 *stale* | 9 | 3.0 | 1 | 4 | 1 | no |
 | 0011 | 6 | 3.0 | 2 | 5 | 2 | no |
 | 0012 | 9 | 3.4 | 2 | 4 | 2 | no |
 | 0013 | 10 | 4.2 | 3 | 4 | 0 | yes |
-| 0014 | 11 | 4.1 | 3 | 4 | 1 | no |
+| 0014 | 12 | 3.8 | 3 | 4 | 4 | no |
 | 0015 | 12 | 3.9 | 3 | 4 | 2 | no |
-| 0016 | 5 | 3.8 | 3 | 5 | 1 | no |
+| 0016 *stale* | 5 | 3.8 | 3 | 5 | 1 | no |
 | 0017 | 5 | 3.6 | 3 | 4 | 1 | no |
 | 0018 | 10 | 3.9 | 2 | 5 | 2 | no |
-| 0019 | 6 | 3.3 | 3 | 4 | 2 | no |
+| 0019 *stale* | 6 | 3.3 | 3 | 4 | 2 | no |
 | 0020 | 10 | 3.6 | 2 | 5 | 1 | no |
 | 0021 | 5 | 3.4 | 3 | 5 | 1 | no |
 | 0022 | 11 | 3.4 | 2 | 4 | 1 | no |
-| 0023 | 11 | 3.2 | 1 | 4 | 3 | no |
+| 0023 *stale* | 11 | 3.2 | 1 | 4 | 3 | no |
 | 0024 | 8 | 3.9 | 3 | 5 | 1 | no |
-| 0025 | 7 | 3.7 | 3 | 5 | 0 | no |
-| 0026 | 10 | 3.4 | 2 | 3 | 2 | no |
+| 0025 | 7 | 3.3 | 2 | 4 | 1 | no |
+| 0026 *stale* | 10 | 3.4 | 2 | 3 | 2 | no |
 | 0027 | 13 | 3.4 | 1 | 4 | 2 | no |
-| 0028 | 9 | 3.9 | 3 | 4 | 0 | no |
+| 0028 | 9 | 3.7 | 2 | 3 | 3 | no |
 | 0029 | 10 | 3.9 | 3 | – | 1 | no |
-| 0030 | 6 | 4.0 | 4 | – | 0 | yes |
-| 0031 | 3 | 4.0 | 4 | – | 2 | no |
-| 0032 | 5 | 3.8 | 3 | – | 2 | no |
-| 0033 | 5 | 3.8 | 3 | – | 1 | no |
-| 0034 | 9 | 3.8 | 3 | – | 1 | no |
-| 0035 | 4 | 4.0 | 4 | – | 0 | yes |
-| 0036 | 8 | 3.9 | 3 | – | 1 | no |
-| model | 88 | 3.7 | 2 | – | 1 | no |
+| 0030 *stale* | 6 | 4.0 | 4 | – | 0 | no |
+| 0031 | 3 | 2.7 | 2 | – | 3 | no |
+| 0032 *stale* | 5 | 3.8 | 3 | – | 2 | no |
+| 0033 *stale* | 5 | 3.8 | 3 | – | 1 | no |
+| 0034 *stale* | 9 | 3.8 | 3 | – | 1 | no |
+| 0035 *stale* | 4 | 4.0 | 4 | – | 0 | no |
+| 0036 *stale* | 8 | 3.9 | 3 | – | 1 | no |
+| model *stale* | 88 | 3.7 | 2 | – | 1 | no |
 
 ## 0001
 
@@ -63,14 +63,10 @@ ambiguous spans. Pass: mean ≥ 4.0, no paragraph ≤ 2, fidelity ≥ 4, 0 uncle
 
 ## 0002
 
-- ¶3 natural 4/5
-  - refers to the speaker or refers to the hearer — repeated verb across the two alternatives reads mechanical
-- ¶8 natural 3/5
-  - did not build a Discourse Layer and do not plan a Discourse Layer — repeats the full noun phrase instead of a natural ellipsis; reads mechanical
-- unclear: The Gap of one Closed Class is bigger than the Gap of the Pronouns. — Doesn't name which word-class has the bigger coverage gap — the document gives no way to identify it, so this just registers that pronouns aren't even the single largest such gap.
-- unclear: The ambiguity of the long sentence reappears in the reference. — No ambiguity was named for 'the long sentence' itself, so it's unclear exactly which ambiguity is meant; most plausible reading is that splitting a long sentence and having the second sentence refer back with a pronoun reintroduces some referential/scope ambiguity similar to whatever made the original sentence hard, but the text doesn't specify which.
+- ¶2 natural 3/5
+- ¶9 natural 3/5
+- unclear: splits a long sentence — general point vs specific residual problem
 - fidelity 4/5
-  - invented: States the banned pronoun list totals 'fourteen words' -- the original lists eight base forms (it, they, he, she, this, that, these, those) plus their unspecified object/possessive forms, and gives no total count.
 
 ## 0003
 
@@ -227,27 +223,15 @@ need Conditionals. — abrupt topic jump right after the token-count sentence, r
 
 ## 0014
 
-- ¶2 natural 4/5
-  - The word "every" appears in the
-subject and appears in the object. The language bans the word "all" and
-bans the word "each". — repeated 'appears in'/'bans the word' template back-to-back
-- ¶3 natural 4/5
-  - The word "no" has the Form Tag "QUANT_NEG" and takes a singular noun. The
-word "no" marks a universal Negation and appears in the subject. The object
-cannot carry the word "no", so the word "no" opens every universal
-Negation. — 'the word "no"' repeated four times across three sentences
-- ¶9 natural 3/5
-  - The word "if" opens a Conditional. The word "do" opens a Prohibition. The
-word "no" opens a universal Negation. The word "every" opens a universal
-statement. A Bare Plural opens a generic statement. A determiner opens a
-plain statement. — a run of six sentences following the identical 'X opens a Y' template, reads like a generated table rather than prose
-- ¶10 natural 3/5
-  - The rule helps the reader, because the reader knows the frame before the
-claim. The rule helps a Language Model, because the
-Language Model gets a constraint from the First Token. — 'the rule helps X, because...' template repeated (a third time for 'the parser'), mechanical
-- unclear: quantifiers break 5 sentences of the Dogfood and open every list of the Gaps — unclear whether this means the 5 broken sentences each head/introduce a separate list of Gaps in some report, or that quantifier problems as a category account for every entry in the Gaps list; the exact relationship between 'break 5 sentences' and 'open every list of the Gaps' is not spelled out.
+- ¶6 natural 3/5
+- ¶8 natural 3/5
+- ¶11 natural 3/5
+- ¶12 natural 3/5
+- unclear: quantifier does not open the sentence — two readings
+- unclear: 4 bans to 3 replacements mapping — incomplete mapping per document
+- unclear: no X must has 2 meanings — meanings not spelled out
+- unclear: order of sentence is order of scope — mechanism not illustrated
 - fidelity 4/5
-  - distorted: The summary frames the primary 'fix' for the 'every X does not Y' scope ambiguity as a general requirement that a quantifier must open the sentence, and attaches the example 'retries no request' to that framing. In the original, 'retries no request' actually illustrates the separate rule that object-position negation with 'no' is unwritable (its meaning lives at 'does not retry requests'); the real resolution of the 'every X does not Y' ambiguity is the positive-predicates-only restriction on quantified subjects, which the summary does state correctly later but not as the causal 'fix'.
 
 ## 0015
 
@@ -425,10 +409,11 @@ design. The future design can parse a sentence inside the quoted span. — 'futu
 ## 0025
 
 - ¶2 natural 3/5
-  - Technical texts use approximate quantities. — reads as a disconnected generic aside tacked onto the end, not tied to the preceding argument
-- ¶5 natural 3/5
-  - A second spelling of "percent" duplicates the word. — abrupt fragment-like justification that doesn't connect smoothly to the prior sentence
-- fidelity 5/5
+- ¶4 natural 3/5
+- ¶5 natural 2/5
+- ¶7 natural 3/5
+- unclear: about vs percent duplication reasoning — distinguishing principle not spelled out
+- fidelity 4/5
 
 ## 0026
 
@@ -476,10 +461,15 @@ design. The future design can parse a sentence inside the quoted span. — 'futu
 
 ## 0028
 
-- ¶4 natural 3/5
-  - A Modifier cannot follow the Noun Phrase. A Coordination cannot follow the Noun Phrase. — repeats the identical predicate 'cannot follow the Noun Phrase' back to back, mechanical parallelism
-- fidelity 4/5
-  - distorted: Summary conflates two separate examples from the original into one incorrect claim: the Context example (the 'Banned' list of pronouns, turned into nine sentences) is merged with the Consequences example (four allowed pronouns collapsing four sentences into one block) to produce 'a project glossary list of four Pronouns had to be rewritten into nine separate, repetitive sentences' — a four-pronouns-to-nine-sentences pairing that appears nowhere in the original
+- ¶1 natural 3/5
+- ¶3 natural 3/5
+- ¶7 natural 3/5
+- ¶8 natural 2/5
+- ¶9 natural 3/5
+- unclear: items enumerate the last Noun Phrase — membership vs looser relation
+- unclear: second deferred question, colon inside a sentence — scope of the open question unclear
+- unclear: third deferred question, intro shaped as a question — scenario not spelled out
+- fidelity 3/5
 
 ## 0029
 
@@ -487,12 +477,17 @@ design. The future design can parse a sentence inside the quoted span. — 'futu
   - Some rewrites dropped the Ordinal. Some rewrites turned the Ordinal into a chain. — repeats 'Some rewrites' as the sentence opener twice in a row, choppy and mechanical
 - unclear: The chain ranked 2 nouns in every sentence. — Could mean some rewrites replaced an Ordinal with a comparative-style construction that ranks or orders two nouns against each other instead of stating a numbered position; or "chain" could refer to some other sequential/list structure unrelated to comparison — the exact mechanism of this rewrite pattern is not spelled out.
 
+## 0030
+
+
 ## 0031
 
-- ¶1 natural 4/5
-  - replaced the phrase with the Noun Preposition or wrote 2 sentences — joins two unlike repair strategies without parallel structure, reads clunky
-- unclear: the verb can take the phrase — "the phrase" could mean the prepositional phrase "for the load" (inside the subject, genuinely ambiguous between modifying "metrics" or the verb "exist") or could mean "in the research"; the document doesn't specify which.
-- unclear: The Noun Preposition changed the sense in 3 cases. — Could mean the rewrite unintentionally shifted meaning away from the original claim in those 3 cases (a limitation/problem), or simply that the resulting sentence naturally read with a somewhat different but acceptable sense; the document doesn't say which.
+- ¶1 natural 3/5
+- ¶2 natural 2/5
+- ¶3 natural 3/5
+- unclear: metrics/load Ban mechanics — which phrase is ambiguous unclear
+- unclear: Propositional Loss in 3 cases — no explanation of what was lost
+- unclear: If a Copula precedes the phrase — referent of the phrase unclear
 
 ## 0032
 
@@ -526,6 +521,11 @@ design. The future design can parse a sentence inside the quoted span. — 'futu
 - ¶9 natural 3/5
   - the Linter names the home of the word "then" — "home" is an odd metaphor for where a rejected word belongs, unnatural word choice
 - unclear: the repair of the paragraphs — Unclear whether this names a specific existing tool, parallel to "lint-file" and "the extractor," that repairs or rewrites paragraph text, or is a more general description of a repair step in the pipeline; the document does not define it elsewhere.
+
+## 0035
+
+- ¶3 natural 4/5
+  - The sentence "some guards become floors" is one example. — repeats the "is one example" pattern used two sentences earlier for a different case, reading templated
 
 ## 0036
 

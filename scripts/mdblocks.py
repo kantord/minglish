@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 
 @dataclass
 class Block:
-    kind: str  # "heading" | "prose" | "enumeration" | "step_block" | "code" | "table" | "hr"
+    kind: str  # "heading" | "prose" | "enumeration" | "step_block" | "mapping" | "code" | "table" | "hr"
     text: str = ""  # de-markdowned content; for "enumeration"/"step_block", lines joined by \n
     level: int = 0  # heading level (1-6)
     raw: str = ""  # "_list" only: items with their "- " marker kept, for
@@ -31,6 +31,7 @@ _HR = re.compile(r"^\s*(-{3,}|\*{3,}|_{3,})\s*$")
 _HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
 _FENCE = re.compile(r"^\s*```")
 _TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
+_TABLE_DIVIDER = re.compile(r"^\s*\|(\s*:?-+:?\s*\|)+\s*$")
 _TASK = re.compile(r"^(\s*)([-*]|\d+\.)\s+\[[ xX]\]\s+(.*)$")
 _LIST_ITEM = re.compile(r"^(\s*)([-*]|\d+\.)\s+(.*)$")
 _LINK_DEF = re.compile(r"^\s*\[[^\]]+\]:\s+\S+")
@@ -127,9 +128,19 @@ def parse_blocks(text: str) -> list[Block]:
 
         if _TABLE_ROW.match(raw):
             j = i
+            rows: list[str] = []
             while j < n and (_TABLE_ROW.match(lines[j]) or not lines[j].strip()):
+                if lines[j].strip():
+                    rows.append(lines[j].strip())
                 j += 1
-            blocks.append(Block(kind="table"))
+            # a 2-column table (header + "|---|---|" divider + data rows):
+            # stash the data rows in .raw (never .text — a table stays
+            # excluded from prose by default, same as every other table
+            # shape) so a possible Mapping fold (ADR 0051) below can use
+            # them when this table directly follows a ":"-ending statement
+            data_rows = [r for r in rows[2:] if not _TABLE_DIVIDER.match(r)] if len(rows) >= 2 and _TABLE_DIVIDER.match(rows[1]) else []
+            is_2col = all(r.count("|") == 3 for r in rows) if rows else False
+            blocks.append(Block(kind="table", raw="\n".join(data_rows) if is_2col and data_rows else ""))
             i = j
             continue
 
@@ -224,6 +235,17 @@ def _fold_enumerations(blocks: list[Block]) -> list[Block]:
     i = 0
     while i < len(blocks):
         b = blocks[i]
+        if (b.kind == "prose" and b.text.rstrip().endswith(":") and i + 1 < len(blocks)
+                and blocks[i + 1].kind == "table" and blocks[i + 1].raw):
+            # a 2-column table right after a ":"-ending statement is a
+            # Mapping block (ADR 0051), same fold shape as Enumeration
+            cut = b.text.rfind(". ")
+            prose, intro = (b.text[: cut + 1], b.text[cut + 2 :]) if cut >= 0 else ("", b.text)
+            if prose.strip():
+                out.append(Block(kind="prose", text=prose.strip()))
+            out.append(Block(kind="mapping", text="\n".join([intro, blocks[i + 1].raw])))
+            i += 2
+            continue
         if b.kind == "prose" and b.text.rstrip().endswith(":") and i + 1 < len(blocks) and blocks[i + 1].kind == "_list":
             cut = b.text.rfind(". ")
             prose, intro = (b.text[: cut + 1], b.text[cut + 2 :]) if cut >= 0 else ("", b.text)

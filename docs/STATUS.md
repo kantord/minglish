@@ -82,7 +82,33 @@ that is not derivable from the code, ADRs, or git history.
   One paragraph, not a corpus-wide result yet — see that file's
   Recommendation for the generalization step. ADR 0050 kept regardless
   (real, regression-tested capability gain, and it did measurably help
-  once judged correctly).
+  once judged correctly). **Round 3** (same file, `/goal make at least
+  10 documents pass`): found `docs/judgements.yaml` is stale for 18 of
+  37 documents (including 2 of the 3 "passing" ones) — the honest
+  official count right now is **1/37**, not 3/37. Also found single-run
+  naturalness judging has enough variance to flip pass/fail on its own
+  (documented swings up to 1.0 points between two runs on
+  near-identical content) — do not trust a single judge run near the
+  4.0 boundary. **Round 4**: pushed the 5 closest documents to a full
+  pass via targeted unclear-span fixes — all 5 got *worse* on
+  re-judging, not better (naturalness and unclear-resolution are
+  frequently in direct tension on this corpus: resolving an ambiguity
+  needs exactly the explicit, spelled-out phrasing naturalness scoring
+  penalizes). Decisive, not noise — 5/5, one direction. **Round 5**:
+  built the structural fix round 4 pointed at instead — ADR 0051 adds
+  real grammar-validated table support (`is_mapping`/`parse_mapping`,
+  `scripts/mdblocks.py`), asked before building since the alternative
+  (an unchecked markdown table) would have abandoned ADR 0001's
+  check-don't-choose discipline for a score. Applied to
+  `docs/adr/0002-pronoun-policy.md`: the fixed paragraph scored 4/5
+  naturalness, 0 unclear on re-judge — the first result in the whole
+  investigation that held up instead of regressing. Doesn't make that
+  document pass alone (other paragraphs have unrelated problems), and
+  wasn't applied to the rest of the corpus given session length — the
+  concrete, de-risked next step. Read that file's Round 5 section
+  before doing more document-naturalness work; refreshing stale
+  judgements still comes first, but the fix for the once-dominant
+  failure shape now exists and works.
 - `docs/controversial-decisions-2026-09-05.md` — every unilateral,
   user-unvalidated call made across both A/B rounds, most notably: a
   live grammar change may contradict ADR 0048 ("one shape per

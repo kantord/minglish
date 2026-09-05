@@ -171,7 +171,7 @@ def main():
     blocks = mdblocks.parse_blocks(text)
 
     headings = [b for b in blocks if b.kind == "heading"]
-    prose_blocks = [b for b in blocks if b.kind in ("prose", "enumeration", "step_block")]
+    prose_blocks = [b for b in blocks if b.kind in ("prose", "enumeration", "step_block", "mapping")]
     all_sents = [(bi, s) for bi, b in enumerate(prose_blocks) for s in sentences(b.text)]
     verdicts = lint([s for _, s in all_sents])
     ok = sum(1 for v, _ in verdicts if v)

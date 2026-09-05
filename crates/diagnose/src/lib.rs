@@ -10,7 +10,7 @@
 //! Pattern checks over the token stream attach specific, actionable names
 //! (missing *then*, quantifier+negation, reduced relative, …).
 
-use grammar::{is_enumeration, is_step_block, metrics, parse, parse_text, Lexicon, Metrics, Tok, Tree};
+use grammar::{is_enumeration, is_mapping, is_step_block, metrics, parse, parse_text, Lexicon, Metrics, Tok, Tree};
 use std::collections::BTreeMap;
 
 // ------------------------------------------------------------ diagnosis --
@@ -31,7 +31,7 @@ pub enum Diagnosis {
 
 pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     // an Enumeration block (ADR 0028) is one unit; its errors are already explained
-    if is_enumeration(sentence) || is_step_block(sentence) {
+    if is_enumeration(sentence) || is_step_block(sentence) || is_mapping(sentence) {
         return match parse_text(lexicon, sentence) {
             Ok(tree) => Diagnosis::Clean(metrics(&tree)),
             Err(e) if e.contains("not a minglish word") || e.contains("is banned in minglish") => Diagnosis::Word(e),
