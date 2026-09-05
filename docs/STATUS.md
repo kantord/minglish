@@ -18,9 +18,20 @@ signal a second clause has started — a token-window guess can never
 tell that from an aux/modal/copula next to its own main verb. Bucket
 dropped 473 → 7 genuine matches on rerun. Report: docs/finding-
 frequency-report.md; full writeup in docs/ideas.md, "Antiparsers".
-Determiner-omission (480×, now top of the ranking) is next, but needs
-its own audit first — see docs/ideas.md's "Still not done". Fixed along
-the way: adding a crate's second `[[bin]]` target silently broke every
+Determiner-omission (480×) and noun-noun-compounds (273×), the next two
+ranked findings, were then audited the same way (40 real trigger
+sentences sampled each from the near-miss corpus) — both came back
+clean, zero false positives, no antiparser needed. Lesson: the
+antiparser thesis applies specifically when the checked token pattern
+is itself common in *valid* constructions (true of "two verb-ish
+tokens", false of "bare noun with no preceding determiner" or "two
+adjacent nouns"). Cleaned up two pieces of dead/tautological code found
+in the determiner check during the audit (`crates/diagnose/src/
+lib.rs`), verified behavior-identical (finding-frequency counts
+unchanged). See docs/ideas.md's "Still not done" for what's left
+(defined-term 121×, inline-list 114×, transitive-needs-object 108×, all
+unaudited) and the `Repair::Single` surfacing decision. Fixed along the
+way: adding a crate's second `[[bin]]` target silently broke every
 `cargo run -p diagnose` call site that didn't pin `--bin diagnose`
 (showcase.sh, lint-file.py, dogfood-sweep.py, justfile's `lint`) —
 `|| true` swallowed the ambiguous-target error and truncated

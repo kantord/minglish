@@ -312,19 +312,38 @@ lint-file.py`, `scripts/dogfood-sweep.py`, `justfile`'s `lint` recipe) to
 `--bin diagnose` explicitly — a standing gotcha for any future second
 binary added to a crate that already has a `main.rs`.
 
-**Still not done**: clause-as-object is now built (above). Determiner-
-omission (480×, top of the current ranking) is next — but audit it the
-same way first, not just port it: it has its own suspicious dead
-condition (`crates/diagnose/src/lib.rs`, the `j == 0 && i > 0 && false`
-branch in the bare-singular-noun check — always false, looks like an
-unfinished edge case) worth understanding before deciding whether it's
-actually fragile enough to justify a grammar, or mostly correct as-is.
-Noun-noun compounds (273×) is the next-ranked candidate after that.
-Separately: decide whether `Repair::Single` results get surfaced as
-"try: X" suggestions only, or auto-applied in a repair-proposal flow
-(matching `autofix-paragraphs`'s existing human-verdict gate, `just
-verdict`,
-rather than silently rewriting anything).
+**Determiner-omission and noun-noun-compounds audited, 2026-09-05 — both
+clean, no antiparser needed.** Sampled 40 real trigger sentences each
+from the near-miss corpus for both checks (same method as the
+clause-object audit above). Every single sample in both was a genuine
+violation ("clarity"/"naturalness"/"prose"/"anaphora" used bare as mass
+nouns; "anaphora mechanism"/"discourse mechanism"/"discourse tools" as
+real noun-noun compounds) — zero false positives found in either. So
+unlike clause-as-object, these two token-window heuristics turn out to
+already be structurally reliable in practice: the adjacency they check
+for (immediately-preceding determiner slot; immediately-adjacent noun
+pair) has no other common English shape that coincidentally produces
+the same token pattern, unlike "two verb-ish tokens" which is the
+*normal* shape of most predicates. Lesson: the antiparser thesis
+("token-window heuristics misfire because of coincidental adjacency")
+doesn't mean every heuristic is suspect — it applies specifically when
+the checked-for token pattern is itself common in valid constructions.
+Cleaned up the determiner-omission check's two pieces of dead/tautological
+code found during the audit (`crates/diagnose/src/lib.rs`): the
+`(j == 0 && i > 0 && false)` branch (always false — contributed
+nothing) and the `(i > 0 || sentence_initial_bare)` guard (always true,
+since `i == 0` forces `j == 0` by construction) — pure clarity cleanup,
+verified behavior-identical by the full test suite and an unchanged
+`finding-frequency` STYLE count.
+
+**Still not done**: decide whether `Repair::Single` results get
+surfaced as "try: X" suggestions only, or auto-applied in a
+repair-proposal flow (matching `autofix-paragraphs`'s existing
+human-verdict gate, `just verdict`, rather than silently rewriting
+anything). The remaining ranked findings ("is a defined term" 121×,
+inline-list-should-be-Enumeration 114×, "is transitive and needs an
+object" 108×) haven't been audited yet — same method as above before
+building anything for them.
 5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
    not ranking). A candidate is a faithful rewrite only if input ⊨ candidate
    and candidate ⊨ input; a role swap fails one direction. This mechanizes

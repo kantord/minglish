@@ -551,10 +551,9 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             let determined = prev.is_some_and(|p| {
                 is_det(p) || matches!(p, Tok::NounSg(_) | Tok::Approx(_) | Tok::Percent(_)
                     | Tok::Pron1(_) | Tok::Pron2(_) | Tok::Poss(_))
-            }) || (j == 0 && i > 0 && false);
+            });
             let mentioned = toks.get(i + 1).is_some_and(|nx| matches!(nx, Tok::Name(_)));
-            let sentence_initial_bare = j == 0;
-            if !determined && !mentioned && (i > 0 || sentence_initial_bare) {
+            if !determined && !mentioned {
                 out.push(format!(
                     "\"{n}\" — a singular noun needs a determiner: \"the {n}\" (mass nouns take \"the\")"
                 ));
