@@ -75,7 +75,19 @@ proptest! {
     #[test]
     fn tier2_accepts_every_generated_statement(s in statement()) {
         let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
-        prop_assert!(matches!(diagnose(&lexicon, &s), Diagnosis::Clean(_)), "diagnose() rejected: {}", s);
+        let d = diagnose(&lexicon, &s);
+        // ADR 0048: same-verb-lemma coordination is a deliberate exception —
+        // Tier-1 (grammar) still accepts it, diagnose() correctly rejects it
+        // in favor of the colon-list construction. `pred()` is sampled
+        // twice independently, so the generator can and does land on the
+        // same verb for both coordinated predicates; that's the expected
+        // shape of this one known rejection, not a regression.
+        let ok = match &d {
+            Diagnosis::Clean(_) => true,
+            Diagnosis::Style(findings) => findings.iter().any(|f| f.contains("repeats across the coordination")),
+            _ => false,
+        };
+        prop_assert!(ok, "diagnose() rejected: {} -> {:?}", s, d);
         let toks: Vec<_> = lexicon.tokenize(&s).unwrap().into_iter().map(|(_, t)| t).collect();
         prop_assert!(Tier2::new(&toks).count() >= 1, "tier-2 rejects a tier-1 sentence: {}", s);
     }

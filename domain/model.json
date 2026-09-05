@@ -461,7 +461,7 @@
   {
     "lemma": "copula",
     "category": "NOUN",
-    "definition": "a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word \"is\" is a Copula, and the word \"are\" is a Copula. the past Tense uses the word \"was\" or uses the word \"were\".",
+    "definition": "a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word \"is\" is a Copula, and the word \"are\" is a Copula. the past Tense uses: the word \"was\" or the word \"were\".",
     "kind": "category",
     "examples": [
       "is",
@@ -693,7 +693,7 @@
   {
     "lemma": "conditional",
     "category": "NOUN",
-    "definition": "a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word \"if\" opens the condition. the word \"then\" opens the consequent.",
+    "definition": "a Conditional is a Sentence Shape. a Conditional has: a condition and a consequent. the word \"if\" opens the condition. the word \"then\" opens the consequent.",
     "kind": "category",
     "examples": [
       "if the test fails, then the agent retries the request."

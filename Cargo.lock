@@ -30,6 +30,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "antiparse"
+version = "0.1.0"
+dependencies = [
+ "grammar",
+ "lalrpop",
+ "lalrpop-util",
+]
+
+[[package]]
 name = "ascii-canvas"
 version = "4.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

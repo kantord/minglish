@@ -96,9 +96,17 @@ rules. Distinguish delimiters or introduce a marker when designed.
    "files" lexes as the enabled NOUN_PL, so the file→submit VERB redirect
    never surfaces. The diagnose layer should notice a noun in verb position
    whose lemma has a rejected-VERB entry and surface the suggestion.
-   **Resolved 2026-09-02** (slot findings in diagnose: verb after a
+   **Partially fixed 2026-09-02** (slot findings in diagnose: verb after a
    determiner → NOUN redirect; noun between subject and object → VERB
-   redirect). The structural version (role assignment) stays in
+   redirect) — but only the plain-SVO, right-after-the-subject position;
+   never re-verified against every bare-verb-form position, so it stayed
+   silently broken after a modal, a negation, or sentence-initial
+   ("the agent must not file the report" fell through to unrelated,
+   sometimes contradictory generic findings instead). **Actually resolved
+   2026-09-04**: widened the trigger to every bare-verb position
+   (`introduces_bare_verb` in `crates/diagnose/src/lib.rs`) and added
+   `suppress_superseded` to drop the now-superseded generic findings for
+   the same word. The structural version (role assignment) stays in
    "Structured repair".
 
 ## Imperative-input advice gap (agenttest run 4, 2026-09-01)
@@ -144,6 +152,103 @@ project; everything else was considered and dropped.
    Covers the failure classes the agent cases actually show (dropped
    *then*, agreement, passive→active shape). Only here does the candidate
    set grow enough to need a ranker.
+
+## Antiparsers: a prototype for steps 1–2 above (2026-09-04)
+
+Working prototype in `crates/antiparse` (isolated, not wired into
+`diagnose` yet). Motivating question: the generic linter fallback
+("restructure into one of the minglish templates") happens because
+`pattern_findings`/`slot_findings` are token-window heuristics — "if the
+token before looks like X" — which is exactly why the redirect-check bug
+above existed (the guard didn't enumerate every real position) and why it
+could misfire (a coincidental adjacency, not a real structural match). An
+**antiparser** is a small grammar that recognizes one known-invalid
+construction *structurally* — a real parse of the bad shape, not a guess.
+This is the standard compiler-construction technique of **error
+productions**, applied here as fully separate grammars rather than merged
+into one, for a reason this project has hit twice already: ADR 0040 found
+real reduce/reduce conflicts trying to add coordinated NPs *inside* the
+existing grammar, purely from shared structure. Keeping each antiparser
+its own file, its own `extern` block, no shared nonterminals, sidesteps
+that: each is independently checked for conflicts by `lalrpop`'s own
+build-time gate, and adding one can never reconflict another.
+
+**What was built and verified:**
+- 3 independent `.lalrpop` grammars (`AntiBareCoordObject`,
+  `AntiNounVerbSlot`, `AntiFreeOnly`) — all build conflict-free together.
+- A span-search harness (`antiparse::scan`): tries each antiparser at
+  every substring of the token stream, since a bad construction is often
+  embedded in a larger valid sentence, not the whole thing. O(n²) per
+  antiparser; measured 1.87ms for a 29-token compound sentence — a
+  non-issue at real sentence lengths (a bulk pass would bound span length
+  per antiparser instead, but didn't need to for this prototype).
+- Ranking by proximity to the Tier-1 failure position (`ParseError`
+  already carries this for free) — the cheap heuristic for "most likely
+  writer intent" when multiple antiparsers match different spans.
+- 5 integration tests against the real lexicon, all passing.
+
+**The repair-mapping question** (can a match be turned into a fixed valid
+tree, not just explained): empirically, matches split into exactly the 3
+categories the `Repair` enum encodes, and they line up precisely with
+ADR 0008's Redirect-vs-Ban distinction:
+- **Single** (one deterministic fix) — when the underlying issue is a
+  *Redirect*: `AntiNounVerbSlot` always has one, because the substitution
+  data already lives in the seed's reject table (*files* → *submit*).
+  `AntiBareCoordObject` has one *only* when both conjuncts already carry
+  their own determiner — then the colon-list construction (ADR 0041)
+  is always a valid rewrite.
+- **Menu** (several candidates, can't auto-pick) — `AntiFreeOnly`: ADR
+  0047 bans the free position specifically because it's scope-ambiguous
+  between subject and object; the antiparser can name both candidate
+  fixes but not choose, because choosing would be guessing the writer's
+  actual intent.
+- **None** (no safe repair, explain why) — `AntiBareCoordObject` when a
+  conjunct is elliptical ("the old file and reports"): the missing
+  determiner/modifier is genuinely not recoverable from the sentence
+  alone, so the honest move is to say why, not invent content.
+
+This is the same shape as ADR 0008's Ban policy ("prefer a Ban to a rare
+Redirect") applied to whole constructions instead of single words — and
+it means an antiparser's own parse tree already carries the role
+assignment Structured Repair's step 2 needs (which conjunct, which slot,
+which lemma) for free, from a real grammar match rather than a brute-force
+permutation search over the enumerated structure set. Building
+antiparsers for the highest-value bans would very plausibly retire
+Structured Repair's steps 1–2 rather than duplicate them — step 3
+(table-driven rewrite) is what's still separately needed, and this
+prototype's `Repair::Single` case already does exactly that for the two
+constructions it covers.
+
+**Scope found empirically, not assumed:** banned *words* (pronouns,
+epistemic hedges, "may") never reach this pipeline — `Lexicon::tokenize`
+rejects them via the `bans` table before a token stream exists at all.
+Antiparsers are relevant only to *structural* mistakes, where every word
+tokenizes fine and the arrangement is what's rejected. That's a real
+scope boundary, not a current limitation to remove.
+
+**What the hint-authoring workflow would need to become**, if this is
+built out past the prototype: right now a new hint is "notice a failure,
+write a Rust token-window check." An antiparser-based system changes the
+unit of authoring to "one small grammar file per Ban/ADR, with an
+`extern` block naming only the tokens it needs, plus a `repair()`
+function returning one of the 3 categories." That's more structured and
+far more systematic (every entry in `domain/model.json`'s `Ban`/`Gap`
+list is a mechanical candidate to transcribe into a grammar file, since
+each already has documented example sentences to test against) — but
+it's still a per-construction authoring cost, not free; it converts an ad
+hoc "notice and patch" workflow into an enumerable backlog, which is a
+real improvement for problem 2 (coverage lag) without claiming to solve
+coverage completely.
+
+**Not yet done, real next steps if this proceeds**: wire `scan()` into
+`diagnose()` as a fourth channel (ahead of the generic fallback); build
+antiparsers for the corpus's actual highest-frequency STYLE findings
+(would need instrumenting how often each `pattern_findings` check fires,
+to prioritize by real impact rather than guessing); decide whether
+`Repair::Single` results get surfaced as "try: X" suggestions only, or
+auto-applied in a repair-proposal flow (matching `autofix-paragraphs`'s
+existing human-verdict gate, `just verdict`, rather than silently
+rewriting anything).
 5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
    not ranking). A candidate is a faithful rewrite only if input ⊨ candidate
    and candidate ⊨ input; a role swap fails one direction. This mechanizes

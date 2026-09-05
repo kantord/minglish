@@ -60,7 +60,7 @@ examples); "a X" after the tag is the category the term belongs to
 **Compound** (noun, category) — a Compound joins 2 nouns. a determiner does not separate the 2 nouns. the phrase "seed list" is a Compound. the language bans every Compound, because the relation of the 2 nouns is unknown. if the model has a term for the thing, then the writer writes the term with a capital. if the model does not have a term, then the writer unfolds the Compound into a paraphrase. the paraphrase "the initial words" replaces the Compound "seed list".
   Examples: `seed list` · `build output` · `the paraphrase "the initial words" replaces the Compound "seed list".`
 
-**Conditional** (noun, category) · a Sentence Shape — a Conditional is a Sentence Shape. a Conditional has a condition and has a consequent. the word "if" opens the condition. the word "then" opens the consequent.
+**Conditional** (noun, category) · a Sentence Shape — a Conditional is a Sentence Shape. a Conditional has: a condition and a consequent. the word "if" opens the condition. the word "then" opens the consequent.
   Examples: `if the test fails, then the agent retries the request.`
 
 **Conjunct** (noun, category) — a Conjunct is one part of a Coordination. a Modifier describes one Conjunct, so the writer repeats the Modifier in the second Conjunct. a Prepositional Phrase attaches to one Conjunct.
@@ -80,7 +80,7 @@ examples); "a X" after the tag is the category the term belongs to
   - "or"
   ```
 
-**Copula** (noun, category) · a Function Word — a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word "is" is a Copula, and the word "are" is a Copula. the past Tense uses the word "was" or uses the word "were".
+**Copula** (noun, category) · a Function Word — a Copula is a Function Word. a Copula links the subject of a sentence to a Complement, so a Copula does not take an object. the word "is" is a Copula, and the word "are" is a Copula. the past Tense uses: the word "was" or the word "were".
   Examples: `is` · `are` · `was` · `were`
 
 **Coverage** (noun, unique) — the Coverage is a share of a corpus. the corpus is the file "data/ud/en_ewt-ud-test.conllu". the file holds sentences of English. if the Lexicon contains every word of a sentence, then the Lexicon covers the sentence. Triage counts the sentences of the corpus and measures the Coverage. the Coverage is a proxy, because Triage does not parse the sentences. the Coverage does not measure the quality of the Redirects.

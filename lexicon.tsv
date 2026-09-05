@@ -1809,9 +1809,9 @@ see	form	VERB_TRANS_BASE	see
 seed	term	-	Seed
 seeds	term	-	Seeds
 seeing	form	VERB_TRANS_ING	see
-seem	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
-seemed	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
-seems	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
+seem	ban	-	epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in "the result is correct" (ADR 0042)
+seemed	ban	-	epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in "the result is correct" (ADR 0042)
+seems	ban	-	epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in "the result is correct" (ADR 0042)
 seen	form	VERB_TRANS_ED	see
 sees	form	VERB_TRANS_3SG	see
 send	form	VERB_TRANS_BASE	send

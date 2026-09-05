@@ -1,0 +1,41 @@
+// Antiparser: a bare coordinated NP object ("stores a word and a message"),
+// the exact shape ADR 0040 found conflicts trying to add *inside* the main
+// grammar. Kept as its own small, separately-checked grammar (ADR 0043's
+// Idiomatic Structure principle applied to antiparsers themselves): no
+// shared nonterminals with minglish.lalrpop, so it cannot reconflict it,
+// and its own conflict-freedom is checked independently by lalrpop.
+
+use crate::anti::bare_coord::{Conjunct, BareCoordMatch};
+use grammar::{Tok, LexError};
+
+grammar;
+
+extern {
+    type Location = usize;
+    type Error = LexError;
+
+    enum Tok {
+        "DET" => Tok::Det(<String>),
+        "DET_SG" => Tok::DetSg(<String>),
+        "ADJ" => Tok::Adj(<String>),
+        "NOUN_SG" => Tok::NounSg(<String>),
+        "NOUN_PL" => Tok::NounPl(<String>),
+        "VT_3SG" => Tok::Vt3(<String>),
+        "VT_BASE" => Tok::VtBase(<String>),
+        "VT_ED" => Tok::VtEd(<String>),
+        "CONJ" => Tok::Conj(<String>),
+    }
+}
+
+Conj: Conjunct = {
+    <d:"DET"> <a:"ADJ"?> <n:"NOUN_SG"> => Conjunct { det: Some(d), adj: a, noun: n },
+    <d:"DET_SG"> <a:"ADJ"?> <n:"NOUN_SG"> => Conjunct { det: Some(d), adj: a, noun: n },
+    <d:"DET"> <a:"ADJ"?> <n:"NOUN_PL"> => Conjunct { det: Some(d), adj: a, noun: n },
+    <a:"ADJ"?> <n:"NOUN_PL"> => Conjunct { det: None, adj: a, noun: n },
+};
+
+pub Start: BareCoordMatch = {
+    <v:"VT_3SG"> <l:Conj> <c:"CONJ"> <r:Conj> => BareCoordMatch { verb: v, left: l, conj: c, right: r },
+    <v:"VT_BASE"> <l:Conj> <c:"CONJ"> <r:Conj> => BareCoordMatch { verb: v, left: l, conj: c, right: r },
+    <v:"VT_ED"> <l:Conj> <c:"CONJ"> <r:Conj> => BareCoordMatch { verb: v, left: l, conj: c, right: r },
+};

@@ -1,12 +1,19 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (ADR 0047: "only" is confined inside the
-Noun Phrase — never a free pre-predicate adverb, so its scope is
-exactly the Noun Phrase it wraps, never the classic English
-focus/scope ambiguity ("I only introduced Sue to John"). Closes the
-last item of the decision queue's word list — "only" was previously
-a Ban, queue item 2). Everything a fresh agent needs that is not
-derivable from the code, ADRs, or git history.
+Last updated: 2026-09-04 (ADR 0048: minglish converges to one
+construction per meaning by default now — coexistence needs
+empirical evidence. First application: same-verb-lemma Coordination
+("stores a word and stores a message") is banned in favor of the
+colon-list (ADR 0041), the sole canonical shape now. Can't be a
+grammar rule — a CFG can't compare two terminals' string payloads —
+so it's the first check in `diagnose()` that can turn a `Clean`
+parse into a `Style` rejection, narrowly scoped (not a general
+post-success pipeline stage). Also: `crates/antiparse` — a prototype
+of "antiparsers" (error productions: small, independent grammars
+that structurally recognize a known-invalid construction instead of
+guessing from token windows) — evaluated but not wired into
+`diagnose()` yet, see docs/ideas.md). Everything a fresh agent needs
+that is not derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 
@@ -19,7 +26,7 @@ derivable from the code, ADRs, or git history.
   names its parent category. These fields live only in the model, never in
   the seed; a core lemma that becomes a term is dropped from the seed
   (done for "pronoun" and "block").
-- `docs/adr/0001–0047` — every language and policy decision, each citing its
+- `docs/adr/0001–0048` — every language and policy decision, each citing its
   evidence. 0006 (comprehension-first + density + expressiveness-subordinate
   + enforcement hierarchy), 0008 (redirect vs ban) as amended by 0023
   (per-sense synonyms, absolute findability floor), 0012 (loss taxonomy),
@@ -63,9 +70,7 @@ derivable from the code, ADRs, or git history.
    (agreed design in docs/ideas.md, "Paragraph repair").
 2. Parked with design notes in `docs/ideas.md`: vocative (directed
    imperatives), quotation-as-mention, pseudocode/analysis-code compiler,
-   embeddings-as-measurement, core+jargon-packs split, LM-based cost model,
-   linter advice gap #2 (rejected-verb redirects dormant on inflected forms:
-   "the agent files the report" gives no submit-suggestion).
+   embeddings-as-measurement, core+jargon-packs split, LM-based cost model.
 3. Structured repair (docs/ideas.md, "Structured repair"): structure
    enumerator → role assignment → table-driven rewrite with explanations;
    NLI as the future faithfulness gate. Steps 1–3 need no model and no API

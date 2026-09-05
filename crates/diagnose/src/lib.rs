@@ -10,7 +10,7 @@
 //! Pattern checks over the token stream attach specific, actionable names
 //! (missing *then*, quantifier+negation, reduced relative, …).
 
-use grammar::{is_enumeration, is_step_block, metrics, parse, parse_text, Lexicon, Metrics, Tok};
+use grammar::{is_enumeration, is_step_block, metrics, parse, parse_text, Lexicon, Metrics, Tok, Tree};
 use std::collections::BTreeMap;
 
 // ------------------------------------------------------------ diagnosis --
@@ -39,7 +39,12 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
         };
     }
     match parse(lexicon, sentence) {
-        Ok(tree) => return Diagnosis::Clean(metrics(&tree)),
+        Ok(tree) => {
+            if let Some(msg) = same_verb_coordination(lexicon, &tree) {
+                return Diagnosis::Style(vec![msg]);
+            }
+            return Diagnosis::Clean(metrics(&tree));
+        }
         Err(e) if e.contains("not a minglish word")
             || e.contains("is banned in minglish")
             || e.contains("not yet usable") => {
@@ -53,6 +58,7 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     let toks: Vec<Tok> = toks.into_iter().map(|(_, t)| t).collect();
     let mut findings = pattern_findings(&toks);
     findings.extend(slot_findings(lexicon, &toks));
+    suppress_superseded(&mut findings);
     findings.sort();
     findings.dedup();
     let readings = Tier2::new(&toks).count();
@@ -85,7 +91,103 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
     }
 }
 
+// ---------------------------------------------------- success-time checks --
+
+/// ADR 0048: same-subject VP coordination repeating the identical verb
+/// lemma ("stores a word and stores a message") is banned in favor of the
+/// colon-list construction (ADR 0041) — the sole canonical form for this
+/// meaning now (grilled design: minglish converges to one construction
+/// per meaning by default; coexistence needs empirical evidence, and none
+/// exists for this pair — this session's own earlier analysis already
+/// found the repeat form reads worse). This cannot be a grammar rule: a
+/// CFG has no way to compare two terminals' string payloads against each
+/// other, only their category, so a LALRPOP production can't express "the
+/// second verb token must differ from the first." It's a semantic check
+/// on an already-successful Tier-1 parse — the first check in this file
+/// that can turn `Clean` into `Style` (a deliberately narrow special
+/// case, not a general new pipeline stage; see docs/ideas.md).
+fn same_verb_coordination(lexicon: &Lexicon, tree: &Tree) -> Option<String> {
+    if let Tree::Node { label: "S" | "Clause", children, .. } = tree {
+        if children.len() == 3 {
+            if let (Some(pred), Tree::Node { label: "CoordPred", children: cp, .. }) =
+                (children.get(1), &children[2])
+            {
+                if let (Some(v1), Some(v2)) = (plain_vp_verb(pred), cp.get(1).and_then(plain_vp_verb)) {
+                    let l1 = lexicon.lemma_of(v1).unwrap_or(v1);
+                    let l2 = lexicon.lemma_of(v2).unwrap_or(v2);
+                    if l1 == l2 {
+                        return Some(format!(
+                            "\"{v1}\" repeats across the coordination — write the colon-list \
+                             instead: \"{v1}: <object> and <object>\" (ADR 0041, ADR 0048)"
+                        ));
+                    }
+                }
+            }
+        }
+    }
+    if let Tree::Node { children, .. } = tree {
+        for c in children {
+            if let Some(m) = same_verb_coordination(lexicon, c) {
+                return Some(m);
+            }
+        }
+    }
+    None
+}
+
+/// The verb word of a VP whose shape the colon-list construction (ADR
+/// 0041) can actually replace: a transitive verb with a plain NP object
+/// and *nothing else* — unwraps the ADR 0044 medial-adverb wrapper if
+/// present. Anything else has no valid colon-list equivalent, so it's
+/// deliberately excluded, not a false negative: an intransitive verb's
+/// PP complement ("refers to the writer") — 2 children, but the second
+/// is a PP, not an NP; a transitive verb with a trailing PPv ("checks
+/// the word against the Lexicon") — the colon-list production has no PPv
+/// slot at all, so rewriting would silently drop that PP's meaning.
+fn plain_vp_verb(t: &Tree) -> Option<&str> {
+    let t = match t {
+        Tree::Node { label: "PredAdv", children, .. } => children.last()?,
+        _ => t,
+    };
+    let Tree::Node { label: "VP", children, .. } = t else { return None };
+    let [Tree::Leaf { word, .. }, obj] = children.as_slice() else { return None };
+    is_np_like(obj).then_some(word)
+}
+
+fn is_np_like(t: &Tree) -> bool {
+    match t {
+        Tree::Leaf { .. } => true, // a bare Name as object
+        Tree::Node { label, .. } => matches!(*label, "NP" | "NPAppos" | "NPGen" | "NPPct" | "NPOnly"),
+    }
+}
+
 // ------------------------------------------------------ pattern findings --
+
+/// When a word has a specific "X is a noun in minglish — as a verb use Y"
+/// (or the mirror "is a verb ... as a noun use Y") redirect finding, drop
+/// every other finding that also names that exact quoted word — those are
+/// generic checks re-diagnosing the same token with worse, sometimes
+/// contradictory advice (advice gap #2: the redirect is correct, the other
+/// checks just don't know about it).
+fn suppress_superseded(findings: &mut Vec<String>) {
+    // the redirected word may sit alone in quotes ("file") or as part of a
+    // longer quoted span ("file the") — match it at a quote/space boundary
+    // either way, not just as a fully standalone quoted token.
+    let redirected: Vec<String> = findings
+        .iter()
+        .filter(|f| f.contains("in minglish — as a "))
+        .filter_map(|f| f.split('"').nth(1).map(str::to_string))
+        .collect();
+    if redirected.is_empty() {
+        return;
+    }
+    findings.retain(|f| {
+        f.contains("in minglish — as a ")
+            || !redirected.iter().any(|w| {
+                f.contains(&format!("\"{w}\"")) || f.contains(&format!("\"{w} ")) || f.contains(&format!(" {w}\""))
+            })
+    });
+}
 
 fn word(t: &Tok) -> &str {
     match t {
@@ -657,8 +759,10 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             && (!verb_before || toks.get(j + 1).is_none_or(|n| matches!(n, Tok::PrepV(_) | Tok::PrepN(_) | Tok::Comma | Tok::Conj(_))))
         {
             out.push(
-                "noun phrases cannot be coordinated — repeat the verb: \"the mechanism stores \
-                 a word and stores a message\", or split the sentence (ADR 0004)"
+                "noun phrases cannot be coordinated — write the colon-list: \"the mechanism \
+                 stores: a word and a message\" (ADR 0041), or split the sentence (ADR 0004). \
+                 Repeating the verb does not help here: the same verb twice is itself banned \
+                 (ADR 0048)"
                     .to_string(),
             );
         }
@@ -694,6 +798,13 @@ fn is_det(t: &Tok) -> bool {
 
 fn is_noun_head(t: &Tok) -> bool {
     matches!(t, Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_) | Tok::Pron1(_) | Tok::Pron2(_))
+}
+
+/// A token after which the grammar expects a bare verb form (VBaseP):
+/// negation, "yet" (ADR 0046), or a modal — the do-support/Prohibition/
+/// ModalVP/Imperative positions, beyond the plain-SVO subject-head case.
+fn introduces_bare_verb(t: &Tok) -> bool {
+    matches!(t, Tok::Neg(_) | Tok::Yet(_) | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_))
 }
 
 /// A word in the wrong slot whose rejected sense has a redirect (ideas,
@@ -732,9 +843,15 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
                     None => format!("\"{w}\" is a verb in minglish and cannot follow a determiner"),
                 });
             }
-            // noun form in a verb slot: after a subject head, before an object start
+            // noun form in a verb slot: after a subject head (plain SVO), or
+            // anywhere a bare verb form is grammatically expected — sentence
+            // start (Imperative), after "not"/"yet", or after a modal — before
+            // an object start. Broadened from subject-head-only (advice gap
+            // #2): the redirect lookup itself is already position-independent
+            // (keyed by lemma), only this trigger was too narrow.
             Tok::NounSg(w) | Tok::NounPl(w)
-                if prev.is_some_and(is_noun_head) && next.is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_) | Tok::AdjLong(_))) =>
+                if (prev.is_none() || prev.is_some_and(|p| is_noun_head(p) || introduces_bare_verb(p)))
+                    && next.is_some_and(|n| is_det(n) || matches!(n, Tok::Adj(_) | Tok::AdjLong(_))) =>
             {
                 if let Some(s) = lexicon.redirect(w, "VERB") {
                     out.push(format!("\"{w}\" is a noun in minglish — as a verb use \"{s}\""));

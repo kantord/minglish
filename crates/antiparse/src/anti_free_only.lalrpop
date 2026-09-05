@@ -1,0 +1,41 @@
+// Antiparser: "only" in the free pre-predicate position ("the mechanism
+// only stores the report") — banned by ADR 0047 precisely because English
+// leaves this scope-ambiguous (subject or object?). Demonstrates the third
+// repair category: neither a single deterministic fix nor "no fix" but a
+// small menu of candidate repairs the antiparser cannot choose between.
+
+use crate::anti::free_only::FreeOnlyMatch;
+use grammar::{Tok, LexError};
+
+grammar;
+
+extern {
+    type Location = usize;
+    type Error = LexError;
+
+    enum Tok {
+        "NOUN_SG" => Tok::NounSg(<String>),
+        "NOUN_PL" => Tok::NounPl(<String>),
+        "FOCUS" => Tok::Focus(<String>),
+        "VT_3SG" => Tok::Vt3(<String>),
+        "VT_BASE" => Tok::VtBase(<String>),
+        "VI_3SG" => Tok::Vi3(<String>),
+        "VI_BASE" => Tok::ViBase(<String>),
+    }
+}
+
+Subj: String = {
+    "NOUN_SG" => "".to_string(),
+    "NOUN_PL" => "".to_string(),
+};
+
+Verb: String = {
+    <v:"VT_3SG"> => v,
+    <v:"VT_BASE"> => v,
+    <v:"VI_3SG"> => v,
+    <v:"VI_BASE"> => v,
+};
+
+pub Start: FreeOnlyMatch = {
+    <_s:Subj> "FOCUS" <v:Verb> => FreeOnlyMatch { verb: v },
+};

@@ -872,17 +872,17 @@
   {
     "lemma": "seem",
     "category": "BANNED",
-    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+    "advice": "epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in \"the result is correct\" (ADR 0042)"
   },
   {
     "lemma": "seems",
     "category": "BANNED",
-    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+    "advice": "epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in \"the result is correct\" (ADR 0042)"
   },
   {
     "lemma": "seemed",
     "category": "BANNED",
-    "advice": "epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)"
+    "advice": "epistemic hedges are banned - it is a linking verb here; drop it and use the copula directly, as in \"the result is correct\" (ADR 0042)"
   },
   {
     "lemma": "all",

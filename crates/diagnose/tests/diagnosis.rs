@@ -142,3 +142,76 @@ fn rejections_get_named_diagnoses() {
         other => panic!("expected AMBIGUOUS, got {other:?}"),
     }
 }
+
+/// Advice gap #2 (docs/STATUS.md): the "as a verb use X" redirect was only
+/// wired for the plain-SVO position (right after the subject). A modal,
+/// negation, or sentence-initial imperative left the same word to fall
+/// through to generic, sometimes actively wrong findings ("must be
+/// quoted", "needs a determiner") instead of the correct redirect. Fixed
+/// by widening the trigger and suppressing the now-superseded generic
+/// findings for the same word.
+#[test]
+fn verb_redirect_fires_in_every_bare_verb_position() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    let cases = [
+        "the agent files the report",
+        "file the report",
+        "do not file the report",
+        "the agent can file the report",
+        "the agent must not file the report",
+    ];
+    for sentence in cases {
+        match diagnose(&lexicon, sentence) {
+            Diagnosis::Style(findings) => {
+                assert!(
+                    findings.iter().any(|f| f.contains("as a verb use \"submit\"")),
+                    "{sentence}: expected the submit redirect, got {findings:?}"
+                );
+                assert!(
+                    !findings.iter().any(|f| f.contains("must be quoted") || f.contains("needs a determiner")),
+                    "{sentence}: a superseded generic finding survived: {findings:?}"
+                );
+            }
+            other => panic!("{sentence}: expected STYLE, got {other:?}"),
+        }
+    }
+}
+
+/// ADR 0048 (grilled design): minglish converges to one canonical
+/// construction per meaning by default; coexistence needs empirical
+/// evidence, and none exists for same-verb-lemma coordination — this
+/// session's own earlier analysis already found it reads worse than the
+/// colon-list form. Banned via a semantic check on an already-successful
+/// Tier-1 parse (a CFG can't compare two terminals' string payloads
+/// against each other), narrowly scoped: different-verb coordination,
+/// negated/modal predicates, and the colon-list shape itself all stay
+/// untouched.
+#[test]
+fn same_verb_coordination_is_banned_but_only_the_plain_shape() {
+    let lexicon = Lexicon::load(&repo("lexicon.tsv")).unwrap();
+    match diagnose(&lexicon, "the mechanism stores a word and stores a message") {
+        Diagnosis::Style(findings) => {
+            assert!(findings.iter().any(|f| f.contains("repeats across the coordination")), "{findings:?}");
+        }
+        other => panic!("expected STYLE, got {other:?}"),
+    }
+    // nested inside a Conditional's Clause, not just top-level S
+    match diagnose(&lexicon, "if the agent saves the report and saves the file, then the writer reads the report") {
+        Diagnosis::Style(findings) => {
+            assert!(findings.iter().any(|f| f.contains("repeats across the coordination")), "{findings:?}");
+        }
+        other => panic!("expected STYLE, got {other:?}"),
+    }
+    let still_clean = [
+        "the agent saves the report and deletes the file",
+        "the agent does not save the report and does not save the file",
+        "the mechanism stores: a word and a message",
+    ];
+    for sentence in still_clean {
+        assert!(
+            matches!(diagnose(&lexicon, sentence), Diagnosis::Clean(_)),
+            "{sentence}: expected Clean, got {:?}",
+            diagnose(&lexicon, sentence)
+        );
+    }
+}

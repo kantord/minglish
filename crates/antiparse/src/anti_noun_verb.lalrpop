@@ -1,0 +1,41 @@
+// Antiparser: a noun-tagged word sitting in a bare-verb slot ("must not
+// file the report") — the exact position-blind redirect bug found this
+// session. Reformalized here as a real grammar match (not a token-window
+// heuristic) to compare the two approaches directly: this fires only on
+// a genuine structural match, never a coincidental adjacency.
+
+use crate::anti::noun_verb::NounVerbMatch;
+use grammar::{Tok, LexError};
+
+grammar;
+
+extern {
+    type Location = usize;
+    type Error = LexError;
+
+    enum Tok {
+        "DET" => Tok::Det(<String>),
+        "ADJ" => Tok::Adj(<String>),
+        "NOUN_SG" => Tok::NounSg(<String>),
+        "NOUN_PL" => Tok::NounPl(<String>),
+        "NEG" => Tok::Neg(<String>),
+        "YET" => Tok::Yet(<String>),
+        "MODAL_MUST" => Tok::ModalMust(<String>),
+        "MODAL_CAN" => Tok::ModalCan(<String>),
+        "MODAL_CANNOT" => Tok::ModalCannot(<String>),
+    }
+}
+
+Intro: String = {
+    "NEG" => "not".to_string(),
+    "YET" => "yet".to_string(),
+    "MODAL_MUST" => "must".to_string(),
+    "MODAL_CAN" => "can".to_string(),
+    "MODAL_CANNOT" => "cannot".to_string(),
+};
+
+pub Start: NounVerbMatch = {
+    <intro:Intro?> <n:"NOUN_SG"> <d:"DET"> => NounVerbMatch { intro, word: n, next_det: Some(d) },
+    <intro:Intro?> <n:"NOUN_PL"> <d:"DET"> => NounVerbMatch { intro, word: n, next_det: Some(d) },
+    <intro:Intro?> <n:"NOUN_SG"> <_a:"ADJ"> => NounVerbMatch { intro, word: n, next_det: None },
+};
