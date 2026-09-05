@@ -62,5 +62,5 @@ bound. If the evidence grows, then the maintainers revisit the bound.
   the claim.
 - The rule does not add a token, because a Bare Plural is shorter than a
   false definite. The decision "0006" prefers the short formulation.
-- A writer must learn one fiat rule. A Bare Plural is a generic statement
-  and is not an existential statement.
+- A writer must learn one fiat rule. A Bare Plural is a generic statement.
+  A Bare Plural is not an existential statement.

@@ -26,7 +26,7 @@ of a Step Block. The language has 4 keywords:
 The keyword "Given" marks a precondition, and the keyword "When" marks an
 event. The keyword "Then" marks a result, and the keyword "And" marks a
 continuation of the prior keyword. Every line holds one clause. The clause
-does not contain a Coordination, and the clauses of a Conditional follow the
+does not contain a Coordination. The clauses of a Conditional follow the
 identical rule.
 
 A header opens a Step Block. Gherkin has 2 headers:

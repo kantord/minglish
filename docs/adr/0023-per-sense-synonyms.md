@@ -59,8 +59,8 @@ The word "same" becomes a Ban. The Ban gives an advice for every sense. The
 first sense refers to one thing, so the writer repeats the noun with the
 word "the". The word "the" carries the identity. The second sense compares
 2 things, so the writer uses the word "identical". The sentence "the copies
-are identical" is one example. The word "identical" enters the Lexicon and
-is an ordinary adjective.
+are identical" is one example. The word "identical" enters the Lexicon.
+The word "identical" is an ordinary adjective.
 
 The maintainers deferred the phrase "identical to the report", because the
 Complement does not take a Prepositional Phrase. A later decision can add

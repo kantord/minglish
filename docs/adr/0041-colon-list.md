@@ -29,7 +29,7 @@ Imperative allows the shape, and a Prohibition allows the shape.
 
 ## Consequences
 
-- A writer can name 2 things of one verb in one sentence, and the writer
+- A writer can name 2 things of one verb in one sentence. The writer
   keeps a clear scope. A writer does not repeat the verb "stores".
 - The decision "0004" bans a chain of 3 Conjuncts. A writer uses the
   Enumeration for 3 items.

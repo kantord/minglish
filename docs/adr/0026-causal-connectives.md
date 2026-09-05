@@ -20,7 +20,7 @@ and the phrase "because A, B" puts the reason at the front. The phrase "B
 because A" puts the effect at the front. The 2 orders differ in the
 structure of the information. One clause is old, and one clause is new. The
 order "old before new" helps the comprehension. The decision "0006" adopts
-the order, and the common advice of the style adopts the order. If the effect
+the order. The common advice of the style adopts the order. If the effect
 sits at the front, then the sentence can have an ambiguous attachment. The
 phrase "B because A and C" is one example.
 

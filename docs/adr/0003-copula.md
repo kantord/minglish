@@ -24,8 +24,8 @@ is a Progressive. The maintainers deferred 4 questions of the Grammar:
 - the Passive
 - the Progressive
 
-The research of the project found the main danger in the Participles, and
-the Reduced Relative is one example.
+The research of the project found the main danger in the Participles.
+The Reduced Relative is one example.
 
 ## Decision
 
@@ -56,7 +56,7 @@ allowed the phrase "must be".
 ## Consequences
 
 - The language can describe a property and can name a class. The sentence
-  "the queue is empty" is the first example, and the sentence "the parser is
+  "the queue is empty" is the first example. The sentence "the parser is
   a program" is the second example.
 - The first version of the language cannot say a past state and cannot say
   an ongoing process. The maintainers revisit the question in the decision

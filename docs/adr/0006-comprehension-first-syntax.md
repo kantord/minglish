@@ -66,7 +66,7 @@ If the 2 formulations tie, then the maintainers choose the expressive
 formulation. The maintainers do not trade the precision for the charisma.
 The clarity outranks the charisma.
 
-A constraint is a bound on the load and is not a Ban of a shape. The
+A constraint is a bound on the load. A constraint is not a Ban of a shape. The
 Grammar limits the load at the front of a sentence and does not ban a
 shape. If a rule requires a long text, then the rule must earn the words.
 The length is cheaper than the load but is not free.

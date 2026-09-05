@@ -36,7 +36,7 @@ does not open the sentence, then the Linter checks the lowercase of the
 word. If the Lexicon has the lowercase, then the Linter shows an error. The
 error names a wrong capital or names a Collision. If a Name collides with a
 word of the Lexicon, then the Name needs a quoted span. The word "I" is the
-Pronoun and is not a Name.
+Pronoun. The word "I" is not a Name.
 
 A quoted span holds an identifier. The identifier keeps the case and keeps
 the spelling inside a quoted span. The file "seed.json" is one example. A

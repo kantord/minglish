@@ -31,8 +31,8 @@ machine must find the Collisions.
 
 ## Decision
 
-The maintainers chose the third option. The Seed is a handwritten file and
-is the single source of the Lexicon. Every Lemma has one entry in the Seed.
+The maintainers chose the third option. The Seed is a handwritten file.
+The Seed is the single source of the Lexicon. Every Lemma has one entry in the Seed.
 The entry names the Category of the Lemma. An entry can contain 4 fields:
 - the irregular Surface Forms
 - the Redirects
@@ -42,8 +42,8 @@ The entry names the Category of the Lemma. An entry can contain 4 fields:
 The note is a free text and records the rationale.
 
 The tool Lexgen is a program in Rust. The folder `crates/lexgen` holds the
-program. The program expands the Paradigms with about 10 rules and checks 3
-invariants. No Surface Form has 2 Form Tags. If the data attests a second
+program. The program expands the Paradigms with about 10 rules. The program
+checks 3 invariants. No Surface Form has 2 Form Tags. If the data attests a second
 Category of a Lemma, then the entry must reject the second Category. A
 Rejected Sense has a Redirect or has a Waiver. The data attests every
 Surface Form. If the Seed breaks an invariant, then the

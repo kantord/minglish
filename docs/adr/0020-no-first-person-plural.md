@@ -55,8 +55,8 @@ group in every case.
 - The Ban reduces the expressiveness of the text. The expressiveness is the
   5th criterion of the decision "0006". The maintainers accept the small
   expense, because the reference becomes precise.
-- The word "maintainer" enters the Lexicon and becomes the main example of
-  a replacement.
+- The word "maintainer" enters the Lexicon. The word "maintainer" becomes
+  the main example of a replacement.
 - The Gap "adr0001-05" had 2 halves:
   - "we"
   - "commit"

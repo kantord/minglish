@@ -4,47 +4,47 @@
 
 | ADR | parse rate |
 |---|---|
-| 0001-generated-lexicon-from-curated-seed.md | 51/54 |
+| 0001-generated-lexicon-from-curated-seed.md | 53/56 |
 | 0002-pronoun-policy.md | 22/22 |
-| 0003-copula.md | 27/28 |
+| 0003-copula.md | 29/30 |
 | 0004-coordination.md | 23/24 |
 | 0005-negation.md | 23/23 |
-| 0006-comprehension-first-syntax.md | 57/58 |
+| 0006-comprehension-first-syntax.md | 58/59 |
 | 0007-conditionals.md | 19/21 |
 | 0008-redirect-vs-ban.md | 36/37 |
 | 0009-modals.md | 33/38 |
 | 0010-simple-past.md | 29/31 |
 | 0011-pp-attachment.md | 32/33 |
 | 0012-pair-validity.md | 41/41 |
-| 0013-generic-bare-plurals.md | 39/39 |
-| 0014-universal-and-no.md | 40/42 |
+| 0013-generic-bare-plurals.md | 40/40 |
+| 0014-universal-and-no.md | 41/43 |
 | 0015-compounds-transparency.md | 59/61 |
 | 0016-have-and-one.md | 34/35 |
-| 0017-existential-some.md | 20/21 |
-| 0018-proper-names.md | 40/43 |
+| 0017-existential-some.md | 22/23 |
+| 0018-proper-names.md | 41/44 |
 | 0019-imperatives.md | 30/31 |
-| 0020-no-first-person-plural.md | 26/27 |
+| 0020-no-first-person-plural.md | 27/28 |
 | 0021-but.md | 24/25 |
 | 0022-digits.md | 51/52 |
-| 0023-per-sense-synonyms.md | 61/61 |
+| 0023-per-sense-synonyms.md | 62/62 |
 | 0024-percent.md | 31/31 |
 | 0025-approximation.md | 20/20 |
-| 0026-causal-connectives.md | 50/52 |
+| 0026-causal-connectives.md | 51/53 |
 | 0027-domain-model.md | 54/57 |
-| 0028-enumeration.md | 36/36 |
+| 0028-enumeration.md | 38/38 |
 | 0029-ordinals-and-scales.md | 28/29 |
 | 0030-comparatives.md | 28/28 |
 | 0031-complement-phrases.md | 21/21 |
-| 0032-modal-be.md | 20/21 |
-| 0033-time-prepositions.md | 18/18 |
-| 0034-step-block.md | 31/31 |
+| 0032-modal-be.md | 22/23 |
+| 0033-time-prepositions.md | 19/19 |
+| 0034-step-block.md | 32/32 |
 | 0035-become.md | 17/17 |
 | 0036-domain-model-schema.md | 32/32 |
-| 0037-full-clause-coordination.md | 27/27 |
+| 0037-full-clause-coordination.md | 28/28 |
 | 0038-coordination-inside-clauses.md | 24/24 |
 | 0039-without.md | 8/8 |
 | 0040-coordinated-noun-phrases.md | 17/19 |
-| 0041-colon-list.md | 20/20 |
+| 0041-colon-list.md | 21/21 |
 | 0042-epistemic-hedges-banned.md | 14/14 |
 | 0043-idiomatic-structure-never.md | 20/21 |
 | 0044-medial-temporal-adverbs.md | 15/15 |
@@ -59,7 +59,7 @@
 | 0053-vocabulary-packs.md | 34/34 |
 | 0054-appositive.md | 54/54 |
 
-**Aggregate: 1581/1622 sentences (97%)**
+**Aggregate: 1602/1643 sentences (98%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 

@@ -6,8 +6,8 @@ Status: proposed (tentative)
 ## Context
 
 The Bare Plural of the decision "0013" marks a generic statement. The
-decision "0014" added the word "every" for a universal statement and added
-the word "no" for a universal Negation. The Negation of a universal
+decision "0014" added the word "every" for a universal statement. The
+decision "0014" added the word "no" for a universal Negation. The Negation of a universal
 statement did not have a Sentence Shape, so the decision "0014" deferred
 the Negation to the present decision.
 
@@ -41,6 +41,6 @@ reader rebuilds the logic from the syntax.
 - Every corner of the square has one Sentence Shape. Every quantified
   sentence announces the Sentence Shape with the First Token.
 - The word "some" takes every plural predicate and takes the Negation. The
-  decision "0014" limits the word "every" to a positive predicate and
-  limits the word "no" to a positive predicate. The bound stays, because
+  decision "0014" limits the word "every" to a positive predicate. The
+  decision "0014" limits the word "no" to a positive predicate. The bound stays, because
   the 2 words have a real Scope Ambiguity with a Negation.

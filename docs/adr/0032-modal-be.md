@@ -27,9 +27,9 @@ decision gives 2 examples:
 - "a term can be a verb"
 - "the intro cannot be a question"
 
-The word "be" is not an Auxiliary and is not an infinitive. The word "be"
-does not open an Imperative. The fences of the decision "0003" stay, and
-the fences of the decision "0010" stay.
+The word "be" is not an Auxiliary. The word "be" is not an infinitive.
+The word "be" does not open an Imperative. The fences of the decision "0003" stay.
+The fences of the decision "0010" stay.
 
 ## Consequences
 

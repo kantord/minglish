@@ -77,8 +77,8 @@ parser.
 
 ## Consequences
 
-- The language can say a universal rule with the word "every" and can say
-  a universal Negation of an ability with the phrase "no X can". The 2
+- The language can say a universal rule with the word "every". The language
+  can say a universal Negation of an ability with the phrase "no X can". The 2
   shapes are the natural shapes of English and are dense.
 - The Bans cause rewrites. The rewrites are shorter than the original
   phrases or are clearer than the original phrases.

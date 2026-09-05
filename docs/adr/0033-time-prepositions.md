@@ -22,7 +22,7 @@ The language adds 3 Verb Prepositions:
 - "until"
 
 A Noun Phrase follows every new word and names an event. The sentence "the
-ambiguity reappears after the split" is one example, and the sentence "the
+ambiguity reappears after the split" is one example. The sentence "the
 reader holds the consequent until the condition" is a second example. The
 rules of the decision "0011" cover the 3 words, so the phrase attaches to
 the verb. A clause has one Verb Preposition.

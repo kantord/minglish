@@ -12,7 +12,7 @@ structure. The structure was the sentence, so a list became a repetition.
 
 ## Decision
 
-An Enumeration is a Block and is not a sentence. The Block has one plain
+An Enumeration is a Block. An Enumeration is not a sentence. The Block has one plain
 statement and has one line for every item. The statement ends with a
 colon. The string "- " opens every item. Markdown turns the dash into a
 bullet.
@@ -46,7 +46,7 @@ intro stays with the items. The rule covers 4 tools:
 
 The maintainers deferred 3 questions. The first question is an ordered
 list. The items of an ordered list are clauses. The steps of a procedure
-are one example, and the rules are a second example. The second question names the colon inside a sentence, so the
+are one example. The rules are a second example. The second question names the colon inside a sentence, so the
 maintainers did not decide the rule of the colon. The third question
 names an intro with the shape of a question, so the maintainers did not
 decide the rule of the intro.

@@ -39,7 +39,7 @@ decision can revisit the Ban.
 
 ## Consequences
 
-- A writer can join 2 different subjects in one sentence, and the comma
+- A writer can join 2 different subjects in one sentence. The comma
   marks the new clause.
 - The old shape of a full clause becomes a Ban. A writer adds the comma or
   splits the sentence.
