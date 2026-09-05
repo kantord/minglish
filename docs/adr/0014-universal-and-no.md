@@ -54,12 +54,17 @@ decides the scope.
 
 ## The first-token telegraph principle
 
-The First Token of a sentence announces the Sentence Shape, so the reader
-knows the Sentence Shape after the First Token. The word "if" opens a
-Conditional, the word "do" opens a Prohibition, and the word "no" opens a
-universal Negation. The word "every" opens a universal statement, and a
-Bare Plural opens a generic statement. A determiner opens a plain
-statement, and an Indexical Pronoun opens a plain statement.
+The First Token of a sentence announces the Sentence Shape. 4 First Tokens
+are words:
+- "if"
+- "do"
+- "no"
+- "every"
+
+3 First Tokens are Categories:
+- a Bare Plural
+- a determiner
+- an Indexical Pronoun
 
 Every future Sentence Shape must take a distinct First Token. A question is
 one example of a future Sentence Shape. An existential statement is a

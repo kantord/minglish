@@ -3,6 +3,38 @@
 Parking lot for directions we intend to explore but have deliberately not
 committed to. Move an item into an ADR when it becomes a real decision.
 
+## A fully self-hosting language specification (2026-09-05)
+
+Raised by the maintainer. minglish already dogfoods *some* of its own
+description — every ADR since the 2026-09-03 naturalness pass is
+written in minglish itself (`docs/dogfood-sweep.md` tracks the parse
+rate), and today's `skills/minglish/repair-prompt.md` is a first
+system-prompt-level example, 100% self-parsing. What's not yet
+self-hosting: `CONTEXT.md`, `README.md`, `skills/minglish/SKILL.md`
+(the general onboarding doc — confirmed today at only 4% self-parsing,
+see `docs/prompt-ab.md`), and this file itself, `docs/ideas.md`, are
+all plain English. The idea is to push toward the *entire* canonical
+spec — grammar reference, onboarding doc, and the meta-documents that
+describe the project to a newcomer — being written in minglish,
+analogous to a self-hosting compiler: the language's own description
+becomes the strongest possible dogfood test of whether the language is
+actually sufficient for real technical writing, not just for content
+someone already chose because it happened to be expressible.
+
+Real tension worth resolving before committing to this, not
+glossed over: `SKILL.md`'s prose is *instructions to a reader who does
+not yet know minglish* — the repair-prompt.md experiment this session
+showed that writing tight, dogfooded instructional prose is possible,
+but it required real design work per sentence (see the sentence-by-
+sentence rewrite log in this session's transcript) and dropped
+scope (Conditional, Step Block) to fit a word budget. A fully self-
+hosting `SKILL.md` is the same effort at ~4x the length, and it isn't
+free of chicken-and-egg risk: a document teaching someone the language
+is unusually exposed to the language's own current expressiveness
+gaps (see `docs/language-gaps.md`), since it can't route around a gap
+the way a narrower document can. Worth scoping as its own project, not
+folded silently into unrelated work.
+
 ## Vector embeddings as measurement tooling
 
 Constraint: embeddings may serve *measurement and suggestion*, never the
@@ -576,3 +608,58 @@ directly was also considered and dropped: it's already a local `assert!`
 checked on every call site through the existing corpus and generated
 tests (#4), so a standalone property test would mostly duplicate that
 coverage without covering anything the assert doesn't already catch.
+
+## Sequence-level surprisal (Markov chain / n-gram) as a naturalness metric (2026-09-05)
+
+Raised by the maintainer while reviewing the naturalness-iteration work
+(`docs/naturalness-iteration-2026-09-05.md`). `textcost`'s existing cost
+model uses *unigram* surprisal — already known to have a blind spot
+(`docs/research/cnl-design-findings.md`, "Translator compression bias,
+and the nominalization blind spot": unigram surprisal prices a word by
+its own frequency alone, so it cannot see that a *sequence* of common
+words can still be highly predictable, or highly surprising, as a
+sequence).
+
+That gap is exactly what today's naturalness-ceiling finding is made
+of: "The word 'if' opens a Conditional. The word 'do' opens a
+Prohibition..." — every individual word is common (low unigram
+surprisal, i.e. "cheap" by the current metric), but the *sequence*
+repeats the identical template 7 times, which is maximally predictable
+and reads as mechanical for exactly that reason. A blind human/LLM
+judge caught this immediately; the project's own cost metric currently
+cannot, because it never looks past single-token frequency.
+
+**The idea**: a low-order Markov chain (bigram or trigram) trained
+over the existing minglish corpus (`tests/paragraph-cases`,
+`tests/agent-cases`, the ADRs themselves — already-collected data, no
+new corpus needed) gives a cheap, local, fully auditable
+per-transition surprisal score, without needing an external LM. Two
+uses:
+
+1. **A real naturalness proxy, cheaper than a blind LLM judge.** A
+   sentence or paragraph whose *sequence*-level surprisal is
+   abnormally low (near-zero entropy, i.e. the reader could predict
+   almost every next word from the template alone) is a strong,
+   mechanically-detectable signal for the "reads like a list" failure
+   this session kept re-finding by expensive blind judging. This could
+   flag candidate mechanical runs automatically (a `finding-frequency`-
+   style tool), narrowing what needs an expensive blind-judge pass.
+2. **An optimization signal for language design**, with the same
+   guardrail ADR 0001 and the vector-embeddings section above already
+   established: measurement and suggestion only, never a substitute for
+   the check-don't-choose discipline that decides what the language
+   *allows*. A construction that would raise average sequence-entropy
+   corpus-wide is a data point in favor of designing it (e.g. the
+   still-missing table/mapping construction from today's session), not
+   a rule that auto-generates one.
+
+Not yet built. Needs: (a) confirm the existing corpus is large enough
+for a stable bigram/trigram model (minglish's whole-corpus vocabulary
+is small and closed, which cuts both ways — sparse data, but also a
+much smaller space to estimate over than open English); (b) decide
+whether surprisal is computed over surface tokens or over the parse
+tree's grammatical categories (the latter would catch "same Sentence
+Shape repeated" even when the actual words vary, which is closer to
+what today's judges were actually reacting to — see the "varied verb"
+trial in `docs/naturalness-iteration-2026-09-05.md`, which still scored
+2/5 despite different words, because the *structure* repeated).

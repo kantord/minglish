@@ -69,16 +69,20 @@ that is not derivable from the code, ADRs, or git history.
   `SKILL.md` itself is untouched (still the general onboarding doc).
 - `docs/naturalness-iteration-2026-09-05.md` — round 2: tested whether
   a *grammar* construction (ADR 0050, 3-way clause Coordination) fixes
-  naturalness where the prompt A/B couldn't. It doesn't, by itself:
-  5 independent blind-judged trials across both rounds (2 documents, 3
-  intervention types — prompt, grammar, word choice) all score 2/5.
-  Real finding: dense enumerative/defined-term content has a
-  naturalness ceiling sentence-level fixes don't move; the actual gap
-  is a missing associative/table-shaped block construction, a bigger
-  project than this round, or the naturalness bar itself needs
-  reconsidering for table-shaped content. ADR 0050 is kept anyway (a
-  real, regression-tested capability gain) even though it didn't
-  deliver the naturalness win it was built for.
+  naturalness where the prompt A/B couldn't. **Read the "Correction"
+  section of that file first**: 7 straight blind-judge trials scored
+  2/5 and looked like a confirmed hard ceiling — until it turned out
+  every one of those judges was missing `CONTEXT.md` access (a
+  self-inflicted deviation from the real `docs/prejudge.md` protocol).
+  Re-judged correctly, the same paragraph moved 2→3/5 (ADR 0050 alone)
+  →4/5 (ADR 0050 + splitting a mixed-granularity list into homogeneous
+  Enumerations), with fidelity also verified at 4/5 against the
+  original — clearing `docs/judge-report.md`'s actual pass bar on a
+  real paragraph in `docs/adr/0014-universal-and-no.md`, now applied.
+  One paragraph, not a corpus-wide result yet — see that file's
+  Recommendation for the generalization step. ADR 0050 kept regardless
+  (real, regression-tested capability gain, and it did measurably help
+  once judged correctly).
 - `docs/controversial-decisions-2026-09-05.md` — every unilateral,
   user-unvalidated call made across both A/B rounds, most notably: a
   live grammar change may contradict ADR 0048 ("one shape per

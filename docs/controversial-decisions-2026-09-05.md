@@ -5,6 +5,29 @@ unilaterally, in-session, without the user reviewing it first. None
 are committed — everything is staged for review. Ordered roughly by
 how much it matters if wrong.
 
+## 0. This session's own "naturalness ceiling" finding was wrong for most of the session, and I stated it flatly before catching it
+
+Not a decision about the language — a decision about how I was testing
+it. For 7 consecutive blind-judge trials (2/3 of this whole naturalness
+investigation, both in `docs/prompt-ab.md` and the first pass of
+`docs/naturalness-iteration-2026-09-05.md`), every judge prompt I wrote
+was a hand-paraphrased approximation of the real judge instruction in
+`docs/prejudge.md`, and it silently dropped that instruction's first
+line: read `CONTEXT.md` for the Capitalized terms. I judged
+term-dense paragraphs with judges that had never been told what the
+terms meant, got a flat, convergent, wrong-looking "hard ceiling"
+result, and wrote it up as a confirmed, confound-checked finding in
+`docs/naturalness-iteration-2026-09-05.md` and reported it to the user
+as settled — before re-running with the real protocol and finding real
+movement (2→3→4/5) on the exact same content. The file has been
+corrected in place, not silently, but the fact that a flatly-stated,
+multiply-"confirmed" conclusion was wrong for most of a session, and
+that I did not think to check my own judge prompt against the
+project's own documented one until directly prompted to think about
+measurement quality, is itself the thing worth flagging here — it is
+exactly the kind of confident-but-wrong intermediate conclusion that
+should make the rest of this report read more skeptically, not less.
+
 ## 1. Shipped a real grammar change to the shared Tier-1 grammar
 
 `crates/grammar/src/minglish.lalrpop`'s `CoordClause` rule now accepts
