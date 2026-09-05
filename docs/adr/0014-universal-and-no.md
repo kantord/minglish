@@ -56,10 +56,10 @@ decides the scope.
 
 The First Token of a sentence announces the Sentence Shape, so the reader
 knows the Sentence Shape after the First Token. The word "if" opens a
-Conditional. The word "do" opens a Prohibition. The word "no" opens a
-universal Negation. The word "every" opens a universal statement. A Bare
-Plural opens a generic statement. A determiner opens a plain statement. An
-Indexical Pronoun opens a plain statement.
+Conditional, the word "do" opens a Prohibition, and the word "no" opens a
+universal Negation. The word "every" opens a universal statement, and a
+Bare Plural opens a generic statement. A determiner opens a plain
+statement, and an Indexical Pronoun opens a plain statement.
 
 Every future Sentence Shape must take a distinct First Token. A question is
 one example of a future Sentence Shape. An existential statement is a

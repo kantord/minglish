@@ -67,6 +67,27 @@ that is not derivable from the code, ADRs, or git history.
   construction (Condition 2/3), not more prompt tuning.
   `crates/agenttest`'s `SKILL_PATH` now points at the new file;
   `SKILL.md` itself is untouched (still the general onboarding doc).
+- `docs/naturalness-iteration-2026-09-05.md` — round 2: tested whether
+  a *grammar* construction (ADR 0050, 3-way clause Coordination) fixes
+  naturalness where the prompt A/B couldn't. It doesn't, by itself:
+  5 independent blind-judged trials across both rounds (2 documents, 3
+  intervention types — prompt, grammar, word choice) all score 2/5.
+  Real finding: dense enumerative/defined-term content has a
+  naturalness ceiling sentence-level fixes don't move; the actual gap
+  is a missing associative/table-shaped block construction, a bigger
+  project than this round, or the naturalness bar itself needs
+  reconsidering for table-shaped content. ADR 0050 is kept anyway (a
+  real, regression-tested capability gain) even though it didn't
+  deliver the naturalness win it was built for.
+- `docs/controversial-decisions-2026-09-05.md` — every unilateral,
+  user-unvalidated call made across both A/B rounds, most notably: a
+  live grammar change may contradict ADR 0048 ("one shape per
+  meaning") and directly overlaps a `grilling`-skill interview on that
+  exact question that got cut off mid-conversation and never resumed;
+  and both rounds' "test"/"judge" agents were free Claude subagents,
+  not the real OpenRouter model `agenttest` actually uses in
+  production. Read this before trusting either A/B round's numbers at
+  face value, and before deciding whether ADR 0050 stands.
 - `domain/model.json` — the domain model (ADR 0027): every project term with
   its minglish definition; `CONTEXT.md` is generated from it. Noun terms are
   written Capitalized in minglish text. `just define <Term>` looks one up.

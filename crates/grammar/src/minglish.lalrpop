@@ -313,9 +313,26 @@ Causal: Tree = {
 // (see the note on Tailn above for why). The comma is mandatory; a
 // shared-subject predicate coordination (no new clause) stays on
 // Statement's comma-free Tailn instead.
+//
+// N-ary as of ADR 0050: a run of 3+ different-subject clauses (Oxford-comma
+// style, conjunction only before the last) is a distinct empirical failure
+// shape in docs/judge-report.md — a run of same-template different-subject
+// sentences reads as tableized/mechanical prose far more often than any
+// other single naturalness issue. `(<Clause> <LComma>)+` generalizes the
+// old exact-binary production (one repetition == the old shape, so every
+// previously-accepted 2-clause sentence still parses identically); no new
+// LALR ambiguity, because a Clause never starts with Conj (and/or/but), so
+// the parser always knows whether to keep collecting list items or to
+// close the list at the final "Conj Clause". Only this standalone,
+// Sentence-level form is generalized — Conditional's and Causal's own
+// inline coordination (ADR 0038) stay binary; chaining 3+ clauses through
+// "if"/"so"/"because" was judged out of scope for this pass (see
+// docs/prompt-ab.md-adjacent decisions log).
 CoordClause: Tree = {
     <c:Clause> <cm:LComma> <cj:LConj> <cl:Clause> =>
         nd("CoordClause", 2, vec![Some(c), Some(cm), Some(cj), Some(cl)]),
+    <c:Clause> <cm1:LComma> <c2:Clause> <cm2:LComma> <cj:LConj> <cl:Clause> =>
+        nd("CoordClause", 4, vec![Some(c), Some(cm1), Some(c2), Some(cm2), Some(cj), Some(cl)]),
 };
 
 // do not <verb …> — prohibition (ADR 0005).
