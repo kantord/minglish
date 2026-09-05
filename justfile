@@ -15,7 +15,11 @@ showcase:
 # lint one or more sentences (quote each one: just lint "the agent reads the file")
 [positional-arguments]
 lint +SENTENCES:
-    -cargo run -q -p diagnose -- "$@"
+    -cargo run -q -p diagnose --bin diagnose -- "$@"
+
+# real-usage frequency of diagnose() outcomes and STYLE finding kinds
+finding-frequency:
+    cargo run -q -p diagnose --bin finding-frequency
 
 # document-level lint of one markdown file (parse rate, topic continuity, relation inventory)
 lint-file FILE:

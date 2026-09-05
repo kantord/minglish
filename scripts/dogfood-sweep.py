@@ -14,7 +14,7 @@ for adr in sorted(glob.glob("docs/adr/*.md")):
         continue
     ok = 0
     for i in range(0, len(sents), 20):
-        out = subprocess.run(["cargo", "run", "-q", "-p", "diagnose", "--"] + sents[i:i+20],
+        out = subprocess.run(["cargo", "run", "-q", "-p", "diagnose", "--bin", "diagnose", "--"] + sents[i:i+20],
                              capture_output=True, text=True).stdout
         for line in out.splitlines():
             if line.startswith("✓"):

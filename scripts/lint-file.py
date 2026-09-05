@@ -62,7 +62,7 @@ def lint(sents):
     sentence's own second line as if it were the diagnosis)."""
     if not sents:
         return []
-    r = subprocess.run(["cargo", "run", "-q", "-p", "diagnose", "--", *sents],
+    r = subprocess.run(["cargo", "run", "-q", "-p", "diagnose", "--bin", "diagnose", "--", *sents],
                        cwd=ROOT, capture_output=True, text=True)
     lines = (r.stdout + r.stderr).splitlines()
     verdicts = []

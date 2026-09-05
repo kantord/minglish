@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 OUT=docs/showcase.md
-run() { cargo run -q -p diagnose -- "$@" 2>&1 || true; }
+run() { cargo run -q -p diagnose --bin diagnose -- "$@" 2>&1 || true; }
 
 {
 echo "# Showcase: the minglish Linter, end to end"

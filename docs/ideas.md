@@ -254,13 +254,39 @@ object of "stores" …`. `AntiBareCoordObject`/`AntiNounVerbSlot` mostly
 overlap with checks already fixed earlier the same session, so they
 don't visibly change those specific cases — expected, not a problem.
 
-**Still not done**: build antiparsers for the corpus's actual highest-
-frequency STYLE findings (needs instrumenting how often each
-`pattern_findings` check fires, to prioritize by real impact rather than
-guessing); decide whether `Repair::Single` results get surfaced as
-"try: X" suggestions only, or auto-applied in a repair-proposal flow
-(matching `autofix-paragraphs`'s existing human-verdict gate, `just
-verdict`, rather than silently rewriting anything).
+**Frequency instrumented, 2026-09-05**: `just finding-frequency`
+(`crates/diagnose/src/bin/finding-frequency.rs`) runs every sentence in
+`tests/paragraph-cases/*.yaml` + `tests/agent-cases/*.yaml` (6643
+sentences — real LLM repair-attempt text, the population that actually
+matters for prioritizing antiparsers) plus the UD-EWT corpus (2077
+sentences, kept only for comparison — 97.6% fail at the WORD level
+before reaching structural analysis at all, confirming EWT is the wrong
+source for this question) through `diagnose()`, buckets STYLE findings
+by template (quoted spans normalized to `X`), and writes
+`docs/finding-frequency-report.md`. Real ranking, near-miss data: 480×
+"singular noun needs a determiner", 473× "a clause cannot be the object
+of a verb", 273× noun-noun compounds, 121× "is a defined term", 114×
+inline-list-should-be-Enumeration. The generic fallback itself only
+fires 23/6643 times (0.35%) — most rejections already get a specific
+explanation; the antiparser backlog above should be prioritized off this
+ranking, not off the fallback's own (rare) firing.
+
+Building this surfaced an unrelated bug: `crates/diagnose` gained a
+second `[[bin]]` target (`src/bin/finding-frequency.rs`, next to the
+crate's existing `src/main.rs`), which made every `cargo run -p diagnose`
+call site ambiguous and silently empty under `|| true` (`scripts/
+showcase.sh` regenerated `docs/showcase.md` down to its first 5 lines).
+Fixed by pinning all four call sites (`scripts/showcase.sh`, `scripts/
+lint-file.py`, `scripts/dogfood-sweep.py`, `justfile`'s `lint` recipe) to
+`--bin diagnose` explicitly — a standing gotcha for any future second
+binary added to a crate that already has a `main.rs`.
+
+**Still not done**: build antiparsers for the ranked findings above,
+starting with the top 2-3 (determiner-omission, clause-as-object);
+decide whether `Repair::Single` results get surfaced as "try: X"
+suggestions only, or auto-applied in a repair-proposal flow (matching
+`autofix-paragraphs`'s existing human-verdict gate, `just verdict`,
+rather than silently rewriting anything).
 5. **Faithfulness gate: bidirectional NLI** (later, and its real value is
    not ranking). A candidate is a faithful rewrite only if input ⊨ candidate
    and candidate ⊨ input; a role swap fails one direction. This mechanizes

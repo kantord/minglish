@@ -1,18 +1,29 @@
 # Project status and handoff
 
-Last updated: 2026-09-04 (`crates/antiparse` wired into `diagnose()`
-as a fourth channel, ahead of the generic "restructure into one of
-the minglish templates" fallback — when the hand-written
-`pattern_findings`/`slot_findings` checks find nothing, an
-antiparser match is tried, ranked by proximity to Tier-1's real
-failure position (new: `grammar::parse_tokens` /
-`failure_position`). Confirmed genuine, not just infrastructure:
-"the mechanism only stores the report" (ADR 0047's free-`only`
-ban, no prior dedicated check) now gets a specific `[AntiFreeOnly]`
-explanation with both candidate fixes named, instead of the generic
-message. See docs/ideas.md, "Antiparsers", for the full writeup and
-what's still not done). Everything a fresh agent needs that is not
-derivable from the code, ADRs, or git history.
+Last updated: 2026-09-05 (`just finding-frequency` — real-usage
+instrumentation of `diagnose()` outcomes over 6643 near-miss minglish
+sentences from `tests/paragraph-cases/` + `tests/agent-cases/`. Ranks
+STYLE finding kinds so the antiparser backlog (docs/ideas.md,
+"Antiparsers") gets built off real frequency, not guesses: top gaps
+are "singular noun needs a determiner" (480×), "clause cannot be the
+object of a verb" (473×), noun-noun compounds (273×). The generic
+fallback fires only 0.35% of the time. Report: docs/finding-frequency-
+report.md. Fixed along the way: adding a crate's second `[[bin]]`
+target silently broke every `cargo run -p diagnose` call site that
+didn't pin `--bin diagnose` (showcase.sh, lint-file.py, dogfood-
+sweep.py, justfile's `lint`) — `|| true` swallowed the ambiguous-
+target error and truncated docs/showcase.md to nothing. On 2026-09-04,
+`crates/antiparse` was wired into `diagnose()` as a fourth channel,
+ahead of the generic fallback — when the hand-written
+`pattern_findings`/`slot_findings` checks find nothing, an antiparser
+match is tried, ranked by proximity to Tier-1's real failure position
+(new: `grammar::parse_tokens` / `failure_position`). Confirmed
+genuine, not just infrastructure: "the mechanism only stores the
+report" (ADR 0047's free-`only` ban, no prior dedicated check) now
+gets a specific `[AntiFreeOnly]` explanation with both candidate fixes
+named, instead of the generic message. See docs/ideas.md,
+"Antiparsers", for the full writeup). Everything a fresh agent needs
+that is not derivable from the code, ADRs, or git history.
 
 ## Where everything lives
 
