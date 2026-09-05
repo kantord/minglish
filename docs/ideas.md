@@ -3,6 +3,37 @@
 Parking lot for directions we intend to explore but have deliberately not
 committed to. Move an item into an ADR when it becomes a real decision.
 
+## Register parameters — configurable per-document constraints (2026-09-05)
+
+Raised by the maintainer while discussing ADR 0052 (adding "am"). "I"
+is already a sanctioned Pronoun usable as the subject of any ordinary
+verb everywhere in minglish — the ADR 0052 gap was narrowly "I" +
+Copula, an accidental hole, not a deliberate first-person restriction.
+But the maintainer wants a *real* first-person restriction available
+for some registers (ADRs are the concrete example: read through this
+session's own corpus work, every ADR uses "the maintainers decided",
+never "I decided" — an existing, unenforced convention, not a rule).
+
+The idea: a **register parameter** — a named, document-level (or
+per-run) switch the Linter checks in addition to the fixed Grammar,
+not a Grammar-level ban. This matches the project's existing
+Grammar-accepts/Linter-verifies split (the same architecture behind
+`same_verb_coordination`/`other_domain_membership` in
+`crates/diagnose`, and the antiparsers) — a register parameter is
+exactly that pattern generalized: the Grammar stays register-agnostic
+(sentences that use "I" always parse), and a register-level check
+in the Linter can reject them when the active register forbids it,
+with its own named, actionable error (e.g. "the ADR register bans the
+Pronoun 'I' — name the maintainers or the tool instead").
+
+First candidate parameter: `first_person: allowed | banned`. Not
+designed further this session — needs at minimum: how a document
+declares its own register (frontmatter? a CLI flag to `just lint`?),
+whether `docjudge`/`prejudge` need register-awareness too, and whether
+any other existing "soft convention" in the corpus (there may be more
+than just first-person) is a second candidate parameter worth adding
+at the same time rather than one at a time.
+
 ## A fully self-hosting language specification (2026-09-05)
 
 Raised by the maintainer. minglish already dogfoods *some* of its own

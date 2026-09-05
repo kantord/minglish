@@ -307,7 +307,7 @@ fn word(t: &Tok) -> &str {
         | Tok::VtBase(w) | Tok::Vt3(w) | Tok::VtEd(w) | Tok::VtIng(w) | Tok::ViBase(w)
         | Tok::Vi3(w) | Tok::ViEd(w) | Tok::ViIng(w) | Tok::PrepN(w) | Tok::PrepV(w)
         | Tok::Pron1(w) | Tok::Pron2(w) | Tok::Poss(w) | Tok::CopSg(w) | Tok::CopPl(w)
-        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w) | Tok::TimeAdv(w) | Tok::Yet(w) | Tok::Focus(w) | Tok::Other(w)
+        | Tok::CopSgPast(w) | Tok::CopPlPast(w) | Tok::Cop1Sg(w) | Tok::Conj(w) | Tok::Neg(w) | Tok::TempAdv(w) | Tok::TimeAdv(w) | Tok::Yet(w) | Tok::Focus(w) | Tok::Other(w)
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
@@ -456,7 +456,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
             );
         }
         // progressive / passive after copula
-        if matches!(w[0], Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
+        if matches!(w[0], Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)) {
             match &w[1] {
                 Tok::VtIng(_) | Tok::ViIng(_) => out.push(
                     "progressive (\"is <verb>-ing\") is not in minglish — use the simple form \
@@ -477,7 +477,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         let verbs: Vec<usize> = toks
             .iter()
             .enumerate()
-            .filter(|(_, t)| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)))
+            .filter(|(_, t)| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)))
             .map(|(i, _)| i)
             .collect();
         if verbs.len() >= 2 {
@@ -520,7 +520,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         let ofs: Vec<usize> = toks.iter().enumerate().filter(|(_, t)| matches!(t, Tok::PrepN(_))).map(|(i, _)| i).collect();
         for w in ofs.windows(2) {
             let between = &toks[w[0] + 1..w[1]];
-            if !between.iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Conj(_) | Tok::Comma | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))) {
+            if !between.iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_) | Tok::Conj(_) | Tok::Comma | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))) {
                 out.push(
                     "\"of … of\" — \"of\" does not chain; name the inner thing in its own sentence, \
                      or drop one level (ADR 0011)"
@@ -614,7 +614,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     }
     // a bare number as a complement: "the bound is 4" (measurements are deferred, ADR 0022)
     for (i, t) in toks.iter().enumerate() {
-        if matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
+        if matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)) {
             let mut j = i + 1;
             if matches!(toks.get(j), Some(Tok::Approx(_))) { j += 1; }
             if matches!(toks.get(j), Some(Tok::NumPl(_))) && toks.get(j + 1).is_none() {
@@ -704,7 +704,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     // a stray "not" inside a noun phrase: "a person not the speaker"
     for (i, t) in toks.iter().enumerate() {
         if matches!(t, Tok::Neg(_)) && i > 0
-            && !matches!(toks[i - 1], Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::DoBase(_) | Tok::Do3(_) | Tok::DoPast(_) | Tok::ModalMust(_))
+            && !matches!(toks[i - 1], Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_) | Tok::DoBase(_) | Tok::Do3(_) | Tok::DoPast(_) | Tok::ModalMust(_))
         {
             out.push("\"not\" negates the verb only — write \"does not <verb>\" or \"is not <adjective>\"; a noun phrase cannot carry \"not\" (ADR 0005)".to_string());
         }
@@ -713,8 +713,8 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     for (i, t) in toks.iter().enumerate() {
         if matches!(t, Tok::Comma) && !matches!(toks.get(i + 1), Some(Tok::So(_) | Tok::Because(_) | Tok::Then(_) | Tok::Conj(_)))
             && !matches!(toks.first(), Some(Tok::If(_)))
-            && toks[..i].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)))
-            && toks[i + 1..].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)))
+            && toks[..i].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)))
+            && toks[i + 1..].iter().any(|t| is_finite_verb(t) || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)))
         {
             out.push("a comma cannot join 2 clauses — write 2 sentences, or \"<clause>, so <clause>\" / \"<clause>, because <clause>\" (ADR 0026)".to_string());
         }
@@ -799,7 +799,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     {
         let first_verb = toks.iter().position(|t| {
             is_finite_verb(t)
-                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
+                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)
                     | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))
         });
         if let Some(v) = first_verb {
@@ -818,7 +818,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
     }
     // copula + prepositional phrase / adjective + PP (ADR 0003; ADR 0023 deferral)
     for (i, t) in toks.iter().enumerate() {
-        if !matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)) {
+        if !matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)) {
             continue;
         }
         let mut j = i + 1;
@@ -852,7 +852,7 @@ fn pattern_findings(toks: &[Tok]) -> Vec<String> {
         }
         let verb_before = toks[..i].iter().any(|t| {
             is_finite_verb(t)
-                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_)
+                || matches!(t, Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_)
                     | Tok::ModalMust(_) | Tok::ModalCan(_) | Tok::ModalCannot(_) | Tok::Do3(_) | Tok::DoBase(_) | Tok::DoPast(_))
         });
         if matches!(toks.get(j), Some(Tok::NounSg(_) | Tok::NounPl(_) | Tok::Name(_)))
@@ -1048,7 +1048,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::PrepN(_) => vec![Term::PrepN],
         Tok::PrepV(_) => vec![Term::PrepV],
         Tok::Pron1(_) | Tok::Pron2(_) => vec![Term::Pron],
-        Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) => vec![Term::CopAny],
+        Tok::CopSg(_) | Tok::CopPl(_) | Tok::CopSgPast(_) | Tok::CopPlPast(_) | Tok::Cop1Sg(_) => vec![Term::CopAny],
         Tok::Conj(_) => vec![Term::Conj],
         Tok::Neg(_) => vec![Term::Neg],
         Tok::TempAdv(_) => vec![Term::TempAdv],

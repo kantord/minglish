@@ -216,6 +216,8 @@ adversative	form	ADJ_LONG	adversative
 advice	form	NOUN_SG	advice
 advices	form	NOUN_PL	advice
 affect	form	NOUN_SG	affect
+affection	form	NOUN_SG	affection
+affections	form	NOUN_PL	affection
 affects	form	NOUN_PL	affect
 after	form	PREP_V	after
 afterward	form	TIME_ADV	afterward
@@ -230,10 +232,12 @@ allow	form	VERB_TRANS_BASE	allow
 allowed	form	VERB_TRANS_ED	allow
 allowing	form	VERB_TRANS_ING	allow
 allows	form	VERB_TRANS_3SG	allow
+alone	form	ADJ_LONG	alone
 already	form	TEMP_ADV	already
 also	ban	-	"also" adds a second claim - write the claim as its own sentence; the reader keeps both
 alternative	form	NOUN_SG	alternative
 alternatives	form	NOUN_PL	alternative
+am	form	COPULA_1SG	am
 ambiguities	form	NOUN_PL	ambiguity
 ambiguity	form	NOUN_SG	ambiguity
 ambiguous	form	ADJ_LONG	ambiguous
@@ -370,6 +374,8 @@ brands	form	NOUN_PL	brand
 break	form	VERB_TRANS_BASE	break
 breaking	form	VERB_TRANS_ING	break
 breaks	form	VERB_TRANS_3SG	break
+breeze	form	NOUN_SG	breeze
+breezes	form	NOUN_PL	breeze
 broke	form	VERB_TRANS_ED	break
 broken	form	VERB_TRANS_ED	break
 bug	form	NOUN_SG	bug
@@ -585,6 +591,8 @@ cost	reject	NOUN	expense
 costed	form	VERB_TRANS_ED	cost
 costing	form	VERB_TRANS_ING	cost
 costs	form	VERB_TRANS_3SG	cost
+cottage	form	NOUN_SG	cottage
+cottages	form	NOUN_PL	cottage
 could	ban	-	for possibility rephrase the sentence, or state the fact plainly (ADR 0009, ADR 0042)
 count	form	VERB_TRANS_BASE	count
 counted	form	VERB_TRANS_ED	count
@@ -600,6 +608,8 @@ create	form	VERB_TRANS_BASE	create
 created	form	VERB_TRANS_ED	create
 creates	form	VERB_TRANS_3SG	create
 creating	form	VERB_TRANS_ING	create
+creature	form	NOUN_SG	creature
+creatures	form	NOUN_PL	creature
 criteria	form	NOUN_PL	criterion
 criterion	form	NOUN_SG	criterion
 curate	form	VERB_TRANS_BASE	curate
@@ -617,6 +627,10 @@ dashes	form	NOUN_PL	dash
 data	form	NOUN_SG	data
 database	form	NOUN_SG	database
 databases	form	NOUN_PL	database
+day	form	NOUN_SG	day
+days	form	NOUN_PL	day
+death	form	NOUN_SG	death
+deaths	form	NOUN_PL	death
 debt	form	NOUN_SG	debt
 debts	form	NOUN_PL	debt
 decide	form	VERB_TRANS_BASE	decide
@@ -664,6 +678,8 @@ deleted	form	VERB_TRANS_ED	delete
 deletes	form	VERB_TRANS_3SG	delete
 deleting	form	VERB_TRANS_ING	delete
 deliberate	form	ADJ_LONG	deliberate
+delight	form	NOUN_SG	delight
+delights	form	NOUN_PL	delight
 demonstrative	form	NOUN_SG	demonstrative
 demonstratives	form	NOUN_PL	demonstrative
 dense	form	ADJ_LONG	dense
@@ -686,6 +702,8 @@ describing	form	VERB_TRANS_ING	describe
 design	form	NOUN_SG	design
 design	reject	VERB	plan
 designs	form	NOUN_PL	design
+despair	form	NOUN_SG	despair
+despairs	form	NOUN_PL	despair
 determiner	form	NOUN_SG	determiner
 determiners	form	NOUN_PL	determiner
 deterministic	form	ADJ_LONG	deterministic
@@ -708,6 +726,8 @@ disagree	form	VERB_INTRANS_BASE	disagree
 disagreed	form	VERB_INTRANS_ED	disagree
 disagreeing	form	VERB_INTRANS_ING	disagree
 disagrees	form	VERB_INTRANS_3SG	disagree
+disaster	form	NOUN_SG	disaster
+disasters	form	NOUN_PL	disaster
 discourse	form	NOUN_SG	discourse
 discourse layer	term	-	Discourse Layer
 discourse layers	term	-	Discourse Layers
@@ -854,6 +874,10 @@ false	form	ADJ_LONG	false
 familiar	form	ADJ_LONG	familiar
 familiarities	form	NOUN_PL	familiarity
 familiarity	form	NOUN_SG	familiarity
+father	form	NOUN_SG	father
+fathers	form	NOUN_PL	father
+fear	form	NOUN_SG	fear
+fears	form	NOUN_PL	fear
 feature	form	NOUN_SG	feature
 features	form	NOUN_PL	feature
 fell	form	VERB_INTRANS_ED	fall
@@ -927,6 +951,8 @@ free	form	ADJ	free
 freer	form	ADJ_CMP	free
 frequencies	form	NOUN_PL	frequency
 frequency	form	NOUN_SG	frequency
+friend	form	NOUN_SG	friend
+friends	form	NOUN_PL	friend
 from	form	PREP_V	from
 front	form	NOUN_SG	front
 fronted	ban	-	write "at the front": "the text at the front of the sentence"
@@ -994,6 +1020,7 @@ had	form	VERB_TRANS_ED	have
 half	form	NOUN_SG	half
 halves	form	NOUN_PL	half
 handwritten	form	ADJ_LONG	handwritten
+happiness	form	NOUN_SG	happiness
 has	form	VERB_TRANS_3SG	have
 have	form	VERB_TRANS_BASE	have
 having	form	VERB_TRANS_ING	have
@@ -1006,6 +1033,8 @@ headers	form	NOUN_PL	header
 heads	form	NOUN_PL	head
 hearer	form	NOUN_SG	hearer
 hearers	form	NOUN_PL	hearer
+heart	form	NOUN_SG	heart
+hearts	form	NOUN_PL	heart
 heavier	form	ADJ_CMP	heavy
 heavy	form	ADJ	heavy
 held	form	VERB_TRANS_ED	hold
@@ -1029,6 +1058,13 @@ homes	form	NOUN_PL	home
 homograph	form	NOUN_SG	homograph
 homographs	form	NOUN_PL	homograph
 honest	form	ADJ_LONG	honest
+hope	form	NOUN_SG	hope
+hopes	form	NOUN_PL	hope
+horror	form	NOUN_SG	horror
+horrors	form	NOUN_PL	horror
+house	form	NOUN_SG	house
+houses	form	NOUN_PL	house
+human	form	ADJ_LONG	human
 hurt	form	VERB_TRANS_BASE	hurt
 hurting	form	VERB_TRANS_ING	hurt
 hurts	form	VERB_TRANS_3SG	hurt
@@ -1036,6 +1072,7 @@ hyphenated	form	ADJ_LONG	hyphenated
 hypotheses	form	NOUN_PL	hypothesis
 hypothesis	form	NOUN_SG	hypothesis
 i	form	PRON_1SG	i
+ice	form	NOUN_SG	ice
 idea	form	NOUN_SG	idea
 ideal	form	ADJ_LONG	ideal
 ideas	form	NOUN_PL	idea
@@ -1116,6 +1153,8 @@ join	form	VERB_TRANS_BASE	join
 joined	form	VERB_TRANS_ED	join
 joining	form	VERB_TRANS_ING	join
 joins	form	VERB_TRANS_3SG	join
+joy	form	NOUN_SG	joy
+joys	form	NOUN_PL	joy
 judge	form	VERB_TRANS_BASE	judge
 judged	form	VERB_TRANS_ED	judge
 judges	form	VERB_TRANS_3SG	judge
@@ -1168,6 +1207,7 @@ lexer	term	-	Lexer
 lexers	term	-	Lexers
 lexicon	term	-	Lexicon
 lexicons	term	-	Lexicons
+life	form	NOUN_SG	life
 likely	ban	-	epistemic hedges are banned - state the claim directly, or name the source and let the reader judge it (ADR 0042)
 limit	form	VERB_TRANS_BASE	limit
 limited	form	VERB_TRANS_ED	limit
@@ -1187,6 +1227,7 @@ linting	form	VERB_TRANS_ING	lint
 lints	form	VERB_TRANS_3SG	lint
 list	form	NOUN_SG	list
 lists	form	NOUN_PL	list
+lives	form	NOUN_PL	life
 load	form	NOUN_SG	load
 loads	form	NOUN_PL	load
 logic	form	NOUN_SG	logic
@@ -1204,6 +1245,8 @@ losses	form	NOUN_PL	loss
 lost	form	VERB_TRANS_ED	lose
 loud	form	ADJ	loud
 louder	form	ADJ_CMP	loud
+love	form	NOUN_SG	love
+loves	form	NOUN_PL	love
 lowercase	form	NOUN_SG	lowercase
 lowercases	form	NOUN_PL	lowercase
 machine	form	NOUN_SG	machine
@@ -1218,6 +1261,7 @@ maintainers	form	NOUN_PL	maintainer
 make	form	VERB_TRANS_BASE	make
 makes	form	VERB_TRANS_3SG	make
 making	form	VERB_TRANS_ING	make
+man	form	NOUN_SG	man
 mandatory	form	ADJ_LONG	mandatory
 map	form	VERB_TRANS_BASE	map
 mapped	form	VERB_TRANS_ED	map
@@ -1256,6 +1300,7 @@ member	form	NOUN_SG	member
 members	form	NOUN_PL	member
 memories	form	NOUN_PL	memory
 memory	form	NOUN_SG	memory
+men	form	NOUN_PL	man
 mention	form	VERB_TRANS_BASE	mention
 mentioned	form	VERB_TRANS_ED	mention
 mentioning	form	VERB_TRANS_ING	mention
@@ -1280,6 +1325,8 @@ minimum	form	NOUN_SG	minimum
 minimums	form	NOUN_PL	minimum
 minute	form	NOUN_SG	minute
 minutes	form	NOUN_PL	minute
+miseries	form	NOUN_PL	misery
+misery	form	NOUN_SG	misery
 miss	form	NOUN_SG	miss
 misses	form	NOUN_PL	miss
 mix	form	NOUN_SG	mix
@@ -1328,6 +1375,8 @@ nested	form	ADJ_LONG	nested
 never	form	NEG	never
 new	form	ADJ	new
 newer	form	ADJ_CMP	new
+night	form	NOUN_SG	night
+nights	form	NOUN_PL	night
 nine	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 no	form	QUANT_NEG	no
 noise	form	NOUN_SG	noise
@@ -1985,6 +2034,8 @@ suggest	form	VERB_TRANS_BASE	suggest
 suggested	form	VERB_TRANS_ED	suggest
 suggesting	form	VERB_TRANS_ING	suggest
 suggests	form	VERB_TRANS_3SG	suggest
+sun	form	NOUN_SG	sun
+suns	form	NOUN_PL	sun
 superlative	form	NOUN_SG	superlative
 superlatives	form	NOUN_PL	superlative
 surface form	term	-	Surface Form
@@ -2050,6 +2101,8 @@ things	form	NOUN_PL	thing
 third	form	ORD	third
 this	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
 those	ban	-	third-person reference is banned - repeat the noun you mean (ADR 0002)
+thought	form	NOUN_SG	thought
+thoughts	form	NOUN_PL	thought
 thousand	form	SCALE	thousand
 three	ban	-	counts are digits: write "3 files", not "three files" (ADR 0022)
 thus	ban	-	for a cause and its result write "<cause>, so <result>"; for a result and its reason write "<result>, because <reason>" (ADR 0026)
@@ -2194,6 +2247,7 @@ weighed	form	VERB_TRANS_ED	weigh
 weighing	form	VERB_TRANS_ING	weigh
 weighs	form	VERB_TRANS_3SG	weigh
 weight	ban	-	write "load" (Cognitive Load) or "size"
+welfare	form	NOUN_SG	welfare
 went	form	VERB_INTRANS_ED	go
 were	form	COPULA_PL_PAST	were
 when	ban	-	"when" is not in the language - write "if <clause>, then <clause>" (ADR 0007), or name the event: "after the split" (ADR 0033)
@@ -2212,6 +2266,8 @@ wordings	form	NOUN_PL	wording
 words	form	NOUN_PL	word
 work	form	NOUN_SG	work
 works	form	NOUN_PL	work
+world	form	NOUN_SG	world
+worlds	form	NOUN_PL	world
 write	form	VERB_TRANS_BASE	write
 writer	form	NOUN_SG	writer
 writers	form	NOUN_PL	writer

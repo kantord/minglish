@@ -37,6 +37,7 @@ extern {
         "COP_PL" => Tok::CopPl(<String>),
         "COP_SG_PAST" => Tok::CopSgPast(<String>),
         "COP_PL_PAST" => Tok::CopPlPast(<String>),
+        "COP_1SG" => Tok::Cop1Sg(<String>),
         "CONJ" => Tok::Conj(<String>),
         "NEG" => Tok::Neg(<String>),
         "TEMP_ADV" => Tok::TempAdv(<String>),
@@ -106,6 +107,11 @@ LCopSg: Tree = <l:@L> <w:"COP_SG"> => leaf(l, w);
 LCopPl: Tree = <l:@L> <w:"COP_PL"> => leaf(l, w);
 LCopSgPast: Tree = <l:@L> <w:"COP_SG_PAST"> => leaf(l, w);
 LCopPlPast: Tree = <l:@L> <w:"COP_PL_PAST"> => leaf(l, w);
+// "am" (ADR 0052): a distinct Form Tag from "is", valid only after "I" —
+// Pred1Core is the only production that references it, so "the file am"
+// can never parse (unlike reusing LCopSg, which would accept "am"
+// anywhere a regular singular subject's copula is expected).
+LCop1Sg: Tree = <l:@L> <w:"COP_1SG"> => leaf(l, w);
 LConj: Tree = <l:@L> <w:"CONJ"> => leaf(l, w);
 LNeg: Tree = <l:@L> <w:"NEG"> => leaf(l, w);
 LTempAdv: Tree = <l:@L> <w:"TEMP_ADV"> => leaf(l, w);
@@ -393,7 +399,12 @@ PredPLCore: Tree = {
     CopPredn<LBecomePast>,
 };
 
-// First person: base agreement, but no copula — *am* is not in the language.
+// First person: base agreement for ordinary verbs. The Copula (ADR 0052)
+// gets a real "am" (LCop1Sg, present) — reusing "is" would parse but read
+// as "I is", not the collapse-irregular-forms move it looks like (unlike
+// was/were -> "was", which is already correct English for "I"). The past
+// tense already works for free: LCopSgPast is "was", and "I was" is
+// standard English, so no new word was needed there.
 Pred1: Tree = PredAdv<Pred1Core>;
 Pred1Core: Tree = {
     VPn<LVtBase, LViBase>,
@@ -401,6 +412,13 @@ Pred1Core: Tree = {
     NegVPn<LDoBase>,
     NegVPn<LDoPast>,
     ModalVP,
+    CopPredn<LCop1Sg>,
+    CopPredn<LCopSgPast>,
+    // ADR 0035's become agrees with "I" like any base-form verb: "become",
+    // not "becomes" (LBecomeSg is 3rd-singular, wrong for "I" — the same
+    // base/3sg distinction Pred1Core already makes for ordinary verbs above).
+    CopPredn<LBecomePl>,
+    CopPredn<LBecomePast>,
 };
 
 // Positive-only predicate sets for quantified subjects (ADR 0014);

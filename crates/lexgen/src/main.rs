@@ -17,6 +17,10 @@ use seed::{Category, SeedEntry};
 
 const SEED_PATH: &str = "seed/seed.json";
 const DOMAIN_PATH: &str = "domain/model.json";
+/// Vocabulary packs (ADR 0053): (name, path). A minglish document doesn't
+/// yet declare which packs it uses (deferred — see the ADR); for now every
+/// pack always loads, same as the domain model.
+const PACKS: &[(&str, &str)] = &[("narrative", "packs/narrative.json")];
 const CONTEXT_PATH: &str = "CONTEXT.md";
 const LEXICON_PATH: &str = "lexicon.tsv";
 const REPORT_PATH: &str = "docs/lexicon-report.md";
@@ -56,6 +60,19 @@ fn main() {
             exit(1);
         }
     }
+    // vocabulary packs (ADR 0053): loaded after core+domain so the
+    // "no override" check below sees the full core+domain set first.
+    let core_and_domain_lemmas: BTreeSet<(String, String)> =
+        entries.iter().map(|e| (e.lemma.clone(), e.category.clone())).collect();
+    for (name, path) in PACKS {
+        match seed::load_pack(path, name) {
+            Ok(p) => entries.extend(p),
+            Err(e) => {
+                eprintln!("error: {path}: {e}");
+                exit(1);
+            }
+        }
+    }
     let refdata = match RefData::load("data") {
         Ok(r) => r,
         Err(e) => {
@@ -83,6 +100,16 @@ fn main() {
             errors.push(format!(
                 "domain term \"{}\" is also a core lemma — the pack may not override the seed",
                 e.lemma
+            ));
+        }
+    }
+
+    // -- lint: a vocabulary pack adds, never overrides (ADR 0053) ------------
+    for e in entries.iter().filter(|e| e.pack.is_some()) {
+        if core_and_domain_lemmas.contains(&(e.lemma.clone(), e.category.clone())) {
+            errors.push(format!(
+                "pack word \"{}\" ({}) is also a core or domain lemma — a pack may not override the seed",
+                e.lemma, e.pack.as_deref().unwrap_or("?")
             ));
         }
     }

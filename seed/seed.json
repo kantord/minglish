@@ -394,6 +394,11 @@
     "note": "present-only copula; lemma be deliberately absent (ADR 0003)"
   },
   {
+    "lemma": "am",
+    "category": "COPULA_1SG",
+    "note": "present copula after \"I\" only (ADR 0052); not an alternate spelling of \"is\" — a distinct Form Tag, so it never appears after a regular singular subject"
+  },
+  {
     "lemma": "are",
     "category": "COPULA_PL",
     "note": "present-only copula (ADR 0003)"

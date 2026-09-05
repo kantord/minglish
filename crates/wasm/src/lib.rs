@@ -80,7 +80,7 @@ fn word_of(t: &Tok) -> &str {
         Det(w) | DetSg(w) | Adj(w) | NounSg(w) | NounPl(w) | VtBase(w) | Vt3(w) | VtEd(w)
         | VtIng(w) | ViBase(w) | Vi3(w) | ViEd(w) | ViIng(w) | PrepN(w) | PrepV(w)
         | Pron1(w) | Pron2(w) | Poss(w) | CopSg(w) | CopPl(w) | CopSgPast(w)
-        | CopPlPast(w) | Conj(w) | Neg(w) | TempAdv(w) | TimeAdv(w) | Yet(w) | Focus(w) | Other(w) | DoBase(w) | Do3(w) | DoPast(w)
+        | CopPlPast(w) | Cop1Sg(w) | Conj(w) | Neg(w) | TempAdv(w) | TimeAdv(w) | Yet(w) | Focus(w) | Other(w) | DoBase(w) | Do3(w) | DoPast(w)
         | ModalMust(w) | ModalCan(w) | ModalCannot(w) | If(w) | Then(w) | Every(w)
         | No(w) | Num(w) | NumPl(w) | Percent(w) | Approx(w) | So(w) | Because(w)
         | Ord(w) | Than(w) | More(w) | Scale(w) | AdjCmp(w) | AdjLong(w) | Be(w)
@@ -116,6 +116,7 @@ fn tag_of(t: &Tok) -> &'static str {
         CopPl(_) => "COPULA_PL",
         CopSgPast(_) => "COPULA_SG_PAST",
         CopPlPast(_) => "COPULA_PL_PAST",
+        Cop1Sg(_) => "COPULA_1SG",
         Conj(_) => "CONJ",
         Neg(_) => "NEG",
         TempAdv(_) => "TEMP_ADV",

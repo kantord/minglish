@@ -38,6 +38,11 @@ pub struct SeedEntry {
     /// True for entries loaded from domain/model.json (never serialized).
     #[serde(skip)]
     pub domain: bool,
+    /// The pack this entry came from (ADR 0053), e.g. "narrative" — never
+    /// serialized, set by `load_pack`. `None` for core seed and domain
+    /// entries.
+    #[serde(skip)]
+    pub pack: Option<String>,
     /// Curation rationale. Free text, never machine-read (hence dead_code).
     #[serde(default)]
     #[allow(dead_code)]
@@ -105,6 +110,18 @@ impl Category {
 
 pub fn load(path: &str) -> Result<Vec<SeedEntry>, String> {
     load_with(path, false)
+}
+
+/// A vocabulary pack (ADR 0053): plain seed-shaped entries (same rules as
+/// the core seed — single lowercase lemma, no domain-model fields), tagged
+/// with the pack's name so the caller can enforce "packs add, never
+/// override" without re-deriving which entries came from which file.
+pub fn load_pack(path: &str, pack_name: &str) -> Result<Vec<SeedEntry>, String> {
+    let mut entries = load(path)?;
+    for e in &mut entries {
+        e.pack = Some(pack_name.to_string());
+    }
+    Ok(entries)
 }
 
 /// Load a seed-shaped file. Domain-model entries may have multi-word lemmas

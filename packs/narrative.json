@@ -1,0 +1,175 @@
+[
+  {
+    "lemma": "breeze",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot: 'a cold breeze filled me with delight'"
+  },
+  {
+    "lemma": "delight",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "disaster",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "welfare",
+    "category": "NOUN",
+    "forms": { "plural": "welfare" },
+    "note": "uncountable, like 'data'; Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "heart",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "joy",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "fear",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "verb sense ('to fear') deferred; use 'X filled with fear' instead"
+  },
+  {
+    "lemma": "hope",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "verb sense ('to hope') deferred, same as fear"
+  },
+  {
+    "lemma": "despair",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "verb sense ('to despair') deferred, same as fear"
+  },
+  {
+    "lemma": "horror",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "misery",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "thought",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "the base verb 'think' is not in the language, but 'thought' is independently attested as a rare verb form ('to thought'); 'thought' here is a bare noun"
+  },
+  {
+    "lemma": "father",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "friend",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "love",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "verb sense ('to love') deferred; use 'X filled with love' instead"
+  },
+  {
+    "lemma": "affection",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "happiness",
+    "category": "NOUN",
+    "forms": { "plural": "happiness" },
+    "note": "uncountable, like 'data'"
+  },
+  {
+    "lemma": "life",
+    "category": "NOUN",
+    "forms": { "plural": "lives" },
+    "note": "irregular plural; no VERB_TRANS 'live' exists yet, so 'lives' cannot collide"
+  },
+  {
+    "lemma": "death",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "human",
+    "category": "ADJ",
+    "waive": ["NOUN"],
+    "note": "noun sense ('a human') deferred; use 'man' or 'creature' instead"
+  },
+  {
+    "lemma": "creature",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "man",
+    "category": "NOUN",
+    "forms": { "plural": "men" },
+    "waive": ["ADJ", "VERB"],
+    "note": "irregular plural; ADJ/VERB senses ('man enough', 'to man a post') deferred"
+  },
+  {
+    "lemma": "alone",
+    "category": "ADJ",
+    "waive": ["ADV"],
+    "note": "predicate use only ('I am alone', enabled by ADR 0052); adverbial use deferred"
+  },
+  {
+    "lemma": "house",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "verb sense ('to house') deferred as out of scope for this pack"
+  },
+  {
+    "lemma": "cottage",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "sun",
+    "category": "NOUN",
+    "waive": ["VERB"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "ice",
+    "category": "NOUN",
+    "forms": { "plural": "ice" },
+    "waive": ["VERB"],
+    "note": "uncountable, like 'data'"
+  },
+  {
+    "lemma": "day",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "night",
+    "category": "NOUN",
+    "note": "Frankenstein Letter 1 pilot gap"
+  },
+  {
+    "lemma": "world",
+    "category": "NOUN",
+    "waive": ["ADJ"],
+    "note": "Frankenstein Letter 1 pilot gap"
+  }
+]
