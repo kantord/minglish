@@ -43,6 +43,9 @@ pub fn diagnose(lexicon: &Lexicon, sentence: &str) -> Diagnosis {
             if let Some(msg) = same_verb_coordination(lexicon, &tree) {
                 return Diagnosis::Style(vec![msg]);
             }
+            if let Some(msg) = vague_appositive(lexicon, &tree) {
+                return Diagnosis::Style(vec![msg]);
+            }
             if let Some(msg) = other_domain_membership(lexicon, &tree) {
                 return Diagnosis::Style(vec![msg]);
             }
@@ -159,6 +162,50 @@ fn same_verb_coordination(lexicon: &Lexicon, tree: &Tree) -> Option<String> {
     if let Tree::Node { children, .. } = tree {
         for c in children {
             if let Some(m) = same_verb_coordination(lexicon, c) {
+                return Some(m);
+            }
+        }
+    }
+    None
+}
+
+/// A generic placeholder noun ("term", "thing", ...) that reads as a
+/// vague auto-inserted tag when it is the ENTIRE content of an
+/// Appositive (ADR 0054), with no adjective and no "of"-PP to give it
+/// real content. A direct A/B test found this exact contrast: "The
+/// Redirect, a term, appears in the Lexicon" scored 2/5 (the judge:
+/// "vague filler... auto-inserted gloss tag"), while the identical
+/// shape with a modifier ("a term of the project") scored 4/5. A CFG
+/// cannot single out "term" from a specific noun like "Function Word"
+/// — both are just LNounSg — so this is a closed, curated word list, a
+/// semantic check in the same spirit as ADR 0048's same-verb check
+/// just above.
+const VAGUE_APPOS_NOUNS: &[&str] = &[
+    "term", "thing", "kind", "sort", "item", "entity", "aspect", "element", "factor", "part", "piece",
+];
+
+fn vague_appositive(lexicon: &Lexicon, tree: &Tree) -> Option<String> {
+    if let Tree::Node { label: "Appos", children, .. } = tree {
+        // children: [subject, comma, "namely", content NP, comma] since
+        // the 2026-09-06 revision made "namely" mandatory (ADR 0054) —
+        // content moved from index 2 to index 3.
+        if let Some(Tree::Node { label: "NP", children: np, .. }) = children.get(3) {
+            if np.len() == 2 {
+                if let Tree::Leaf { word, .. } = &np[1] {
+                    let lemma = lexicon.lemma_of(word).unwrap_or(word);
+                    if VAGUE_APPOS_NOUNS.contains(&lemma) {
+                        return Some(format!(
+                            "\"{word}\" alone in an Appositive reads as a vague placeholder — \
+                             add a modifier (\"a {word} of <thing>\") or use a more specific noun (ADR 0054)"
+                        ));
+                    }
+                }
+            }
+        }
+    }
+    if let Tree::Node { children, .. } = tree {
+        for c in children {
+            if let Some(m) = vague_appositive(lexicon, c) {
                 return Some(m);
             }
         }
@@ -311,7 +358,7 @@ fn word(t: &Tok) -> &str {
         | Tok::DoBase(w) | Tok::Do3(w) | Tok::DoPast(w) | Tok::ModalMust(w)
         | Tok::ModalCan(w) | Tok::ModalCannot(w) | Tok::If(w) | Tok::Then(w)
         | Tok::Every(w) | Tok::No(w) | Tok::Num(w) | Tok::NumPl(w) | Tok::Percent(w)
-        | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Some_(w) | Tok::Name(w)
+        | Tok::Approx(w) | Tok::So(w) | Tok::Because(w) | Tok::Namely(w) | Tok::Some_(w) | Tok::Name(w)
         | Tok::Ord(w) | Tok::Than(w) | Tok::More(w) | Tok::Scale(w) | Tok::AdjCmp(w) | Tok::AdjLong(w) | Tok::Be(w) | Tok::BecomeSg(w) | Tok::BecomePl(w) | Tok::BecomePast(w) => w,
         Tok::Comma => ",",
         Tok::Colon => ":",
@@ -1020,7 +1067,7 @@ fn slot_findings(lexicon: &Lexicon, toks: &[Tok]) -> Vec<String> {
 enum Term {
     Det, DetSg, Poss, Every, No, Some_, Num, Adj, NSg, NPl,
     VAny, PrepN, PrepV, Pron, CopAny, Conj, Neg, TempAdv, DoAny, ModAny, If, Then, Comma,
-    Ing, Ed, NameT, Pct, Approx, So, Because, Ord, Than,
+    Ing, Ed, NameT, Pct, Approx, So, Because, Namely, Ord, Than,
 }
 
 fn term_of(t: &Tok) -> Vec<Term> {
@@ -1036,6 +1083,7 @@ fn term_of(t: &Tok) -> Vec<Term> {
         Tok::Approx(_) => vec![Term::Approx],
         Tok::So(_) => vec![Term::So],
         Tok::Because(_) => vec![Term::Because],
+        Tok::Namely(_) => vec![Term::Namely],
         Tok::Ord(_) => vec![Term::Ord],
         Tok::Be(_) | Tok::BecomeSg(_) | Tok::BecomePl(_) | Tok::BecomePast(_) => vec![Term::CopAny],
         Tok::Than(_) => vec![Term::Than],

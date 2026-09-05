@@ -105,10 +105,23 @@ fn main() {
     }
 
     // -- lint: a vocabulary pack adds, never overrides (ADR 0053) ------------
+    // Checked against core+domain AND every OTHER already-loaded pack, not
+    // just the pre-pack snapshot — two packs claiming the same lemma+category
+    // must fail this check even if neither collides with core/domain (a real
+    // gap found in review: with only one pack loaded this was untestable and
+    // untested).
     for e in entries.iter().filter(|e| e.pack.is_some()) {
-        if core_and_domain_lemmas.contains(&(e.lemma.clone(), e.category.clone())) {
+        let overrides_core_or_domain =
+            core_and_domain_lemmas.contains(&(e.lemma.clone(), e.category.clone()));
+        let overrides_other_pack = entries.iter().any(|other| {
+            other.pack.is_some()
+                && other.pack != e.pack
+                && other.lemma == e.lemma
+                && other.category == e.category
+        });
+        if overrides_core_or_domain || overrides_other_pack {
             errors.push(format!(
-                "pack word \"{}\" ({}) is also a core or domain lemma — a pack may not override the seed",
+                "pack word \"{}\" ({}) is also a core, domain, or other-pack lemma — a pack may not override the seed",
                 e.lemma, e.pack.as_deref().unwrap_or("?")
             ));
         }

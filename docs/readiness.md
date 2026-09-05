@@ -94,6 +94,43 @@ term, instead of needing its own flat sentence). This is a design
 problem with real uncertainty, not a mechanical extension — budget
 accordingly, likely the single largest remaining item.
 
+**2026-09-05 update**: built (ADR 0054, `Subj, NP, Predicate`, singular
+subject only) — zero LALR(1) conflict. Real naturalness payoff **not
+yet shown**: a direct A/B on one real example scored 4/5 both with and
+without it (tied, not a win) — see `docs/top-5-issues-2026-09-05.md`
+item 1. Two other candidate cheap fixes were tested and falsified the
+same day: same-subject predicate coordination (already legal) doesn't
+fix a whole paragraph's rhythm, and inverting a repeated-predicate
+chain into a colon-list actively regressed one real document's score
+(3/5 → 2/5). The remaining honest next step is testing ADR 0054 at
+scale (several real failing documents, same 3-for-3 bar ADR 0051
+cleared) before trusting it.
+
+**Same-day correction, after a skeptic-agent audit**: the original
+"zero corpus regression" claim above was misleadingly precise — no
+sentence in the corpus (1582 sentences) exercises the construction at
+all, so "zero regression" meant "unused," not "validated." Also found:
+the construction initially only worked in a bare top-level statement,
+not inside `if/then`, `because`/`so`, `and`-coordination, or a Step —
+most of the content it was built for. Both are fixed now (see
+`docs/top-5-issues-2026-09-05.md`'s second update), but log this as a
+real instance of the exact undisclosed-sub-decision failure mode
+`docs/controversial-decisions-2026-09-05.md` warns about, not just a
+bug.
+
+**Second correction, same day — the load-bearing one**: a scale test
+(2 real domain-model paragraphs, ADR 0054 §8) found 1 win, 1 tie by
+blind LLM judges — until the user, a real human, was shown the actual
+example sentences and disagreed: flagged a real garden-path reading
+(`Subj, NP, Predicate` looks like an asyndetic list until the verb's
+agreement resolves it) and judged the flat original more natural than
+every embedded example shown, including the "winning" one. Reverted the
+shipped `linter` change. This is Condition 5's gap (no human validation
+data) materializing directly — every LLM-judge naturalness number this
+construction has ever gotten should be read as contradicted by the
+first real human check, not confirmed. Do not treat ADR 0054 as a
+naturalness win until a human, not a subagent, says so.
+
 ## Condition 3: documents cohere above the sentence
 
 **Status: partially met — infrastructure exists, coverage is thin.**

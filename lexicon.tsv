@@ -1360,6 +1360,7 @@ my	form	POSS_1SG	my
 name	form	VERB_TRANS_BASE	name
 name	term	-	Name
 named	form	VERB_TRANS_ED	name
+namely	form	NAMELY	namely
 names	form	VERB_TRANS_3SG	name
 names	term	-	Names
 naming	form	VERB_TRANS_ING	name

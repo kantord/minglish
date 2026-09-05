@@ -1561,6 +1561,11 @@
     "note": "reason connective: \"<result>, because <reason>\"; comma mandatory; never sentence-initial (ADR 0026)"
   },
   {
+    "lemma": "namely",
+    "category": "NAMELY",
+    "note": "ADR 0054 revision: mandatory marker right after the Appositive's opening comma (\"Subj, namely NP, Predicate\") — removes the garden path where a bare \"Subj, NP,\" reads as an asyndetic list until the predicate's agreement resolves it (confirmed real by direct human reaction, docs/garden-paths-2026-09-06.md). A word real English already uses for exactly this (non-restrictive restatement), not a punctuation workaround."
+  },
+  {
     "lemma": "since",
     "category": "BANNED",
     "advice": "\"since\" is causal or temporal - for a cause and its result write \"<cause>, so <result>\"; for a result and its reason write \"<result>, because <reason>\" (ADR 0026)"

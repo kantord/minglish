@@ -61,6 +61,7 @@ extern {
         "APPROX" => Tok::Approx(<String>),
         "RESULT" => Tok::So(<String>),
         "REASON" => Tok::Because(<String>),
+        "NAMELY" => Tok::Namely(<String>),
         "ORD" => Tok::Ord(<String>),
         "THAN" => Tok::Than(<String>),
         "MORE" => Tok::More(<String>),
@@ -163,6 +164,10 @@ LPercent: Tree = <l:@L> <w:"PERCENT"> => leaf(l, w);
 LApprox: Tree = <l:@L> <w:"APPROX"> => leaf(l, w);
 LSo: Tree = <l:@L> <w:"RESULT"> => leaf(l, w);
 LBecause: Tree = <l:@L> <w:"REASON"> => leaf(l, w);
+// "namely" (ADR 0054 revision): mandatory marker between the
+// Appositive's opening comma and its content — see the ApposSG
+// definition below for why.
+LNamely: Tree = <l:@L> <w:"NAMELY"> => leaf(l, w);
 LOrd: Tree = <l:@L> <w:"ORD"> => leaf(l, w);
 LThan: Tree = <l:@L> <w:"THAN"> => leaf(l, w);
 LMore: Tree = <l:@L> <w:"MORE"> => leaf(l, w);
@@ -254,6 +259,7 @@ pub Sentence: Tree = {
 
 Statement: Tree = {
     <s:SubjSG> <p:PredSG> <t:Tailn<PredSG>?> => nd("S", 1, vec![Some(s), Some(p), t]),
+    <s:ApposSG> <p:PredSG> <t:Tailn<PredSG>?> => nd("S", 1, vec![Some(s), Some(p), t]),
     <s:NPEvery> <p:PredEvery> => nd("S", 1, vec![Some(s), Some(p)]),
     <s:NPNo> <p:PredNo> => nd("S", 1, vec![Some(s), Some(p)]),
     <s:NPSome> <p:PredPL> => nd("S", 1, vec![Some(s), Some(p)]),
@@ -268,6 +274,7 @@ Statement: Tree = {
 // after a Clause reduces.
 Clause: Tree = {
     <s:SubjSG> <p:PredSG> <t:CoordPredTail<PredSG>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
+    <s:ApposSG> <p:PredSG> <t:CoordPredTail<PredSG>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
     <s:SubjPL> <p:PredPL> <t:CoordPredTail<PredPL>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
     <s:Subj1> <p:Pred1> <t:CoordPredTail<Pred1>?> => nd("Clause", 1, vec![Some(s), Some(p), t]),
 };
@@ -357,6 +364,68 @@ Imperative: Tree = {
 SubjSG: Tree = { NPSG };
 SubjPL: Tree = { NPPL, BarePl, LPron2 };
 Subj1: Tree = { LPron1 };
+
+// Appositive (ADR 0054, revised 2026-09-06): a comma-delimited noun
+// phrase right after a singular subject, restating or defining it
+// inline — lets a term's first use carry its own definition without a
+// separate flat "X is a Y" sentence. Confined to SubjSG: a bare SubjSG
+// is never otherwise followed by a comma (PredSG starts unconditionally
+// after it in Statement/Clause), so this new "SubjSG COMMA" prefix
+// cannot collide with any existing production — verified conflict-free
+// by the LALRPOP build, not just reasoned by hand (ADR 0050's own
+// lesson).
+//
+// "namely" is now MANDATORY right after the opening comma — not present
+// in the original design. Reason: "Subj, NP," (no marker) is visually
+// identical to an asyndetic list (2 comma-joined NPs, no "and") until
+// the predicate's agreement resolves it, possibly many tokens later —
+// a real, confirmed garden path (docs/garden-paths-2026-09-06.md), not
+// a theoretical one: a direct human reaction to real example sentences
+// flagged exactly this. "Subj, namely NP," cannot be misread as a list
+// — no list ever opens its second item with "namely," and this is a
+// word real English already uses for exactly this job (a non-
+// restrictive restatement), not a punctuation workaround. The garden
+// path is removed by construction, not detected after the fact.
+//
+// The inner phrase is NPAny — deliberately NOT restricted by structure
+// (2 structural restrictions were tried and both falsified by direct
+// A/B tests; see ADR 0054's Consequences for the full account). The
+// real failure mode (a vague placeholder noun like "a term" used with
+// no modifier) is a lexical/semantic one, not a structural one — "a
+// Function Word" is just as bare, structurally, and tests fine. That
+// distinction can't be a CFG rule (a grammar can't tell "term" from
+// "Function Word" — both are just LNounSg), so it's a Tier-2 lint
+// check instead (see diagnose::vague_appositive), the same split
+// ADR 0048's same-verb-coordination check already uses for a
+// distinction the grammar structurally cannot make.
+ApposContent: Tree = { NPAny };
+ApposSG: Tree = <s:SubjSG> <c1:LComma> <m:LNamely> <a:ApposContent> <c2:LComma> =>
+    nd("Appos", 3, vec![Some(s), Some(c1), Some(m), Some(a), Some(c2)]);
+
+// A trailing (right-branching) appositive was tried twice and dropped
+// both times (2026-09-05) — not a design still in progress, a closed
+// question. See ADR 0054's Consequences for the full account:
+// attempt 1 (a bare COMMA trigger) hit a real, confirmed LALR(1)
+// conflict — after "SubjSG LCopSg LAdj", the parser could not decide,
+// on 1 token of lookahead, between reducing Compl=LAdj (the sentence
+// is already complete on its own: "the Copula is safe" stands alone)
+// and shifting into a trailing continuation, because COMMA is already
+// claimed at that exact shared state by Causal/Conditional/CoordClause,
+// and COLON is separately claimed there by Enumeration/Mapping's Intro.
+// Attempt 2 (a dedicated "namely" token, avoiding the conflict — real
+// English still wants a comma before "namely", which itself hits the
+// same conflict, so it had to run comma-less: "the Copula is safe
+// namely a Function Word") built and parsed cleanly, but scored WORSE
+// on a real naturalness A/B (2/5) than the center-embedded original
+// (4/5) — not primarily because of the missing comma (the judge called
+// that "the smaller problem"), but because anchoring the trailing
+// appositive to an unrelated NP-free adjective predicate ("is safe")
+// forces the sentence to make a tangential claim before restating the
+// subject from a distance, which reads as "two clauses stitched
+// together." Center-embedding costs more structurally (Gibson's DLT)
+// but keeps the appositive adjacent to the thing it restates, which
+// mattered more here. Not reattempted with a 3rd anchor point without
+// a genuinely different idea, not just a different token.
 
 // ------------------------------------------------------------- predicates
 

@@ -4,49 +4,62 @@
 
 | ADR | parse rate |
 |---|---|
-| 0001-generated-lexicon-from-curated-seed.md | 54/54 |
-| 0002-pronoun-policy.md | 25/25 |
-| 0003-copula.md | 28/28 |
-| 0004-coordination.md | 24/24 |
-| 0005-negation.md | 24/24 |
-| 0006-comprehension-first-syntax.md | 58/58 |
-| 0007-conditionals.md | 21/21 |
-| 0008-redirect-vs-ban.md | 37/37 |
-| 0009-modals.md | 38/38 |
-| 0010-simple-past.md | 31/31 |
-| 0011-pp-attachment.md | 33/33 |
+| 0001-generated-lexicon-from-curated-seed.md | 51/54 |
+| 0002-pronoun-policy.md | 22/22 |
+| 0003-copula.md | 27/28 |
+| 0004-coordination.md | 23/24 |
+| 0005-negation.md | 23/23 |
+| 0006-comprehension-first-syntax.md | 57/58 |
+| 0007-conditionals.md | 19/21 |
+| 0008-redirect-vs-ban.md | 36/37 |
+| 0009-modals.md | 33/38 |
+| 0010-simple-past.md | 29/31 |
+| 0011-pp-attachment.md | 32/33 |
 | 0012-pair-validity.md | 41/41 |
 | 0013-generic-bare-plurals.md | 39/39 |
-| 0014-universal-and-no.md | 45/45 |
-| 0015-compounds-transparency.md | 61/61 |
-| 0016-have-and-one.md | 35/35 |
-| 0017-existential-some.md | 21/21 |
-| 0018-proper-names.md | 43/43 |
-| 0019-imperatives.md | 31/31 |
-| 0020-no-first-person-plural.md | 27/27 |
-| 0021-but.md | 25/25 |
-| 0022-digits.md | 52/52 |
+| 0014-universal-and-no.md | 40/42 |
+| 0015-compounds-transparency.md | 59/61 |
+| 0016-have-and-one.md | 34/35 |
+| 0017-existential-some.md | 20/21 |
+| 0018-proper-names.md | 40/43 |
+| 0019-imperatives.md | 30/31 |
+| 0020-no-first-person-plural.md | 26/27 |
+| 0021-but.md | 24/25 |
+| 0022-digits.md | 51/52 |
 | 0023-per-sense-synonyms.md | 61/61 |
 | 0024-percent.md | 31/31 |
 | 0025-approximation.md | 20/20 |
-| 0026-causal-connectives.md | 52/52 |
-| 0027-domain-model.md | 57/57 |
-| 0028-enumeration.md | 37/37 |
-| 0029-ordinals-and-scales.md | 29/29 |
+| 0026-causal-connectives.md | 50/52 |
+| 0027-domain-model.md | 54/57 |
+| 0028-enumeration.md | 36/36 |
+| 0029-ordinals-and-scales.md | 28/29 |
 | 0030-comparatives.md | 28/28 |
-| 0031-complement-phrases.md | 20/20 |
-| 0032-modal-be.md | 21/21 |
-| 0033-time-prepositions.md | 15/15 |
+| 0031-complement-phrases.md | 21/21 |
+| 0032-modal-be.md | 20/21 |
+| 0033-time-prepositions.md | 18/18 |
 | 0034-step-block.md | 31/31 |
-| 0035-become.md | 18/18 |
+| 0035-become.md | 17/17 |
 | 0036-domain-model-schema.md | 32/32 |
 | 0037-full-clause-coordination.md | 27/27 |
 | 0038-coordination-inside-clauses.md | 24/24 |
 | 0039-without.md | 8/8 |
-| 0040-coordinated-noun-phrases.md | 19/19 |
-| 0041-colon-list.md | 14/14 |
+| 0040-coordinated-noun-phrases.md | 17/19 |
+| 0041-colon-list.md | 20/20 |
+| 0042-epistemic-hedges-banned.md | 14/14 |
+| 0043-idiomatic-structure-never.md | 20/21 |
+| 0044-medial-temporal-adverbs.md | 15/15 |
+| 0045-afterward.md | 15/15 |
+| 0046-yet.md | 10/11 |
+| 0047-only.md | 17/17 |
+| 0048-one-shape-per-meaning.md | 20/20 |
+| 0049-other.md | 30/30 |
+| 0050-nary-clause-coordination.md | 23/23 |
+| 0051-mapping-table.md | 18/18 |
+| 0052-first-person-copula.md | 12/12 |
+| 0053-vocabulary-packs.md | 34/34 |
+| 0054-appositive.md | 54/54 |
 
-**Aggregate: 1337/1337 sentences (100%)**
+**Aggregate: 1581/1622 sentences (97%)**
 
 ## Blocking words, ranked (gap-interview shortlist)
 
